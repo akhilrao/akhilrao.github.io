@@ -1,2 +1,1 @@
-# akhilrao.github.io
-Supposed to be a blog with Jekyll and Poole...
+# A readme
