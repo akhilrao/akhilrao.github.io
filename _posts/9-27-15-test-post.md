@@ -1,0 +1,18 @@
+---
+layout: post
+title: A test post
+---
+
+some content
+
+# A header
+
+some more content
+
+## A subheader
+
+even more content
+
+### Third subheader
+
+last bunch of content
