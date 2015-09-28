@@ -1,5 +1,8 @@
 # Dependencies
 markdown:         redcarpet
+redcarpet:
+    extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+    
 highlighter:      pygments
 
 # Permalinks
@@ -15,12 +18,14 @@ baseurl:          /
 
 author:
   name:           'Akhil Rao'
-#  url:            
+  url:            https://github.com/akhilrao
 
 #paginate:         5
 
 # Custom vars
-#version:          2.1.0
+version:          0.0.1
 
-#github:
-#  repo:          
+github:
+  repo:          https://github.com/akhilrao
+  
+excerpt_separator: <!--endexcerpt-->
