@@ -20,7 +20,7 @@ author:
   name:           'Akhil Rao'
   url:            https://github.com/akhilrao
 
-#paginate:         5
+paginate:         5
 
 # Custom vars
 version:          0.0.1
