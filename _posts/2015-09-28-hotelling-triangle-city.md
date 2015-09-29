@@ -50,7 +50,7 @@ Now that we have some background, let's consider a slightly more complicated ver
 
 Everything is the same as before, except that there are 3 firms and they are located at the vertices of an equilateral triangle:
 
-[![Figure 2](/public/images/hotelling/triangle_city.svg "Triangle City")](/public/images/hotelling/triangle_city.pdf "Triangle City")
+[![Figure 2](/public/images/hotelling/triangle_city.svg "Triangle City")](/public/images/hotelling/triangle_city.svg "Triangle City")
 
 
 Let's normalize the sides to length 1. The firms are symmetric with respect to costs, and the consumers are distributed uniformly along the edges of the triangle. Once again, we look at the indifferent consumer, \\(\tilde{x}\\). Without loss of generality, let's consider the indifferent consumer between firm 1 and firm 2. As before, we have
