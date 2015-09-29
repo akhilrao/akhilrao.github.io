@@ -1,12 +1,21 @@
 ---
 layout: post
 title: Triangle City - A Hotelling Model
+category: micro theory
+tags: micro-theory hotelling differentiation
+year: 2015
+month: 9
+day: 28
+published: true
+summary: A Hotelling model with fixed firms on the ends of a line. An extension to a triangle.
 ---
 
-[Hotelling models](https://en.wikipedia.org/wiki/Location_model) are a nice way to consider questions about differentiated products and monopolistic pricing. The idea is that firms are located a certain distance apart, and that the distance imposes a cost to consumers. The products themselves are homogeneous, but the distance cost acts as a differentiator. One version of the model is as follows:
+[Hotelling models](https://en.wikipedia.org/wiki/Location_model) are a nice way to think about questions about differentiated products and monopolistic pricing. The idea is that firms are located a certain distance apart, and that consumers face a travel cost. The products themselves are homogeneous but the cost of distance "differentiates" them. One version of the model, with fixed firm locations, is as follows:
 
 
-Suppose you have a city that's on a line normalized to length 1. A mass of consumers (also normalized to 1) is uniformly distributed along this line. There is a firm located at each end of the line (assume only 2 firms). Consumers value the firm's products at \\(v\\). Let \\(p_i\\) be the price of the \\(i\\)th firm's product and \\(c\\) be the common constant marginal cost. Assume that each consumer will necessarily buy 1 unit of the good, and that consumers face a linear travel cost to the firm.
+### Linear City
+
+Suppose you have a city that's on a line normalized to length 1. A mass of consumers (also normalized to 1) is uniformly distributed along this line. There is a firm located at each end of the line (assume 2 for now, you could have \\(n)\\). Consumers value the firms' homogeneous products at \\(v\\). Let \\(p_i\\) be the price of the \\(i\\)th firm's product and \\(c\\) be the common constant marginal cost. Assume that each consumer will necessarily buy 1 unit of the good, and that consumers face a linear travel cost to the firm.
 
 [![](/public/images/hotelling/linear_city.svg "Linear City")](/public/images/hotelling/linear_city.svg "Linear City")
 
@@ -18,7 +27,7 @@ That is, the indifferent consumer is the one whose utility from buying from firm
 
 $$ \tilde{x} = \frac{1}{2} + \frac{p_2 - p_1}{2t} $$
 
-Cool, now we can go to the firm's problems and see how the firms will deal with this. Since the firms are symmetric, we only need to consider one firm. Let's consider firm 1. The firm wants to maximize its profits (\\(\pi_{i}\\)), i.e.
+Cool, now we can go to the firms' problems and see how they deal with this. Since the firms are symmetric, we only need to consider one firm. Let's consider firm 1. The firm wants to maximize its profits (\\(\pi_{i}\\)), i.e.
 
 
 $$ \max_{p_1} (p_1 - c)\tilde{x} $$
@@ -47,6 +56,8 @@ So the more the firm differentiates, the more profits it makes. The degree of di
 
 Now that we have some background, let's consider a slightly more complicated version of this model: Triangle City.
 
+
+### Triangle City
 
 Everything is the same as before, except that there are 3 firms and they are located at the vertices of an equilateral triangle:
 
