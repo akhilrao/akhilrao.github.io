@@ -8,7 +8,7 @@ title: Triangle City - A Hotelling Model
 
 Suppose you have a city that's on a line normalized to length 1. A mass of consumers (also normalized to 1) is uniformly distributed along this line. There is a firm located at each end of the line (assume only 2 firms). Consumers value the firm's products at \\(v\\). Let \\(p_i\\) be the price of the \\(i\\)th firm's product and \\(c\\) be the common constant marginal cost. Assume that each consumer will necessarily buy 1 unit of the good, and that consumers face a cost in travelling to the firm. Let's assume the travel cost is linear.
 
-![Figure 1](https://github.com/akhilrao/akhilrao.github.io/images/linear_city.pdf "Linear City")
+[![Figure 1](/public/images/hotelling/linear_city.pdf "Linear City")](/public/images/hotelling/linear_city.pdf "Linear City")
 
 We can analyze this problem by considering the indifferent consumer, call them \\(\tilde{x}\\) and let them be a distance of \\(t\\) away from one firm and \\(1-t\\) away from the other. The indifferent consumer's decision looks like this:
 
@@ -50,7 +50,7 @@ Now that we have some background, let's consider a slightly more complicated ver
 
 Everything is the same as before, except that there are 3 firms and they are located at the vertices of an equilateral triangle:
 
-![Figure 2](https://github.com/akhilrao/akhilrao.github.io/images/triangle_city.pdf "Triangle City")
+![[Figure 2](/public/images/hotelling/triangle_city.pdf "Triangle City")](/public/images/hotelling/triangle_city.pdf "Triangle City")
 
 
 Let's normalize the sides to length 1. The firms are symmetric with respect to costs, and the consumers are distributed uniformly along the edges of the triangle. Once again, we look at the indifferent consumer, \\(\tilde{x}\\). Without loss of generality, let's consider the indifferent consumer between firm 1 and firm 2. As before, we have
@@ -75,6 +75,6 @@ The equilibrium is: \\( (p_1,p_2,p_3,\pi_1,\pi_2,\pi_2) = (t+c,t+c,t+c,\frac{t}{
 
 
 Variations to explore in future posts: 
-- Triangle city case with asymmetric firms
-- Circle city case with symmetric firms
-- Polygon city case with symmetric firms
+*  Triangle city case with asymmetric firms
+*  Circle city case with symmetric firms
+*  Polygon city case with symmetric firms
