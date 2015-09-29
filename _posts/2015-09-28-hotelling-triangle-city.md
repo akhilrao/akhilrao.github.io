@@ -8,7 +8,7 @@ title: Triangle City - A Hotelling Model
 
 Suppose you have a city that's on a line normalized to length 1. A mass of consumers (also normalized to 1) is uniformly distributed along this line. There is a firm located at each end of the line (assume only 2 firms). Consumers value the firm's products at \\(v\\). Let \\(p_i\\) be the price of the \\(i\\)th firm's product and \\(c\\) be the common constant marginal cost. Assume that each consumer will necessarily buy 1 unit of the good, and that consumers face a cost in travelling to the firm. Let's assume the travel cost is linear.
 
-[![](/public/images/hotelling/linear_city.pdf "Linear City")](/public/images/hotelling/linear_city.pdf "Linear City")
+[![](/public/images/hotelling/linear_city.pdf?raw=true "Linear City")](/public/images/hotelling/linear_city.pdf "Linear City")
 
 We can analyze this problem by considering the indifferent consumer, call them \\(\tilde{x}\\) and let them be a distance of \\(t\\) away from one firm and \\(1-t\\) away from the other. The indifferent consumer's decision looks like this:
 
