@@ -6,15 +6,15 @@ title: Triangle City - A Hotelling Model
 [Hotelling models](https://en.wikipedia.org/wiki/Location_model) are a nice way to consider questions about differentiated products and monopolistic pricing. The idea is that firms are located a certain distance apart, and that the distance imposes a cost to consumers. The products themselves are homogeneous, but the distance cost acts as a differentiator. One version of the model is as follows:
 
 
-Suppose you have a city that's on a line normalized to length 1. A mass of consumers (also normalized to 1) is uniformly distributed along this line. There is a firm located at each end of the line (assume only 2 firms). Consumers value the firm's products at \\(v\\). Let \\(p_i\\) be the price of the \\(i\\)th firm's product and \\(c\\) be the common constant marginal cost. Assume that each consumer will necessarily buy 1 unit of the good, and that consumers face a cost in travelling to the firm. Let's assume the travel cost is linear.
+Suppose you have a city that's on a line normalized to length 1. A mass of consumers (also normalized to 1) is uniformly distributed along this line. There is a firm located at each end of the line (assume only 2 firms). Consumers value the firm's products at \\(v\\). Let \\(p_i\\) be the price of the \\(i\\)th firm's product and \\(c\\) be the common constant marginal cost. Assume that each consumer will necessarily buy 1 unit of the good, and that consumers face a linear travel cost to the firm.
 
-[![](/public/images/hotelling/linear_city.svg?raw=true "Linear City")](/public/images/hotelling/linear_city.svg "Linear City")
+[![](/public/images/hotelling/linear_city.svg "Linear City")](/public/images/hotelling/linear_city.svg "Linear City")
 
-We can analyze this problem by considering the indifferent consumer, call them \\(\tilde{x}\\) and let them be a distance of \\(t\\) away from one firm and \\(1-t\\) away from the other. The indifferent consumer's decision looks like this:
+We can analyze this problem by considering the indifferent consumer, call her \\(\tilde{x}\\). Let her be a distance of \\(t\\) away from one firm and \\(1-t\\) away from the other. The indifferent consumer's decision looks like this:
 
 $$ v - p - t\tilde{x} = v - p -(1-t)\tilde{x}$$
 
-That is, the indifferent consumer is the one whose utility from buying from firm 1 is equal to their utility from buying from firm 2. From this expression, we get that
+That is, the indifferent consumer is the one whose utility from buying from firm 1 is equal to her utility from buying from firm 2. From this expression, we get that
 
 $$ \tilde{x} = \frac{1}{2} + \frac{p_2 - p_1}{2t} $$
 
@@ -68,13 +68,17 @@ $$ U(firm 1) = U(firm 2) > U(firm 3) $$ or
 $$ v - p_1 - t\tilde{x} > v - p_3 - (1+\tilde{x})t $$
 
 
-Ok, cool. So how do we solve this? Since the firms are symmetric and the competition between two firms on any edge implies that the shop-local condition holds, we can make our lives easier and consider only a single edge of the triangle (any edge) to get the prices and profits. But then we are back in linear city along each edge. So triangle city actually has the same solution as linear city!
-
+Ok, cool. So how do we solve this? Since the firms are symmetric and the competition between two firms on any edge implies that the shop-local condition holds, we can make our lives easier and consider only a single edge of the triangle (any edge) to get the prices and profits. But then we are back in linear city along each edge. So triangle city has the same solution as linear city!
 
 The equilibrium is: \\( (p_1,p_2,p_3,\pi_1,\pi_2,\pi_2) = (t+c,t+c,t+c,\frac{t}{2},\frac{t}{2},\frac{t}{2}) \\)
 
 
-Variations to explore in future posts: 
+Variations to explore: 
+
 *  Triangle city case with asymmetric firms
-*  Circle city case with symmetric firms
-*  Polygon city case with symmetric firms
+
+*  Triangle city case with different side lengths
+
+*  Circle city case with \\(n\\) symmetric firms
+
+*  Polygon city case with \\(n\\) symmetric firms

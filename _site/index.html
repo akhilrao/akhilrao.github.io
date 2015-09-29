@@ -109,15 +109,15 @@
 
     <p><a href="https://en.wikipedia.org/wiki/Location_model">Hotelling models</a> are a nice way to consider questions about differentiated products and monopolistic pricing. The idea is that firms are located a certain distance apart, and that the distance imposes a cost to consumers. The products themselves are homogeneous, but the distance cost acts as a differentiator. One version of the model is as follows:</p>
 
-<p>Suppose you have a city that&#39;s on a line normalized to length 1. A mass of consumers (also normalized to 1) is uniformly distributed along this line. There is a firm located at each end of the line (assume only 2 firms). Consumers value the firm&#39;s products at \(v\). Let \(p_i\) be the price of the \(i\)th firm&#39;s product and \(c\) be the common constant marginal cost. Assume that each consumer will necessarily buy 1 unit of the good, and that consumers face a cost in travelling to the firm. Let&#39;s assume the travel cost is linear.</p>
+<p>Suppose you have a city that&#39;s on a line normalized to length 1. A mass of consumers (also normalized to 1) is uniformly distributed along this line. There is a firm located at each end of the line (assume only 2 firms). Consumers value the firm&#39;s products at \(v\). Let \(p_i\) be the price of the \(i\)th firm&#39;s product and \(c\) be the common constant marginal cost. Assume that each consumer will necessarily buy 1 unit of the good, and that consumers face a linear travel cost to the firm.</p>
 
-<p><a href="/public/images/hotelling/linear_city.svg" title="Linear City"><img src="/public/images/hotelling/linear_city.svg?raw=true" alt="" title="Linear City"></a></p>
+<p><a href="/public/images/hotelling/linear_city.svg" title="Linear City"><img src="/public/images/hotelling/linear_city.svg" alt="" title="Linear City"></a></p>
 
-<p>We can analyze this problem by considering the indifferent consumer, call them \(\tilde{x}\) and let them be a distance of \(t\) away from one firm and \(1-t\) away from the other. The indifferent consumer&#39;s decision looks like this:</p>
+<p>We can analyze this problem by considering the indifferent consumer, call her \(\tilde{x}\). Let her be a distance of \(t\) away from one firm and \(1-t\) away from the other. The indifferent consumer&#39;s decision looks like this:</p>
 
 <p>$$ v - p - t\tilde{x} = v - p -(1-t)\tilde{x}$$</p>
 
-<p>That is, the indifferent consumer is the one whose utility from buying from firm 1 is equal to their utility from buying from firm 2. From this expression, we get that</p>
+<p>That is, the indifferent consumer is the one whose utility from buying from firm 1 is equal to her utility from buying from firm 2. From this expression, we get that</p>
 
 <p>$$ \tilde{x} = \frac{1}{2} + \frac{p_2 - p_1}{2t} $$</p>
 
@@ -158,14 +158,18 @@ v - p - t\tilde{x} &amp; = v - p -(1-t)\tilde{x} \cr
 <p>$$ U(firm 1) = U(firm 2) &gt; U(firm 3) $$ or
 $$ v - p_1 - t\tilde{x} &gt; v - p_3 - (1+\tilde{x})t $$</p>
 
-<p>Ok, cool. So how do we solve this? Since the firms are symmetric and the competition between two firms on any edge implies that the shop-local condition holds, we can make our lives easier and consider only a single edge of the triangle (any edge) to get the prices and profits. But then we are back in linear city along each edge. So triangle city actually has the same solution as linear city!</p>
+<p>Ok, cool. So how do we solve this? Since the firms are symmetric and the competition between two firms on any edge implies that the shop-local condition holds, we can make our lives easier and consider only a single edge of the triangle (any edge) to get the prices and profits. But then we are back in linear city along each edge. So triangle city has the same solution as linear city!</p>
 
 <p>The equilibrium is: \( (p_1,p_2,p_3,\pi_1,\pi_2,\pi_2) = (t+c,t+c,t+c,\frac{t}{2},\frac{t}{2},\frac{t}{2}) \)</p>
 
-<p>Variations to explore in future posts: 
-*  Triangle city case with asymmetric firms
-*  Circle city case with symmetric firms
-*  Polygon city case with symmetric firms</p>
+<p>Variations to explore: </p>
+
+<ul>
+<li><p>Triangle city case with asymmetric firms</p></li>
+<li><p>Triangle city case with different side lengths</p></li>
+<li><p>Circle city case with \(n\) symmetric firms</p></li>
+<li><p>Polygon city case with \(n\) symmetric firms</p></li>
+</ul>
 
   </div>
   
