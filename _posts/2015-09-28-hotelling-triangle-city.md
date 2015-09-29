@@ -42,7 +42,7 @@ which gives us the following first-order condition:
 \end{align}
 
 
-The "\*" in "\\( p_2^\* \\)" is to indicate that firm 1 is taking firm 2's pricing decision as given. Because the firms are symmetric, \\(p_2 = p_1\\), which gives us:
+The "\*" in "\\( p_2^\* \\)" is to indicate that firm 1 is taking firm 2's pricing decision as given and already optimized. Because the firms are symmetric, \\(p_2 = p_1\\), which gives us:
 
 
 $$ p_1 = t + c $$
@@ -61,14 +61,14 @@ Now that we have some background, let's consider a slightly more complicated ver
 
 Everything is the same as before, except that there are 3 firms and they are located at the vertices of an equilateral triangle:
 
-[![Figure 2](/public/images/hotelling/triangle_city.svg "Triangle City")](/public/images/hotelling/triangle_city.svg "Triangle City")
+[![Figure 2](/public/images/hotelling/triangle_city.svg?raw=true "Triangle City")](/public/images/hotelling/triangle_city.svg?raw=true "Triangle City")
 
 
 Let's normalize the sides to length 1. The firms are symmetric with respect to costs, and the consumers are distributed uniformly along the edges of the triangle. Once again, we look at the indifferent consumer, \\(\tilde{x}\\). Without loss of generality, let's consider the indifferent consumer between firm 1 and firm 2. As before, we have
 
 
 $$ \begin{align} 
-v - p - t\tilde{x} & = v - p -(1-t)\tilde{x} \cr
+v - p_1 - t\tilde{x} & = v - p_2 -(1-t)\tilde{x} \cr
 \implies \tilde{x} & = \frac{1}{2} + \frac{p_2 - p_1}{2t}
 \end{align} $$
 
