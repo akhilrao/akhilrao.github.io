@@ -11,7 +11,7 @@
 
   <title>
     
-      A blog &middot; By Akhil Rao
+      A Model A Day &middot; By Akhil Rao
     
   </title>
 
@@ -37,7 +37,7 @@
     <div class="sidebar-about">
       <h1>
         <a href="/">
-          A blog
+          A Model A Day
         </a>
       </h1>
       <p class="lead"></p>
@@ -73,9 +73,9 @@
         
       
 
-      <a class="sidebar-nav-item" href="/archive/v.zip">Download</a>
-      <a class="sidebar-nav-item" href="">GitHub project</a>
-      <span class="sidebar-nav-item">Currently v</span>
+      <a class="sidebar-nav-item" href="https://github.com/akhilrao/archive/v0.0.1.zip">Download</a>
+      <a class="sidebar-nav-item" href="https://github.com/akhilrao">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v0.0.1</span>
     </nav>
 
     <p>&copy; 2015. All rights reserved.</p>
@@ -85,6 +85,84 @@
 
     <div class="content container">
       <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2015/09/28/2015-09-28-cournot-with-capacity-constraint/">
+        A Cournot model with a capacity constraint
+      </a>
+    </h1>
+
+    <span class="post-date">28 Sep 2015</span>
+
+    
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2015/09/28/hotelling-triangle-city/">
+        Triangle City - A Hotelling Model
+      </a>
+    </h1>
+
+    <span class="post-date">28 Sep 2015</span>
+
+    <p><a href="https://en.wikipedia.org/wiki/Location_model">Hotelling models</a> are a nice way to consider questions about differentiated products and monopolistic pricing. The idea is that firms are located a certain distance apart, with the distance to the firm differentiating the products to consumers. One version of the model is as follows:</p>
+
+<p>Suppose you have a city that&#39;s on a line normalized to length 1. A mass of consumers (also normalized to 1) is uniformly distributed along this line. There is a firm located at each end of the line (assume only 2 firms). Consumers value the firm&#39;s products at \(v\). Let \(p_i\) be the price of the \(i\)th firm&#39;s product and \(c\) be the common constant marginal cost. Assume that each consumer will necessarily buy 1 unit of the good, and that consumers face a cost in travelling to the firm. Let&#39;s assume the travel cost is linear.</p>
+
+<p><img src="https://github.com/akhilrao/akhilrao.github.io/images/linear_city.pdf" alt="Figure 1" title="Linear City"></p>
+
+<p>We can analyze this problem by considering the indifferent consumer, call them \(\tilde{x}\) and let them be a distance of \(t\) away from one firm and \(1-t\) away from the other. The indifferent consumer&#39;s decision looks like this:</p>
+
+<p>$$ v - p - t\tilde{x} = v - p -(1-t)\tilde{x}$$</p>
+
+<p>That is, the indifferent consumer is the one whose utility from buying from firm 1 is equal to their utility from buying from firm 2. From this expression, we get that</p>
+
+<p>$$ \tilde{x} = \frac{1}{2} + \frac{p_2 - p_1}{2t} $$</p>
+
+<p>Cool, now we can go to the firm&#39;s problems and see how the firms will deal with this. Since the firms are symmetric, we only need to consider one firm. Let&#39;s consider firm 1. The firm wants to maximize its profits (\(\pi_{i}\)), i.e.</p>
+
+<p>$$ \max_{p_1} (p_1 - c)\tilde{x} $$</p>
+
+<p>which gives us the following first-order condition:</p>
+
+<p>\begin{align} 
+ \frac{1}{2} + \frac{p_2^*}{2t} - \frac{2p_1}{2t} + \frac{c}{2t} &amp; = 0 \cr
+ \implies t + p_2^* - p_1 &amp; = p_1 - c 
+\end{align}</p>
+
+<p>The &quot;*&quot; in &quot;\( p_2^* \)&quot; is to indicate that firm 1 is taking firm 2&#39;s pricing decision as given. Because the firms are symmetric, \(p_2 = p_1\), which gives us:</p>
+
+<p>$$ p_1 = t + c $$</p>
+
+<p>This is a nice expression. When we plug things back into \(\tilde{x}\), we get that the indifferent consumer is located at exactly \( \frac{1}{2} \) on our linear city of length 1, which is intuitive in the case of symmetric firms. When we plug things into the firm&#39;s profits, we get that \( \pi_1 = \pi_2 = \frac{t}{2} \).</p>
+
+<p>So the more the firm differentiates, the more profits it makes. The degree of differentiation lets it add some markup to its marginal cost when pricing. Although it&#39;s hard to see here, as the number of firms goes to \( \infty \), the markup goes to 0 and the price goes to marginal cost, just as we&#39;d expect in the perfectly competitive case.</p>
+
+<p>Now that we have some background, let&#39;s consider a slightly more complicated version of this model: Triangle City.</p>
+
+<p>Everything is the same as before, except that there are 3 firms and they are located at the vertices of an equilateral triangle:</p>
+
+<p><img src="https://github.com/akhilrao/akhilrao.github.io/images/triangle_city.pdf" alt="Figure 2" title="Triangle City"></p>
+
+<p>Let&#39;s normalize the sides to length 1. The firms are symmetric with respect to costs, and the consumers are distributed uniformly along the edges of the triangle. Once again, we look at the indifferent consumer, \(\tilde{x}\). Without loss of generality, let&#39;s consider the indifferent consumer between firm 1 and firm 2. As before, we have</p>
+
+<p>$$ \begin{align} 
+v - p - t\tilde{x} &amp; = v - p -(1-t)\tilde{x} \cr
+\implies \tilde{x} &amp; = \frac{1}{2} + \frac{p_2 - p_1}{2t}
+\end{align} $$</p>
+
+<p>Under what condition(s) will the consumers only shop at their local store? The utility from shopping at a local store must be strictly greater than the utility from going to the far store, i.e.</p>
+
+<p>$$ U(firm 1) = U(firm 2) &gt; U(firm 3) $$, or
+$$ v - p_1 - t\tilde{x} &gt; v - p_3 - (1+\tilde{x})t $$</p>
+
+<p>Ok, cool. So how do we solve this? Since the firms are symmetric and the competition between two firms on any edge implies that the shop-local condition holds, we can make our lives easier and consider only a single edge of the triangle (any edge) to get the prices and profits. But then we are back in linear city along each edge. So triangle city actually has the same solution as linear city!</p>
+
+<p>Hotelling models are fun.</p>
+
+  </div>
   
 </div>
 
