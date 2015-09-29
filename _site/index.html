@@ -72,6 +72,10 @@
           
         
       
+        
+          
+        
+      
 
       <a class="sidebar-nav-item" href="https://github.com/akhilrao/archive/v0.0.1.zip">Download</a>
       <a class="sidebar-nav-item" href="https://github.com/akhilrao">GitHub project</a>
@@ -88,8 +92,8 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/micro%20theory/2015/09/29/bertrand-cournot-duopoly/">
-        Oligopoly - Bertrand and Cournot
+      <a href="/2015/09/29/2015-10-07-search-two-offers/">
+        2015 10 07 Search Two Offers
       </a>
     </h1>
 
@@ -100,100 +104,57 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/2015/09/28/2015-09-28-cournot-with-capacity-constraint/">
-        A Cournot model with a capacity constraint
+      <a href="/2015/09/29/2015-10-06-on-job-search/">
+        2015 10 06 On Job Search
       </a>
     </h1>
 
-    <span class="post-date">28 Sep 2015</span>
+    <span class="post-date">29 Sep 2015</span>
 
     
   </div>
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/micro%20theory/2015/09/28/hotelling-triangle-city/">
-        Triangle City - A Hotelling Model
+      <a href="/2015/09/29/2015-10-05-mccall-labor-search/">
+        2015 10 05 Mccall Labor Search
       </a>
     </h1>
 
-    <span class="post-date">28 Sep 2015</span>
+    <span class="post-date">29 Sep 2015</span>
 
-    <p><a href="https://en.wikipedia.org/wiki/Location_model">Hotelling models</a> are a nice way to think about questions about differentiated products and monopolistic pricing. The idea is that firms are located a certain distance apart, and that consumers face a travel cost. The products themselves are homogeneous but the cost of distance &quot;differentiates&quot; them. One version of the model, with fixed firm locations, is as follows:</p>
+    
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2015/09/29/2015-10-04-ct-growth/">
+        2015 10 04 Ct Growth
+      </a>
+    </h1>
 
-<h3 id="linear-city">Linear City</h3>
+    <span class="post-date">29 Sep 2015</span>
 
-<p>Suppose you have a city that&#39;s on a line normalized to length 1. A mass of consumers (also normalized to 1) is uniformly distributed along this line. There is a firm located at each end of the line (assume 2 for now, you could have \(n)\). Consumers value the firms&#39; homogeneous products at \(v\). Let \(p_i\) be the price of the \(i\)th firm&#39;s product and \(c\) be the common constant marginal cost. Assume that each consumer will necessarily buy 1 unit of the good, and that consumers face a linear travel cost to the firm.</p>
+    
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2015/09/29/2015-10-03-ct-tfk-utfk/">
+        2015 10 03 Ct Tfk Utfk
+      </a>
+    </h1>
 
-<p><img src="http://github.com/akhilrao/akhilrao/public/images/hotelling/linear_city.svg" alt="Figure 1" title="Linear City"><img src="http://github.com/akhilrao/akhilrao/public/images/hotelling/linear_city.svg"></p>
+    <span class="post-date">29 Sep 2015</span>
 
-<p>We can analyze this problem by considering the indifferent consumer, call her \(\tilde{x}\). Let her be a distance of \(t\) away from one firm and \(1-t\) away from the other. The indifferent consumer&#39;s decision looks like this:</p>
-
-<p>$$ v - p_1 - t\tilde{x} = v - p_2 -(1-t)\tilde{x}$$</p>
-
-<p>That is, the indifferent consumer is the one whose utility from buying from firm 1 is equal to her utility from buying from firm 2. From this expression, we get that</p>
-
-<p>$$ \tilde{x} = \frac{1}{2} + \frac{p_2 - p_1}{2t} $$</p>
-
-<p>Cool, now we can go to the firms&#39; problems and see how they deal with this. Since the firms are symmetric, we only need to consider one firm. Let&#39;s consider firm 1. The firm wants to maximize its profits (\(\pi_{i}\)), i.e.</p>
-
-<p>$$ \max_{p_1} (p_1 - c)\tilde{x} $$</p>
-
-<p>which gives us the following first-order condition:</p>
-
-<p>\begin{align} 
- \frac{1}{2} + \frac{p_2^*}{2t} - \frac{2p_1}{2t} + \frac{c}{2t} &amp; = 0 \cr
- \implies t + p_2^* - p_1 &amp; = p_1 - c 
-\end{align}</p>
-
-<p>The &quot;*&quot; in &quot;\( p_2^* \)&quot; is to indicate that firm 1 is taking firm 2&#39;s pricing decision as given and already optimized. Because the firms are symmetric, \(p_2 = p_1\), which gives us:</p>
-
-<p>$$ p_1 = t + c $$</p>
-
-<p>This is a nice expression. When we plug things back into \(\tilde{x}\), we get that the indifferent consumer is located at exactly \( \frac{1}{2} \) on our linear city of length 1, which is intuitive in the case of symmetric firms. When we plug things into the firm&#39;s profits, we get that \( \pi_1 = \pi_2 = \frac{t}{2} \).</p>
-
-<p>So the more the firm differentiates, the more profits it makes. The degree of differentiation lets it add some markup to its marginal cost when pricing. Although it&#39;s hard to see here, as the number of firms goes to \( \infty \), the markup goes to 0 and the price goes to marginal cost, just as we&#39;d expect in the perfectly competitive case.</p>
-
-<p>Now that we have some background, let&#39;s consider a slightly more complicated version of this model: Triangle City.</p>
-
-<h3 id="triangle-city">Triangle City</h3>
-
-<p>Everything is the same as before, except that there are 3 firms and they are located at the vertices of an equilateral triangle:</p>
-
-<p><a href="/public/images/hotelling/triangle_city.svg?raw=true" title="Triangle City"><img src="/public/images/hotelling/triangle_city.svg?raw=true" alt="Figure 2" title="Triangle City"></a></p>
-
-<p>Let&#39;s normalize the sides to length 1. The firms are symmetric with respect to costs, and the consumers are distributed uniformly along the edges of the triangle. Once again, we look at the indifferent consumer, \(\tilde{x}\). Without loss of generality, let&#39;s consider the indifferent consumer between firm 1 and firm 2. As before, we have</p>
-
-<p>$$ \begin{align} 
-v - p_1 - t\tilde{x} &amp; = v - p_2 -(1-t)\tilde{x} \cr
-\implies \tilde{x} &amp; = \frac{1}{2} + \frac{p_2 - p_1}{2t}
-\end{align} $$</p>
-
-<p>Under what condition(s) will the consumers only shop at their local store? The utility from shopping at a local store must be strictly greater than the utility from going to the far store, i.e.</p>
-
-<p>$$ U(firm 1) = U(firm 2) &gt; U(firm 3) $$ or
-$$ v - p_1 - t\tilde{x} &gt; v - p_3 - (1+\tilde{x})t $$</p>
-
-<p>Ok, cool. So how do we solve this? Since the firms are symmetric and the competition between two firms on any edge implies that the shop-local condition holds, we can make our lives easier and consider only a single edge of the triangle (any edge) to get the prices and profits. But then we are back in linear city along each edge. So triangle city has the same solution as linear city!</p>
-
-<p>The equilibrium is: \( (p_1,p_2,p_3,\pi_1,\pi_2,\pi_2) = (t+c,t+c,t+c,\frac{t}{2},\frac{t}{2},\frac{t}{2}) \)</p>
-
-<p>Variations to explore: </p>
-
-<ul>
-<li><p>Triangle city case with asymmetric firms</p></li>
-<li><p>Triangle city case with different side lengths</p></li>
-<li><p>Circle city case with \(n\) symmetric firms</p></li>
-<li><p>Polygon city case with \(n\) symmetric firms</p></li>
-</ul>
-
+    
   </div>
   
 </div>
 
 <div class="pagination">
   
-    <span class="pagination-item older">Older</span>
+    <a class="pagination-item older" href="/page2">Older</a>
   
   
     <span class="pagination-item newer">Newer</span>

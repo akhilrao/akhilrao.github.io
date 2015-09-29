@@ -15,11 +15,11 @@ summary: A Hotelling model with fixed firms on the ends of a line. An extension 
 
 ### Linear City
 
-Suppose you have a city that's on a line normalized to length 1. A mass of consumers (also normalized to 1) is uniformly distributed along this line. There is a firm located at each end of the line (assume 2 for now, you could have \\(n)\\). Consumers value the firms' homogeneous products at \\(v\\). Let \\(p_i\\) be the price of the \\(i\\)th firm's product and \\(c\\) be the common constant marginal cost. Assume that each consumer will necessarily buy 1 unit of the good, and that consumers face a linear travel cost to the firm.
+Suppose you have a city that's on a line normalized to length 1. A mass of consumers (also normalized to 1) is uniformly distributed along this line. There is a firm located at each end of the line (assume 2 firms total for now, you could have \\(n)\\). Consumers value the firms' homogeneous products at \\(v\\). Let \\(p_i\\) be the price of the \\(i\\)th firm's product and \\(c\\) be the common constant marginal cost. Assume that each consumer will necessarily buy 1 unit of the good, and that consumers face a linear travel cost to the firm.
 
-![Figure 1](http://github.com/akhilrao/akhilrao/public/images/hotelling/linear_city.svg "Linear City")<img src="http://github.com/akhilrao/akhilrao/public/images/hotelling/linear_city.svg">
+[![Linear City](/public/images/hotelling/linear_city.png "Linear City")](/public/images/hotelling/linear_city.png "Linear City")
 
-We can analyze this problem by considering the indifferent consumer, call her \\(\tilde{x}\\). Let her be a distance of \\(t\\) away from one firm and \\(1-t\\) away from the other. The indifferent consumer's decision looks like this:
+We can analyze this problem by considering the indifferent consumer, call her \\(\tilde{x}\\). Let her be a distance of \\(t\\) away from firm 1 and \\(1-t\\) away from firm 2. The indifferent consumer's decision looks like this:
 
 $$ v - p_1 - t\tilde{x} = v - p_2 -(1-t)\tilde{x}$$
 
@@ -61,7 +61,7 @@ Now that we have some background, let's consider a slightly more complicated ver
 
 Everything is the same as before, except that there are 3 firms and they are located at the vertices of an equilateral triangle:
 
-[![Figure 2](/public/images/hotelling/triangle_city.svg?raw=true "Triangle City")](/public/images/hotelling/triangle_city.svg?raw=true "Triangle City")
+[![Triangle City](/public/images/hotelling/triangle_city.png "Triangle City")](/public/images/hotelling/triangle_city.png "Triangle City")
 
 
 Let's normalize the sides to length 1. The firms are symmetric with respect to costs, and the consumers are distributed uniformly along the edges of the triangle. Once again, we look at the indifferent consumer, \\(\tilde{x}\\). Without loss of generality, let's consider the indifferent consumer between firm 1 and firm 2. As before, we have
