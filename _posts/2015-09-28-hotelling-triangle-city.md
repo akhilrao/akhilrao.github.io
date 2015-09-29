@@ -17,11 +17,11 @@ summary: A Hotelling model with fixed firms on the ends of a line. An extension 
 
 Suppose you have a city that's on a line normalized to length 1. A mass of consumers (also normalized to 1) is uniformly distributed along this line. There is a firm located at each end of the line (assume 2 for now, you could have \\(n)\\). Consumers value the firms' homogeneous products at \\(v\\). Let \\(p_i\\) be the price of the \\(i\\)th firm's product and \\(c\\) be the common constant marginal cost. Assume that each consumer will necessarily buy 1 unit of the good, and that consumers face a linear travel cost to the firm.
 
-[![](/public/images/hotelling/linear_city.svg "Linear City")](/public/images/hotelling/linear_city.svg "Linear City")
+![Figure 1](http://github.com/akhilrao/akhilrao/public/images/hotelling/linear_city.svg "Linear City")<img src="http://github.com/akhilrao/akhilrao/public/images/hotelling/linear_city.svg">
 
 We can analyze this problem by considering the indifferent consumer, call her \\(\tilde{x}\\). Let her be a distance of \\(t\\) away from one firm and \\(1-t\\) away from the other. The indifferent consumer's decision looks like this:
 
-$$ v - p - t\tilde{x} = v - p -(1-t)\tilde{x}$$
+$$ v - p_1 - t\tilde{x} = v - p_2 -(1-t)\tilde{x}$$
 
 That is, the indifferent consumer is the one whose utility from buying from firm 1 is equal to her utility from buying from firm 2. From this expression, we get that
 
