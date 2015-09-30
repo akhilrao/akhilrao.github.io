@@ -81,7 +81,7 @@ $$ v - p_1 - t\tilde{x} > v - p_3 - (1+\tilde{x})t $$
 
 Ok, cool. So how do we solve this? Since the firms are symmetric and the competition between two firms on any edge implies that the shop-local condition holds, we can make our lives easier and consider only a single edge of the triangle (any edge) to get the prices and profits. But then we are back in linear city along each edge. So triangle city has the same solution as linear city!
 
-The equilibrium is: \\( (p_1,p_2,p_3,\pi_1,\pi_2,\pi_2) = (t+c,t+c,t+c,\frac{t}{2},\frac{t}{2},\frac{t}{2}) \\)
+The equilibrium is: \\( (p_1,p_2,p_3,\pi_1,\pi_2,\pi_3) = (t+c,t+c,t+c,\frac{t}{2},\frac{t}{2},\frac{t}{2}) \\)
 
 
 Variations to explore: 
