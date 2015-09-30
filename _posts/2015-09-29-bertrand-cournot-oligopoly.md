@@ -10,13 +10,13 @@ published: true
 summary: A comparison of Bertrand and Cournot models of oligopoly.
 ---
 
-Models of perfect competition are kinda dull. Firms price at marginal cost, no firm makes any profits, and there's just not a whole lot to be said there. Imperfect competition, on the other hand, is much more interesting. There can be markups, firms can do cool things . In this post, we're going to look at some simple models of oligopoly (imperfect competition where there are a few firms). I'm going to start with 2 firms, then n firms, and then a couple variations.
+Models of perfect competition are kinda dull. Firms price at marginal cost, no firm makes any profits, and there's just not a whole lot to be said there. Imperfect competition is much more interesting. There can be markups, firms can do cool things . In this post, we're going to look at some simple models of oligopoly (imperfect competition where there are a few firms). I'm going to start with 2 firms, then n firms, and then a couple variations.
 
 There are two popular models of oligopoly: Cournot (firms choose quantities) and Bertrand (firms choose prices). Although the firms' objective functions are the same (to maximize profits), the two models produce very different outcomes and require different solution techniques.
 
 Cournot models give us a degree of competition, becoming perfectly competitive as the number of firms goes to \\(\infty\\), and can usually be solved with standard optimization techniques. Bertrand models become perfectly competitive when there is more than one firm involved (!! 2 firms is perfectly competitive??!), and because of discontinuities induced by assumptions on demand, cannot usually be solved by standard optimization techniques. We'll use game theory to solve both.
 
-My understanding is that although both of these models pre-date Nash's solution concept, the equilibria are still Nash equilibria (NE or NEs - in equilibrium, no one can increase their payoff by unilaterally deviating from the equilibrium strategy profile). This is interesting to me because I learned to solve Bertrand models by looking for NEs. I think it would be harder to see this solution without that equilibrium concept specifically in mind, but maybe not.
+Although both of these models pre-date Nash's solution concept, their equilibria are still Nash equilibria (NE or NEs - in equilibrium, no one can increase their payoff by unilaterally deviating from the equilibrium strategy profile). This is interesting to me because I learned to solve Bertrand models by looking for NEs. I think it would be harder to see this solution without that equilibrium concept specifically in mind, but maybe not.
 
 ### Cournot competition 
 
