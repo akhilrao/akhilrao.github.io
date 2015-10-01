@@ -76,6 +76,10 @@
           
         
       
+        
+          
+        
+      
 
       <a class="sidebar-nav-item" href="https://github.com/akhilrao/archive/v0.0.1.zip">Download</a>
       <a class="sidebar-nav-item" href="https://github.com/akhilrao">GitHub project</a>
@@ -89,6 +93,105 @@
 
     <div class="content container">
       <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/micro%20theory/2015/09/30/cournot-monopoly-fixed-cost-manager/">
+        When a manager can reduce fixed costs in exchange for profits
+      </a>
+    </h1>
+
+    <span class="post-date">30 Sep 2015</span>
+
+    <p>In most consumer-firm problems, we assume the consumer owns the firm, but doesn&#39;t manage it. Who does? It&#39;s not quite clear. I like to imagine that the firm is a robot that the consumer programmed to produce stuff and <em>whirr</em> MAXIMIZE PROFITS <em>whirr</em>. This model came from thinking about scenarios where a profit-maximizing owner who is perfectly capable of maximizing profits might want to hire a manager in exchange for a share of profits. Why would they do this? When would there be agency problems?</p>
+
+<h3 id="the-setting">The setting</h3>
+
+<p>The underlying problem is a profit-maximizing monopolist facing linear inverse demand \(p=a-bx\) and some positive fixed cost \(F\). That is,</p>
+
+<p>$$\max_{x}  (p - c)x - F $$</p>
+
+<p>I&#39;m framing it as a Cournot problem, but we could do it as a Bertrand problem and we&#39;d get the same result because there&#39;s only one firm. The fixed cost goes away and we get the familiar \(x^*=\frac{a-c}{2b}\) and \(p^*=\frac{a+c}{2}\).</p>
+
+<p>The twist is that the fixed cost is \(F(k) = d - k\), where \(d\) is some positive number and \(k\in[0,1]\) is the share of profits the owner will give to a manager who can reduce the fixed costs. (The point wasn&#39;t to be super realistic, I just wanted something simple and decreasing in \(k\).)</p>
+
+<p>The new problems are</p>
+
+<p>$$ \begin{align}
+\text{Manager:}&amp; \ \max_{x}  k[(p(x) - c)x - F] \cr
+\text{Owner:} &amp; \  \max_{k} k[(p^* - c)x^* - F(k)] \cr
+ &amp; s.t. \ k \ge 0 , 1-k \ge 0
+\end{align} $$</p>
+
+<p>The owner first decides how much to pay the manager. The more the owner pays the manager, the lower the fixed costs (I was going for &quot;more pay =&gt; better manager&quot;). Once this is decided, the manager steps in to maximize profits. I assume that reducing the fixed costs comes naturally to the manager  - it is costless to them - so \(F\) will drop out of the manager&#39;s first-order conditions just like it does for a regular problem with fixed costs.</p>
+
+<h3 id="the-solution">The solution</h3>
+
+<p>The manager&#39;s problem is a standard Cournot monopolist&#39;s problem. The profit-share, \(k\), is irrelevant to the optimal quantity choice because it enters the manager&#39;s problem as a constant scaling the profits.</p>
+
+<p>$$ \begin{align}
+\text{Manager&#39;s FOC:} \ &amp; k[p(x) + x\frac{\partial p}{\partial x} - c] = 0 \cr
+\implies &amp; x^* = \frac{a-c}{2b}, \cr
+&amp; p^* = \frac{a+c}{2}
+\end{align} $$</p>
+
+<p>The owner&#39;s problem is a little trickier because of the restrictions on \(k\). We need to set up the following Lagrangian:</p>
+
+<p>$$ L = (1-k)[(p^* - c)x^* - d + k] + \lambda_1(k) + \lambda_2(1-k)$$</p>
+
+<p>Which yields the following saddle-point conditions:</p>
+
+<p>$$ \begin{align}
+\mathsf{k:} &amp; \ -[(p^* - c)x^* - d + 2k] + \lambda_1 - \lambda_2 = 0 \cr
+\mathsf{\lambda_1 :} &amp; \ \lambda_1(k) = 0 \cr
+\mathsf{\lambda_2 :} &amp; \ \lambda_2(1-k) = 0 \cr
+\end{align} $$</p>
+
+<p>This gives us 3 cases which fully characterize the parameter space.</p>
+
+<h5 id="case-1-k-0">Case 1: k = 0</h5>
+
+<p>If we assume \(k=0\), we get the following saddle point:</p>
+
+<p>$$ (k,\lambda_1,\lambda_2) = (0,\frac{(a-c)^2}{4b} - d,0) $$</p>
+
+<p>The owner gives the manager nothing. The lagrange multipliers have to be non-negative, which gives us the parameter restriction: \( d \le \frac{(a-c)^2}{4b} \).</p>
+
+<h5 id="case-2-k-in-0-1">Case 2: k \(\in\) (0,1)</h5>
+
+<p>If we assume \(k \in (0,1)\), we get the following saddle point:</p>
+
+<p>$$ (k,\lambda_1,\lambda_2) = (\frac{1}{2}(d - \frac{(a-c)^2}{4b}),0,0) $$</p>
+
+<p>The owner gives the manager some positive share and the lagrange multipliers are 0. \(k \gt 0\) gives us the following parameter restriction: \( d \gt \frac{(a-c)^2}{4b} \).</p>
+
+<h5 id="case-3-k-1">Case 3: k = 1</h5>
+
+<p>If we assume \(k=1\), we get the following saddle point:</p>
+
+<p>$$ (k,\lambda_1,\lambda_2) = (0,0,d - \frac{(a-c)^2 + 8b}{4b}) $$</p>
+
+<p>The owner gives the manager full control of the company. \(\lambda_2 \ge 0\) gives us the following parameter restriction: \( d \ge \frac{(a-c)^2 + 8b}{4b} \).</p>
+
+<h3 id="summary">Summary</h3>
+
+<p>The owner and manager both will implement monopoly pricing - there&#39;s only one firm, so this is optimal. If the fixed cost without a manager is greater than the monopoly profit, then the owner will hire the manager to reduce the fixed cost. The owner will pay the manager half the difference between the original fixed cost and the monopoly profit - this is the owner&#39;s profit-maximizing wage for the manager. If the fixed cost is high enough, the owner will give the manager the company because the business isn&#39;t worth it.</p>
+
+<p>Given the relationship between the wage paid to the manager and the fixed cost in this model, we can think of \(k\) not only as the profit-maximizing wage paid to the manager, but also as the optimal level of managerial ability that the owner will choose when it costs profit share.</p>
+
+<p>What could this be a model of? I don&#39;t know. There&#39;s a manager who can make it worthwhile to get into a market where you&#39;ll be a monopolist if you can cross the high fixed cost to entry. Maybe a manager who has connections or knowledge that would reduce the fixed costs?</p>
+
+<p>I think the agency problem involved in non-owners running a firm (so any professional management) is interesting. Eventually, I&#39;d like to construct a model where rational actors cause an agency problem. In this model, the manager does their job (picking the profit-maximizing business decision) perfectly. There is no agency problem because the manager is paid a fraction of profits, so the manager&#39;s wage-maximizing outcome is aligned with the owner&#39;s profit-maximizing desires. The manager is a price-taker in the sense that they simply take the share they are offered as given. This is reasonable if the market for managers is perfectly competitive.</p>
+
+<p>Variations to explore:</p>
+
+<ul>
+<li><p>What if the manager was paid a share of sales or revenue instead of profits? I&#39;d expect agency problems to be possible here, since the objective functions don&#39;t necessarily align.</p></li>
+<li><p>What if the manager could reduce marginal costs instead of fixed costs? I think of this as a manager who brings persistent efficiencies, whereas this one brings one-time efficiencies. I&#39;d expect qualitatively similar results to this model.</p></li>
+<li><p>What if the firm was taxed (increasing in output) and the manager could reduce the tax? Again I&#39;d expect qualitatively similar results to this model, but it seems like a more plausible model for hiring managers with government connections.</p></li>
+</ul>
+
+  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -130,18 +233,6 @@
     <h1 class="post-title">
       <a href="/2015/09/29/2015-10-04-ct-growth/">
         2015 10 04 Ct Growth
-      </a>
-    </h1>
-
-    <span class="post-date">29 Sep 2015</span>
-
-    
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/2015/09/29/2015-10-03-ct-tfk-utfk/">
-        2015 10 03 Ct Tfk Utfk
       </a>
     </h1>
 
