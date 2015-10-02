@@ -10,7 +10,7 @@ published: true
 summary: Two firms are at opposite ends of a line in a Hotelling model, and customers value their products differently. A merger occurs.
 ---
 
-Consider a Hotelling duopoly on opposite ends of a linear city. [We know](http://akhilrao.github.io/micro%20theory/2015/09/28/hotelling-triangle-city/) that if the firms and products are symmetric, the indifferent consumer is at the midpoint and the price is greater than marginal cost by the travel cost (\\(\tilde{x}=\frac{1}{2}, p=t+c\\)). Suppose the firms are symmetric with constant marginal cost \\(c\\), but consumers value their products at \\(v_1\\) and \\(v_2\\), respectively. Assume that \\(v_1\\) and \\(v_2\\) are high enough that the market will be covered, and that the firms choose prices simultaneously. As before, we first find the indifferent consumer's demand and then plug it into the firms' profit-maximizations.
+Consider a Hotelling duopoly on opposite ends of a linear city of length 1. [We know](http://akhilrao.github.io/micro%20theory/2015/09/28/hotelling-triangle-city/) that if the firms and products are symmetric, the indifferent consumer is at the midpoint and the price is greater than marginal cost by the travel cost (\\(\tilde{x}=\frac{1}{2}, p=t+c\\)). Suppose the firms are symmetric with constant marginal cost \\(c\\), but consumers value their products at \\(v_1\\) and \\(v_2\\), respectively. Assume that \\(v_1\\) and \\(v_2\\) are high enough that the market will be covered, and that the firms choose prices simultaneously. As before, we first find the indifferent consumer's demand and then plug it into the firms' profit-maximization problems.
 
 The indifferent consumer's demand:
 

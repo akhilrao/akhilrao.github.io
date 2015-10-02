@@ -84,7 +84,7 @@ Ok, cool. So how do we solve this? Since the firms are symmetric and the competi
 The equilibrium is: \\( (p_1,p_2,p_3,\pi_1,\pi_2,\pi_3) = (t+c,t+c,t+c,\frac{t}{2},\frac{t}{2},\frac{t}{2}) \\)
 
 
-Variations to explore: 
+####Variations to explore: 
 
 *  Triangle city case with asymmetric firms
 

@@ -44,7 +44,7 @@ $$ q_i = \frac{a - c}{3b} $$
 
 Again by symmetry of the firms, we don't need to solve firm \\(j\\)'s problem: it's identical to firm \\(i\\)'s.
 
-The equilibrium is: \\( (P, q_i, q_j, \pi_i, \pi_j) = (a-\frac{2}{3}(a-c), \frac{a - c}{3b}, \frac{a - c}{3b}, \frac{(a-c)^2}{9} , \frac{(a-c)^2}{9}  \\)
+The equilibrium is: \\( (P, q_i, q_j, \pi_i, \pi_j) = (a-\frac{2}{3}(a-c), \frac{a - c}{3b}, \frac{a - c}{3b}, \frac{(a-c)^2}{9} , \frac{(a-c)^2}{9})  \\)
 
 #### \\(n\\) symmetric firms
 
@@ -54,9 +54,9 @@ $$ \begin{align}
 & \max_{q_i}  (p - c)q_i \cr
 \text{FOC:} &  a - 2bq_i - b\sum_{j \neq i}^n q_j^\* - c = 0 \cr
 \text{BR:} &  q_i^\* = \frac{a - (n-1)bq_j - c}{2b} \cr
-\implies & q_i = \frac{a-c}{(n+1)b} \cr
-\implies & P = \frac{a}{n+1} + \frac{n}{n+1}c \cr
-\implies & \pi = \frac{(a-c)^2}{(n+1)^2} \cr
+\implies & q_i = \frac{a-c}{(n+1)b}, \cr
+ & P = \frac{a}{n+1} + \frac{n}{n+1}c, \cr
+ & \pi = \frac{(a-c)^2}{(n+1)^2} \cr
 \end{align} $$
 
 We can see that the 2 firm example was a special case of the \\(n\\) firm example. As \\(n \to \infty\\), \\(P \to c\\) and \\(\pi \to 0\\). When \\(n = 1\\), we get the monopoly outcome, \\(q = \frac{a-c}{2b}\\), \\( P = \frac{a + c}{2}\\), and \\(\pi = \frac{(a-c)^2}{4}\\).
@@ -130,7 +130,7 @@ Bertrand models, though they accord with my initial ideas of how firms compete, 
 I find Cournot models easier to think about and solve, since it's pretty much algorithmic. Bertrand models require a little more thought, but can often be condensed into pretty compact and elegant arguments.
 
 
-Variations to explore:
+####Variations to explore:
 
 * Bertrand competition with asymmetric firms
 

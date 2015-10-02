@@ -91,7 +91,7 @@ What could this be a model of? I don't know. There's a manager who can make it w
 
 I think the agency problem involved in non-owners running a firm (so any professional management) is interesting. Eventually, I'd like to construct a model where rational actors cause an agency problem. In this model, the manager does their job (picking the profit-maximizing business decision) perfectly. There is no agency problem because the manager is paid a fraction of profits, so the manager's wage-maximizing outcome is aligned with the owner's profit-maximizing desires. The manager is a price-taker in the sense that they simply take the share they are offered as given. This is reasonable if the market for managers is perfectly competitive.
 
-Variations to explore:
+####Variations to explore:
 
 * What if the manager was paid a share of sales or revenue instead of profits? I'd expect agency problems to be possible here, since the objective functions don't necessarily align.
 
@@ -99,4 +99,4 @@ Variations to explore:
 
 * What if the firm was taxed (increasing in output) and the manager could reduce the tax? Again I'd expect qualitatively similar results to this model, but it seems like a more plausible model for hiring managers with government connections.
 
-* O.E. Williamson, in his paper "A Model of Rational Managerial Behavior", describes a pretty cool model with staffing and reported profits. It's more complicated than this one, and mentioning it in the "Variations" section is like calling a supercar a "variation" of a model T. I may blog about this one in the near future.
+* O.E. Williamson, in his paper "A Model of Rational Managerial Behavior", describes a pretty cool model with staffing and reported profits. I may blog about it in the near future.
