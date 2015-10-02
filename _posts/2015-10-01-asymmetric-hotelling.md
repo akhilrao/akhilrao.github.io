@@ -29,13 +29,13 @@ p_1 & = \frac{1}{2}[v_1-v_2+p_2^\* + \frac{t}{2} + c] \cr
 p_2 & = \frac{1}{2}[v_2-v_1+p_1^\* + \frac{t}{2} + c] \cr
 \end{align} $$
 
-As we'd expect, each firm's optimal price is increasing in consumers' valuations of their own product, decreasing in consumers' valuations of their competitor's product, and increasing in their marginal cost. Interestingly, their own optimal prices are increasing in their competitor's price.
+As we'd expect, each firm's optimal price is increasing in consumers' valuations of their own product, decreasing in consumers' valuations of their competitor's product, and increasing in their marginal cost. Interestingly, their own optimal prices are increasing in their competitor's price. I think the correct terms are "strategic substitutes" and "strategic complements", but I could be mistaken.
 
 In Cournot models, if the other firm increases their quantity, you want to decrease yours - we see this from the Cournot best-response, \\( q_i^\* = \frac{-(p(Q) - c)}{\frac{\partial p}{\partial Q}} \\) (which is \\(q_i^\* = \frac{a - bq_j^\* - c}{2b} \\) when inverse demand is linear), where \\(\frac{\partial q_i}{\partial q_j} \lt 0\\). The quantities are "strategic substitutes". This linkage is through the inverse demand function, where one firm increasing its quantity results in a lower price for all firms.
 
 In Hotelling models the opposite is true regarding prices - they are "strategic complements", or \\(\frac{\partial p_i}{\partial p_j} \gt 0\\). My intuition for this is that the other firm raising its price gives you room to raise yours; as long as we assume the market is covered, there is a single indifferent consumer choosing between the two firms who links their prices in this way. If the market isn't covered, I think you would have two indifferent consumers, one for each firm, each consumer indifferent between buying from the nearer firm or not buying at all. Then the firms' problems would be decoupled, and \\(\frac{\partial p_i}{\partial p_j}\\) would be 0.
 
-How much would a change in cost affect the price? We can see this by looking at \\(\frac{\partial p_i}{\partial c}\\) for any \\(i\\). This is called the "pass-through rate", or just the "pass-through". In a future post, I'll derive the pass-through rate for a Cournot oligopolist and relate it to the curvature of the inverse demand function. Here, the pass-through is easy: \\(\frac{\partial p_i}{\partial c} = \frac{1}{2}\\).
+How much would a change in cost affect the price? We can see this by looking at \\(\frac{\partial p_i}{\partial c}\\) for any \\(i\\). This is called the "pass-through rate", or just the "pass-through". In a [future post](http://akhilrao.github.io/micro%20theory/2015/10/02/passthrough-symmetric-cournot/), I'll derive the pass-through rate for a Cournot oligopolist and relate it to the curvature of the inverse demand function. Here, the pass-through is easy: \\(\frac{\partial p_i}{\partial c} = \frac{1}{2}\\).
 
 What if the firms merged and became a monopolist selling two differentiated products? In this case, the firm can capture all of the consumer surplus. The indifferent consumer's demand becomes:
 
