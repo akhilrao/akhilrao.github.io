@@ -187,7 +187,7 @@
 
     <span class="post-date">01 Oct 2015</span>
 
-    <p>Consider a Hotelling duopoly on opposite ends of a linear city. <a href="http://akhilrao.github.io/micro%20theory/2015/09/28/hotelling-triangle-city/">We know</a> that if the firms and products are symmetric, the indifferent consumer is at the midpoint and the price is greater than marginal cost by the travel cost (\(p=t+c\)). Suppose the firms are symmetric with constant marginal cost \(c\), but consumers value their products at \(v_1\) and \(v_2\), respectively. Assume that \(v_1\) and \(v_2\) are high enough that the market will be covered, and that the firms compete by choosing prices simultaneously. As before, we first find the indifferent consumer&#39;s demand and then plug it into the firms&#39; profit-maximizations.</p>
+    <p>Consider a Hotelling duopoly on opposite ends of a linear city. <a href="http://akhilrao.github.io/micro%20theory/2015/09/28/hotelling-triangle-city/">We know</a> that if the firms and products are symmetric, the indifferent consumer is at the midpoint and the price is greater than marginal cost by the travel cost (\(\tilde{x}=\frac{1}{2}, p=t+c\)). Suppose the firms are symmetric with constant marginal cost \(c\), but consumers value their products at \(v_1\) and \(v_2\), respectively. Assume that \(v_1\) and \(v_2\) are high enough that the market will be covered, and that the firms choose prices simultaneously. As before, we first find the indifferent consumer&#39;s demand and then plug it into the firms&#39; profit-maximizations.</p>
 
 <p>The indifferent consumer&#39;s demand:</p>
 
@@ -206,23 +206,23 @@ p_1 &amp; = \frac{1}{2}[v_1-v_2+p_2^* + \frac{t}{2} + c] \cr
 p_2 &amp; = \frac{1}{2}[v_2-v_1+p_1^* + \frac{t}{2} + c] \cr
 \end{align} $$</p>
 
-<p>As we&#39;d expect, each firm&#39;s optimal price is increasing in consumers&#39; valuations of their own product, decreasing in consumers&#39; valuations of their competitors&#39; product, and increasing in their marginal cost. Interestingly, their own optimal prices are increasing in their competitors&#39; price.</p>
+<p>As we&#39;d expect, each firm&#39;s optimal price is increasing in consumers&#39; valuations of their own product, decreasing in consumers&#39; valuations of their competitor&#39;s product, and increasing in their marginal cost. Interestingly, their own optimal prices are increasing in their competitor&#39;s price.</p>
 
-<p>In Cournot models, if the other firm increases their quantity, you want to decrease yours - we see this from the Cournot best-response, \( q_i^* = p(Q) + q_i\frac{\partial p}{\partial q_i} - c \) (which is \(q_i^* = \frac{a - bq_j^* - c}{2b} \) when inverse demand is linear), where \(\frac{\partial q_i}{\partial q_j} \lt 0\). The quantities are &quot;strategic substitutes&quot;. </p>
+<p>In Cournot models, if the other firm increases their quantity, you want to decrease yours - we see this from the Cournot best-response, \( q_i^* = \frac{-(p(Q) - c)}{\frac{\partial p}{\partial Q}} \) (which is \(q_i^* = \frac{a - bq_j^* - c}{2b} \) when inverse demand is linear), where \(\frac{\partial q_i}{\partial q_j} \lt 0\). The quantities are &quot;strategic substitutes&quot;. This linkage is through the inverse demand function, where one firm increasing its quantity results in a lower price for all firms.</p>
 
-<p>In Hotelling models the opposite is true regarding prices - they are &quot;strategic complements&quot;, or \(\frac{\partial p_i}{\partial p_j} \gt 0\). My intuition for this is that the other firm raising its price gives you room to raise yours. This is true as long as we assume the market is covered, since there is a single indifferent consumer choosing between the two firms. If the market isn&#39;t covered, I think you would have two indifferent consumers, one for each firm, each indifferent between buying from the nearer firm or not buying at all. Then the firms&#39; problems would be decoupled, and \(\frac{\partial p_i}{\partial p_j}\) would be 0.</p>
+<p>In Hotelling models the opposite is true regarding prices - they are &quot;strategic complements&quot;, or \(\frac{\partial p_i}{\partial p_j} \gt 0\). My intuition for this is that the other firm raising its price gives you room to raise yours; as long as we assume the market is covered, there is a single indifferent consumer choosing between the two firms who links their prices in this way. If the market isn&#39;t covered, I think you would have two indifferent consumers, one for each firm, each consumer indifferent between buying from the nearer firm or not buying at all. Then the firms&#39; problems would be decoupled, and \(\frac{\partial p_i}{\partial p_j}\) would be 0.</p>
 
 <p>How much would a change in cost affect the price? We can see this by looking at \(\frac{\partial p_i}{\partial c}\) for any \(i\). This is called the &quot;pass-through rate&quot;, or just the &quot;pass-through&quot;. In a future post, I&#39;ll derive the pass-through rate for a Cournot oligopolist and relate it to the curvature of the inverse demand function. Here, the pass-through is easy: \(\frac{\partial p_i}{\partial c} = \frac{1}{2}\).</p>
 
-<p>What if the firms merged and became a monopolist selling two differentiated products? In this case, the firm can capture all of the consumers&#39; surplus. The indifferent consumer&#39;s demand becomes:</p>
+<p>What if the firms merged and became a monopolist selling two differentiated products? In this case, the firm can capture all of the consumer surplus. The indifferent consumer&#39;s demand becomes:</p>
 
 <p>$$ \begin{align}
-&amp; v_1 - p_1 - t\tilde{x} = v_2 - p_2 - t(1-\tilde{x}) = 0 \cr
+&amp; v_1 - p_1 - t\tilde{x} = v_2 - p_2 - t(1-\tilde{x}) = 0 \cr \cr
 \implies &amp; \tilde{x} = \frac{(v_1-p_1)}{t}, \cr
  &amp; \tilde{x} = \frac{v_2-p_2}{t} + 1 \cr
 \end{align} $$</p>
 
-<p>We can use the two expressions we have for \(\tilde{x}\) to get a function that relates \(p_1\) to \(p_2\). I&#39;m going to go with \(p_2 = p_1 = v_1 + v_2 +t \). Now we solve the firm&#39;s problem and get the prices:</p>
+<p>We can use the two expressions we have for \(\tilde{x}\) to get a function that relates \(p_1\) to \(p_2\). I&#39;m going to go with \(p_2 = p_1 - v_1 + v_2 + t \). Now we solve the firm&#39;s problem and get the prices:</p>
 
 <p>$$ \begin{align}
 &amp; \max_{p_1} \ [p_1 + p_2(p_1) - c]\tilde{x}(p_1) \cr
@@ -230,9 +230,9 @@ p_2 &amp; = \frac{1}{2}[v_2-v_1+p_1^* + \frac{t}{2} + c] \cr
 \implies &amp; p_2 = \frac{1}{4}[5v_2 - v_1 + 5t + c] \cr
 \end{align} $$</p>
 
-<p>\(p_1\) and \(p_2\) look a little weird to me, with the fractions and numbers, but I double-checked my algebra and I think it&#39;s right. Anyway, the signs on the derivatives make sense. As the consumers&#39; valuations of product 1 (2) increases, the price of product 2 (1) decreases and vice versa, and the price is increasing in travel and marginal costs.</p>
+<p>\(p_1\) and \(p_2\) look a little weird to me, with the fractions and numbers, but I double-checked my algebra and I think it&#39;s right. Anyway, the signs on the derivatives make sense. As the indifferent consumer&#39;s valuation of product 1 increases (decreases), the price of product 2 decreases (increases), and vice versa. The price is increasing in travel and marginal costs.</p>
 
-<p>I like the addition of the firms merging. I&#39;d like to look at some more models with firms merging.</p>
+<p>I like the addition of the firms merging. I&#39;d like to look at some more models with that.</p>
 
 <p>Variations to explore:</p>
 
