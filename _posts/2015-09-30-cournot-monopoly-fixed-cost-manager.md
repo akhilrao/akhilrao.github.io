@@ -5,7 +5,7 @@ category: micro theory
 tags: micro-theory monopoly fixed cost manager profit-sharing incentives
 year: 2015
 month: 9
-day: 29
+day: 30
 published: true
 summary: A model I thought sounded fun.
 ---

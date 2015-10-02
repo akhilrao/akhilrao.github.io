@@ -80,6 +80,90 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
 
       <a class="sidebar-nav-item" href="https://github.com/akhilrao/archive/v0.0.1.zip">Download</a>
       <a class="sidebar-nav-item" href="https://github.com/akhilrao">GitHub project</a>
@@ -93,6 +177,115 @@
 
     <div class="content container">
       <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/micro%20theory/2015/10/01/asymmetric-hotelling/">
+        Hotelling duopoly with different valuations and a merger
+      </a>
+    </h1>
+
+    <span class="post-date">01 Oct 2015</span>
+
+    <p>Consider a Hotelling duopoly on opposite ends of a linear city. <a href="http://akhilrao.github.io/micro%20theory/2015/09/28/hotelling-triangle-city/">We know</a> that if the firms and products are symmetric, the indifferent consumer is at the midpoint and the price is greater than marginal cost by the travel cost (\(p=t+c\)). Suppose the firms are symmetric with constant marginal cost \(c\), but consumers value their products at \(v_1\) and \(v_2\), respectively. Assume that \(v_1\) and \(v_2\) are high enough that the market will be covered, and that the firms compete by choosing prices simultaneously. As before, we first find the indifferent consumer&#39;s demand and then plug it into the firms&#39; profit-maximizations.</p>
+
+<p>The indifferent consumer&#39;s demand:</p>
+
+<p>$$ \begin{align}
+&amp; v_1 - p_1 - t\tilde{x} = v_2 - p_2 - t(1-\tilde{x}) \cr
+\cr
+\implies &amp; \tilde{x} = \frac{(v_1-v_2)-(p_1-p_2)}{2t} + \frac{1}{2} \cr
+\end{align} $$</p>
+
+<p>The firms&#39; first-order conditions and optimal prices:</p>
+
+<p>$$ \begin{align}
+\text{Firm 1:} &amp; \ \ \frac{1}{2}[1 + \frac{(v_1-v_2)-(2p_1-p_2)-c}{t}] = 0 \cr
+\text{Firm 2:} &amp; \ \ \frac{1}{2}[1 + \frac{(v_1-v_2)-(p_1-2p_2)-c}{t}] = 0 \cr \cr
+p_1 &amp; = \frac{1}{2}[v_1-v_2+p_2^* + \frac{t}{2} + c] \cr
+p_2 &amp; = \frac{1}{2}[v_2-v_1+p_1^* + \frac{t}{2} + c] \cr
+\end{align} $$</p>
+
+<p>As we&#39;d expect, each firm&#39;s optimal price is increasing in consumers&#39; valuations of their own product, decreasing in consumers&#39; valuations of their competitors&#39; product, and increasing in their marginal cost. Interestingly, their own optimal prices are increasing in their competitors&#39; price.</p>
+
+<p>In Cournot models, if the other firm increases their quantity, you want to decrease yours - we see this from the Cournot best-response, \( q_i^* = p(Q) + q_i\frac{\partial p}{\partial q_i} - c \) (which is \(q_i^* = \frac{a - bq_j^* - c}{2b} \) when inverse demand is linear), where \(\frac{\partial q_i}{\partial q_j} \lt 0\). The quantities are &quot;strategic substitutes&quot;. </p>
+
+<p>In Hotelling models the opposite is true regarding prices - they are &quot;strategic complements&quot;, or \(\frac{\partial p_i}{\partial p_j} \gt 0\). My intuition for this is that the other firm raising its price gives you room to raise yours. This is true as long as we assume the market is covered, since there is a single indifferent consumer choosing between the two firms. If the market isn&#39;t covered, I think you would have two indifferent consumers, one for each firm, each indifferent between buying from the nearer firm or not buying at all. Then the firms&#39; problems would be decoupled, and \(\frac{\partial p_i}{\partial p_j}\) would be 0.</p>
+
+<p>How much would a change in cost affect the price? We can see this by looking at \(\frac{\partial p_i}{\partial c}\) for any \(i\). This is called the &quot;pass-through rate&quot;, or just the &quot;pass-through&quot;. In a future post, I&#39;ll derive the pass-through rate for a Cournot oligopolist and relate it to the curvature of the inverse demand function. Here, the pass-through is easy: \(\frac{\partial p_i}{\partial c} = \frac{1}{2}\).</p>
+
+<p>What if the firms merged and became a monopolist selling two differentiated products? In this case, the firm can capture all of the consumers&#39; surplus. The indifferent consumer&#39;s demand becomes:</p>
+
+<p>$$ \begin{align}
+&amp; v_1 - p_1 - t\tilde{x} = v_2 - p_2 - t(1-\tilde{x}) = 0 \cr
+\implies &amp; \tilde{x} = \frac{(v_1-p_1)}{t}, \cr
+ &amp; \tilde{x} = \frac{v_2-p_2}{t} + 1 \cr
+\end{align} $$</p>
+
+<p>We can use the two expressions we have for \(\tilde{x}\) to get a function that relates \(p_1\) to \(p_2\). I&#39;m going to go with \(p_2 = p_1 = v_1 + v_2 +t \). Now we solve the firm&#39;s problem and get the prices:</p>
+
+<p>$$ \begin{align}
+&amp; \max_{p_1} \ [p_1 + p_2(p_1) - c]\tilde{x}(p_1) \cr
+\implies &amp; p_1 = \frac{1}{4}[3v_1 - v_2 + t + c] \cr
+\implies &amp; p_2 = \frac{1}{4}[5v_2 - v_1 + 5t + c] \cr
+\end{align} $$</p>
+
+<p>\(p_1\) and \(p_2\) look a little weird to me, with the fractions and numbers, but I double-checked my algebra and I think it&#39;s right. Anyway, the signs on the derivatives make sense. As the consumers&#39; valuations of product 1 (2) increases, the price of product 2 (1) decreases and vice versa, and the price is increasing in travel and marginal costs.</p>
+
+<p>I like the addition of the firms merging. I&#39;d like to look at some more models with firms merging.</p>
+
+<p>Variations to explore:</p>
+
+<ul>
+<li><p>A merger between two firms in Triangle City</p></li>
+<li><p>A model of Circle City with \(n\) firms</p></li>
+<li><p>A merger between two firms in an \(n\)-firm Circle City</p></li>
+<li><p>A Hotelling model on a not-fully-connected graph? Consumers and firms would be at the nodes, with the cost of reaching a firm increasing in the number of nodes between a consumer and the firm. I think it would be a lot harder to solve than a Hotelling model on a continuous space, but the linkages in price through demand would be interesting. Maybe a continuous city on a polygon with lines between vertices is an easier way to look at those linkages.</p></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/micro%20theory/2015/09/30/2015-10-01-assorted-cournot-models/">
+        Asymmetric Cournot with discrete quantities
+      </a>
+    </h1>
+
+    <span class="post-date">30 Sep 2015</span>
+
+    <p>In standard Cournot models, firms are symmetric and choose continuous quantities (\(q_i \in \mathbb{R_+}\)). Here we consider a model of Cournot duopoly with asymmetric firms limited to discrete quantities (\(q_i \in \mathbb{Z_+}\)). Because the set we are optimizing over is no longer continuous, we can&#39;t use the Kuhn-Tucker approach used in Cournot models with continuous quantities. Instead, we set up the problem as a game in <a href="https://en.wikipedia.org/wiki/Normal-form_game">normal form</a> and find the pure- and mixed-strategy Nash equilibria by using <a href="https://en.wikipedia.org/wiki/Strategic_dominance">iterated elimination of dominated strategies</a>.</p>
+
+<h3 id="the-setting">The setting</h3>
+
+<p>Let firm 1 have marginal cost \(c_1 = 4\) and firm 2 have marginal cost \(c_2 = 5\). Let the inverse demand function be given by 
+$$ \begin{align}
+P(Q)=\begin{cases} 10 - Q \ \ &amp; if \ \ Q \le 10 \cr 
+0 \ \ &amp; if \ \ Q \gt 10 \end{cases} 
+\end{align} $$</p>
+
+<p>and \( Q = q_1 + q_2\).</p>
+
+<p>To start, we can eliminate any quantities greater than the firm&#39;s monopoly quantities. That&#39;s what the firm would do if it wasn&#39;t constrained by its competitor, so it can&#39;t be profit-maximizing to play anything above those quantities. To find the monopoly quantities, we can take the standard Cournot duopoly best-response function, \(q_i^* = \frac{a - bq_j^* - c_i}{2b}\), and plug in \( q_j^* = 0\). This gives us that firm 1&#39;s monopoly quantity is 3, and firm 2&#39;s is 2.5. We can eliminate any quantity choice greater than 3 for both firms, since they are strictly dominated.</p>
+
+<p>How do we handle 2.5? Firm 2 has to choose 2 or 3, not 2.5. We can see that \(\pi_2(q_1=0,q_2=3) = 6\) and \(\pi_2(q_1=0,q_2=2) = 6 \), so we can&#39;t eliminate 3 from firm 2&#39;s choices by strict domination.</p>
+
+<p>MATRIX GAME</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/micro%20theory/2015/09/30/2015-09-30-price-signalling-tutors/">
+        When tutors signal quality to students by higher prices
+      </a>
+    </h1>
+
+    <span class="post-date">30 Sep 2015</span>
+
+    <p>Why do economics tutors who charge higher prices seem to get more students? Signalling may explain this if price is interpreted as a signal of quality. Such signalling may be an equilibrium outcome if students do not share information about tutor quality.</p>
+
+  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -189,6 +382,7 @@
 <li><p>What if the manager was paid a share of sales or revenue instead of profits? I&#39;d expect agency problems to be possible here, since the objective functions don&#39;t necessarily align.</p></li>
 <li><p>What if the manager could reduce marginal costs instead of fixed costs? I think of this as a manager who brings persistent efficiencies, whereas this one brings one-time efficiencies. I&#39;d expect qualitatively similar results to this model.</p></li>
 <li><p>What if the firm was taxed (increasing in output) and the manager could reduce the tax? Again I&#39;d expect qualitatively similar results to this model, but it seems like a more plausible model for hiring managers with government connections.</p></li>
+<li><p>O.E. Williamson, in his paper &quot;A Model of Rational Managerial Behavior&quot;, describes a pretty cool model with staffing and reported profits. It&#39;s more complicated than this one, and mentioning it in the &quot;Variations&quot; section is like calling a supercar a &quot;variation&quot; of a model T. I may blog about this one in the near future.</p></li>
 </ul>
 
   </div>
@@ -197,42 +391,6 @@
     <h1 class="post-title">
       <a href="/2015/09/29/2015-10-07-search-two-offers/">
         2015 10 07 Search Two Offers
-      </a>
-    </h1>
-
-    <span class="post-date">29 Sep 2015</span>
-
-    
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/2015/09/29/2015-10-06-on-job-search/">
-        2015 10 06 On Job Search
-      </a>
-    </h1>
-
-    <span class="post-date">29 Sep 2015</span>
-
-    
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/2015/09/29/2015-10-05-mccall-labor-search/">
-        2015 10 05 Mccall Labor Search
-      </a>
-    </h1>
-
-    <span class="post-date">29 Sep 2015</span>
-
-    
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/2015/09/29/2015-10-04-ct-growth/">
-        2015 10 04 Ct Growth
       </a>
     </h1>
 

@@ -12,7 +12,7 @@ summary: A comparison of Bertrand and Cournot models of oligopoly.
 
 Models of perfect competition are kinda dull. Firms price at marginal cost, no firm makes any profits, and there's just not a whole lot to be said there. Imperfect competition is much more interesting. There can be markups, firms can do cool things . In this post, we're going to look at some simple models of oligopoly (imperfect competition where there are a few firms). I'm going to start with 2 firms, then n firms, and then a couple variations.
 
-There are two popular models of oligopoly: Cournot (firms choose quantities) and Bertrand (firms choose prices). Although the firms' objective functions are the same (to maximize profits), the two models produce very different outcomes and require different solution techniques.
+There are two popular models of oligopoly: [Cournot](https://en.wikipedia.org/wiki/Cournot_competition) (firms choose quantities) and [Bertrand](https://en.wikipedia.org/wiki/Bertrand_competition) (firms choose prices). Although the firms' objective functions are the same (to maximize profits), the two models produce very different outcomes and require different solution techniques.
 
 Cournot models give us a degree of competition, becoming perfectly competitive as the number of firms goes to \\(\infty\\), and can usually be solved with standard optimization techniques. Bertrand models become perfectly competitive when there is more than one firm involved (!! 2 firms is perfectly competitive??!), and because of discontinuities induced by assumptions on demand, cannot usually be solved by standard optimization techniques. We'll use game theory to solve both.
 
@@ -36,7 +36,7 @@ $$ a - 2bq_i - bq_j^\* - c = 0 $$
 
 Firm \\(i\\)'s best-response function is:
 
-$$ q_i^\* = \frac{a - bq_i^\* - c}{2b} $$
+$$ q_i^\* = \frac{a - bq_j^\* - c}{2b} $$
 
 Since the firms are symmetric, \\(q_i = q_j\\), giving us firm i's equilibrium quantity:
 
