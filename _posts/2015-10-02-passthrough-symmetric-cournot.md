@@ -35,7 +35,7 @@ Dividing by \\(\frac{\partial P}{\partial Q}\\) on top and bottom, we get
 
 $$ \begin{align} 
 \frac{\partial P}{\partial c} & =  \frac{N}{(N+1) + Q\frac{P''(Q)}{P'(Q)}} \cr
-& = \frac{N}{(N+1) = \sigma(Q)} \cr
+& = \frac{N}{(N+1) - \sigma(Q)} \cr
 \end{align} $$
 
 Thus, we see that the pass-through rate is indeed a function of the curvature of the inverse demand function. If we assume inverse demand is linear, we get
