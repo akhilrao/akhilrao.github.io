@@ -68,7 +68,7 @@ Let's normalize the sides to length 1. The firms are symmetric with respect to c
 
 
 $$ \begin{align} 
-v - p_1 - t\tilde{x} & = v - p_2 -(1-t)\tilde{x} \cr
+v - p_1 - t\tilde{x} & = v - p_2 - t(1-\tilde{x}) \cr
 \implies \tilde{x} & = \frac{1}{2} + \frac{p_2 - p_1}{2t}
 \end{align} $$
 
