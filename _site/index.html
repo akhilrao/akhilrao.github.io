@@ -156,6 +156,54 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
 
       <a class="sidebar-nav-item" href="https://github.com/akhilrao/archive/v0.0.1.zip">Download</a>
       <a class="sidebar-nav-item" href="https://github.com/akhilrao">GitHub project</a>
@@ -169,6 +217,78 @@
 
     <div class="content container">
       <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/micro%20theory/2015/10/04/2015-10-04-labor-market-imperfect-information/">
+        A simple labor market with imperfect information
+      </a>
+    </h1>
+
+    <span class="post-date">04 Oct 2015</span>
+
+    <p>Suppose there is a single firm facing a perfectly competitive labor market. A potential employee \(E\)&#39;s productivity to the firm is the realization of a random variable \(\theta \sim U[0,2]\). \(E\)&#39;s reservation wage is \(r(\theta)=\theta^2\). (I prefer to think of the reservation wage as \(E\)&#39;s home production ability here.)</p>
+
+<p>What does the competitive equilibrium look like?</p>
+
+<h4 id="benchmark-case-theta-is-public-information">Benchmark case: \(\theta\) is public information</h4>
+
+<p>When \(\theta\) is public information, the firm will pay each worker their marginal productivity, \(w=\theta\).</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/micro%20theory/2015/10/04/monopoly-pricing-discrete-demand/">
+        Monopoly pricing for discrete demand
+      </a>
+    </h1>
+
+    <span class="post-date">04 Oct 2015</span>
+
+    <p>How should a monopoly price when demand is discrete? This situation arises whenever the consumer is choosing between &quot;buy&quot; or &quot;not buy&quot;, as opposed to a choice of a continuous quantity.</p>
+
+<p>Let the consumers&#39; valuations of the good be given by \(V \sim F(v)\), where \(F(v)\) is the <a href="https://en.wikipedia.org/wiki/Cumulative_distribution_function">CDF</a> of the valuations and \(f(p)\) is the associated density. The probability that a consumer chooses to buy the good is the probability that their valuation is greater than the price, i.e. \(1-F(p)\). The seller&#39;s expected payoff is then</p>
+
+<p>$$ \pi(p) = (p-c)(1-F(p)) $$</p>
+
+<p>This is the usual profit expression, but with \(1-F(p)\) as the demand. Maximizing this gives us</p>
+
+<p>$$ \begin{align}
+ \text{FOC:} \ \ &amp; 1 - F(p) - pf(p) + cf(p) = 0 \cr
+ \implies \ \ &amp; p = c + \frac{1-F(p)}{f(p)} \cr
+\end{align}$$</p>
+
+<p>This is called &quot;markup pricing&quot;; the price is the marginal cost \(c\) plus a markup, \( \frac{1-F(p)}{f(p)} \). The markup is the inverse of the <a href="https://en.wikipedia.org/wiki/Failure_rate#hazard_function">hazard rate</a> of the demand function. The hazard rate measures how likely an event (a &quot;failure&quot;, or &quot;hazard&quot;) is to happen given that it hasn&#39;t happened before. In the case of demand, the hazard rate is the probability that a consumer will buy the good at a certain price \(p\), conditional on having not bought the good before. So it makes some sense that the markup would be based on the hazard rate of demand.</p>
+
+<h3 id="an-example">An example</h3>
+
+<p>Suppose \( F(v) \sim U[a,b]\) - the consumers are equally likely to be willing to pay anywhere from \(a\) to \(b\) for the product. Then \(F(v) = \frac{v-a}{b-a} \), and \(f(v) = \frac{1}{b-a}\). Plugging this into the pricing formula we derived above, we get</p>
+
+<p>$$\begin{align}
+p &amp; = c + \frac{1- \frac{p-a}{b-a}}{\frac{1}{b-a}} \cr
+\implies p &amp; = \frac{c+b}{2} \cr
+\end{align}$$</p>
+
+<p>So, for uniformly distributed valuations of the product, the monopolist should optimally price their product at half of marginal cost plus the maximum valuation.</p>
+
+<h3 id="more-on-the-hazard-rate">More on the hazard rate</h3>
+
+<p>The hazard rate, \(\lambda\), turns out to be important to analyzing markets. We usually assume that \(\lambda\) is nondecreasing in \(p\). This is equivalent to assuming that the density of demand is log-concave. A proof of the statement follows.</p>
+
+<h5 id="proof">Proof</h5>
+
+<p>$$\begin{align}
+f&#39;(x)[1-F(x)] &amp; = \int_x^\infty f&#39;(x)f(t)dt \cr
+ &amp; = \int_x^\infty \frac{f&#39;(x)}{f(x)}f(t)f(x)dt \cr
+ &amp; \ge \int_x^\infty \frac{f&#39;(t)}{f(t)}f(t)f(x)dt  ~~~~(\because t \ge x) \cr
+ &amp; = f(x)[f(\infty) - f(x)]
+ &amp; \ge - f(x)^2
+\end{align}$$</p>
+
+<p>So log-concave \(f(x) \equiv \lambda\) is nondecreasing. </p>
+
+  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -392,244 +512,6 @@ p_2 &amp; = \frac{1}{2}[v_2-v_1+p_1^* + \frac{t}{2} + c] \cr
 <li><p>A merger between two firms in an \(n\)-firm Circle City</p></li>
 <li><p>A Hotelling model on a not-fully-connected graph? Consumers and firms would be at the nodes, with the cost of reaching a firm increasing in the number of nodes between a consumer and the firm. I think it would be a lot harder to solve than a Hotelling model on a continuous space, but the linkages in price through demand would be interesting. Maybe a continuous city on a polygon with lines between vertices is an easier way to look at those linkages.</p></li>
 </ul>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/micro%20theory/2015/09/30/cournot-monopoly-fixed-cost-manager/">
-        When a manager can reduce fixed costs in exchange for profits
-      </a>
-    </h1>
-
-    <span class="post-date">30 Sep 2015</span>
-
-    <p>In most consumer-firm problems, we assume the consumer owns the firm, but doesn&#39;t manage it. Who does? It&#39;s not quite clear. I like to imagine that the firm is a robot that the consumer programmed to produce stuff and <em>whirr</em> MAXIMIZE PROFITS <em>whirr</em>. This model came from thinking about scenarios where a profit-maximizing owner who is perfectly capable of maximizing profits might want to hire a manager in exchange for a share of profits. Why would they do this? When would there be agency problems?</p>
-
-<h3 id="the-setting">The setting</h3>
-
-<p>The underlying problem is a profit-maximizing monopolist facing linear inverse demand \(p=a-bx\) and some positive fixed cost \(F\). That is,</p>
-
-<p>$$\max_{x}  (p - c)x - F $$</p>
-
-<p>I&#39;m framing it as a Cournot problem, but we could do it as a Bertrand problem and we&#39;d get the same result because there&#39;s only one firm. The fixed cost goes away and we get the familiar \(x^*=\frac{a-c}{2b}\) and \(p^*=\frac{a+c}{2}\).</p>
-
-<p>The twist is that the fixed cost is \(F(k) = d - k\), where \(d\) is some positive number and \(k\in[0,1]\) is the share of profits the owner will give to a manager who can reduce the fixed costs. (The point wasn&#39;t to be super realistic, I just wanted something simple and decreasing in \(k\).)</p>
-
-<p>The new problems are</p>
-
-<p>$$ \begin{align}
-\text{Manager:}&amp; \ \max_{x}  k[(p(x) - c)x - F] \cr
-\text{Owner:} &amp; \  \max_{k} k[(p^* - c)x^* - F(k)] \cr
- &amp; s.t. \ k \ge 0 , 1-k \ge 0
-\end{align} $$</p>
-
-<p>The owner first decides how much to pay the manager. The more the owner pays the manager, the lower the fixed costs (I was going for &quot;more pay =&gt; better manager&quot;). Once this is decided, the manager steps in to maximize profits. I assume that reducing the fixed costs comes naturally to the manager  - it is costless to them - so \(F\) will drop out of the manager&#39;s first-order conditions just like it does for a regular problem with fixed costs.</p>
-
-<h3 id="the-solution">The solution</h3>
-
-<p>The manager&#39;s problem is a standard Cournot monopolist&#39;s problem. The profit-share, \(k\), is irrelevant to the optimal quantity choice because it enters the manager&#39;s problem as a constant scaling the profits.</p>
-
-<p>$$ \begin{align}
-\text{Manager&#39;s FOC:} \ &amp; k[p(x) + x\frac{\partial p}{\partial x} - c] = 0 \cr
-\implies &amp; x^* = \frac{a-c}{2b}, \cr
-&amp; p^* = \frac{a+c}{2}
-\end{align} $$</p>
-
-<p>The owner&#39;s problem is a little trickier because of the restrictions on \(k\). We need to set up the following Lagrangian:</p>
-
-<p>$$ L = (1-k)[(p^* - c)x^* - d + k] + \lambda_1(k) + \lambda_2(1-k)$$</p>
-
-<p>Which yields the following saddle-point conditions:</p>
-
-<p>$$ \begin{align}
-\mathsf{k:} &amp; \ -[(p^* - c)x^* - d + 2k] + \lambda_1 - \lambda_2 = 0 \cr
-\mathsf{\lambda_1 :} &amp; \ \lambda_1(k) = 0 \cr
-\mathsf{\lambda_2 :} &amp; \ \lambda_2(1-k) = 0 \cr
-\end{align} $$</p>
-
-<p>This gives us 3 cases which fully characterize the parameter space.</p>
-
-<h5 id="case-1-k-0">Case 1: k = 0</h5>
-
-<p>If we assume \(k=0\), we get the following saddle point:</p>
-
-<p>$$ (k,\lambda_1,\lambda_2) = (0,\frac{(a-c)^2}{4b} - d,0) $$</p>
-
-<p>The owner gives the manager nothing. The lagrange multipliers have to be non-negative, which gives us the parameter restriction: \( d \le \frac{(a-c)^2}{4b} \).</p>
-
-<h5 id="case-2-k-in-0-1">Case 2: k \(\in\) (0,1)</h5>
-
-<p>If we assume \(k \in (0,1)\), we get the following saddle point:</p>
-
-<p>$$ (k,\lambda_1,\lambda_2) = (\frac{1}{2}(d - \frac{(a-c)^2}{4b}),0,0) $$</p>
-
-<p>The owner gives the manager some positive share and the lagrange multipliers are 0. \(k \gt 0\) gives us the following parameter restriction: \( d \gt \frac{(a-c)^2}{4b} \).</p>
-
-<h5 id="case-3-k-1">Case 3: k = 1</h5>
-
-<p>If we assume \(k=1\), we get the following saddle point:</p>
-
-<p>$$ (k,\lambda_1,\lambda_2) = (0,0,d - \frac{(a-c)^2 + 8b}{4b}) $$</p>
-
-<p>The owner gives the manager full control of the company. \(\lambda_2 \ge 0\) gives us the following parameter restriction: \( d \ge \frac{(a-c)^2 + 8b}{4b} \).</p>
-
-<h3 id="summary">Summary</h3>
-
-<p>The owner and manager both will implement monopoly pricing - there&#39;s only one firm, so this is optimal. If the fixed cost without a manager is greater than the monopoly profit, then the owner will hire the manager to reduce the fixed cost. The owner will pay the manager half the difference between the original fixed cost and the monopoly profit - this is the owner&#39;s profit-maximizing wage for the manager. If the fixed cost is high enough, the owner will give the manager the company because the business isn&#39;t worth it.</p>
-
-<p>Given the relationship between the wage paid to the manager and the fixed cost in this model, we can think of \(k\) not only as the profit-maximizing wage paid to the manager, but also as the optimal level of managerial ability that the owner will choose when it costs profit share.</p>
-
-<p>What could this be a model of? I don&#39;t know. There&#39;s a manager who can make it worthwhile to get into a market where you&#39;ll be a monopolist if you can cross the high fixed cost to entry. Maybe a manager who has connections or knowledge that would reduce the fixed costs?</p>
-
-<p>I think the agency problem involved in non-owners running a firm (so any professional management) is interesting. Eventually, I&#39;d like to construct a model where rational actors cause an agency problem. In this model, the manager does their job (picking the profit-maximizing business decision) perfectly. There is no agency problem because the manager is paid a fraction of profits, so the manager&#39;s wage-maximizing outcome is aligned with the owner&#39;s profit-maximizing desires. The manager is a price-taker in the sense that they simply take the share they are offered as given. This is reasonable if the market for managers is perfectly competitive.</p>
-
-<h4 id="variations-to-explore">Variations to explore:</h4>
-
-<ul>
-<li><p>What if the manager was paid a share of sales or revenue instead of profits? I&#39;d expect agency problems to be possible here, since the objective functions don&#39;t necessarily align.</p></li>
-<li><p>What if the manager could reduce marginal costs instead of fixed costs? I think of this as a manager who brings persistent efficiencies, whereas this one brings one-time efficiencies. I&#39;d expect qualitatively similar results to this model.</p></li>
-<li><p>What if the firm was taxed (increasing in output) and the manager could reduce the tax? Again I&#39;d expect qualitatively similar results to this model, but it seems like a more plausible model for hiring managers with government connections.</p></li>
-<li><p>O.E. Williamson, in his paper &quot;A Model of Rational Managerial Behavior&quot;, describes a pretty cool model with staffing and reported profits. I may blog about it in the near future.</p></li>
-</ul>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/micro%20theory/2015/09/29/bertrand-cournot-oligopoly/">
-        Oligopoly - Bertrand and Cournot
-      </a>
-    </h1>
-
-    <span class="post-date">29 Sep 2015</span>
-
-    <p>Models of perfect competition are kinda dull. Firms price at marginal cost, no firm makes any profits, and there&#39;s just not a whole lot to be said there. Imperfect competition is much more interesting. There can be markups, firms can do cool things . In this post, we&#39;re going to look at some simple models of oligopoly (imperfect competition where there are a few firms). I&#39;m going to start with 2 firms, then n firms, and then a couple variations.</p>
-
-<p>There are two popular models of oligopoly: <a href="https://en.wikipedia.org/wiki/Cournot_competition">Cournot</a> (firms choose quantities) and <a href="https://en.wikipedia.org/wiki/Bertrand_competition">Bertrand</a> (firms choose prices). Although the firms&#39; objective functions are the same (to maximize profits), the two models produce very different outcomes and require different solution techniques.</p>
-
-<p>Cournot models give us a degree of competition, becoming perfectly competitive as the number of firms goes to \(\infty\), and can usually be solved with standard optimization techniques. Bertrand models become perfectly competitive when there is more than one firm involved (!! 2 firms is perfectly competitive??!), and because of discontinuities induced by assumptions on demand, cannot usually be solved by standard optimization techniques. We&#39;ll use game theory to solve both.</p>
-
-<p>Although both of these models pre-date Nash&#39;s solution concept, their equilibria are still Nash equilibria (NE or NEs - in equilibrium, no one can increase their payoff by unilaterally deviating from the equilibrium strategy profile). This is interesting to me because I learned to solve Bertrand models by looking for NEs. I think it would be harder to see this solution without that equilibrium concept specifically in mind, but maybe not.</p>
-
-<h3 id="cournot-competition">Cournot competition</h3>
-
-<p>Cournot models are nice because we can use a pretty simple optimization program - set up profit, take first order conditions, solve for best-response (BR) functions, and get quantity. The firm&#39;s profit maximization problem is usually unconstrained\(^1\), which makes it even nicer.</p>
-
-<p>In a Cournot model, each firm chooses a quantity to produce and then they play that quantity at the same time. Because they move simultaneously, they have to guess what the other will do. This gives us their best-response functions. Best-response functions are what they sound like: functions which tell you your best response to your opponent&#39;s move (&quot;If he does this, I should do that&quot;). They are sometimes correspondences instead of functions. We find the optimal quantity by plugging one firm&#39;s best-response into the other&#39;s. The resulting intersection gives us the quantities that the firms will play in equilibrium.</p>
-
-<h4 id="2-symmetric-firms">2 symmetric firms</h4>
-
-<p>Let the inverse demand function be linear as \(P = a - bQ\), where \(Q = q_i + q_j\), and the common constant marginal cost is \(c\). \(a\), \(b\), and \(c\) are all strictly greater than 0 and \(a&gt;c\). Firm \(i\) solves:</p>
-
-<p>$$ \max_{q_i}  (p - c)q_i $$</p>
-
-<p>The FOC is:</p>
-
-<p>$$ a - 2bq_i - bq_j^* - c = 0 $$</p>
-
-<p>Firm \(i\)&#39;s best-response function is:</p>
-
-<p>$$ q_i^* = \frac{a - bq_j^* - c}{2b} $$</p>
-
-<p>Since the firms are symmetric, \(q_i = q_j\), giving us firm i&#39;s equilibrium quantity:</p>
-
-<p>$$ q_i = \frac{a - c}{3b} $$</p>
-
-<p>Again by symmetry of the firms, we don&#39;t need to solve firm \(j\)&#39;s problem: it&#39;s identical to firm \(i\)&#39;s.</p>
-
-<p>The equilibrium is: \( (P, q_i, q_j, \pi_i, \pi_j) = (a-\frac{2}{3}(a-c), \frac{a - c}{3b}, \frac{a - c}{3b}, \frac{(a-c)^2}{9} , \frac{(a-c)^2}{9})  \)</p>
-
-<h4 id="n-symmetric-firms">\(n\) symmetric firms</h4>
-
-<p>The conditions and results are similar for \(n\) symmetric firms. Inverse demand is now \(P = a - b\sum_{i=1}^n q_i\). Firm \(i\) solves:</p>
-
-<p>$$ \begin{align}
-&amp; \max_{q_i}  (p - c)q_i \cr
-\text{FOC:} &amp;  a - 2bq_i - b\sum_{j \neq i}^n q_j^* - c = 0 \cr
-\text{BR:} &amp;  q_i^* = \frac{a - (n-1)bq_j - c}{2b} \cr
-\implies &amp; q_i = \frac{a-c}{(n+1)b}, \cr
- &amp; P = \frac{a}{n+1} + \frac{n}{n+1}c, \cr
- &amp; \pi = \frac{(a-c)^2}{(n+1)^2} \cr
-\end{align} $$</p>
-
-<p>We can see that the 2 firm example was a special case of the \(n\) firm example. As \(n \to \infty\), \(P \to c\) and \(\pi \to 0\). When \(n = 1\), we get the monopoly outcome, \(q = \frac{a-c}{2b}\), \( P = \frac{a + c}{2}\), and \(\pi = \frac{(a-c)^2}{4}\).</p>
-
-<h3 id="bertrand-competition">Bertrand competition</h3>
-
-<p>In Bertrand models, we assume that the firm with the lower price captures all of the market and that firms split the market evenly when they charge the same price. This creates a discontinuity in profits as a function of price, which means we can&#39;t apply a regular optimization program. </p>
-
-<p>Instead, we have to consider the optimal price in cases, looking for NEs. This means asking the question: assuming the strategy profile we&#39;re considering is an equilibrium, can any player improve their payoff by unilaterally deviating? If yes, then that strategy profile isn&#39;t a Nash equilibrium.</p>
-
-<h4 id="2-symmetric-firms">2 symmetric firms</h4>
-
-<p>Suppose prices are \(p_i = p_j &gt; c\). Firm \(j\) can deviate to a \(p_j \in (c,p_i)\) \(\forall p_i &gt; c \) and capture all of the demand and increase profits. So \(p_i &gt; c\) can&#39;t be an equilibrium.</p>
-
-<p>We can rule out any case where \(p_i &lt; c \) \(\forall i \), since the firm would then make negative profits and could improve its payoff by deviating to \(p_i = c \) to make 0 profits.</p>
-
-<p>So we&#39;re left with \(p_i = c\). If both firms charge \(c\), neither can improve their payoff by deviating unilaterally. So the equilibrium is that they charge marginal cost and make 0 profits. Deviating can only lead to losses or vicious price competition.</p>
-
-<h4 id="n-symmetric-firms">\(n\) symmetric firms</h4>
-
-<p>The same argument from the 2 firm case holds for 2 of the \(n\) firms. As a result, all of the other \(n-2\) firms are indifferent between charging \(p_i = c\) and \(p_i &gt; c\). They either split the demand evenly at 0 margin (0 profits), or have a margin and no demand (0 profits).</p>
-
-<h3 id="a-couple-variations">A couple variations</h3>
-
-<p>Now that we know the standard results, let&#39;s look at some variations on the 2-firm models: Cournot competition with asymmetric firms, and Bertrand competition with integer pricing.</p>
-
-<h4 id="cournot-competition-2-firms-with-different-marginal-costs">Cournot competition: 2 firms with different marginal costs</h4>
-
-<p>Same as the earlier 2-firm setup, except now \(c_i &gt; c_j\).</p>
-
-<p>$$ \begin{align}
-BR_i : &amp; q_i^* = \frac{a - bq_{j}^* - c_i}{2b} \cr
-BR_j : &amp; q_j^* = \frac{a - bq_{i}^* - c_j}{2b} \cr
-\implies &amp; q_i = \frac{a- 2c_i + c_j}{3b} \cr
- &amp; q_j = \frac{a- 2c_j + c_i}{3b} \cr
-\implies &amp; q_i &lt; q_j \cr
-\end{align} $$</p>
-
-<p>If \(c_i = c_j\), we would be back in the symmetric 2 firm case. Without calculating the profits, we can argue by revealed preference that \( \pi_i &lt; \pi_j\). The argument is straightforward: firm \(j\) could have chosen \(q_i\), but didn&#39;t. Since firms are profit-maximizers, this means \(j\) must make higher profits selling the higher quantity.</p>
-
-<p>Another neat thing we can do here is look at the derivatives of the equilibrium quantities with respect to costs and quantities. This tells us how each firm&#39;s optimal quantity will change with respect to their own and their competitor&#39;s marginal costs. We get:</p>
-
-<p>$$\begin{align}
-\frac{\partial q_i}{\partial c_i} &amp; = -\frac{2}{3b} &lt; 0 \cr
-\frac{\partial q_i}{\partial c_j} &amp; = \frac{1}{3b} &gt; 0
-\end{align}$$</p>
-
-<p>Firms will produce less as their own costs increase, and more as their competitor&#39;s costs increase. Seems intuitive.</p>
-
-<h4 id="bertrand-competition-2-symmetric-firms-with-integer-pricing">Bertrand competition: 2 symmetric firms with integer pricing</h4>
-
-<p>The setup is the same as the earlier 2 firm case, except now firms can only charge prices that are integers.</p>
-
-<p>As before, we can rule out any prices below marginal cost, since 0 profits are better than negative profits.</p>
-
-<p>If both firms price at marginal cost, neither firm can deviate an increase their payoff. So \(p_i = p_j = c)\ is one Nash equilibrium.</p>
-
-<p>Is there an equilibrium with positive profits? Let \(d&gt;c\) be the smallest integer greater than \(c\). Suppose both firms price at \(d\). Then deviating downward to \(c\) would yield 0 profits (all demand, no margin), as would deviating upward (some margin, no demand). So there is another Nash equilibrium at \(p_i=p_j=d\).</p>
-
-<p>We could simplify that argument by saying \(d=c+1\), which it is in this case. Doing it this way, we can see that this equilibrium exists whenever prices are discrete. Say prices are discretized into intervals of \(\delta\), replace &quot;smallest integer greater than \(c\)&quot; with &quot;smallest discrete price greater than \(c\)&quot;, and the result follows.</p>
-
-<h3 id="in-conclusion">In conclusion</h3>
-
-<p>Cournot models may seem less realistic in most settings at face value because it&#39;s more natural (for me at least) to assume firms choose prices rather than quantities. But the results are more plausible: with only a few firms, each firm has some market power and uses it to get profits. As the number of firms increases, each firm&#39;s market power decreases and in the limit we get perfect competition.</p>
-
-<p>Bertrand models, though they accord with my initial ideas of how firms compete, produce less realistic results: only 2 firms is enough to create a perfectly competitive outcome (prices at marginal cost, zero profits). Competition is brutal in Bertrand models: firms force each other to the lowest price possible, only making profits (in the examples we considered) when the space of prices has discontinuities that prevent continuous undercutting.</p>
-
-<p>I find Cournot models easier to think about and solve, since it&#39;s pretty much algorithmic. Bertrand models require a little more thought, but can often be condensed into pretty compact and elegant arguments.</p>
-
-<h4 id="variations-to-explore">Variations to explore:</h4>
-
-<ul>
-<li><p>Bertrand competition with asymmetric firms</p></li>
-<li><p>Cournot competition with capacity constraints</p></li>
-<li><p>Stackelberg (sequential Cournot) competition</p></li>
-<li><p>Cournot competition with fixed costs</p></li>
-</ul>
-
-<p>\(^1\)There&#39;s an interesting problem I&#39;ll do in a future post with a cash-constrained revenue-maximizing firm. The firm&#39;s problem ends up having the same setup as a utility-maximizing budget constrained consumer, which is pretty neat.</p>
 
   </div>
   
