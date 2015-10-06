@@ -26,7 +26,7 @@ To start, we can eliminate any quantities greater than the firm's monopoly quant
 
 How do we handle 2.5? Firm 2 has to choose 2 or 3, not 2.5. We can see that \\(\pi_2(q_1=0,q_2=3) = 6\\) and \\(\pi_2(q_1=0,q_2=2) = 6 \\), so we can't eliminate 3 from firm 2's choices by strict domination.
 
-The game matrix below shows the firms' profits. Firm 1 is on the columns, and firm 2 is on the rows. The entries are "payoff(firm 1), payoff(firm 2)".
+The game matrix below shows the firms' profits. Firm 1 is on the columns, and firm 2 is on the rows. The entries are "\\(\pi_1, \pi_2\\)".
 
 $$\begin{array}{c|lcr}
  & 0 & 1 & 2 & 3 \cr
