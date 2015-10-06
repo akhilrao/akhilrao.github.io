@@ -110,7 +110,7 @@ As \\(N \to \infty\\), \\(\delta_c \to 1 ~~~ \forall \alpha\\). When \\(N=2\\):
 As I understand it, \\(\alpha=\frac{1}{2}\\) represents a state of total uncertainty - market B is equally likely to exist or not exist tomorrow. Any non-uniform distribution over the state of market B tomorrow gives the players more information about what is likely to happen than when \\(\alpha=\frac{1}{2}\\). When players are completely uncertain about whether or not market B will exist tomorrow, they need to weigh tomorrow at least as heavily as today in order to cooperate (given our assumptions on \\(\delta\\), they can't do that). When market B survives with probability 1, they are most likely to cooperate (\\(\delta \ge \frac{1}{3}\\)). When market B survives with probability 0, they need a discount factor of at least \\(\frac{2}{3}\\) to cooperate.
 
 
-Collusion can be more or less likely in case 3 than case 2 or case 1. Depending on how likely market B is to exist tomorrow their payoff from cooperating can be more than doubled, but their payoff from deviating is doubled no matter what happens to market B tomorrow.
+Collusion can be more or less likely in case 3 than case 2 or case 1. Depending on how likely it is that market B will exist tomorrow the firms' payoffs from cooperating can be more than doubled, but their payoffs from deviating are doubled no matter what happens to market B tomorrow.
 
 ### Summary
 
