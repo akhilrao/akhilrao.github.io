@@ -180,6 +180,30 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
 
       <a class="sidebar-nav-item" href="https://github.com/akhilrao/archive/v0.0.1.zip">Download</a>
       <a class="sidebar-nav-item" href="https://github.com/akhilrao">GitHub project</a>
@@ -193,6 +217,80 @@
 
     <div class="content container">
       <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/micro%20theory/2015/10/06/labor-market-signalling-two-types/">
+        A simple labor market with two types of workers and a test
+      </a>
+    </h1>
+
+    <span class="post-date">06 Oct 2015</span>
+
+    <p>Consider a competitive labor market where workers are either high ability (&quot;high type&quot;) or low ability (&quot;low type&quot;). A worker&#39;s type is the worker&#39;s private information, but the firms are aware that a fraction \(\alpha \in (0,1)\) of the workers have high ability. The high ability worker will produce value \(v=v_h\) for the firm, and the low type will produce \(v=v_l\), where \(0\le v_l\lt v_h\lt\infty\). The worker&#39;s can produce \(r\lt v_h\) if they are self-employed (reservation wage).</p>
+
+<h4 id="benchmark-case-no-signalling">Benchmark case: No signalling</h4>
+
+<p>If there&#39;s no way for the worker to signal their type to the firm, then the firm will go with what it knows: that the probability of a worker having high ability is \(alpha\). Using this, we get that the firm&#39;s expectation of the workers&#39; ability is \(E[v]=\alpha v_h + (1-\alpha) v_l\).</p>
+
+<p>A <a href="https://en.wikipedia.org/wiki/Competitive_equilibrium">competitive equilibrium</a> can be described be a price \(w^*(\theta)\) and an allocation \(\theta^*(w)\) which maximize the agents&#39; expected utilities. Here, the CE is</p>
+
+<p>$$\begin{align}
+w^*(\theta)=E \ [ \ \theta \ | \ \theta \in \theta^*] \cr
+\theta^*(w)= \{ \theta \ : \ r \le w \}
+\end{align}$$</p>
+
+<p>The firm will pay workers the expected value of their marginal productivity, which ends up being a constant. The workers will work if the wage is greater than or equal to what they could get staying at home. If the workers&#39; reservation wage is greater than the firm&#39;s wage (expected marginal productivity of labor), no one will work. If \(r&lt;w=E[v]\), everyone will work.</p>
+
+<h4 id="with-a-costly-test-that-signals-types">With a costly test that signals types</h4>
+
+<p>Now suppose there&#39;s a test that workers can take, and it&#39;s easier for high types to get a certain score than it is for low types. By observing the score that workers get on the test, firms can guess whether a worker is high ability or not. Formally,</p>
+
+<p>$$c(e,\theta)=
+\begin{cases}
+c_{h}e ~~~ \text{if} ~ \theta=v_h \cr
+c_{l}e ~~~ \text{if} ~ \theta=v_l
+\end{cases}$$</p>
+
+<p>where \(0\lt c_h\lt c_l\). Preparing for and taking the test is useless except that it is costlier for the low type, and can be used to distinguish between the types.</p>
+
+<p>The equilibrium concept we use here is a Perfect Bayesian Equilibrium (<a href="https://en.wikipedia.org/wiki/Bayesian_game#Perfect_Bayesian_equilibrium">PBE</a>. The worker&#39;s choice of test score is optimal given their knowledge of their type, the firm&#39;s beliefs of the worker&#39;s type after observing their test score \(\mu(e)\) is formed using Bayes&#39; Rule, and the wage \(w(e)\) is a Nash equilibrium for \(e(\theta)\) given the firm&#39;s beliefs \(\mu(e)\).</p>
+
+<p>One separating PBE that we can construct is \(w^*(e^*(v_h)) = v_h\) and \(w^*(e^*(v_l)) = v_l\), \(e^*(v_l)=0\), and \(e^*(v_h)=\tilde{e}\), where \(\tilde{e}\) is the least education the high type can get while still getting utility at least as high as if they pooled with the low type. </p>
+
+<p>The argument for this is pretty simple. If the high type can signal their ability, there&#39;s no point in the low type scoring above 0 on the test - effort is costly. If the firm can distinguish high and low types, then they will pay each their marginal product.</p>
+
+<p>The most efficient separating PBE is when the high type engages in as little signalling behavior as possible. This occurs when the high type&#39;s education level makes them indifferent between being employed and pooling with the low type. Letting \(c_l(e)=c(e,v_l)\) and \(c_h(e)=c(e,v_h)\),</p>
+
+<p>$$\begin{align}
+e^*(v_h):&amp;~~ v_h - c_l (e^*(v_h)) = v_l \cr
+\implies &amp;~ c_l (e^*(v_h)) = v_h-v_l \cr
+\implies &amp;~ e^*(v_h) = c_l^{-1}(v_h-v_l) \equiv \tilde{e} \cr
+\end{align}$$</p>
+
+<p>The full PBE is</p>
+
+<p>$$ e^*(\theta) =
+\begin{cases}
+0 ~~ \text{if} ~~ \theta=v_l\cr
+\tilde{e} ~~ \text{if} ~~ \theta=v_h\cr
+\end{cases} $$</p>
+
+<p>$$ \mu^*(e) =
+\begin{cases}
+0 ~~ \text{if} ~~ e \lt \tilde{e}\cr
+1 ~~ \text{if} ~~ e \ge \tilde{e}\cr
+\end{cases} $$</p>
+
+<p>$$ w^*(e) =
+\begin{cases}
+v_l ~~ \text{if} ~~ \theta=v_l\cr
+v_h ~~ \text{if} ~~ \theta=v_h\cr
+\end{cases} $$</p>
+
+<p>This is not a unique equilibrium. There are a continuum of separating PBEs that are less efficient than this one, and a continuum of pooling PBEs with one more efficient than the rest. Whether the most efficient separating PBE is more efficient than the most efficient pooling PBE depends on the parameter values.</p>
+
+  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -255,7 +353,7 @@ P(Q)=\begin{cases} 10 - Q \ \ &amp; if \ \ Q \le 10 \cr
 
 <p>How do we handle 2.5? Firm 2 has to choose 2 or 3, not 2.5. We can see that \(\pi_2(q_1=0,q_2=3) = 6\) and \(\pi_2(q_1=0,q_2=2) = 6 \), so we can&#39;t eliminate 3 from firm 2&#39;s choices by strict domination.</p>
 
-<p>The game matrix below shows the firms&#39; profits. Firm 1 is on the columns, and firm 2 is on the rows. The entries are &quot;payoff(firm 1), payoff(firm 2)&quot;.</p>
+<p>The game matrix below shows the firms&#39; profits. Firm 1 is on the columns, and firm 2 is on the rows. The entries are &quot;\(\pi_1, \pi_2\)&quot;.</p>
 
 <p>$$\begin{array}{c|lcr}
  &amp; 0 &amp; 1 &amp; 2 &amp; 3 \cr
@@ -292,7 +390,7 @@ P(Q)=\begin{cases} 10 - Q \ \ &amp; if \ \ Q \le 10 \cr
 <li>\((3,1,6,1)\)</li>
 </ol>
 
-<p>Letting \(p_1 = Pr(q_2=1), p_2 = Pr(q_2=2), k_2=Pr(q_1=2), k_3=Pr(q_1=3)\), we can get their expected utilities:</p>
+<p>Letting \(p_1 = Pr(q_2=1)\), \(p_2 = Pr(q_2=2)\), \(k_2=Pr(q_1=2)\), \(k_3=Pr(q_1=3)\), we can get their expected utilities:</p>
 
 <p>$$\begin{align}
 EU_{1}(2) &amp; = p_1(6) + p_2(4) = 6p_1 + 4p_2 \cr
@@ -310,7 +408,7 @@ EU_2(1) &amp; = EU_2(2) \cr
  k_3&amp;=0,k_2=1 \cr 
 \end{align}$$</p>
 
-<p>This is odd: The mixed NE that&#39;s coming out is a degenerate one, pure NE #1. I think I remember something about there needs to be an odd number of pure + mixed NE to a matrix game in total, so this might imply that there are actually no mixed NE? I was told that this game actually has infinitely many mixed NE, but I don&#39;t see it.</p>
+<p>This is odd: The mixed NE that&#39;s coming out is a degenerate one, pure NE #1. I think I remember something to the effect that the total number of pure + mixed NE in a matrix game is supposed to be odd, so this might imply that there are actually no mixed NE? I was told that this game actually has infinitely many mixed NE, but I don&#39;t see it.</p>
 
   </div>
   
@@ -494,52 +592,6 @@ c \ \ \text{otherwise}
 <li><p>Infinitely-repeated matrix game with correlated equilibria. The Folk Theorem can be used here.</p></li>
 <li><p>Finitely-repeated and infinitely-repeated Rubinstein bargaining. Not really a variation of this - the only similarity is that they&#39;re both dynamic games - but still an interesting model.</p></li>
 </ul>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/micro%20theory/2015/10/02/passthrough-symmetric-cournot/">
-        Deriving pass-through for an N-firm Cournot oligopoly
-      </a>
-    </h1>
-
-    <span class="post-date">02 Oct 2015</span>
-
-    <p>In the <a href="http://akhilrao.github.io/micro%20theory/2015/10/01/asymmetric-hotelling/">previous post</a>, I mentioned the concept of pass-through. Pass-through is the partial derivative of price with respect to marginal cost; it tells us how the equilibrium price will change in response to a change in marginal cost. As we will see here, it is closely related to the curvature of the inverse demand function.</p>
-
-<p>Consider a homogeneous product market with \(N \ge 2\) firms which are Cournot competitors with the same constant marginal cost \( c\). The inverse demand function is \(P(Q)\), and it satisfies \(2P&#39;(Q) + QP&#39;&#39;(Q) \lt 0\). The first order condition for firm \(i\) when every firm produces positive output is given by \( P(Q) + q_{i}P&#39;(Q) - c = 0 \). Because the firms are symmetric, \(q_i = \frac{Q}{N}\), making firm \(i\)&#39;s first order condition \(P(Q) + \frac{Q}{N}P&#39;(Q) - c = 0\). Call this FOC as \(F\).</p>
-
-<p>Define \( \sigma(Q) = -\frac{QP&#39;&#39;(Q)}{P&#39;(Q)} \), the curvature of the inverse demand function.</p>
-
-<p>By the <a href="https://en.wikipedia.org/wiki/Implicit_function_theorem">implicit function theorem</a>, we can find \(\frac{\partial Q}{\partial c}\), the quantity pass-through, as</p>
-
-<p>$$ \begin{align}
- \frac{\partial Q}{\partial c} &amp; = - \frac{\frac{\partial F}{\partial c}}{\frac{\partial F}{\partial c}} \cr
- &amp; = \frac{N}{(N+1)P&#39;(Q) + QP&#39;&#39;(Q)} \cr
-\end{align} $$</p>
-
-<p>Then, by the chain rule,</p>
-
-<p>$$ \begin{align}
-\frac{\partial P(Q)}{\partial c} &amp; = \frac{\partial P}{\partial Q}\frac{\partial Q}{\partial c} \cr
-\implies \frac{\partial P(Q)}{\partial c} &amp; = \frac{\partial P}{\partial Q} \frac{N}{(N+1)P&#39;(Q) + QP&#39;&#39;(Q)} \cr
-\end{align} $$</p>
-
-<p>Dividing by \(\frac{\partial P}{\partial Q}\) on top and bottom, we get</p>
-
-<p>$$ \begin{align} 
-\frac{\partial P}{\partial c} &amp; =  \frac{N}{(N+1) + Q\frac{P&#39;&#39;(Q)}{P&#39;(Q)}} \cr
-&amp; = \frac{N}{(N+1) - \sigma(Q)} \cr
-\end{align} $$</p>
-
-<p>Thus, we see that the pass-through rate is indeed a function of the curvature of the inverse demand function. If we assume inverse demand is linear, we get</p>
-
-<p>$$P&#39;(c) = \frac{N}{N+1}$$</p>
-
-<p>As \( N \to \infty\), \(P&#39;(c) \to 1\). This makes sense, given that we know as \( N \to \infty\), \(P \to c\).</p>
-
-<p>Pass-through is a pretty useful concept, and it seems to be a popular tool these days in analyses of oligopoly and market power.</p>
 
   </div>
   

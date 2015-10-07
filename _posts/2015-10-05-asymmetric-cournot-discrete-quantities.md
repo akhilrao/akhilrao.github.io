@@ -59,7 +59,7 @@ There are 3 pure-strategy Nash equilibria, \\((q_1,q_2,\pi_1,\pi_2)\\):
 2. \\((2,2,4,2)\\)
 3. \\((3,1,6,1)\\)
 
-Letting \\(p_1 = Pr(q_2=1), p_2 = Pr(q_2=2), k_2=Pr(q_1=2), k_3=Pr(q_1=3)\\), we can get their expected utilities:
+Letting \\(p_1 = Pr(q_2=1)\\), \\(p_2 = Pr(q_2=2)\\), \\(k_2=Pr(q_1=2)\\), \\(k_3=Pr(q_1=3)\\), we can get their expected utilities:
 
 $$\begin{align}
 EU_{1}(2) & = p_1(6) + p_2(4) = 6p_1 + 4p_2 \cr
@@ -77,4 +77,4 @@ EU_2(1) & = EU_2(2) \cr
  k_3&=0,k_2=1 \cr 
 \end{align}$$
 
-This is odd: The mixed NE that's coming out is a degenerate one, pure NE #1. I think I remember something about there needs to be an odd number of pure + mixed NE to a matrix game in total, so this might imply that there are actually no mixed NE? I was told that this game actually has infinitely many mixed NE, but I don't see it.
+This is odd: The mixed NE that's coming out is a degenerate one, pure NE #1. I think I remember something to the effect that the total number of pure + mixed NE in a matrix game is supposed to be odd, so this might imply that there are actually no mixed NE? I was told that this game actually has infinitely many mixed NE, but I don't see it.
