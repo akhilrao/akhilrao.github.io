@@ -14,7 +14,7 @@ Consider a competitive labor market where workers are either high ability ("high
 
 #### Benchmark case: No signalling
 
-If there's no way for the worker to signal their type to the firm, then the firm will go with what it knows: that the probability of a worker having high ability is \\(alpha\\). Using this, we get that the firm's expectation of the workers' ability is \\(E[v]=\alpha v_h + (1-\alpha) v_l\\).
+If there's no way for the worker to signal their type to the firm, then the firm will go with what it knows: that the probability of a worker having high ability is \\(\alpha\\). Using this, we get that the firm's expectation of the workers' ability is \\(E[v]=\alpha v_h + (1-\alpha) v_l\\).
 
 A [competitive equilibrium](https://en.wikipedia.org/wiki/Competitive_equilibrium) can be described be a price \\(w^\*(\theta)\\) and an allocation \\(\theta^\*(w)\\) which maximize the agents' expected utilities. Here, the CE is
 
