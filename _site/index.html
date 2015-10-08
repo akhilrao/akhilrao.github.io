@@ -240,6 +240,18 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
 
       <a class="sidebar-nav-item" href="https://github.com/akhilrao/archive/v0.0.1.zip">Download</a>
       <a class="sidebar-nav-item" href="https://github.com/akhilrao">GitHub project</a>
@@ -256,6 +268,77 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="/micro%20theory/2015/10/08/imperfect-information-car-search/">
+        When is it optimal to search for a used car?
+      </a>
+    </h1>
+
+    <span class="post-date">08 Oct 2015</span>
+
+    <p>Suppose you are considering purchasing a used car. There are \(N \ge 1\) sellers. The value of seller \(i\)&#39;s car is \(v_i\), given by</p>
+
+<p>$$v_i =
+\begin{cases}
+1 ~~ \text{with probability} ~~ \beta_i \cr
+0 ~~ \text{with probability} ~~ 1- \beta_i \cr
+\end{cases}$$</p>
+
+<p>where \(\beta_i = \beta^i, i=1,...,N\). So as the number of sellers increases, we only add sellers worse than the current ones. Since we search in a random order, for a given N this just tells us the distribution of sellers. A seller&#39;s \(\beta_i\) is their private information. This is sort of like Craigslist or some other internet search; you search randomly over sellers of uncertain quality. </p>
+
+<p>You&#39;re a savvy shopper though, and before you buy the car you&#39;re going to get it inspected, which costs \(c\). You could also think about this as a search cost, to avoid confusion over inspection-less visits to sellers. Suppose the price of a car is \(1/2\) from every seller, for simplicity. You can inspect as many sellers as you want, but only one at a time.</p>
+
+<p>Based on \(\beta\), \(N\), and \(c\), when will it be optimal for you to search at least once?</p>
+
+<h4 id="benchmark-case-expected-utility-maximizer">Benchmark case: Expected-utility maximizer</h4>
+
+<p>An expected utility maximizer would start by figuring out the expected value of a search,</p>
+
+<p>$$\begin{align}
+\hat{\beta} &amp;= \frac{1}{N} \sum_{i=1}^{N} \beta^i \cr
+&amp;= \frac{\beta}{N} \left( \frac{1- \beta^N}{1- \beta } \right)
+\end{align}$$</p>
+
+<p>We assume we&#39;re starting from no prior searches so that we don&#39;t have to condition on information and update beliefs, which any optimizing agent ought to be doing. We want the expected value of a search, net of inspection costs, to be positive, or</p>
+
+<p>$$\begin{align}
+\hat{\beta}(v-p) - c &amp;\ge 0 \cr
+ \implies \hat{\beta}(1/2) - c &amp;\ge 0 \cr
+ \implies c &amp;\le \frac{1}{2}\hat{\beta} \cr
+\end{align}$$</p>
+
+<p>We use \(\hat{\beta}(v-p)\) instead of \(\hat{\beta}-p\) because our value from the car is \(1\) for sure - the uncertainty is in whether or not we see it, not in the value itself.</p>
+
+<p>This gives us a bound on whether or not it is optimal to search - an expected-utility maximizer will search if the expected value of the car is greater than the inspection cost.</p>
+
+<p>This makes sense, but there&#39;s another way we can approach this question.</p>
+
+<h4 id="a-worst-case-utility-maximizer">A worst-case utility maximizer</h4>
+
+<p>I guess another way to put this is a &quot;minimum-utility maximizer&quot;. I&#39;ve never heard that term before. I think worst-case bounds are more popular in computer science than economics, which is probably why I haven&#39;t heard it called that. </p>
+
+<p>The worst case we could encounter on our first search is to visit seller \(N\) first. A minimum-utility maximizer only wants to search if even in this bad draw is worth their time, or</p>
+
+<p>$$\begin{align}
+\beta^N(v-p) - c &amp;\ge 0 \cr
+\implies c &amp;\le \frac{1}{2}\beta^N \cr
+\end{align}$$</p>
+
+<p>which looks pretty similar to the expected-utility maximizer&#39;s solution, but with \(\beta^N\) instead of \(\hat{\beta}\). This implies a more &quot;conservative&quot; decision rule than the benchmark solution.</p>
+
+<h4 id="summary">Summary</h4>
+
+<p>This is a pretty cool problem. I disagreed with my professor about the solution - I used the worst-case bound, while he used the expected-utility bound. He pointed out that in this case, the worst-case bound is a subset of the expectation-bound (I think that must be true generally), so the worst-case bound ignored a large area where an expected-utility maximizer would find it optimal to search. I agree with his argument, but I still prefer the worst-case bound to the expectation-bound. In writing this post, I&#39;ve been trying to understand why.</p>
+
+<p>I think the worst-case bound is a more general solution to the problem (or a solution to a more general problem) than the expectation-bound. In this problem, we&#39;re assuming we know a lot about the distribution of values - we know pretty much exactly what it looks like always, and so we use the expectation to figure out what to do. If we relax that assumption to only knowing the supports of the distribution of values, then we can&#39;t take an expectation to maximize expected utility. But we can still find a worst-case bound and maximize a minimum utility. That said, if we have the information about the distribution, why would we ignore it?</p>
+
+<p>While the minimum-utility maximizer may ignore opportunities that the expected-utility maximizer would take, the minimum-utility maximizer can consistently apply their decision rule in more situations than the expected-utility maximizer can. </p>
+
+<p>I&#39;m not sure whether I maximize expected-utility or minimum-utility, but I like this problem a lot.</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="/macro%20theory/2015/10/07/two-period-planner-het-betas/">
         A two period planner's problem with heterogeneous time preferences
       </a>
@@ -265,7 +348,7 @@
 
     <p>Two period models are nice because they&#39;re usually easy to solve and can get at some good intuition. Two period models and most dynamic economic models use a discount rate, often \(\beta\) or \(\delta\), which is how much the agent values future payoffs in relation to present payoffs.</p>
 
-<p>In this model there are \(n\) agents in total, \(k\) of whom have discount rate \(\beta\in [0,1]\), and the remaining \(n-k\) with discount rate \(\beta =1\). The agents live for two periods, \(t=1,2\), and receive a consumption endowment of 1 in the period 1 and \(e\gt 0\) in period 2. They have preferences over per-period consumption given by \(\log c_t\). Their lifetime utilities are</p>
+<p>In this model there are \(n\) agents in total, \(k\) of whom have discount rate \(\beta\in [0,1]\) (impatient), and the remaining \(n-k\) with discount rate \(\beta =1\) (patient). The agents live for two periods, \(t=1,2\), and receive a consumption endowment of 1 in the period 1 and \(e\gt 0\) in period 2. They have preferences over per-period consumption given by \(\log c_t\). Their lifetime utilities are</p>
 
 <p>$$\begin{align}
  \text{k impatient:} ~~ V(c_1,c_2) &amp;= \log c_1 + \beta \log c_2 \cr
@@ -522,59 +605,6 @@ EU_2(1) &amp; = EU_2(2) \cr
 \end{align}$$</p>
 
 <p>This is odd: The mixed NE that&#39;s coming out is a degenerate one, pure NE #1. I think I remember something to the effect that the total number of pure + mixed NE in a matrix game is supposed to be odd, so this might imply that there are actually no mixed NE? I was told that this game actually has infinitely many mixed NE, but I don&#39;t see it.</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/micro%20theory/2015/10/04/monopoly-pricing-discrete-demand/">
-        Monopoly pricing for discrete demand
-      </a>
-    </h1>
-
-    <span class="post-date">04 Oct 2015</span>
-
-    <p>How should a monopoly price when demand is discrete? This situation arises whenever the consumer is choosing between &quot;buy&quot; or &quot;not buy&quot;, as opposed to a choice of a continuous quantity.</p>
-
-<p>Let the consumers&#39; valuations of the good be given by \(V \sim F(v)\), where \(F(v)\) is the <a href="https://en.wikipedia.org/wiki/Cumulative_distribution_function">CDF</a> of the valuations and \(f(p)\) is the associated density. The probability that a consumer chooses to buy the good is the probability that their valuation is greater than the price, i.e. \(1-F(p)\). The seller&#39;s expected payoff is then</p>
-
-<p>$$ \pi(p) = (p-c)(1-F(p)) $$</p>
-
-<p>This is the usual profit expression, but with \(1-F(p)\) as the demand. Maximizing this gives us</p>
-
-<p>$$ \begin{align}
- \text{FOC:} \ \ &amp; 1 - F(p) - pf(p) + cf(p) = 0 \cr
- \implies \ \ &amp; p = c + \frac{1-F(p)}{f(p)} \cr
-\end{align}$$</p>
-
-<p>This is called &quot;markup pricing&quot;; the price is the marginal cost \(c\) plus a markup, \( \frac{1-F(p)}{f(p)} \). The markup is the inverse of the <a href="https://en.wikipedia.org/wiki/Failure_rate#hazard_function">hazard rate</a> of the demand function. The hazard rate measures how likely an event (a &quot;failure&quot;, or &quot;hazard&quot;) is to happen given that it hasn&#39;t happened before. In the case of demand, the hazard rate is the probability that a consumer will buy the good at a certain price \(p\), conditional on having not bought the good before. So it makes some sense that the markup would be based on the hazard rate of demand.</p>
-
-<h3 id="an-example">An example</h3>
-
-<p>Suppose \( F(v) \sim U[a,b]\) - the consumers are equally likely to be willing to pay anywhere from \(a\) to \(b\) for the product. Then \(F(v) = \frac{v-a}{b-a} \), and \(f(v) = \frac{1}{b-a}\). Plugging this into the pricing formula we derived above, we get</p>
-
-<p>$$\begin{align}
-p &amp; = c + \frac{1- \frac{p-a}{b-a}}{\frac{1}{b-a}} \cr
-\implies p &amp; = \frac{c+b}{2} \cr
-\end{align}$$</p>
-
-<p>So, for uniformly distributed valuations of the product, the monopolist should optimally price their product at half of marginal cost plus the maximum valuation.</p>
-
-<h3 id="more-on-the-hazard-rate">More on the hazard rate</h3>
-
-<p>The hazard rate, \(\lambda\), turns out to be important to analyzing markets. We usually assume that \(\lambda\) is nondecreasing in \(p\). This is equivalent to assuming that the density of demand is log-concave. A proof of the statement follows.</p>
-
-<h5 id="proof">Proof</h5>
-
-<p>$$\begin{align}
-f&#39;(x)[1-F(x)] &amp; = \int_x^\infty f&#39;(x)f(t)dt \cr
- &amp; = \int_x^\infty \frac{f&#39;(x)}{f(x)}f(t)f(x)dt \cr
- &amp; \ge \int_x^\infty \frac{f&#39;(t)}{f(t)}f(t)f(x)dt  ~~~~(\because t \ge x) \cr
- &amp; = f(x)[f(\infty) - f(x)]
- &amp; \ge - f(x)^2
-\end{align}$$</p>
-
-<p>So log-concave \(f(x) \equiv \lambda\) is nondecreasing. </p>
 
   </div>
   

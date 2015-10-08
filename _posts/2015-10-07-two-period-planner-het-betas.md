@@ -12,7 +12,7 @@ summary: A two-period economy is populated by two types of agents with different
 
 Two period models are nice because they're usually easy to solve and can get at some good intuition. Two period models and most dynamic economic models use a discount rate, often \\(\beta\\) or \\(\delta\\), which is how much the agent values future payoffs in relation to present payoffs.
 
-In this model there are \\(n\\) agents in total, \\(k\\) of whom have discount rate \\(\beta\in [0,1]\\), and the remaining \\(n-k\\) with discount rate \\(\beta =1\\). The agents live for two periods, \\(t=1,2\\), and receive a consumption endowment of 1 in the period 1 and \\(e\gt 0\\) in period 2. They have preferences over per-period consumption given by \\(\log c_t\\). Their lifetime utilities are
+In this model there are \\(n\\) agents in total, \\(k\\) of whom have discount rate \\(\beta\in [0,1]\\) (impatient), and the remaining \\(n-k\\) with discount rate \\(\beta =1\\) (patient). The agents live for two periods, \\(t=1,2\\), and receive a consumption endowment of 1 in the period 1 and \\(e\gt 0\\) in period 2. They have preferences over per-period consumption given by \\(\log c_t\\). Their lifetime utilities are
 
 $$\begin{align}
  \text{k impatient:} ~~ V(c_1,c_2) &= \log c_1 + \beta \log c_2 \cr
