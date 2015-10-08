@@ -204,6 +204,42 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
 
       <a class="sidebar-nav-item" href="https://github.com/akhilrao/archive/v0.0.1.zip">Download</a>
       <a class="sidebar-nav-item" href="https://github.com/akhilrao">GitHub project</a>
@@ -217,6 +253,83 @@
 
     <div class="content container">
       <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/macro%20theory/2015/10/07/two-period-planner-het-betas/">
+        A two period planner's problem with heterogeneous time preferences
+      </a>
+    </h1>
+
+    <span class="post-date">07 Oct 2015</span>
+
+    <p>Two period models are nice because they&#39;re usually easy to solve and can get at some good intuition. Two period models and most dynamic economic models use a discount rate, often \(\beta\) or \(\delta\), which is how much the agent values future payoffs in relation to present payoffs.</p>
+
+<p>In this model there are \(n\) agents in total, \(k\) of whom have discount rate \(\beta\in [0,1]\), and the remaining \(n-k\) with discount rate \(\beta =1\). The agents live for two periods, \(t=1,2\), and receive a consumption endowment of 1 in the period 1 and \(e\gt 0\) in period 2. They have preferences over per-period consumption given by \(\log c_t\). Their lifetime utilities are</p>
+
+<p>$$\begin{align}
+ \text{k impatient:} ~~ V(c_1,c_2) &amp;= \log c_1 + \beta \log c_2 \cr
+ \text{n-k patient:} ~~ U(c_1,c_2) &amp;= \log c_1 + \log c_2 \cr
+\end{align}$$</p>
+
+<p>They want to choose consumption plans that maximize their utilities. The benevolent dictator/social planner wants to maximize the social welfare function</p>
+
+<p>$$\begin{align}
+ W &amp;= kV + (n-k)U \cr
+ &amp;= k( \log c_{1}^{v} + \beta \log c_{2}^{v}) + (n-k)( \log c_{1}^{u} + \beta \log c_{2}^{u}) \cr
+\end{align}$$</p>
+
+<p>Assume the planner has to choose the same consumption plan for every agent of the same type, but can choose different consumption plans for the patient and impatient agents.</p>
+
+<h4 id="benchmark-case-no-storage-technology">Benchmark case: No storage technology</h4>
+
+<p>Suppose there are no refrigerators or other storage technologies, so that the consumption good can&#39;t be carried across time. The dictator&#39;s problem is</p>
+
+<p>$$\begin{align} 
+\max_p &amp; ~~W ~~ \text{s.t.}~~ c_1^u + c_1^v \le n ~ , ~ c_2^u + c_2^v \le ne \cr
+\implies L &amp; = W + \lambda_1 (n-c_1^u - c_1^v) + \lambda_2 (ne-c_2^u - c_2^v) \cr
+\end{align}$$</p>
+
+<p>Since the utility functions are log, all the variables must be strictly greater than 0 and we can ignore non-negativity constraints in the lagrangian.</p>
+
+<p>From saddle point conditions, we get that the optimal consumption plans will satisfy</p>
+
+<p>$$\begin{align}
+c_1^u + c_1^v &amp;= n \cr
+c_2^u + c_2^v &amp;= ne \cr
+kc_1^u &amp;= (n-k)c_1^v \cr
+\beta kc_1^u &amp;= (n-k)c_1^v \cr
+\end{align}$$</p>
+
+<p>Without a use for savings, the optimal plan is to just consume all resources in the period they&#39;re received: \(c_1^v = k\), \(c_1^u = (n-k)\), and \(c_1^v=\frac{k \beta ne}{n-k(1-\beta )}, c_1^u=ne-\frac{k \beta ne}{n-k(1- \beta )}\). The lack of savings technology means \(\beta\) only affects the second period allocation, not the first. When \(\beta \lt 1\), the impatient agents receive less consumption good because they care less about this period. When \(\beta=1\) each group of agents just consumes their period endowment.</p>
+
+<h4 id="with-a-storage-technology">With a storage technology</h4>
+
+<p>Now suppose a storage technology is developed, so that endowments can be carried across periods. The technology has a transformation rate \(R\gt 0\) so that 1 unit of the good stored in period 1 becomes \(R\) units of the good in period 2. The dictator&#39;s problem is now</p>
+
+<p>$$\begin{align} 
+\max_p &amp; ~~W ~~ \text{s.t.}~~ R(c_1^u + c_1^v) + c_2^u + c_2^v \le ne + Rn \cr
+\implies L &amp; = W + \lambda_1 (n-c_1^u - c_1^v) + \lambda_2 (ne-c_2^u - c_2^v) \cr
+\end{align}$$</p>
+
+<p>From saddle point conditions, we get that the optimal consumption plans will be</p>
+
+<p>$$\begin{align}
+c_1^u &amp;=k \cr
+c_1^v &amp;=n-k \cr
+c_2^u &amp;=ne-\frac{k \beta ne}{n-k(1- \beta )} \cr
+c_2^v &amp;=\frac{k \beta ne}{n-k(1-\beta )} ne \cr
+\end{align}$$</p>
+
+<p>The welfare effects of the technology depends on \(\beta\) and \(R\), the rates of time preference and transformation. If the transformation rate is equal to the agent&#39;s discount rate, then the agent will be better off because they smooth their consumption by saving in the first period.</p>
+
+<p>If \(\beta = R^{-1}\), the impatient type will be better off from the technology, but the patient type&#39;s welfare change is ambiguous. If \(\beta = R^{-1} = 1\), both types will be better off from the technology. </p>
+
+<p>If \(\beta \neq R^{-1} \), the impatient type will not necessarily be better off. If \(\beta \neq R^{-1} \), but \(R^{-1}=1\), the patient type will be better off.</p>
+
+<p>As long as \(\beta \lt 1\), the savings technology cannot make them both better off.</p>
+
+  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -254,11 +367,11 @@ c_{l}e ~~~ \text{if} ~ \theta=v_l
 
 <p>where \(0\lt c_h\lt c_l\). Preparing for and taking the test is useless except that it is costlier for the low type, and can be used to distinguish between the types.</p>
 
-<p>The equilibrium concept we use here is a Perfect Bayesian Equilibrium (<a href="https://en.wikipedia.org/wiki/Bayesian_game#Perfect_Bayesian_equilibrium">PBE</a>. The worker&#39;s choice of test score is optimal given their knowledge of their type, the firm&#39;s beliefs of the worker&#39;s type after observing their test score \(\mu(e)\) is formed using Bayes&#39; Rule, and the wage \(w(e)\) is a Nash equilibrium for \(e(\theta)\) given the firm&#39;s beliefs \(\mu(e)\).</p>
+<p>The equilibrium concept we use here is a Perfect Bayesian Equilibrium (<a href="https://en.wikipedia.org/wiki/Bayesian_game#Perfect_Bayesian_equilibrium">PBE</a>). The worker&#39;s choice of test score \(e(\theta)\) is optimal given their knowledge of their type, the firm&#39;s beliefs of the worker&#39;s type after observing the test score \(\mu(e)\) is formed using Bayes&#39; Rule, and the wage \(w(e)\) is a Nash equilibrium for \(e(\theta)\) given the firm&#39;s beliefs \(\mu(e)\).</p>
 
-<p>One separating PBE that we can construct is \(w^*(e^*(v_h)) = v_h\) and \(w^*(e^*(v_l)) = v_l\), \(e^*(v_l)=0\), and \(e^*(v_h)=\tilde{e}\), where \(\tilde{e}\) is the least education the high type can get while still getting utility at least as high as if they pooled with the low type. </p>
+<p>One separating PBE that we can construct is \(w^*(e^*(v_h)) = v_h\), \(w^*(e^*(v_l)) = v_l\), \(e^*(v_l)=0\), and \(e^*(v_h)=\tilde{e}\), where \(\tilde{e}\) is the least education the high type can get while still getting utility at least as high as if they pooled with the low type.</p>
 
-<p>The argument for this is pretty simple. If the high type can signal their ability, there&#39;s no point in the low type scoring above 0 on the test - effort is costly. If the firm can distinguish high and low types, then they will pay each their marginal product.</p>
+<p>The argument for this is pretty simple. If the high type can signal their ability, there&#39;s no point in the low type scoring above 0 on the test - effort is costly, and they&#39;d be better off not exerting it. If the firm can distinguish high and low types, then they will pay each their marginal product.</p>
 
 <p>The most efficient separating PBE is when the high type engages in as little signalling behavior as possible. This occurs when the high type&#39;s education level makes them indifferent between being employed and pooling with the low type. Letting \(c_l(e)=c(e,v_l)\) and \(c_h(e)=c(e,v_h)\),</p>
 
@@ -462,136 +575,6 @@ f&#39;(x)[1-F(x)] &amp; = \int_x^\infty f&#39;(x)f(t)dt \cr
 \end{align}$$</p>
 
 <p>So log-concave \(f(x) \equiv \lambda\) is nondecreasing. </p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/micro%20theory/2015/10/03/repeated-bertrand-collusion/">
-        Repeated play and collusion in an N-firm Bertrand oligopoly
-      </a>
-    </h1>
-
-    <span class="post-date">03 Oct 2015</span>
-
-    <p>So far, <a href="http://akhilrao.github.io/micro%20theory/2015/09/29/bertrand-cournot-oligopoly/">we&#39;ve seen</a> one-shot Bertrand games with up to \(N\) firms. What happens if the firms are playing a Bertrand game repeatedly for \(T\) periods?</p>
-
-<p>Consider a repeated Bertrand oligopoly with \(N \ge 2\) firms, played for \(T \lt \infty\) periods. We know that the one-shot Nash equilibrium is \(p_{i}=c \ \ \ \forall i \). For \(T\) periods, we start at the last period and work backwards (backwards induction).</p>
-
-<p>In the last period, the game is a one-shot Bertrand game. Thus the equilibrium price will be \(p_{i,T}=c \ \ \ \forall i\). Each firm knows that in period \(T-1\), and  since there&#39;s no possibility of colluding tomorrow they each play \(p_{i,T-1}=c\). We can extend the argument to see that \(p_{i,t}=c \ \ \ \forall t,i\).</p>
-
-<p>What if \(T = \infty\)? If the game is infinitely repeated, we can&#39;t apply backwards induction since there is no last period. Instead, we define trigger strategies and look for parameter restrictions that would need to hold to make the strategy a <a href="https://en.wikipedia.org/wiki/Subgame_perfect_equilibrium">subgame-perfect Nash equilibrium</a>. </p>
-
-<p>Let&#39;s take the same example, and assume that play is history-dependent, i.e. players consider what happened before in deciding what to do today. We&#39;ll consider 3 cases: first when players compete in an infinitely repeated market like above, second when the market as an exogenous probability of ending after each period, and third when firms compete in both markets simultaneously.</p>
-
-<h3 id="case-1">Case 1:</h3>
-
-<p>Suppose players are competing in a market with inverse demand \(D(p)\), call it market A, and have a discount factor \(\delta \lt 1\). The history at any period \(T\) is given by:</p>
-
-<p>$$ H_{T-1} = \{ (p_{i,t}); i=1,2,...,N; t=1,2,...,T-1 \} $$</p>
-
-<p>The <a href="https://en.wikipedia.org/wiki/Trigger_strategy">trigger strategy</a> I define for each player \(i\) to collude is:</p>
-
-<p>$$ p_{i,t} =
-\begin{cases}
-p_m \ \ \text{if all elements of} \ \ H_{t-1} = p_m, \ \ \text{or if} \ \ t=1 \cr
-c \ \ \text{otherwise}
-\end{cases} $$</p>
-
-<p>where \(p_m\) is the monopoly price, and \(\pi_m\) is the monopoly profit. We assume that if the firms collude, they do so optimally - they set the price at the monopoly price and divide the profits equally. This is better than pricing at marginal cost and earning 0 profits. But in every period, there is an incentive for firms to deviate and slightly undercut everyone else, capturing the full monopoly profits for one period if they do. However, when they do this everyone goes into the punishment phase and plays \(p=c\), so nobody makes any profits after that. The decision to cooperate or deviate comes down to weighing a stream of discounted payoffs every period against one big payoff today. The discount factor, \(\delta \in (0,1)\) determines how heavily firms weigh future payoffs against present payoffs.</p>
-
-<p>The firms&#39; payoffs from cooperating and deviating optimally are:</p>
-
-<p>$$\begin{align}
-\text{Cooperate:} &amp; \ \ \frac{\pi_m}{N} + \delta\frac{\pi_m}{N} + \delta^2\frac{\pi_m}{N} + ... \cr
-&amp; = \frac{\pi_m}{N}\frac{1}{1-\delta} \cr \cr
-\text{Deviate:} &amp; \ \ \pi_m + 0 + 0 + ... \cr
-&amp; = \pi_m \cr
-\end{align}$$</p>
-
-<p>To find the minimum \(\delta\) that can support collusion, we set the cooperation payoff to be greater than or equal to the deviation payoff and solve for \(\delta\). This gives us that the critical discount factor is</p>
-
-<p>$$\delta_c \ge \frac{N-1}{N} $$</p>
-
-<p>So as \(N \to \infty\), \(\delta_c \to 1\). When \(N=2, \delta_c \ge \frac{1}{2}\). Collusion becomes harder to sustain when there are more firms, as it requires each firm to weight future payoffs increasingly heavily against current payoffs.</p>
-
-<h3 id="case-2">Case 2:</h3>
-
-<p>In this case, there is an exogenous probability \(\alpha \in (0,1)\) that the market will end after each period. Let&#39;s call this market B. The strategy we defined earlier can be applied here and the deviation payoff is the same, but the cooperation payoff is a little different:</p>
-
-<p>$$\begin{align}
-\text{Cooperate:} &amp; \ \ \frac{\pi_m}{N} + \delta(1-\alpha)\frac{\pi_m}{N} + \delta^2(1-\alpha)^2\frac{\pi_m}{N} + ... \cr
-&amp; = \frac{\pi_m}{N}\frac{1}{1-\delta(1-\alpha)} \cr
-\end{align} $$</p>
-
-<p>Solving for the critical discount factor, we get</p>
-
-<p>$$\delta_c \ge \frac{N-1}{N}\frac{1}{(1-\alpha)} $$</p>
-
-<p>When \(N=2\): </p>
-
-<ul>
-<li>\(\alpha\to0 \implies \delta_c \ge \frac{1}{2}\)</li>
-<li>\(\alpha=\frac{1}{2} \implies \delta_c \ge 1\)</li>
-<li>\(\alpha\to1 \implies \delta_c \ge \infty\)</li>
-</ul>
-
-<p>If the market will survive with probability 1, they are as likely to cooperate as in case 1. If the market is 50% or more likely to end tomorrow, they will not cooperate.</p>
-
-<h3 id="case-3">Case 3:</h3>
-
-<p>Finally, what if the firms compete in markets A and B simultaneously? Is collusion more or less likely then? The strategies and payoffs are a bit different here.</p>
-
-<p>The history at time T is: </p>
-
-<p>$$ H_{T-1} = \{ (p_{i,t,A},p_{i,t,B}); i=1,2,...,N; t=1,2,...,T-1\} $$</p>
-
-<p>The trigger strategy I define is:</p>
-
-<p>$$ (p_{i,t,A},p_{i,t,B}) =
-\begin{cases}
-(p_m,p_m) \ \ \text{if all elements of} \ \ H_{t-1} = (p_m,p_m), \text{or if} \ \ t=1 \cr
-c \ \ \text{otherwise}
-\end{cases} $$</p>
-
-<p>The payoffs from cooperating and deviating are:</p>
-
-<p>$$\begin{align}
-\text{Cooperate:} &amp; \ \ (\frac{\pi_m}{N} + \frac{\pi_m}{N}) + (\delta\frac{\pi_m}{N} + \delta(1-\alpha)\frac{\pi_m}{N}) + (\delta^2\frac{\pi_m}{N} + \delta^2(1-\alpha)^2\frac{\pi_m}{N}) + ... \cr
-&amp; = 2\frac{\pi_m}{N} + \frac{\pi_m}{N}\frac{\delta(1+(1-\alpha))}{1-\delta(1+(1-\alpha))} \cr \cr
-\text{Deviate:} &amp; \ \ 2\pi_m + 0 + 0 + ... \cr
-&amp; = 2\pi_m \cr
-\end{align}$$</p>
-
-<p>I&#39;m defining this as simply as I can: firms collude if other firms cooperate in both markets. Any firm who deviates is going to deviate in both markets at the same time. If firms see another firm deviate in either market, all firms go into the punishment phase and play \(p=c\) forever after. This way of defining it makes sense to me because deviating in both markets is better than deviating in one market, given the trigger strategy. I think this trigger strategy also prevents a firm from repeatedly defecting in only one market at a time, which could happen if a double-defection was needed to initiate the punishment phase.</p>
-
-<p>Solving like before, we get</p>
-
-<p>$$\delta_c \ge \frac{2(N-1)}{1+2(N-1)}\frac{1}{(2-\alpha)} $$</p>
-
-<p>As \(N \to \infty\), \(\delta_c \to 1 ~~~ \forall \alpha\). When \(N=2\): </p>
-
-<ul>
-<li>\(\alpha\to0 \implies \delta_c \ge \frac{1}{3}\)</li>
-<li>\(\alpha=\frac{1}{2} \implies \delta_c \ge 1\)</li>
-<li>\(\alpha\to1 \implies \delta_c \ge \frac{2}{3}\)</li>
-</ul>
-
-<p>As I understand it, \(\alpha=\frac{1}{2}\) represents a state of total uncertainty - market B is equally likely to exist or not exist tomorrow. Any non-uniform distribution over the state of market B tomorrow gives the players more information about what is likely to happen than when \(\alpha=\frac{1}{2}\). When players are completely uncertain about whether or not market B will exist tomorrow, they need to weigh tomorrow at least as heavily as today in order to cooperate (given our assumptions on \(\delta\), they can&#39;t do that). When market B survives with probability 1, they are most likely to cooperate (\(\delta \ge \frac{1}{3}\)). When market B survives with probability 0, they need a discount factor of at least \(\frac{2}{3}\) to cooperate.</p>
-
-<p>Collusion can be more or less likely in case 3 than case 2 or case 1. Depending on how likely it is that market B will exist tomorrow the firms&#39; payoffs from cooperating can be more than doubled, but their payoffs from deviating are doubled no matter what happens to market B tomorrow.</p>
-
-<h3 id="summary">Summary</h3>
-
-<p>The one-shot and finitely-repeated Bertrand games have very vicious competition, but as we see here the infinitely-repeated Bertrand game can support collusion if firms value the future highly enough. As the number of firms increases, collusion gets harder to support. When the market might end at any time, collusion gets harder to support. One way to make collusion more feasible when a market could end at any time is to have the firms compete simultaneously in another market that won&#39;t end. Depending on the probability of the second market ending, the two-market case may be more collusive than a single unending market. Repeated-play makes things interesting.</p>
-
-<h4 id="variations-to-explore">Variations to explore</h4>
-
-<ul>
-<li><p>Infinitely-repeated Cournot oligopoly</p></li>
-<li><p>Infinitely-repeated matrix game with correlated equilibria. The Folk Theorem can be used here.</p></li>
-<li><p>Finitely-repeated and infinitely-repeated Rubinstein bargaining. Not really a variation of this - the only similarity is that they&#39;re both dynamic games - but still an interesting model.</p></li>
-</ul>
 
   </div>
   

@@ -37,11 +37,11 @@ c_{l}e ~~~ \text{if} ~ \theta=v_l
 
 where \\(0\lt c_h\lt c_l\\). Preparing for and taking the test is useless except that it is costlier for the low type, and can be used to distinguish between the types.
 
-The equilibrium concept we use here is a Perfect Bayesian Equilibrium ([PBE](https://en.wikipedia.org/wiki/Bayesian_game#Perfect_Bayesian_equilibrium). The worker's choice of test score is optimal given their knowledge of their type, the firm's beliefs of the worker's type after observing their test score \\(\mu(e)\\) is formed using Bayes' Rule, and the wage \\(w(e)\\) is a Nash equilibrium for \\(e(\theta)\\) given the firm's beliefs \\(\mu(e)\\).
+The equilibrium concept we use here is a Perfect Bayesian Equilibrium ([PBE](https://en.wikipedia.org/wiki/Bayesian_game#Perfect_Bayesian_equilibrium)). The worker's choice of test score \\(e(\theta)\\) is optimal given their knowledge of their type, the firm's beliefs of the worker's type after observing the test score \\(\mu(e)\\) is formed using Bayes' Rule, and the wage \\(w(e)\\) is a Nash equilibrium for \\(e(\theta)\\) given the firm's beliefs \\(\mu(e)\\).
 
-One separating PBE that we can construct is \\(w^\*(e^\*(v_h)) = v_h\\) and \\(w^\*(e\^*(v_l)) = v_l\\), \\(e^\*(v_l)=0\\), and \\(e^\*(v_h)=\tilde{e}\\), where \\(\tilde{e}\\) is the least education the high type can get while still getting utility at least as high as if they pooled with the low type. 
+One separating PBE that we can construct is \\(w^\*(e^\*(v_h)) = v_h\\), \\(w^\*(e\^*(v_l)) = v_l\\), \\(e^\*(v_l)=0\\), and \\(e^\*(v_h)=\tilde{e}\\), where \\(\tilde{e}\\) is the least education the high type can get while still getting utility at least as high as if they pooled with the low type.
 
-The argument for this is pretty simple. If the high type can signal their ability, there's no point in the low type scoring above 0 on the test - effort is costly. If the firm can distinguish high and low types, then they will pay each their marginal product.
+The argument for this is pretty simple. If the high type can signal their ability, there's no point in the low type scoring above 0 on the test - effort is costly, and they'd be better off not exerting it. If the firm can distinguish high and low types, then they will pay each their marginal product.
 
 The most efficient separating PBE is when the high type engages in as little signalling behavior as possible. This occurs when the high type's education level makes them indifferent between being employed and pooling with the low type. Letting \\(c_l(e)=c(e,v_l)\\) and \\(c_h(e)=c(e,v_h)\\),
 
