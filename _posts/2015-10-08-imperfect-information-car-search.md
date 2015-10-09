@@ -63,12 +63,18 @@ which looks pretty similar to the expected-utility maximizer's solution, but wit
 
 #### Summary
 
-This is a pretty cool problem. I disagreed with my professor about the solution - I used the worst-case bound, while he used the expected-utility bound. He pointed out that in this case, the worst-case bound is a subset of the expectation-bound (I think that must be true generally), so the worst-case bound ignored a large area where an expected-utility maximizer would find it optimal to search. I agree with his argument, but I still prefer the worst-case bound to the expectation-bound. In writing this post, I've been trying to understand why.
+This is a pretty cool problem. I disagreed with my professor about the solution - I used the worst-case bound, while he used the expected-utility bound. He pointed out that in this case, the worst-case bound is a subset of the expectation-bound (I think that must be true generally), so the worst-case bound ignores a large area where an expected-utility maximizer would find it optimal to search. I agree with his argument, but I still prefer the worst-case bound to the expectation-bound. In writing this post, I've been trying to understand why.
 
 I think the worst-case bound is a more general solution to the problem (or a solution to a more general problem) than the expectation-bound. In this problem, we're assuming we know a lot about the distribution of values - we know pretty much exactly what it looks like always, and so we know we can use the expectation to figure out what to do. 
 
 If we relax that assumption to only knowing the supports of the distribution of values, then we can't take an expectation to maximize expected utility. We can still find a worst-case bound and maximize a minimum utility in cases like this. The worst-case bound requires less information than the expected-value bound; we can set a worst-case bound even if we have no information about the distribution of sellers (or if the distribution of values is continuous and has no expectation, like a Cauchy) by looking at our own budget constraint. That said, if we have the information there's no reason to ignore it.
 
-While the minimum-utility maximizer may ignore opportunities that the expected-utility maximizer would take, the minimum-utility maximizer can consistently apply their decision rule in more situations than the expected-utility maximizer can. 
+While the minimum-utility maximizer may ignore opportunities that the expected-utility maximizer would take, the minimum-utility maximizer can consistently apply their decision rule in more situations than the expected-utility maximizer can.
 
-I'm not sure whether I maximize expected-utility or minimum-utility, but I like this problem a lot.
+I found a neat quote on [Turing's Invisible Hand](https://agtb.wordpress.com/2009/09/06/cs-and-economics-different-attitudes/) about this:
+
+*In a situation that already exists, there is obviously some empirical distribution, and it is hard to argue against taking it into account.  In a situation that doesn’t exist, there is yet no empirical distribution, so in order to prepare for it we need to either theoretically guess the future distribution, or prepare for worst case.*
+
+Most situations we consider in economics already exist, or are similar to ones that do, so there's usually a distribution we can work with or a reasonable guess we can make. The connection between EU-maxing/minU-maxing and risk preference is interesting to me; I'd like to go back to the manager's problem and add uncertainty and different risk preferences in this form between the manager and owner.
+
+I like this problem. At some point, I want to try solving it with a generic distribution of values and running it in R.
