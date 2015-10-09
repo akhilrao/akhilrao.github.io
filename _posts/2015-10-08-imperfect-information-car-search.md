@@ -27,14 +27,14 @@ Based on \\(\beta\\), \\(N\\), and \\(c\\), when will it be optimal for you to s
 
 #### Benchmark case: Expected-utility maximizer
 
-An expected utility maximizer would start by figuring out the expected value of a search,
+An expected utility maximizer would start by figuring out the expected quality of a seller,
 
 $$\begin{align}
 \hat{\beta} &= \frac{1}{N} \sum_{i=1}^{N} \beta^i \cr
 &= \frac{\beta}{N} \left( \frac{1- \beta^N}{1- \beta } \right)
 \end{align}$$
 
-We assume we're starting from no prior searches so that we don't have to condition on information and update beliefs, which any optimizing agent ought to be doing. We want the expected value of a search, net of inspection costs, to be positive, or
+We assume we're starting from no prior searches so that we don't have to condition on information and update beliefs, which any optimizing agent ought to be doing. The EU-maximizer wants the expected value of a search net of inspection costs to be positive, or
 
 $$\begin{align}
 \hat{\beta}(v-p) - c &\ge 0 \cr
@@ -65,7 +65,7 @@ which looks pretty similar to the expected-utility maximizer's solution, but wit
 
 This is a pretty cool problem. I disagreed with my professor about the solution - I used the worst-case bound, while he used the expected-utility bound. He pointed out that in this case, the worst-case bound is a subset of the expectation-bound (I think that must be true generally), so the worst-case bound ignored a large area where an expected-utility maximizer would find it optimal to search. I agree with his argument, but I still prefer the worst-case bound to the expectation-bound. In writing this post, I've been trying to understand why.
 
-I think the worst-case bound is a more general solution to the problem (or a solution to a more general problem) than the expectation-bound. In this problem, we're assuming we know a lot about the distribution of values - we know pretty much exactly what it looks like always, and so we use the expectation to figure out what to do. If we relax that assumption to only knowing the supports of the distribution of values, then we can't take an expectation to maximize expected utility. But we can still find a worst-case bound and maximize a minimum utility. That said, if we have the information about the distribution, why would we ignore it?
+I think the worst-case bound is a more general solution to the problem (or a solution to a more general problem) than the expectation-bound. In this problem, we're assuming we know a lot about the distribution of values - we know pretty much exactly what it looks like always, and so we use the expectation to figure out what to do. If we relax that assumption to only knowing the supports of the distribution of values, then we can't take an expectation to maximize expected utility. We can still find a worst-case bound and maximize a minimum utility in cases like this. The worst-case bound requires less information than the expected-value bound; we can set a worst-case bound even if we have no information about the distribution of sellers by looking at our own budget constraint. That said, if we have the information there's no reason to ignore it.
 
 While the minimum-utility maximizer may ignore opportunities that the expected-utility maximizer would take, the minimum-utility maximizer can consistently apply their decision rule in more situations than the expected-utility maximizer can. 
 
