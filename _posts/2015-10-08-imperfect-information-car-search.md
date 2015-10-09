@@ -63,7 +63,7 @@ which looks pretty similar to the expected-utility maximizer's solution, but wit
 
 #### Summary
 
-This is a pretty cool problem. I disagreed with my professor about the solution - I used the worst-case bound, while he used the expected-utility bound. He pointed out that in this case, the worst-case bound is a subset of the expectation-bound (I think that must be true generally), so the worst-case bound ignores a large area where an expected-utility maximizer would find it optimal to search. I agree with his argument, but I still prefer the worst-case bound to the expectation-bound. In writing this post, I've been trying to understand why.
+This is a pretty cool problem. I initially disagreed with my professor about the solution - I used the worst-case bound, while he used the expected-value bound. He pointed out that in this case, the worst-case bound is a subset of the expected-value bound (I think that must be true generally), so the worst-case bound ignores a large area where an expected-utility maximizer would find it optimal to search. I agree with his argument, but I still prefer the worst-case bound to the expected-value bound. In writing this post, I've been trying to understand why.
 
 I think the worst-case bound is a more general solution to the problem (or a solution to a more general problem) than the expectation-bound. In this problem, we're assuming we know a lot about the distribution of values - we know pretty much exactly what it looks like always, and so we know we can use the expectation to figure out what to do. 
 
