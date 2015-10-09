@@ -19,7 +19,7 @@ $$v_i =
 0 ~~ \text{with probability} ~~ 1- \beta_i \cr
 \end{cases}$$
 
-where \\(\beta_i = \beta^i, i=1,...,N\\). So as the number of sellers increases, we only add sellers worse than the current ones. Since we search in a random order, for a given N this just tells us the distribution of sellers. A seller's \\(\beta_i\\) is their private information. This is sort of like Craigslist or some other internet search; you search randomly over sellers of uncertain quality. 
+where \\(\beta_i = \beta^i, i=1,...,N\\). So as the number of sellers increases, we only add sellers worse than the current ones. Since we search in a random order, for a given \\(N\\) this just tells us the distribution of sellers. A seller's \\(\beta_i\\) is their private information. This is sort of like Craigslist or some other internet search; you search randomly over sellers of uncertain quality. 
 
 You're a savvy shopper though, and before you buy the car you're going to get it inspected, which costs \\(c\\). You could also think about this as a search cost, to avoid confusion over inspection-less visits to sellers. Suppose the price of a car is \\(1/2\\) from every seller, for simplicity. You can inspect as many sellers as you want, but only one at a time.
 
