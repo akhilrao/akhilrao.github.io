@@ -67,7 +67,9 @@ This is a pretty cool problem. I initially disagreed with my professor about the
 
 I think the worst-case bound is a more general solution to the problem (or a solution to a more general problem) than the expectation-bound. In this problem, we're assuming we know a lot about the distribution of values - we know pretty much exactly what it looks like always, and so we know we can use the expectation to figure out what to do. 
 
-If we relax that assumption to only knowing the supports of the distribution of values, then we can't take an expectation to maximize expected utility. We can still find a worst-case bound and maximize a minimum utility in cases like this. The worst-case bound requires less information than the expected-value bound; we can set a worst-case bound even if we have no information about the distribution of sellers (or if the distribution of values is continuous and has no expectation, like a Cauchy) by looking at our own budget constraint. That said, if we have the information there's no reason to ignore it.
+If we relax that assumption to only knowing the supports of the distribution of values, then we can't take an expectation to maximize expected utility. We can still find a worst-case bound and maximize a minimum utility in cases like this. 
+
+In general, the worst-case bound requires less information than the expected-value bound; we can set a worst-case bound even if we have no information about the distribution of sellers (or if the distribution of values is continuous and has no expectation, like a Cauchy) by looking at our own budget constraint. That said, if we have the information there's no reason to ignore it.
 
 While the minimum-utility maximizer may ignore opportunities that the expected-utility maximizer would take, the minimum-utility maximizer can consistently apply their decision rule in more situations than the expected-utility maximizer can.
 
