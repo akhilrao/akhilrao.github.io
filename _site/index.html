@@ -252,6 +252,50 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
 
       <a class="sidebar-nav-item" href="https://github.com/akhilrao/archive/v0.0.1.zip">Download</a>
       <a class="sidebar-nav-item" href="https://github.com/akhilrao">GitHub project</a>
@@ -265,6 +309,88 @@
 
     <div class="content container">
       <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/macro%20theory/2015/10/10/2015-10-10-otj-search/">
+        On-the-job search with dynamic programming
+      </a>
+    </h1>
+
+    <span class="post-date">10 Oct 2015</span>
+
+    <p>Consider a worker trying to maximize lifetime consumption and leisure. She needs a job to get stuff to consume, which eats into her leisure time, and gives us an interesting tradeoff to study.</p>
+
+<p>The total time available is normalized to 1 and everything is measured in terms of the consumption good. For any wage \(w_t\), the worker needs to decide how much time to work, \(1-l_t\). Her labor income is \(w_t (1-l_t)\). If she&#39;s unemployed, she gets to spend all her time on leisure, but she gets no income and therefore no consumption. Formally, the worker solves</p>
+
+<p>$$\begin{align}
+\max_{c_t,l_t} &amp;~ E_0 \sum_{t=0}^{\infty} \beta^t[\ln c_t + \phi \ln l_t] \cr
+\text{s.t.} &amp;~ 0 \le l \le 1 \cr
+&amp;~ c_t \le w_t (1-l_t)
+\end{align}$$</p>
+
+<p>where \(\beta \in (0,1)\) and \(\phi \gt 0\).</p>
+
+<p>In the beginning of each period, the unemployed worker receives an offer \(w \in [0,B],~B \lt \infty\), drawn randomly from the continuous distribution function \(F(w)\). If the worker accepts the offer, she begins receiving labor income in the same period.</p>
+
+<p>The employed worker can pay a search cost \(z \gt 0\) to receive another offer randomly drawn from the same distribution, \(F(w)\) - she can keep searching on the job. If she accepts the offer, she begins working at the new job in the following period.</p>
+
+<p>To keep things simple, let&#39;s assume there is no exogenous job destruction; once an offer is accepted, the job survives with probability 1. There is no saving or borrowing.</p>
+
+<p>The utility function is natural log in consumption and leisure, so we can rule out 0 and \(\infty\) as solutions. The unemployed worker will always accept their first job offer. The action is in the employed worker searching.</p>
+
+<h4 id="the-bellman-equations">The Bellman equations</h4>
+
+<p>To solve this problem, we break the consumer&#39;s infinite period down into a series of smaller one-period decisions and find an optimal solution to that one equation (<a href="https://en.wikipedia.org/wiki/Dynamic_programming">dynamic programming</a>). In each period, the workers face the following decisions:</p>
+
+<p>$$\begin{align}
+\text{Unemployed:} ~~ V^u (w) &amp; = \max_l \{accept , ~ reject \} \cr
+&amp; = \max_l \{ u(w(1-l),l) + \beta V^e (w), u(0,1)\} \cr
+\end{align}$$</p>
+
+<p>Clearly, the unemployed will always accept any offer \(w \gt 0\).</p>
+
+<p>$$\begin{align}
+\text{Employed:} ~~ V^e (w) &amp; = \max_l \{don&#39;t~search , ~ search \} \cr
+&amp; = \max_l \left\{ \frac{u(w(1-l),l)}{1-\beta}, \frac{u(w(1-l)-z,l)}{1-\beta} + \frac{\beta}{1-\beta} \int_w^B (V^e (w&#39;) - V^e (w)) \ dF(w&#39;) \right\} \cr
+\end{align}$$</p>
+
+<p>\(w&#39;\) is the next period&#39;s offer. The search integral is a <a href="https://en.wikipedia.org/wiki/Lebesgue_integration">Lebesgue integral</a>. The worker will obviously not accept an offer at a wage lower than the current one, so we only integrate over the current wage to the upper bound.</p>
+
+<h4 id="is-there-a-reservation-wage">Is there a reservation wage?</h4>
+
+<p>In this context, &quot;is there a wage \(\bar{w}\) such that the employed worker searches if and only if \(w \le \bar{w}\)&quot;? The answer is yes. To find \(\bar{w}\), let&#39;s assume it exists, in which case it satisfies </p>
+
+<p>$$V^e (Don&#39;t~search) = V^e (Search)$$ </p>
+
+<p>Then we do some algebra and get that</p>
+
+<p>$$\bar{w}:~ \ln(w(1-l)) - \ln(w(1-l)-z) = \beta \int_{\bar{w}}^B (V^e (w&#39;) - V^e (\bar{w})) \ dF(w&#39;) $$</p>
+
+<p>The LHS is the search penalty to the marginal utility of consumption (marginal cost of searching), and the RHS is the discounted expected increase in wage from the search (marginal benefit of searching).</p>
+
+<p>What else can we say about the worker&#39;s search behavior?</p>
+
+<ul>
+<li><p>As \(w \to 0 \), \(V^e_s (w) \to -\infty\) faster than \(V^e_n (w) \to -\infty\). So at a low enough wage, the search cost \(z\) has a large effect on the worker&#39;s utility and she won&#39;t search.</p></li>
+<li><p>At \(w=B\),
+$$\begin{align}
+V^e_s (B) &amp; = (1-\beta)^{-1} (\ln(B(1-l)-z) + \phi \ \ln(l)) \cr
+V^e_n (B) &amp; = (1-\beta)^{-1} (\ln(B(1-l)) + \phi \ \ln(l)) \cr
+\implies V^e_n (B) &amp; \gt V^e_s (B)
+\end{align}$$
+So the worker won&#39;t search when she&#39;s already earning the maximum wage, which is pretty intuitive.</p></li>
+</ul>
+
+<p>So the worker won&#39;t search at a low enough wage, and she won&#39;t search at the highest wage... since the value of searching and not searching are both concave functions, this means they must touch twice, if they touch at all. To make life easier, let&#39;s assume \(z\) is small enough that \(V^e_s (w) \lt V^e_n (w)\) occurs on the lower end of the wage scale only at wages below 1 (so negative utilities). Utility has a cardinal interpretation here, so we can rule out the case of the worker earning so little she can&#39;t afford to search. </p>
+
+<p>Anyway, with this behavior, in the long run we should expect every worker to end up with a wage above their reservation wage, since they&#39;ll keep searching for a better job other wise.</p>
+
+<p>In a future post, I&#39;ll relax the assumption that \(z\) is very small and sketch out all the cases of the reservation wage, and explore the worker&#39;s labor supply behavior in this model.</p>
+
+<p>Dynamic programming is a powerful way to get a simple solution to an optimization problem. Without it, we would have had to set up and solve an infinite-period optimization. With it, we can just find a consistent decision rule for an arbitrary period. To use DP, we need some assumptions on the functions we&#39;re optimizing. When I revisit this model, maybe I&#39;ll talk about those assumptions as well.</p>
+
+  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -352,7 +478,13 @@
 
 <p>While the minimum-utility maximizer may ignore opportunities that the expected-utility maximizer would take, the minimum-utility maximizer can consistently apply their decision rule in more situations than the expected-utility maximizer can.</p>
 
-<p>I found a neat quote on <a href="https://agtb.wordpress.com/2009/09/06/cs-and-economics-different-attitudes/">Turing&#39;s Invisible Hand</a> about this:</p>
+<p>Below is a plot of the cost bounds with \(\beta=0.99\) as the number of sellers increases. The worst-case bound is in red, the expected-utility bound is in blue.</p>
+
+<p><a href="/public/images/search/cost_bounds_used_car.png" title="Cost bounds"><img src="/public/images/search/cost_bounds_used_car.png" alt="Cost bounds" title="Cost bounds"></a></p>
+
+<p>As we could have predicted from the functions themselves, the bounds both approach 0 quite rapidly as the number of sellers increases. With \(\beta=0.99\) the two are practically indistinguishable after 20000 or so sellers. With \(\beta=0.5\) the two are practically indistinguishable after 600 or so sellers. The lower \(\beta\) is, the faster they approach each other - also intuitive from the functions, but I hadn&#39;t expected it to be quite so fast.</p>
+
+<p>I found a neat quote on <a href="https://agtb.wordpress.com/2009/09/06/cs-and-economics-different-attitudes/">Turing&#39;s Invisible Hand</a> about worst-case vs. expected-case more generally:</p>
 
 <p><em>In a situation that already exists, there is obviously some empirical distribution, and it is hard to argue against taking it into account.  In a situation that doesn’t exist, there is yet no empirical distribution, so in order to prepare for it we need to either theoretically guess the future distribution, or prepare for worst case.</em></p>
 
@@ -441,111 +573,22 @@ c_2^v &amp;=\frac{k \beta ne}{n-k(1-\beta )} ne \cr
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/micro%20theory/2015/10/06/labor-market-signalling-two-types/">
-        A simple labor market with two types of workers and a test
+      <a href="/econometrics/2015/10/06/classical-linear-regression-model/">
+        The Classical Linear Regression Model
       </a>
     </h1>
 
     <span class="post-date">06 Oct 2015</span>
 
-    <p>Consider a competitive labor market where workers are either high ability (&quot;high type&quot;) or low ability (&quot;low type&quot;). A worker&#39;s type is the worker&#39;s private information, but the firms are aware that a fraction \(\alpha \in (0,1)\) of the workers have high ability. The high ability worker will produce value \(v=v_h\) for the firm, and the low type will produce \(v=v_l\), where \(0\le v_l\lt v_h\lt\infty\). The worker&#39;s can produce \(r\lt v_h\) if they are self-employed (reservation wage).</p>
+    <p>Say you have some observations of random variables who are related to each other, a sequence \({(Y_t,X_{t1},...,X_{tD})}_{t=1}^n\). The Classical Linear Regression Model (CLRM) is one way to go about constructing a statistical model of the relationships between the variables. The CLRM forms the basis of many econometric models.</p>
 
-<h4 id="benchmark-case-no-signalling">Benchmark case: No signalling</h4>
+<p>There are two fundamental assumptions that define the CLRM.</p>
 
-<p>If there&#39;s no way for the worker to signal their type to the firm, then the firm will go with what it knows: that the probability of a worker having high ability is \(\alpha\). Using this, we get that the firm&#39;s expectation of the workers&#39; ability is \(E[v]=\alpha v_h + (1-\alpha) v_l\).</p>
+<h5 id="assumption-1">Assumption 1</h5>
 
-<p>A <a href="https://en.wikipedia.org/wiki/Competitive_equilibrium">competitive equilibrium</a> can be described be a price \(w^*(\theta)\) and an allocation \(\theta^*(w)\) which maximize the agents&#39; expected utilities. Here, the CE is</p>
-
-<p>$$\begin{align}
-w^*(\theta)=E \ [ \ \theta \ | \ \theta \in \theta^*] \cr
-\theta^*(w)= \{ \theta \ : \ r \le w \}
-\end{align}$$</p>
-
-<p>The firm will pay workers the expected value of their marginal productivity, which ends up being a constant. The workers will work if the wage is greater than or equal to what they could get staying at home. If the workers&#39; reservation wage is greater than the firm&#39;s wage (expected marginal productivity of labor), no one will work. If \(r&lt;w=E[v]\), everyone will work.</p>
-
-<h4 id="with-a-costly-test-that-signals-types">With a costly test that signals types</h4>
-
-<p>Now suppose there&#39;s a test that workers can take, and it&#39;s easier for high types to get a certain score than it is for low types. By observing the score that workers get on the test, firms can guess whether a worker is high ability or not. Formally,</p>
-
-<p>$$c(e,\theta)=
-\begin{cases}
-c_{h}e ~~~ \text{if} ~ \theta=v_h \cr
-c_{l}e ~~~ \text{if} ~ \theta=v_l
-\end{cases}$$</p>
-
-<p>where \(0\lt c_h\lt c_l\). Preparing for and taking the test is useless except that it is costlier for the low type, and can be used to distinguish between the types.</p>
-
-<p>The equilibrium concept we use here is a Perfect Bayesian Equilibrium (<a href="https://en.wikipedia.org/wiki/Bayesian_game#Perfect_Bayesian_equilibrium">PBE</a>). The worker&#39;s choice of test score \(e(\theta)\) is optimal given their knowledge of their type, the firm&#39;s beliefs of the worker&#39;s type after observing the test score \(\mu(e)\) is formed using Bayes&#39; Rule, and the wage \(w(e)\) is a Nash equilibrium for \(e(\theta)\) given the firm&#39;s beliefs \(\mu(e)\).</p>
-
-<p>One separating PBE that we can construct is \(w^*(e^*(v_h)) = v_h\), \(w^*(e^*(v_l)) = v_l\), \(e^*(v_l)=0\), and \(e^*(v_h)=\tilde{e}\), where \(\tilde{e}\) is the least education the high type can get while still getting utility at least as high as if they pooled with the low type.</p>
-
-<p>The argument for this is pretty simple. If the high type can signal their ability, there&#39;s no point in the low type scoring above 0 on the test - effort is costly, and they&#39;d be better off not exerting it. If the firm can distinguish high and low types, then they will pay each their marginal product.</p>
-
-<p>The most efficient separating PBE is when the high type engages in as little signalling behavior as possible. This occurs when the high type&#39;s education level makes them indifferent between being employed and pooling with the low type. Letting \(c_l(e)=c(e,v_l)\) and \(c_h(e)=c(e,v_h)\),</p>
-
-<p>$$\begin{align}
-e^*(v_h):&amp;~~ v_h - c_l (e^*(v_h)) = v_l \cr
-\implies &amp;~ c_l (e^*(v_h)) = v_h-v_l \cr
-\implies &amp;~ e^*(v_h) = c_l^{-1}(v_h-v_l) \equiv \tilde{e} \cr
-\end{align}$$</p>
-
-<p>The full PBE is</p>
-
-<p>$$ e^*(\theta) =
-\begin{cases}
-0 ~~ \text{if} ~~ \theta=v_l\cr
-\tilde{e} ~~ \text{if} ~~ \theta=v_h\cr
-\end{cases} $$</p>
-
-<p>$$ \mu^*(e) =
-\begin{cases}
-0 ~~ \text{if} ~~ e \lt \tilde{e}\cr
-1 ~~ \text{if} ~~ e \ge \tilde{e}\cr
-\end{cases} $$</p>
-
-<p>$$ w^*(e) =
-\begin{cases}
-v_l ~~ \text{if} ~~ \theta=v_l\cr
-v_h ~~ \text{if} ~~ \theta=v_h\cr
-\end{cases} $$</p>
-
-<p>This is not a unique equilibrium. There are a continuum of separating PBEs that are less efficient than this one, and a continuum of pooling PBEs with one more efficient than the rest. Whether the most efficient separating PBE is more efficient than the most efficient pooling PBE depends on the parameter values.</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/micro%20theory/2015/10/05/hotelling-circle-city/">
-        A symmetric Circle City Hotelling model
-      </a>
-    </h1>
-
-    <span class="post-date">05 Oct 2015</span>
-
-    <p>This model is very similar to <a href="">Triangle City</a>.</p>
-
-<h3 id="circle-city">Circle City</h3>
-
-<p>Let the circle be of circumference \(d\pi\). There are \(n\) symmetric firms facing marginal cost \(c\) located equidistant from each other on the circle. Firm \(i\) faces two marginal consumers: \(x_{i-1}\) (the firm to its left) and \(x_i\) (the firm to its right). The marginal consumers are identical, and firm \(i\) and firm \(i+1\) compete over consumer \(x_i\). Consumers face a travel cost of t. \(x_i\)&#39;s utility is given by:</p>
-
-<p>$$\begin{align} 
-v - p_i - tx_i &amp;= v - p_{i+1} - t(\frac{td\pi}{n}-x_i) \cr
-\implies x_i &amp;= \frac{p_{i+1}-p_i+(td\pi/n)}{2t} \cr
-\end{align}$$</p>
-
-<p>Since the consumers are identical, this holds for every marginal consumer. Firm \(i\) faces \(x_i + x_{i-1}\), and solves</p>
-
-<p>$$max_p (p_i-c)\left[\frac{p_{i+1}-p_i+(td\pi/n)}{2t} + \frac{p_{i-1}-p_i+(td\pi/n)}{2t} \right] $$</p>
-
-<p>$$\begin{align} 
-\text{FOC:} &amp;~~~ \left[\frac{p_{i+1}-p_i+(td\pi/n)}{2t} + \frac{p_{i-1}-p_i+(td\pi/n)}{2t} \right] - (p_i-c)\frac{2}{2t} \cr
-\implies &amp; ~~~ \frac{td\pi}{n} - (p_i-c)\frac{1}{t} = 0 ~~~~~~ (\pi_i=\pi_j ~ \forall~i,j~\because \text{firms are symmetric})\cr
-\implies &amp; p_i^* = c + \frac{td\pi}{n}
-\end{align}$$</p>
-
-<p>So the markup is increasing in the diameter of the circle (\(\frac{\partial p}{\partial d} \gt 0\)) and the travel cost (\(\frac{\partial p}{\partial } \gt 0\)), and decreasing in the number of firms (\(n \to \infty\), \(p \to c\)).</p>
-
-<p>The fact that firm \(i\) faces 2 (or \(k\), I suppose) symmetric marginal customers doesn&#39;t affect the equilibrium prices \(p_i^*\), only equilibrium profits \(\pi_i^*\) (scaled by \(k\)).</p>
+<p>$$\begin{pmatrix}
+\left( Y_t \cr X_t \right)
+\end{pmatrix}$$</p>
 
   </div>
   

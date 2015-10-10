@@ -73,7 +73,13 @@ In general, the worst-case bound requires less information than the expected-val
 
 While the minimum-utility maximizer may ignore opportunities that the expected-utility maximizer would take, the minimum-utility maximizer can consistently apply their decision rule in more situations than the expected-utility maximizer can.
 
-I found a neat quote on [Turing's Invisible Hand](https://agtb.wordpress.com/2009/09/06/cs-and-economics-different-attitudes/) about this:
+Below is a plot of the cost bounds with \\(\beta=0.99\\) as the number of sellers increases. The worst-case bound is in red, the expected-utility bound is in blue.
+
+[![Cost bounds](/public/images/search/cost_bounds_used_car.png "Cost bounds")](/public/images/search/cost_bounds_used_car.png "Cost bounds")
+
+As we could have predicted from the functions themselves, the bounds both approach 0 quite rapidly as the number of sellers increases. With \\(\beta=0.99\\) the two are practically indistinguishable after 20000 or so sellers. With \\(\beta=0.5\\) the two are practically indistinguishable after 600 or so sellers. The lower \\(\beta\\) is, the faster they approach each other - also intuitive from the functions, but I hadn't expected it to be quite so fast.
+
+I found a neat quote on [Turing's Invisible Hand](https://agtb.wordpress.com/2009/09/06/cs-and-economics-different-attitudes/) about worst-case vs. expected-case more generally:
 
 *In a situation that already exists, there is obviously some empirical distribution, and it is hard to argue against taking it into account.  In a situation that doesn’t exist, there is yet no empirical distribution, so in order to prepare for it we need to either theoretically guess the future distribution, or prepare for worst case.*
 
