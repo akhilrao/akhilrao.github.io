@@ -75,7 +75,7 @@ While the minimum-utility maximizer may ignore opportunities that the expected-u
 
 Below is a plot of the cost bounds with \\(\beta=0.99\\) as the number of sellers increases. The worst-case bound is in red, the expected-utility bound is in blue.
 
-[![Cost bounds](/public/images/search/cost_bounds_used_car.png "Cost bounds")](/public/images/search/cost_bounds_used_car.png "Cost bounds")
+[![Cost bounds](/public/images/search/cost_bounds_used_car.png "Cost bounds")]
 
 As we could have predicted from the functions themselves, the bounds both approach 0 quite rapidly as the number of sellers increases. With \\(\beta=0.99\\) the two are practically indistinguishable after 20000 or so sellers. With \\(\beta=0.5\\) the two are practically indistinguishable after 600 or so sellers. The lower \\(\beta\\) is, the faster they approach each other - also intuitive from the functions, but I hadn't expected it to be quite so fast.
 
