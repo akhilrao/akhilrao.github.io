@@ -77,7 +77,7 @@ Below is a plot of the cost bounds with \\(\beta=0.99\\) as the number of seller
 
 [![Cost bounds](/public/images/search/cost_bounds_used_car.PNG "Cost bounds")](/public/images/search/cost_bounds_used_car.PNG "Cost bounds")
 
-As we could have predicted from the functions themselves, the bounds both approach 0 quite rapidly as the number of sellers increases. With \\(\beta=0.99\\) the two are practically indistinguishable after 20000 or so sellers. With \\(\beta=0.5\\) the two are practically indistinguishable after 600 or so sellers. The lower \\(\beta\\) is, the faster they approach each other - also intuitive from the functions, but I hadn't expected it to be quite so fast.
+The bounds both approach 0 as the number of sellers increases. With \\(\beta=0.99\\) the two are practically indistinguishable after 20000 or so sellers - which seems like a pretty big market to me, maybe not relative to financial markets but still. With \\(\beta=0.5\\) (not shown) the two are practically indistinguishable after 600 or so sellers. The lower \\(\beta\\) is, the faster they approach each other - intuitive from the functions, but I hadn't expected the worst-case bound to drop quite so fast.
 
 I found a neat quote on [Turing's Invisible Hand](https://agtb.wordpress.com/2009/09/06/cs-and-economics-different-attitudes/) about worst-case vs. expected-case more generally:
 
@@ -85,4 +85,4 @@ I found a neat quote on [Turing's Invisible Hand](https://agtb.wordpress.com/200
 
 Most situations we consider in economics already exist, or are similar to ones that do, so there's usually a distribution we can work with or a reasonable guess we can make. The connection between EU-maxing/minU-maxing and risk preference is interesting to me; I'd like to go back to the manager's problem and add uncertainty and different risk preferences in this form between the manager and owner.
 
-I like this problem. At some point, I want to try solving it with a generic distribution of values and running it in R.
+I like this problem. At some point, I want to try solving it with a different distribution and running it in R.

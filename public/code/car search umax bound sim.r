@@ -1,4 +1,4 @@
-## Simulating the worst case and expected utility bounds
+## Simulating the worst case and expected utility bounds for the used car search problem on 10/08/2015
 
 beta.v <- 0.99
 N.start <- 1

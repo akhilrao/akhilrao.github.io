@@ -312,6 +312,66 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="/micro%20theory/2015/10/11/monopoly-pricing-discrete-sequential-demand/">
+        Monopoly pricing for sequential discrete demand
+      </a>
+    </h1>
+
+    <span class="post-date">11 Oct 2015</span>
+
+    <p>Today&#39;s post is a variation on <a href="http://akhilrao.github.io/micro%20theory/2015/10/04/monopoly-pricing-discrete-demand/">monopoly pricing for discrete demand</a>.</p>
+
+<p>Suppose you&#39;re moving, and you have a piece of used furniture that you need to sell. You&#39;ve got two potential buyers, \(B_1\) and \(B_2\), lined up to buy it. They arrive sequentially, so \(B_2\) won&#39;t have anything to look at if \(B_1\) buys. Assume \(B_i\) is willing to pay \(v_i\) for the furniture, where \(v_i\) is an independent draw from a uniform CDF \(F(v_i) = \frac{v_i - a}{b - a}\) for \(v_i \in [a,b]\). The furniture has no value to you if it isn&#39;t sold - you can&#39;t take it with you - and there is no discounting. There&#39;s no bargaining, either - you get to make a take-it-or-leave-it offer to each buyer.</p>
+
+<p>Let&#39;s start at the end of this game. Suppose \(B_1\) rejected your offer. Let&#39;s also use some numbers: \(a=40, b=40\).</p>
+
+<h4 id="pricing-for-the-second-buyer">Pricing for the second buyer</h4>
+
+<p>The game ends if this buyer rejects, so this round is basically the same as the example from our previous post. Your price solves</p>
+
+<p>$$ \max_{p_2} ~ (p_2-c)(1-F(p_2)) $$</p>
+
+<p>Giving us</p>
+
+<p>$$ p_2 = c + \frac{1-F(p_2 )}{f(p_2 )} $$</p>
+
+<p>In this example, the marginal cost would be the opportunity cost - the value of the furniture to you if you didn&#39;t sell it. We know that&#39;s 0 here because you&#39;re moving and can&#39;t take it with you. Plugging in for this uniform CDF and PDF, the optimal price becomes</p>
+
+<p>$$\begin{align}
+ p_2 &amp;= \frac{b}{2} \cr
+\implies p_2 &amp;= 70 \cr
+\end{align} $$</p>
+
+<p>Your expected profits from this pricing scheme are</p>
+
+<p>$$\begin{align}
+\pi_2 &amp;= (p_2-c)(1-F(p_2)) \cr
+&amp;= (70)(\frac{70}{100}) \cr
+&amp;= 49 \cr 
+\end{align}$$</p>
+
+<p>Note that there&#39;s no discounting here - if there was, we&#39;d be hitting this expected profit with a discount rate, and it would be lower than 49.</p>
+
+<h4 id="pricing-for-the-first-buyer">Pricing for the first buyer</h4>
+
+<p>Now that we know the end of the game, we can go backwards to the first round. You&#39;re solving the same problem for the first buyer, but now you have to keep in mind that if the first person doesn&#39;t buy, you&#39;ve still got the second person coming. The optimal price will solve</p>
+
+<p>$$ \max_{p_1} ~ p_1(1-F(p_1)) + F(p_1) \pi_2 $$</p>
+
+<p>Giving us</p>
+
+<p>$$ p_1 = \frac{189}{2} \gt p_2 $$</p>
+
+<p>This is nice and what we would expect: when you have multiple buyers lined up, your price should decrease over time as buyers reject, if only because there are fewer buyers coming later. The last buyer should receive the lowest price.</p>
+
+<p>To round it off, your expected profits in the first stage would be 73.7975. Your expected profits decrease as you move through the buyers, since your price gets lower and you lose the expected value of the future buyers.</p>
+
+<p>Adding discounting wouldn&#39;t change the key features of this problem. Adding bargaining would, since the buyers wouldn&#39;t have to accept your profit-maximizing price. Discounting plus bargaining would change things by giving the person with the higher discount rate (more patience) an advantage. This is what happens in Rubinstein bargaining games.</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="/macro%20theory/2015/10/10/otj-search/">
         On-the-job search with dynamic programming
       </a>
@@ -341,7 +401,7 @@
 
 <h4 id="the-bellman-equations">The Bellman equations</h4>
 
-<p>To solve this problem, we break the consumer&#39;s infinite period down into a series of smaller one-period decisions and find an optimal solution to that one equation (<a href="https://en.wikipedia.org/wiki/Dynamic_programming">dynamic programming</a>). In each period, the workers face the following decisions:</p>
+<p>To solve this problem, we break the consumer&#39;s decision over infinite periods down into a series of smaller one-period decisions and find an optimal solution to that one equation (<a href="https://en.wikipedia.org/wiki/Dynamic_programming">dynamic programming</a>). In each period, the workers face the following decisions:</p>
 
 <p>$$\begin{align}
 \text{Unemployed:} ~~ V^u (w) &amp; = \max_l \{accept , ~ reject \} \cr
@@ -355,7 +415,7 @@
 &amp; = \max_l \left\{ \frac{u(w(1-l),l)}{1-\beta}, \frac{u(w(1-l)-z,l)}{1-\beta} + \frac{\beta}{1-\beta} \int_w^B (V^e (w&#39;) - V^e (w)) \ dF(w&#39;) \right\} \cr
 \end{align}$$</p>
 
-<p>\(w&#39;\) is the next period&#39;s offer. The search integral is a <a href="https://en.wikipedia.org/wiki/Lebesgue_integration">Lebesgue integral</a>. The worker will obviously not accept an offer at a wage lower than the current one, so we only integrate over the current wage to the upper bound.</p>
+<p>\(w&#39;\) is the next period&#39;s offer. The search integral is a <a href="https://en.wikipedia.org/wiki/Lebesgue_integration">Lebesgue integral</a> over the wage distribution. The worker will obviously not accept an offer at a wage lower than the current one, so we only integrate over the current wage to the upper bound.</p>
 
 <h4 id="is-there-a-reservation-wage">Is there a reservation wage?</h4>
 
@@ -482,7 +542,7 @@ So the worker won&#39;t search when she&#39;s already earning the maximum wage, 
 
 <p><a href="/public/images/search/cost_bounds_used_car.PNG" title="Cost bounds"><img src="/public/images/search/cost_bounds_used_car.PNG" alt="Cost bounds" title="Cost bounds"></a></p>
 
-<p>As we could have predicted from the functions themselves, the bounds both approach 0 quite rapidly as the number of sellers increases. With \(\beta=0.99\) the two are practically indistinguishable after 20000 or so sellers. With \(\beta=0.5\) the two are practically indistinguishable after 600 or so sellers. The lower \(\beta\) is, the faster they approach each other - also intuitive from the functions, but I hadn&#39;t expected it to be quite so fast.</p>
+<p>The bounds both approach 0 as the number of sellers increases. With \(\beta=0.99\) the two are practically indistinguishable after 20000 or so sellers - which seems like a pretty big market to me, maybe not relative to financial markets but still. With \(\beta=0.5\) (not shown) the two are practically indistinguishable after 600 or so sellers. The lower \(\beta\) is, the faster they approach each other - intuitive from the functions, but I hadn&#39;t expected the worst-case bound to drop quite so fast.</p>
 
 <p>I found a neat quote on <a href="https://agtb.wordpress.com/2009/09/06/cs-and-economics-different-attitudes/">Turing&#39;s Invisible Hand</a> about worst-case vs. expected-case more generally:</p>
 
@@ -490,7 +550,7 @@ So the worker won&#39;t search when she&#39;s already earning the maximum wage, 
 
 <p>Most situations we consider in economics already exist, or are similar to ones that do, so there&#39;s usually a distribution we can work with or a reasonable guess we can make. The connection between EU-maxing/minU-maxing and risk preference is interesting to me; I&#39;d like to go back to the manager&#39;s problem and add uncertainty and different risk preferences in this form between the manager and owner.</p>
 
-<p>I like this problem. At some point, I want to try solving it with a generic distribution of values and running it in R.</p>
+<p>I like this problem. At some point, I want to try solving it with a different distribution and running it in R.</p>
 
   </div>
   
@@ -568,27 +628,6 @@ c_2^v &amp;=\frac{k \beta ne}{n-k(1-\beta )} ne \cr
 <p>If \(\beta \neq R^{-1} \), the impatient type will not necessarily be better off. If \(\beta \neq R^{-1} \), but \(R^{-1}=1\), the patient type will be better off.</p>
 
 <p>As long as \(\beta \lt 1\), the savings technology cannot make them both better off.</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/econometrics/2015/10/06/classical-linear-regression-model/">
-        The Classical Linear Regression Model
-      </a>
-    </h1>
-
-    <span class="post-date">06 Oct 2015</span>
-
-    <p>Say you have some observations of random variables who are related to each other, a sequence \({(Y_t,X_{t1},...,X_{tD})}_{t=1}^n\). The Classical Linear Regression Model (CLRM) is one way to go about constructing a statistical model of the relationships between the variables. The CLRM forms the basis of many econometric models.</p>
-
-<p>There are two fundamental assumptions that define the CLRM.</p>
-
-<h5 id="assumption-1">Assumption 1</h5>
-
-<p>$$\begin{pmatrix}
-\left( Y_t \cr X_t \right)
-\end{pmatrix}$$</p>
 
   </div>
   

@@ -32,7 +32,7 @@ The utility function is natural log in consumption and leisure, so we can rule o
 
 #### The Bellman equations
 
-To solve this problem, we break the consumer's infinite period down into a series of smaller one-period decisions and find an optimal solution to that one equation ([dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming)). In each period, the workers face the following decisions:
+To solve this problem, we break the consumer's decision over infinite periods down into a series of smaller one-period decisions and find an optimal solution to that one equation ([dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming)). In each period, the workers face the following decisions:
 
 $$\begin{align}
 \text{Unemployed:} ~~ V^u (w) & = \max_l \\{accept , ~ reject \\} \cr
@@ -46,7 +46,7 @@ $$\begin{align}
 & = \max_l \left\\{ \frac{u(w(1-l),l)}{1-\beta}, \frac{u(w(1-l)-z,l)}{1-\beta} + \frac{\beta}{1-\beta} \int_w^B (V^e (w') - V^e (w)) \ dF(w') \right\\} \cr
 \end{align}$$
 
-\\(w'\\) is the next period's offer. The search integral is a [Lebesgue integral](https://en.wikipedia.org/wiki/Lebesgue_integration). The worker will obviously not accept an offer at a wage lower than the current one, so we only integrate over the current wage to the upper bound.
+\\(w'\\) is the next period's offer. The search integral is a [Lebesgue integral](https://en.wikipedia.org/wiki/Lebesgue_integration) over the wage distribution. The worker will obviously not accept an offer at a wage lower than the current one, so we only integrate over the current wage to the upper bound.
 
 #### Is there a reservation wage?
 
