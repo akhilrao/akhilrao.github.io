@@ -2,10 +2,10 @@
 layout: post
 title: Monopoly pricing for sequential discrete demand
 category: micro theory
-tags: micro-theory monopoly pricing discrete demand 
+tags: micro-theory monopoly pricing discrete demand sequential
 year: 2015
 month: 10
-day: 04
+day: 11
 published: true
 summary: How should you optimally price a piece of used furniture when you're moving and have two buyers lined up?
 ---
