@@ -72,7 +72,9 @@ V^e_n (B) & = (1-\beta)^{-1} (\ln(B(1-l)) + \phi \ \ln(l)) \cr
 \end{align}$$
 So the worker won't search when she's already earning the maximum wage, which is pretty intuitive.
 
-So the worker won't search at a low enough wage, and she won't search at the highest wage... since the value of searching and not searching are both concave functions, this means they must touch twice, if they touch at all. To make life easier, let's assume \\(z\\) is small enough that \\(V^e_s (w) \lt V^e_n (w)\\) occurs on the lower end of the wage scale only at wages below 1 (so negative utilities). Utility has a cardinal interpretation here, so we can rule out the case of the worker earning so little she can't afford to search. 
+So the worker won't search at a low enough wage, and she won't search at the highest wage... since the value of searching and not searching are both concave functions, this means they must touch twice if they cross. They could potentially touch only once if they don't cross. This makes things complicated, since now there are potentially three wages where the condition we used to find the reservation wage holds: in the case where they cross, there's the wage at which workers start searching and the wage at which the workers stop searching (what we found); in the case where they touch only once, there's the wage at which workers are indifferent between searching and not searching.  
+
+To make life easier, let's assume \\(z\\) is small enough that \\(V^e_s (w) \lt V^e_n (w)\\) occurs on the lower end of the wage scale only at wages below 1 (so negative utilities), and the only place where our reservation wage condition holds that matters is the one we explored. Utility has a cardinal interpretation here, so we can rule out the case of the worker earning so little she can't afford to search. 
 
 Anyway, with this behavior, in the long run we should expect every worker to end up with a wage above their reservation wage, since they'll keep searching for a better job other wise.
 

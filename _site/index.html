@@ -300,6 +300,22 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
 
       <a class="sidebar-nav-item" href="https://github.com/akhilrao/archive/v0.0.1.zip">Download</a>
       <a class="sidebar-nav-item" href="https://github.com/akhilrao">GitHub project</a>
@@ -316,6 +332,64 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="/micro%20theory/2015/10/11/2015-10-12-eu-max-3-lottery/">
+        An expected-utility maximizer and 3 lotteries
+      </a>
+    </h1>
+
+    <span class="post-date">11 Oct 2015</span>
+
+    <p>Consider an individual with preferences over lotteries that have an expected-utility representation. There are three lotteries this individual can choose from:</p>
+
+<p>$$ L_1
+\begin{cases}
+\begin{align}
+200 ~~~ &amp;P(200) = 1 \cr
+\end{align}
+\end{cases}$$</p>
+
+<p>$$ L_2
+\begin{cases}
+\begin{align}
+0 ~~~ &amp;P(0) = 2/3 \cr
+200 ~~~ &amp;P(200) = 1/6 \cr
+1000 ~~~ &amp;P(1000) = 1/6 \cr
+\end{align}
+\end{cases}$$</p>
+
+<p>$$ L_3
+\begin{cases}
+\begin{align}
+0 ~~~ &amp;P(0) = 1/3 \cr
+400 ~~~ &amp;P(400) = 1/3 \cr
+1000 ~~~ &amp;P(1000) = 1/3 \cr
+\end{align}
+\end{cases}$$</p>
+
+<p>The expected utilities of the lotteries are:</p>
+
+<p>$$\begin{align}
+EU_{L1} =&amp; (200)(1) = 200 \cr
+EU_{L2} =&amp; (0)(1/3) + (100)(1/6) + (1000)(1/6) \cr
+ =&amp; 200 \cr
+ EU_{L3} =&amp; (0)(1/3) + (100)(1/3) + (1000)(1/3) \cr
+ =&amp; 1400/3 \cr
+\end{align}$$</p>
+
+<p>We can take a first pass at ordering the three lotteries by expected utility alone. This gives us that \( L_3 \succ L_2 \sim L_1\). To go further, we can use the concept of <a href="https://en.wikipedia.org/wiki/Stochastic_dominance">stochastic dominance</a>.</p>
+
+<p>\(X \succ_{FSD} Y\) (X first-order stochastically dominates Y) if \(F_x (t) \le F_y (t) ~ \forall t \in [a,b]\), where \([a,b]\) is the support of \(F_x\) and \(F_y\). This is equivalent to saying \(X \succ_{FSD} Y\) iff \( E[u(x)] \ge E[u(y)] ~ \forall\) nondecreasing, continuous functions \(u\). We apply this concept when we order the lotteries by expected utility.</p>
+
+<p>Second-order stochastic dominance is a refinement on this. We say \(X \succ_{SSD} Y\) (X second-order stochastically dominates Y) if \(\int_a^w F_x (t) dt \le \int_a^w F_y (t) dt ~ \forall w \in [a,b]\), where \([a,b]\) is the support of \(F_x\) and \(F_y\). This is equivalent to saying \(X \succ_{SSD} Y\) iff \( E[u(x)] \ge E[u(y)] ~ \forall\) nondecreasing, continuous, and <em>concave</em> functions \(u\). We apply this concept when we order the lotteries by expected utility.</p>
+
+<p>If all we have is that the agent is an expected-utility maximizer then all we can do is apply first-order stochastic dominance and say that the agent will prefer \(L_3\) over \(L_1\) and \(L_2\), and be indifferent between \(L_1\) and \(L_2\).</p>
+
+<p>If we know or are willing to assume that the agent is risk-averse - that their utility function \(u\) is concave - then we can apply second-order stochastic dominance and rank the lotteries \(L_3 \succ L_1 \succ L_2 \). The risk-averse agent would rather take the safe 200-for-sure than the risky 200-on-average.</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="/micro%20theory/2015/10/11/monopoly-pricing-discrete-sequential-demand/">
         Monopoly pricing for sequential discrete demand
       </a>
@@ -327,11 +401,11 @@
 
 <p>Suppose you&#39;re moving, and you have a piece of used furniture that you need to sell. You&#39;ve got two potential buyers, \(B_1\) and \(B_2\), lined up to buy it. They arrive sequentially, so \(B_2\) won&#39;t have anything to look at if \(B_1\) buys. Assume \(B_i\) is willing to pay \(v_i\) for the furniture, where \(v_i\) is an independent draw from a uniform CDF \(F(v_i) = \frac{v_i - a}{b - a}\) for \(v_i \in [a,b]\). The furniture has no value to you if it isn&#39;t sold - you can&#39;t take it with you - and there is no discounting. There&#39;s no bargaining, either - you get to make a take-it-or-leave-it offer to each buyer.</p>
 
-<p>Let&#39;s start at the end of this game. Suppose \(B_1\) rejected your offer. Let&#39;s also use some numbers: \(a=40, b=40\).</p>
+<p>Let&#39;s start at the end of this game with some numbers: \(a=40, b=140\).</p>
 
 <h4 id="pricing-for-the-second-buyer">Pricing for the second buyer</h4>
 
-<p>The game ends if this buyer rejects, so this round is basically the same as the example from our previous post. Your price solves</p>
+<p>Suppose \(B_1\) rejected your offer, so you&#39;re pricing it for \(B_2\). The game ends if this buyer rejects, so this round is basically a standard discrete demand monopoly pricing problem. Your price solves</p>
 
 <p>$$ \max_{p_2} ~ (p_2-c)(1-F(p_2)) $$</p>
 
@@ -446,7 +520,9 @@ V^e_n (B) &amp; = (1-\beta)^{-1} (\ln(B(1-l)) + \phi \ \ln(l)) \cr
 So the worker won&#39;t search when she&#39;s already earning the maximum wage, which is pretty intuitive.</p></li>
 </ul>
 
-<p>So the worker won&#39;t search at a low enough wage, and she won&#39;t search at the highest wage... since the value of searching and not searching are both concave functions, this means they must touch twice, if they touch at all. To make life easier, let&#39;s assume \(z\) is small enough that \(V^e_s (w) \lt V^e_n (w)\) occurs on the lower end of the wage scale only at wages below 1 (so negative utilities). Utility has a cardinal interpretation here, so we can rule out the case of the worker earning so little she can&#39;t afford to search. </p>
+<p>So the worker won&#39;t search at a low enough wage, and she won&#39;t search at the highest wage... since the value of searching and not searching are both concave functions, this means they must touch twice if they cross. They could potentially touch only once if they don&#39;t cross. This makes things complicated, since now there are potentially three wages where the condition we used to find the reservation wage holds: in the case where they cross, there&#39;s the wage at which workers start searching and the wage at which the workers stop searching (what we found); in the case where they touch only once, there&#39;s the wage at which workers are indifferent between searching and not searching.  </p>
+
+<p>To make life easier, let&#39;s assume \(z\) is small enough that \(V^e_s (w) \lt V^e_n (w)\) occurs on the lower end of the wage scale only at wages below 1 (so negative utilities), and the only place where our reservation wage condition holds that matters is the one we explored. Utility has a cardinal interpretation here, so we can rule out the case of the worker earning so little she can&#39;t afford to search. </p>
 
 <p>Anyway, with this behavior, in the long run we should expect every worker to end up with a wage above their reservation wage, since they&#39;ll keep searching for a better job other wise.</p>
 
@@ -555,83 +631,6 @@ So the worker won&#39;t search when she&#39;s already earning the maximum wage, 
 <p>Most situations we consider in economics already exist, or are similar to ones that do, so there&#39;s usually a distribution we can work with or a reasonable guess we can make. The connection between EU-maxing/minU-maxing and risk preference is interesting to me; I&#39;d like to go back to the manager&#39;s problem and add uncertainty and different risk preferences in this form between the manager and owner.</p>
 
 <p>I like this problem. At some point, I want to try solving it with a different distribution and running it in R.</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/macro%20theory/2015/10/07/two-period-planner-het-betas/">
-        A two period planner's problem with heterogeneous time preferences
-      </a>
-    </h1>
-
-    <span class="post-date">07 Oct 2015</span>
-
-    <p>Two period models are nice because they&#39;re usually easy to solve and can get at some good intuition. Two period models and most dynamic economic models use a discount rate, often \(\beta\) or \(\delta\), which is how much the agent values future payoffs in relation to present payoffs.</p>
-
-<p>In this model there are \(n\) agents in total, \(k\) of whom have discount rate \(\beta\in [0,1]\) (impatient), and the remaining \(n-k\) with discount rate \(\beta =1\) (patient). The agents live for two periods, \(t=1,2\), and receive a consumption endowment of 1 in the period 1 and \(e\gt 0\) in period 2. They have preferences over per-period consumption given by \(\log c_t\). Their lifetime utilities are</p>
-
-<p>$$\begin{align}
- \text{k impatient:} ~~ V(c_1,c_2) &amp;= \log c_1 + \beta \log c_2 \cr
- \text{n-k patient:} ~~ U(c_1,c_2) &amp;= \log c_1 + \log c_2 \cr
-\end{align}$$</p>
-
-<p>They want to choose consumption plans that maximize their utilities. The benevolent dictator/social planner wants to maximize the social welfare function</p>
-
-<p>$$\begin{align}
- W &amp;= kV + (n-k)U \cr
- &amp;= k( \log c_{1}^{v} + \beta \log c_{2}^{v}) + (n-k)( \log c_{1}^{u} + \beta \log c_{2}^{u}) \cr
-\end{align}$$</p>
-
-<p>Assume the planner has to choose the same consumption plan for every agent of the same type, but can choose different consumption plans for the patient and impatient agents.</p>
-
-<h4 id="benchmark-case-no-storage-technology">Benchmark case: No storage technology</h4>
-
-<p>Suppose there are no refrigerators or other storage technologies, so that the consumption good can&#39;t be carried across time. The dictator&#39;s problem is</p>
-
-<p>$$\begin{align} 
-\max_p &amp; ~~W ~~ \text{s.t.}~~ c_1^u + c_1^v \le n ~ , ~ c_2^u + c_2^v \le ne \cr
-\implies L &amp; = W + \lambda_1 (n-c_1^u - c_1^v) + \lambda_2 (ne-c_2^u - c_2^v) \cr
-\end{align}$$</p>
-
-<p>Since the utility functions are log, all the variables must be strictly greater than 0 and we can ignore non-negativity constraints in the lagrangian.</p>
-
-<p>From saddle point conditions, we get that the optimal consumption plans will satisfy</p>
-
-<p>$$\begin{align}
-c_1^u + c_1^v &amp;= n \cr
-c_2^u + c_2^v &amp;= ne \cr
-kc_1^u &amp;= (n-k)c_1^v \cr
-\beta kc_1^u &amp;= (n-k)c_1^v \cr
-\end{align}$$</p>
-
-<p>Without a use for savings, the optimal plan is to just consume all resources in the period they&#39;re received: \(c_1^v = k\), \(c_1^u = (n-k)\), and \(c_1^v=\frac{k \beta ne}{n-k(1-\beta )}, c_1^u=ne-\frac{k \beta ne}{n-k(1- \beta )}\). The lack of savings technology means \(\beta\) only affects the second period allocation, not the first. When \(\beta \lt 1\), the impatient agents receive less consumption good because they care less about this period. When \(\beta=1\) each group of agents just consumes their period endowment.</p>
-
-<h4 id="with-a-storage-technology">With a storage technology</h4>
-
-<p>Now suppose a storage technology is developed, so that endowments can be carried across periods. The technology has a transformation rate \(R\gt 0\) so that 1 unit of the good stored in period 1 becomes \(R\) units of the good in period 2. The dictator&#39;s problem is now</p>
-
-<p>$$\begin{align} 
-\max_p &amp; ~~W ~~ \text{s.t.}~~ R(c_1^u + c_1^v) + c_2^u + c_2^v \le ne + Rn \cr
-\implies L &amp; = W + \lambda_1 (n-c_1^u - c_1^v) + \lambda_2 (ne-c_2^u - c_2^v) \cr
-\end{align}$$</p>
-
-<p>From saddle point conditions, we get that the optimal consumption plans will be</p>
-
-<p>$$\begin{align}
-c_1^u &amp;=k \cr
-c_1^v &amp;=n-k \cr
-c_2^u &amp;=ne-\frac{k \beta ne}{n-k(1- \beta )} \cr
-c_2^v &amp;=\frac{k \beta ne}{n-k(1-\beta )} ne \cr
-\end{align}$$</p>
-
-<p>The welfare effects of the technology depends on \(\beta\) and \(R\), the rates of time preference and transformation. If the transformation rate is equal to the agent&#39;s discount rate, then the agent will be better off because they smooth their consumption by saving in the first period.</p>
-
-<p>If \(\beta = R^{-1}\), the impatient type will be better off from the technology, but the patient type&#39;s welfare change is ambiguous. If \(\beta = R^{-1} = 1\), both types will be better off from the technology. </p>
-
-<p>If \(\beta \neq R^{-1} \), the impatient type will not necessarily be better off. If \(\beta \neq R^{-1} \), but \(R^{-1}=1\), the patient type will be better off.</p>
-
-<p>As long as \(\beta \lt 1\), the savings technology cannot make them both better off.</p>
 
   </div>
   
