@@ -19,7 +19,7 @@ Define \\( \sigma(Q) = -\frac{QP''(Q)}{P'(Q)} \\), the curvature of the inverse 
 By the [implicit function theorem](https://en.wikipedia.org/wiki/Implicit_function_theorem), we can find \\(\frac{\partial Q}{\partial c}\\), the quantity pass-through, as
 
 $$ \begin{align}
- \frac{\partial Q}{\partial c} & = - \frac{\frac{\partial F}{\partial c}}{\frac{\partial F}{\partial c}} \cr
+ \frac{\partial Q}{\partial c} & = - \frac{\frac{\partial F}{\partial c}}{\frac{\partial F}{\partial Q}} \cr
  & = \frac{N}{(N+1)P'(Q) + QP''(Q)} \cr
 \end{align} $$
 

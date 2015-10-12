@@ -76,7 +76,7 @@ So the worker won't search at a low enough wage, and she won't search at the hig
 
 To make life easier, let's assume \\(z\\) is small enough that \\(V^e_s (w) \lt V^e_n (w)\\) occurs on the lower end of the wage scale only at wages below 1 (so negative utilities), and the only place where our reservation wage condition holds that matters is the one we explored. Utility has a cardinal interpretation here, so we can rule out the case of the worker earning so little she can't afford to search. 
 
-Anyway, with this behavior, in the long run we should expect every worker to end up with a wage above their reservation wage, since they'll keep searching for a better job other wise.
+Anyway, with this behavior, in the long run we should expect every worker to end up with a wage above their reservation wage, since they'll keep searching for a better job otherwise.
 
 In a future post, I'll relax the assumption that \\(z\\) is very small and sketch out all the cases of the reservation wage, and explore the worker's labor supply behavior in this model.
 
