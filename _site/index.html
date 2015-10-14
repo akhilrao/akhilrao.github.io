@@ -316,6 +316,18 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
 
       <a class="sidebar-nav-item" href="https://github.com/akhilrao/archive/v0.0.1.zip">Download</a>
       <a class="sidebar-nav-item" href="https://github.com/akhilrao">GitHub project</a>
@@ -329,6 +341,57 @@
 
     <div class="content container">
       <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/micro%20theory/2015/10/13/2015-14-04-principal-agent-problem-owner-manager/">
+        An principal-agent problem between an owner and a manager
+      </a>
+    </h1>
+
+    <span class="post-date">13 Oct 2015</span>
+
+    <p>Suppose a firm is run by a manager, contracted by the owner. The firm&#39;s profit is a random variable \(\pi \in [\pi_a , \pi_b]\)  which the manager can influence through some effort. For simplicity, assume effort is discrete: \(e \in \{e_l,e_h\}\), with \(e_h \gt e_l \ge 0 \).  The manager&#39;s efforts are such that profits with \(e_h\) first-order stochastically dominate profits with \(e_l\), i.e. \(E \ [\pi|e_h] \gt E \ [\pi|e_l]\) and \( f(\pi|e) \gt 0 ~~ \forall \pi\). The manager&#39;s utility is \(u(w,e) = v(w) - g(e)\) with \(g(e_h) \gt g(e_l) \) and \(v&#39;(w) \gt 0, v&#39;&#39;(w) \lt 0\). The manager&#39;s utility strictly concave, so they are risk-averse. Let&#39;s assume the manager&#39;s reservation utility is \(\bar{u} \ge 0 \).</p>
+
+<p>The idea is that the manager would prefer to exert less effort to more, but that more effort is likely to produce higher profits than less effort. No manager can control everything - profit is still a random variable and low realizations can occur when the manager exerts more effort, it&#39;s just less likely. The manager&#39;s reservaton utility is their outside offer or what they could produce at home. For clarity, let&#39;s call the owner she and the manager he.</p>
+
+<h4 id="benchmark-case-effort-is-publicly-observable">Benchmark case: effort is publicly observable</h4>
+
+<p>If the manager&#39;s efforts are publicly observable, then the owner solves</p>
+
+<p>MATH</p>
+
+<p>We can think of this as a two-stage decision process: given some level of effort from the manager, the owner wants to pay him the profit-maximizing wage. The constraint is called an &quot;individual rationality (IR) constraint&quot; or a &quot;participation constraint&quot;, which is basically a way to embed the manager&#39;s problem into the owner&#39;s decision-making. The owner is constrained to pay the manager a wage that is at least as good as the manager&#39;s outside offer. If the owner doesn&#39;t, the manager won&#39;t work for her.</p>
+
+<p>MATH</p>
+
+<p>Since we integrated over \(\pi\) this wage holds for all realizations of profit. The optimal wage profile for any level of effort is to pay the manager the inverse wage-utility of the sum of their reservation utility and their marginal cost of effort, or \(w^*_e = v^{-1}(\bar{u} + g(e)) \). From this we see that for a given level of effort, the optimal wage must be a constant. We can think of this as insurance against profit risk: the optimal contract will insure the risk-averse manager against any realization of profit, since the manager&#39;s effort doesn&#39;t guarantee high profits, just makes it more likely.</p>
+
+<p>The lagrange multiplier on the constraint is the owner&#39;s shadow price of the manager&#39;s participation: it&#39;s what the owner would give to marginally reduce the manager&#39;s reservation utility.</p>
+
+<h4 id="information-problem-effort-is-manager-39-s-private-information">Information problem: effort is manager&#39;s private information</h4>
+
+<p>ASSUMPTIONS, MOTIVATION</p>
+
+<p>INCENTIVE COMPATIBILITY CONSTRAINT</p>
+
+<p>MATH</p>
+
+<p>SHADOW PRICES</p>
+
+<p>When the manager&#39;s effort is private information, the profit maximizing wage is no longer a constant, it depends on the likelihoods of profits under the different effort levels. From the first-order condition, we can see that the optimal wage profile has a component based on the shadow price of the manager&#39;s participation, and a component based on the shadow price of the manager&#39;s cooperation. The latter term is scaled based on the likelihood ratio of profits given effort, i.e. based on how likely the observed profits were given the efforts the manager may have exerted. If the manager cooperates and doesn&#39;t shirk, this component can be nearly as large as the owner&#39;s shadow price on cooperation. However, profits are random, and low realizations will affect the manager&#39;s pay - low realizations are just less likely when the manager is cooperating. It would be interesting to see a critical discount rate for the manager&#39;s cooperating in a dynamic version of this.</p>
+
+<h4 id="summary">Summary</h4>
+
+<p>This model seems like my earlier attempt to model an owner-manager problem combined with the labor market signaling problem. Unlike the earlier problem, here the manager&#39;s behavior is embedded in the owner&#39;s problem as a constraint. This problem also abstracts away from the actual generation of profits - the owner in this problem only sees profits as a random variable, not as actual revenues and costs. This lets us get effort into the problem, which lets us drive a wedge between the owner and the manager. Given the manager&#39;s incentive compatibility constraint, it seems like low realizations of profits could cause the manager to shirk, but I&#39;m not sure if that&#39;s true.</p>
+
+<p>The initial assumptions are somewhat strict, and it makes sense to change them based on the specific question at hand. One example I&#39;ve been thinking of is a mutual fund manager principal-agent problem. The owner would be the investor (the manager&#39;s client), the profits would be the mutual fund&#39;s returns, and effort would be trading activity. Many mutual funds charge commissions for &quot;active management&quot;, but generally portfolio returns are higher under &quot;passive management&quot;. In the benchmark case, we can imagine the investor is choosing between an actively managed fund versus a passively managed one. When the trading activity is hidden information, then there would probably be a condition very similar to the incentive compatibility constraint here that would scale the manager&#39;s pay based on observed portfolio returns.</p>
+
+<p>What if the principal doesn&#39;t know the conditional distribution of payoffs given the agent&#39;s actions? One way to model that could be as a Bayesian game - the principal has some beliefs over the distribution, and learns from repeated play.</p>
+
+<p>I like this model a lot. The problems aren&#39;t hard to solve, but the way they go together makes the model do interesting things. The initial assumptions are important, but it is reasonable to change them and try things. I think these features make a model fun to play with. I wonder how well its predictions have held up if/when they&#39;ve been put to the data.</p>
+
+  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -544,93 +607,6 @@ So the worker won&#39;t search when she&#39;s already earning the maximum wage, 
     <p>No model today.</p>
 
 <p>Tomorrow: a labor search problem.</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/micro%20theory/2015/10/08/imperfect-information-car-search/">
-        When is it optimal to search for a used car?
-      </a>
-    </h1>
-
-    <span class="post-date">08 Oct 2015</span>
-
-    <p>Suppose you are considering purchasing a used car. There are \(N \ge 1\) sellers. The value of seller \(i\)&#39;s car is \(v_i\), given by</p>
-
-<p>$$v_i =
-\begin{cases}
-1 ~~ \text{with probability} ~~ \beta_i \cr
-0 ~~ \text{with probability} ~~ 1- \beta_i \cr
-\end{cases}$$</p>
-
-<p>where \(\beta_i = \beta^i, i=1,...,N\). So as the number of sellers increases, we only add sellers worse than the current ones. Since we search in a random order, for a given \(N\) this just tells us the distribution of sellers. A seller&#39;s \(\beta_i\) is their private information. This is sort of like Craigslist or some other internet search; you search randomly over sellers of uncertain quality. </p>
-
-<p>You&#39;re a savvy shopper though, and before you buy the car you&#39;re going to get it inspected, which costs \(c\). You could also think about this as a search cost, to avoid confusion over inspection-less visits to sellers. Suppose the price of a car is \(1/2\) from every seller, for simplicity. You can inspect as many sellers as you want, but only one at a time.</p>
-
-<p>Based on \(\beta\), \(N\), and \(c\), when will it be optimal for you to search at least once?</p>
-
-<h4 id="benchmark-case-expected-utility-maximizer">Benchmark case: Expected-utility maximizer</h4>
-
-<p>An expected utility maximizer would start by figuring out the expected quality of a seller,</p>
-
-<p>$$\begin{align}
-\hat{\beta} &amp;= \frac{1}{N} \sum_{i=1}^{N} \beta^i \cr
-&amp;= \frac{\beta}{N} \left( \frac{1- \beta^N}{1- \beta } \right)
-\end{align}$$</p>
-
-<p>We assume we&#39;re starting from no prior searches so that we don&#39;t have to condition on information and update beliefs, which any optimizing agent ought to be doing. The EU-maximizer wants the expected value of a search net of inspection costs to be positive, or</p>
-
-<p>$$\begin{align}
-\hat{\beta}(v-p) - c &amp;\ge 0 \cr
- \implies \hat{\beta}(1/2) - c &amp;\ge 0 \cr
- \implies c &amp;\le \frac{1}{2}\hat{\beta} \cr
-\end{align}$$</p>
-
-<p>We use \(\hat{\beta}(v-p)\) instead of \(\hat{\beta}-p\) because our value from the car is \(1\) for sure - the uncertainty is in whether or not we see it, not in the value itself.</p>
-
-<p>This gives us a bound on whether or not it is optimal to search - an expected-utility maximizer will search if the expected value of the car is greater than the inspection cost.</p>
-
-<p>This makes sense, but there&#39;s another way we can approach this question.</p>
-
-<h4 id="a-worst-case-utility-maximizer">A worst-case utility maximizer</h4>
-
-<p>I guess another way to put this is a &quot;minimum-utility maximizer&quot;. I&#39;ve never heard that term before. I think worst-case bounds are more popular in computer science than economics, which is probably why I haven&#39;t heard it called that. </p>
-
-<p>The worst case we could encounter on our first search is to visit seller \(N\) first. A minimum-utility maximizer only wants to search if even in this bad draw is worth their time, or</p>
-
-<p>$$\begin{align}
-\beta^N(v-p) - c &amp;\ge 0 \cr
-\implies c &amp;\le \frac{1}{2}\beta^N \cr
-\end{align}$$</p>
-
-<p>which looks pretty similar to the expected-utility maximizer&#39;s solution, but with \(\beta^N\) instead of \(\hat{\beta}\). This implies a more &quot;conservative&quot; decision rule than the benchmark solution.</p>
-
-<h4 id="summary">Summary</h4>
-
-<p>This is a pretty cool problem. I initially disagreed with my professor about the solution - I used the worst-case bound, while he used the expected-value bound. He pointed out that in this case, the worst-case bound is a subset of the expected-value bound (I think that must be true generally), so the worst-case bound ignores a large area where an expected-utility maximizer would find it optimal to search. I agree with his argument, but I still prefer the worst-case bound to the expected-value bound. In writing this post, I&#39;ve been trying to understand why.</p>
-
-<p>I think the worst-case bound is a more general solution to the problem (or a solution to a more general problem) than the expectation-bound. In this problem, we&#39;re assuming we know a lot about the distribution of values - we know pretty much exactly what it looks like always, and so we know we can use the expectation to figure out what to do. </p>
-
-<p>If we relax that assumption to only knowing the supports of the distribution of values, then we can&#39;t take an expectation to maximize expected utility. We can still find a worst-case bound and maximize a minimum utility in cases like this. </p>
-
-<p>In general, the worst-case bound requires less information than the expected-value bound; we can set a worst-case bound even if we have no information about the distribution of sellers (or if the distribution of values is continuous and has no expectation, like a Cauchy) by looking at our own budget constraint. That said, if we have the information there&#39;s no reason to ignore it.</p>
-
-<p>While the minimum-utility maximizer may ignore opportunities that the expected-utility maximizer would take, the minimum-utility maximizer can consistently apply their decision rule in more situations than the expected-utility maximizer can.</p>
-
-<p>Below is a plot of the cost bounds with \(\beta=0.99\) as the number of sellers increases. The worst-case bound is in red, the expected-utility bound is in blue.</p>
-
-<p><a href="/public/images/search/cost_bounds_used_car.PNG" title="Cost bounds"><img src="/public/images/search/cost_bounds_used_car.PNG" alt="Cost bounds" title="Cost bounds"></a></p>
-
-<p>The bounds both approach 0 as the number of sellers increases. With \(\beta=0.99\) the two are practically indistinguishable after 20000 or so sellers - which seems like a pretty big market to me, maybe not relative to financial markets but still. With \(\beta=0.5\) (not shown) the two are practically indistinguishable after 600 or so sellers. The lower \(\beta\) is, the faster they approach each other - intuitive from the functions, but I hadn&#39;t expected the worst-case bound to drop quite so fast.</p>
-
-<p>I found a neat quote on <a href="https://agtb.wordpress.com/2009/09/06/cs-and-economics-different-attitudes/">Turing&#39;s Invisible Hand</a> about worst-case vs. expected-case more generally:</p>
-
-<p><em>In a situation that already exists, there is obviously some empirical distribution, and it is hard to argue against taking it into account.  In a situation that doesn’t exist, there is yet no empirical distribution, so in order to prepare for it we need to either theoretically guess the future distribution, or prepare for worst case.</em></p>
-
-<p>Most situations we consider in economics already exist, or are similar to ones that do, so there&#39;s usually a distribution we can work with or a reasonable guess we can make. The connection between EU-maxing/minU-maxing and risk preference is interesting to me; I&#39;d like to go back to the manager&#39;s problem and add uncertainty and different risk preferences in this form between the manager and owner.</p>
-
-<p>I like this problem. At some point, I want to try solving it with a different distribution and running it in R.</p>
 
   </div>
   
