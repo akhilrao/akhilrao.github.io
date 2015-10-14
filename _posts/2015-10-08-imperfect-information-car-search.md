@@ -48,7 +48,7 @@ This gives us a bound on whether or not it is optimal to search - an expected-ut
 
 This makes sense, but there's another way we can approach this question.
 
-#### A worst-case utility maximizer
+#### Different behavior: A worst-case utility maximizer
 
 I guess another way to put this is a "minimum-utility maximizer". I've never heard that term before. I think worst-case bounds are more popular in computer science than economics, which is probably why I haven't heard it called that. 
 

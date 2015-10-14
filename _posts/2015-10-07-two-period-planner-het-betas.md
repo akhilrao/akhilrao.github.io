@@ -50,7 +50,7 @@ kc_1^u &= (n-k)c_1^v \cr
 
 Without a use for savings, the optimal plan is to just consume all resources in the period they're received: \\(c_1^v = k\\), \\(c_1^u = (n-k)\\), and \\(c_1^v=\frac{k \beta ne}{n-k(1-\beta )}, c_1^u=ne-\frac{k \beta ne}{n-k(1- \beta )}\\). The lack of savings technology means \\(\beta\\) only affects the second period allocation, not the first. When \\(\beta \lt 1\\), the impatient agents receive less consumption good because they care less about this period. When \\(\beta=1\\) each group of agents just consumes their period endowment.
 
-#### With a storage technology
+#### Development: With a storage technology
 
 Now suppose a storage technology is developed, so that endowments can be carried across periods. The technology has a transformation rate \\(R\gt 0\\) so that 1 unit of the good stored in period 1 becomes \\(R\\) units of the good in period 2. The dictator's problem is now
 

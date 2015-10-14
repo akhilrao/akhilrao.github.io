@@ -25,7 +25,7 @@ w^\*(\theta)=E \ [ \ \theta \ | \ \theta \in \theta^\*] \cr
 
 The firm will pay workers the expected value of their marginal productivity, which ends up being a constant. The workers will work if the wage is greater than or equal to what they could get staying at home. If the workers' reservation wage is greater than the firm's wage (expected marginal productivity of labor), no one will work. If \\(r<w=E[v]\\), everyone will work.
 
-#### With a costly test that signals types
+#### Signalling: With a costly test that signals types
 
 Now suppose there's a test that workers can take, and it's easier for high types to get a certain score than it is for low types. By observing the score that workers get on the test, firms can guess whether a worker is high ability or not. Formally,
 
