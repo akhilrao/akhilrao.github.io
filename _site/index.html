@@ -344,14 +344,14 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/micro%20theory/2015/10/13/2015-14-04-principal-agent-problem-owner-manager/">
-        An principal-agent problem between an owner and a manager
+      <a href="/micro%20theory/2015/10/15/principal-agent-problem-owner-manager/">
+        A principal-agent problem between an owner and a manager
       </a>
     </h1>
 
-    <span class="post-date">13 Oct 2015</span>
+    <span class="post-date">15 Oct 2015</span>
 
-    <p>Suppose a firm is run by a manager, who is contracted by the owner. The firm&#39;s profit is a random variable \(\pi \in [\pi_a , \pi_b]\)  which the manager can influence through some effort. For simplicity, assume effort is discrete: \(e \in \{e_l,e_h\}\), with \(e_h \gt e_l \ge 0 \).  The manager&#39;s efforts are such that profits with \(e_h\) first-order stochastically dominate profits with \(e_l\), i.e. \(E \ [\pi|e_h] \gt E \ [\pi|e_l]\) and \( f(\pi|e) \gt 0 ~~ \forall \pi\). The manager&#39;s utility is \(u(w,e) = v(w) - g(e)\) with \(g(e_h) \gt g(e_l) \) and \(v&#39;(w) \gt 0, v&#39;&#39;(w) \lt 0\). The manager&#39;s utility strictly concave, so they are risk-averse. Let&#39;s assume the manager&#39;s reservation utility is \(\bar{u} \ge 0 \).</p>
+    <p>Suppose a firm&#39;s owner contracts a manager to run the firm. The firm&#39;s profit is a random variable \(\pi \in [\pi_a , \pi_b]\)  which the manager can influence through some effort. For simplicity, assume effort is discrete: \(e \in \{e_l,e_h\}\), with \(e_h \gt e_l \ge 0 \).  The manager&#39;s efforts are such that profits with \(e_h\) first-order stochastically dominate profits with \(e_l\), i.e. \(E \ [\pi|e_h] \gt E \ [\pi|e_l]\) and \( f(\pi|e) \gt 0 ~~ \forall \pi\). The manager&#39;s utility is \(u(w,e) = v(w) - g(e)\) with \(g(e_h) \gt g(e_l) \) and \(v&#39;(w) \gt 0, v&#39;&#39;(w) \lt 0\). The manager&#39;s utility strictly concave, so they are risk-averse. Let&#39;s assume the manager&#39;s reservation utility is \(\bar{u} \ge 0 \).</p>
 
 <p>The idea is that the manager would prefer to exert less effort to more, but that more effort is likely to produce higher profits than less effort. No manager can control everything - profit is still a random variable and low realizations can occur when the manager exerts more effort, it&#39;s just less likely. The manager&#39;s reservaton utility is their outside offer or what they could produce at home. For clarity, let&#39;s call the owner she and the manager he.</p>
 
@@ -359,37 +359,74 @@
 
 <p>If the manager&#39;s efforts are publicly observable, then the owner solves</p>
 
-<p>MATH</p>
+<p>$$ \begin{align}
+\max_{e \in \{e_l, e_h \}, w( \pi )} ~~&amp; \int_{\pi_a}^{\pi_b} [\pi - w( \pi )] f(\pi | e) ~ d \pi \cr
+\text{s.t.} ~~&amp; \int_{\pi_a}^{\pi_b} v(w(\pi )) f(\pi | e) ~ d \pi - g(e) \ge \bar{u}
+\end{align} $$</p>
 
-<p>We can think of this as a two-stage decision process: given some level of effort from the manager, the owner wants to pay him the profit-maximizing wage. The constraint is called an &quot;individual rationality (IR) constraint&quot; or a &quot;participation constraint&quot;, which is basically a way to embed the manager&#39;s problem into the owner&#39;s decision-making. The owner is constrained to pay the manager a wage that is at least as good as the manager&#39;s outside offer. If the owner doesn&#39;t, the manager won&#39;t work for her.</p>
+<p>We can think of this as a two-stage decision process: given some level of effort from the manager, the owner wants to pay him the profit-maximizing wage. The constraint is called an &quot;individual rationality (IR) constraint&quot; or a &quot;participation constraint&quot;. It&#39;s a way to factor the manager&#39;s problem into the owner&#39;s decision-making - the owner is constrained to pay the manager a wage that is at least as good as the manager&#39;s outside offer. If the owner doesn&#39;t, the manager won&#39;t work for her. For a fixed level of effort \(e\), the owner&#39;s problem can be simplified to minimizing the manager&#39;s wage subject to the participation constraint, or maximizing the negative of the manager&#39;s wage.</p>
 
-<p>MATH</p>
+<p>$$ \begin{align}
+\min_{w( \pi )} ~~&amp; \int_{\pi_a}^{\pi_b} w( \pi ) f(\pi | e) ~ d \pi \cr
+\text{s.t.} ~~&amp; \int_{\pi_a}^{\pi_b} v(w(\pi )) f(\pi | e) ~ d \pi - g(e) \ge \bar{u}
+\end{align} $$</p>
 
-<p>Since we integrated over \(\pi\) this wage holds for all realizations of profit. The optimal wage profile for any level of effort is to pay the manager the inverse wage-utility of the sum of their reservation utility and their marginal cost of effort, or \(w^*_e = v^{-1}(\bar{u} + g(e)) \). From this we see that for a given level of effort, the optimal wage must be a constant. We can think of this as insurance against profit risk: the optimal contract will insure the risk-averse manager against any realization of profit, since the manager&#39;s effort doesn&#39;t guarantee high profits, just makes it more likely.</p>
+<p>A minimization problem can be made into a maximization problem by multiplying the objective by \(-1\). Economists seem to prefer maximization, while statisticians and computer scientists seem to prefer minimization. I&#39;m not sure why this is the case, or if it even is the case beyond my limited sample. </p>
 
-<p>The lagrange multiplier on the constraint is the owner&#39;s <a href="https://en.wikipedia.org/wiki/Shadow_price">shadow price</a> of the manager&#39;s participation: it&#39;s what the owner would give to marginally reduce the manager&#39;s reservation utility. More generally, the lagrange multiplier on a constraint is the improvement to the objective function from marginally relaxing the constraint. </p>
+<p>Since we integrated over \(\pi\) this wage holds for all realizations of profit. We can solve this as a constrained maximization</p>
+
+<p>$$ \begin{align}
+\mathcal{L} = &amp; - \int_{\pi_a}^{\pi_b} w( \pi ) f(\pi | e) ~ d \pi + \lambda [\int_{\pi_a}^{\pi_b} v(w(\pi )) f(\pi | e) ~ d \pi - g(e) - \bar{u}] \cr
+\text{FOC:} ~~ &amp; - \int_{\pi_a}^{\pi_b} f(\pi | e) ~ d \pi + \lambda \int_{\pi_a}^{\pi_b} v&#39;(w(\pi )) f(\pi | e) ~ d \pi = 0 \cr
+\implies ~~ &amp; \frac{1}{v&#39;(w(\pi ))} = \lambda
+\end{align} $$</p>
+
+<p>From this we see that for a given level of effort, the optimal wage must be a constant. The optimal wage profile for any level of effort is to pay the manager the inverse wage-utility of the sum of their reservation utility and their marginal cost of effort, or \(w^*_e = v^{-1}(\bar{u} + g(e)) \). We can think of this as insurance against profit risk: the optimal contract will insure the risk-averse manager against any realization of profit, since the manager&#39;s effort doesn&#39;t guarantee high profits, just makes it more likely.</p>
+
+<p>The lagrange multiplier \( \lambda\) on the participation constraint is the owner&#39;s <a href="https://en.wikipedia.org/wiki/Shadow_price">shadow price</a> of the manager&#39;s participation: it&#39;s the owner&#39;s (maximum) willingness-to-pay to marginally reduce the manager&#39;s reservation utility. More generally, the lagrange multiplier on a constraint is the improvement to the objective function from marginally relaxing that constraint.</p>
+
+<p>The IR constraint must bind in this problem if the manager works for the owner. Any excess utility the owner gives the manager reduces the owner&#39;s profit, so the owner can always do better by reducing the manager&#39;s wage until the constraint binds.</p>
 
 <h4 id="information-problem-effort-is-manager-39-s-private-information">Information problem: effort is manager&#39;s private information</h4>
 
-<p>ASSUMPTIONS, MOTIVATION</p>
+<p>Now suppose the manager&#39;s effort level is not publicly observable anymore, it&#39;s the manager&#39;s private information. Now the owner solves</p>
 
-<p>INCENTIVE COMPATIBILITY CONSTRAINT</p>
+<p>$$ \begin{align}
+\min_{w( \pi )} ~~&amp; \int_{\pi_a}^{\pi_b} w( \pi ) f(\pi | e) ~ d \pi \cr
+\text{s.t.} ~~&amp; \int_{\pi_a}^{\pi_b} v(w(\pi )) f(\pi | e) ~ d \pi - g(e) \ge \bar{u} \cr
+&amp; e = \text{argmax} ~~ \int_{\pi_a}^{\pi_b} v(w(\pi )) f(\pi | e) ~ d \pi - g(e) \cr
+\end{align} $$</p>
 
-<p>MATH</p>
+<p>The second constraint is called an &quot;incentive compatibility&quot; (IC) constraint. It says that the effort level the owner wants to implement has to be solve the manager&#39;s problem. I think of this as a refinement on the IR constraint - not only should it make sense for the manager to participate, it should be what they would most prefer to do. The manager should have no incentive to deviate. It&#39;s not quite the same as the IR constraint, since it&#39;s possible for the argmax of the manager&#39;s problem under effort is lower than the reservation utility.</p>
 
-<p>SHADOW PRICES</p>
+<p>Implementing \(e_l\) is easy - the owner just pays the manager the same wage as under observable effort. It satisfies the IR constraint, and at that wage the manager would put in low effort anyway (there is no profitable deviation). Implementing \(e_h\) is more interesting, since the IC constraint becomes important. For this problem, the IC implies</p>
 
-<p>When the manager&#39;s effort is private information, the profit maximizing wage is no longer a constant, it depends on the likelihoods of profits under the different effort levels. From the first-order condition, we can see that the optimal wage profile has a component based on the shadow price of the manager&#39;s participation, and a component based on the shadow price of the manager&#39;s cooperation. The cooperation component is scaled based on the likelihood ratio of observed profits given effort, i.e. based on how likely the observed profits were given the efforts the manager could have exerted. I&#39;m not sure how to do this if effort were continuous; maybe a conditional expectation? </p>
+<p>$$ \int_{\pi_a}^{\pi_b} v(w(\pi )) f(\pi | e_h ) ~ d \pi - g(e_h ) \ge \int_{\pi_a}^{\pi_b} v(w(\pi )) f(\pi | e_l ) ~ d \pi - g(e_l ) $$</p>
 
-<p>If the manager cooperates and doesn&#39;t shirk, the second component can be nearly as large as the owner&#39;s shadow price on cooperation (because the densities are strictly positive on the support, the likelihood ratio can be small but not 0). However, profits are random, and low realizations will affect the manager&#39;s pay - low realizations are just less likely when the manager is cooperating. I see the way the likelihood ratio enters as an &quot;information penalty&quot;. Without further restrictions, the penalty may cause the wage to be negative.</p>
+<p>So the manager&#39;s expected value of putting in high effort has to be greater than or equal to his expected value of putting in low effort. If not, the manager has an incentive to deviate and since effort is unobservable, he will.</p>
 
-<p>My guess is that there is some connection between this information penalty and how much information is contained in the conditional distributions, or how sensitive profits are to efforts. I think that in the limiting case of the conditional distribution of profits being (almost) uniform for any effort level, the second term in the optimal wage would disappear. In that case, the owner would only pay the manager enough to participate, but since the owner has no information to check on the manager&#39;s effort levels, the owner won&#39;t pay the manager anything for exerting effort. In that case, I don&#39;t think an equilibrium where the manager exerts high effort can be sustained.</p>
+<p>As before, we put it into a lagrangian. From the first-order condition of the owner&#39;s problem,</p>
+
+<p>$$\begin{align}
+w(\pi) : ~~ &amp; - \int_{\pi_a}^{\pi_b} f(\pi | e_h ) ~ d \pi + \lambda  \int_{\pi_a}^{\pi_b} v&#39;(w(\pi )) f(\pi | e_h ) ~ d\pi \cr + \ &amp; \gamma \int_{\pi_a}^{\pi_b} [f(\pi | e_h )-f(\pi | e_l )] \ v&#39;(w(\pi)) = 0 \cr
+\implies ~~ &amp; \frac{1}{v&#39;(w(\pi ))} = \lambda + \gamma \left[ 1 - \frac{f(\pi|e_l )}{f(\pi|e_h )} \right]
+\end{align}$$</p>
+
+<p>The condition on the wage has the same component of the IR constraint multiplier - the shadow price of the manager&#39;s participation - and a new component from the IC constraint based on the shadow price of the manager&#39;s cooperation. This component is not a constant - it depends on the realizations of profit through the ratio of conditional densities of profit given effort. In repeated play, this term is a likelihood ratio. </p>
+
+<p>By the same argument as earlier, the IR constraint must bind. By a similar argument, the IC constraint will also bind if high effort is implemented.</p>
+
+<p>The cooperation shadow price is scaled based on the likelihood ratio of observed profits given effort, i.e. based on how likely the observed profits were given the efforts the manager could have exerted. I&#39;m not sure how to do this if effort were continuous; maybe a conditional expectation? </p>
+
+<p>If the manager cooperates and doesn&#39;t shirk, the second component can be nearly as large as the owner&#39;s shadow price on cooperation (because the densities are strictly positive on the support, the likelihood ratio can be small but not 0). However, profits are random, and low realizations will affect the manager&#39;s pay - low realizations are just less likely when the manager is cooperating. I see the way the likelihood ratio enters as an &quot;information penalty&quot;. Without further restrictions, the penalty may cause the wage to be negative. I think this is unrealistic, but my guess is that adding a wage nonnegativity constraint will penalize the manager&#39;s wage, since the owner can&#39;t optimally punish the manager for bad profit realizations. I should try that.</p>
+
+<p>My guess is that there is some connection between this information penalty and how much information is contained in the conditional distributions, or how sensitive profits are to efforts. I think that in the limiting case of the conditional distribution of profits being uniform for any effort level, the second term in the optimal wage would disappear. In that case, the owner would only pay the manager enough to participate, but since the owner has no information to check on the manager&#39;s effort levels, the owner won&#39;t pay the manager anything for exerting effort. In that case, I don&#39;t think an equilibrium where the manager exerts high effort can be sustained.</p>
 
 <p>In the other direction, if the conditional distributions are highly informative about effort levels, then the penalties will be applied much more swiftly and harshly but also much less often if the manager is cooperating.</p>
 
 <p>The information penalty also seems related to the <a href="https://en.wikipedia.org/wiki/Price_of_anarchy">Price of Anarchy</a>, like maybe a &quot;likelihood-PoA&quot; or something. I wonder if that&#39;s a thing.</p>
 
-<p>It would be interesting to see a critical discount rate for the manager&#39;s cooperating in a dynamic version of this, given that he may be penalized even if he cooperates.</p>
+<p>It would be interesting to see a critical discount rate for the manager&#39;s cooperation in a dynamic version of this, given that he may be penalized even if he cooperates.</p>
 
 <h4 id="conclusion">Conclusion</h4>
 
