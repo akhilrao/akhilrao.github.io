@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Optimal supply and pass-through of a risky commodity in a symmetric Cournot market
+title: Optimal supply of a risky commodity in a symmetric Cournot market
 category: micro theory
-tags: micro-theory oligopoly cournot risky supply passthrough 
+tags: micro-theory oligopoly cournot risk supply passthrough 
 year: 2015
 month: 10
 day: 02
@@ -10,7 +10,7 @@ published: true
 summary: Symmetric firms compete in a Cournot market with a probability of death. The probability that a firm will die depends on the aggregate quantity supplied. Pass-through is derived. 
 ---
 
-This post is a model I've been thinking about a bit lately. Consider a Cournot market with \\(n\\) symmetric firms competing. Since the firms are symmetric, they will all supply the same quantity, \\(\bar{x}\\). The firms face a generic inverse demand function, \\(P(X)\\). The twist is that there is a risk of removal: with probability \\(F(n \bar{x} ) \\) a firm will randomly be removed from the market. The PDF of removal is \\( F'(X) = f'(X) \\), which is thrice continuously differentiable.
+This post is a model I've been thinking about a bit lately. Consider a Cournot market with \\(n\\) symmetric firms competing. Since the firms are symmetric, they will all supply the same quantity, \\(\bar{x}\\). The firms face a generic inverse demand function, \\(P(X)\\). The twist is that there is a risk of removal: with probability \\(F(n \bar{x} ) \\) a firm will randomly be removed from the market. The PDF of removal is \\( F'(X) = f(X) \\), which is thrice continuously differentiable.
 
 With this model, I am trying to understand markets for illegal commodities better. I think this is a reasonable way to look at the probability of getting arrested when supplying some prohibited ("risky") commodity. The chance the seller ("the firm") gets arrested (removed from the market, 0 payoff) should depend on the number of sellers and the quantity supplied by the individual seller. In this version, it depends on both through aggregate supply. Aggregate quantity supplied is \\( X = n \bar{x} \\).
 
