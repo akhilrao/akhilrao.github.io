@@ -348,6 +348,14 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
 
       <a class="sidebar-nav-item" href="https://github.com/akhilrao/archive/v0.0.1.zip">Download</a>
       <a class="sidebar-nav-item" href="https://github.com/akhilrao">GitHub project</a>
@@ -467,6 +475,77 @@ Suppose \(T\) is the final period. Then \( \gamma_{3,T}k_{T+1} = 0\). In the fin
 <p>then we get that \( k^* \) exists \( \forall \mu \lt 1 \).</p>
 
 <p>What is consumption in this case? The fourth steady state condition tells us that \( c^* = f( \mu^* k^* ) - k^* \delta \mu^{* \alpha} \). At the steady state, we know that \( f( \mu^* k^* ) \gt k^* \delta \mu^{* \alpha} \) - the optimal solution is such that the level of output is greater than the amount of depreciated utilized capital in each period. So consumption is also strictly positive when it is optimal to partially utilize capacity.</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/micro%20theory/2015/10/18/risky-good-supply-passthrough/">
+        Optimal quantity supply and pass-through of a risky commodity in a symmetric market
+      </a>
+    </h1>
+
+    <span class="post-date">18 Oct 2015</span>
+
+    <p>This post is a model I&#39;ve been thinking about a bit lately. Consider a Cournot market with \(n\) symmetric firms competing. Since the firms are symmetric, they will all supply the same quantity, \(\bar{x}\). The firms face a generic inverse demand function, \(P(X)\). The twist is that there is a risk of removal: with probability \(F(n \bar{x} ) \) a firm will randomly be removed from the market. The PDF of removal is \( F&#39;(X) = f&#39;(X) \), which is thrice continuously differentiable.</p>
+
+<p>With this model, I am trying to understand markets for illegal commodities better. I think this is a reasonable way to look at the probability of getting arrested when supplying some prohibited (&quot;risky&quot;) commodity. The chance the seller (&quot;the firm&quot;) gets arrested (removed from the market, 0 payoff) should depend on the number of sellers and the quantity supplied by the individual seller. In this version, it depends on both through aggregate supply. Aggregate quantity supplied is \( X = n \bar{x} \).</p>
+
+<p>I&#39;m not sure I like this; I would like to do it with the probability of removal as a generic function of number of sellers and individual seller&#39;s quantity supplied, \(F(x_i , n) \). But this is tractable and a reasonable start.</p>
+
+<h3 id="optimal-supply-and-profits">Optimal supply and profits</h3>
+
+<p>Each firm solves</p>
+
+<p>$$ \max_x~ F(X)(0) + (1-F(nx))(p(nx)-c)x $$</p>
+
+<p>Their first-order condition is</p>
+
+<p>$$\begin{align} 
+&amp; x[np&#39;(X) - nf(X)p(X) - nF(X)p&#39;(X) + cnf(X)] \cr 
+&amp; + (p(X)-c)(1-F(X)) = 0 \cr
+\end{align}$$</p>
+
+<p>Which gives us the optimal quantity supplied</p>
+
+<p>$$ \bar{x} = \frac{-(p(X) - c)}{n[p&#39;(X) + \frac{f(X)}{1-F(X)}(p(X)-c)]} $$</p>
+
+<p>\( \lambda(X) \equiv \frac{f(X)}{1-F(X)} \) is the arrest hazard rate - the probability of a firm&#39;s arrest for a specific level of aggregate supply given the firm has not been arrested yet. The optimal quantity supplied is reduced from the usual optimal Cournot quantity. The reduction is increasing in the hazard rate (riskier at current \(X\) means sell less to be safe) and the profit margin (more profit per unit means the firm can sell fewer units).</p>
+
+<p>Individual firms&#39; profits are given by</p>
+
+<p>$$ \bar{\pi} = \frac{(p(X) - c)^2 }{n \ [ |p&#39;(X)| + \lambda(X) (p(X)-c)]} $$</p>
+
+<h3 id="pass-through">Pass-through</h3>
+
+<p>How does having this risk in the picture change how cost affects price?</p>
+
+<p>\( \sigma(X) = -\frac{XP&#39;&#39;(X)}{P&#39;(X)} \) is the curvature of the inverse demand function. Define \( \gamma(X) = -\frac{XF&#39;&#39;(X)}{F&#39;(X)} \), the curvature of the arrest likelihood. The pass-through depends on \( \sigma(X)\), \( \gamma(X)\), and \( \lambda(X) \).</p>
+
+<p>Let the firms&#39; first-order condition be \(R\). \(R\) defines the quantity supplied as an implicit function of cost. The quantity pass-through, \(\frac{\partial X}{\partial c}\), is</p>
+
+<p>$$ \begin{align}
+ \frac{\partial X}{\partial c} &amp; = - \frac{\partial R / \partial c}{\partial R / \partial X} \cr
+\end{align} $$</p>
+
+<p>Then</p>
+
+<p>$$ \begin{align}
+\frac{\partial P(X)}{\partial c} &amp; = \frac{\partial P}{\partial X}\frac{\partial X}{\partial c} \cr
+\implies \frac{\partial P(X)}{\partial c} &amp; = \frac{Xf(X) + F(X)}{f(X)[2 \lambda^{-1} - 2x - 1 - \sigma \lambda^{-1} - p&#39;^{-1}((p-c)(1- \gamma + ( \gamma / x) ) + p)]}  \cr
+\end{align} $$</p>
+
+<p>I&#39;m not sure of my algebra, so I&#39;ll try again and update this. But the expression depends on things in ways that make sense. I&#39;m not sure what the derivative wrt the parameters are or if they make sense yet. It&#39;s pretty long and ugly.</p>
+
+<h3 id="summary">Summary</h3>
+
+<p>I say &quot;arrest&quot;, but I guess it&#39;s really &quot;zero payoff&quot;. Maybe arrest should be negative payoff or something. I think this could apply to any event, with the payoffs associated with \(F(x)\) set up appropriately. I&#39;m sure this has been done much more generally before.</p>
+
+<p>I think it would be interesting to see the &quot;risk pass-through&quot;, the change in price with respect to risk. The regular passthrough already incorporates the curvature of the risk likelihood, so maybe &quot;risk pass-through&quot; is unnecessary.</p>
+
+<p>I haven&#39;t assumed a form for price here, but it would depend on the hazard rate through \( \bar{x} \). The direct effect of the number of sellers would cancel out of the price, but \(n\) would still come in through the price and risk functions. As the hazard rate increases, I think the price should also increase if only because the quantity supplied will decrease. Without assuming a specific form, I can&#39;t go further in saying much about the price. I would like to see what the arrest risk premium looks like, if it is there.</p>
+
+<p>At some point I may try to do some numerics on this model to see how stuff changes with different assumptions.</p>
 
   </div>
   
@@ -683,90 +762,6 @@ EU_{L2} =&amp; (0)(1/3) + (100)(1/6) + (1000)(1/6) \cr
 <p>To round it off, your expected profits in the first stage would be 73.7975. Your expected profits decrease as you move through the buyers, since your price gets lower and you lose the expected value of the future buyers.</p>
 
 <p>Adding discounting wouldn&#39;t change the key features of this problem. Adding bargaining would, since the buyers wouldn&#39;t have to accept your profit-maximizing price. Discounting plus bargaining would change things by giving the person with the higher discount rate (more patience) an advantage. This is what happens in Rubinstein bargaining games.</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/macro%20theory/2015/10/10/otj-search/">
-        On-the-job search with dynamic programming
-      </a>
-    </h1>
-
-    <span class="post-date">10 Oct 2015</span>
-
-    <p>Consider a worker trying to maximize lifetime consumption and leisure. She needs a job to get stuff to consume, which eats into her leisure time, and gives us an interesting tradeoff to study.</p>
-
-<p>The total time available is normalized to 1 and everything is measured in terms of the consumption good. For any wage \(w_t\), the worker needs to decide how much time to work, \(1-l_t\). Her labor income is \(w_t (1-l_t)\). If she&#39;s unemployed, she gets to spend all her time on leisure, but she gets no income and therefore no consumption. Formally, the worker solves</p>
-
-<p>$$\begin{align}
-\max_{c_t,l_t} &amp;~ E_0 \sum_{t=0}^{\infty} \beta^t[\ln c_t + \phi \ln l_t] \cr
-\text{s.t.} &amp;~ 0 \le l \le 1 \cr
-&amp;~ c_t \le w_t (1-l_t)
-\end{align}$$</p>
-
-<p>where \(\beta \in (0,1)\) and \(\phi \gt 0\).</p>
-
-<p>In the beginning of each period, the unemployed worker receives an offer \(w \in [0,B],~B \lt \infty\), drawn randomly from the continuous distribution function \(F(w)\). If the worker accepts the offer, she begins receiving labor income in the same period.</p>
-
-<p>The employed worker can pay a search cost \(z \gt 0\) to receive another offer randomly drawn from the same distribution, \(F(w)\) - she can keep searching on the job. If she accepts the offer, she begins working at the new job in the following period.</p>
-
-<p>To keep things simple, let&#39;s assume there is no exogenous job destruction; once an offer is accepted, the job survives with probability 1. There is no saving or borrowing.</p>
-
-<p>The utility function is natural log in consumption and leisure, so we can rule out 0 and \(\infty\) as solutions. The unemployed worker will always accept their first job offer. The action is in the employed worker searching.</p>
-
-<h4 id="the-bellman-equations">The Bellman equations</h4>
-
-<p>To solve this problem, we break the consumer&#39;s decision over infinite periods down into a series of smaller one-period decisions and find an optimal solution to that one equation (<a href="https://en.wikipedia.org/wiki/Dynamic_programming">dynamic programming</a>). In each period, the workers face the following decisions:</p>
-
-<p>$$\begin{align}
-\text{Unemployed:} ~~ V^u (w) &amp; = \max_l \{accept , ~ reject \} \cr
-&amp; = \max_l \{ u(w(1-l),l) + \beta V^e (w), u(0,1)\} \cr
-\end{align}$$</p>
-
-<p>Clearly, the unemployed will always accept any offer \(w \gt 0\).</p>
-
-<p>$$\begin{align}
-\text{Employed:} ~~ V^e (w) &amp; = \max_l \{don&#39;t~search , ~ search \} \cr
-&amp; = \max_l \left\{ \frac{u(w(1-l),l)}{1-\beta}, \frac{u(w(1-l)-z,l)}{1-\beta} + \frac{\beta}{1-\beta} \int_w^B (V^e (w&#39;) - V^e (w)) \ dF(w&#39;) \right\} \cr
-\end{align}$$</p>
-
-<p>\(w&#39;\) is the next period&#39;s offer. The search integral is a <a href="https://en.wikipedia.org/wiki/Lebesgue_integration">Lebesgue integral</a> over the wage distribution. The worker will obviously not accept an offer at a wage lower than the current one, so we only integrate over the current wage to the upper bound.</p>
-
-<h4 id="is-there-a-reservation-wage">Is there a reservation wage?</h4>
-
-<p>In this context, &quot;is there a wage \(\bar{w}\) such that the employed worker searches if and only if \(w \le \bar{w}\)&quot;? The answer is yes. To find \(\bar{w}\), let&#39;s assume it exists, in which case it satisfies </p>
-
-<p>$$V^e (Don&#39;t~search) = V^e (Search)$$ </p>
-
-<p>Then we do some algebra and get that</p>
-
-<p>$$\bar{w}:~ \ln(w(1-l)) - \ln(w(1-l)-z) = \beta \int_{\bar{w}}^B (V^e (w&#39;) - V^e (\bar{w})) \ dF(w&#39;) $$</p>
-
-<p>The LHS is the search penalty to the marginal utility of consumption (marginal cost of searching), and the RHS is the discounted expected increase in wage from the search (marginal benefit of searching).</p>
-
-<p>What else can we say about the worker&#39;s search behavior?</p>
-
-<ul>
-<li><p>As \(w \to 0 \), \(V^e_s (w) \to -\infty\) faster than \(V^e_n (w) \to -\infty\). So at a low enough wage, the search cost \(z\) has a large effect on the worker&#39;s utility and she won&#39;t search.</p></li>
-<li><p>At \(w=B\),
-$$\begin{align}
-V^e_s (B) &amp; = (1-\beta)^{-1} (\ln(B(1-l)-z) + \phi \ \ln(l)) \cr
-V^e_n (B) &amp; = (1-\beta)^{-1} (\ln(B(1-l)) + \phi \ \ln(l)) \cr
-\implies V^e_n (B) &amp; \gt V^e_s (B)
-\end{align}$$
-So the worker won&#39;t search when she&#39;s already earning the maximum wage, which is pretty intuitive.</p></li>
-</ul>
-
-<p>So the worker won&#39;t search at a low enough wage, and she won&#39;t search at the highest wage... since the value of searching and not searching are both concave functions, this means they must touch twice if they cross. They could potentially touch only once if they don&#39;t cross. This makes things complicated, since now there are potentially three wages where the condition we used to find the reservation wage holds: in the case where they cross, there&#39;s the wage at which workers start searching and the wage at which the workers stop searching (what we found); in the case where they touch only once, there&#39;s the wage at which workers are indifferent between searching and not searching.  </p>
-
-<p>To make life easier, let&#39;s assume \(z\) is small enough that \(V^e_s (w) \lt V^e_n (w)\) occurs on the lower end of the wage scale only at wages below 1 (so negative utilities), and the only place where our reservation wage condition holds that matters is the one we explored. Utility has a cardinal interpretation here, so we can rule out the case of the worker earning so little she can&#39;t afford to search. </p>
-
-<p>Anyway, with this behavior, in the long run we should expect every worker to end up with a wage above their reservation wage, since they&#39;ll keep searching for a better job otherwise.</p>
-
-<p>In a future post, I&#39;ll relax the assumption that \(z\) is very small and sketch out all the cases of the reservation wage, and explore the worker&#39;s labor supply behavior in this model.</p>
-
-<p>Dynamic programming is a powerful way to get a simple solution to an optimization problem. Without it, we would have had to set up and solve an infinite-period optimization. With it, we can just find a consistent decision rule for an arbitrary period. To use DP, we need some assumptions on the functions we&#39;re optimizing. When I revisit this model, maybe I&#39;ll talk about those assumptions as well.</p>
 
   </div>
   

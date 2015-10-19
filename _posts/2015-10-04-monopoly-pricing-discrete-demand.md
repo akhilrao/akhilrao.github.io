@@ -12,7 +12,7 @@ summary: How should a monopoly price optimally when demand is discrete? A deriva
 
 How should a monopoly price when demand is discrete? This situation arises whenever the consumer is choosing between "buy" or "not buy", as opposed to a choice of a continuous quantity.
 
-Let the consumers' valuations of the good be given by \\(V \sim F(v)\\), where \\(F(v)\\) is the [CDF](https://en.wikipedia.org/wiki/Cumulative_distribution_function) of the valuations and \\(f(p)\\) is the associated density. The probability that a consumer chooses to buy the good is the probability that their valuation is greater than the price, i.e. \\(1-F(p)\\). The seller's expected payoff is then
+Let the consumers' valuations of the good be given by \\(V \sim F(v)\\), where \\(F(v)\\) is the [CDF](https://en.wikipedia.org/wiki/Cumulative_distribution_function) of the valuations and \\(f(v)\\) is the associated density. The probability that a consumer chooses to buy the good is the probability that their valuation is greater than the price, i.e. \\(1-F(p)\\). The seller's expected payoff is then
 
 $$ \pi(p) = (p-c)(1-F(p)) $$
 
