@@ -5,7 +5,7 @@ category: micro theory
 tags: micro-theory oligopoly cournot risk supply passthrough 
 year: 2015
 month: 10
-day: 02
+day: 19
 published: true
 summary: Symmetric firms compete in a Cournot market with a probability of death. The probability that a firm will die depends on the aggregate quantity supplied. Pass-through is derived. 
 ---
@@ -69,4 +69,4 @@ I think it would be interesting to see the "risk pass-through", the change in pr
 
 I haven't assumed a form for price here, but it would depend on the hazard rate through \\( \bar{x} \\). The direct effect of the number of sellers would cancel out of the price, but \\(n\\) would still come in through the price and risk functions. As the hazard rate increases, I think the price should also increase if only because the quantity supplied will decrease. Without assuming a specific form, I can't go further in saying much about the price. I would like to see what the arrest risk premium looks like, if it is there.
 
-At some point I may try to do some numerics on this model to see how stuff changes with different assumptions.
+At some point I may try to do some numerics on this model to see how stuff changes with different assumptions. There are many possible extensions to this, which I like.
