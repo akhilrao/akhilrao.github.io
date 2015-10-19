@@ -59,7 +59,7 @@ $$ \begin{align}
 \implies \frac{\partial P(X)}{\partial c} & = \frac{Xf(X) + F(X)}{f(X)[2 \lambda^{-1} - 2x - 1 - \sigma \lambda^{-1} - p'^{-1}((p-c)(1- \gamma + ( \gamma / X) ) + p)]}  \cr
 \end{align} $$
 
-I'm not sure of my algebra, so I'll try again and update this. But the expression depends on things in ways that make sense. I'm not sure what the derivative wrt the parameters are or if they make sense yet. It's pretty long and ugly.
+I'm not sure of my algebra, so I'll try again and update this. But the terms in the expression make some sense to me. I'm not sure what the derivative wrt the parameters are or if they make sense yet, but that would be an informative exercise.
 
 ### Summary
 
