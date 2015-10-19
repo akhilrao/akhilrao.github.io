@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Optimal quantity supply and pass-through of a risky commodity in a symmetric market
+title: Optimal supply and pass-through of a risky commodity in a symmetric Cournot market
 category: micro theory
 tags: micro-theory oligopoly cournot risky supply passthrough 
 year: 2015
@@ -14,7 +14,7 @@ This post is a model I've been thinking about a bit lately. Consider a Cournot m
 
 With this model, I am trying to understand markets for illegal commodities better. I think this is a reasonable way to look at the probability of getting arrested when supplying some prohibited ("risky") commodity. The chance the seller ("the firm") gets arrested (removed from the market, 0 payoff) should depend on the number of sellers and the quantity supplied by the individual seller. In this version, it depends on both through aggregate supply. Aggregate quantity supplied is \\( X = n \bar{x} \\).
 
-I'm not sure I like this; I would like to do it with the probability of removal as a generic function of number of sellers and individual seller's quantity supplied, \\(F(x_i , n) \\). But this is tractable and a reasonable start.
+I'm not sure I like this; I would like to do it with the probability of removal as a generic function of number of sellers and individual seller's quantity supplied, \\(F(x_i , n) \\). But this is a tractable start.
 
 ### Optimal supply and profits
 
