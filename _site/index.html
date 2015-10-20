@@ -368,16 +368,121 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/micro%20theory/2015/10/19/risky-good-supply-passthrough/">
-        Optimal supply of a risky commodity in a symmetric Cournot market
+      <a href="/micro%20theory/2015/10/20/hotelling-digital-piracy-arrest/">
+        Hotelling monopoly pricing for a digital good with piracy
+      </a>
+    </h1>
+
+    <span class="post-date">20 Oct 2015</span>
+
+    <p>This post and <a href="http://akhilrao.github.io/micro%20theory/2015/10/19/risky-good-supply-passthrough/">previous post</a> are about illegal markets. This one is about a digital good that can be pirated.</p>
+
+<p>The basic idea is: consumers can buy 1 unit of the good from the firm at price \(p\), or for free at some chance \( \theta \in (0,1) \) of 0 payoff (&quot;piracy and arrest&quot;). The good can be reproduced at 0 marginal cost.</p>
+
+<p>The setting is a version of <a href="http://akhilrao.github.io/micro%20theory/2015/09/28/hotelling-triangle-city/">Linear City</a>. There are three refinements on the standard Hotelling-on-a-line-of-length-1 setup here:</p>
+
+<ol>
+<li>Consumers choose between buying at the firm, F, or getting the good for free from an illegal source T (like torrent sites). Getting the good for free comes with a probability \( \theta \) of 0 payoff. This is the risk of getting sued or arrested for illegally consuming the content.</li>
+<li>The marginal cost of producing the good is 0. This is reasonable for digital goods, where the marginal cost is some \(\epsilon\) very small.</li>
+<li>The travel cost is directional: \(t^F\) to get to the firm, and \(t^T\) to get to the torrent. This is a crude way to capture the different user experiences of consuming a digital good through the firm or the torrent. No assumptions on the ordering of travel costs; they can even be equal, though that would defeat the point.</li>
+</ol>
+
+<p>I&#39;m assuming that the good is identical whether it&#39;s consumed from the firm or the torrent, so the value is a common \(v\). </p>
+
+<h3 id="the-marginal-consumer">The marginal consumer</h3>
+
+<p>The marginal consumer is indifferent between buying the item legally from the firm and taking a risk to get the item for free illegally. Formally,</p>
+
+<p>$$ \begin{align}
+u( consume \ legally ) &amp;= u( consume \ illegally ) \cr
+v - p - t^F x &amp;= (1- \theta)(v-t^T (1-x)) \cr
+\implies x &amp; = \frac{\theta v - p + t^T (1- \theta) }{t^F + t^T (1- \theta)} \cr
+\end{align} $$</p>
+
+<p>The expression \( t^T (1 - \theta) \) is &quot;expected cost of surviving piracy&quot;. </p>
+
+<h3 id="the-firm">The firm</h3>
+
+<p>Since the marginal cost is 0, the firm just maximizes price times demand.</p>
+
+<p>$$ \begin{align}
+\max_p ~~&amp; p~[\frac{\theta v - p + t^T (1- \theta) }{t^F + t^T (1- \theta)}]  \cr
+\text{FOC:}~ &amp; \frac{\theta v - 2p + t^T (1- \theta) }{t^F + t^T (1- \theta)} = 0 \cr
+\implies p &amp; = \frac{1}{2} (\theta v + t^T (1- \theta))
+\end{align}$$</p>
+
+<p>Plugging the price back into the objective function, we get the firm&#39;s profit:</p>
+
+<p>$$ \pi = \frac{ ( \theta v + t^T (1- \theta) )^2 }{4( t^F + t^T (1- \theta) )} $$</p>
+
+<h3 id="equilibrium-analysis">Equilibrium analysis</h3>
+
+<p>The equilibrium of this problem is a triple of demand, price, and profit,</p>
+
+<p>$$\begin{align}
+x &amp; = \frac{\theta v + t^T (1- \theta)}{2( t^F + t^T (1- \theta) )} \cr
+p &amp; = \frac{1}{2} (\theta v + t^T (1- \theta)) \cr
+\pi &amp;= \frac{ ( \theta v + t^T (1- \theta) )^2 }{4( t^F + t^T (1- \theta) )} \cr
+\end{align}$$</p>
+
+<p>As \( \theta \to 1 \), the equilibrium approaches the regular Hotelling monopoly equilibrium with zero marginal cost,</p>
+
+<p>$$ x_{(\theta = 1)} = \frac{ v }{2 t^F  } , ~~ p_{(\theta = 1)} = \frac{v}{2}, ~~ \pi_{(\theta = 1)} = \frac{ v^2 }{4 t^F } $$</p>
+
+<p>The equilibrium price is a combination of the monopoly price and the expected cost of surviving piracy. If \( t^T \lt v \) (as it necessarily-but-not-sufficiently should be if there is piracy), then the price with piracy is lower than the price if piracy isn&#39;t an option. </p>
+
+<p>The equilibrium demand is a combination of monopoly and duopoly demand expressed in terms of the expected cost of surviving piracy. I think this is because even though it&#39;s not another firm, with consumer demand being uniformly distributed the torrents act as a competitive force against the firm. I think for reasonably values of travel cost, the indifferent consumer is closer to the firm than they would be without piracy, or under a uniform-value duopoly, implying that the piracy option reduces the firm&#39;s marketshare (which makes sense).</p>
+
+<p>The equilibrium profits are similarly a combination of monopoly and duopoly profits, with the latter expressed in terms of expected cost of surviving piracy. This is smaller than the monopoly profit. I&#39;m not sure if it&#39;s smaller than the duopoly profit as well; probably depends on the value of \( t^T (1- \theta) \).</p>
+
+<p>From the demand, we can see how much piracy vs legal purchasing is happening:</p>
+
+<p>$$ \begin{align}
+\text{Firm&#39;s marketshare:}~~ &amp; x  = \frac{\theta v + t^T (1- \theta)}{2( t^F + t^T (1- \theta) )} \cr
+\text{Piracy marketshare:}~~ &amp; 1-x  = \frac{ 2 t^F + t^T (1- \theta) - \theta v}{2( t^F + t^T (1- \theta) )} \cr
+\end{align} $$</p>
+
+<p>Finally, we can find a restriction on \( \theta \) such that \( x \lt 1 \) (consumers always pirate):</p>
+
+<p>$$ \implies ~ \theta \lt \frac{2t^F + t^T }{v + t^T } $$</p>
+
+<p>This always holds when \( v \lt 2t^F \), since \( \theta \lt 1 \). If consumers don&#39;t value the good enough relative to the travel cost of legal purchase, they would accept any chance of arrest and pirate the good (\( \lim_{\theta \to 1} (x) \lt 1 \) ) .</p>
+
+<h3 id="summary">Summary</h3>
+
+<p>I really like the simplicity and flexibility of the Hotelling framework. There aren&#39;t too many parameters and they have nice interpretations. Finding an indifferent consumer and solving a firm&#39;s problem are some algebra, and the amount of algebra scales pretty fast with the model&#39;s complexity, but it&#39;s doable. The consumer&#39;s choice boils down to choosing between two options, which saves us from having to solve a consumer&#39;s problem. My professor said Hotelling is a &quot;workhorse&quot; model of IO, and I can see why.</p>
+
+<p>I like the directional travel cost. User experiences matter, and I think this would probably be well-captured empirically by something like &quot;minimum number of actions (clicks/keystrokes/swipes/etc) to accomplish this activity&quot;. These may be small in comparison to travel costs for physical goods, but I think it&#39;s the relative differences in travel costs that matter, not the absolute levels.</p>
+
+<p>I guess the true minimum number of actions is 1 - program a button to execute that specific arbitrarily complex sequence of actions. Or 0 - the system automatically executes that action on a loop. Low reuse value though. So maybe &quot;given default OS settings&quot;.</p>
+
+<p>Some possible refinements:</p>
+
+<ol>
+<li><p>Allow the value of the legal/illegal good to vary, maybe making them functions of some level of investment from the firm. Probably not hard.</p></li>
+<li><p>Make the risk likelihood a function of the quantity of illegal consumption. Probably not hard.</p></li>
+<li><p>Modeling the firm&#39;s ability to influence the risk likelihood. This is from the observation that organizations like the RIAA/MPAA are able to increase the level of enforcement at some (low) cost. Probably not too hard. The likelihood could be indexed by the firm&#39;s choice of some index variable, like &quot;effort&quot; in the owner-manager problem.</p></li>
+<li><p>Add multiple goods. I&#39;m not sure how to do this but I feel like it&#39;s probably been done before and is therefore doable.</p></li>
+<li><p>Model the content distribution network. I&#39;m not sure how to do this. Maybe with some sufficient statistics of the network size/structure for the firm to do some enforcement. Not sure what those statistics would be or how that would work. The incentives of the CDN and its platform <a href="https://gigaom.com/2011/02/18/pirate-economics-101-who%E2%80%99s-making-money-from-torrents/">may matter</a>. Probably hard.</p></li>
+<li><p>All of the above, allowing the risk likelihood to vary across CDNs that may have incentives which conflict with the firms&#39; incentives. As hard as 1-5 + hard.</p></li>
+</ol>
+
+<p>Some cursory Googling turns up <a href="http://archive.nyu.edu/bitstream/2451/27797/2/CeDER-PP-2004-02.pdf">this paper</a>, so far the only directly related result I&#39;ve found for theoretical economic models of digital piracy. The model in this paper seems more like a hidden-action model than what I did here, but I haven&#39;t gone through it in detail yet.</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/micro%20theory/2015/10/19/illegal-good-supply-passthrough/">
+        Optimal supply of an illegal commodity in a symmetric Cournot market
       </a>
     </h1>
 
     <span class="post-date">19 Oct 2015</span>
 
-    <p>This post is a model I&#39;ve been thinking about a bit lately. Consider a Cournot market with \(n\) symmetric firms competing. Since the firms are symmetric, they will all supply the same quantity, \(\bar{x}\). The firms face a generic inverse demand function, \(P(X)\). The twist is that there is a risk of removal: with probability \(F(n \bar{x} ) \) a firm will randomly be removed from the market. The PDF of removal is \( F&#39;(X) = f(X) \), which is thrice continuously differentiable.</p>
+    <p>This post is about a topic I&#39;ve been thinking about a bit lately: illegal markets, or markets for illegal commodities. Consider a Cournot market with \(n\) symmetric firms competing. Since the firms are symmetric, they will all supply the same quantity, \(\bar{x}\). The firms face a generic inverse demand function, \(P(X)\). The twist is that there is a risk of removal: with probability \(F(n \bar{x} ) \) a firm will randomly be removed from the market. The PDF of removal is \( F&#39;(X) = f(X) \), which is thrice continuously differentiable.</p>
 
-<p>With this model, I am trying to understand markets for illegal commodities better. I think this is a reasonable way to look at the probability of getting arrested when supplying some prohibited (&quot;risky&quot;) commodity. The chance the seller (&quot;the firm&quot;) gets arrested (removed from the market, 0 payoff) should depend on the number of sellers and the quantity supplied by the individual seller. In this version, it depends on both through aggregate supply. Aggregate quantity supplied is \( X = n \bar{x} \).</p>
+<p>I think this is a reasonable way to look at the probability of getting arrested when supplying some prohibited (&quot;risky&quot;) commodity. The chance the seller (&quot;the firm&quot;) gets arrested (removed from the market, 0 payoff) should depend on the number of sellers and the quantity supplied by the individual seller. In this version, it depends on both through aggregate supply. Aggregate quantity supplied is \( X = n \bar{x} \).</p>
 
 <p>I&#39;m not sure I like this; I would like to do it with the probability of removal as a generic function of number of sellers and individual seller&#39;s quantity supplied, \(F(x_i , n) \). But this is a tractable start.</p>
 
@@ -433,7 +538,7 @@
 
 <p>I haven&#39;t assumed a form for price here, but it would depend on the hazard rate through \( \bar{x} \). The direct effect of the number of sellers would cancel out of the price, but \(n\) would still come in through the price and risk functions. As the hazard rate increases, I think the price should also increase if only because the quantity supplied will decrease. Without assuming a specific form, I can&#39;t go further in saying much about the price. I would like to see what the arrest risk premium looks like, if it is there.</p>
 
-<p>At some point I may try to do some numerics on this model to see how stuff changes with different assumptions. There are many possible extensions to this, which I like.</p>
+<p>At some point I may try to do some numerics on this model to see how stuff changes with different assumptions. One extension I&#39;ve been thinking of is to include the illegal good manufacturer, and see how the organization of that side of the market affects the equilibrium.</p>
 
   </div>
   
@@ -698,66 +803,6 @@ EU_{L2} =&amp; (0)(1/3) + (100)(1/6) + (1000)(1/6) \cr
 <p>If all we have is that the agent is an expected-utility maximizer then all we can do is apply first-order stochastic dominance and say that the agent will prefer \(L_3\) over \(L_1\) and \(L_2\), and be indifferent between \(L_1\) and \(L_2\).</p>
 
 <p>If we know or are willing to assume that the agent is risk-averse - that their utility function \(u\) is concave - then we can apply second-order stochastic dominance and rank the lotteries \(L_3 \succ L_1 \succ L_2 \). The risk-averse agent would rather take the safe 200-for-sure than the risky 200-on-average.</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/micro%20theory/2015/10/11/monopoly-pricing-discrete-sequential-demand/">
-        Monopoly pricing for sequential discrete demand
-      </a>
-    </h1>
-
-    <span class="post-date">11 Oct 2015</span>
-
-    <p>Today&#39;s post is a variation on <a href="http://akhilrao.github.io/micro%20theory/2015/10/04/monopoly-pricing-discrete-demand/">monopoly pricing for discrete demand</a>.</p>
-
-<p>Suppose you&#39;re moving, and you have a piece of used furniture that you need to sell. You&#39;ve got two potential buyers, \(B_1\) and \(B_2\), lined up to buy it. They arrive sequentially, so \(B_2\) won&#39;t have anything to look at if \(B_1\) buys. Assume \(B_i\) is willing to pay \(v_i\) for the furniture, where \(v_i\) is an independent draw from a uniform CDF \(F(v_i) = \frac{v_i - a}{b - a}\) for \(v_i \in [a,b]\). The furniture has no value to you if it isn&#39;t sold - you can&#39;t take it with you - and there is no discounting. There&#39;s no bargaining, either - you get to make a take-it-or-leave-it offer to each buyer.</p>
-
-<p>Let&#39;s start at the end of this game with some numbers: \(a=40, b=140\).</p>
-
-<h4 id="pricing-for-the-second-buyer">Pricing for the second buyer</h4>
-
-<p>Suppose \(B_1\) rejected your offer, so you&#39;re pricing it for \(B_2\). The game ends if this buyer rejects, so this round is basically a standard discrete demand monopoly pricing problem. Your price solves</p>
-
-<p>$$ \max_{p_2} ~ (p_2-c)(1-F(p_2)) $$</p>
-
-<p>Giving us</p>
-
-<p>$$ p_2 = c + \frac{1-F(p_2 )}{f(p_2 )} $$</p>
-
-<p>In this example, the marginal cost would be the opportunity cost - the value of the furniture to you if you didn&#39;t sell it. We know that&#39;s 0 here because you&#39;re moving and can&#39;t take it with you. Plugging in for this uniform CDF and PDF, the optimal price becomes</p>
-
-<p>$$\begin{align}
- p_2 &amp;= \frac{b}{2} \cr
-\implies p_2 &amp;= 70 \cr
-\end{align} $$</p>
-
-<p>Your expected profits from this pricing scheme are</p>
-
-<p>$$\begin{align}
-\pi_2 &amp;= (p_2-c)(1-F(p_2)) \cr
-&amp;= (70)(\frac{70}{100}) \cr
-&amp;= 49 \cr 
-\end{align}$$</p>
-
-<p>Note that there&#39;s no discounting here - if there was, we&#39;d be hitting this expected profit with a discount rate, and it would be lower than 49.</p>
-
-<h4 id="pricing-for-the-first-buyer">Pricing for the first buyer</h4>
-
-<p>Now that we know the end of the game, we can go backwards to the first round. You&#39;re solving the same problem for the first buyer, but now you have to keep in mind that if the first person doesn&#39;t buy, you&#39;ve still got the second person coming. The optimal price will solve</p>
-
-<p>$$ \max_{p_1} ~ p_1(1-F(p_1)) + F(p_1) \pi_2 $$</p>
-
-<p>Giving us</p>
-
-<p>$$ p_1 = \frac{189}{2} \gt p_2 $$</p>
-
-<p>This is nice and what we would expect: when you have multiple buyers lined up, your price should decrease over time as buyers reject, if only because there are fewer buyers coming later. The last buyer should receive the lowest price.</p>
-
-<p>To round it off, your expected profits in the first stage would be 73.7975. Your expected profits decrease as you move through the buyers, since your price gets lower and you lose the expected value of the future buyers.</p>
-
-<p>Adding discounting wouldn&#39;t change the key features of this problem. Adding bargaining would, since the buyers wouldn&#39;t have to accept your profit-maximizing price. Discounting plus bargaining would change things by giving the person with the higher discount rate (more patience) an advantage. This is what happens in Rubinstein bargaining games.</p>
 
   </div>
   

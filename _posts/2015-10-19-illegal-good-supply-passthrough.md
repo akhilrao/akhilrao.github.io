@@ -1,18 +1,18 @@
 ---
 layout: post
-title: Optimal supply of a risky commodity in a symmetric Cournot market
+title: Optimal supply of an illegal commodity in a symmetric Cournot market
 category: micro theory
 tags: micro-theory oligopoly cournot risk supply passthrough 
 year: 2015
 month: 10
 day: 19
 published: true
-summary: Symmetric firms compete in a Cournot market with a probability of death. The probability that a firm will die depends on the aggregate quantity supplied. Pass-through is derived. 
+summary: Symmetric firms compete in a Cournot market for an illegal good with a probability of being removed from the market ("arrest"). The probability of removal depends on the aggregate quantity supplied. Pass-through is derived. 
 ---
 
-This post is a model I've been thinking about a bit lately. Consider a Cournot market with \\(n\\) symmetric firms competing. Since the firms are symmetric, they will all supply the same quantity, \\(\bar{x}\\). The firms face a generic inverse demand function, \\(P(X)\\). The twist is that there is a risk of removal: with probability \\(F(n \bar{x} ) \\) a firm will randomly be removed from the market. The PDF of removal is \\( F'(X) = f(X) \\), which is thrice continuously differentiable.
+This post is about a topic I've been thinking about a bit lately: illegal markets, or markets for illegal commodities. Consider a Cournot market with \\(n\\) symmetric firms competing. Since the firms are symmetric, they will all supply the same quantity, \\(\bar{x}\\). The firms face a generic inverse demand function, \\(P(X)\\). The twist is that there is a risk of removal: with probability \\(F(n \bar{x} ) \\) a firm will randomly be removed from the market. The PDF of removal is \\( F'(X) = f(X) \\), which is thrice continuously differentiable.
 
-With this model, I am trying to understand markets for illegal commodities better. I think this is a reasonable way to look at the probability of getting arrested when supplying some prohibited ("risky") commodity. The chance the seller ("the firm") gets arrested (removed from the market, 0 payoff) should depend on the number of sellers and the quantity supplied by the individual seller. In this version, it depends on both through aggregate supply. Aggregate quantity supplied is \\( X = n \bar{x} \\).
+I think this is a reasonable way to look at the probability of getting arrested when supplying some prohibited ("risky") commodity. The chance the seller ("the firm") gets arrested (removed from the market, 0 payoff) should depend on the number of sellers and the quantity supplied by the individual seller. In this version, it depends on both through aggregate supply. Aggregate quantity supplied is \\( X = n \bar{x} \\).
 
 I'm not sure I like this; I would like to do it with the probability of removal as a generic function of number of sellers and individual seller's quantity supplied, \\(F(x_i , n) \\). But this is a tractable start.
 
@@ -69,4 +69,4 @@ I think it would be interesting to see the "risk pass-through", the change in pr
 
 I haven't assumed a form for price here, but it would depend on the hazard rate through \\( \bar{x} \\). The direct effect of the number of sellers would cancel out of the price, but \\(n\\) would still come in through the price and risk functions. As the hazard rate increases, I think the price should also increase if only because the quantity supplied will decrease. Without assuming a specific form, I can't go further in saying much about the price. I would like to see what the arrest risk premium looks like, if it is there.
 
-At some point I may try to do some numerics on this model to see how stuff changes with different assumptions. There are many possible extensions to this, which I like.
+At some point I may try to do some numerics on this model to see how stuff changes with different assumptions. One extension I've been thinking of is to include the illegal good manufacturer, and see how the organization of that side of the market affects the equilibrium.
