@@ -10,7 +10,7 @@ published: true
 summary: A Hotelling monopolist producing a zero marginal cost good faces competition from a zero-price supply of the good ("piracy"). The zero-price supply is associated with a risk of no payoff for the consumer ("arrest"). 
 ---
 
-This post and [previous post](http://akhilrao.github.io/micro%20theory/2015/10/19/risky-good-supply-passthrough/) are about illegal markets. This one is about a digital good that can be pirated.
+This post and [previous post](http://akhilrao.github.io/micro%20theory/2015/10/19/risky-good-supply-passthrough/) are about markets where illegal things happen. This one is about a digital good that can be pirated.
 
 The basic idea is: consumers can buy 1 unit of the good from the firm at price \\(p\\), or for free at some chance \\( \theta \in (0,1) \\) of 0 payoff ("piracy and arrest"). The good can be reproduced at 0 marginal cost.
 
