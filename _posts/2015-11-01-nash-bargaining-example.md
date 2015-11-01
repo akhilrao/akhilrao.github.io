@@ -16,7 +16,7 @@ The NBS represents a particular example of an axiomatic bargaining system. These
 
 The division of the joint surplus should satisfy some individual rationality and collective rationality (pareto efficiency) constraints. This still leaves us with a whole set of equilibria all along the efficient frontier. So we impose some axioms on the solution based on how we think the cooperation should be, and that usually gives us a unique equilibrium. This is why axiomatic bargaining is sometimes called "equilibrium selection" because we choose the axioms.
 
-A two-player bargaining problem is characterized by a pair \\( (F,v) \\), where \\(F\\) is a closed and convex subset of \\(R^2\\) is the "feasible set" and \\(v \in F\\) is a vector of "disagreement payoffs" - the payoffs the players would get if they fail to reach an agreement. The set \\( F \cap \\{ (x_1 , x_2) : x_1 \gt v_1, x_2 \gt v_2  \\} \\) should be bounded and non-empty. This is the set of feasible outcomes that is strictly better than the disagreement point, \\(v_1, v_2\\).
+A two-player bargaining problem is characterized by a pair \\( (F,v) \\), where \\(F\\) is a closed and convex "feasible set" and \\(v \in F\\) is a vector of "disagreement payoffs" - the payoffs the players would get if they fail to reach an agreement. The set \\( F \cap \\{ (x_1 , x_2) : x_1 \gt v_1, x_2 \gt v_2  \\} \\) should be bounded and non-empty. This is the set of feasible outcomes that is strictly better than the outcome if they can't agree, \\( (v_1, v_2) \\).
 
 ### Axioms and Motivation
 
