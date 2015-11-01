@@ -93,7 +93,7 @@ I guess the true minimum number of actions is 1 - program a button to execute th
 
 Some possible refinements:
 
-1. Allow the value of the legal/illegal good to vary, maybe making them functions of some level of investment from the firm. Probably not hard.
+1. Allow the value of the legal/illegal good to vary, maybe making them functions of some level of investment from the firm. Related, allowing the firm to influence \\(t^T \\) through investment in DRM technologies. Individually, probably not too hard.
 
 2. Make the risk likelihood a function of the quantity of illegal consumption. Probably not hard.
 

@@ -11,7 +11,7 @@
 
   <title>
     
-      A Model A Day &middot; By Akhil Rao
+      Produced Under Scarcity &middot; By Akhil Rao
     
   </title>
 
@@ -37,7 +37,7 @@
     <div class="sidebar-about">
       <h1>
         <a href="/">
-          A Model A Day
+          Produced Under Scarcity
         </a>
       </h1>
       <p class="lead"></p>
@@ -352,6 +352,42 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
 
       <a class="sidebar-nav-item" href="https://github.com/akhilrao/archive/v0.0.1.zip">Download</a>
       <a class="sidebar-nav-item" href="https://github.com/akhilrao">GitHub project</a>
@@ -365,6 +401,133 @@
 
     <div class="content container">
       <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/micro%20theory/2015/10/30/nash-bargaining-example/">
+        The 2-player Nash Bargaining Solution
+      </a>
+    </h1>
+
+    <span class="post-date">30 Oct 2015</span>
+
+    <p>The <a href="https://en.wikipedia.org/wiki/Bargaining_problem#Nash_bargaining_solution">Nash Bargaining Solution</a> is an important solution concept in game theory. It describes a two-player cooperative bargaining situation where the players are trying to maximize a joint surplus. It has been generalized to \(n\) players, but I&#39;ve been told that the NBS is really unwieldy in that setting and that the Shapley value is used instead.</p>
+
+<p>The NBS represents a particular example of an axiomatic bargaining system. These are solution concepts where the solution is characterized by defining the axioms it must satisfy. Such solution concepts are used in cooperative game theory, where players are trying to maximize some total pie conditional on nothing if they fail to reach an agreement.</p>
+
+<p>The division of the joint surplus should satisfy some individual rationality and collective rationality (pareto efficiency) constraints. This still leaves us with a whole set of equilibria all along the efficient frontier. So we impose some axioms on the solution based on how we think the cooperation should be, and that usually gives us a unique equilibrium. This is why axiomatic bargaining is sometimes called &quot;equilibrium selection&quot; because we choose the axioms.</p>
+
+<p>A two-player bargaining problem is characterized by a pair \( (F,v) \), where \(F\) is a closed and convex subset of \(R^2\) is the &quot;feasible set&quot; and \(v \in F\) is a vector of &quot;disagreement payoffs&quot; - the payoffs the players would get if they fail to reach an agreement. The set \( F \cap \{ (x_1 , x_2) : x_1 \gt v_1, x_2 \gt v_2  \} \) should be bounded and non-empty. This is the set of feasible outcomes that is strictly better than the disagreement point, \(v_1, v_2\).</p>
+
+<h3 id="axioms-and-motivation">Axioms and Motivation</h3>
+
+<p>The NBS is a mapping \( \phi : F \to R^2 \) which satisfies the following four axioms:</p>
+
+<ol>
+<li><p>Symmetry (SYM): For every \( (F,v) \), if \( (F,v) \) is symmetric, then \( \phi_1 (F,v) = \phi_2 (F,v) = \ ... \ = \phi_n (F,v) \). </p></li>
+<li><p>Weak Pareto Optimality (WPO): For every \( (F,v) \) we should have \( \phi (F,v) \in W(T) \), where for \( T \subset R^2 \), \( W(T) := \{ x \in T: \not\exists \ y \in T \ \text{s.t.} \ y \gt x \} \).</p></li>
+<li><p>Scale Transformation Covariance (STC): For every \( (F,v) \) and all \(a,b \in R^2 \) with \(a \gt 0 \) and \( (aF + b, av + b) \in F \), we have \( \phi(aF + b, av + b) = a \phi(F,v) + b \).</p></li>
+<li><p>Independence of Irrelevant Alternatives (IIA): \(\forall \ (F,v),(G,w) \) with \( v=w \), \( G \subset F \), and \( \phi(G,w) \in F \), we have \( \phi (F,v) = \phi (G,w) \).</p></li>
+</ol>
+
+<p>The motivations for these axioms are:</p>
+
+<p>SYM: If there is no information that lets us distinguish between the players in a bargaining game&#39;s description, then that game&#39;s solution should also not distinguish between the players.</p>
+
+<p>WPO: \(W(T) \) is referred to as the &quot;weakly Pareto optimal subset of \(T\)&quot;, where \(T\) is any subset of \( R^2\). The idea of this axiom is that the players should not be able to improve upon the solution outcome without making the other player worse off.</p>
+
+<p>STC: Utility functions are uniquely determined only up to a positive affine transformation. The idea of this axiom is that our solution should not depend upon the particular representation we&#39;ve chosen in this sense. I think this feature of utility functions (unique up to affine transformation) is true of any utility function, ordinal or cardinal, but maybe I&#39;m too used to thinking in terms of von Neumann-Morgenstern utilities in a game setting.</p>
+
+<p>IIA: IIA is apparently Nash&#39;s most-criticized axiom, as well as one of the most important for this solution concept. It says that letting the feasible set shrink while the solution outcome remains feasible souldn&#39;t change the solution. In plainer terms: if you prefer chocolate over vanilla, and vanilla over strawberry, and you were considering between chocolate and vanilla, allowing you to choose strawberry shouldn&#39;t change the outcome (you&#39;ll still choose chocolate).</p>
+
+<h3 id="computing-the-solution">Computing the solution</h3>
+
+<p>With these four axioms, we can now define the NBS as a function we can maximize. For every \( (F,v)\), the symmetric NBS is obtained by solving</p>
+
+<p>$$ \max_{x_1,x_2 \in F} \ (x_1 - v_1)(x_2 - v_2) $$</p>
+
+<p>The NBS maximizes each player&#39;s gain over the disagreement outcome, \( (v_1,v_2) \). The term \( (x_1 - v_1)(x_2 - v_2) \) is referred to as the symmetric Nash product.</p>
+
+<p>Basically, we&#39;re maximizing a Cobb-Douglas function of the players&#39; gains over the disagreement outcome. In the symmetric case, we have that the Cobb-Douglas exponents are both equal to \( 1/2\) and sum to \(1\) (normalized). They should always sum to \(1\), but we can add some asymmetry by letting the exponents be \( \beta \) and \( 1- \beta \). Then the NBS solves</p>
+
+<p>$$ \max_{x_1,x_2} \ (x_1 - v_1)^{\beta}(x_2 - v_2)^{1-\beta} $$</p>
+
+<p>The exponents can be interpreted as each player&#39;s bargaining power; the higher \( \beta \) is, the more player 1 will receive in equilibrium, and vice versa. This lets us consider </p>
+
+<h3 id="an-example">An example</h3>
+
+<p>This is a somewhat contrived example, but suppose a buyer and a seller are bargaining over an investment \(I\) the buyer can make. The buyer values the good at \(v\), and it costs \(c\) to produce (or you can think of \(c\) as the seller&#39;s opportunity cost of selling the good).</p>
+
+<p>The buyer will demand 1 unit of the good with probability \( Pr(v \gt c) = x \) and 0 units with probability \( Pr(v=0) = 1-x \). The buyer will buy as long as they value the good above marginal cost, and the seller will charge the buyer their full value for the good. The buyer and the seller are going to bargain over the surplus created by the transaction. So instead of a price coordinating buyer and seller&#39;s actions, we have them directly coordinating over what to do. Let&#39;s assume that investment is related to the buyer&#39;s likelihood of buying as \( I = x^2 /2 \). If they fail to reach an agreement, there will be no surplus created and they&#39;ll each get 0 payoff.</p>
+
+<h4 id="benchmark-buyer-gets-all-surplus">Benchmark: Buyer gets all surplus</h4>
+
+<p>In the benchmark case, let&#39;s suppose that the buyer is going to get all of the surplus, and is solving the problem as a planner (internalizing the seller&#39;s cost of the good). The buyer solves</p>
+
+<p>$$ \max_x \ x(v-c) - \frac{x^2}{2} $$</p>
+
+<p>This gives us the optimal demand and investment as</p>
+
+<p>$$ \begin{align}
+x = &amp; \ v - c \cr
+I = &amp; \ \frac{(v-c)^2}{2} \cr
+\end{align} $$</p>
+
+<p>The optimal demand, \(x\), is actually the optimal probability of purchase. It&#39;s a little weird that we&#39;re having the buyer choose a probability, but in this case I think it&#39;s easier than expressing \(x\) as a function of \(I\) and solving for the optimal investment directly.</p>
+
+<p>So the buyer takes all the surplus, and chooses to invest the amount that solves the above optimization problem. Not much intuition to see yet.</p>
+
+<h4 id="nash-bargaining-buyer-and-seller-split-surplus-equally">Nash Bargaining: Buyer and Seller split surplus equally</h4>
+
+<p>Now suppose the buyer and seller split the surplus equally, and use Nash Bargaining to determine how much to invest. The buyer&#39;s share of the surplus is \(x_b\) and the seller&#39;s is \(x_s\). We do this as a two-stage problem: first the buyer and seller negotiate a split of the surplus, and then the buyer chooses a level of investment. Their bargaining outcome solves</p>
+
+<p>$$ \begin{align} 
+\max_{S_s, S_b } &amp; ~ (S_b - 0)( S_s - 0) \cr
+\text{s.t} &amp; ~ S_b + S_s = v - c \cr
+\implies \max_{S_b } &amp; \ S_b (v-c- S_b ) \cr
+\end{align} $$</p>
+
+<p>We can reformulate the constrained optimization as an unconstrained optimization as above. This gives us the optimal split for the buyer and seller:</p>
+
+<p>$$\begin{align}
+ S_b &amp;= \frac{v-c}{2} \cr
+ S_s &amp;= \frac{v-c}{2} \cr
+\end{align}$$</p>
+
+<p>So the buyer and seller split the surplus equally. We got this by solving an optimization problem, but we could have also gotten this by making an argument from the axioms. Another way to say this is that the NBS axioms are such that the above maximization will find the unique solution.</p>
+
+<p>Now the second stage: how much investment will the buyer choose? The buyer is going to solve a similar problem as in the benchmark,</p>
+
+<p>$$ \max_x \ x(\frac{v-c}{2}) - \frac{x^2}{2} $$</p>
+
+<p>Giving us an optimal investment of</p>
+
+<p>$$ I = \frac{(v-c)^2}{2} $$</p>
+
+<p>This is lower than the benchmark level of investment, which makes sense - the buyer is getting half instead of all of the surplus from the transaction, so their incentive to invest is lower.</p>
+
+<p>This example is very stylized, but I think it&#39;s a rough first pass at some deeper dynamic model of learning to use a technology and the demand for that technology. Maybe some kind of software with a learning curve, like Photoshop or something, where the cost of investment is capturing for the learning curve of that technology. If we want to think about the split of the surplus as coming from a price instead of bargaining, then we see that consumers would invest more in learning the technology if the price was lower than higher.</p>
+
+<h3 id="summary">Summary</h3>
+
+<p>The NBS isn&#39;t super realistic, but it&#39;s a nice tool to use when you don&#39;t want to get too into the details of bargaining. Sometimes that&#39;s ok and it doesn&#39;t distort the final outcome too much, and sometimes it isn&#39;t and it does.</p>
+
+<p>Apparently, &quot;Nash&#39;s Program&quot; is to formulate cooperative bargaining solutions in terms of non-cooperative strategic games. For example, the symmetric NBS is also the split that both players would receive if they were almost infinitely patient and completely identical and engaged in an infinitely repeated Rubinstein bargaining game, which is not cooperative. I think this is pretty cool, as it lets us think of a cooperative game&#39;s outcome as a result of an underlying non-cooperative game. There&#39;s probably a theorem somewhere about when that representation exists and when it doesn&#39;t.</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/micro%20theory/2015/10/29/hidden-information-agency-problem/">
+        A hidden information principal-agent problem between an owner and a manager
+      </a>
+    </h1>
+
+    <span class="post-date">29 Oct 2015</span>
+
+    <p>This problem is similar to the earlier <a href="http://akhilrao.github.io/micro%20theory/2015/10/15/principal-agent-problem-owner-manager/">principal-agent problem</a>. Instead of the manager&#39;s choice of effort being hidden, it&#39;s the cost to the manager of exerting effort that is hidden.</p>
+
+  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -459,7 +622,7 @@ p &amp; = \frac{1}{2} (\theta v + t^T (1- \theta)) \cr
 <p>Some possible refinements:</p>
 
 <ol>
-<li><p>Allow the value of the legal/illegal good to vary, maybe making them functions of some level of investment from the firm. Probably not hard.</p></li>
+<li><p>Allow the value of the legal/illegal good to vary, maybe making them functions of some level of investment from the firm. Related, allowing the firm to influence \(t^T \) through investment in DRM technologies. Individually, probably not too hard.</p></li>
 <li><p>Make the risk likelihood a function of the quantity of illegal consumption. Probably not hard.</p></li>
 <li><p>Modeling the firm&#39;s ability to influence the risk likelihood. This is from the observation that organizations like the RIAA/MPAA are able to increase the level of enforcement at some (low) cost. Probably not too hard. The likelihood could be indexed by the firm&#39;s choice of some index variable, like &quot;effort&quot; in the owner-manager problem.</p></li>
 <li><p>Add multiple goods. I&#39;m not sure how to do this but I feel like it&#39;s probably been done before and is therefore doable.</p></li>
@@ -480,7 +643,7 @@ p &amp; = \frac{1}{2} (\theta v + t^T (1- \theta)) \cr
 
     <span class="post-date">19 Oct 2015</span>
 
-    <p>This post is about a topic I&#39;ve been thinking about a bit lately: illegal markets, or markets for illegal commodities. Consider a Cournot market with \(n\) symmetric firms competing. Since the firms are symmetric, they will all supply the same quantity, \(\bar{x}\). The firms face a generic inverse demand function, \(P(X)\). The twist is that there is a risk of removal: with probability \(F(n \bar{x} ) \) a firm will randomly be removed from the market. The PDF of removal is \( F&#39;(X) = f(X) \), which is thrice continuously differentiable.</p>
+    <p>This post is about a topic I&#39;ve been thinking about a bit lately: illegal markets, or markets for illegal commodities. Consider a Cournot market with \(n\) symmetric firms competing. Since the firms are symmetric, they will all supply the same quantity, \(\bar{x}\). The firms face a generic inverse demand function, \(P(X)\). The twist is that there is a risk of removal: with probability \(F(n \bar{x} ) \) a firm will be removed from the market. The PDF of removal is \( F&#39;(X) = f(X) \), which is thrice continuously differentiable.</p>
 
 <p>I think this is a reasonable way to look at the probability of getting arrested when supplying some prohibited (&quot;risky&quot;) commodity. The chance the seller (&quot;the firm&quot;) gets arrested (removed from the market, 0 payoff) should depend on the number of sellers and the quantity supplied by the individual seller. In this version, it depends on both through aggregate supply. Aggregate quantity supplied is \( X = n \bar{x} \).</p>
 
@@ -647,162 +810,6 @@ Suppose \(T\) is the final period. Then \( \gamma_{3,T}k_{T+1} = 0\). In the fin
 <p>then we get that \( k^* \) exists \( \forall \mu \lt 1 \).</p>
 
 <p>What is consumption in this case? The fourth steady state condition tells us that \( c^* = f( \mu^* k^* ) - k^* \delta \mu^{* \alpha} \). At the steady state, we know that \( f( \mu^* k^* ) \gt k^* \delta \mu^{* \alpha} \) - the optimal solution is such that the level of output is greater than the amount of depreciated utilized capital in each period. So consumption is also strictly positive when it is optimal to partially utilize capacity.</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/micro%20theory/2015/10/15/principal-agent-problem-owner-manager/">
-        A principal-agent problem between an owner and a manager
-      </a>
-    </h1>
-
-    <span class="post-date">15 Oct 2015</span>
-
-    <p>Suppose a firm&#39;s owner contracts a manager to run the firm. The firm&#39;s profit is a random variable \(\pi \in [\pi_a , \pi_b]\)  which the manager can influence through some effort. For simplicity, assume effort is discrete: \(e \in \{e_l,e_h\}\), with \(e_h \gt e_l \ge 0 \).  The manager&#39;s efforts are such that profits with \(e_h\) first-order stochastically dominate profits with \(e_l\), i.e. \(E \ [\pi|e_h] \gt E \ [\pi|e_l]\) and \( f(\pi|e) \gt 0 ~~ \forall \pi\). The manager&#39;s utility is \(u(w,e) = v(w) - g(e)\) with \(g(e_h) \gt g(e_l) \) and \(v&#39;(w) \gt 0, v&#39;&#39;(w) \lt 0\). The manager&#39;s utility strictly concave, so they are risk-averse. Let&#39;s assume the manager&#39;s reservation utility is \(\bar{u} \ge 0 \).</p>
-
-<p>The idea is that the manager would prefer to exert less effort to more, but that more effort is likely to produce higher profits than less effort. No manager can control everything - profit is still a random variable and low realizations can occur when the manager exerts more effort, it&#39;s just less likely. The manager&#39;s reservaton utility is their outside offer or what they could produce at home. For clarity, let&#39;s call the owner she and the manager he.</p>
-
-<h4 id="benchmark-case-effort-is-publicly-observable">Benchmark case: effort is publicly observable</h4>
-
-<p>If the manager&#39;s efforts are publicly observable, then the owner solves</p>
-
-<p>$$ \begin{align}
-\max_{e \in \{e_l, e_h \}, w( \pi )} ~~&amp; \int_{\pi_a}^{\pi_b} [\pi - w( \pi )] f(\pi | e) ~ d \pi \cr
-\text{s.t.} ~~&amp; \int_{\pi_a}^{\pi_b} v(w(\pi )) f(\pi | e) ~ d \pi - g(e) \ge \bar{u}
-\end{align} $$</p>
-
-<p>We can think of this as a two-stage decision process: given some level of effort from the manager, the owner wants to pay him the profit-maximizing wage. The constraint is called an &quot;individual rationality (IR) constraint&quot; or a &quot;participation constraint&quot;. It&#39;s a way to factor the manager&#39;s problem into the owner&#39;s decision-making - the owner is constrained to pay the manager a wage that is at least as good as the manager&#39;s outside offer. If the owner doesn&#39;t, the manager won&#39;t work for her. For a fixed level of effort \(e\), the owner&#39;s problem can be simplified to minimizing the manager&#39;s wage subject to the participation constraint, or maximizing the negative of the manager&#39;s wage.</p>
-
-<p>$$ \begin{align}
-\min_{w( \pi )} ~~&amp; \int_{\pi_a}^{\pi_b} w( \pi ) f(\pi | e) ~ d \pi \cr
-\text{s.t.} ~~&amp; \int_{\pi_a}^{\pi_b} v(w(\pi )) f(\pi | e) ~ d \pi - g(e) \ge \bar{u}
-\end{align} $$</p>
-
-<p>A minimization problem can be made into a maximization problem by multiplying the objective by \(-1\). Economists seem to prefer maximization, while statisticians and computer scientists seem to prefer minimization. I&#39;m not sure why this is the case, or if it even is the case beyond my limited sample. </p>
-
-<p>Since we integrated over \(\pi\) this wage holds for all realizations of profit. We can solve this as a constrained maximization</p>
-
-<p>$$ \begin{align}
-\mathcal{L} = &amp; - \int_{\pi_a}^{\pi_b} w( \pi ) f(\pi | e) ~ d \pi + \lambda [\int_{\pi_a}^{\pi_b} v(w(\pi )) f(\pi | e) ~ d \pi - g(e) - \bar{u}] \cr
-\text{FOC:} ~~ &amp; - \int_{\pi_a}^{\pi_b} f(\pi | e) ~ d \pi + \lambda \int_{\pi_a}^{\pi_b} v&#39;(w(\pi )) f(\pi | e) ~ d \pi = 0 \cr
-\implies ~~ &amp; \frac{1}{v&#39;(w(\pi ))} = \lambda
-\end{align} $$</p>
-
-<p>From this we see that for a given level of effort, the optimal wage must be a constant. The optimal wage profile for any level of effort is to pay the manager the inverse wage-utility of the sum of their reservation utility and their marginal cost of effort, or \(w^*_e = v^{-1}(\bar{u} + g(e)) \). We can think of this as insurance against profit risk: the optimal contract will insure the risk-averse manager against any realization of profit, since the manager&#39;s effort doesn&#39;t guarantee high profits, just makes it more likely.</p>
-
-<p>The lagrange multiplier \( \lambda\) on the participation constraint is the owner&#39;s <a href="https://en.wikipedia.org/wiki/Shadow_price">shadow price</a> of the manager&#39;s participation: it&#39;s the owner&#39;s (maximum) willingness-to-pay to marginally reduce the manager&#39;s reservation utility. More generally, the lagrange multiplier on a constraint is the improvement to the objective function from marginally relaxing that constraint.</p>
-
-<p>The IR constraint must bind in this problem if the manager works for the owner. Any excess utility the owner gives the manager reduces the owner&#39;s profit, so the owner can always do better by reducing the manager&#39;s wage until the constraint binds.</p>
-
-<h4 id="information-problem-effort-is-manager-39-s-private-information">Information problem: effort is manager&#39;s private information</h4>
-
-<p>Now suppose the manager&#39;s effort level is not publicly observable anymore, it&#39;s the manager&#39;s private information. Now the owner solves</p>
-
-<p>$$ \begin{align}
-\min_{w( \pi )} ~~&amp; \int_{\pi_a}^{\pi_b} w( \pi ) f(\pi | e) ~ d \pi \cr
-\text{s.t.} ~~&amp; \int_{\pi_a}^{\pi_b} v(w(\pi )) f(\pi | e) ~ d \pi - g(e) \ge \bar{u} \cr
-&amp; e = \text{argmax} ~~ \int_{\pi_a}^{\pi_b} v(w(\pi )) f(\pi | e) ~ d \pi - g(e) \cr
-\end{align} $$</p>
-
-<p>The second constraint is called an &quot;incentive compatibility&quot; (IC) constraint. It says that the effort level the owner wants to implement has to be solve the manager&#39;s problem. I think of this as a refinement on the IR constraint - not only should it make sense for the manager to participate, it should be what they would most prefer to do. The manager should have no incentive to deviate. It&#39;s not quite the same as the IR constraint, since it&#39;s possible for the argmax of the manager&#39;s problem under effort is lower than the reservation utility.</p>
-
-<p>Implementing \(e_l\) is easy - the owner just pays the manager the same wage as under observable effort. It satisfies the IR constraint, and at that wage the manager would put in low effort anyway (there is no profitable deviation). Implementing \(e_h\) is more interesting, since the IC constraint becomes important. For this problem, the IC implies</p>
-
-<p>$$ \int_{\pi_a}^{\pi_b} v(w(\pi )) f(\pi | e_h ) ~ d \pi - g(e_h ) \ge \int_{\pi_a}^{\pi_b} v(w(\pi )) f(\pi | e_l ) ~ d \pi - g(e_l ) $$</p>
-
-<p>So the manager&#39;s expected value of putting in high effort has to be greater than or equal to his expected value of putting in low effort. If not, the manager has an incentive to deviate and since effort is unobservable, he will.</p>
-
-<p>As before, we put it into a lagrangian. From the first-order condition of the owner&#39;s problem,</p>
-
-<p>$$\begin{align}
-w(\pi) : ~~ &amp; - \int_{\pi_a}^{\pi_b} f(\pi | e_h ) ~ d \pi + \lambda  \int_{\pi_a}^{\pi_b} v&#39;(w(\pi )) f(\pi | e_h ) ~ d\pi \cr + \ &amp; \gamma \int_{\pi_a}^{\pi_b} [f(\pi | e_h )-f(\pi | e_l )] \ v&#39;(w(\pi)) = 0 \cr
-\implies ~~ &amp; \frac{1}{v&#39;(w(\pi ))} = \lambda + \gamma \left[ 1 - \frac{f(\pi|e_l )}{f(\pi|e_h )} \right]
-\end{align}$$</p>
-
-<p>The condition on the wage has the same component of the IR constraint multiplier - the shadow price of the manager&#39;s participation - and a new component from the IC constraint based on the shadow price of the manager&#39;s cooperation. This component is not a constant - it depends on the realizations of profit through the ratio of conditional densities of profit given effort. In repeated play, this term is a likelihood ratio. </p>
-
-<p>By the same argument as earlier, the IR constraint must bind. By a similar argument, the IC constraint will also bind if high effort is implemented.</p>
-
-<p>The cooperation shadow price is scaled based on the likelihood ratio of observed profits given effort, i.e. based on how likely the observed profits were given the efforts the manager could have exerted. I&#39;m not sure how to do this if effort were continuous; maybe a conditional expectation? </p>
-
-<p>If the manager cooperates and doesn&#39;t shirk, the second component can be nearly as large as the owner&#39;s shadow price on cooperation (because the densities are strictly positive on the support, the likelihood ratio can be small but not 0). However, profits are random, and low realizations will affect the manager&#39;s pay - low realizations are just less likely when the manager is cooperating. I see the way the likelihood ratio enters as an &quot;information penalty&quot;. Without further restrictions, the penalty may cause the wage to be negative. I think this is unrealistic, but my guess is that adding a wage nonnegativity constraint will penalize the manager&#39;s wage, since the owner can&#39;t optimally punish the manager for bad profit realizations. I should try that.</p>
-
-<p>My guess is that there is some connection between this information penalty and how much information is contained in the conditional distributions, or how sensitive profits are to efforts. I think that in the limiting case of the conditional distribution of profits being uniform for any effort level, the second term in the optimal wage would disappear. In that case, the owner would only pay the manager enough to participate, but since the owner has no information to check on the manager&#39;s effort levels, the owner won&#39;t pay the manager anything for exerting effort. In that case, I don&#39;t think an equilibrium where the manager exerts high effort can be sustained.</p>
-
-<p>In the other direction, if the conditional distributions are highly informative about effort levels, then the penalties will be applied much more swiftly and harshly but also much less often if the manager is cooperating.</p>
-
-<p>The information penalty also seems related to the <a href="https://en.wikipedia.org/wiki/Price_of_anarchy">Price of Anarchy</a>, like maybe a &quot;likelihood-PoA&quot; or something. I wonder if that&#39;s a thing.</p>
-
-<p>It would be interesting to see a critical discount rate for the manager&#39;s cooperation in a dynamic version of this, given that he may be penalized even if he cooperates.</p>
-
-<h4 id="conclusion">Conclusion</h4>
-
-<p>This model is like my earlier attempt to model an owner-manager problem combined with the labor market signaling problem. Unlike the earlier problem, here the manager&#39;s behavior is embedded in the owner&#39;s problem as a constraint. This problem also abstracts away from the actual generation of profits - the owner in this problem only sees profits as a random variable, not as actual revenues and costs. This lets us get effort into the problem, which lets us drive a wedge between the owner and the manager. Given the manager&#39;s incentive compatibility constraint, it seems like low realizations of profits could cause the manager to shirk, but I&#39;m not sure if that&#39;s true.</p>
-
-<p>The initial assumptions are somewhat strict, and it makes sense to change them based on the specific question at hand. One example I&#39;ve been thinking of is a mutual fund manager principal-agent problem. The owner would be the investor (the manager&#39;s client), the profits would be the mutual fund&#39;s returns, and effort would be trading activity. Many mutual funds charge commissions for &quot;active management&quot;, but generally portfolio returns are higher under &quot;passive management&quot;. This would require reversing our earlier assumptions about effort and the conditional distribution of profits given effort. In the benchmark case, we can imagine the investor is choosing between an actively managed fund versus a passively managed one. When the trading activity is hidden information, then there would probably be a condition very similar to the incentive compatibility constraint here that would scale the manager&#39;s pay based on observed portfolio returns, with a penalty for excess trading. </p>
-
-<p>What if the principal doesn&#39;t know the conditional distribution of payoffs given the agent&#39;s actions? One way to model that could be as a Bayesian game - the principal has some beliefs over the distribution, and learns from repeated play.</p>
-
-<p>I like this model a lot. The problems aren&#39;t hard to solve, but the way they go together makes the model do interesting things. The initial assumptions are important, but it is reasonable to change them and try things. I think these features make a model fun to play with. I wonder how well its predictions have held up if/when they&#39;ve been put to the data.</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/micro%20theory/2015/10/12/eu-max-3-lottery/">
-        An expected-utility maximizer and 3 lotteries
-      </a>
-    </h1>
-
-    <span class="post-date">12 Oct 2015</span>
-
-    <p>Consider an individual with preferences over lotteries that have an expected-utility representation. There are three lotteries this individual can choose from:</p>
-
-<p>$$ L_1
-\begin{cases}
-\begin{align}
-200 ~~~ &amp;P(200) = 1 \cr
-\end{align}
-\end{cases}$$</p>
-
-<p>$$ L_2
-\begin{cases}
-\begin{align}
-0 ~~~ &amp;P(0) = 2/3 \cr
-200 ~~~ &amp;P(200) = 1/6 \cr
-1000 ~~~ &amp;P(1000) = 1/6 \cr
-\end{align}
-\end{cases}$$</p>
-
-<p>$$ L_3
-\begin{cases}
-\begin{align}
-0 ~~~ &amp;P(0) = 1/3 \cr
-400 ~~~ &amp;P(400) = 1/3 \cr
-1000 ~~~ &amp;P(1000) = 1/3 \cr
-\end{align}
-\end{cases}$$</p>
-
-<p>The expected utilities of the lotteries are:</p>
-
-<p>$$\begin{align}
-EU_{L1} =&amp; (200)(1) = 200 \cr
-EU_{L2} =&amp; (0)(1/3) + (100)(1/6) + (1000)(1/6) \cr
- =&amp; 200 \cr
- EU_{L3} =&amp; (0)(1/3) + (100)(1/3) + (1000)(1/3) \cr
- =&amp; 1400/3 \cr
-\end{align}$$</p>
-
-<p>We can take a first pass at ordering the three lotteries by expected utility alone. This gives us that \( L_3 \succ L_2 \sim L_1\). To go further, we can use the concept of <a href="https://en.wikipedia.org/wiki/Stochastic_dominance">stochastic dominance</a>.</p>
-
-<p>\(X \succ_{FSD} Y\) (X first-order stochastically dominates Y) if \(F_x (t) \le F_y (t) ~ \forall t \in [a,b]\), where \([a,b]\) is the support of \(F_x\) and \(F_y\). This is equivalent to saying \(X \succ_{FSD} Y\) iff \( E[u(x)] \ge E[u(y)] ~ \forall\) nondecreasing, continuous functions \(u\). We apply this concept when we order the lotteries by expected utility.</p>
-
-<p>Second-order stochastic dominance is a refinement on this. We say \(X \succ_{SSD} Y\) (X second-order stochastically dominates Y) if \(\int_a^w F_x (t) dt \le \int_a^w F_y (t) dt ~ \forall w \in [a,b]\), where \([a,b]\) is the support of \(F_x\) and \(F_y\). This is equivalent to saying \(X \succ_{SSD} Y\) iff \( E[u(x)] \ge E[u(y)] ~ \forall\) nondecreasing, continuous, and <em>concave</em> functions \(u\). We apply this concept when we order the lotteries by expected utility.</p>
-
-<p>If all we have is that the agent is an expected-utility maximizer then all we can do is apply first-order stochastic dominance and say that the agent will prefer \(L_3\) over \(L_1\) and \(L_2\), and be indifferent between \(L_1\) and \(L_2\).</p>
-
-<p>If we know or are willing to assume that the agent is risk-averse - that their utility function \(u\) is concave - then we can apply second-order stochastic dominance and rank the lotteries \(L_3 \succ L_1 \succ L_2 \). The risk-averse agent would rather take the safe 200-for-sure than the risky 200-on-average.</p>
 
   </div>
   

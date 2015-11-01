@@ -1,8 +1,8 @@
 ---
 layout: post
-title: A principal-agent problem between an owner and a manager
+title: A hidden action principal-agent problem between an owner and a manager
 category: micro theory
-tags: micro-theory principal-agent problem owner manager
+tags: micro-theory principal-agent problem owner manager hidden action
 year: 2015
 month: 10
 day: 15
