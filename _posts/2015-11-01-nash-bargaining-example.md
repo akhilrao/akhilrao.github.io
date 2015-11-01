@@ -14,7 +14,7 @@ The [Nash Bargaining Solution](https://en.wikipedia.org/wiki/Bargaining_problem#
 
 The NBS represents a particular example of an axiomatic bargaining system. These are solution concepts where the solution is characterized by defining the axioms it must satisfy. Such solution concepts are used in cooperative game theory, where players are trying to maximize some total pie conditional on some "disagreement outcome" if they fail to reach an agreement.
 
-The division of the joint surplus should satisfy some individual rationality and collective rationality (pareto efficiency) constraints. This still leaves us with a whole set of equilibria all along the efficient frontier. So we impose some axioms on the solution based on how we think the cooperation should be, and that usually gives us a unique equilibrium. This is why axiomatic bargaining is sometimes called "equilibrium selection" because we choose the axioms.
+The division of the joint surplus should satisfy some individual rationality and collective rationality (pareto efficiency) constraints. This can still leave us with a whole set of equilibria all along the efficient frontier. So we impose some axioms on the solution based on how we think the cooperation should be, and that usually gives us a unique equilibrium. Axiomatic bargaining is sometimes called "equilibrium selection" because we choose the equilibrium by choosing the axioms.
 
 A two-player bargaining problem is characterized by a pair \\( (F,v) \\), where \\(F\\) is a closed and convex "feasible set" and \\(v \in F\\) is a vector of disagreement outcomes. The set \\( F \cap \\{ (x_1 , x_2) : x_1 \gt v_1, x_2 \gt v_2  \\} \\) should be bounded and non-empty. This is the set of feasible outcomes that is strictly better than the outcome if they can't agree, \\( (v_1, v_2) \\).
 
@@ -77,9 +77,9 @@ The optimal demand, \\(x\\), is actually the optimal probability of purchase. It
 
 So the buyer takes all the surplus, and chooses to invest the amount that solves the above optimization problem. Not much intuition to see yet.
 
-#### Nash Bargaining: Buyer and Seller split surplus equally
+#### Nash Bargaining: Buyer and Seller split surplus
 
-Now suppose the buyer and seller split the surplus equally, and use Nash Bargaining to determine how much to invest. The buyer's share of the surplus is \\(x_b\\) and the seller's is \\(x_s\\). We do this as a two-stage problem: first the buyer and seller negotiate a split of the surplus, and then the buyer chooses a level of investment. Their bargaining outcome solves
+Now suppose the buyer and seller split the surplus, and use Nash Bargaining to determine how much to invest. The buyer's share of the surplus is \\(x_b\\) and the seller's is \\(x_s\\). We do this as a two-stage problem: first the buyer and seller negotiate a split of the surplus, and then the buyer chooses a level of investment. Their symmetric bargaining outcome solves
 
 $$ \begin{align} 
 \max_{S_s, S_b } & ~ (S_b - 0)( S_s - 0) \cr
@@ -102,7 +102,7 @@ $$ \max_x \ x(\frac{v-c}{2}) - \frac{x^2}{2} $$
 
 Giving us an optimal investment of
 
-$$ I = \frac{(v-c)^2}{2} $$
+$$ I = \frac{(v-c)^2}{8} $$
 
 This is lower than the benchmark level of investment, which makes sense - the buyer is getting half instead of all of the surplus from the transaction, so their incentive to invest is lower.
 
