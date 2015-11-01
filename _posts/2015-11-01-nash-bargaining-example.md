@@ -20,9 +20,9 @@ A two-player bargaining problem is characterized by a pair \\( (F,v) \\), where 
 
 ### Axioms and Motivation
 
-The NBS is a mapping \\( \phi : F \to R^2 \\) which satisfies the following four axioms:
+The NBS for two players is a mapping \\( \phi : F \to R^2 \\) which satisfies the following four axioms:
 
-1. Symmetry (SYM): For every \\( (F,v) \\), if \\( (F,v) \\) is symmetric, then \\( \phi_1 (F,v) = \phi_2 (F,v) = \ ... \ = \phi_n (F,v) \\). 
+1. Symmetry (SYM): For every \\( (F,v) \\), if \\( (F,v) \\) is symmetric, then \\( \phi_1 (F,v) = \phi_2 (F,v)\\) (both players receive the same outcome). 
 
 2. Weak Pareto Optimality (WPO): For every \\( (F,v) \\) we should have \\( \phi (F,v) \in W(T) \\), where for \\( T \subset R^2 \\), \\( W(T) := \\{ x \in T: \not\exists \ y \in T \ \text{s.t.} \ y \gt x \\} \\).
 
