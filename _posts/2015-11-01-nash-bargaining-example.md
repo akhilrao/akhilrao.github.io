@@ -4,8 +4,8 @@ title: The 2-player Nash Bargaining Solution
 category: micro theory
 tags: micro-theory axiomatic nash bargaining solution cooperative game theory
 year: 2015
-month: 10
-day: 30
+month: 11
+day: 01
 published: true
 summary: A brief discussion of the Nash Bargaining Solution for two players with an example.
 ---
