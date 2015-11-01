@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The 2-player Nash Bargaining Solution
+title: The Nash Bargaining Solution with 2 players
 category: micro theory
 tags: micro-theory axiomatic nash bargaining solution cooperative game theory
 year: 2015
@@ -12,11 +12,11 @@ summary: A brief discussion of the Nash Bargaining Solution for two players with
 
 The [Nash Bargaining Solution](https://en.wikipedia.org/wiki/Bargaining_problem#Nash_bargaining_solution) is an important solution concept in game theory. It describes a two-player cooperative bargaining situation where the players are trying to maximize a joint surplus. It has been generalized to \\(n\\) players, but I've been told that the NBS is really unwieldy in that setting and that the Shapley value is used instead.
 
-The NBS represents a particular example of an axiomatic bargaining system. These are solution concepts where the solution is characterized by defining the axioms it must satisfy. Such solution concepts are used in cooperative game theory, where players are trying to maximize some total pie conditional on nothing if they fail to reach an agreement.
+The NBS represents a particular example of an axiomatic bargaining system. These are solution concepts where the solution is characterized by defining the axioms it must satisfy. Such solution concepts are used in cooperative game theory, where players are trying to maximize some total pie conditional on some "disagreement outcome" if they fail to reach an agreement.
 
 The division of the joint surplus should satisfy some individual rationality and collective rationality (pareto efficiency) constraints. This still leaves us with a whole set of equilibria all along the efficient frontier. So we impose some axioms on the solution based on how we think the cooperation should be, and that usually gives us a unique equilibrium. This is why axiomatic bargaining is sometimes called "equilibrium selection" because we choose the axioms.
 
-A two-player bargaining problem is characterized by a pair \\( (F,v) \\), where \\(F\\) is a closed and convex "feasible set" and \\(v \in F\\) is a vector of "disagreement payoffs" - the payoffs the players would get if they fail to reach an agreement. The set \\( F \cap \\{ (x_1 , x_2) : x_1 \gt v_1, x_2 \gt v_2  \\} \\) should be bounded and non-empty. This is the set of feasible outcomes that is strictly better than the outcome if they can't agree, \\( (v_1, v_2) \\).
+A two-player bargaining problem is characterized by a pair \\( (F,v) \\), where \\(F\\) is a closed and convex "feasible set" and \\(v \in F\\) is a vector of disagreement outcomes. The set \\( F \cap \\{ (x_1 , x_2) : x_1 \gt v_1, x_2 \gt v_2  \\} \\) should be bounded and non-empty. This is the set of feasible outcomes that is strictly better than the outcome if they can't agree, \\( (v_1, v_2) \\).
 
 ### Axioms and Motivation
 
@@ -34,9 +34,9 @@ The motivations for these axioms are:
 
 SYM: If there is no information that lets us distinguish between the players in a bargaining game's description, then that game's solution should also not distinguish between the players.
 
-WPO: \\(W(T) \\) is referred to as the "weakly Pareto optimal subset of \\(T\\)", where \\(T\\) is any subset of \\( R^2\\). The idea of this axiom is that the players should not be able to improve upon the solution outcome without making the other player worse off.
+WPO: \\(W(T) \\) is referred to as the "weakly Pareto optimal subset of \\(T\\)", where \\(T\\) is any subset of \\( R^2\\). The idea of this axiom is that the players should not be able to improve upon the solution outcome without making the other player worse off. This axiom lets us use standard optimization techniques to find the NBS.
 
-STC: Utility functions are uniquely determined only up to a positive affine transformation. The idea of this axiom is that our solution should not depend upon the particular representation we've chosen in this sense. I think this (unique up to affine transformation) is true of any utility function, ordinal or cardinal, but I know it's true of von Neumann-Morgenstern utilities, which is the utility concept we're using here.
+STC: Utility functions are uniquely determined only up to a positive affine transformation. The idea of this axiom is that our solution should not depend upon the particular representation we've chosen in this sense. I think this (unique up to affine transformation) is true of any utility function, ordinal or cardinal, but I know it's true of von Neumann-Morgenstern utilities, which is the utility concept we're using here. STC tells us that the NBS is a linear mapping.
 
 IIA: IIA is apparently Nash's most-criticized axiom, as well as one of the most important for this solution concept. It says that letting the feasible set shrink while the solution outcome remains feasible souldn't change the solution. In plainer terms: if you prefer chocolate over vanilla, and vanilla over strawberry, and you were considering between chocolate and vanilla, allowing you to choose strawberry shouldn't change the outcome (you'll still choose chocolate).
 
@@ -48,11 +48,11 @@ $$ \max_{x_1,x_2 \in F} \ (x_1 - v_1)(x_2 - v_2) $$
 
 The NBS maximizes each player's gain over the disagreement outcome, \\( (v_1,v_2) \\). The term \\( (x_1 - v_1)(x_2 - v_2) \\) is referred to as the symmetric Nash product.
 
-Basically, we're maximizing a Cobb-Douglas function of the players' gains over the disagreement outcome. In the symmetric case, we have that the Cobb-Douglas exponents are both equal to \\( 1/2\\) and sum to \\(1\\) (normalized). They should always sum to \\(1\\), but we can add some asymmetry by letting the exponents be \\( \beta \\) and \\( 1- \beta \\). Then the NBS solves
+Basically, we're maximizing a Cobb-Douglas function of the players' gains over the disagreement outcome. In the symmetric case, we have that the Cobb-Douglas exponents are both equal to \\( 1/2\\) and sum to \\(1\\) (normalized). We can add some asymmetry by letting the exponents be \\( \beta \in (0,1) \\) and \\( 1- \beta \\). Then the NBS solves
 
 $$ \max_{x_1,x_2} \ (x_1 - v_1)^{\beta}(x_2 - v_2)^{1-\beta} $$
 
-The exponents can be interpreted as each player's bargaining power; the higher \\( \beta \\) is, the more player 1 will receive in equilibrium, and vice versa. This lets us consider 
+The exponents can be interpreted as each player's bargaining power; the higher \\( \beta \\) is, the more player 1 will receive in equilibrium, and vice versa.
 
 ### An example
 
