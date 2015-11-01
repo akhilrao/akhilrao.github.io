@@ -36,7 +36,7 @@ SYM: If there is no information that lets us distinguish between the players in 
 
 WPO: \\(W(T) \\) is referred to as the "weakly Pareto optimal subset of \\(T\\)", where \\(T\\) is any subset of \\( R^2\\). The idea of this axiom is that the players should not be able to improve upon the solution outcome without making the other player worse off.
 
-STC: Utility functions are uniquely determined only up to a positive affine transformation. The idea of this axiom is that our solution should not depend upon the particular representation we've chosen in this sense. I think this feature of utility functions (unique up to affine transformation) is true of any utility function, ordinal or cardinal, but maybe I'm too used to thinking in terms of von Neumann-Morgenstern utilities in a game setting.
+STC: Utility functions are uniquely determined only up to a positive affine transformation. The idea of this axiom is that our solution should not depend upon the particular representation we've chosen in this sense. I think this (unique up to affine transformation) is true of any utility function, ordinal or cardinal, but I know it's true of von Neumann-Morgenstern utilities, which is the utility concept we're using here.
 
 IIA: IIA is apparently Nash's most-criticized axiom, as well as one of the most important for this solution concept. It says that letting the feasible set shrink while the solution outcome remains feasible souldn't change the solution. In plainer terms: if you prefer chocolate over vanilla, and vanilla over strawberry, and you were considering between chocolate and vanilla, allowing you to choose strawberry shouldn't change the outcome (you'll still choose chocolate).
 
