@@ -50,7 +50,7 @@ The NBS maximizes each player's gain over the disagreement outcome, \\( (v_1,v_2
 
 Basically, we're maximizing a Cobb-Douglas function of the players' gains over the disagreement outcome. In the symmetric case, we have that the Cobb-Douglas exponents are both equal to \\( 1/2\\) and sum to \\(1\\) (normalized). We can add some asymmetry by letting the exponents be \\( \beta \in (0,1) \\) and \\( 1- \beta \\). Then the NBS solves
 
-$$ \max_{x_1,x_2} \ (x_1 - v_1)^{\beta}(x_2 - v_2)^{1-\beta} $$
+$$ \max_{x_1,x_2 \in F} \ (x_1 - v_1)^{\beta}(x_2 - v_2)^{1-\beta} $$
 
 The exponents can be interpreted as each player's bargaining power; the higher \\( \beta \\) is, the more player 1 will receive in equilibrium, and vice versa.
 
@@ -58,7 +58,9 @@ The exponents can be interpreted as each player's bargaining power; the higher \
 
 This is a somewhat contrived example, but suppose a buyer and a seller are bargaining over an investment \\(I\\) the buyer can make. The buyer values the good at \\(v\\), and it costs \\(c\\) to produce (or you can think of \\(c\\) as the seller's opportunity cost of selling the good).
  
-The buyer will demand 1 unit of the good with probability \\( Pr(v \gt c) = x \\) and 0 units with probability \\( Pr(v=0) = 1-x \\). The buyer will buy as long as they value the good above marginal cost, and the seller will charge the buyer their full value for the good. The buyer and the seller are going to bargain over the surplus created by the transaction. So instead of a price coordinating buyer and seller's actions, we have them directly coordinating over what to do. Let's assume that investment is related to the buyer's likelihood of buying as \\( I = x^2 /2 \\). If they fail to reach an agreement, there will be no surplus created and they'll each get 0 payoff.
+The buyer will demand 1 unit of the good with probability \\( Pr(v \gt c) = x \\) and 0 units with probability \\( Pr(v=0) = 1-x \\). The buyer will buy as long as they value the good above marginal cost, and the seller will charge the buyer their full value for the good. The buyer and the seller are going to bargain over the surplus created by the transaction. So instead of a price coordinating buyer and seller's actions, we have them directly coordinating over how to share the surplus. 
+
+Let's assume that investment is related to the buyer's likelihood of buying as \\( I = x^2 /2 \\). If they fail to reach an agreement, there will be no surplus created and they'll each get 0 payoff.
 
 #### Benchmark: Buyer gets all surplus
 
