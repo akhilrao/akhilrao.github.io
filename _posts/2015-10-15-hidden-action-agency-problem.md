@@ -23,14 +23,14 @@ $$ \begin{align}
 \text{s.t.} ~~& \int_{\pi_a}^{\pi_b} v(w(\pi )) f(\pi | e) ~ d \pi - g(e) \ge \bar{u}
 \end{align} $$
 
-We can think of this as a two-stage decision process: given some level of effort from the manager, the owner wants to pay him the profit-maximizing wage. The constraint is called an "individual rationality (IR) constraint" or a "participation constraint". It's a way to factor the manager's problem into the owner's decision-making - the owner is constrained to pay the manager a wage that is at least as good as the manager's outside offer. If the owner doesn't, the manager won't work for her. For a fixed level of effort \\(e\\), the owner's problem can be simplified to minimizing the manager's wage subject to the participation constraint, or maximizing the negative of the manager's wage.
+We can think of this as a two-stage decision process: given some level of effort from the manager, the owner wants to pay him the profit-maximizing wage. The constraint is called an "individual rationality (IR) constraint" or a "participation constraint". It's a way to factor the manager's problem into the owner's decision-making - the owner is constrained to pay the manager a wage that is at least as good as the manager's outside offer. If the owner doesn't, the manager won't work for her. For a fixed level of effort \\(e\\), the owner's problem can be simplified to minimizing the manager's wage subject to the participation constraint.
 
 $$ \begin{align}
 \min_{w( \pi )} ~~& \int_{\pi_a}^{\pi_b} w( \pi ) f(\pi | e) ~ d \pi \cr
 \text{s.t.} ~~& \int_{\pi_a}^{\pi_b} v(w(\pi )) f(\pi | e) ~ d \pi - g(e) \ge \bar{u}
 \end{align} $$
 
-A minimization problem can be made into a maximization problem by multiplying the objective by \\(-1\\). Economists seem to prefer maximization, while statisticians and computer scientists seem to prefer minimization. I'm not sure why this is the case, or if it even is the case beyond my limited sample. 
+A minimization problem can be made into a maximization problem by multiplying the objective by \\(-1\\). Economists seem to prefer maximization, while statisticians and computer scientists seem to prefer minimization. 
 
 Since we integrated over \\(\pi\\) this wage holds for all realizations of profit. We can solve this as a constrained maximization
 
@@ -40,7 +40,7 @@ $$ \begin{align}
 \implies ~~ & \frac{1}{v'(w(\pi ))} = \lambda
 \end{align} $$
 
-From this we see that for a given level of effort, the optimal wage must be a constant. The optimal wage profile for any level of effort is to pay the manager the inverse wage-utility of the sum of their reservation utility and their marginal cost of effort, or \\(w^\*_e = v^{-1}(\bar{u} + g(e)) \\). We can think of this as insurance against profit risk: the optimal contract will insure the risk-averse manager against any realization of profit, since the manager's effort doesn't guarantee high profits, just makes it more likely.
+From this we see that for a given level of effort, the optimal wage must be a constant. We can think of this as insurance against profit risk: the optimal contract will insure the risk-averse manager against any realization of profit, since the manager's effort doesn't guarantee high profits, just makes it more likely. The optimal wage profile for any level of effort is to pay the manager the inverse wage-utility of the sum of their reservation utility and their marginal cost of effort, or \\(w^\*_e = v^{-1}(\bar{u} + g(e)) \\).
 
 The lagrange multiplier \\( \lambda\\) on the participation constraint is the owner's [shadow price](https://en.wikipedia.org/wiki/Shadow_price) of the manager's participation: it's the owner's (maximum) willingness-to-pay to marginally reduce the manager's reservation utility. More generally, the lagrange multiplier on a constraint is the improvement to the objective function from marginally relaxing that constraint.
 

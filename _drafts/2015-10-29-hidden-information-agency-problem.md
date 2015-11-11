@@ -11,3 +11,16 @@ summary: A firm's profit is a random variable. A manager can exert effort to inf
 ---
 
 This problem is similar to the earlier [principal-agent problem](http://akhilrao.github.io/micro%20theory/2015/10/15/principal-agent-problem-owner-manager/). Instead of the manager's choice of effort being hidden, it's the cost to the manager of exerting effort that is hidden.
+
+Assume that profit is a random variable that can be influenced by the manager's effort, \\( \pi(e) \\) such that \\( \pi'(e) \gt 0 ,  \pi''(e) \lt 0 \\). The manager's utility is given by \\( u(w,e,\theta ) = v(w-g(e,\theta)) \\). The manager's disutility from effort satisfies \\( g(0,\theta) = 0 \forall \theta \\) and is 
+
+\\( \theta \in \\{\theta_l , \theta_h
+
+$$
+g(x) = \left\{\begin{aligned}
+&1 &&: |x| \le 1\\
+&0 &&: |x| > 1
+\end{aligned}
+\right 
+
+$$
