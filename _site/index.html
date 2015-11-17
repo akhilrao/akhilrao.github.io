@@ -458,16 +458,18 @@
 <p>$$\begin{align}
 A_n &amp; \equiv \frac{1}{n} \sum_{t=1}^n X_t \cr
 \phi_{A_n}(s) &amp; \equiv E(e^{isA_n }) \cr
+&amp; = \int e^{isA_n } ~ dP \cr
 \end{align}$$</p>
 
-<p>By the properties of exponential functions and the fact that \( X_t \) is IID, we can write \( \phi_{A_n}(\frac{s}{n}) \) as</p>
+<p>By the properties of exponential functions and the fact that \( X_t \) is IID, we can write \( \phi_{A_n}(s) \) as</p>
 
 <p>$$ \phi_{A_n}(s) =  ( \phi_{X_t} \left( \frac{s}{n} \right) )^n $$</p>
 
 <p>By a theorem I may someday prove here but will now state without proof (Carlos&#39; Theorem 129), we can approximate \( \phi_{X_t}(\frac{s}{n}) \) as</p>
 
 <p>$$\begin{align}
- \phi_{X_t} \left(\frac{s}{n} \right) &amp; = 1 + is \frac{\mu}{n} + \mathcal{O} \left(\frac{s^2}{n^2} \right) \cr
+ \phi_{X_t} \left(\frac{s}{n} \right) &amp; = 1 + is \frac{E(X_t)}{n} + \mathcal{O} \left(\frac{s^2}{n^2} \right) \cr
+ &amp; = 1 + is \frac{ \mu }{n} + \mathcal{O} \left(\frac{s^2}{n^2} \right) \cr
  \mathcal{O} \left(\frac{s^2}{n^2} \right) &amp; \equiv i^2 \int_0^{\frac{x}{n}} \left(\frac{x}{n}-s \right) e^{is} ds \cr
 \end{align}$$</p>
 
