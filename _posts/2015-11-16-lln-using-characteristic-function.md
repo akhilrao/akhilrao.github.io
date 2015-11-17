@@ -5,7 +5,7 @@ category: probability theory
 tags: probability-theory characteristic functions LLN convergence
 year: 2015
 month: 11
-day: 17
+day: 16
 published: true
 summary: A proof of convergence in probability of a sequence of IID random variables using characteristic functions. A first moment is assumed to exist, but nothing else.
 ---
