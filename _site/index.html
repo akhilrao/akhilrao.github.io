@@ -400,6 +400,26 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
 
       <a class="sidebar-nav-item" href="https://github.com/akhilrao/archive/v0.0.1.zip">Download</a>
       <a class="sidebar-nav-item" href="https://github.com/akhilrao">GitHub project</a>
@@ -413,6 +433,78 @@
 
     <div class="content container">
       <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/probability%20theory/2015/11/16/2015-11-17-lln-using-characteristic-function/">
+        Proof of a law of large numbers
+      </a>
+    </h1>
+
+    <span class="post-date">16 Nov 2015</span>
+
+    <p>Usually, when we have a sequence of random variables, we can say things about the average of the sequence as we sample repeatedly by assuming things about the moments and the sampling process and then applying an appropriate law of large numbers. But how would we prove a law of large numbers?</p>
+
+<p>Laws of large numbers are statements about averages of random variables converging in probability to a constant. In this example, we assume the existence of a finite first moment, assume random sampling with replacement (IID), and show that a sequence of averages of the IID random variables will converge to the first moment.</p>
+
+<p>Let \( \{X_t\}, ~ t=1,2,... \) be the sequence of IID random variables on a probability space \( ( \Omega, \mathcal{F}, P ) \) with \( E(X_t) = \mu \lt \infty \). The goal is to show that </p>
+
+<p>$$ \lim_{n \to \infty} P \left( \omega : \left| \frac{1}{n} \sum_{t=1}^n X_t(\omega) - \mu \right| \gt \epsilon \right) = 0 $$</p>
+
+<h3 id="proof">Proof</h3>
+
+<p>Begin by defining \( A_n \) and its characteristic function:</p>
+
+<p>$$\begin{align}
+A_n &amp; \equiv \frac{1}{n} \sum_{t=1}^n X_t \cr
+\phi_{A_n}(s) &amp; \equiv E(e^{isA_n }) \cr
+\end{align}$$</p>
+
+<p>By the properties of exponential functions and the fact that \( X_t \) is IID, we can write \( \phi_{A_n}(\frac{s}{n}) \) as</p>
+
+<p>$$ \phi_{A_n}(s) =  ( \phi_{X_t} \left( \frac{s}{n} \right) )^n $$</p>
+
+<p>By a theorem I may someday prove here but will now state without proof (Carlos&#39; Theorem 129), we can approximate \( \phi_{X_t}(\frac{s}{n}) \) as</p>
+
+<p>$$\begin{align}
+ \phi_{X_t} \left(\frac{s}{n} \right) &amp; = 1 + is \frac{\mu}{n} + \mathcal{O} \left(\frac{s^2}{n^2} \right) \cr
+ \mathcal{O} \left(\frac{s^2}{n^2} \right) &amp; \equiv i^2 \int_0^{\frac{x}{n}} \left(\frac{x}{n}-s \right) e^{is} ds \cr
+\end{align}$$</p>
+
+<p>\( \mathcal{O}(\frac{s^2}{n^2}) \) is the remainder from the approximation, the \( \mathcal{O} \) is <a href="https://en.wikipedia.org/wiki/Big_O_notation">big O notation</a> that the remainder is bounded.</p>
+
+<p>So now we have</p>
+
+<p>$$ \phi_{A_n}(s) \approx \left( 1 + is \frac{\mu}{n} \right)^n $$</p>
+
+<p>The trick is to use a binomial expansion here. In general,</p>
+
+<p>$$ \begin{align}
+\left( 1+ \frac{a}{n} \right)^n &amp; = \sum_{j=0}^n \binom{n}{j} \left( \frac{a}{n} \right)^j \cr
+\lim_{n \to \infty} \left( 1+ \frac{a}{n} \right)^n &amp; = \sum_{j=0}^{\infty} \left( \frac{a^j}{j!} \right) \cr
+&amp; = e^a \cr
+\end{align} $$</p>
+
+<p>So, letting \( a = is \mu \),</p>
+
+<p>$$\begin{align}
+\phi_{A_n}(s) &amp; = \left( 1 + is \frac{ \mu }{n} + \mathcal{O}(\frac{s^2}{n^2}) \right)^n \cr
+ \lim_{n \to \infty} \phi_{A_n}(s) &amp; = e^{is \mu } = \phi_{ \mu } (s) \cr
+\end{align}$$</p>
+
+<p>The remainder term \( \mathcal{O} (\frac{s^2}{n^2} ) \to 0 \) as \(n \to \infty\).</p>
+
+<p>By the uniqueness of mapping between characteristic and distribution functions of random variables, \( \lim_{n \to \infty} \phi_{A_n}(s) = \phi_{ \mu }(s) \) implies \( \lim_{n \to \infty} F_{A_n} = F_{ \mu } \), where \( F_{A_n} \) and \( F_{ \mu } \) are the distribution functions of \( A_n \) and \( \mu \) respectively.</p>
+
+<p>This is still only convergence in distribution, not convergence in probability. However, \( \mu \) is a constant, and convergence in distribution to the distribution of a constant is the same as convergence in probability to that constant (think of the constant&#39;s distribution as a point mass). So we have the desired result, \( A_n \overset{p}{\to} \mu \).</p>
+
+<h3 id="discussion">Discussion</h3>
+
+<p>I&#39;m not entirely sure how to interpret the parameter \(s\) for a general characteristic function. The characteristic function is just an exponential Fourier transform, and I would usually interpret that parameter as the &quot;time index&quot; for a given sequence I was Fourier transforming. I&#39;m not sure if that interperetation is justified here, since each random variable is an IID draw from the same distribution. If I wanted to read a &quot;time index&quot; into this, it would be \( t\), which is the draw number. Maybe \(s\) is not very meaningful in this setting, so we can let it be whatever we want?</p>
+
+<p>Anyway, the point of doing it this way is that sometimes a product of exponentials is easier to work with than some arbitrary sum. I should learn more about Fourier transforms and characteristic functions, they seem useful.</p>
+
+  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -757,77 +849,6 @@ p &amp; = \frac{1}{2} (\theta v + t^T (1- \theta)) \cr
 </ol>
 
 <p>Some cursory Googling turns up <a href="http://archive.nyu.edu/bitstream/2451/27797/2/CeDER-PP-2004-02.pdf">this paper</a>, so far the only directly related result I&#39;ve found for theoretical economic models of digital piracy. The model in this paper seems more like a hidden-action model than what I did here, but I haven&#39;t gone through it in detail yet.</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/micro%20theory/2015/10/19/illegal-good-supply-passthrough/">
-        Optimal supply of an illegal commodity in a symmetric Cournot market
-      </a>
-    </h1>
-
-    <span class="post-date">19 Oct 2015</span>
-
-    <p>This post is about a topic I&#39;ve been thinking about a bit lately: illegal markets, or markets for illegal commodities. Consider a Cournot market with \(n\) symmetric firms competing. Since the firms are symmetric, they will all supply the same quantity, \(\bar{x}\). The firms face a generic inverse demand function, \(P(X)\). The twist is that there is a risk of removal: with probability \(F(n \bar{x} ) \) a firm will be removed from the market. The PDF of removal is \( F&#39;(X) = f(X) \), which is thrice continuously differentiable.</p>
-
-<p>I think this is a reasonable way to look at the probability of getting arrested when supplying some prohibited (&quot;risky&quot;) commodity. The chance the seller (&quot;the firm&quot;) gets arrested (removed from the market, 0 payoff) should depend on the number of sellers and the quantity supplied by the individual seller. In this version, it depends on both through aggregate supply. Aggregate quantity supplied is \( X = n \bar{x} \).</p>
-
-<p>I&#39;m not sure I like this; I would like to do it with the probability of removal as a generic function of number of sellers and individual seller&#39;s quantity supplied, \(F(x_i , n) \). But this is a tractable start.</p>
-
-<h3 id="optimal-supply-and-profits">Optimal supply and profits</h3>
-
-<p>Each firm solves</p>
-
-<p>$$ \max_x~ F(X)(0) + (1-F(nx))(p(nx)-c)x $$</p>
-
-<p>Their first-order condition is</p>
-
-<p>$$\begin{align} 
-&amp; x[np&#39;(X) - nf(X)p(X) - nF(X)p&#39;(X) + cnf(X)] \cr 
-&amp; + (p(X)-c)(1-F(X)) = 0 \cr
-\end{align}$$</p>
-
-<p>Which gives us the optimal quantity supplied</p>
-
-<p>$$ \bar{x} = \frac{-(p(X) - c)}{n[p&#39;(X) + \frac{f(X)}{1-F(X)}(p(X)-c)]} $$</p>
-
-<p>\( \lambda(X) \equiv \frac{f(X)}{1-F(X)} \) is the arrest hazard rate - the probability of a firm&#39;s arrest for a specific level of aggregate supply given the firm has not been arrested yet. The optimal quantity supplied is reduced from the usual optimal Cournot quantity. The reduction is increasing in the hazard rate (riskier at current \(X\) means sell less to be safe) and the profit margin (more profit per unit means the firm can sell fewer units).</p>
-
-<p>Individual firms&#39; profits are given by</p>
-
-<p>$$ \bar{\pi} = \frac{(p(X) - c)^2 }{n \ [ |p&#39;(X)| + \lambda(X) (p(X)-c)]} $$</p>
-
-<h3 id="pass-through">Pass-through</h3>
-
-<p>How does having this risk in the picture change how cost affects price?</p>
-
-<p>\( \sigma(X) = -\frac{XP&#39;&#39;(X)}{P&#39;(X)} \) is the curvature of the inverse demand function. Define \( \gamma(X) = -\frac{XF&#39;&#39;(X)}{F&#39;(X)} \), the curvature of the arrest likelihood. The pass-through depends on \( \sigma(X)\), \( \gamma(X)\), and \( \lambda(X) \).</p>
-
-<p>Let the firms&#39; first-order condition be \(R\). \(R\) defines the quantity supplied as an implicit function of cost. The quantity pass-through, \(\frac{\partial X}{\partial c}\), is</p>
-
-<p>$$ \begin{align}
- \frac{\partial X}{\partial c} &amp; = - \frac{\partial R / \partial c}{\partial R / \partial X} \cr
-\end{align} $$</p>
-
-<p>Then</p>
-
-<p>$$ \begin{align}
-\frac{\partial P(X)}{\partial c} &amp; = \frac{\partial P}{\partial X}\frac{\partial X}{\partial c} \cr
-\implies \frac{\partial P(X)}{\partial c} &amp; = \frac{Xf(X) + F(X)}{f(X)[2 \lambda^{-1} - 2x - 1 - \sigma \lambda^{-1} - p&#39;^{-1}((p-c)(1- \gamma + ( \gamma / X) ) + p)]}  \cr
-\end{align} $$</p>
-
-<p>I&#39;m not sure of my algebra, so I&#39;ll try again and update this. But the terms in the expression make some sense to me. I&#39;m not sure what the derivative wrt the parameters are or if they make sense yet, but that would be an informative exercise.</p>
-
-<h3 id="summary">Summary</h3>
-
-<p>I say &quot;arrest&quot;, but I guess it&#39;s really &quot;zero payoff&quot;. Maybe arrest should be negative payoff or something. I think this could apply to any event, with the payoffs associated with \(F(x)\) set up appropriately. I&#39;m sure this has been done much more generally before.</p>
-
-<p>I think it would be interesting to see the &quot;risk pass-through&quot;, the change in price with respect to risk. The regular passthrough already incorporates the curvature of the risk likelihood, so maybe &quot;risk pass-through&quot; is unnecessary.</p>
-
-<p>I haven&#39;t assumed a form for price here, but it would depend on the hazard rate through \( \bar{x} \). The direct effect of the number of sellers would cancel out of the price, but \(n\) would still come in through the price and risk functions. As the hazard rate increases, I think the price should also increase if only because the quantity supplied will decrease. Without assuming a specific form, I can&#39;t go further in saying much about the price. I would like to see what the arrest risk premium looks like, if it is there.</p>
-
-<p>At some point I may try to do some numerics on this model to see how stuff changes with different assumptions. One extension I&#39;ve been thinking of is to include the illegal good manufacturer, and see how the organization of that side of the market affects the equilibrium.</p>
 
   </div>
   
