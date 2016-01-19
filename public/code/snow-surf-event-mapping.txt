@@ -1,0 +1,8 @@
+Snowboarding event : Surfing event
+----------------------------------
+Walk : Walk
+Stand : Surfer - Standing
+Sit: Surfer - Sitting
+Chair lift: Paddle
+Riding down the mountain: Wave
+Sync taps: Sync
