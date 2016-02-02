@@ -6,8 +6,7 @@ markdown:         kramdown
 highlighter:      pygments
 
 # Permalinks
-permalink:        pretty
-#relative_permalinks: true
+#permalink:        pretty
 
 # Setup
 title:            Produced Under Scarcity
