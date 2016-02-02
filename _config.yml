@@ -7,7 +7,7 @@ highlighter:      rouge
 
 # Permalinks
 permalink:        date
-relative_permalinks: false
+absolute_permalinks: true
 
 # Setup
 title:            Produced Under Scarcity
