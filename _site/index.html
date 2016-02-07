@@ -30,6 +30,7 @@
 </head>
 
 
+  
   <body>
 
     <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
@@ -55,20 +56,48 @@
     
       
         
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/about/">About</a>
+          <a class="sidebar-nav-item" href="/about.html">About</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/archive/">Archive</a>
+          <a class="sidebar-nav-item" href="/archive.html">Archive</a>
         
       
     
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
       
     
       
@@ -422,7 +451,43 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="//probability%20theory/2015/11/16/lln-proof/">
+      <a href="//web/2016/02/07/conditional-probability-app.html">
+        A conditional probability app
+      </a>
+    </h1>
+
+    <span class="post-date">07 Feb 2016</span>
+
+    <p>I wrote my first-ever Shiny app! My first-ever app, too. It&#39;s a simple <a href="https://akhilrao.shinyapps.io/conditionalProbApp/">conditional probability calculator</a>. </p>
+
+<p>Say you have two events, \(A\) and \(B\), which occur over a population \(N\). Input the number of occurrences of \(A\) and \(B\) and the size of \(N\), and the app will apply Bayes&#39; rule to show you \(P(A|B)\) for beliefs you may hold over \(P(B|A)\).</p>
+
+<p>For example: Suppose you want to know the probability that someone who died in the USA in 2010 was 85+ years old. Event A is taken to be the number of deaths in the USA in 2010, event B is taken to be the population that was 85+ years old in the USA in 2010, and the population size is taken to be the average total population of the USA in 2010. Three Wolfram Alpha queries later we have</p>
+
+<p>$$\begin{align}
+P(A) &amp;= \frac{2,550,000}{310,000,000} = 0.008 \cr
+P(B) &amp;= \frac{5,176,00}{310,000,000} = 0.017
+\end{align}$$</p>
+
+<p>By Bayes&#39; rule, we have</p>
+
+<p>$$ P(A|B) = P(B|A) \frac{P(A)}{P(B)} $$</p>
+
+<p>I think \( P(A)/P(B) \) is called the base rate. Using the app, you can see how the probability someone died given they were 85 or older would change depending on the probability of being 85 or older given they died (in the USA in 2010), or \(P(\text{died in USA in 2010|85 or older in USA in 2010})\) as a function of your beliefs over \(P(\text{85 or older in USA in 2010|died in USA in 2010})\). I used this example as a &quot;comparison event&quot; for the app.</p>
+
+<p>In the picture below, the red line is \(P(\text{died in USA in 2010|85 or older in USA in 2010})\), and the black line is \(P(A|B)\) for a hypothetical event where \(P(A) = 15/100\) and \(P(B) = 50/100\).</p>
+
+<p><a href="/public/images/conditionalProbApp/stock.png" title="Example"><img src="/public/images/conditionalProbApp/stock.png" alt="Example" title="Example"></a></p>
+
+<p>It&#39;s very basic and kinda ugly right now. I&#39;ll update it periodically to make it more useful and prettier.</p>
+
+<p>I wrote this app to help me think through conditional probabilities a bit better. Often I hold beliefs over some \(P(B|A)\) and use those beliefs to infer something about the corresponding \(P(A|B)\), not necessarily considering the base rate. Hopefully I&#39;ll neglect base rates a little less going forward.</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="//probability%20theory/2015/11/16/lln-proof.html">
         Proof of a law of large numbers
       </a>
     </h1>
@@ -433,66 +498,62 @@
 
 <p>Laws of large numbers are statements about averages of random variables converging in probability to a constant. In this example, we assume the existence of a finite first moment, assume random sampling with replacement (IID), and show that a sequence of averages of the IID random variables will converge to the first moment.</p>
 
-<p>Let \( \{X_t\}, ~ t=1,2,… \) be the sequence of IID random variables on a probability space \( ( \Omega, \mathcal{F}, P ) \) with \( E(X_t) = \mu \lt \infty \). The goal is to show that</p>
+<p>Let \( \{X_t\}, ~ t=1,2,... \) be the sequence of IID random variables on a probability space \( ( \Omega, \mathcal{F}, P ) \) with \( E(X_t) = \mu \lt \infty \). The goal is to show that </p>
 
-<script type="math/tex; mode=display">\lim_{n \to \infty} P \left( \omega : \left| \frac{1}{n} \sum_{t=1}^n X_t(\omega) - \mu \right| \gt \epsilon \right) = 0</script>
+<p>$$ \lim_{n \to \infty} P \left( \omega : \left| \frac{1}{n} \sum_{t=1}^n X_t(\omega) - \mu \right| \gt \epsilon \right) = 0 $$</p>
 
 <h3 id="proof">Proof</h3>
 
 <p>Begin by defining \( A_n \) and its characteristic function:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-A_n & \equiv \frac{1}{n} \sum_{t=1}^n X_t \cr
-\phi_{A_n}(s) & \equiv E(e^{isA_n }) \cr
-& = \int e^{isA_n } ~ dP \cr
-\end{align} %]]></script>
+<p>$$\begin{align}
+A_n &amp; \equiv \frac{1}{n} \sum_{t=1}^n X_t \cr
+\phi_{A_n}(s) &amp; \equiv E(e^{isA_n }) \cr
+&amp; = \int e^{isA_n } ~ dP \cr
+\end{align}$$</p>
 
 <p>By the properties of exponential functions and the fact that \( X_t \) is IID, we can write \( \phi_{A_n}(s) \) as</p>
 
-<script type="math/tex; mode=display">\phi_{A_n}(s) =  ( \phi_{X_t} \left( \frac{s}{n} \right) )^n</script>
+<p>$$ \phi_{A_n}(s) =  ( \phi_{X_t} \left( \frac{s}{n} \right) )^n $$</p>
 
-<p>By a theorem I may someday prove here but will now state without proof (Carlos’ Theorem 129), we can approximate \( \phi_{X_t}(\frac{s}{n}) \) as</p>
+<p>By a theorem I may someday prove here but will now state without proof (Carlos&#39; Theorem 129), we can approximate \( \phi_{X_t}(\frac{s}{n}) \) as</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
- \phi_{X_t} \left(\frac{s}{n} \right) & = 1 + is \frac{E(X_t)}{n} + \mathcal{O} \left(\frac{s^2}{n^2} \right) \cr
- & = 1 + is \frac{ \mu }{n} + \mathcal{O} \left(\frac{s^2}{n^2} \right) \cr
- \mathcal{O} \left(\frac{s^2}{n^2} \right) & \equiv i^2 \int_0^{\frac{x}{n}} \left(\frac{x}{n}-s \right) e^{is} ds \cr
-\end{align} %]]></script>
+<p>$$\begin{align}
+ \phi_{X_t} \left(\frac{s}{n} \right) &amp; = 1 + is \frac{E(X_t)}{n} + \mathcal{O} \left(\frac{s^2}{n^2} \right) \cr
+ &amp; = 1 + is \frac{ \mu }{n} + \mathcal{O} \left(\frac{s^2}{n^2} \right) \cr
+ \mathcal{O} \left(\frac{s^2}{n^2} \right) &amp; \equiv i^2 \int_0^{\frac{x}{n}} \left(\frac{x}{n}-s \right) e^{is} ds \cr
+\end{align}$$</p>
 
 <p>\( \mathcal{O}(\frac{s^2}{n^2}) \) is the remainder from the approximation, the \( \mathcal{O} \) is <a href="https://en.wikipedia.org/wiki/Big_O_notation">big O notation</a> that the remainder is bounded.</p>
 
 <p>So now we have</p>
 
-<script type="math/tex; mode=display">\phi_{A_n}(s) \approx \left( 1 + is \frac{\mu}{n} \right)^n</script>
+<p>$$ \phi_{A_n}(s) \approx \left( 1 + is \frac{\mu}{n} \right)^n $$</p>
 
 <p>The trick is to use a binomial expansion here. In general,</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\left( 1+ \frac{a}{n} \right)^n & = \sum_{j=0}^n \binom{n}{j} \left( \frac{a}{n} \right)^j \cr
-\lim_{n \to \infty} \left( 1+ \frac{a}{n} \right)^n & = \sum_{j=0}^{\infty} \left( \frac{a^j}{j!} \right) \cr
-& = e^a \cr
-\end{align} %]]></script>
+<p>$$ \begin{align}
+\left( 1+ \frac{a}{n} \right)^n &amp; = \sum_{j=0}^n \binom{n}{j} \left( \frac{a}{n} \right)^j \cr
+\lim_{n \to \infty} \left( 1+ \frac{a}{n} \right)^n &amp; = \sum_{j=0}^{\infty} \left( \frac{a^j}{j!} \right) \cr
+&amp; = e^a \cr
+\end{align} $$</p>
 
 <p>So, letting \( a = is \mu \),</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\phi_{A_n}(s) & = \left( 1 + is \frac{ \mu }{n} + \mathcal{O}(\frac{s^2}{n^2}) \right)^n \cr
- \lim_{n \to \infty} \phi_{A_n}(s) & = e^{is \mu } = \phi_{ \mu } (s) \cr
-\end{align} %]]></script>
+<p>$$\begin{align}
+\phi_{A_n}(s) &amp; = \left( 1 + is \frac{ \mu }{n} + \mathcal{O}(\frac{s^2}{n^2}) \right)^n \cr
+ \lim_{n \to \infty} \phi_{A_n}(s) &amp; = e^{is \mu } = \phi_{ \mu } (s) \cr
+\end{align}$$</p>
 
 <p>The remainder term \( \mathcal{O} (\frac{s^2}{n^2} ) \to 0 \) as \(n \to \infty\).</p>
 
 <p>By the uniqueness of mapping between characteristic and distribution functions of random variables, \( \lim_{n \to \infty} \phi_{A_n}(s) = \phi_{ \mu }(s) \) implies \( \lim_{n \to \infty} F_{A_n} = F_{ \mu } \), where \( F_{A_n} \) and \( F_{ \mu } \) are the distribution functions of \( A_n \) and \( \mu \) respectively.</p>
 
-<p>This is still only convergence in distribution, not convergence in probability. However, \( \mu \) is a constant, and convergence in distribution to the distribution of a constant is the same as convergence in probability to that constant (think of the constant’s distribution as a point mass). So we have the desired result, \( A_n \overset{p}{\to} \mu \).</p>
+<p>This is still only convergence in distribution, not convergence in probability. However, \( \mu \) is a constant, and convergence in distribution to the distribution of a constant is the same as convergence in probability to that constant (think of the constant&#39;s distribution as a point mass). So we have the desired result, \( A_n \overset{p}{\to} \mu \).</p>
 
 <h3 id="discussion">Discussion</h3>
 
-<p>I’m not entirely sure how to interpret the parameter \(s\) for a general characteristic function. The characteristic function is just an exponential Fourier transform, and I would usually interpret that parameter as the “time index” for a given sequence I was Fourier transforming. I’m not sure if that interperetation is justified here, since each random variable is an IID draw from the same distribution. If I wanted to read a “time index” into this, it would be \( t\), which is the draw number. Maybe \(s\) is not very meaningful in this setting, so we can let it be whatever we want?</p>
+<p>I&#39;m not entirely sure how to interpret the parameter \(s\) for a general characteristic function. The characteristic function is just an exponential Fourier transform, and I would usually interpret that parameter as the &quot;time index&quot; for a given sequence I was Fourier transforming. I&#39;m not sure if that interperetation is justified here, since each random variable is an IID draw from the same distribution. If I wanted to read a &quot;time index&quot; into this, it would be \( t\), which is the draw number. Maybe \(s\) is not very meaningful in this setting, so we can let it be whatever we want?</p>
 
 <p>Anyway, the point of doing it this way is that sometimes a product of exponentials is easier to work with than some arbitrary sum. I should learn more about Fourier transforms and characteristic functions, they seem useful.</p>
 
@@ -500,61 +561,59 @@ A_n & \equiv \frac{1}{n} \sum_{t=1}^n X_t \cr
   
   <div class="post">
     <h1 class="post-title">
-      <a href="//micro%20theory/2015/11/10/two-part-tariff-example/">
+      <a href="//micro%20theory/2015/11/10/two-part-tariff-example.html">
         An example of a two-part tariff
       </a>
     </h1>
 
     <span class="post-date">10 Nov 2015</span>
 
-    <p>What if a monopolist could design a pricing scheme to capture more consumer surplus when consumers have different valuations of the product? This is the idea behind price discrimination. A two-part tariff is a way to implement price discrimination when the seller is uncertain about the individual consumer’s valuation.</p>
+    <p>What if a monopolist could design a pricing scheme to capture more consumer surplus when consumers have different valuations of the product? This is the idea behind price discrimination. A two-part tariff is a way to implement price discrimination when the seller is uncertain about the individual consumer&#39;s valuation.</p>
 
 <p>In a two-part tariff, the seller prices the good as \(T(q) = A + pq \). This creates a continuum of bundles, \( \{T,q\} \), located on a straight line. In choosing a quantity, the consumer chooses a bundle along this line, and in any bundle, the consumer pays at least \(A\).</p>
 
-<p>Two-part tariffs can only work if there is limited arbitrage. It doesn’t work if a consumer can just acquire the good and re-sell it at \(A\). An amusement park that charges an admission price and a price per ride (a time cost?) is an example. This pricing scheme is a de facto quantity discount, since the average cost goes down as the quantity purchased increases.</p>
+<p>Two-part tariffs can only work if there is limited arbitrage. It doesn&#39;t work if a consumer can just acquire the good and re-sell it at \(A\). An amusement park that charges an admission price and a price per ride (a time cost?) is an example. This pricing scheme is a de facto quantity discount, since the average cost goes down as the quantity purchased increases.</p>
 
 <h2 id="an-example">An example</h2>
 
-<p>Suppose consumer preferences follow</p>
+<p>Suppose consumer preferences follow </p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
+<p>$$ \begin{align}
  U_i = \begin{cases}
-    \theta_i V(q_i) - T(q_i) \ && \text{if} \ q_i \gt 0 \cr
-    0 \ && \text{if} \ q_i = 0 \cr
+    \theta_i V(q_i) - T(q_i) \ &amp;&amp; \text{if} \ q_i \gt 0 \cr
+    0 \ &amp;&amp; \text{if} \ q_i = 0 \cr
 \end{cases} 
-\end{align} %]]></script>
+\end{align}$$</p>
 
-<p>where \(V : ~ V(0) = 0, V’(q_i) \gt 0, V’‘(q_i) \lt 0 \). \( \theta_i \) is the “taste” parameter that varies across consumers.</p>
+<p>where \(V : ~ V(0) = 0, V&#39;(q_i) \gt 0, V&#39;&#39;(q_i) \lt 0 \). \( \theta_i \) is the &quot;taste&quot; parameter that varies across consumers.</p>
 
-<p>Assume there are two groups of consumers: a proportion \( \lambda \) have \( \theta = \theta_1 \), and \( 1- \lambda \) have \( \theta = \theta_2 \), where \( \theta_2 \gt \theta_1 \gt c \), where \( c \) is the seller’s marginal cost.</p>
+<p>Assume there are two groups of consumers: a proportion \( \lambda \) have \( \theta = \theta_1 \), and \( 1- \lambda \) have \( \theta = \theta_2 \), where \( \theta_2 \gt \theta_1 \gt c \), where \( c \) is the seller&#39;s marginal cost.</p>
 
-<p>A convenient functional form that satisfies this is \(V(q) = \frac{1}{2}(1-(1-q)^2 ) \), so that \( V’(q) = 1-q \). This lets us derive consumer demand, aggregate demand, and net consumer surplus. To get consumer demand, we solve</p>
+<p>A convenient functional form that satisfies this is \(V(q) = \frac{1}{2}(1-(1-q)^2 ) \), so that \( V&#39;(q) = 1-q \). This lets us derive consumer demand, aggregate demand, and net consumer surplus. To get consumer demand, we solve</p>
 
-<script type="math/tex; mode=display">\max_{q_i} \  \theta_i V(q_i) - T(q_i)</script>
+<p>$$ \max_{q_i} \  \theta_i V(q_i) - T(q_i) $$</p>
 
 <p>which gives us</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-q_i & = 1 - \frac{p}{ \theta_i } \cr
-Q(p) & = 1 - p \hat{ \theta } \cr
-CS_i & = \frac{1}{2 \theta_i } ( \theta_i - p)^2 \cr
-\end{align} %]]></script>
+<p>$$ \begin{align}
+q_i &amp; = 1 - \frac{p}{ \theta_i } \cr
+Q(p) &amp; = 1 - p \hat{ \theta } \cr
+CS_i &amp; = \frac{1}{2 \theta_i } ( \theta_i - p)^2 \cr
+\end{align} $$</p>
 
-<p>where \( \hat{ \theta } = \frac{\lambda}{\theta_1} + \frac{1- \lambda}{\theta_2} \), the harmonic mean of the two groups’ valuations.</p>
+<p>where \( \hat{ \theta } = \frac{\lambda}{\theta_1} + \frac{1- \lambda}{\theta_2} \), the harmonic mean of the two groups&#39; valuations.</p>
 
-<h3 id="fully-observable--thetai-">Fully observable \( \theta_i \)</h3>
+<h3 id="fully-observable-theta_i">Fully observable \( \theta_i \)</h3>
 
 <p>When the monopolist can fully observe \( \theta_i \), the best they can do is to set \(p=c\) (maximize the size of the pie) and then charge each group their total surplus for the purchase, \(A_i=CS_i = \frac{1}{2 \theta_i } ( \theta_i - c)^2 \) (perfect price discrimination). The personalized fixed fee will be higher for the type with the higher valuation.</p>
 
-<p>The monopolist’s profit under this pricing scheme is</p>
+<p>The monopolist&#39;s profit under this pricing scheme is</p>
 
-<script type="math/tex; mode=display">\pi^{pd} = \lambda \frac{1}{2 \theta_1}( \theta_1 - c)^2 + ( 1 - \lambda ) \frac{1}{2 \theta_2}( \theta_2 - c)^2</script>
+<p>$$ \pi^{pd} = \lambda \frac{1}{2 \theta_1}( \theta_1 - c)^2 + ( 1 - \lambda ) \frac{1}{2 \theta_2}( \theta_2 - c)^2 $$</p>
 
-<p>If the monopolist couldn’t observe \( \theta_i \), they couldn’t implement this scheme, as \( \theta_2 \) would have an incentive to pretend to be \( \theta_1 \).</p>
+<p>If the monopolist couldn&#39;t observe \( \theta_i \), they couldn&#39;t implement this scheme, as \( \theta_2 \) would have an incentive to pretend to be \( \theta_1 \).</p>
 
-<h3 id="unobservable--thetai-">Unobservable \( \theta_i \)</h3>
+<h3 id="unobservable-theta_i">Unobservable \( \theta_i \)</h3>
 
 <p>When \( \theta_i \) is unobservable to the monopolist, the best they can do with a linear tariff is to charge the monopoly price.</p>
 
@@ -566,171 +625,158 @@ CS_i & = \frac{1}{2 \theta_i } ( \theta_i - p)^2 \cr
 
 <h3 id="linear-two-part-tariff">Linear two-part tariff</h3>
 
-<p>When \( \theta_i \) is unobservable to the seller, they can do better than monopoly pricing by using a linear two-part tariff that captures all of the lower-valuation-type’s surplus.</p>
+<p>When \( \theta_i \) is unobservable to the seller, they can do better than monopoly pricing by using a linear two-part tariff that captures all of the lower-valuation-type&#39;s surplus.</p>
 
 <p>Suppose that the marginal price is \( p \). The highest fixed fee under which \( \theta_1 \) will still purchase is \( A = CS_1 (p) \). \( \theta_2 \) will buy under this scheme, because \( CS_2(p) \gt CS_1(p) = A \). So the monopolist solves</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align} 
-\max_p \ & CS_1(p) + (p-c)Q(p) \cr
-  = & \frac{1}{2 \theta_1}(\theta_1 -p)^2 + (p-c)(\hat{\theta} -p) \cr
-  \implies p = & \frac{ \hat{\theta} + c - 1 }{2- \theta_{1}^{-1}}
-\end{align} %]]></script>
+<p>$$ \begin{align} 
+\max_p \ &amp; CS_1(p) + (p-c)Q(p) \cr
+  = &amp; \frac{1}{2 \theta_1}(\theta_1 -p)^2 + (p-c)(\hat{\theta} -p) \cr
+  \implies p = &amp; \frac{ \hat{\theta} + c - 1 }{2- \theta_{1}^{-1}}
+\end{align} $$</p>
 
 <h3 id="comparison">Comparison</h3>
 
 <p>In the above pricing schemes,</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-c = & p^{pd} \lt p^{2t} \lt p^m \cr
- & \pi^{pd} \gt \pi^{2t} \gt \pi^m \cr  
-\end{align} %]]></script>
+<p>$$ \begin{align}
+c = &amp; p^{pd} \lt p^{2t} \lt p^m \cr
+ &amp; \pi^{pd} \gt \pi^{2t} \gt \pi^m \cr<br>
+\end{align} $$</p>
 
 <p>Under perfect price discrimination, the monopolist charges a personalized fixed fee \( A_i = \frac{1}{2 \theta_i } ( \theta_i - c)^2 \) and captures all of the surplus. Thus, the profits in this case are the highest.</p>
 
-<p>Under the linear two-part tariff, the monopolist charges a blanket fixed fee equal to the lower type’s surplus, \( A = \frac{1}{2 \theta_1 } ( \theta_1 - c)^2 \). In a more general setting with a continuum of types, this would be the surplus of the lowest type the monopolist finds it worthwhile to go after.</p>
+<p>Under the linear two-part tariff, the monopolist charges a blanket fixed fee equal to the lower type&#39;s surplus, \( A = \frac{1}{2 \theta_1 } ( \theta_1 - c)^2 \). In a more general setting with a continuum of types, this would be the surplus of the lowest type the monopolist finds it worthwhile to go after.</p>
 
-<p>Under the monopoly price, the monopolist doesn’t try to capture any additional surplus based on consumer’s valuations. Consequently, the profits are lowest, and the price is the highest. The higher price creates more deadweight loss, but since the monopolist doesn’t have any instrument to capture the lost surplus this doesn’t matter to them.</p>
+<p>Under the monopoly price, the monopolist doesn&#39;t try to capture any additional surplus based on consumer&#39;s valuations. Consequently, the profits are lowest, and the price is the highest. The higher price creates more deadweight loss, but since the monopolist doesn&#39;t have any instrument to capture the lost surplus this doesn&#39;t matter to them.</p>
 
-<p>In terms of total welfare, surplus is maximized under perfect price discrimination, and is higher under the two-part tariff than under monopoly pricing. This increase in total surplus comes at a cost to the consumer, as the monopolist is able to capture all of the low type’s surplus with the two-part tariff. This gives the monopolist an incentive to reduce the deadweight loss associated with monopoly pricing by reducing the marginal price. Under perfect price discrimination the total surplus is maximized, but all of it goes to the producer.</p>
+<p>In terms of total welfare, surplus is maximized under perfect price discrimination, and is higher under the two-part tariff than under monopoly pricing. This increase in total surplus comes at a cost to the consumer, as the monopolist is able to capture all of the low type&#39;s surplus with the two-part tariff. This gives the monopolist an incentive to reduce the deadweight loss associated with monopoly pricing by reducing the marginal price. Under perfect price discrimination the total surplus is maximized, but all of it goes to the producer.</p>
 
 <p>This suggests that price discrimination may be desirable in some markets to the extent that the benefits of the efficiency gains compensate consumers for their loss in surplus. I think it would be interesting to try to model this with a bargaining layer, where consumers could bargain with the firm over the surplus. I think it could be similar to the <a href="http://akhilrao.github.io/micro%20theory/2015/11/01/nash-bargaining-example/">Nash Bargaining example</a>.</p>
 
-<p>In real life, I don’t know if we often observe many examples of transfer payments from firms to consumers that would indicate some sort of bargaining over price discrimination. I think that the Second Welfare Theorem may imply it’s possible, in which case the Coase Theorem would imply that if it’s welfare-increasing for both parties we should see it happen. So there may be some examples out there.</p>
+<p>In real life, I don&#39;t know if we often observe many examples of transfer payments from firms to consumers that would indicate some sort of bargaining over price discrimination. I think that the Second Welfare Theorem may imply it&#39;s possible, in which case the Coase Theorem would imply that if it&#39;s welfare-increasing for both parties we should see it happen. So there may be some examples out there.</p>
 
   </div>
   
   <div class="post">
     <h1 class="post-title">
-      <a href="//micro%20theory/2015/11/01/nash-bargaining-example/">
+      <a href="//micro%20theory/2015/11/01/nash-bargaining-example.html">
         The Nash Bargaining Solution with 2 players
       </a>
     </h1>
 
     <span class="post-date">01 Nov 2015</span>
 
-    <p>The <a href="https://en.wikipedia.org/wiki/Bargaining_problem#Nash_bargaining_solution">Nash Bargaining Solution</a> is an important solution concept in game theory. It describes a two-player cooperative bargaining situation where the players are trying to maximize a joint surplus. It has been generalized to \(n\) players, but I’ve been told that the NBS is really unwieldy in that setting and that the Shapley value is used instead.</p>
+    <p>The <a href="https://en.wikipedia.org/wiki/Bargaining_problem#Nash_bargaining_solution">Nash Bargaining Solution</a> is an important solution concept in game theory. It describes a two-player cooperative bargaining situation where the players are trying to maximize a joint surplus. It has been generalized to \(n\) players, but I&#39;ve been told that the NBS is really unwieldy in that setting and that the Shapley value is used instead.</p>
 
-<p>The NBS represents a particular example of an axiomatic bargaining system. These are solution concepts where the solution is characterized by defining the axioms it must satisfy. Such solution concepts are used in cooperative game theory, where players are trying to maximize some total pie conditional on some “disagreement outcome” if they fail to reach an agreement.</p>
+<p>The NBS represents a particular example of an axiomatic bargaining system. These are solution concepts where the solution is characterized by defining the axioms it must satisfy. Such solution concepts are used in cooperative game theory, where players are trying to maximize some total pie conditional on some &quot;disagreement outcome&quot; if they fail to reach an agreement.</p>
 
-<p>The division of the joint surplus should satisfy some individual rationality and collective rationality (pareto efficiency) constraints. This can still leave us with a whole set of equilibria all along the efficient frontier. So we impose some axioms on the solution based on how we think the cooperation should be, and that usually gives us a unique equilibrium. Axiomatic bargaining is sometimes called “equilibrium selection” because we choose the equilibrium by choosing the axioms.</p>
+<p>The division of the joint surplus should satisfy some individual rationality and collective rationality (pareto efficiency) constraints. This can still leave us with a whole set of equilibria all along the efficient frontier. So we impose some axioms on the solution based on how we think the cooperation should be, and that usually gives us a unique equilibrium. Axiomatic bargaining is sometimes called &quot;equilibrium selection&quot; because we choose the equilibrium by choosing the axioms.</p>
 
-<p>A two-player bargaining problem is characterized by a pair \( (F,v) \), where \(F\) is a closed and convex “feasible set” and \(v \in F\) is a vector of disagreement outcomes. The set \( F \cap \{ (x_1 , x_2) : x_1 \gt v_1, x_2 \gt v_2  \} \) should be bounded and non-empty. This is the set of feasible outcomes that is strictly better than the outcome if they can’t agree, \( (v_1, v_2) \).</p>
+<p>A two-player bargaining problem is characterized by a pair \( (F,v) \), where \(F\) is a closed and convex &quot;feasible set&quot; and \(v \in F\) is a vector of disagreement outcomes. The set \( F \cap \{ (x_1 , x_2) : x_1 \gt v_1, x_2 \gt v_2  \} \) should be bounded and non-empty. This is the set of feasible outcomes that is strictly better than the outcome if they can&#39;t agree, \( (v_1, v_2) \).</p>
 
 <h3 id="axioms-and-motivation">Axioms and Motivation</h3>
 
 <p>The NBS for two players is a mapping \( \phi : F \to R^2 \) which satisfies the following four axioms:</p>
 
 <ol>
-  <li>
-    <p>Symmetry (SYM): For every \( (F,v) \), if \( (F,v) \) is symmetric, then \( \phi_1 (F,v) = \phi_2 (F,v)\) (both players receive the same outcome).</p>
-  </li>
-  <li>
-    <p>Weak Pareto Optimality (WPO): For every \( (F,v) \) we should have \( \phi (F,v) \in W(T) \), where for \( T \subset R^2 \), \( W(T) := \{ x \in T: \not\exists \ y \in T \ \text{s.t.} \ y \gt x \} \).</p>
-  </li>
-  <li>
-    <p>Scale Transformation Covariance (STC): For every \( (F,v) \) and all \(a,b \in R^2 \) with \(a \gt 0 \) and \( (aF + b, av + b) \in F \), we have \( \phi(aF + b, av + b) = a \phi(F,v) + b \).</p>
-  </li>
-  <li>
-    <p>Independence of Irrelevant Alternatives (IIA): \(\forall \ (F,v),(G,w) \) with \( v=w \), \( G \subset F \), and \( \phi(G,w) \in F \), we have \( \phi (F,v) = \phi (G,w) \).</p>
-  </li>
+<li><p>Symmetry (SYM): For every \( (F,v) \), if \( (F,v) \) is symmetric, then \( \phi_1 (F,v) = \phi_2 (F,v)\) (both players receive the same outcome). </p></li>
+<li><p>Weak Pareto Optimality (WPO): For every \( (F,v) \) we should have \( \phi (F,v) \in W(T) \), where for \( T \subset R^2 \), \( W(T) := \{ x \in T: \not\exists \ y \in T \ \text{s.t.} \ y \gt x \} \).</p></li>
+<li><p>Scale Transformation Covariance (STC): For every \( (F,v) \) and all \(a,b \in R^2 \) with \(a \gt 0 \) and \( (aF + b, av + b) \in F \), we have \( \phi(aF + b, av + b) = a \phi(F,v) + b \).</p></li>
+<li><p>Independence of Irrelevant Alternatives (IIA): \(\forall \ (F,v),(G,w) \) with \( v=w \), \( G \subset F \), and \( \phi(G,w) \in F \), we have \( \phi (F,v) = \phi (G,w) \).</p></li>
 </ol>
 
 <p>The motivations for these axioms are:</p>
 
-<p>SYM: If there is no information that lets us distinguish between the players in a bargaining game’s description, then that game’s solution should also not distinguish between the players.</p>
+<p>SYM: If there is no information that lets us distinguish between the players in a bargaining game&#39;s description, then that game&#39;s solution should also not distinguish between the players.</p>
 
-<p>WPO: \(W(T) \) is referred to as the “weakly Pareto optimal subset of \(T\)”, where \(T\) is any subset of \( R^2\). The idea of this axiom is that the players should not be able to improve upon the solution outcome without making the other player worse off. This axiom lets us use standard optimization techniques to find the NBS.</p>
+<p>WPO: \(W(T) \) is referred to as the &quot;weakly Pareto optimal subset of \(T\)&quot;, where \(T\) is any subset of \( R^2\). The idea of this axiom is that the players should not be able to improve upon the solution outcome without making the other player worse off. This axiom lets us use standard optimization techniques to find the NBS.</p>
 
-<p>STC: Utility functions are uniquely determined only up to a positive affine transformation. The idea of this axiom is that our solution should not depend upon the particular representation we’ve chosen in this sense. I think this (unique up to affine transformation) is true of any utility function, ordinal or cardinal, but I know it’s true of von Neumann-Morgenstern utilities, which is the utility concept we’re using here. STC tells us that the NBS is a linear mapping.</p>
+<p>STC: Utility functions are uniquely determined only up to a positive affine transformation. The idea of this axiom is that our solution should not depend upon the particular representation we&#39;ve chosen in this sense. I think this (unique up to affine transformation) is true of any utility function, ordinal or cardinal, but I know it&#39;s true of von Neumann-Morgenstern utilities, which is the utility concept we&#39;re using here. STC tells us that the NBS is a linear mapping.</p>
 
-<p>IIA: IIA is apparently Nash’s most-criticized axiom, as well as one of the most important for this solution concept. It says that letting the feasible set shrink while the solution outcome remains feasible souldn’t change the solution. In plainer terms: if you prefer chocolate over vanilla, and vanilla over strawberry, and you were considering between chocolate and vanilla, allowing you to choose strawberry shouldn’t change the outcome (you’ll still choose chocolate).</p>
+<p>IIA: IIA is apparently Nash&#39;s most-criticized axiom, as well as one of the most important for this solution concept. It says that letting the feasible set shrink while the solution outcome remains feasible souldn&#39;t change the solution. In plainer terms: if you prefer chocolate over vanilla, and vanilla over strawberry, and you were considering between chocolate and vanilla, allowing you to choose strawberry shouldn&#39;t change the outcome (you&#39;ll still choose chocolate).</p>
 
 <h3 id="computing-the-solution">Computing the solution</h3>
 
 <p>With these four axioms, we can now define the NBS as a function we can maximize. For every \( (F,v)\), the symmetric NBS is obtained by solving</p>
 
-<script type="math/tex; mode=display">\max_{x_1,x_2 \in F} \ (x_1 - v_1)(x_2 - v_2)</script>
+<p>$$ \max_{x_1,x_2 \in F} \ (x_1 - v_1)(x_2 - v_2) $$</p>
 
-<p>The NBS maximizes each player’s gain over the disagreement outcome, \( (v_1,v_2) \). The term \( (x_1 - v_1)(x_2 - v_2) \) is referred to as the symmetric Nash product.</p>
+<p>The NBS maximizes each player&#39;s gain over the disagreement outcome, \( (v_1,v_2) \). The term \( (x_1 - v_1)(x_2 - v_2) \) is referred to as the symmetric Nash product.</p>
 
-<p>Basically, we’re maximizing a Cobb-Douglas function of the players’ gains over the disagreement outcome. In the symmetric case, we have that the Cobb-Douglas exponents are both equal to \( 1/2\) and sum to \(1\) (normalized). We can add some asymmetry by letting the exponents be \( \beta \in (0,1) \) and \( 1- \beta \). Then the NBS solves</p>
+<p>Basically, we&#39;re maximizing a Cobb-Douglas function of the players&#39; gains over the disagreement outcome. In the symmetric case, we have that the Cobb-Douglas exponents are both equal to \( 1/2\) and sum to \(1\) (normalized). We can add some asymmetry by letting the exponents be \( \beta \in (0,1) \) and \( 1- \beta \). Then the NBS solves</p>
 
-<script type="math/tex; mode=display">\max_{x_1,x_2 \in F} \ (x_1 - v_1)^{\beta}(x_2 - v_2)^{1-\beta}</script>
+<p>$$ \max_{x_1,x_2 \in F} \ (x_1 - v_1)^{\beta}(x_2 - v_2)^{1-\beta} $$</p>
 
-<p>The exponents can be interpreted as each player’s bargaining power; the higher \( \beta \) is, the more player 1 will receive in equilibrium, and vice versa.</p>
+<p>The exponents can be interpreted as each player&#39;s bargaining power; the higher \( \beta \) is, the more player 1 will receive in equilibrium, and vice versa.</p>
 
 <h3 id="an-example">An example</h3>
 
-<p>This is a somewhat contrived example, but suppose a buyer and a seller are bargaining over an investment \(I\) the buyer can make. The buyer values the good at \(v\), and it costs \(c\) to produce (or you can think of \(c\) as the seller’s opportunity cost of selling the good).</p>
+<p>This is a somewhat contrived example, but suppose a buyer and a seller are bargaining over an investment \(I\) the buyer can make. The buyer values the good at \(v\), and it costs \(c\) to produce (or you can think of \(c\) as the seller&#39;s opportunity cost of selling the good).</p>
 
-<p>The buyer will demand 1 unit of the good with probability \( Pr(v \gt c) = x \) and 0 units with probability \( Pr(v=0) = 1-x \). The buyer will buy as long as they value the good above marginal cost, and the seller will charge the buyer their full value for the good. The buyer and the seller are going to bargain over the surplus created by the transaction. So instead of a price coordinating buyer and seller’s actions, we have them directly coordinating over how to share the surplus.</p>
+<p>The buyer will demand 1 unit of the good with probability \( Pr(v \gt c) = x \) and 0 units with probability \( Pr(v=0) = 1-x \). The buyer will buy as long as they value the good above marginal cost, and the seller will charge the buyer their full value for the good. The buyer and the seller are going to bargain over the surplus created by the transaction. So instead of a price coordinating buyer and seller&#39;s actions, we have them directly coordinating over how to share the surplus. </p>
 
-<p>Let’s assume that investment is related to the buyer’s likelihood of buying as \( I = x^2 /2 \). If they fail to reach an agreement, there will be no surplus created and they’ll each get 0 payoff.</p>
+<p>Let&#39;s assume that investment is related to the buyer&#39;s likelihood of buying as \( I = x^2 /2 \). If they fail to reach an agreement, there will be no surplus created and they&#39;ll each get 0 payoff.</p>
 
 <h4 id="benchmark-buyer-gets-all-surplus">Benchmark: Buyer gets all surplus</h4>
 
-<p>In the benchmark case, let’s suppose that the buyer is going to get all of the surplus, and is solving the problem as a planner (internalizing the seller’s cost of the good). The buyer solves</p>
+<p>In the benchmark case, let&#39;s suppose that the buyer is going to get all of the surplus, and is solving the problem as a planner (internalizing the seller&#39;s cost of the good). The buyer solves</p>
 
-<script type="math/tex; mode=display">\max_x \ x(v-c) - \frac{x^2}{2}</script>
+<p>$$ \max_x \ x(v-c) - \frac{x^2}{2} $$</p>
 
 <p>This gives us the optimal demand and investment as</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-x = & \ v - c \cr
-I = & \ \frac{(v-c)^2}{2} \cr
-\end{align} %]]></script>
+<p>$$ \begin{align}
+x = &amp; \ v - c \cr
+I = &amp; \ \frac{(v-c)^2}{2} \cr
+\end{align} $$</p>
 
-<p>The optimal demand, \(x\), is actually the optimal probability of purchase. It’s a little weird that we’re having the buyer choose a probability, but in this case I think it’s easier than expressing \(x\) as a function of \(I\) and solving for the optimal investment directly.</p>
+<p>The optimal demand, \(x\), is actually the optimal probability of purchase. It&#39;s a little weird that we&#39;re having the buyer choose a probability, but in this case I think it&#39;s easier than expressing \(x\) as a function of \(I\) and solving for the optimal investment directly.</p>
 
 <p>So the buyer takes all the surplus, and chooses to invest the amount that solves the above optimization problem. Not much intuition to see yet.</p>
 
 <h4 id="nash-bargaining-buyer-and-seller-split-surplus">Nash Bargaining: Buyer and Seller split surplus</h4>
 
-<p>Now suppose the buyer and seller split the surplus, and use Nash Bargaining to determine how much to invest. The buyer’s share of the surplus is \(x_b\) and the seller’s is \(x_s\). We do this as a two-stage problem: first the buyer and seller negotiate a split of the surplus, and then the buyer chooses a level of investment. Their symmetric bargaining outcome solves</p>
+<p>Now suppose the buyer and seller split the surplus, and use Nash Bargaining to determine how much to invest. The buyer&#39;s share of the surplus is \(x_b\) and the seller&#39;s is \(x_s\). We do this as a two-stage problem: first the buyer and seller negotiate a split of the surplus, and then the buyer chooses a level of investment. Their symmetric bargaining outcome solves</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align} 
-\max_{S_s, S_b } & ~ (S_b - 0)( S_s - 0) \cr
-\text{s.t} & ~ S_b + S_s = v - c \cr
-\implies \max_{S_b } & \ S_b (v-c- S_b ) \cr
-\end{align} %]]></script>
+<p>$$ \begin{align} 
+\max_{S_s, S_b } &amp; ~ (S_b - 0)( S_s - 0) \cr
+\text{s.t} &amp; ~ S_b + S_s = v - c \cr
+\implies \max_{S_b } &amp; \ S_b (v-c- S_b ) \cr
+\end{align} $$</p>
 
 <p>We can reformulate the constrained optimization as an unconstrained optimization as above. This gives us the optimal split for the buyer and seller:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
- S_b &= \frac{v-c}{2} \cr
- S_s &= \frac{v-c}{2} \cr
-\end{align} %]]></script>
+<p>$$\begin{align}
+ S_b &amp;= \frac{v-c}{2} \cr
+ S_s &amp;= \frac{v-c}{2} \cr
+\end{align}$$</p>
 
 <p>So the buyer and seller split the surplus equally. We got this by solving an optimization problem, but we could have also gotten this by making an argument from the axioms. Another way to say this is that the NBS axioms are such that the above maximization will find the unique solution.</p>
 
 <p>Now the second stage: how much investment will the buyer choose? The buyer is going to solve a similar problem as in the benchmark,</p>
 
-<script type="math/tex; mode=display">\max_x \ x(\frac{v-c}{2}) - \frac{x^2}{2}</script>
+<p>$$ \max_x \ x(\frac{v-c}{2}) - \frac{x^2}{2} $$</p>
 
 <p>Giving us an optimal investment of</p>
 
-<script type="math/tex; mode=display">I = \frac{(v-c)^2}{8}</script>
+<p>$$ I = \frac{(v-c)^2}{8} $$</p>
 
 <p>This is lower than the benchmark level of investment, which makes sense - the buyer is getting half instead of all of the surplus from the transaction, so their incentive to invest is lower.</p>
 
-<p>This example is very stylized, but I think it’s a rough first pass at some deeper dynamic model of learning to use a technology and the demand for that technology. Maybe some kind of software with a learning curve, like Photoshop or something, where the cost of investment is capturing for the learning curve of that technology. If we want to think about the split of the surplus as coming from a price instead of bargaining, then we see that consumers would invest more in learning the technology if the price was lower than higher.</p>
+<p>This example is very stylized, but I think it&#39;s a rough first pass at some deeper dynamic model of learning to use a technology and the demand for that technology. Maybe some kind of software with a learning curve, like Photoshop or something, where the cost of investment is capturing for the learning curve of that technology. If we want to think about the split of the surplus as coming from a price instead of bargaining, then we see that consumers would invest more in learning the technology if the price was lower than higher.</p>
 
 <h3 id="summary">Summary</h3>
 
-<p>The NBS isn’t super realistic, but it’s a nice tool to use when you don’t want to get too into the details of bargaining. Sometimes that’s ok and it doesn’t distort the final outcome too much, and sometimes it isn’t and it does.</p>
+<p>The NBS isn&#39;t super realistic, but it&#39;s a nice tool to use when you don&#39;t want to get too into the details of bargaining. Sometimes that&#39;s ok and it doesn&#39;t distort the final outcome too much, and sometimes it isn&#39;t and it does.</p>
 
-<p>Apparently, “Nash’s Program” is to formulate cooperative bargaining solutions in terms of non-cooperative strategic games. For example, the symmetric NBS is also the split that both players would receive if they were almost infinitely patient and completely identical and engaged in an infinitely repeated Rubinstein bargaining game, which is not cooperative. I think this is pretty cool, as it lets us think of a cooperative game’s outcome as a result of an underlying non-cooperative game. There’s probably a theorem somewhere about when that representation exists and when it doesn’t.</p>
+<p>Apparently, &quot;Nash&#39;s Program&quot; is to formulate cooperative bargaining solutions in terms of non-cooperative strategic games. For example, the symmetric NBS is also the split that both players would receive if they were almost infinitely patient and completely identical and engaged in an infinitely repeated Rubinstein bargaining game, which is not cooperative. I think this is pretty cool, as it lets us think of a cooperative game&#39;s outcome as a result of an underlying non-cooperative game. There&#39;s probably a theorem somewhere about when that representation exists and when it doesn&#39;t.</p>
 
   </div>
   
   <div class="post">
     <h1 class="post-title">
-      <a href="//micro%20theory/2015/10/20/hotelling-digital-piracy-arrest/">
+      <a href="//micro%20theory/2015/10/20/hotelling-digital-piracy-arrest.html">
         Hotelling monopoly pricing for a digital good with piracy
       </a>
     </h1>
@@ -739,187 +785,97 @@ I = & \ \frac{(v-c)^2}{2} \cr
 
     <p>This post and <a href="http://akhilrao.github.io/micro%20theory/2015/10/19/risky-good-supply-passthrough/">previous post</a> are about markets where illegal things happen. This one is about a digital good that can be pirated.</p>
 
-<p>The basic idea is: consumers can buy 1 unit of the good from the firm at price \(p\), or for free at some chance \( \theta \in (0,1) \) of 0 payoff (“piracy and arrest”). The good can be reproduced at 0 marginal cost.</p>
+<p>The basic idea is: consumers can buy 1 unit of the good from the firm at price \(p\), or for free at some chance \( \theta \in (0,1) \) of 0 payoff (&quot;piracy and arrest&quot;). The good can be reproduced at 0 marginal cost.</p>
 
 <p>The setting is a version of <a href="http://akhilrao.github.io/micro%20theory/2015/09/28/hotelling-triangle-city/">Linear City</a>. There are three refinements on the standard Hotelling-on-a-line-of-length-1 setup here:</p>
 
 <ol>
-  <li>Consumers choose between buying at the firm, F, or getting the good for free from an illegal source T (like torrent sites). Getting the good for free comes with a probability \( \theta \) of 0 payoff. This is the risk of getting sued or arrested for illegally consuming the content.</li>
-  <li>The marginal cost of producing the good is 0. This is reasonable for digital goods, where the marginal cost is some \(\epsilon\) very small.</li>
-  <li>The travel cost is directional: \(t^F\) to get to the firm, and \(t^T\) to get to the torrent. This is a crude way to capture the different user experiences of consuming a digital good through the firm or the torrent. No assumptions on the ordering of travel costs; they can even be equal, though that would defeat the point.</li>
+<li>Consumers choose between buying at the firm, F, or getting the good for free from an illegal source T (like torrent sites). Getting the good for free comes with a probability \( \theta \) of 0 payoff. This is the risk of getting sued or arrested for illegally consuming the content.</li>
+<li>The marginal cost of producing the good is 0. This is reasonable for digital goods, where the marginal cost is some \(\epsilon\) very small.</li>
+<li>The travel cost is directional: \(t^F\) to get to the firm, and \(t^T\) to get to the torrent. This is a crude way to capture the different user experiences of consuming a digital good through the firm or the torrent. No assumptions on the ordering of travel costs; they can even be equal, though that would defeat the point.</li>
 </ol>
 
-<p>I’m assuming that the good is identical whether it’s consumed from the firm or the torrent, so the value is a common \(v\).</p>
+<p>I&#39;m assuming that the good is identical whether it&#39;s consumed from the firm or the torrent, so the value is a common \(v\). </p>
 
 <h3 id="the-marginal-consumer">The marginal consumer</h3>
 
 <p>The marginal consumer is indifferent between buying the item legally from the firm and taking a risk to get the item for free illegally. Formally,</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-u( consume \ legally ) &= u( consume \ illegally ) \cr
-v - p - t^F x &= (1- \theta)(v-t^T (1-x)) \cr
-\implies x & = \frac{\theta v - p + t^T (1- \theta) }{t^F + t^T (1- \theta)} \cr
-\end{align} %]]></script>
+<p>$$ \begin{align}
+u( consume \ legally ) &amp;= u( consume \ illegally ) \cr
+v - p - t^F x &amp;= (1- \theta)(v-t^T (1-x)) \cr
+\implies x &amp; = \frac{\theta v - p + t^T (1- \theta) }{t^F + t^T (1- \theta)} \cr
+\end{align} $$</p>
 
-<p>The expression \( t^T (1 - \theta) \) is “expected cost of surviving piracy”.</p>
+<p>The expression \( t^T (1 - \theta) \) is &quot;expected cost of surviving piracy&quot;. </p>
 
 <h3 id="the-firm">The firm</h3>
 
 <p>Since the marginal cost is 0, the firm just maximizes price times demand.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\max_p ~~& p~[\frac{\theta v - p + t^T (1- \theta) }{t^F + t^T (1- \theta)}]  \cr
-\text{FOC:}~ & \frac{\theta v - 2p + t^T (1- \theta) }{t^F + t^T (1- \theta)} = 0 \cr
-\implies p & = \frac{1}{2} (\theta v + t^T (1- \theta))
-\end{align} %]]></script>
+<p>$$ \begin{align}
+\max_p ~~&amp; p~[\frac{\theta v - p + t^T (1- \theta) }{t^F + t^T (1- \theta)}]  \cr
+\text{FOC:}~ &amp; \frac{\theta v - 2p + t^T (1- \theta) }{t^F + t^T (1- \theta)} = 0 \cr
+\implies p &amp; = \frac{1}{2} (\theta v + t^T (1- \theta))
+\end{align}$$</p>
 
-<p>Plugging the price back into the objective function, we get the firm’s profit:</p>
+<p>Plugging the price back into the objective function, we get the firm&#39;s profit:</p>
 
-<script type="math/tex; mode=display">\pi = \frac{ ( \theta v + t^T (1- \theta) )^2 }{4( t^F + t^T (1- \theta) )}</script>
+<p>$$ \pi = \frac{ ( \theta v + t^T (1- \theta) )^2 }{4( t^F + t^T (1- \theta) )} $$</p>
 
 <h3 id="equilibrium-analysis">Equilibrium analysis</h3>
 
 <p>The equilibrium of this problem is a triple of demand, price, and profit,</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-x & = \frac{\theta v + t^T (1- \theta)}{2( t^F + t^T (1- \theta) )} \cr
-p & = \frac{1}{2} (\theta v + t^T (1- \theta)) \cr
-\pi &= \frac{ ( \theta v + t^T (1- \theta) )^2 }{4( t^F + t^T (1- \theta) )} \cr
-\end{align} %]]></script>
+<p>$$\begin{align}
+x &amp; = \frac{\theta v + t^T (1- \theta)}{2( t^F + t^T (1- \theta) )} \cr
+p &amp; = \frac{1}{2} (\theta v + t^T (1- \theta)) \cr
+\pi &amp;= \frac{ ( \theta v + t^T (1- \theta) )^2 }{4( t^F + t^T (1- \theta) )} \cr
+\end{align}$$</p>
 
 <p>As \( \theta \to 1 \), the equilibrium approaches the regular Hotelling monopoly equilibrium with zero marginal cost,</p>
 
-<script type="math/tex; mode=display">x_{(\theta = 1)} = \frac{ v }{2 t^F  } , ~~ p_{(\theta = 1)} = \frac{v}{2}, ~~ \pi_{(\theta = 1)} = \frac{ v^2 }{4 t^F }</script>
+<p>$$ x_{(\theta = 1)} = \frac{ v }{2 t^F  } , ~~ p_{(\theta = 1)} = \frac{v}{2}, ~~ \pi_{(\theta = 1)} = \frac{ v^2 }{4 t^F } $$</p>
 
-<p>The equilibrium price is a combination of the monopoly price and the expected cost of surviving piracy. If \( t^T \lt v \) (as it necessarily-but-not-sufficiently should be if there is piracy), then the price with piracy is lower than the price if piracy isn’t an option.</p>
+<p>The equilibrium price is a combination of the monopoly price and the expected cost of surviving piracy. If \( t^T \lt v \) (as it necessarily-but-not-sufficiently should be if there is piracy), then the price with piracy is lower than the price if piracy isn&#39;t an option. </p>
 
-<p>The equilibrium demand is a combination of monopoly and duopoly demand expressed in terms of the expected cost of surviving piracy. I think this is because even though it’s not another firm, with consumer demand being uniformly distributed the torrents act as a competitive force against the firm. I think for reasonably values of travel cost, the indifferent consumer is closer to the firm than they would be without piracy, or under a uniform-value duopoly, implying that the piracy option reduces the firm’s marketshare (which makes sense).</p>
+<p>The equilibrium demand is a combination of monopoly and duopoly demand expressed in terms of the expected cost of surviving piracy. I think this is because even though it&#39;s not another firm, with consumer demand being uniformly distributed the torrents act as a competitive force against the firm. I think for reasonably values of travel cost, the indifferent consumer is closer to the firm than they would be without piracy, or under a uniform-value duopoly, implying that the piracy option reduces the firm&#39;s marketshare (which makes sense).</p>
 
-<p>The equilibrium profits are similarly a combination of monopoly and duopoly profits, with the latter expressed in terms of expected cost of surviving piracy. This is smaller than the monopoly profit. I’m not sure if it’s smaller than the duopoly profit as well; probably depends on the value of \( t^T (1- \theta) \).</p>
+<p>The equilibrium profits are similarly a combination of monopoly and duopoly profits, with the latter expressed in terms of expected cost of surviving piracy. This is smaller than the monopoly profit. I&#39;m not sure if it&#39;s smaller than the duopoly profit as well; probably depends on the value of \( t^T (1- \theta) \).</p>
 
 <p>From the demand, we can see how much piracy vs legal purchasing is happening:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\text{Firm's marketshare:}~~ & x  = \frac{\theta v + t^T (1- \theta)}{2( t^F + t^T (1- \theta) )} \cr
-\text{Piracy marketshare:}~~ & 1-x  = \frac{ 2 t^F + t^T (1- \theta) - \theta v}{2( t^F + t^T (1- \theta) )} \cr
-\end{align} %]]></script>
+<p>$$ \begin{align}
+\text{Firm&#39;s marketshare:}~~ &amp; x  = \frac{\theta v + t^T (1- \theta)}{2( t^F + t^T (1- \theta) )} \cr
+\text{Piracy marketshare:}~~ &amp; 1-x  = \frac{ 2 t^F + t^T (1- \theta) - \theta v}{2( t^F + t^T (1- \theta) )} \cr
+\end{align} $$</p>
 
 <p>Finally, we can find a restriction on \( \theta \) such that \( x \lt 1 \) (consumers always pirate):</p>
 
-<script type="math/tex; mode=display">\implies ~ \theta \lt \frac{2t^F + t^T }{v + t^T }</script>
+<p>$$ \implies ~ \theta \lt \frac{2t^F + t^T }{v + t^T } $$</p>
 
-<p>This always holds when \( v \lt 2t^F \), since \( \theta \lt 1 \). If consumers don’t value the good enough relative to the travel cost of legal purchase, they would accept any chance of arrest and pirate the good (\( \lim_{\theta \to 1} (x) \lt 1 \) ) .</p>
+<p>This always holds when \( v \lt 2t^F \), since \( \theta \lt 1 \). If consumers don&#39;t value the good enough relative to the travel cost of legal purchase, they would accept any chance of arrest and pirate the good (\( \lim_{\theta \to 1} (x) \lt 1 \) ) .</p>
 
 <h3 id="summary">Summary</h3>
 
-<p>I really like the simplicity and flexibility of the Hotelling framework. There aren’t too many parameters and they have nice interpretations. Finding an indifferent consumer and solving a firm’s problem are some algebra, and the amount of algebra scales pretty fast with the model’s complexity, but it’s doable. The consumer’s choice boils down to choosing between two options, which saves us from having to solve a consumer’s problem. My professor said Hotelling is a “workhorse” model of IO, and I can see why.</p>
+<p>I really like the simplicity and flexibility of the Hotelling framework. There aren&#39;t too many parameters and they have nice interpretations. Finding an indifferent consumer and solving a firm&#39;s problem are some algebra, and the amount of algebra scales pretty fast with the model&#39;s complexity, but it&#39;s doable. The consumer&#39;s choice boils down to choosing between two options, which saves us from having to solve a consumer&#39;s problem. My professor said Hotelling is a &quot;workhorse&quot; model of IO, and I can see why.</p>
 
-<p>I like the directional travel cost. User experiences matter, and I think this would probably be well-captured empirically by something like “minimum number of actions (clicks/keystrokes/swipes/etc) to accomplish this activity”. These may be small in comparison to travel costs for physical goods, but I think it’s the relative differences in travel costs that matter, not the absolute levels.</p>
+<p>I like the directional travel cost. User experiences matter, and I think this would probably be well-captured empirically by something like &quot;minimum number of actions (clicks/keystrokes/swipes/etc) to accomplish this activity&quot;. These may be small in comparison to travel costs for physical goods, but I think it&#39;s the relative differences in travel costs that matter, not the absolute levels.</p>
 
-<p>I guess the true minimum number of actions is 1 - program a button to execute that specific arbitrarily complex sequence of actions. Or 0 - the system automatically executes that action on a loop. Low reuse value though. So maybe “given default OS settings”.</p>
+<p>I guess the true minimum number of actions is 1 - program a button to execute that specific arbitrarily complex sequence of actions. Or 0 - the system automatically executes that action on a loop. Low reuse value though. So maybe &quot;given default OS settings&quot;.</p>
 
 <p>Some possible refinements:</p>
 
 <ol>
-  <li>
-    <p>Allow the value of the legal/illegal good to vary, maybe making them functions of some level of investment from the firm. Related, allowing the firm to influence \(t^T \) through investment in DRM technologies. Individually, probably not too hard.</p>
-  </li>
-  <li>
-    <p>Make the risk likelihood a function of the quantity of illegal consumption. Probably not hard.</p>
-  </li>
-  <li>
-    <p>Modeling the firm’s ability to influence the risk likelihood. This is from the observation that organizations like the RIAA/MPAA are able to increase the level of enforcement at some (low) cost. Probably not too hard. The likelihood could be indexed by the firm’s choice of some index variable, like “effort” in the owner-manager problem.</p>
-  </li>
-  <li>
-    <p>Add multiple goods. I’m not sure how to do this but I feel like it’s probably been done before and is therefore doable.</p>
-  </li>
-  <li>
-    <p>Model the content distribution network. I’m not sure how to do this. Maybe with some sufficient statistics of the network size/structure for the firm to do some enforcement. Not sure what those statistics would be or how that would work. The incentives of the CDN and its platform <a href="https://gigaom.com/2011/02/18/pirate-economics-101-who%E2%80%99s-making-money-from-torrents/">may matter</a>. Probably hard.</p>
-  </li>
-  <li>
-    <p>All of the above, allowing the risk likelihood to vary across CDNs that may have incentives which conflict with the firms’ incentives. As hard as 1-5 + hard.</p>
-  </li>
+<li><p>Allow the value of the legal/illegal good to vary, maybe making them functions of some level of investment from the firm. Related, allowing the firm to influence \(t^T \) through investment in DRM technologies. Individually, probably not too hard.</p></li>
+<li><p>Make the risk likelihood a function of the quantity of illegal consumption. Probably not hard.</p></li>
+<li><p>Modeling the firm&#39;s ability to influence the risk likelihood. This is from the observation that organizations like the RIAA/MPAA are able to increase the level of enforcement at some (low) cost. Probably not too hard. The likelihood could be indexed by the firm&#39;s choice of some index variable, like &quot;effort&quot; in the owner-manager problem.</p></li>
+<li><p>Add multiple goods. I&#39;m not sure how to do this but I feel like it&#39;s probably been done before and is therefore doable.</p></li>
+<li><p>Model the content distribution network. I&#39;m not sure how to do this. Maybe with some sufficient statistics of the network size/structure for the firm to do some enforcement. Not sure what those statistics would be or how that would work. The incentives of the CDN and its platform <a href="https://gigaom.com/2011/02/18/pirate-economics-101-who%E2%80%99s-making-money-from-torrents/">may matter</a>. Probably hard.</p></li>
+<li><p>All of the above, allowing the risk likelihood to vary across CDNs that may have incentives which conflict with the firms&#39; incentives. As hard as 1-5 + hard.</p></li>
 </ol>
 
-<p>Some cursory Googling turns up <a href="http://archive.nyu.edu/bitstream/2451/27797/2/CeDER-PP-2004-02.pdf">this paper</a>, so far the only directly related result I’ve found for theoretical economic models of digital piracy. The model in this paper seems more like a hidden-action model than what I did here, but I haven’t gone through it in detail yet.</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="//micro%20theory/2015/10/19/illegal-good-supply-passthrough/">
-        Optimal supply of an illegal commodity in a symmetric Cournot market
-      </a>
-    </h1>
-
-    <span class="post-date">19 Oct 2015</span>
-
-    <p>This post is about a topic I’ve been thinking about a bit lately: illegal markets, or markets for illegal commodities. Consider a Cournot market with \(n\) symmetric firms competing. Since the firms are symmetric, they will all supply the same quantity, \(\bar{x}\). The firms face a generic inverse demand function, \(P(X)\). The twist is that there is a risk of removal: with probability \(F(n \bar{x} ) \) a firm will be removed from the market. The PDF of removal is \( F’(X) = f(X) \), which is thrice continuously differentiable.</p>
-
-<p>I think this is a reasonable way to look at the probability of getting arrested when supplying some prohibited (“risky”) commodity. The chance the seller (“the firm”) gets arrested (removed from the market, 0 payoff) should depend on the number of sellers and the quantity supplied by the individual seller. In this version, it depends on both through aggregate supply. Aggregate quantity supplied is \( X = n \bar{x} \).</p>
-
-<p>I’m not sure I like this; I would like to do it with the probability of removal as a generic function of number of sellers and individual seller’s quantity supplied, \(F(x_i , n) \). But this is a tractable start.</p>
-
-<h3 id="optimal-supply-and-profits">Optimal supply and profits</h3>
-
-<p>Each firm solves</p>
-
-<script type="math/tex; mode=display">\max_x~ F(X)(0) + (1-F(nx))(p(nx)-c)x</script>
-
-<p>Their first-order condition is</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align} 
-& x[np'(X) - nf(X)p(X) - nF(X)p'(X) + cnf(X)] \cr 
-& + (p(X)-c)(1-F(X)) = 0 \cr
-\end{align} %]]></script>
-
-<p>Which gives us the optimal quantity supplied</p>
-
-<script type="math/tex; mode=display">\bar{x} = \frac{-(p(X) - c)}{n[p'(X) + \frac{f(X)}{1-F(X)}(p(X)-c)]}</script>
-
-<p>\( \lambda(X) \equiv \frac{f(X)}{1-F(X)} \) is the arrest hazard rate - the probability of a firm’s arrest for a specific level of aggregate supply given the firm has not been arrested yet. The optimal quantity supplied is reduced from the usual optimal Cournot quantity. The reduction is increasing in the hazard rate (riskier at current \(X\) means sell less to be safe) and the profit margin (more profit per unit means the firm can sell fewer units).</p>
-
-<p>Individual firms’ profits are given by</p>
-
-<script type="math/tex; mode=display">\bar{\pi} = \frac{(p(X) - c)^2 }{n \ [ |p'(X)| + \lambda(X) (p(X)-c)]}</script>
-
-<h3 id="pass-through">Pass-through</h3>
-
-<p>How does having this risk in the picture change how cost affects price?</p>
-
-<p>\( \sigma(X) = -\frac{XP’‘(X)}{P’(X)} \) is the curvature of the inverse demand function. Define \( \gamma(X) = -\frac{XF’‘(X)}{F’(X)} \), the curvature of the arrest likelihood. The pass-through depends on \( \sigma(X)\), \( \gamma(X)\), and \( \lambda(X) \).</p>
-
-<p>Let the firms’ first-order condition be \(R\). \(R\) defines the quantity supplied as an implicit function of cost. The quantity pass-through, \(\frac{\partial X}{\partial c}\), is</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
- \frac{\partial X}{\partial c} & = - \frac{\partial R / \partial c}{\partial R / \partial X} \cr
-\end{align} %]]></script>
-
-<p>Then</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\frac{\partial P(X)}{\partial c} & = \frac{\partial P}{\partial X}\frac{\partial X}{\partial c} \cr
-\implies \frac{\partial P(X)}{\partial c} & = \frac{Xf(X) + F(X)}{f(X)[2 \lambda^{-1} - 2x - 1 - \sigma \lambda^{-1} - p'^{-1}((p-c)(1- \gamma + ( \gamma / X) ) + p)]}  \cr
-\end{align} %]]></script>
-
-<p>I’m not sure of my algebra, so I’ll try again and update this. But the terms in the expression make some sense to me. I’m not sure what the derivative wrt the parameters are or if they make sense yet, but that would be an informative exercise.</p>
-
-<h3 id="summary">Summary</h3>
-
-<p>I say “arrest”, but I guess it’s really “zero payoff”. Maybe arrest should be negative payoff or something. I think this could apply to any event, with the payoffs associated with \(F(x)\) set up appropriately. I’m sure this has been done much more generally before.</p>
-
-<p>I think it would be interesting to see the “risk pass-through”, the change in price with respect to risk. The regular passthrough already incorporates the curvature of the risk likelihood, so maybe “risk pass-through” is unnecessary.</p>
-
-<p>I haven’t assumed a form for price here, but it would depend on the hazard rate through \( \bar{x} \). The direct effect of the number of sellers would cancel out of the price, but \(n\) would still come in through the price and risk functions. As the hazard rate increases, I think the price should also increase if only because the quantity supplied will decrease. Without assuming a specific form, I can’t go further in saying much about the price. I would like to see what the arrest risk premium looks like, if it is there.</p>
-
-<p>At some point I may try to do some numerics on this model to see how stuff changes with different assumptions. One extension I’ve been thinking of is to include the illegal good manufacturer, and see how the organization of that side of the market affects the equilibrium.</p>
+<p>Some cursory Googling turns up <a href="http://archive.nyu.edu/bitstream/2451/27797/2/CeDER-PP-2004-02.pdf">this paper</a>, so far the only directly related result I&#39;ve found for theoretical economic models of digital piracy. The model in this paper seems more like a hidden-action model than what I did here, but I haven&#39;t gone through it in detail yet.</p>
 
   </div>
   
@@ -959,8 +915,6 @@ p & = \frac{1}{2} (\theta v + t^T (1- \theta)) \cr
     </script>
   </body>
 </html>
-
-
 
 <script type="text/javascript"
     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
