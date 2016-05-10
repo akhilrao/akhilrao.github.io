@@ -420,6 +420,38 @@
         
       
     
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
 
     <a class="sidebar-nav-item" href="https://github.com/akhilrao/archive/v0.0.1.zip">Download</a>
     <a class="sidebar-nav-item" href="https://github.com/akhilrao">GitHub project</a>
@@ -451,6 +483,71 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="//micro%20theory/2016/05/11/coase-bargaining-externality.html">
+        An app for Coase bargaining
+      </a>
+    </h1>
+
+    <span class="post-date">11 May 2016</span>
+
+    <p>I came across an article today about <a href="http://www.economist.com/blogs/buttonwood/2016/05/airline-safety?fsrc=scn%2Ftw%2Fte%2Fbl%2Fed%2F?fsrc=scn/fb/te/bl/ed/airlinesafetytenwaystotellyoumightbesittingnexttoaneconomist">&quot;how you know you&#39;re on a plane with an economist&quot;</a>. The article&#39;s supposed to be a take on another recent news piece, about an economist getting pulled off a plane for doing math. I have a long flight coming up, and the article got me thinking about the problem of people reclining.</p>
+
+<p>The person sitting in front of me on a long (8+ hours) flight has the right to recline their seat back. Now, I&#39;m not a very tall person and I&#39;m used to sitting for long stretches, so I am not too physically uncomfortable if the person in front of me reclines all the way. But I do like to read, write, and occasionally eat, so the lack of space in front of me is not ideal.</p>
+
+<p>(Some airlines get around this by having seats in a fixed bucket, so that instead of actually reclining you just kinda slide forward in the bucket. I really don&#39;t like these; I think they&#39;re the worst of both worlds. You no longer have much space, and you can&#39;t even meaningfully recline. I&#39;m ignoring this case here.)</p>
+
+<p>The situation with the reclining seat seems like something the Coase theorem ought to apply to: we have a well-defined property right (person in front has right to recline) and an externality (reclining reduces my personal space), so maybe we can bargain our way to a better solution. This is such a straightforward idea, I&#39;m sure it&#39;s been discussed elsewhere at length.</p>
+
+<p>What I would like is an app to facilitate this bargaining. I think the app would do something like this:</p>
+
+<ol>
+<li><p>Given two participating users, allow the users to define the property right and the externality in question. For example, &quot;<Person \\(A\\)> has <the right to recline>, <person \\(B\\)> is negatively affected by <reclining> and would like to see if a welfare-improving bargain can be struck.&quot; (Suppose \(B\) is &quot;she&quot; and \(A\) is &quot;he&quot; for exposition.)</p></li>
+<li><p>Users privately enter their maximum willingness-to-pay and minimum willingness-to-accept to reduce the externality. In the seat example, \(A\) would enter his minimum willingness-to-accept to not recline, and \(B\) would enter her maximum willingness-to-pay for \(A\) to not recline.</p></li>
+<li><p>If the maximum WTP is greater than or equal to the minimum WTA, the app would suggest a price for \(B\) to pay \(A\) to not recline. The specific price can be determined by some &quot;fair&quot; division, like the Nash Bargaining Solution.</p></li>
+</ol>
+
+<p>In the example above, the Nash Bargaining Solution would be a payment \(p_B\) from \(B\) to \(A\) that solves</p>
+
+<p>$$ \max_{p_B} \ (p_B - WTA_A)(WTP_B - p_B) $$</p>
+
+<p>where \( WTA_A \) and \( WTP_B \) are \(A\) and \(B\)&#39;s minimum willingness-to-accept and maximum willingness-to-pay, respectively. The solution is</p>
+
+<p>$$ p_B = \frac{WTP_B + WTA_A}{2} $$</p>
+
+<p>i.e., with the NBS, if \( WTP_B \geq WTA_A \), \(B\) would pay \(A\) his minimum willingness-to-accept to not recline, plus half of her excess willingness-to-pay for \(A\) to not recline. This results in the surplus, \( WTP_B - WTA_A \), being evenly divided between \(A\) and \(B\).</p>
+
+<p>The usual problem people cite with the Coase theorem in practice is that it gets hard to implement with more than a few people. It seems to me like a phone app could really make these transactions easier to do. I&#39;ve described the two-person case above, but I reckon this could be extended to the \(n\)-person case using the Shapley value. I would be willing to pay $5 for an app that did this, possibly more if it was widely used.</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="//web/2016/02/08/worth-a-search-app.html">
+        Is this worth a search?
+      </a>
+    </h1>
+
+    <span class="post-date">08 Feb 2016</span>
+
+    <p>Another simple Shiny app, this time to answer the question, <a href="https://akhilrao.shinyapps.io/worthASearchApp/">&quot;is this worth searching for?&quot;</a>. </p>
+
+<p>The basic idea is taken from this <a href="http://akhilrao.github.io/micro%20theory/2015/10/08/imperfect-information-car-search.html">earlier post</a> about searching for a used car.</p>
+
+<p>For example: Suppose you are thinking about looking for a used car, and you want to see whether it&#39;s worth searching for. You plug in your willingness-to-pay for a car, the cost to you to find and inspect one car, the number of sellers in the region, and the average price they&#39;re asking for. Using the formulas from the post for the expected quality of the average seller and the expected value of one search, we have</p>
+
+<p>$$\begin{align}
+\hat{\beta} &amp;= \frac{\beta}{N} \left( \frac{1- \beta^N}{1- \beta } \right) \cr
+EV(\text{search}) &amp;= \hat{\beta}(v-p) - c
+\end{align}$$</p>
+
+<p>where \(N\) is the number of sellers, \(\beta\) is the probability the average seller has what you want, \(p\) is the average price, and \(c\) is the search cost. If the expected value of a search is greater than 0, it&#39;s worth at least one search.</p>
+
+<p>Using the app, I can see what the probability of a seller having what I want would need to be for a search to be worth it. I can interpret the point on the x axis where \(EV(\text{search})=0\) as the minimum level of belief I would have to hold that the average seller has what I&#39;m looking for for a search to be rational.</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="//web/2016/02/07/conditional-probability-app.html">
         A conditional probability app
       </a>
@@ -460,9 +557,9 @@
 
     <p>I wrote my first-ever Shiny app! My first-ever app, too. It&#39;s a simple <a href="https://akhilrao.shinyapps.io/conditionalProbApp/">conditional probability calculator</a>. </p>
 
-<p>Say you have two events, \(A\) and \(B\), which occur over a population \(N\). Input the number of occurrences of \(A\) and \(B\) and the size of \(N\), and the app will apply Bayes&#39; rule to show you \(P(A|B)\) for beliefs you may hold over \(P(B|A)\).</p>
+<p>Say you have two events, \(A\) and \(B\), which occur over two populations \(N_A\) and \(N_B\). Input the number of occurrences of \(A\) and \(B\) and the size of \(N_A\) and \(N_B\), and the app will apply Bayes&#39; rule to show you \(P(A|B)\) for beliefs you may hold over \(P(B|A)\).</p>
 
-<p>For example: Suppose you want to know the probability that someone who died in the USA in 2010 was 85+ years old. Event A is taken to be the number of deaths in the USA in 2010, event B is taken to be the population that was 85+ years old in the USA in 2010, and the population size is taken to be the average total population of the USA in 2010. Three Wolfram Alpha queries later we have</p>
+<p>For example: Suppose you want to know the probability that someone who died in the USA in 2010 was 85+ years old. Event A is taken to be the number of deaths in the USA in 2010, event B is taken to be the population that was 85+ years old in the USA in 2010, and the population size is taken to be the average total population of the USA in 2010 (\(N_A = N_B\)). Three Wolfram Alpha queries later we have</p>
 
 <p>$$\begin{align}
 P(A) &amp;= \frac{2,550,000}{310,000,000} = 0.008 \cr
@@ -473,7 +570,9 @@ P(B) &amp;= \frac{5,176,00}{310,000,000} = 0.017
 
 <p>$$ P(A|B) = P(B|A) \frac{P(A)}{P(B)} $$</p>
 
-<p>I think \( P(A)/P(B) \) is called the base rate. Using the app, you can see how the probability someone died given they were 85 or older would change depending on the probability of being 85 or older given they died (in the USA in 2010), or \(P(\text{died in USA in 2010|85 or older in USA in 2010})\) as a function of your beliefs over \(P(\text{85 or older in USA in 2010|died in USA in 2010})\). I used this example as a &quot;comparison event&quot; for the app.</p>
+<p>I think \( P(A)/P(B) \) is called the base rate. </p>
+
+<p>Using the app, I can see how the probability someone died given they were 85 or older would change depending on the probability of being 85 or older given they died (in the USA in 2010), or \(P(\text{died in USA in 2010|85 or older in USA in 2010})\) as a function of my beliefs over \(P(\text{85 or older in USA in 2010|died in USA in 2010})\). In frequency terms, I can calculate the proportion of deaths that were 85+ year olds using the number of 85+ year olds, the number of deaths, the total US population in 2010, and my beliefs over the proportion of 85 year olds who died. I used this example as a &quot;comparison event&quot; for the app.</p>
 
 <p>In the picture below, the red line is \(P(\text{died in USA in 2010|85 or older in USA in 2010})\), and the black line is \(P(A|B)\) for a hypothetical event where \(P(A) = 15/100\) and \(P(B) = 50/100\).</p>
 
@@ -655,227 +754,6 @@ c = &amp; p^{pd} \lt p^{2t} \lt p^m \cr
 <p>This suggests that price discrimination may be desirable in some markets to the extent that the benefits of the efficiency gains compensate consumers for their loss in surplus. I think it would be interesting to try to model this with a bargaining layer, where consumers could bargain with the firm over the surplus. I think it could be similar to the <a href="http://akhilrao.github.io/micro%20theory/2015/11/01/nash-bargaining-example/">Nash Bargaining example</a>.</p>
 
 <p>In real life, I don&#39;t know if we often observe many examples of transfer payments from firms to consumers that would indicate some sort of bargaining over price discrimination. I think that the Second Welfare Theorem may imply it&#39;s possible, in which case the Coase Theorem would imply that if it&#39;s welfare-increasing for both parties we should see it happen. So there may be some examples out there.</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="//micro%20theory/2015/11/01/nash-bargaining-example.html">
-        The Nash Bargaining Solution with 2 players
-      </a>
-    </h1>
-
-    <span class="post-date">01 Nov 2015</span>
-
-    <p>The <a href="https://en.wikipedia.org/wiki/Bargaining_problem#Nash_bargaining_solution">Nash Bargaining Solution</a> is an important solution concept in game theory. It describes a two-player cooperative bargaining situation where the players are trying to maximize a joint surplus. It has been generalized to \(n\) players, but I&#39;ve been told that the NBS is really unwieldy in that setting and that the Shapley value is used instead.</p>
-
-<p>The NBS represents a particular example of an axiomatic bargaining system. These are solution concepts where the solution is characterized by defining the axioms it must satisfy. Such solution concepts are used in cooperative game theory, where players are trying to maximize some total pie conditional on some &quot;disagreement outcome&quot; if they fail to reach an agreement.</p>
-
-<p>The division of the joint surplus should satisfy some individual rationality and collective rationality (pareto efficiency) constraints. This can still leave us with a whole set of equilibria all along the efficient frontier. So we impose some axioms on the solution based on how we think the cooperation should be, and that usually gives us a unique equilibrium. Axiomatic bargaining is sometimes called &quot;equilibrium selection&quot; because we choose the equilibrium by choosing the axioms.</p>
-
-<p>A two-player bargaining problem is characterized by a pair \( (F,v) \), where \(F\) is a closed and convex &quot;feasible set&quot; and \(v \in F\) is a vector of disagreement outcomes. The set \( F \cap \{ (x_1 , x_2) : x_1 \gt v_1, x_2 \gt v_2  \} \) should be bounded and non-empty. This is the set of feasible outcomes that is strictly better than the outcome if they can&#39;t agree, \( (v_1, v_2) \).</p>
-
-<h3 id="axioms-and-motivation">Axioms and Motivation</h3>
-
-<p>The NBS for two players is a mapping \( \phi : F \to R^2 \) which satisfies the following four axioms:</p>
-
-<ol>
-<li><p>Symmetry (SYM): For every \( (F,v) \), if \( (F,v) \) is symmetric, then \( \phi_1 (F,v) = \phi_2 (F,v)\) (both players receive the same outcome). </p></li>
-<li><p>Weak Pareto Optimality (WPO): For every \( (F,v) \) we should have \( \phi (F,v) \in W(T) \), where for \( T \subset R^2 \), \( W(T) := \{ x \in T: \not\exists \ y \in T \ \text{s.t.} \ y \gt x \} \).</p></li>
-<li><p>Scale Transformation Covariance (STC): For every \( (F,v) \) and all \(a,b \in R^2 \) with \(a \gt 0 \) and \( (aF + b, av + b) \in F \), we have \( \phi(aF + b, av + b) = a \phi(F,v) + b \).</p></li>
-<li><p>Independence of Irrelevant Alternatives (IIA): \(\forall \ (F,v),(G,w) \) with \( v=w \), \( G \subset F \), and \( \phi(G,w) \in F \), we have \( \phi (F,v) = \phi (G,w) \).</p></li>
-</ol>
-
-<p>The motivations for these axioms are:</p>
-
-<p>SYM: If there is no information that lets us distinguish between the players in a bargaining game&#39;s description, then that game&#39;s solution should also not distinguish between the players.</p>
-
-<p>WPO: \(W(T) \) is referred to as the &quot;weakly Pareto optimal subset of \(T\)&quot;, where \(T\) is any subset of \( R^2\). The idea of this axiom is that the players should not be able to improve upon the solution outcome without making the other player worse off. This axiom lets us use standard optimization techniques to find the NBS.</p>
-
-<p>STC: Utility functions are uniquely determined only up to a positive affine transformation. The idea of this axiom is that our solution should not depend upon the particular representation we&#39;ve chosen in this sense. I think this (unique up to affine transformation) is true of any utility function, ordinal or cardinal, but I know it&#39;s true of von Neumann-Morgenstern utilities, which is the utility concept we&#39;re using here. STC tells us that the NBS is a linear mapping.</p>
-
-<p>IIA: IIA is apparently Nash&#39;s most-criticized axiom, as well as one of the most important for this solution concept. It says that letting the feasible set shrink while the solution outcome remains feasible souldn&#39;t change the solution. In plainer terms: if you prefer chocolate over vanilla, and vanilla over strawberry, and you were considering between chocolate and vanilla, allowing you to choose strawberry shouldn&#39;t change the outcome (you&#39;ll still choose chocolate).</p>
-
-<h3 id="computing-the-solution">Computing the solution</h3>
-
-<p>With these four axioms, we can now define the NBS as a function we can maximize. For every \( (F,v)\), the symmetric NBS is obtained by solving</p>
-
-<p>$$ \max_{x_1,x_2 \in F} \ (x_1 - v_1)(x_2 - v_2) $$</p>
-
-<p>The NBS maximizes each player&#39;s gain over the disagreement outcome, \( (v_1,v_2) \). The term \( (x_1 - v_1)(x_2 - v_2) \) is referred to as the symmetric Nash product.</p>
-
-<p>Basically, we&#39;re maximizing a Cobb-Douglas function of the players&#39; gains over the disagreement outcome. In the symmetric case, we have that the Cobb-Douglas exponents are both equal to \( 1/2\) and sum to \(1\) (normalized). We can add some asymmetry by letting the exponents be \( \beta \in (0,1) \) and \( 1- \beta \). Then the NBS solves</p>
-
-<p>$$ \max_{x_1,x_2 \in F} \ (x_1 - v_1)^{\beta}(x_2 - v_2)^{1-\beta} $$</p>
-
-<p>The exponents can be interpreted as each player&#39;s bargaining power; the higher \( \beta \) is, the more player 1 will receive in equilibrium, and vice versa.</p>
-
-<h3 id="an-example">An example</h3>
-
-<p>This is a somewhat contrived example, but suppose a buyer and a seller are bargaining over an investment \(I\) the buyer can make. The buyer values the good at \(v\), and it costs \(c\) to produce (or you can think of \(c\) as the seller&#39;s opportunity cost of selling the good).</p>
-
-<p>The buyer will demand 1 unit of the good with probability \( Pr(v \gt c) = x \) and 0 units with probability \( Pr(v=0) = 1-x \). The buyer will buy as long as they value the good above marginal cost, and the seller will charge the buyer their full value for the good. The buyer and the seller are going to bargain over the surplus created by the transaction. So instead of a price coordinating buyer and seller&#39;s actions, we have them directly coordinating over how to share the surplus. </p>
-
-<p>Let&#39;s assume that investment is related to the buyer&#39;s likelihood of buying as \( I = x^2 /2 \). If they fail to reach an agreement, there will be no surplus created and they&#39;ll each get 0 payoff.</p>
-
-<h4 id="benchmark-buyer-gets-all-surplus">Benchmark: Buyer gets all surplus</h4>
-
-<p>In the benchmark case, let&#39;s suppose that the buyer is going to get all of the surplus, and is solving the problem as a planner (internalizing the seller&#39;s cost of the good). The buyer solves</p>
-
-<p>$$ \max_x \ x(v-c) - \frac{x^2}{2} $$</p>
-
-<p>This gives us the optimal demand and investment as</p>
-
-<p>$$ \begin{align}
-x = &amp; \ v - c \cr
-I = &amp; \ \frac{(v-c)^2}{2} \cr
-\end{align} $$</p>
-
-<p>The optimal demand, \(x\), is actually the optimal probability of purchase. It&#39;s a little weird that we&#39;re having the buyer choose a probability, but in this case I think it&#39;s easier than expressing \(x\) as a function of \(I\) and solving for the optimal investment directly.</p>
-
-<p>So the buyer takes all the surplus, and chooses to invest the amount that solves the above optimization problem. Not much intuition to see yet.</p>
-
-<h4 id="nash-bargaining-buyer-and-seller-split-surplus">Nash Bargaining: Buyer and Seller split surplus</h4>
-
-<p>Now suppose the buyer and seller split the surplus, and use Nash Bargaining to determine how much to invest. The buyer&#39;s share of the surplus is \(x_b\) and the seller&#39;s is \(x_s\). We do this as a two-stage problem: first the buyer and seller negotiate a split of the surplus, and then the buyer chooses a level of investment. Their symmetric bargaining outcome solves</p>
-
-<p>$$ \begin{align} 
-\max_{S_s, S_b } &amp; ~ (S_b - 0)( S_s - 0) \cr
-\text{s.t} &amp; ~ S_b + S_s = v - c \cr
-\implies \max_{S_b } &amp; \ S_b (v-c- S_b ) \cr
-\end{align} $$</p>
-
-<p>We can reformulate the constrained optimization as an unconstrained optimization as above. This gives us the optimal split for the buyer and seller:</p>
-
-<p>$$\begin{align}
- S_b &amp;= \frac{v-c}{2} \cr
- S_s &amp;= \frac{v-c}{2} \cr
-\end{align}$$</p>
-
-<p>So the buyer and seller split the surplus equally. We got this by solving an optimization problem, but we could have also gotten this by making an argument from the axioms. Another way to say this is that the NBS axioms are such that the above maximization will find the unique solution.</p>
-
-<p>Now the second stage: how much investment will the buyer choose? The buyer is going to solve a similar problem as in the benchmark,</p>
-
-<p>$$ \max_x \ x(\frac{v-c}{2}) - \frac{x^2}{2} $$</p>
-
-<p>Giving us an optimal investment of</p>
-
-<p>$$ I = \frac{(v-c)^2}{8} $$</p>
-
-<p>This is lower than the benchmark level of investment, which makes sense - the buyer is getting half instead of all of the surplus from the transaction, so their incentive to invest is lower.</p>
-
-<p>This example is very stylized, but I think it&#39;s a rough first pass at some deeper dynamic model of learning to use a technology and the demand for that technology. Maybe some kind of software with a learning curve, like Photoshop or something, where the cost of investment is capturing for the learning curve of that technology. If we want to think about the split of the surplus as coming from a price instead of bargaining, then we see that consumers would invest more in learning the technology if the price was lower than higher.</p>
-
-<h3 id="summary">Summary</h3>
-
-<p>The NBS isn&#39;t super realistic, but it&#39;s a nice tool to use when you don&#39;t want to get too into the details of bargaining. Sometimes that&#39;s ok and it doesn&#39;t distort the final outcome too much, and sometimes it isn&#39;t and it does.</p>
-
-<p>Apparently, &quot;Nash&#39;s Program&quot; is to formulate cooperative bargaining solutions in terms of non-cooperative strategic games. For example, the symmetric NBS is also the split that both players would receive if they were almost infinitely patient and completely identical and engaged in an infinitely repeated Rubinstein bargaining game, which is not cooperative. I think this is pretty cool, as it lets us think of a cooperative game&#39;s outcome as a result of an underlying non-cooperative game. There&#39;s probably a theorem somewhere about when that representation exists and when it doesn&#39;t.</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="//micro%20theory/2015/10/20/hotelling-digital-piracy-arrest.html">
-        Hotelling monopoly pricing for a digital good with piracy
-      </a>
-    </h1>
-
-    <span class="post-date">20 Oct 2015</span>
-
-    <p>This post and <a href="http://akhilrao.github.io/micro%20theory/2015/10/19/risky-good-supply-passthrough/">previous post</a> are about markets where illegal things happen. This one is about a digital good that can be pirated.</p>
-
-<p>The basic idea is: consumers can buy 1 unit of the good from the firm at price \(p\), or for free at some chance \( \theta \in (0,1) \) of 0 payoff (&quot;piracy and arrest&quot;). The good can be reproduced at 0 marginal cost.</p>
-
-<p>The setting is a version of <a href="http://akhilrao.github.io/micro%20theory/2015/09/28/hotelling-triangle-city/">Linear City</a>. There are three refinements on the standard Hotelling-on-a-line-of-length-1 setup here:</p>
-
-<ol>
-<li>Consumers choose between buying at the firm, F, or getting the good for free from an illegal source T (like torrent sites). Getting the good for free comes with a probability \( \theta \) of 0 payoff. This is the risk of getting sued or arrested for illegally consuming the content.</li>
-<li>The marginal cost of producing the good is 0. This is reasonable for digital goods, where the marginal cost is some \(\epsilon\) very small.</li>
-<li>The travel cost is directional: \(t^F\) to get to the firm, and \(t^T\) to get to the torrent. This is a crude way to capture the different user experiences of consuming a digital good through the firm or the torrent. No assumptions on the ordering of travel costs; they can even be equal, though that would defeat the point.</li>
-</ol>
-
-<p>I&#39;m assuming that the good is identical whether it&#39;s consumed from the firm or the torrent, so the value is a common \(v\). </p>
-
-<h3 id="the-marginal-consumer">The marginal consumer</h3>
-
-<p>The marginal consumer is indifferent between buying the item legally from the firm and taking a risk to get the item for free illegally. Formally,</p>
-
-<p>$$ \begin{align}
-u( consume \ legally ) &amp;= u( consume \ illegally ) \cr
-v - p - t^F x &amp;= (1- \theta)(v-t^T (1-x)) \cr
-\implies x &amp; = \frac{\theta v - p + t^T (1- \theta) }{t^F + t^T (1- \theta)} \cr
-\end{align} $$</p>
-
-<p>The expression \( t^T (1 - \theta) \) is &quot;expected cost of surviving piracy&quot;. </p>
-
-<h3 id="the-firm">The firm</h3>
-
-<p>Since the marginal cost is 0, the firm just maximizes price times demand.</p>
-
-<p>$$ \begin{align}
-\max_p ~~&amp; p~[\frac{\theta v - p + t^T (1- \theta) }{t^F + t^T (1- \theta)}]  \cr
-\text{FOC:}~ &amp; \frac{\theta v - 2p + t^T (1- \theta) }{t^F + t^T (1- \theta)} = 0 \cr
-\implies p &amp; = \frac{1}{2} (\theta v + t^T (1- \theta))
-\end{align}$$</p>
-
-<p>Plugging the price back into the objective function, we get the firm&#39;s profit:</p>
-
-<p>$$ \pi = \frac{ ( \theta v + t^T (1- \theta) )^2 }{4( t^F + t^T (1- \theta) )} $$</p>
-
-<h3 id="equilibrium-analysis">Equilibrium analysis</h3>
-
-<p>The equilibrium of this problem is a triple of demand, price, and profit,</p>
-
-<p>$$\begin{align}
-x &amp; = \frac{\theta v + t^T (1- \theta)}{2( t^F + t^T (1- \theta) )} \cr
-p &amp; = \frac{1}{2} (\theta v + t^T (1- \theta)) \cr
-\pi &amp;= \frac{ ( \theta v + t^T (1- \theta) )^2 }{4( t^F + t^T (1- \theta) )} \cr
-\end{align}$$</p>
-
-<p>As \( \theta \to 1 \), the equilibrium approaches the regular Hotelling monopoly equilibrium with zero marginal cost,</p>
-
-<p>$$ x_{(\theta = 1)} = \frac{ v }{2 t^F  } , ~~ p_{(\theta = 1)} = \frac{v}{2}, ~~ \pi_{(\theta = 1)} = \frac{ v^2 }{4 t^F } $$</p>
-
-<p>The equilibrium price is a combination of the monopoly price and the expected cost of surviving piracy. If \( t^T \lt v \) (as it necessarily-but-not-sufficiently should be if there is piracy), then the price with piracy is lower than the price if piracy isn&#39;t an option. </p>
-
-<p>The equilibrium demand is a combination of monopoly and duopoly demand expressed in terms of the expected cost of surviving piracy. I think this is because even though it&#39;s not another firm, with consumer demand being uniformly distributed the torrents act as a competitive force against the firm. I think for reasonably values of travel cost, the indifferent consumer is closer to the firm than they would be without piracy, or under a uniform-value duopoly, implying that the piracy option reduces the firm&#39;s marketshare (which makes sense).</p>
-
-<p>The equilibrium profits are similarly a combination of monopoly and duopoly profits, with the latter expressed in terms of expected cost of surviving piracy. This is smaller than the monopoly profit. I&#39;m not sure if it&#39;s smaller than the duopoly profit as well; probably depends on the value of \( t^T (1- \theta) \).</p>
-
-<p>From the demand, we can see how much piracy vs legal purchasing is happening:</p>
-
-<p>$$ \begin{align}
-\text{Firm&#39;s marketshare:}~~ &amp; x  = \frac{\theta v + t^T (1- \theta)}{2( t^F + t^T (1- \theta) )} \cr
-\text{Piracy marketshare:}~~ &amp; 1-x  = \frac{ 2 t^F + t^T (1- \theta) - \theta v}{2( t^F + t^T (1- \theta) )} \cr
-\end{align} $$</p>
-
-<p>Finally, we can find a restriction on \( \theta \) such that \( x \lt 1 \) (consumers always pirate):</p>
-
-<p>$$ \implies ~ \theta \lt \frac{2t^F + t^T }{v + t^T } $$</p>
-
-<p>This always holds when \( v \lt 2t^F \), since \( \theta \lt 1 \). If consumers don&#39;t value the good enough relative to the travel cost of legal purchase, they would accept any chance of arrest and pirate the good (\( \lim_{\theta \to 1} (x) \lt 1 \) ) .</p>
-
-<h3 id="summary">Summary</h3>
-
-<p>I really like the simplicity and flexibility of the Hotelling framework. There aren&#39;t too many parameters and they have nice interpretations. Finding an indifferent consumer and solving a firm&#39;s problem are some algebra, and the amount of algebra scales pretty fast with the model&#39;s complexity, but it&#39;s doable. The consumer&#39;s choice boils down to choosing between two options, which saves us from having to solve a consumer&#39;s problem. My professor said Hotelling is a &quot;workhorse&quot; model of IO, and I can see why.</p>
-
-<p>I like the directional travel cost. User experiences matter, and I think this would probably be well-captured empirically by something like &quot;minimum number of actions (clicks/keystrokes/swipes/etc) to accomplish this activity&quot;. These may be small in comparison to travel costs for physical goods, but I think it&#39;s the relative differences in travel costs that matter, not the absolute levels.</p>
-
-<p>I guess the true minimum number of actions is 1 - program a button to execute that specific arbitrarily complex sequence of actions. Or 0 - the system automatically executes that action on a loop. Low reuse value though. So maybe &quot;given default OS settings&quot;.</p>
-
-<p>Some possible refinements:</p>
-
-<ol>
-<li><p>Allow the value of the legal/illegal good to vary, maybe making them functions of some level of investment from the firm. Related, allowing the firm to influence \(t^T \) through investment in DRM technologies. Individually, probably not too hard.</p></li>
-<li><p>Make the risk likelihood a function of the quantity of illegal consumption. Probably not hard.</p></li>
-<li><p>Modeling the firm&#39;s ability to influence the risk likelihood. This is from the observation that organizations like the RIAA/MPAA are able to increase the level of enforcement at some (low) cost. Probably not too hard. The likelihood could be indexed by the firm&#39;s choice of some index variable, like &quot;effort&quot; in the owner-manager problem.</p></li>
-<li><p>Add multiple goods. I&#39;m not sure how to do this but I feel like it&#39;s probably been done before and is therefore doable.</p></li>
-<li><p>Model the content distribution network. I&#39;m not sure how to do this. Maybe with some sufficient statistics of the network size/structure for the firm to do some enforcement. Not sure what those statistics would be or how that would work. The incentives of the CDN and its platform <a href="https://gigaom.com/2011/02/18/pirate-economics-101-who%E2%80%99s-making-money-from-torrents/">may matter</a>. Probably hard.</p></li>
-<li><p>All of the above, allowing the risk likelihood to vary across CDNs that may have incentives which conflict with the firms&#39; incentives. As hard as 1-5 + hard.</p></li>
-</ol>
-
-<p>Some cursory Googling turns up <a href="http://archive.nyu.edu/bitstream/2451/27797/2/CeDER-PP-2004-02.pdf">this paper</a>, so far the only directly related result I&#39;ve found for theoretical economic models of digital piracy. The model in this paper seems more like a hidden-action model than what I did here, but I haven&#39;t gone through it in detail yet.</p>
 
   </div>
   
