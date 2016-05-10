@@ -4,7 +4,7 @@ title: An app for Coase bargaining
 category: micro theory
 tags: micro-theory axiomatic nash bargaining solution cooperative game theory coase app
 year: 2016
-month: 05
+month: 5
 day: 11
 published: true
 summary: What if there was an app to facilitate Coase bargaining?
