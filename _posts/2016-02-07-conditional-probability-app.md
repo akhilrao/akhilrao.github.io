@@ -33,6 +33,4 @@ In the picture below, the red line is \\(P(\text{died in USA in 2010|85 or older
 
 [![Example](/public/images/conditionalProbApp/stock.png "Example")](/public/images/conditionalProbApp/stock.png "Example")
 
-It's very basic and kinda ugly right now. I'll update it periodically to make it more useful and prettier.
-
 I wrote this app to help me think through conditional probabilities more clearly. Often I hold beliefs over some \\(P(B|A)\\) and use those beliefs to infer something about the corresponding \\(P(A|B)\\), not necessarily considering the base rate. Hopefully I'll neglect base rates a little less going forward.
