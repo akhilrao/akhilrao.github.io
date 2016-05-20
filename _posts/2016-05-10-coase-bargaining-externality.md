@@ -16,7 +16,7 @@ The person sitting in front of me on a long (8+ hours) flight has the right to r
 
 (Some airlines get around this by having seats in a fixed bucket, so that instead of actually reclining you just kinda slide forward in the bucket. I really don't like these; I think they're the worst of both worlds. You no longer have much space, and you can't even meaningfully recline. I'm ignoring this case here.)
 
-The situation with the reclining seat seems like something the Coase theorem ought to apply to: we have a well-defined property right (person in front has right to recline) and an externality (reclining reduces my personal space), so maybe we can bargain our way to a better solution. This is such a straightforward idea, I'm sure it's been discussed elsewhere at length.
+The situation with the reclining seat seems like something the [Coase theorem](https://en.wikipedia.org/wiki/Coase_theorem) ought to apply to: we have a well-defined property right (person in front has right to recline) and an externality (reclining reduces my personal space), so maybe we can bargain our way to a better solution. This is such a straightforward idea, I'm sure it's been discussed elsewhere at length.
 
 What I would like is an app to facilitate this bargaining. I think the app would do something like this:
 
@@ -37,3 +37,5 @@ $$ p_B = \frac{WTP_B + WTA_A}{2} $$
 i.e., with the NBS, if \\( WTP_B \geq WTA_A \\), \\(B\\) would pay \\(A\\) his minimum willingness-to-accept to not recline, plus half of her excess willingness-to-pay for \\(A\\) to not recline. This results in the surplus, \\( WTP_B - WTA_A \\), being evenly divided between \\(A\\) and \\(B\\).
 
 The usual problem people cite with the Coase theorem in practice is transaction costs, which an app could reduce. I've described the two-person case above but it could be extended to the \\(n\\)-person case. I would be willing to pay $5 for an app that did this, possibly more if it was widely used.
+
+[srlm](https://github.com/srlm-io) made the app! Here it is on [Google Play](https://play.google.com/store/apps/details?id=io.srlm.coasebargaining) and on [Github](https://github.com/srlm-io/coase-bargaining).
