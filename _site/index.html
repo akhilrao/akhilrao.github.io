@@ -452,6 +452,54 @@
         
       
     
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
 
     <a class="sidebar-nav-item" href="https://github.com/akhilrao/archive/v0.0.1.zip">Download</a>
     <a class="sidebar-nav-item" href="https://github.com/akhilrao">GitHub project</a>
@@ -483,6 +531,104 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="//micro%20theory/2016/06/21/paper-review-aac-orbit-debris-model.html">
+        Paper Review - "Earth Orbit Debris - An Economic Model"
+      </a>
+    </h1>
+
+    <span class="post-date">21 Jun 2016</span>
+
+    <p>Here I review Adilov, Alexander, and Cunningham&#39;s (hereafter AAC) 2013 paper, <a href="http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2264915">&quot;Earth Orbit Debris: An Economic Model&quot;</a>. The paper was published in <em>Environmental and Resource Economics</em> in 2014 as <a href="http://link.springer.com/article/10.1007/s10640-013-9758-4">&quot;An Economic Analysis of Earth Orbit Pollution&quot;</a>. The published version seems very similar to the SSRN version, which is the version I read and what I describe here.</p>
+
+<p>This is the first explicitly mathematical economic analysis of orbital debris production, at least as far as I am aware. Two other, earlier, papers that consider the economics of orbital debris are Weeden and Chow&#39;s <a href="http://www.sciencedirect.com/science/article/pii/S0265964612000604">&quot;Taking a common-pool resources approach to space sustainability: A framework and potential policies&quot;</a> and Bradley and Wein&#39;s <a href="http://www.sciencedirect.com/science/article/pii/S0273117709001240">Space debris: Assessing risk and responsibility</a>. Both were published in space journals (Weeden and Chow in <em>Space Policy</em>, Bradley and Wein in <em>Advances in Space Research</em>). While both consider economic aspects of the space debris problem, neither takes a full-on &quot;mathematical economics&quot; approach to modeling the problem. Weeden and Chow focus more on the economics, drawing heavily on Ostrom&#39;s framework for managing CPR resources, while Bradley and Wein focus more on the physics, using their physical model to estimate the net present value of a debris-related collision. I&#39;ll write about both of these papers separately at a later date.</p>
+
+<p>This paper has two main conclusions:</p>
+
+<ol>
+<li>The decentralized equilibrium has firms launching too many satellites relative to what the central planner would launch, and under-investing in debris-mitigation technologies relative to what the central planner would invest. This is because firms don&#39;t internalize the costs of debris to other firms, resulting in a higher launch rate and a lower level of debris mitigation.</li>
+<li>Firms can be made to internalize the costs of their actions with a Pigouvian tax on launches, which will bring the decentralized launch rate to the &quot;optimal centralized launch rate&quot;.</li>
+</ol>
+
+<p>Because this paper is fully theoretical with no calibration, the conclusions are qualitative in nature.</p>
+
+<h2 id="the-model">The Model</h2>
+
+<p>AAC&#39;s model is a Salop circle (I&#39;ve written about this as <a href="http://akhilrao.github.io/micro%20theory/2015/10/05/hotelling-circle-city.html">Circle City</a>) with two periods. In the first period the orbital environment has no debris and firms simultaneously decide whether or not to launch a satellite. In the second period there is debris generated from the first period launches. Some satellites are destroyed by debris, but firms do not launch any new satellites in period 2; the ones with surviving satellites just choose a price and collect revenues.</p>
+
+<p>The Salop framework lets AAC to capture product differentiation in the satellite market - e.g. GEO satellites for communications, LEO constellations for imaging, etc. Within this framework, they assume that firms are identical, and must pay a marginal cost per-satellite, a fixed launch cost, and a fixed per-period &quot;maintenance cost&quot;. As an aside, the Circle City model is apparently not analytically solvable with heterogeneous firms.</p>
+
+<p>The Circle City setup gives them a symmetric Bertrand-Nash equilibrium where firms price &quot;satellite services&quot; with a markup over marginal cost, even when they use free entry to get the zero-profit condition which gives them the number of firms per-period. Because AAC assume 1 firm per satellite, the number of firms entering the market gives them the launch rate.</p>
+
+<p>The satellites are also homogeneous and generate the same amount of debris. AAC assume that each satellite has an equal probability of a catastrophic collision with debris, and that the destroyed satellites disappear.</p>
+
+<p>In section 2.3, AAC consider the social planner&#39;s problem. To do this, they assume a consumer surplus function, and have the social planner maximize the discounted sum of expected profits and consumer surplus.</p>
+
+<p>In section 2.5, AAC allow the firms to choose the debris creation rate \( \phi \in [0, \phi_H] \). The debris creation rate directly impacts the firm&#39;s launch cost \(r = h(\phi)\), where \( h&#39;(\phi) &lt; 0\) for \(\phi&lt;\phi_H, h&#39;(\phi_H)=0, h&#39;&#39;(\phi)&gt;0\) and \(h(\phi_H)&gt;0\). In words, the launch cost is decreasing in the amount of debris produced at an increasing rate. The assumption of cost-minimizing behavior implies that firms will choose the highest rate of debris creation, \(\phi_H\), since they don&#39;t see an individual benefit from reducing debris creation rates.</p>
+
+<h2 id="discussion">Discussion</h2>
+
+<p>The planner&#39;s solution gives AAC an optimum to compare the decentralized outcomes to, which lets them derive the Pigouvian tax on entry (launches) which would result in the socially optimal level of launches and debris creation. The decentralized outcome is suboptimal in the sense that it diverges from the planner&#39;s solution. Bradley and Wein take a different approach to estimating a fee on debris generation, by calculating the discounted expected value of a catastrophic collision and suggesting a fee that would be equal to that damage. This would not serve the same deterrent function as AAC&#39;s tax, but it isn&#39;t intended to - it&#39;s intended to give an estimate of the damage that debris could cause.</p>
+
+<p>The firms in AAC&#39;s model are individually maximizing objective functions which have no allowance for consumer surplus generated by the lost satellites, so it doesn&#39;t surprise me that the firms will behave differently from how the planner would have them behave. More theoretically, I think the setup of the problem violates the First Welfare Theorem, since debris is not priced in any way even though it affects consumer welfare, so it is natural that firms should produce &quot;too much&quot; debris.</p>
+
+<p>I generally don&#39;t like assuming a specific consumer welfare function without some empirical support for it. It feels like a fudge factor. The practice seems to be common in economic modeling, though, so I guess it&#39;s not something to get bent out of shape about here more than anywhere else.</p>
+
+<p>The assumption of product differentiation through a Salop circle with homogeneous firms seemed clever to me at first, but now it seems weird. It seems to imply that satellite services are only differentiated in terms of consumer taste through the &quot;travel cost&quot; parameter \(t\). This is not true - imaging constellations in LEO provide a fundamentally different service than communications satellites in GEO. <em>Ceteris paribus</em> more telecom satellites in GEO shouldn&#39;t affect the price of images from LEO constellations, and vice versa. </p>
+
+<p>The assumption of a common probability of catastrophic collision with debris seems like a big simplification of the underlying orbital mechanics. In truth, orbital debris seems more like a directional externality to me - it only falls down to Earth, so a satellite already in GEO isn&#39;t affected by debris in LEO, though debris falling to Earth may pose a risk to constellations in LEO. Launching a satellite to GEO could be made more complicated by debris in LEO as well, though these are things I expect the engineers and physicists would work reduce as much as possible; as far as I&#39;m aware this is what <a href="http://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/20100005139.pdf">conjunction analysis</a> is about.</p>
+
+<p>Bradley and Wein discuss this in their paper, where they consider debris generation in a single &quot;spherical altitude shell&quot; (the &quot;Shell of Interest&quot;, or SOI). This mirrors the modeling approach taken in <a href="http://www.sciencedirect.com/science/article/pii/S0032063398000701">Rossi et al.</a>, and as far as I understand it the approach taken in other space debris modeling efforts also. Bradley and Wein argue that ignoring debris entering a SOI from a higher shell doesn&#39;t significantly affect the model results, though Rossi et al. include it in their paper and I think Liou et al. include this in their <a href="http://www.sciencedirect.com/science/article/pii/S0273117704000705">three-dimensional LEO-to-GEO debris evolutionary model</a>. These papers also include end-of-life satellites as sources of debris, and allow destroyed satellites to generate debris. Both of these features are absent from AAC&#39;s model, but would probably not change the qualitative conclusions drawn.</p>
+
+<p>In any case, the result of these two assumptions - homogenous satellite services differentiated through travel cost on the circle, and common probabilities of collisions with debris - seems to be a very strong simplification of the satellite industry and orbital environment. The complexities introduced by weakening these assumptions might be distractions that don&#39;t change anything, or they might not. I think the orbital debris problem is interesting enough to warrant a paper or two that relax these assumptions. In particular, I would like to see how firms respond to specific orbital shells in LEO filling with debris. My guess is that the firms would either try to go to higher shells (above the debris + more coverage area) or lower shells (can&#39;t penetrate the debris in a shell/debris decays faster at lower altitudes). Higher shells would result in increasingly bad pollution, while lower shells would result in some self-cleaning as the debris decayed.</p>
+
+<p>I think AAC&#39;s general conclusion that there will be too many launches and too much debris relative to the social optimum may hold as presented for LEO, where many firms are looking to enter and firms are clustered in a relatively narrow altitude band (I think most LEO satellites are in between 800-1200 km, or thereabouts). I am skeptical that it will hold in the same way for GEO, where the congestibility of the resource is more apparent and the market mechanisms in place for spectrum allocation have led to a <a href="http://space.stackexchange.com/questions/5943/who-what-is-the-international-authority-to-assign-refuse-orbit-to-a-satellite-sp">slot allocation mechanism</a>. <a href="http://www.rff.org/files/sharepoint/WorkImages/Download/RFF-DP-98-10.pdf">Macauley 1994</a> looks at the efficiency of this mechanism; I have not read that paper yet, so I can&#39;t comment. </p>
+
+<p>In GEO, I expect the result to take the form of too little effort expended on end-of-life graveyard orbit policies. Indeed, though the Inter-Agency Space Debris Coordination Committee (IADC) laid out guidelines on acceptable re-orbiting altitude, it appears that <a href="http://arc.aiaa.org/doi/abs/10.2514/6.IAC-04-IAA.5.12.4.05">only a third of the GEO satellites that reached end-of-life complied</a>. My guess is that this is because of three reasons:</p>
+
+<ol>
+<li>Some firms don&#39;t expect to launch another satellite to the same or a nearby slot, and so don&#39;t care if they leave a mess (myopic behavior)</li>
+<li>Some firms would find it too costly to reduce the fuel allocated for stationkeeping (i.e., the lifetime of the satellite and the expected revenues from it) by allocating more fuel to end-of-life disposal (compliance too costly)</li>
+<li>Some firms&#39; satellites may have been non-responsive to the disposal command due to damage, or the firms did not anticipate the disposal requirement and were unable to send such a signal (error/nothing they could do)</li>
+</ol>
+
+<p>I expect that policy could be effective at targeting 1 and 2, but not 3. The possibility of 3 makes me think that some sort of active debris removal will be necessary even if firms and nations all act to minimize future debris and all existing debris magically disappeared.</p>
+
+<p>Lastly, I think the assumptions on \(h(\phi)\) may be a good approximation, but are probably not uniformly true. Some sources of debris, like paint on a satellite, might be cheaper for the firm to avoid. In that case, asking firms to reduce those sources of debris might get good compliance. Other sources of debris, like launching a satellite into an orbit too high for debris to naturally decay quickly, might be harder to get compliance with since higher orbits have more coverage area of the Earth. I think firms might underinvest in debris mitigation technologies in general, but I&#39;m skeptical that they would choose the highest level of debris creation.</p>
+
+<p>Weeden and Chow anticipated the Pigouvian approach AAC espouse, and discuss the significant legal difficulties associated with implementing a Pigouvian tax like AAC describe. Basically, it&#39;s really unlikely that such a tax would be implemented globally, and if it was implemented only in a few countries firms would have an incentive to launch from countries without the tax. Weeden and Chow also suggest the possibility of cooperative orbital management arising, which I think would be really interesting to see formalized in a cooperative game theoretic framework. This possibility is absent from AAC&#39;s discussion of the problem and potential solutions.</p>
+
+<p>In closing, I think that AAC&#39;s paper is a good contribution to the field of space debris and orbital management. It brings environmental and mathematical economics firmly into the discussion of orbital debris management, though I didn&#39;t find the conclusions or intuitions it presented to be very novel. I also thought some of the assumptions were too strong, and either guaranteed certain conclusions or else glossed over interesting particulars of the problem. But as a first theoretical economic model of the subject, I&#39;m happy it&#39;s out there.</p>
+
+<div id="disqus_thread"></div>
+
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    //var disqus_developer = 1;
+    var disqus_config = function () {
+        this.page.url = http://akhilrao.github.io/;  // Replace PAGE_URL with your page's canonical URL variable
+        // this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//akhilrao.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="//micro%20theory/2016/05/10/coase-bargaining-externality.html">
         An app for Coase bargaining
       </a>
@@ -496,12 +642,12 @@
 
 <p>(Some airlines get around this by having seats in a fixed bucket, so that instead of actually reclining you just kinda slide forward in the bucket. I really don&#39;t like these; I think they&#39;re the worst of both worlds. You no longer have much space, and you can&#39;t even meaningfully recline. I&#39;m ignoring this case here.)</p>
 
-<p>The situation with the reclining seat seems like something the Coase theorem ought to apply to: we have a well-defined property right (person in front has right to recline) and an externality (reclining reduces my personal space), so maybe we can bargain our way to a better solution. This is such a straightforward idea, I&#39;m sure it&#39;s been discussed elsewhere at length.</p>
+<p>The situation with the reclining seat seems like something the <a href="https://en.wikipedia.org/wiki/Coase_theorem">Coase theorem</a> ought to apply to: we have a well-defined property right (person in front has right to recline) and an externality (reclining reduces my personal space), so maybe we can bargain our way to a better solution. This is such a straightforward idea, I&#39;m sure it&#39;s been discussed elsewhere at length.</p>
 
 <p>What I would like is an app to facilitate this bargaining. I think the app would do something like this:</p>
 
 <ol>
-<li><p>Given two participating users, allow the users to define the property right and the externality in question. For example, &quot;<Person \\(A\\)> has <the right to recline>, <person \\(B\\)> is negatively affected by <reclining> and would like to see if a welfare-improving bargain can be struck.&quot; (Suppose \(B\) is &quot;she&quot; and \(A\) is &quot;he&quot; for exposition.)</p></li>
+<li><p>Given two participating users, allow the users to define the property right and the externality in question. For example, &quot;\(A\) has the right (to recline his chair), \(B\) is negatively affected by ( \(A\) reclining ) and would like to see if a welfare-improving bargain can be struck.&quot;</p></li>
 <li><p>Users privately enter their maximum willingness-to-pay and minimum willingness-to-accept to reduce the externality. In the seat example, \(A\) would enter his minimum willingness-to-accept to not recline, and \(B\) would enter her maximum willingness-to-pay for \(A\) to not recline.</p></li>
 <li><p>If the maximum WTP is greater than or equal to the minimum WTA, the app would suggest a price for \(B\) to pay \(A\) to not recline. The specific price can be determined by some &quot;fair&quot; division, like the Nash Bargaining Solution.</p></li>
 </ol>
@@ -516,7 +662,9 @@
 
 <p>i.e., with the NBS, if \( WTP_B \geq WTA_A \), \(B\) would pay \(A\) his minimum willingness-to-accept to not recline, plus half of her excess willingness-to-pay for \(A\) to not recline. This results in the surplus, \( WTP_B - WTA_A \), being evenly divided between \(A\) and \(B\).</p>
 
-<p>The usual problem people cite with the Coase theorem in practice is that it gets hard to implement with more than a few people. It seems to me like a phone app could really make these transactions easier to do. I&#39;ve described the two-person case above, but I reckon this could be extended to the \(n\)-person case using the Shapley value. I would be willing to pay $5 for an app that did this, possibly more if it was widely used.</p>
+<p>The usual problem people cite with the Coase theorem in practice is transaction costs, which an app could reduce. I&#39;ve described the two-person case above but it could be extended to the \(n\)-person case. I would be willing to pay $5 for an app that did this, possibly more if it was widely used.</p>
+
+<p><a href="https://github.com/srlm-io">srlm</a> made the app! Here it is on <a href="https://play.google.com/store/apps/details?id=io.srlm.coasebargaining">Google Play</a> and on <a href="https://github.com/srlm-io/coase-bargaining">Github</a>.</p>
 
   </div>
   
@@ -653,105 +801,6 @@ A_n &amp; \equiv \frac{1}{n} \sum_{t=1}^n X_t \cr
 <p>I&#39;m not entirely sure how to interpret the parameter \(s\) for a general characteristic function. The characteristic function is just an exponential Fourier transform, and I would usually interpret that parameter as the &quot;time index&quot; for a given sequence I was Fourier transforming. I&#39;m not sure if that interpretation is justified here, since each random variable is an IID draw from the same distribution. If I wanted to read a &quot;time index&quot; into this, it would be \( t\), which is the draw number. Maybe \(s\) is not very meaningful in this setting, so we can let it be whatever we want?</p>
 
 <p>Anyway, the point of doing it this way is that sometimes a product of exponentials is easier to work with than some arbitrary sum. I should learn more about Fourier transforms and characteristic functions, they seem useful.</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="//micro%20theory/2015/11/10/two-part-tariff-example.html">
-        An example of a two-part tariff
-      </a>
-    </h1>
-
-    <span class="post-date">10 Nov 2015</span>
-
-    <p>What if a monopolist could design a pricing scheme to capture more consumer surplus when consumers have different valuations of the product? This is the idea behind price discrimination. A two-part tariff is a way to implement price discrimination when the seller is uncertain about the individual consumer&#39;s valuation.</p>
-
-<p>In a two-part tariff, the seller prices the good as \(T(q) = A + pq \). This creates a continuum of bundles, \( \{T,q\} \), located on a straight line. In choosing a quantity, the consumer chooses a bundle along this line, and in any bundle, the consumer pays at least \(A\).</p>
-
-<p>Two-part tariffs can only work if there is limited arbitrage. It doesn&#39;t work if a consumer can just acquire the good and re-sell it at \(A\). An amusement park that charges an admission price and a price per ride (a time cost?) is an example. This pricing scheme is a de facto quantity discount, since the average cost goes down as the quantity purchased increases.</p>
-
-<h2 id="an-example">An example</h2>
-
-<p>Suppose consumer preferences follow </p>
-
-<p>$$ \begin{align}
- U_i = \begin{cases}
-    \theta_i V(q_i) - T(q_i) \ &amp;&amp; \text{if} \ q_i \gt 0 \cr
-    0 \ &amp;&amp; \text{if} \ q_i = 0 \cr
-\end{cases} 
-\end{align}$$</p>
-
-<p>where \(V : ~ V(0) = 0, V&#39;(q_i) \gt 0, V&#39;&#39;(q_i) \lt 0 \). \( \theta_i \) is the &quot;taste&quot; parameter that varies across consumers.</p>
-
-<p>Assume there are two groups of consumers: a proportion \( \lambda \) have \( \theta = \theta_1 \), and \( 1- \lambda \) have \( \theta = \theta_2 \), where \( \theta_2 \gt \theta_1 \gt c \), where \( c \) is the seller&#39;s marginal cost.</p>
-
-<p>A convenient functional form that satisfies this is \(V(q) = \frac{1}{2}(1-(1-q)^2 ) \), so that \( V&#39;(q) = 1-q \). This lets us derive consumer demand, aggregate demand, and net consumer surplus. To get consumer demand, we solve</p>
-
-<p>$$ \max_{q_i} \  \theta_i V(q_i) - T(q_i) $$</p>
-
-<p>which gives us</p>
-
-<p>$$ \begin{align}
-q_i &amp; = 1 - \frac{p}{ \theta_i } \cr
-Q(p) &amp; = 1 - p \hat{ \theta } \cr
-CS_i &amp; = \frac{1}{2 \theta_i } ( \theta_i - p)^2 \cr
-\end{align} $$</p>
-
-<p>where \( \hat{ \theta } = \frac{\lambda}{\theta_1} + \frac{1- \lambda}{\theta_2} \), the harmonic mean of the two groups&#39; valuations.</p>
-
-<h3 id="fully-observable-theta_i">Fully observable \( \theta_i \)</h3>
-
-<p>When the monopolist can fully observe \( \theta_i \), the best they can do is to set \(p=c\) (maximize the size of the pie) and then charge each group their total surplus for the purchase, \(A_i=CS_i = \frac{1}{2 \theta_i } ( \theta_i - c)^2 \) (perfect price discrimination). The personalized fixed fee will be higher for the type with the higher valuation.</p>
-
-<p>The monopolist&#39;s profit under this pricing scheme is</p>
-
-<p>$$ \pi^{pd} = \lambda \frac{1}{2 \theta_1}( \theta_1 - c)^2 + ( 1 - \lambda ) \frac{1}{2 \theta_2}( \theta_2 - c)^2 $$</p>
-
-<p>If the monopolist couldn&#39;t observe \( \theta_i \), they couldn&#39;t implement this scheme, as \( \theta_2 \) would have an incentive to pretend to be \( \theta_1 \).</p>
-
-<h3 id="unobservable-theta_i">Unobservable \( \theta_i \)</h3>
-
-<p>When \( \theta_i \) is unobservable to the monopolist, the best they can do with a linear tariff is to charge the monopoly price.</p>
-
-<p>An alternate interpretation is that the monopolist is still able to observe \( \theta_i \), but that consumers can fully arbitrage the good so that the monopolist is limited to linear tariffs.</p>
-
-<p>Whatever the interpretation, in this case we solve the standard monopoly pricing problem with \( Q(p) = 1 - p \hat{ \theta } \). The price is \( p^m = \frac{1}{2}( \hat{\theta } + c) \) and the profits are \( \pi^m = \frac{1}{4 \hat{\theta } }( \hat{\theta } - c )^2 \).</p>
-
-<p>We assume that \( \theta_1 \gt \frac{1}{2}(c+ \theta_2 ) \) , so that the monopolist finds it profitable to serve both populations.</p>
-
-<h3 id="linear-two-part-tariff">Linear two-part tariff</h3>
-
-<p>When \( \theta_i \) is unobservable to the seller, they can do better than monopoly pricing by using a linear two-part tariff that captures all of the lower-valuation-type&#39;s surplus.</p>
-
-<p>Suppose that the marginal price is \( p \). The highest fixed fee under which \( \theta_1 \) will still purchase is \( A = CS_1 (p) \). \( \theta_2 \) will buy under this scheme, because \( CS_2(p) \gt CS_1(p) = A \). So the monopolist solves</p>
-
-<p>$$ \begin{align} 
-\max_p \ &amp; CS_1(p) + (p-c)Q(p) \cr
-  = &amp; \frac{1}{2 \theta_1}(\theta_1 -p)^2 + (p-c)(\hat{\theta} -p) \cr
-  \implies p = &amp; \frac{ \hat{\theta} + c - 1 }{2- \theta_{1}^{-1}}
-\end{align} $$</p>
-
-<h3 id="comparison">Comparison</h3>
-
-<p>In the above pricing schemes,</p>
-
-<p>$$ \begin{align}
-c = &amp; p^{pd} \lt p^{2t} \lt p^m \cr
- &amp; \pi^{pd} \gt \pi^{2t} \gt \pi^m \cr<br>
-\end{align} $$</p>
-
-<p>Under perfect price discrimination, the monopolist charges a personalized fixed fee \( A_i = \frac{1}{2 \theta_i } ( \theta_i - c)^2 \) and captures all of the surplus. Thus, the profits in this case are the highest.</p>
-
-<p>Under the linear two-part tariff, the monopolist charges a blanket fixed fee equal to the lower type&#39;s surplus, \( A = \frac{1}{2 \theta_1 } ( \theta_1 - c)^2 \). In a more general setting with a continuum of types, this would be the surplus of the lowest type the monopolist finds it worthwhile to go after.</p>
-
-<p>Under the monopoly price, the monopolist doesn&#39;t try to capture any additional surplus based on consumer&#39;s valuations. Consequently, the profits are lowest, and the price is the highest. The higher price creates more deadweight loss, but since the monopolist doesn&#39;t have any instrument to capture the lost surplus this doesn&#39;t matter to them.</p>
-
-<p>In terms of total welfare, surplus is maximized under perfect price discrimination, and is higher under the two-part tariff than under monopoly pricing. This increase in total surplus comes at a cost to the consumer, as the monopolist is able to capture all of the low type&#39;s surplus with the two-part tariff. This gives the monopolist an incentive to reduce the deadweight loss associated with monopoly pricing by reducing the marginal price. Under perfect price discrimination the total surplus is maximized, but all of it goes to the producer.</p>
-
-<p>This suggests that price discrimination may be desirable in some markets to the extent that the benefits of the efficiency gains compensate consumers for their loss in surplus. I think it would be interesting to try to model this with a bargaining layer, where consumers could bargain with the firm over the surplus. I think it could be similar to the <a href="http://akhilrao.github.io/micro%20theory/2015/11/01/nash-bargaining-example/">Nash Bargaining example</a>.</p>
-
-<p>In real life, I don&#39;t know if we often observe many examples of transfer payments from firms to consumers that would indicate some sort of bargaining over price discrimination. I think that the Second Welfare Theorem may imply it&#39;s possible, in which case the Coase Theorem would imply that if it&#39;s welfare-increasing for both parties we should see it happen. So there may be some examples out there.</p>
 
   </div>
   
