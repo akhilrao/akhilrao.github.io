@@ -11,7 +11,7 @@ kramdown:
   syntax_highlighter: rouge
 
 # Permalinks
-permalink:        /:categories/:title.html/
+permalink:        /:categories/:year/:month/:day/:title/
 #absolute_permalinks: true
 
 # Setup
@@ -20,7 +20,7 @@ tagline:          ''
 description:      
 url:              https://akhilrao.github.io
 #url:              https://github.com/akhilrao
-baseurl:          ''
+baseurl:          'https://akhilrao.github.io'
 
 author:
   name:           'Akhil Rao'
