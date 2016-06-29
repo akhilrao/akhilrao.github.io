@@ -11,7 +11,7 @@
 
   <title>
     
-      Produced Under Scarcity &middot; By Akhil Rao
+      Produced Under Scarcity &middot; 
     
   </title>
 
@@ -521,7 +521,7 @@
         <div class="container">
           <h3 class="masthead-title">
             <a href="/" title="Home">Produced Under Scarcity</a>
-            <small>By Akhil Rao</small>
+            <small></small>
           </h3>
         </div>
       </div>
@@ -531,116 +531,122 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="//micro%20theory/2016/06/21/paper-review-aac-orbit-debris-model.html">
+      <a href="//micro%20theory/paper-review-aac-orbit-debris-model.html">
         Paper Review - "Earth Orbit Debris - An Economic Model"
       </a>
     </h1>
 
     <span class="post-date">21 Jun 2016</span>
 
-    <p>Here I review Adilov, Alexander, and Cunningham&#39;s (hereafter AAC) 2013 paper, <a href="http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2264915">&quot;Earth Orbit Debris: An Economic Model&quot;</a>. The paper was published in <em>Environmental and Resource Economics</em> in 2014 as <a href="http://link.springer.com/article/10.1007/s10640-013-9758-4">&quot;An Economic Analysis of Earth Orbit Pollution&quot;</a>. The published version seems very similar to the SSRN version, which is the version I read and what I describe here.</p>
+    <p>Here I review Adilov, Alexander, and Cunningham’s (hereafter AAC) 2013 paper, <a href="http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2264915">“Earth Orbit Debris: An Economic Model”</a>. The paper was published in <em>Environmental and Resource Economics</em> in 2014 as <a href="http://link.springer.com/article/10.1007/s10640-013-9758-4">“An Economic Analysis of Earth Orbit Pollution”</a>. The published version seems very similar to the SSRN version, which is the version I read and what I describe here. At some point I intend to write a literature review for my own space debris project; hopefully this writeup will help me with that.</p>
 
-<p>This is the first explicitly mathematical economic analysis of orbital debris production, at least as far as I am aware. Two other, earlier, papers that consider the economics of orbital debris are Weeden and Chow&#39;s <a href="http://www.sciencedirect.com/science/article/pii/S0265964612000604">&quot;Taking a common-pool resources approach to space sustainability: A framework and potential policies&quot;</a> and Bradley and Wein&#39;s <a href="http://www.sciencedirect.com/science/article/pii/S0273117709001240">Space debris: Assessing risk and responsibility</a>. Both were published in space journals (Weeden and Chow in <em>Space Policy</em>, Bradley and Wein in <em>Advances in Space Research</em>). While both consider economic aspects of the space debris problem, neither takes a full-on &quot;mathematical economics&quot; approach to modeling the problem. Weeden and Chow focus more on the economics, drawing heavily on Ostrom&#39;s framework for managing CPR resources, while Bradley and Wein focus more on the physics, using their physical model to estimate the net present value of a debris-related collision. I&#39;ll write about both of these papers separately at a later date.</p>
+<p>This is the first explicitly mathematical economic analysis of orbital debris production, at least as far as I am aware. Two other, earlier, papers that consider the economics of orbital debris are Weeden and Chow’s <a href="http://www.sciencedirect.com/science/article/pii/S0265964612000604">“Taking a common-pool resources approach to space sustainability: A framework and potential policies”</a> and Bradley and Wein’s <a href="http://www.sciencedirect.com/science/article/pii/S0273117709001240">Space debris: Assessing risk and responsibility</a>. Both were published in space journals (Weeden and Chow in <em>Space Policy</em>, Bradley and Wein in <em>Advances in Space Research</em>). While both consider economic aspects of the space debris problem, neither takes a full-on “mathematical economics” approach to modeling the problem. Weeden and Chow focus more on the economics, drawing heavily on Ostrom’s framework for managing CPR resources, while Bradley and Wein focus more on the physics, using their physical model to estimate the net present value of a debris-related collision. I’ll write about both of these papers separately at a later date.</p>
 
 <p>This paper has two main conclusions:</p>
 
 <ol>
-<li>The decentralized equilibrium has firms launching too many satellites relative to what the central planner would launch, and under-investing in debris-mitigation technologies relative to what the central planner would invest. This is because firms don&#39;t internalize the costs of debris to other firms, resulting in a higher launch rate and a lower level of debris mitigation.</li>
-<li>Firms can be made to internalize the costs of their actions with a Pigouvian tax on launches, which will bring the decentralized launch rate to the &quot;optimal centralized launch rate&quot;.</li>
+  <li>The decentralized equilibrium has firms launching too many satellites relative to what the central planner would launch, and under-investing in debris-mitigation technologies relative to what the central planner would invest. This is because firms don’t internalize the costs of debris to other firms, resulting in a higher launch rate and a lower level of debris mitigation.</li>
+  <li>Firms can be made to internalize the costs of their actions with a Pigouvian tax on launches, which will bring the decentralized launch rate to the “optimal centralized launch rate”.</li>
 </ol>
 
 <p>Because this paper is fully theoretical with no calibration, the conclusions are qualitative in nature.</p>
 
 <h2 id="the-model">The Model</h2>
 
-<p>AAC&#39;s model is a Salop circle (I&#39;ve written about this as <a href="http://akhilrao.github.io/micro%20theory/2015/10/05/hotelling-circle-city.html">Circle City</a>) with two periods. In the first period the orbital environment has no debris and firms simultaneously decide whether or not to launch a satellite. In the second period there is debris generated from the first period launches. Some satellites are destroyed by debris, but firms do not launch any new satellites in period 2; the ones with surviving satellites just choose a price and collect revenues.</p>
+<p>AAC’s model is a Salop circle (I’ve written about this as <a href="http://akhilrao.github.io/micro%20theory/2015/10/05/hotelling-circle-city.html">Circle City</a>) with two periods. In the first period the orbital environment has no debris and firms simultaneously decide whether or not to launch a satellite. In the second period there is debris generated from the first period launches. Some satellites are destroyed by debris, but firms do not launch any new satellites in period 2; the ones with surviving satellites just choose a price and collect revenues.</p>
 
-<p>The Salop framework lets AAC to capture product differentiation in the satellite market - e.g. GEO satellites for communications, LEO constellations for imaging, etc. Within this framework, they assume that firms are identical, and must pay a marginal cost per-satellite, a fixed launch cost, and a fixed per-period &quot;maintenance cost&quot;. As an aside, the Circle City model is apparently not analytically solvable with heterogeneous firms.</p>
+<p>The Salop framework lets AAC to capture product differentiation in the satellite market - e.g. GEO satellites for communications, LEO constellations for imaging, etc. Within this framework, they assume that firms are identical, and must pay a marginal cost per-satellite, a fixed launch cost, and a fixed per-period “maintenance cost”. As an aside, the Circle City model is apparently not analytically solvable with heterogeneous firms.</p>
 
-<p>The Circle City setup gives them a symmetric Bertrand-Nash equilibrium where firms price &quot;satellite services&quot; with a markup over marginal cost, even when they use free entry to get the zero-profit condition which gives them the number of firms per-period. Because AAC assume 1 firm per satellite, the number of firms entering the market gives them the launch rate.</p>
+<p>The Circle City setup gives them a symmetric Bertrand-Nash equilibrium where firms price “satellite services” with a markup over marginal cost, even when they use free entry to get the zero-profit condition which gives them the number of firms per-period. Because AAC assume 1 firm per satellite, the number of firms entering the market gives them the launch rate.</p>
 
 <p>The satellites are also homogeneous and generate the same amount of debris. AAC assume that each satellite has an equal probability of a catastrophic collision with debris, and that the destroyed satellites disappear.</p>
 
-<p>In section 2.3, AAC consider the social planner&#39;s problem. To do this, they assume a consumer surplus function, and have the social planner maximize the discounted sum of expected profits and consumer surplus.</p>
+<p>In section 2.3, AAC consider the social planner’s problem. To do this, they assume a consumer surplus function, and have the social planner maximize the discounted sum of expected profits and consumer surplus.</p>
 
-<p>In section 2.5, AAC allow the firms to choose the debris creation rate \( \phi \in [0, \phi_H] \). The debris creation rate directly impacts the firm&#39;s launch cost \(r = h(\phi)\), where \( h&#39;(\phi) &lt; 0\) for \(\phi&lt;\phi_H, h&#39;(\phi_H)=0, h&#39;&#39;(\phi)&gt;0\) and \(h(\phi_H)&gt;0\). In words, the launch cost is decreasing in the amount of debris produced at an increasing rate. The assumption of cost-minimizing behavior implies that firms will choose the highest rate of debris creation, \(\phi_H\), since they don&#39;t see an individual benefit from reducing debris creation rates.</p>
+<p>In section 2.5, AAC allow the firms to choose the debris creation rate \( \phi \in [0, \phi_H] \). The debris creation rate directly impacts the firm’s launch cost \(r = h(\phi)\), where \( h’(\phi) &lt; 0\) for \(\phi&lt;\phi_H, h’(\phi_H)=0, h’’(\phi)&gt;0\) and \(h(\phi_H)&gt;0\). In words, the launch cost is decreasing in the amount of debris produced at an increasing rate. The assumption of cost-minimizing behavior implies that firms will choose the highest rate of debris creation, \(\phi_H\), since they don’t see an individual benefit from reducing debris creation rates.</p>
 
 <h2 id="discussion">Discussion</h2>
 
-<p>The planner&#39;s solution gives AAC an optimum to compare the decentralized outcomes to, which lets them derive the Pigouvian tax on entry (launches) which would result in the socially optimal level of launches and debris creation. The decentralized outcome is suboptimal in the sense that it diverges from the planner&#39;s solution. Bradley and Wein take a different approach to estimating a fee on debris generation, by calculating the discounted expected value of a catastrophic collision and suggesting a fee that would be equal to that damage. This would not serve the same deterrent function as AAC&#39;s tax, but it isn&#39;t intended to - it&#39;s intended to give an estimate of the damage that debris could cause.</p>
+<p>The planner’s solution gives AAC an optimum to compare the decentralized outcomes to, which lets them derive the Pigouvian tax on entry (launches) which would result in the socially optimal level of launches and debris creation. The decentralized outcome is suboptimal in the sense that it diverges from the planner’s solution. Bradley and Wein take a different approach to estimating a fee on debris generation, by calculating the discounted expected value of a catastrophic collision and suggesting a fee that would be equal to that damage. This would not serve the same deterrent function as AAC’s tax, but it isn’t intended to - it’s intended to give an estimate of the damage that debris could cause.</p>
 
-<p>The firms in AAC&#39;s model are individually maximizing objective functions which have no allowance for consumer surplus generated by the lost satellites, so it doesn&#39;t surprise me that the firms will behave differently from how the planner would have them behave. More theoretically, I think the setup of the problem violates the First Welfare Theorem: since debris is not priced in any way even though it affects consumer welfare, it is natural that firms should produce &quot;too much&quot; debris.</p>
+<p>The firms in AAC’s model are individually maximizing objective functions which have no allowance for consumer surplus generated by the lost satellites, so it doesn’t surprise me that the firms will behave differently from how the planner would have them behave. More theoretically, I think the setup of the problem violates the First Welfare Theorem: since debris is not priced in any way even though it affects consumer welfare, it is natural that firms should produce “too much” debris.</p>
 
-<p>I generally don&#39;t like assuming a specific consumer welfare function without some empirical support for it. It feels like a fudge factor. The practice seems to be common in economic modeling, though, so I guess it&#39;s not something to get bent out of shape about here more than anywhere else.</p>
+<p>The assumption of product differentiation through a Salop circle with homogeneous firms seemed clever to me at first, but now it seems weird. It seems to imply that satellite services are only differentiated in terms of consumer taste through the “travel cost” parameter \(t\). This is not true - imaging constellations in LEO provide a fundamentally different service than communications satellites in GEO. <em>Ceteris paribus</em> more telecom satellites in GEO shouldn’t affect the price of images from LEO constellations, and vice versa.</p>
 
-<p>The assumption of product differentiation through a Salop circle with homogeneous firms seemed clever to me at first, but now it seems weird. It seems to imply that satellite services are only differentiated in terms of consumer taste through the &quot;travel cost&quot; parameter \(t\). This is not true - imaging constellations in LEO provide a fundamentally different service than communications satellites in GEO. <em>Ceteris paribus</em> more telecom satellites in GEO shouldn&#39;t affect the price of images from LEO constellations, and vice versa. </p>
+<p>The assumption of a common probability of catastrophic collision with debris seems like a big simplification of the underlying orbital mechanics. In truth, orbital debris seems more like a directional externality to me - it only falls down to Earth, so a satellite already in GEO isn’t affected by debris in LEO, though debris falling to Earth may pose a risk to constellations in LEO. Launching a satellite to GEO could be made more complicated by debris in LEO as well, though these are things I expect the engineers and physicists would work reduce as much as possible; as far as I’m aware this is what <a href="http://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/20100005139.pdf">conjunction analysis</a> is about.</p>
 
-<p>The assumption of a common probability of catastrophic collision with debris seems like a big simplification of the underlying orbital mechanics. In truth, orbital debris seems more like a directional externality to me - it only falls down to Earth, so a satellite already in GEO isn&#39;t affected by debris in LEO, though debris falling to Earth may pose a risk to constellations in LEO. Launching a satellite to GEO could be made more complicated by debris in LEO as well, though these are things I expect the engineers and physicists would work reduce as much as possible; as far as I&#39;m aware this is what <a href="http://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/20100005139.pdf">conjunction analysis</a> is about.</p>
+<p>Additionally, a satellite’s probability of collision depends on its size, which is a parameter firms have some control over. The recent move towards cubesats suggests to me that firms are able to reduce the probability that their satellite will get hit.</p>
 
-<p>Additionally, a satellite&#39;s probability of collision depends on its size, which is a parameter firms have some control over. The recent move towards cubesats suggests to me that firms are able to reduce the probability that their satellite will get hit.</p>
+<p>Bradley and Wein discuss the directional aspect of debris generation in their paper, where they consider debris generation in a single “spherical altitude shell” (the “Shell of Interest”, or SOI). This mirrors the modeling approach taken in <a href="http://www.sciencedirect.com/science/article/pii/S0032063398000701">Rossi et al.</a>. Bradley and Wein argue that ignoring debris entering a SOI from a higher shell doesn’t significantly affect the model results, though Rossi et al. include it in their paper and I think Liou et al. include this in their <a href="http://www.sciencedirect.com/science/article/pii/S0273117704000705">three-dimensional LEO-to-GEO debris evolutionary model</a> as well. These papers also include end-of-life satellites as sources of debris, and allow destroyed satellites to generate debris. Both of these features are absent from AAC’s model, but would probably not change the qualitative conclusions drawn.</p>
 
-<p>Bradley and Wein discuss the directional aspect of debris generation in their paper, where they consider debris generation in a single &quot;spherical altitude shell&quot; (the &quot;Shell of Interest&quot;, or SOI). This mirrors the modeling approach taken in <a href="http://www.sciencedirect.com/science/article/pii/S0032063398000701">Rossi et al.</a>. Bradley and Wein argue that ignoring debris entering a SOI from a higher shell doesn&#39;t significantly affect the model results, though Rossi et al. include it in their paper and I think Liou et al. include this in their <a href="http://www.sciencedirect.com/science/article/pii/S0273117704000705">three-dimensional LEO-to-GEO debris evolutionary model</a> as well. These papers also include end-of-life satellites as sources of debris, and allow destroyed satellites to generate debris. Both of these features are absent from AAC&#39;s model, but would probably not change the qualitative conclusions drawn.</p>
+<p>In any case, the result of these two assumptions - homogenous satellite services differentiated through travel cost on the circle, and common probabilities of collisions with debris - seems to be a strong simplification of the satellite industry and orbital environment. The complexities introduced by weakening these assumptions might be distractions that don’t change anything, or they might not. I think the orbital debris problem is interesting enough to warrant a paper or two that relax these assumptions. In particular, I would like to see how firms respond to specific orbital shells in LEO filling with debris. My guess is that the firms would either try to go to higher shells (above the debris + more coverage area) or lower shells (maybe they can’t penetrate the debris in a higher shell/debris decays faster at lower altitudes and they decide to play nicer). Higher shells would result in increasingly bad pollution, while lower shells would result in some self-cleaning as the debris decayed.</p>
 
-<p>In any case, the result of these two assumptions - homogenous satellite services differentiated through travel cost on the circle, and common probabilities of collisions with debris - seems to be a very strong simplification of the satellite industry and orbital environment. The complexities introduced by weakening these assumptions might be distractions that don&#39;t change anything, or they might not. I think the orbital debris problem is interesting enough to warrant a paper or two that relax these assumptions. In particular, I would like to see how firms respond to specific orbital shells in LEO filling with debris. My guess is that the firms would either try to go to higher shells (above the debris + more coverage area) or lower shells (maybe they can&#39;t penetrate the debris in a higher shell/debris decays faster at lower altitudes and they decide to play nicer). Higher shells would result in increasingly bad pollution, while lower shells would result in some self-cleaning as the debris decayed.</p>
-
-<p>I think AAC&#39;s general conclusion that there will be too many launches and too much debris relative to the social optimum may hold as presented for LEO, where many firms are looking to enter and firms are clustered in a relatively narrow altitude band (I think most LEO satellites are in between 800-1200 km, or thereabouts). I am skeptical that it will hold in the same way for GEO, where the congestibility of the resource is more apparent and the market mechanisms in place for spectrum allocation have led to a <a href="http://space.stackexchange.com/questions/5943/who-what-is-the-international-authority-to-assign-refuse-orbit-to-a-satellite-sp">slot allocation mechanism</a>. <a href="http://www.rff.org/files/sharepoint/WorkImages/Download/RFF-DP-98-10.pdf">Macauley 1994</a> looks at the efficiency of this mechanism; I have not read that paper yet, so I can&#39;t comment. </p>
+<p>I think AAC’s general conclusion that there will be too many launches and too much debris relative to the social optimum may hold as presented for LEO, where many firms are looking to enter and firms are clustered in a relatively narrow altitude band (I think most LEO satellites are in between 800-1200 km, or thereabouts). I am skeptical that it will hold in the same way for GEO, where the congestibility of the resource is more apparent and the market mechanisms in place for spectrum allocation have led to a <a href="http://space.stackexchange.com/questions/5943/who-what-is-the-international-authority-to-assign-refuse-orbit-to-a-satellite-sp">slot allocation mechanism</a>. <a href="http://www.rff.org/files/sharepoint/WorkImages/Download/RFF-DP-98-10.pdf">Macauley 1994</a> looks at the efficiency of this mechanism; this paper is on my reading list.</p>
 
 <p>In GEO, I expect the result to take the form of too little effort expended on end-of-life graveyard orbit policies. Indeed, though the Inter-Agency Space Debris Coordination Committee (IADC) laid out guidelines on acceptable re-orbiting altitude, it appears that <a href="http://arc.aiaa.org/doi/abs/10.2514/6.IAC-04-IAA.5.12.4.05">only a third of the GEO satellites that reached end-of-life complied</a>. My guess is that this is because of three reasons:</p>
 
 <ol>
-<li>Some firms don&#39;t expect to launch another satellite to the same or a nearby slot, and so don&#39;t care if they leave a mess (myopic behavior)</li>
-<li>Some firms would find it too costly to reduce the fuel allocated for stationkeeping (i.e., the lifetime of the satellite and the expected revenues from it) by allocating more fuel to end-of-life disposal (compliance too costly)</li>
-<li>Some firms&#39; satellites may have been non-responsive to the disposal command due to damage, or the firms did not anticipate the disposal requirement and were unable to send such a signal (error/nothing they could do)</li>
+  <li>Some firms don’t expect to launch another satellite to the same or a nearby slot, and so don’t care if they leave a mess (myopic behavior)</li>
+  <li>Some firms would find it too costly to reduce the fuel allocated for stationkeeping (i.e., the lifetime of the satellite and the expected revenues from it) by allocating more fuel to end-of-life disposal (compliance too costly)</li>
+  <li>Some firms’ satellites may have been non-responsive to the disposal command due to damage, or the firms did not anticipate the disposal requirement and were unable to send such a signal (error/nothing they could do)</li>
 </ol>
 
 <p>I expect that policy could be effective at targeting 1 and 2, but not 3 (error). The possibility of 3 makes me think that some sort of active debris removal will be necessary even if firms and nations all act to minimize future debris and all existing debris magically disappeared.</p>
 
-<p>Lastly, I think the assumptions on \(h(\phi)\) may be a good approximation, but are probably not uniformly true. Some sources of debris, like paint on a satellite, might be cheaper for the firm to avoid. In that case, asking firms to reduce those sources of debris might get good compliance. Other sources of debris, like launching a satellite into an orbit too high for debris to naturally decay quickly, might be harder to get compliance with since higher orbits have more coverage area over the Earth. I think firms might underinvest in debris mitigation technologies in general, but I&#39;m skeptical that they would choose the highest level of debris creation or lowest level of mitigation. Proposition 3 derives this for profit-maximizing firms, but under a specific assumption about the cost of mitigation in a 2-period setting where firms only launch once.</p>
+<p>Weeden and Chow anticipated the Pigouvian approach AAC espouse, and discuss the significant legal difficulties associated with implementing a Pigouvian tax like AAC describe. Basically, it’s really unlikely that such a tax would be implemented globally, and if it was implemented only in a few countries firms would have an incentive to launch from countries without the tax. Weeden and Chow also suggest the possibility of cooperative orbital management arising, which I think would be really interesting to see formalized in a cooperative game theoretic framework. This possibility is absent from AAC’s discussion of the problem and potential solutions.</p>
 
-<p>The 2-period setting is probably fine for general conclusions, but I wonder how (or if) anything would change if the firms chose to launch each period for \(T\) periods, or whenever their satellites broke down. My guess is that it would depend on whether or not the firms have rational expectations; forward-looking firms ought to anticipate the debris generation from their own and others&#39; satellites, and adjust accordingly (though this might mean they launch even more than they should).</p>
+<p>The 2-period setting is probably fine for general conclusions, but I wonder how (or if) anything would change if the firms chose to launch each period for \(T\) periods, or whenever their satellites broke down. My guess is that it would depend on whether or not the firms have rational expectations. In general, I think that repeated games allow for better outcomes than one-shot games. Reputational incentives, coordination, things of that nature. I think a repeated game framework is a more realistic economic setting for this problem than a one-shot game.</p>
 
-<p>Weeden and Chow anticipated the Pigouvian approach AAC espouse, and discuss the significant legal difficulties associated with implementing a Pigouvian tax like AAC describe. Basically, it&#39;s really unlikely that such a tax would be implemented globally, and if it was implemented only in a few countries firms would have an incentive to launch from countries without the tax. Weeden and Chow also suggest the possibility of cooperative orbital management arising, which I think would be really interesting to see formalized in a cooperative game theoretic framework. This possibility is absent from AAC&#39;s discussion of the problem and potential solutions.</p>
+<p>I think the assumptions on \(h(\phi)\) may be a good approximation, but are probably not uniformly true. It might be cheaper for a firm to avoid some sources of debris, like paint on a satellite. In that case, asking firms to reduce those activities of debris might get good compliance. Other sources of debris, like launching a satellite into an orbit too high for debris to naturally decay quickly, might be harder to get compliance with since higher orbits have more coverage area over the Earth. 
+I think firms might underinvest in debris mitigation technologies in general, but I’m skeptical that they would choose the highest level of debris creation or lowest level of mitigation. Proposition 3 derives this for profit-maximizing firms, but under a specific assumption about the cost of mitigation in a 2-period setting where firms only launch once. Rational expectations with launches over multiple periods in a longer horizon might change things.</p>
 
-<p>In closing, I think that AAC&#39;s paper is a good contribution to the field of space debris. It brings environmental and mathematical economics firmly into the discussion of orbital debris management, though I didn&#39;t find the conclusions or intuitions it presented to be very novel. I also thought some of the assumptions were too strong, and glossed over interesting particulars of the problem. But as a first theoretical economic model of the subject, I&#39;m happy it&#39;s out there.</p>
+<p>In closing, I think that AAC’s paper is a good contribution to the field of space debris. It brings environmental and mathematical economics firmly into the discussion of orbital debris management, though I didn’t find the conclusions or intuitions it presented to be very novel. I also thought some of the assumptions were too strong, and glossed over interesting particulars of the problem. It seems to have published pretty decently and attracted some good attention, though, so there might be a market for more papers on the subject. I hope so.</p>
+
 
   </div>
   
   <div class="post">
     <h1 class="post-title">
-      <a href="//micro%20theory/2016/05/10/coase-bargaining-externality.html">
+      <a href="//micro%20theory/coase-bargaining-externality.html">
         An app for Coase bargaining
       </a>
     </h1>
 
     <span class="post-date">10 May 2016</span>
 
-    <p>I came across an article today about <a href="http://www.economist.com/blogs/buttonwood/2016/05/airline-safety?fsrc=scn%2Ftw%2Fte%2Fbl%2Fed%2F?fsrc=scn/fb/te/bl/ed/airlinesafetytenwaystotellyoumightbesittingnexttoaneconomist">&quot;how you know you&#39;re on a plane with an economist&quot;</a>. The article&#39;s supposed to be a take on another recent news piece, about an economist getting pulled off a plane for doing math. I have a long flight coming up, and the article got me thinking about the problem of people reclining.</p>
+    <p>I came across an article today about <a href="http://www.economist.com/blogs/buttonwood/2016/05/airline-safety?fsrc=scn%2Ftw%2Fte%2Fbl%2Fed%2F?fsrc=scn/fb/te/bl/ed/airlinesafetytenwaystotellyoumightbesittingnexttoaneconomist">“how you know you’re on a plane with an economist”</a>. The article’s supposed to be a take on another recent news piece, about an economist getting pulled off a plane for doing math. I have a long flight coming up, and the article got me thinking about the problem of people reclining.</p>
 
-<p>The person sitting in front of me on a long (8+ hours) flight has the right to recline their seat back. Now, I&#39;m not a very tall person and I&#39;m used to sitting for long stretches, so I am not too physically uncomfortable if the person in front of me reclines all the way. But I do like to read, write, and occasionally eat, so the lack of space in front of me is not ideal.</p>
+<p>The person sitting in front of me on a long (8+ hours) flight has the right to recline their seat back. Now, I’m not a very tall person and I’m used to sitting for long stretches, so I am not too physically uncomfortable if the person in front of me reclines all the way. But I do like to read, write, and occasionally eat, so the lack of space in front of me is not ideal.</p>
 
-<p>(Some airlines get around this by having seats in a fixed bucket, so that instead of actually reclining you just kinda slide forward in the bucket. I really don&#39;t like these; I think they&#39;re the worst of both worlds. You no longer have much space, and you can&#39;t even meaningfully recline. I&#39;m ignoring this case here.)</p>
+<p>(Some airlines get around this by having seats in a fixed bucket, so that instead of actually reclining you just kinda slide forward in the bucket. I really don’t like these; I think they’re the worst of both worlds. You no longer have much space, and you can’t even meaningfully recline. I’m ignoring this case here.)</p>
 
-<p>The situation with the reclining seat seems like something the <a href="https://en.wikipedia.org/wiki/Coase_theorem">Coase theorem</a> ought to apply to: we have a well-defined property right (person in front has right to recline) and an externality (reclining reduces my personal space), so maybe we can bargain our way to a better solution. This is such a straightforward idea, I&#39;m sure it&#39;s been discussed elsewhere at length.</p>
+<p>The situation with the reclining seat seems like something the <a href="https://en.wikipedia.org/wiki/Coase_theorem">Coase theorem</a> ought to apply to: we have a well-defined property right (person in front has right to recline) and an externality (reclining reduces my personal space), so maybe we can bargain our way to a better solution. This is such a straightforward idea, I’m sure it’s been discussed elsewhere at length.</p>
 
 <p>What I would like is an app to facilitate this bargaining. I think the app would do something like this:</p>
 
 <ol>
-<li><p>Given two participating users, allow the users to define the property right and the externality in question. For example, &quot;\(A\) has the right (to recline his chair), \(B\) is negatively affected by ( \(A\) reclining ) and would like to see if a welfare-improving bargain can be struck.&quot;</p></li>
-<li><p>Users privately enter their maximum willingness-to-pay and minimum willingness-to-accept to reduce the externality. In the seat example, \(A\) would enter his minimum willingness-to-accept to not recline, and \(B\) would enter her maximum willingness-to-pay for \(A\) to not recline.</p></li>
-<li><p>If the maximum WTP is greater than or equal to the minimum WTA, the app would suggest a price for \(B\) to pay \(A\) to not recline. The specific price can be determined by some &quot;fair&quot; division, like the Nash Bargaining Solution.</p></li>
+  <li>
+    <p>Given two participating users, allow the users to define the property right and the externality in question. For example, “\(A\) has the right (to recline his chair), \(B\) is negatively affected by ( \(A\) reclining ) and would like to see if a welfare-improving bargain can be struck.”</p>
+  </li>
+  <li>
+    <p>Users privately enter their maximum willingness-to-pay and minimum willingness-to-accept to reduce the externality. In the seat example, \(A\) would enter his minimum willingness-to-accept to not recline, and \(B\) would enter her maximum willingness-to-pay for \(A\) to not recline.</p>
+  </li>
+  <li>
+    <p>If the maximum WTP is greater than or equal to the minimum WTA, the app would suggest a price for \(B\) to pay \(A\) to not recline. The specific price can be determined by some “fair” division, like the Nash Bargaining Solution.</p>
+  </li>
 </ol>
 
 <p>In the example above, the Nash Bargaining Solution would be a payment \(p_B\) from \(B\) to \(A\) that solves</p>
 
-<p>$$ \max_{p_B} \ (p_B - WTA_A)(WTP_B - p_B) $$</p>
+<script type="math/tex; mode=display">\max_{p_B} \ (p_B - WTA_A)(WTP_B - p_B)</script>
 
-<p>where \( WTA_A \) and \( WTP_B \) are \(A\) and \(B\)&#39;s minimum willingness-to-accept and maximum willingness-to-pay, respectively. The solution is</p>
+<p>where \( WTA_A \) and \( WTP_B \) are \(A\) and \(B\)’s minimum willingness-to-accept and maximum willingness-to-pay, respectively. The solution is</p>
 
-<p>$$ p_B = \frac{WTP_B + WTA_A}{2} $$</p>
+<script type="math/tex; mode=display">p_B = \frac{WTP_B + WTA_A}{2}</script>
 
 <p>i.e., with the NBS, if \( WTP_B \geq WTA_A \), \(B\) would pay \(A\) his minimum willingness-to-accept to not recline, plus half of her excess willingness-to-pay for \(A\) to not recline. This results in the surplus, \( WTP_B - WTA_A \), being evenly divided between \(A\) and \(B\).</p>
 
-<p>The usual problem people cite with the Coase theorem in practice is transaction costs, which an app could reduce. I&#39;ve described the two-person case above but it could be extended to the \(n\)-person case. I would be willing to pay $5 for an app that did this, possibly more if it was widely used.</p>
+<p>The usual problem people cite with the Coase theorem in practice is transaction costs, which an app could reduce. I’ve described the two-person case above but it could be extended to the \(n\)-person case. I would be willing to pay $5 for an app that did this, possibly more if it was widely used.</p>
 
 <p><a href="https://github.com/srlm-io">srlm</a> made the app! Here it is on <a href="https://play.google.com/store/apps/details?id=io.srlm.coasebargaining">Google Play</a> and on <a href="https://github.com/srlm-io/coase-bargaining">Github</a>.</p>
 
@@ -648,69 +654,103 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="//web/2016/02/08/worth-a-search-app.html">
+      <a href="//web/worth-a-search-app.html">
         Is this worth a search?
       </a>
     </h1>
 
     <span class="post-date">08 Feb 2016</span>
 
-    <p>Another simple Shiny app, this time to answer the question, <a href="https://akhilrao.shinyapps.io/worthASearchApp/">&quot;is this worth searching for?&quot;</a>. </p>
+    <p>Another simple Shiny app, this time to answer the question, <a href="https://akhilrao.shinyapps.io/worthASearchApp/">“is this worth searching for?”</a>.</p>
 
 <p>The basic idea is taken from this <a href="http://akhilrao.github.io/micro%20theory/2015/10/08/imperfect-information-car-search.html">earlier post</a> about searching for a used car.</p>
 
-<p>For example: Suppose you are thinking about looking for a used car, and you want to see whether it&#39;s worth searching for. You plug in your willingness-to-pay for a car, the cost to you to find and inspect one car, the number of sellers in the region, and the average price they&#39;re asking for. Using the formulas from the post for the expected quality of the average seller and the expected value of one search, we have</p>
+<p>For example: Suppose you are thinking about looking for a used car, and you want to see whether it’s worth searching for. You plug in your willingness-to-pay for a car, the cost to you to find and inspect one car, the number of sellers in the region, and the average price they’re asking for. Using the formulas from the post for the expected quality of the average seller and the expected value of one search, we have</p>
 
-<p>$$\begin{align}
-\hat{\beta} &amp;= \frac{\beta}{N} \left( \frac{1- \beta^N}{1- \beta } \right) \cr
-EV(\text{search}) &amp;= \hat{\beta}(v-p) - c
-\end{align}$$</p>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\hat{\beta} &= \frac{\beta}{N} \left( \frac{1- \beta^N}{1- \beta } \right) \cr
+EV(\text{search}) &= \hat{\beta}(v-p) - c
+\end{align} %]]></script>
 
-<p>where \(N\) is the number of sellers, \(\beta\) is the probability the average seller has what you want, \(p\) is the average price, and \(c\) is the search cost. If the expected value of a search is greater than 0, it&#39;s worth at least one search.</p>
+<p>where \(N\) is the number of sellers, \(\beta\) is the probability the average seller has what you want, \(p\) is the average price, and \(c\) is the search cost. If the expected value of a search is greater than 0, it’s worth at least one search.</p>
 
-<p>Using the app, I can see what the probability of a seller having what I want would need to be for a search to be worth it. I can interpret the point on the x axis where \(EV(\text{search})=0\) as the minimum level of belief I would have to hold that the average seller has what I&#39;m looking for for a search to be rational.</p>
+<p>Using the app, I can see what the probability of a seller having what I want would need to be for a search to be worth it. I can interpret the point on the x axis where \(EV(\text{search})=0\) as the minimum level of belief I would have to hold that the average seller has what I’m looking for for a search to be rational.</p>
 
   </div>
   
   <div class="post">
     <h1 class="post-title">
-      <a href="//web/2016/02/07/conditional-probability-app.html">
+      <a href="//web/conditional-probability-app.html">
         A conditional probability app
       </a>
     </h1>
 
     <span class="post-date">07 Feb 2016</span>
 
-    <p>I wrote my first-ever Shiny app! My first-ever app, too. It&#39;s a simple <a href="https://akhilrao.shinyapps.io/conditionalProbApp/">conditional probability calculator</a>. </p>
+    <p>I wrote my first-ever Shiny app! My first-ever app, too. It’s a simple <a href="https://akhilrao.shinyapps.io/conditionalProbApp/">conditional probability calculator</a>.</p>
 
-<p>Say you have two events, \(A\) and \(B\), which occur over two populations \(N_A\) and \(N_B\). Input the number of occurrences of \(A\) and \(B\) and the size of \(N_A\) and \(N_B\), and the app will apply Bayes&#39; rule to show you \(P(A|B)\) for beliefs you may hold over \(P(B|A)\).</p>
+<table>
+  <tbody>
+    <tr>
+      <td>Say you have two events, \(A\) and \(B\), which occur over two populations \(N_A\) and \(N_B\). Input the number of occurrences of \(A\) and \(B\) and the size of \(N_A\) and \(N_B\), and the app will apply Bayes’ rule to show you \(P(A</td>
+      <td>B)\) for beliefs you may hold over \(P(B</td>
+      <td>A)\).</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>For example: Suppose you want to know the probability that someone who died in the USA in 2010 was 85+ years old. Event A is taken to be the number of deaths in the USA in 2010, event B is taken to be the population that was 85+ years old in the USA in 2010, and the population size is taken to be the average total population of the USA in 2010 (\(N_A = N_B\)). Three Wolfram Alpha queries later we have</p>
 
-<p>$$\begin{align}
-P(A) &amp;= \frac{2,550,000}{310,000,000} = 0.008 \cr
-P(B) &amp;= \frac{5,176,00}{310,000,000} = 0.017
-\end{align}$$</p>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+P(A) &= \frac{2,550,000}{310,000,000} = 0.008 \cr
+P(B) &= \frac{5,176,00}{310,000,000} = 0.017
+\end{align} %]]></script>
 
-<p>By Bayes&#39; rule, we have</p>
+<p>By Bayes’ rule, we have</p>
 
-<p>$$ P(A|B) = P(B|A) \frac{P(A)}{P(B)} $$</p>
+<script type="math/tex; mode=display">P(A|B) = P(B|A) \frac{P(A)}{P(B)}</script>
 
-<p>I think \( P(A)/P(B) \) is called the base rate. </p>
+<p>I think \( P(A)/P(B) \) is called the base rate.</p>
 
-<p>Using the app, I can see how the probability someone died given they were 85 or older would change depending on the probability of being 85 or older given they died (in the USA in 2010), or \(P(\text{died in USA in 2010|85 or older in USA in 2010})\) as a function of my beliefs over \(P(\text{85 or older in USA in 2010|died in USA in 2010})\). In frequency terms, I can calculate the proportion of deaths that were 85+ year olds using the number of 85+ year olds, the number of deaths, the total US population in 2010, and my beliefs over the proportion of 85 year olds who died. I used this example as a &quot;comparison event&quot; for the app.</p>
+<table>
+  <tbody>
+    <tr>
+      <td>Using the app, I can see how the probability someone died given they were 85 or older would change depending on the probability of being 85 or older given they died (in the USA in 2010), or \(P(\text{died in USA in 2010</td>
+      <td>85 or older in USA in 2010})\) as a function of my beliefs over \(P(\text{85 or older in USA in 2010</td>
+      <td>died in USA in 2010})\). In frequency terms, I can calculate the proportion of deaths that were 85+ year olds using the number of 85+ year olds, the number of deaths, the total US population in 2010, and my beliefs over the proportion of 85 year olds who died. I used this example as a “comparison event” for the app.</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>In the picture below, the red line is \(P(\text{died in USA in 2010|85 or older in USA in 2010})\), and the black line is \(P(A|B)\) for a hypothetical event where \(P(A) = 15/100\) and \(P(B) = 50/100\).</p>
+<table>
+  <tbody>
+    <tr>
+      <td>In the picture below, the red line is \(P(\text{died in USA in 2010</td>
+      <td>85 or older in USA in 2010})\), and the black line is \(P(A</td>
+      <td>B)\) for a hypothetical event where \(P(A) = 15/100\) and \(P(B) = 50/100\).</td>
+    </tr>
+  </tbody>
+</table>
 
-<p><a href="/public/images/conditionalProbApp/stock.png" title="Example"><img src="/public/images/conditionalProbApp/stock.png" alt="Example" title="Example"></a></p>
+<p><a href="/public/images/conditionalProbApp/stock.png" title="Example"><img src="/public/images/conditionalProbApp/stock.png" alt="Example" title="Example" /></a></p>
 
-<p>I wrote this app to help me think through conditional probabilities more clearly. Often I hold beliefs over some \(P(B|A)\) and use those beliefs to infer something about the corresponding \(P(A|B)\), not necessarily considering the base rate. Hopefully I&#39;ll neglect base rates a little less going forward.</p>
+<table>
+  <tbody>
+    <tr>
+      <td>I wrote this app to help me think through conditional probabilities more clearly. Often I hold beliefs over some \(P(B</td>
+      <td>A)\) and use those beliefs to infer something about the corresponding \(P(A</td>
+      <td>B)\), not necessarily considering the base rate. Hopefully I’ll neglect base rates a little less going forward.</td>
+    </tr>
+  </tbody>
+</table>
 
   </div>
   
   <div class="post">
     <h1 class="post-title">
-      <a href="//probability%20theory/2015/11/16/lln-proof.html">
+      <a href="//probability%20theory/lln-proof.html">
         Proof of a law of large numbers
       </a>
     </h1>
@@ -721,62 +761,66 @@ P(B) &amp;= \frac{5,176,00}{310,000,000} = 0.017
 
 <p>Laws of large numbers are statements about averages of random variables converging in probability to a constant. In this example, we assume the existence of a finite first moment, assume random sampling with replacement (IID), and show that a sequence of averages of the IID random variables will converge to the first moment.</p>
 
-<p>Let \( \{X_t\}, ~ t=1,2,... \) be the sequence of IID random variables on a probability space \( ( \Omega, \mathcal{F}, P ) \) with \( E(X_t) = \mu \lt \infty \). The goal is to show that </p>
+<p>Let \( \{X_t\}, ~ t=1,2,… \) be the sequence of IID random variables on a probability space \( ( \Omega, \mathcal{F}, P ) \) with \( E(X_t) = \mu \lt \infty \). The goal is to show that</p>
 
-<p>$$ \lim_{n \to \infty} P \left( \omega : \left| \frac{1}{n} \sum_{t=1}^n X_t(\omega) - \mu \right| \gt \epsilon \right) = 0 $$</p>
+<script type="math/tex; mode=display">\lim_{n \to \infty} P \left( \omega : \left| \frac{1}{n} \sum_{t=1}^n X_t(\omega) - \mu \right| \gt \epsilon \right) = 0</script>
 
 <h3 id="proof">Proof</h3>
 
 <p>Begin by defining \( A_n \) and its characteristic function:</p>
 
-<p>$$\begin{align}
-A_n &amp; \equiv \frac{1}{n} \sum_{t=1}^n X_t \cr
-\phi_{A_n}(s) &amp; \equiv E(e^{isA_n }) \cr
-&amp; = \int e^{isA_n } ~ dP \cr
-\end{align}$$</p>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+A_n & \equiv \frac{1}{n} \sum_{t=1}^n X_t \cr
+\phi_{A_n}(s) & \equiv E(e^{isA_n }) \cr
+& = \int e^{isA_n } ~ dP \cr
+\end{align} %]]></script>
 
 <p>By the properties of exponential functions and the fact that \( X_t \) is IID, we can write \( \phi_{A_n}(s) \) as</p>
 
-<p>$$ \phi_{A_n}(s) =  ( \phi_{X_t} \left( \frac{s}{n} \right) )^n $$</p>
+<script type="math/tex; mode=display">\phi_{A_n}(s) =  ( \phi_{X_t} \left( \frac{s}{n} \right) )^n</script>
 
 <p>We can approximate \( \phi_{X_t}(\frac{s}{n}) \) as</p>
 
-<p>$$\begin{align}
- \phi_{X_t} \left(\frac{s}{n} \right) &amp; = 1 + is \frac{E(X_t)}{n} + \mathcal{O} \left(\frac{s^2}{n^2} \right) \cr
- &amp; = 1 + is \frac{ \mu }{n} + \mathcal{O} \left(\frac{s^2}{n^2} \right) \cr
- \mathcal{O} \left(\frac{s^2}{n^2} \right) &amp; \equiv i^2 \int_0^{\frac{x}{n}} \left(\frac{x}{n}-s \right) e^{is} ds \cr
-\end{align}$$</p>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+ \phi_{X_t} \left(\frac{s}{n} \right) & = 1 + is \frac{E(X_t)}{n} + \mathcal{O} \left(\frac{s^2}{n^2} \right) \cr
+ & = 1 + is \frac{ \mu }{n} + \mathcal{O} \left(\frac{s^2}{n^2} \right) \cr
+ \mathcal{O} \left(\frac{s^2}{n^2} \right) & \equiv i^2 \int_0^{\frac{x}{n}} \left(\frac{x}{n}-s \right) e^{is} ds \cr
+\end{align} %]]></script>
 
 <p>\( \mathcal{O}(\frac{s^2}{n^2}) \) is the remainder from the approximation, the \( \mathcal{O} \) is <a href="https://en.wikipedia.org/wiki/Big_O_notation">big O notation</a> that the remainder is bounded.</p>
 
 <p>So now we have</p>
 
-<p>$$ \phi_{A_n}(s) \approx \left( 1 + is \frac{\mu}{n} \right)^n $$</p>
+<script type="math/tex; mode=display">\phi_{A_n}(s) \approx \left( 1 + is \frac{\mu}{n} \right)^n</script>
 
 <p>The trick is to use a binomial expansion here. In general,</p>
 
-<p>$$ \begin{align}
-\left( 1+ \frac{a}{n} \right)^n &amp; = \sum_{j=0}^n \binom{n}{j} \left( \frac{a}{n} \right)^j \cr
-\lim_{n \to \infty} \left( 1+ \frac{a}{n} \right)^n &amp; = \sum_{j=0}^{\infty} \left( \frac{a^j}{j!} \right) \cr
-&amp; = e^a \cr
-\end{align} $$</p>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\left( 1+ \frac{a}{n} \right)^n & = \sum_{j=0}^n \binom{n}{j} \left( \frac{a}{n} \right)^j \cr
+\lim_{n \to \infty} \left( 1+ \frac{a}{n} \right)^n & = \sum_{j=0}^{\infty} \left( \frac{a^j}{j!} \right) \cr
+& = e^a \cr
+\end{align} %]]></script>
 
 <p>So, letting \( a = is \mu \),</p>
 
-<p>$$\begin{align}
-\phi_{A_n}(s) &amp; = \left( 1 + is \frac{ \mu }{n} + \mathcal{O}(\frac{s^2}{n^2}) \right)^n \cr
- \lim_{n \to \infty} \phi_{A_n}(s) &amp; = e^{is \mu } = \phi_{ \mu } (s) \cr
-\end{align}$$</p>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\phi_{A_n}(s) & = \left( 1 + is \frac{ \mu }{n} + \mathcal{O}(\frac{s^2}{n^2}) \right)^n \cr
+ \lim_{n \to \infty} \phi_{A_n}(s) & = e^{is \mu } = \phi_{ \mu } (s) \cr
+\end{align} %]]></script>
 
 <p>The remainder term \( \mathcal{O} (\frac{s^2}{n^2} ) \to 0 \) as \(n \to \infty\).</p>
 
 <p>By the uniqueness of mapping between characteristic and distribution functions of random variables, \( \lim_{n \to \infty} \phi_{A_n}(s) = \phi_{ \mu }(s) \) implies \( \lim_{n \to \infty} F_{A_n} = F_{ \mu } \), where \( F_{A_n} \) and \( F_{ \mu } \) are the distribution functions of \( A_n \) and \( \mu \) respectively.</p>
 
-<p>This is still only convergence in distribution, not convergence in probability. However, \( \mu \) is a constant, and convergence in distribution to the distribution of a constant is the same as convergence in probability to that constant (think of the constant&#39;s distribution as a point mass). So we have the desired result, \( A_n \overset{p}{\to} \mu \).</p>
+<p>This is still only convergence in distribution, not convergence in probability. However, \( \mu \) is a constant, and convergence in distribution to the distribution of a constant is the same as convergence in probability to that constant (think of the constant’s distribution as a point mass). So we have the desired result, \( A_n \overset{p}{\to} \mu \).</p>
 
 <h3 id="discussion">Discussion</h3>
 
-<p>I&#39;m not entirely sure how to interpret the parameter \(s\) for a general characteristic function. The characteristic function is just an exponential Fourier transform, and I would usually interpret that parameter as the &quot;time index&quot; for a given sequence I was Fourier transforming. I&#39;m not sure if that interpretation is justified here, since each random variable is an IID draw from the same distribution. If I wanted to read a &quot;time index&quot; into this, it would be \( t\), which is the draw number. Maybe \(s\) is not very meaningful in this setting, so we can let it be whatever we want?</p>
+<p>I’m not entirely sure how to interpret the parameter \(s\) for a general characteristic function. The characteristic function is just an exponential Fourier transform, and I would usually interpret that parameter as the “time index” for a given sequence I was Fourier transforming. I’m not sure if that interpretation is justified here, since each random variable is an IID draw from the same distribution. If I wanted to read a “time index” into this, it would be \( t\), which is the draw number. Maybe \(s\) is not very meaningful in this setting, so we can let it be whatever we want?</p>
 
 <p>Anyway, the point of doing it this way is that sometimes a product of exponentials is easier to work with than some arbitrary sum. I should learn more about Fourier transforms and characteristic functions, they seem useful.</p>
 

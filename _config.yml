@@ -1,17 +1,24 @@
 # Dependencies
-markdown:         redcarpet
+markdown:         kramdown
 redcarpet:
     extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
     
-highlighter:      rouge
+highlighter:      pygments
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false
 
 # Permalinks
-permalink:        date
+permalink:        /:categories/:title.html
 absolute_permalinks: true
 
 # Setup
 title:            Produced Under Scarcity
-tagline:          'By Akhil Rao'
+tagline:          ''
 description:      
 url:              https://github.com/akhilrao
 baseurl:          ''
