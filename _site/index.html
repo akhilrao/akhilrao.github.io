@@ -500,6 +500,42 @@
         
       
     
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
 
     <a class="sidebar-nav-item" href="https://github.com/akhilrao/archive/v0.0.1.zip">Download</a>
     <a class="sidebar-nav-item" href="https://github.com/akhilrao">GitHub project</a>
@@ -528,6 +564,267 @@
 
       <div class="container content">
         <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="//eda/au-water-trading-1-look-at-data.html/">
+        A look at some Australian water trading data
+      </a>
+    </h1>
+
+    <span class="post-date">29 Jun 2016</span>
+
+    <p><em>This is my first attempt at using Rmarkdown, knitr, and ggplot2. The scripts to reproduce and extend everything discussed here are <a href="https://github.com/akhilrao/akhilrao.github.io/tree/master/public/code/au-water-trading">here</a>. I converted the knitted Rmarkdown file to markdown with the help of this <a href="http://brooksandrew.github.io/simpleblog/articles/blogging-with-r-markdown-and-jekyll-using-knitr/">post</a> by Andrew Brooks.</em></p>
+
+<p>I’m currently working on two projects: one is about orbital debris and satellites launches (what my previous post was about), and the other is about water trading in Australian water markets (that’s what this post is about). It’s too early to talk much about the substantive content of either project; in this post I’m going to describe some interesting (to me!) things in some of the water data I have.</p>
+
+<h2 id="why-australian-water-markets">Why Australian water markets?</h2>
+
+<p>I’ve liked the idea of water markets since I learned about <a href="http://www.latimes.com/local/california/la-me-water-rights-legal-20150629-story.html">California’s messed up water rights</a> as a <a href="http://www.corola.org/">Coro Fellow</a> (FPPA LA ‘12, fun times). Australia actually has pretty well-defined water markets with some trading data, so I started there.</p>
+
+<p>Plus, water markets lend themselves to some great awful puns about market liquidity and trade volumes.</p>
+
+<h2 id="a-little-bit-about-the-markets">A little bit about the markets</h2>
+
+<p>Australian water trading can broadly be classified into two categories: allocation trades and entitlement trades. Allocation trades are short-term transfers of an amount of water, lasting for the remainder of the water year (water years are July 1st xxx(y)-June 30th xxx(y+1)). Entitlement trades are transfers of the rights to water from a given source. Entitlement transfers can further be divided into permanent/ongoing and leases.</p>
+
+<p>I say “markets” instead of “market” because each state has some different laws relating to water trading within its borders. But the broad allocations/entitlements distinction still stands. The <a href="http://www.nationalwatermarket.gov.au/about/products.html">implementation details vary</a>. (I’m saying “entitlement” instead of “access entitlement” for brevity.)</p>
+
+<p>A given water resource will be divided into consumptive and non-consumptive use. Consumptive use is for private purposes like irrigation, urban use, etc., while non-consumptive use is for things like generating hydroelectricity or to guarantee the stability of the environment in that region. Tradeable water rights are defined as shares of a consumptive pool from a given water source. Water resource plans define the amount of water available to a consumptive pool. The national water market’s <a href="http://www.nationalwatermarket.gov.au/about/resources.html">resources page</a> has more information on how this works.</p>
+
+<p>There’s a lot of state-level heterogeneity in how this all looks in practice, but my understanding is that these broad statements are true across the country.</p>
+
+<h2 id="what-are-the-data">What are the data?</h2>
+
+<p>The data used for this post are publicly available at the Bureau of Meteorology’s <a href="http://www.nationalwatermarket.gov.au/water-market-reports/download-data.html">Water Market Information page</a>, specifically the “trade history” dataset.</p>
+
+<p>The dataset describes all of the water transactions that occurred between 2009-2014. A lot of the trades have a zero recorded price. A spoke to one of the people at the Bureau of Meteorology about this some time back, and he told me that only the quantity traded is mandatory, not the price. So a lot of prices are zero. One of the things I want to check is how the distributions of zero price trades compares to the distribution of positive price trades, to see if there’s anything interesting going on there. I’m not going to look into that too much here.</p>
+
+<p>One of my goals for the future is to learn to use mapping tools to get data out of maps like <a href="http://www.bom.gov.au/jsp/awap/rain/index.jsp">these</a>. Rainfall information would be really useful for this project. Along the way, it would help to find a shapefile for a map of Australia with the Murray-Darling Basin and the different water systems marked out.</p>
+
+<h2 id="doing-stuff-with-the-data">Doing stuff with the data</h2>
+
+<p>I’m going to skip all the data cleaning and prep work. It’s in the script <code class="highlighter-rouge">prep-trading-data.r</code>. I’m calling it “cleaning and prep work” but I guess it’s called “wrangling” now? What happend to “munging”, did it go out of style? <a href="https://en.wikipedia.org/wiki/Data_wrangling">Life’s mysteries</a>.</p>
+
+<p><code class="highlighter-rouge">prep-trading-data.r</code> outputs two csv files, one each for allocation and entitlement trades. I used <code class="highlighter-rouge">rm(list=ls())</code> liberally throughout the <code class="highlighter-rouge">prep-trading-data.r</code>, so consider yourself warned. Don’t use the script if you have other things you want to keep in your workspace.</p>
+
+<p><code class="highlighter-rouge">prep-trading-data.r</code> does a bunch of useful things for me, like create an indicator variable for whether a trade was in the Murray-Darling Basin or not, a categorical variable describing the origin and destination states of a trade, and get rid of 14 observations with years like 2103 (at which point we’ll have no water, so they’re clearly wrong). The most tedious part of writing it was going through the <a href="http://www.agriculture.gov.au/abares/publications/display?url=http://143.188.17.20/anrdl/DAFFService/display.php?fid=pb_awmr_d9aawr20151211.xml">Australian Water Markets Report 2013-14</a> to figure out whether a given water system was in the Murray-Darling Basin or not.</p>
+
+<p><code class="highlighter-rouge">ents</code> and <code class="highlighter-rouge">alls</code> are from the csv files of prepped daily water trading data. From there I used <code class="highlighter-rouge">water-eda.r</code> to do a little more processing and make some tables and pictures. The data processing in <code class="highlighter-rouge">water-eda.r</code> is below:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">## load libraries - make sure these are installed! stuff to read excel files, reshape data, plot pretty pictures, estimate consistent standard errors, and probably other useful things.  Probably don't need all of these.
+</span><span class="n">library</span><span class="p">(</span><span class="n">readxl</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">plyr</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">reshape2</span><span class="p">)</span>
+
+<span class="c1">## run prep script
+</span><span class="n">rm</span><span class="p">(</span><span class="n">list</span><span class="o">=</span><span class="n">ls</span><span class="p">())</span> <span class="c1"># I use these liberally. Caveat emptor.
+</span><span class="n">source</span><span class="p">(</span><span class="s2">"prep-trading-data.r"</span><span class="p">)</span> <span class="c1"># does some stuff to make the data nicer to use
+</span>
+<span class="c1">## monthly trading
+</span><span class="n">ents_m</span> <span class="o">&lt;-</span> <span class="n">ddply</span><span class="p">(</span><span class="n">ents</span><span class="p">,</span><span class="err">.</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="n">MonthOfTrade</span><span class="p">,</span><span class="n">mdb</span><span class="p">,</span><span class="n">from_state</span><span class="p">,</span><span class="n">interstate</span><span class="p">),</span><span class="n">summarize</span><span class="p">,</span><span class="n">v_ents</span><span class="o">=</span><span class="n">sum</span><span class="p">(</span><span class="n">quantityTraded</span><span class="p">),</span><span class="n">price_ents</span><span class="o">=</span><span class="n">mean</span><span class="p">(</span><span class="n">PricePerML</span><span class="p">[</span><span class="n">PricePerML</span><span class="o">!=</span><span class="m">0</span><span class="p">]),</span><span class="n">n_ents</span><span class="o">=</span><span class="n">length</span><span class="p">(</span><span class="n">quantityTraded</span><span class="p">),</span><span class="n">np_ents</span><span class="o">=</span><span class="n">length</span><span class="p">(</span><span class="n">PricePerML</span><span class="p">[</span><span class="n">PricePerML</span><span class="o">!=</span><span class="m">0</span><span class="p">]))</span>
+<span class="n">alls_m</span> <span class="o">&lt;-</span> <span class="n">ddply</span><span class="p">(</span><span class="n">alls</span><span class="p">,</span><span class="err">.</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="n">MonthOfTrade</span><span class="p">,</span><span class="n">mdb</span><span class="p">,</span><span class="n">from_state</span><span class="p">,</span><span class="n">interstate</span><span class="p">),</span><span class="n">summarize</span><span class="p">,</span><span class="n">v_alls</span><span class="o">=</span><span class="n">sum</span><span class="p">(</span><span class="n">quantityTraded</span><span class="p">),</span><span class="n">price_alls</span><span class="o">=</span><span class="n">mean</span><span class="p">(</span><span class="n">PricePerML</span><span class="p">[</span><span class="n">PricePerML</span><span class="o">!=</span><span class="m">0</span><span class="p">]),</span><span class="n">n_alls</span><span class="o">=</span><span class="n">length</span><span class="p">(</span><span class="n">quantityTraded</span><span class="p">),</span><span class="n">np_alls</span><span class="o">=</span><span class="n">length</span><span class="p">(</span><span class="n">PricePerML</span><span class="p">[</span><span class="n">PricePerML</span><span class="o">!=</span><span class="m">0</span><span class="p">]))</span>
+
+<span class="c1">### merge alls and ents
+</span><span class="n">trades_m</span> <span class="o">&lt;-</span> <span class="n">join</span><span class="p">(</span><span class="n">alls_m</span><span class="p">,</span><span class="n">ents_m</span><span class="p">,</span><span class="n">by</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"MonthOfTrade"</span><span class="p">,</span><span class="s2">"mdb"</span><span class="p">,</span><span class="s2">"from_state"</span><span class="p">,</span><span class="s2">"interstate"</span><span class="p">),</span><span class="n">type</span><span class="o">=</span><span class="s2">"full"</span><span class="p">,</span><span class="n">match</span><span class="o">=</span><span class="s2">"first"</span><span class="p">)</span>
+<span class="n">trades_m</span><span class="p">[(</span><span class="n">is.na</span><span class="p">(</span><span class="n">trades_m</span><span class="p">))]</span> <span class="o">&lt;-</span> <span class="m">0</span> <span class="c1"># replace NaN and NA with 0
+</span>
+<span class="c1">### melt trades_m
+</span><span class="n">trades_m_melted</span> <span class="o">&lt;-</span> <span class="n">melt</span><span class="p">(</span><span class="n">trades_m</span><span class="p">[,</span><span class="n">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">9</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">11</span><span class="p">,</span><span class="m">12</span><span class="p">,</span><span class="m">13</span><span class="p">)],</span><span class="n">id</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"year"</span><span class="p">,</span><span class="s2">"MonthOfTrade"</span><span class="p">,</span><span class="s2">"mdb"</span><span class="p">,</span><span class="s2">"from_state"</span><span class="p">,</span><span class="s2">"interstate"</span><span class="p">))</span> <span class="c1"># useful for plots later
+</span>
+<span class="c1">## yearly trading
+</span><span class="n">ents_y</span> <span class="o">&lt;-</span> <span class="n">ddply</span><span class="p">(</span><span class="n">ents</span><span class="p">,</span><span class="err">.</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="n">mdb</span><span class="p">,</span><span class="n">from_state</span><span class="p">,</span><span class="n">interstate</span><span class="p">),</span><span class="n">summarize</span><span class="p">,</span><span class="n">v_ents</span><span class="o">=</span><span class="n">sum</span><span class="p">(</span><span class="n">quantityTraded</span><span class="p">),</span><span class="n">price_ents</span><span class="o">=</span><span class="n">mean</span><span class="p">(</span><span class="n">PricePerML</span><span class="p">[</span><span class="n">PricePerML</span><span class="o">!=</span><span class="m">0</span><span class="p">]),</span><span class="n">n_ents</span><span class="o">=</span><span class="n">length</span><span class="p">(</span><span class="n">quantityTraded</span><span class="p">),</span><span class="n">np_ents</span><span class="o">=</span><span class="n">length</span><span class="p">(</span><span class="n">PricePerML</span><span class="p">[</span><span class="n">PricePerML</span><span class="o">!=</span><span class="m">0</span><span class="p">]))</span>
+<span class="n">alls_y</span> <span class="o">&lt;-</span> <span class="n">ddply</span><span class="p">(</span><span class="n">alls</span><span class="p">,</span><span class="err">.</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="n">mdb</span><span class="p">,</span><span class="n">from_state</span><span class="p">,</span><span class="n">interstate</span><span class="p">),</span><span class="n">summarize</span><span class="p">,</span><span class="n">v_alls</span><span class="o">=</span><span class="n">sum</span><span class="p">(</span><span class="n">quantityTraded</span><span class="p">),</span><span class="n">price_alls</span><span class="o">=</span><span class="n">mean</span><span class="p">(</span><span class="n">PricePerML</span><span class="p">[</span><span class="n">PricePerML</span><span class="o">!=</span><span class="m">0</span><span class="p">]),</span><span class="n">n_alls</span><span class="o">=</span><span class="n">length</span><span class="p">(</span><span class="n">quantityTraded</span><span class="p">),</span><span class="n">np_alls</span><span class="o">=</span><span class="n">length</span><span class="p">(</span><span class="n">PricePerML</span><span class="p">[</span><span class="n">PricePerML</span><span class="o">!=</span><span class="m">0</span><span class="p">]))</span>
+
+<span class="c1">### merge alls and ents
+</span><span class="n">trades_y</span> <span class="o">&lt;-</span> <span class="n">join</span><span class="p">(</span><span class="n">alls_y</span><span class="p">,</span><span class="n">ents_y</span><span class="p">,</span><span class="n">by</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"year"</span><span class="p">,</span><span class="s2">"mdb"</span><span class="p">,</span><span class="s2">"from_state"</span><span class="p">,</span><span class="s2">"interstate"</span><span class="p">),</span><span class="n">type</span><span class="o">=</span><span class="s2">"full"</span><span class="p">,</span><span class="n">match</span><span class="o">=</span><span class="s2">"first"</span><span class="p">)</span>
+<span class="n">trades_y</span><span class="p">[(</span><span class="n">is.na</span><span class="p">(</span><span class="n">trades_y</span><span class="p">))]</span> <span class="o">&lt;-</span> <span class="m">0</span> <span class="c1"># replace NaN and NA with 0
+</span>
+<span class="c1">### yearly summary
+</span><span class="n">yearly_summary</span> <span class="o">&lt;-</span> <span class="n">ddply</span><span class="p">(</span><span class="n">trades_y</span><span class="p">,</span><span class="err">.</span><span class="p">(</span><span class="n">year</span><span class="p">),</span><span class="n">summarize</span><span class="p">,</span><span class="n">v_alls</span><span class="o">=</span><span class="n">sum</span><span class="p">(</span><span class="n">v_alls</span><span class="p">),</span><span class="n">v_ents</span><span class="o">=</span><span class="n">sum</span><span class="p">(</span><span class="n">v_ents</span><span class="p">),</span><span class="n">n_alls</span><span class="o">=</span><span class="n">sum</span><span class="p">(</span><span class="n">n_alls</span><span class="p">),</span><span class="n">n_ents</span><span class="o">=</span><span class="n">sum</span><span class="p">(</span><span class="n">n_ents</span><span class="p">))</span> <span class="c1"># for a summary table
+</span></code></pre>
+</div>
+
+<p>Just some <code class="highlighter-rouge">ddply()</code>, <code class="highlighter-rouge">join()</code>, and <code class="highlighter-rouge">melt()</code> to make pictures and tables easier later. <code class="highlighter-rouge">n_ents</code> and <code class="highlighter-rouge">n_alls</code> are the number of entitlement and allocation trades respectively, while <code class="highlighter-rouge">v_ents</code> and <code class="highlighter-rouge">v_alls</code> are the total monthly volume of entitlements and allocations traded.</p>
+
+<p>(I’m still a noob at this whole “generating pretty things in markdown” business, so I used this handy online <a href="http://www.tablesgenerator.com/markdown_tables#">markdown table generator</a> to make this table.)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>year</th>
+      <th>Allocation trades (ML)</th>
+      <th>Entitlement trades (ML)</th>
+      <th>Number of allocation trades</th>
+      <th>Number of entitlement trades</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2004</td>
+      <td>1898</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2005</td>
+      <td>980</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2006</td>
+      <td>1256</td>
+      <td>0</td>
+      <td>38</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2007</td>
+      <td>4279</td>
+      <td>0</td>
+      <td>76</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2008</td>
+      <td>1090</td>
+      <td>0</td>
+      <td>17</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2009</td>
+      <td>873878.133</td>
+      <td>449766.741</td>
+      <td>8119</td>
+      <td>2895</td>
+    </tr>
+    <tr>
+      <td>2010</td>
+      <td>3373516.237</td>
+      <td>1385914.681</td>
+      <td>18434</td>
+      <td>6666</td>
+    </tr>
+    <tr>
+      <td>2011</td>
+      <td>5527076.803</td>
+      <td>2261956.205</td>
+      <td>10070</td>
+      <td>7509</td>
+    </tr>
+    <tr>
+      <td>2012</td>
+      <td>5565003.714</td>
+      <td>1301803.735</td>
+      <td>15099</td>
+      <td>7804</td>
+    </tr>
+    <tr>
+      <td>2013</td>
+      <td>7288640.034</td>
+      <td>1915709.35</td>
+      <td>30058</td>
+      <td>7636</td>
+    </tr>
+    <tr>
+      <td>2014</td>
+      <td>2975364.894</td>
+      <td>827862.547</td>
+      <td>15160</td>
+      <td>2316</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Note that I’m aggregating these by calendar year, not water year. “ML” stands for megaliter (1 million liters). The 2014 data only goes till September, so the apparent dropoff in trading might be mostly truncated data.</p>
+
+<h3 id="pictures">Pictures!</h3>
+
+<p>This is the real reason I wrote this post: pictures!</p>
+
+<p>To get these to load in knitr code chunks, the script <code class="highlighter-rouge">water-eda.r</code> saves the cleaned data in a file called <code class="highlighter-rouge">water-eda-stuff.RData</code>. I’m going to focus on three quantities: volume traded (megaliters per month), trade volume (number of trades per month), and price per megaliter (Australian dollars).</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">load</span><span class="p">(</span><span class="s2">"C:/Users/Akhil/Documents/akhilrao.github.io/public/code/au-water-trading/water-eda-stuff.RData"</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="c1">## drop everything before 2008
+</span><span class="n">trades_m</span> <span class="o">&lt;-</span> <span class="n">subset</span><span class="p">(</span><span class="n">trades_m</span><span class="p">,</span><span class="n">year</span><span class="o">&gt;</span><span class="m">2008</span><span class="p">)</span>
+<span class="n">trades_m_melted</span> <span class="o">&lt;-</span> <span class="n">subset</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="p">,</span><span class="n">year</span><span class="o">&gt;</span><span class="m">2008</span><span class="p">)</span>
+
+<span class="c1">## make plots
+### volume over time
+</span><span class="n">trade_vols</span> <span class="o">&lt;-</span> <span class="n">ggplot</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="p">[</span><span class="n">c</span><span class="p">(</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">variable</span><span class="o">==</span><span class="s2">"v_ents"</span><span class="p">),</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">variable</span><span class="o">==</span><span class="s2">"v_alls"</span><span class="p">)),],</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">MonthOfTrade</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">value</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">mdb</span><span class="p">)))</span>
+
+<span class="n">trade_vols</span> <span class="o">+</span> <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span> <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">"lm"</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">NA</span><span class="p">)</span> <span class="o">+</span> <span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="n">variable</span><span class="p">)</span> <span class="o">+</span> <span class="n">scale_colour_discrete</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"In MDB"</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"No"</span><span class="p">,</span><span class="s2">"Yes"</span><span class="p">))</span> <span class="o">+</span> <span class="n">ggtitle</span><span class="p">(</span><span class="s2">"Water volume traded in and out of MDB"</span><span class="p">)</span> <span class="o">+</span> <span class="n">ylab</span><span class="p">(</span><span class="s2">"Volume (ML) traded per month"</span><span class="p">)</span> <span class="o">+</span> <span class="n">xlab</span><span class="p">(</span><span class="s2">"time"</span><span class="p">)</span></code></pre></figure>
+
+<p><img src="/public/images/eda-water-1/unnamed-chunk-1-1.svg" alt="plot of chunk unnamed-chunk-1" /></p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">### trades over time
+</span><span class="n">trade_counts</span> <span class="o">&lt;-</span> <span class="n">ggplot</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="p">[</span><span class="n">c</span><span class="p">(</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">variable</span><span class="o">==</span><span class="s2">"n_ents"</span><span class="p">),</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">variable</span><span class="o">==</span><span class="s2">"n_alls"</span><span class="p">)),],</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">MonthOfTrade</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">value</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">mdb</span><span class="p">)))</span>
+
+<span class="n">trade_counts</span> <span class="o">+</span> <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span> <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">"lm"</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">NA</span><span class="p">)</span> <span class="o">+</span> <span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="n">variable</span><span class="p">)</span> <span class="o">+</span> <span class="n">scale_colour_discrete</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"In MDB"</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"No"</span><span class="p">,</span><span class="s2">"Yes"</span><span class="p">))</span> <span class="o">+</span> <span class="n">ggtitle</span><span class="p">(</span><span class="s2">"Trades in and out of MDB"</span><span class="p">)</span> <span class="o">+</span> <span class="n">ylab</span><span class="p">(</span><span class="s2">"Number of trades per month"</span><span class="p">)</span> <span class="o">+</span> <span class="n">xlab</span><span class="p">(</span><span class="s2">"time"</span><span class="p">)</span></code></pre></figure>
+
+<p><img src="/public/images/eda-water-1/unnamed-chunk-1-2.svg" alt="plot of chunk unnamed-chunk-1" /></p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">### prices over time
+</span><span class="n">trade_prices</span> <span class="o">&lt;-</span> <span class="n">ggplot</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="p">[</span><span class="n">c</span><span class="p">(</span><span class="n">intersect</span><span class="p">(</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">variable</span><span class="o">==</span><span class="s2">"price_ents"</span><span class="p">),</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">value</span><span class="o">!=</span><span class="m">0</span><span class="p">)),</span><span class="n">intersect</span><span class="p">(</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">variable</span><span class="o">==</span><span class="s2">"price_alls"</span><span class="p">),</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">value</span><span class="o">!=</span><span class="m">0</span><span class="p">))),],</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">MonthOfTrade</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">value</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">mdb</span><span class="p">)))</span>  <span class="c1"># only looking at observations with positive prices
+</span>
+<span class="n">trade_prices</span> <span class="o">+</span> <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span> <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">"lm"</span><span class="p">,</span><span class="n">se</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">NA</span><span class="p">)</span> <span class="o">+</span> <span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="n">variable</span><span class="p">)</span> <span class="o">+</span> <span class="n">scale_colour_discrete</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"In MDB"</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"No"</span><span class="p">,</span><span class="s2">"Yes"</span><span class="p">))</span> <span class="o">+</span> <span class="n">ggtitle</span><span class="p">(</span><span class="s2">"Monthly average trade prices in and out of MDB"</span><span class="p">)</span> <span class="o">+</span> <span class="n">ylab</span><span class="p">(</span><span class="s2">"AUD"</span><span class="p">)</span> <span class="o">+</span> <span class="n">xlab</span><span class="p">(</span><span class="s2">"time"</span><span class="p">)</span></code></pre></figure>
+
+<p><img src="/public/images/eda-water-1/unnamed-chunk-1-3.svg" alt="plot of chunk unnamed-chunk-1" /></p>
+
+<p>Three things I see here:</p>
+
+<ol>
+  <li>More trading of entitlements and allocations inside the MDB than outside, both in terms of volumes of water traded as well as number of trades.</li>
+  <li>Allocation trading inside the MDB has been increasing faster than allocation trading outside the MDB, while entitlement trading in both regions seem to follow similar trends.</li>
+  <li>Average monthly prices per megaliter seem about the same inside or outside the MDB. Entitlement prices seem to have been going up over time.</li>
+</ol>
+
+<p>This makes sense; the Murray-Darling Basin accounts for most of Australia’s water use, so I expected to see more activity inside the MDB than outside. 4 states sit inside the MDB: New South Wales, Victoria, Queensland, and South Australia. New South Wales and Victoria have the most area inside the Basin, so we might expect the action in the Basin to be driven by those two. Let’s take a look:</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">load</span><span class="p">(</span><span class="s2">"C:/Users/Akhil/Documents/akhilrao.github.io/public/code/au-water-trading/water-eda-stuff.RData"</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="c1">## drop everything before 2008
+</span><span class="n">trades_m</span> <span class="o">&lt;-</span> <span class="n">subset</span><span class="p">(</span><span class="n">trades_m</span><span class="p">,</span><span class="n">year</span><span class="o">&gt;</span><span class="m">2008</span><span class="p">)</span>
+<span class="n">trades_m_melted</span> <span class="o">&lt;-</span> <span class="n">subset</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="p">,</span><span class="n">year</span><span class="o">&gt;</span><span class="m">2008</span><span class="p">)</span>
+
+<span class="c1">## make plots
+### volumes over time
+</span><span class="n">trade_vols_state</span> <span class="o">&lt;-</span> <span class="n">ggplot</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="p">[</span><span class="n">c</span><span class="p">(</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">variable</span><span class="o">==</span><span class="s2">"v_ents"</span><span class="p">),</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">variable</span><span class="o">==</span><span class="s2">"v_alls"</span><span class="p">)),],</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">MonthOfTrade</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">value</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">variable</span><span class="p">)))</span>
+
+<span class="n">trade_vols_state</span> <span class="o">+</span> <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span> <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">"lm"</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">NA</span><span class="p">)</span> <span class="o">+</span> <span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="n">from_state</span><span class="p">)</span> <span class="o">+</span> <span class="n">scale_colour_discrete</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"Product type"</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"Allocations"</span><span class="p">,</span><span class="s2">"Entitlements"</span><span class="p">))</span> <span class="o">+</span> <span class="n">ggtitle</span><span class="p">(</span><span class="s2">"Water volume traded in each state"</span><span class="p">)</span> <span class="o">+</span> <span class="n">ylab</span><span class="p">(</span><span class="s2">"Volume (ML) traded per month"</span><span class="p">)</span> <span class="o">+</span> <span class="n">xlab</span><span class="p">(</span><span class="s2">"time"</span><span class="p">)</span></code></pre></figure>
+
+<p><img src="/public/images/eda-water-1/unnamed-chunk-2-1.svg" alt="plot of chunk unnamed-chunk-2" /></p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">### counts over time
+</span><span class="n">trade_counts_state</span> <span class="o">&lt;-</span> <span class="n">ggplot</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="p">[</span><span class="n">c</span><span class="p">(</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">variable</span><span class="o">==</span><span class="s2">"n_ents"</span><span class="p">),</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">variable</span><span class="o">==</span><span class="s2">"n_alls"</span><span class="p">)),],</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">MonthOfTrade</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">value</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">variable</span><span class="p">)))</span>
+
+<span class="n">trade_counts_state</span> <span class="o">+</span> <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span> <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">"lm"</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">NA</span><span class="p">)</span> <span class="o">+</span> <span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="n">from_state</span><span class="p">)</span> <span class="o">+</span> <span class="n">scale_colour_discrete</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"Product type"</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"Allocations"</span><span class="p">,</span><span class="s2">"Entitlements"</span><span class="p">))</span> <span class="o">+</span> <span class="n">ggtitle</span><span class="p">(</span><span class="s2">"Trades in each state"</span><span class="p">)</span> <span class="o">+</span> <span class="n">ylab</span><span class="p">(</span><span class="s2">"Number of trades per month"</span><span class="p">)</span> <span class="o">+</span> <span class="n">xlab</span><span class="p">(</span><span class="s2">"time"</span><span class="p">)</span></code></pre></figure>
+
+<p><img src="/public/images/eda-water-1/unnamed-chunk-2-2.svg" alt="plot of chunk unnamed-chunk-2" /></p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">### prices over time
+</span><span class="n">trade_prices_state</span> <span class="o">&lt;-</span> <span class="n">ggplot</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="p">[</span><span class="n">c</span><span class="p">(</span><span class="n">intersect</span><span class="p">(</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">variable</span><span class="o">==</span><span class="s2">"price_ents"</span><span class="p">),</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">value</span><span class="o">!=</span><span class="m">0</span><span class="p">)),</span><span class="n">intersect</span><span class="p">(</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">variable</span><span class="o">==</span><span class="s2">"price_alls"</span><span class="p">),</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">value</span><span class="o">!=</span><span class="m">0</span><span class="p">))),],</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">MonthOfTrade</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">value</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">variable</span><span class="p">)))</span> 
+
+<span class="n">trade_prices_state</span> <span class="o">+</span> <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span> <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">"lm"</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">NA</span><span class="p">)</span> <span class="o">+</span> <span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="n">from_state</span><span class="p">)</span> <span class="o">+</span> <span class="n">scale_colour_discrete</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"Product type"</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"Allocations"</span><span class="p">,</span><span class="s2">"Entitlements"</span><span class="p">))</span> <span class="o">+</span> <span class="n">ggtitle</span><span class="p">(</span><span class="s2">"Monthly average trade prices in each state"</span><span class="p">)</span> <span class="o">+</span> <span class="n">ylab</span><span class="p">(</span><span class="s2">"AUD"</span><span class="p">)</span> <span class="o">+</span> <span class="n">xlab</span><span class="p">(</span><span class="s2">"time"</span><span class="p">)</span></code></pre></figure>
+
+<p><img src="/public/images/eda-water-1/unnamed-chunk-2-3.svg" alt="plot of chunk unnamed-chunk-2" /></p>
+
+<p>(<em>Northern Territory seems to be missing from my data. Might be a coding error on my part.</em>)</p>
+
+<ol>
+  <li>It looks like the increase in volume traded and trade volume for the allocations is driven by Victoria and New South Wales, with New South Wales having some bigger months in terms of both amount traded and frequency of trades.</li>
+  <li>Overall prices per megaliter seem fairly flat, with the exception of entitlements in New South Wales, which seem to be increasing.</li>
+  <li>Not a lot of trades with positive prices in Queensland, I don’t think any in Tasmania.</li>
+</ol>
+
+<p>I’ll look at more cuts of this data in a future post.</p>
+
+  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -745,84 +1042,6 @@ P(B) &= \frac{5,176,00}{310,000,000} = 0.017
     </tr>
   </tbody>
 </table>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="//probability%20theory/lln-proof.html/">
-        Proof of a law of large numbers
-      </a>
-    </h1>
-
-    <span class="post-date">16 Nov 2015</span>
-
-    <p>Usually, when we have a sequence of random variables, we can say things about what the average of the sequence does as the sample grows by assuming things about the moments and the sampling process and then applying an appropriate law of large numbers. But how would we prove a law of large numbers?</p>
-
-<p>Laws of large numbers are statements about averages of random variables converging in probability to a constant. In this example, we assume the existence of a finite first moment, assume random sampling with replacement (IID), and show that a sequence of averages of the IID random variables will converge to the first moment.</p>
-
-<p>Let \( \{X_t\}, ~ t=1,2,… \) be the sequence of IID random variables on a probability space \( ( \Omega, \mathcal{F}, P ) \) with \( E(X_t) = \mu \lt \infty \). The goal is to show that</p>
-
-<script type="math/tex; mode=display">\lim_{n \to \infty} P \left( \omega : \left| \frac{1}{n} \sum_{t=1}^n X_t(\omega) - \mu \right| \gt \epsilon \right) = 0</script>
-
-<h3 id="proof">Proof</h3>
-
-<p>Begin by defining \( A_n \) and its characteristic function:</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-A_n & \equiv \frac{1}{n} \sum_{t=1}^n X_t \cr
-\phi_{A_n}(s) & \equiv E(e^{isA_n }) \cr
-& = \int e^{isA_n } ~ dP \cr
-\end{align} %]]></script>
-
-<p>By the properties of exponential functions and the fact that \( X_t \) is IID, we can write \( \phi_{A_n}(s) \) as</p>
-
-<script type="math/tex; mode=display">\phi_{A_n}(s) =  ( \phi_{X_t} \left( \frac{s}{n} \right) )^n</script>
-
-<p>We can approximate \( \phi_{X_t}(\frac{s}{n}) \) as</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
- \phi_{X_t} \left(\frac{s}{n} \right) & = 1 + is \frac{E(X_t)}{n} + \mathcal{O} \left(\frac{s^2}{n^2} \right) \cr
- & = 1 + is \frac{ \mu }{n} + \mathcal{O} \left(\frac{s^2}{n^2} \right) \cr
- \mathcal{O} \left(\frac{s^2}{n^2} \right) & \equiv i^2 \int_0^{\frac{x}{n}} \left(\frac{x}{n}-s \right) e^{is} ds \cr
-\end{align} %]]></script>
-
-<p>\( \mathcal{O}(\frac{s^2}{n^2}) \) is the remainder from the approximation, the \( \mathcal{O} \) is <a href="https://en.wikipedia.org/wiki/Big_O_notation">big O notation</a> that the remainder is bounded.</p>
-
-<p>So now we have</p>
-
-<script type="math/tex; mode=display">\phi_{A_n}(s) \approx \left( 1 + is \frac{\mu}{n} \right)^n</script>
-
-<p>The trick is to use a binomial expansion here. In general,</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\left( 1+ \frac{a}{n} \right)^n & = \sum_{j=0}^n \binom{n}{j} \left( \frac{a}{n} \right)^j \cr
-\lim_{n \to \infty} \left( 1+ \frac{a}{n} \right)^n & = \sum_{j=0}^{\infty} \left( \frac{a^j}{j!} \right) \cr
-& = e^a \cr
-\end{align} %]]></script>
-
-<p>So, letting \( a = is \mu \),</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\phi_{A_n}(s) & = \left( 1 + is \frac{ \mu }{n} + \mathcal{O}(\frac{s^2}{n^2}) \right)^n \cr
- \lim_{n \to \infty} \phi_{A_n}(s) & = e^{is \mu } = \phi_{ \mu } (s) \cr
-\end{align} %]]></script>
-
-<p>The remainder term \( \mathcal{O} (\frac{s^2}{n^2} ) \to 0 \) as \(n \to \infty\).</p>
-
-<p>By the uniqueness of mapping between characteristic and distribution functions of random variables, \( \lim_{n \to \infty} \phi_{A_n}(s) = \phi_{ \mu }(s) \) implies \( \lim_{n \to \infty} F_{A_n} = F_{ \mu } \), where \( F_{A_n} \) and \( F_{ \mu } \) are the distribution functions of \( A_n \) and \( \mu \) respectively.</p>
-
-<p>This is still only convergence in distribution, not convergence in probability. However, \( \mu \) is a constant, and convergence in distribution to the distribution of a constant is the same as convergence in probability to that constant (think of the constant’s distribution as a point mass). So we have the desired result, \( A_n \overset{p}{\to} \mu \).</p>
-
-<h3 id="discussion">Discussion</h3>
-
-<p>I’m not entirely sure how to interpret the parameter \(s\) for a general characteristic function. The characteristic function is just an exponential Fourier transform, and I would usually interpret that parameter as the “time index” for a given sequence I was Fourier transforming. I’m not sure if that interpretation is justified here, since each random variable is an IID draw from the same distribution. If I wanted to read a “time index” into this, it would be \( t\), which is the draw number. Maybe \(s\) is not very meaningful in this setting, so we can let it be whatever we want?</p>
-
-<p>Anyway, the point of doing it this way is that sometimes a product of exponentials is easier to work with than some arbitrary sum. I should learn more about Fourier transforms and characteristic functions, they seem useful.</p>
 
   </div>
   
