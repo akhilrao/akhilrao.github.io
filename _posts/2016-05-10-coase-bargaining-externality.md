@@ -20,7 +20,7 @@ The situation with the reclining seat seems like something the [Coase theorem](h
 
 What I would like is an app to facilitate this bargaining. I think the app would do something like this:
 
-1. Given two participating users, allow the users to define the property right and the externality in question. For example, "\\\(A\\\) has the right (to recline his chair), \\(B\\) is negatively affected by ( \\(A\\) reclining ) and would like to see if a welfare-improving bargain can be struck."
+1. Given two participating users, allow the users to define the property right and the externality in question. For example, "\\(A\\) has the right (to recline his chair), \\(B\\) is negatively affected by ( \\(A\\) reclining ) and would like to see if a welfare-improving bargain can be struck."
 
 2. Users privately enter their maximum willingness-to-pay and minimum willingness-to-accept to reduce the externality. In the seat example, \\(A\\) would enter his minimum willingness-to-accept to not recline, and \\(B\\) would enter her maximum willingness-to-pay for \\(A\\) to not recline.
 
@@ -38,4 +38,4 @@ i.e., with the NBS, if \\( WTP_B \geq WTA_A \\), \\(B\\) would pay \\(A\\) his m
 
 The usual problem people cite with the Coase theorem in practice is transaction costs, which an app could reduce. I've described the two-person case above but it could be extended to the \\(n\\)-person case. I would be willing to pay $5 for an app that did this, possibly more if it was widely used.
 
-[srlm](https://github.com/srlm-io) made the app! Here it is on [Google Play](https://play.google.com/store/apps/details?id=io.srlm.coasebargaining) and on [Github](https://github.com/srlm-io/coase-bargaining).
+Update: [srlm](https://github.com/srlm-io) made the app! Here it is on [Google Play](https://play.google.com/store/apps/details?id=io.srlm.coasebargaining) and on [Github](https://github.com/srlm-io/coase-bargaining).

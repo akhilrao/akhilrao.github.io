@@ -21,7 +21,7 @@ tagline:          ''
 description:      
 url:              https://akhilrao.github.io
 #url:              https://github.com/akhilrao
-#baseurl:          'https://akhilrao.github.io'
+baseurl:          'https://akhilrao.github.io'
 
 author:
   name:           'Akhil Rao'
