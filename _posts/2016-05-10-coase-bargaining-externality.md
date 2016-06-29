@@ -20,7 +20,7 @@ The situation with the reclining seat seems like something the [Coase theorem](h
 
 What I would like is an app to facilitate this bargaining. I think the app would do something like this:
 
-1. Given two participating users, allow the users to define the property right and the externality in question. For example, "\\(A\\) has the right (to recline his chair), \\(B\\) is negatively affected by ( \\(A\\) reclining ) and would like to see if a welfare-improving bargain can be struck."
+1. Given two participating users, allow the users to define the property right and the externality in question. For example, "\\\(A\\\) has the right (to recline his chair), \\(B\\) is negatively affected by ( \\(A\\) reclining ) and would like to see if a welfare-improving bargain can be struck."
 
 2. Users privately enter their maximum willingness-to-pay and minimum willingness-to-accept to reduce the externality. In the seat example, \\(A\\) would enter his minimum willingness-to-accept to not recline, and \\(B\\) would enter her maximum willingness-to-pay for \\(A\\) to not recline.
 
