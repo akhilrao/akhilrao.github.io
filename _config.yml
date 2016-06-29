@@ -12,7 +12,7 @@ kramdown:
 
 # Permalinks
 permalink:        /:categories/:title.html/
-absolute_permalinks: true
+#absolute_permalinks: true
 
 # Setup
 title:            Produced Under Scarcity
@@ -24,7 +24,8 @@ baseurl:          ''
 
 author:
   name:           'Akhil Rao'
-  url:            https://github.com/akhilrao
+  url:             https://akhilrao.github.io
+  #url:            https://github.com/akhilrao
 
 paginate:         5
 
