@@ -7,11 +7,11 @@ tags: eda, visualization, R, ggplot2, water trading, markets, data, empirics
 year: 2016
 month: 6
 day: 29
-published: false
+published: true
 summary: A look at some Australian water trading data
 ---
 
-*This is my first attempt at using Rmarkdown, knitr, and ggplot2. The scripts to reproduce and extend everything discussed here are [here](https://github.com/akhilrao/akhilrao.github.io/tree/master/public/code/au-water-trading). My use of knitr and Rmarkdown is based on this [post](http://brooksandrew.github.io/simpleblog/articles/blogging-with-r-markdown-and-jekyll-using-knitr/) by Andrew Brooks.*
+*This is my first attempt at using Rmarkdown, knitr, and ggplot2. The scripts to reproduce and extend everything discussed here are [here](https://github.com/akhilrao/akhilrao.github.io/tree/master/public/code/au-water-trading). I converted the knitted Rmarkdown file to markdown with the help of this [post](http://brooksandrew.github.io/simpleblog/articles/blogging-with-r-markdown-and-jekyll-using-knitr/) by Andrew Brooks.*
 
 I'm currently working on two projects: one is about orbital debris and satellites launches (what my previous post was about), and the other is about water trading in Australian water markets (that's what this post is about). It's too early to talk much about the substantive content of either project; in this post I'm going to describe some interesting (to me!) things in some of the water data I have.
 
@@ -100,7 +100,7 @@ Just some `ddply()`, `join()`, and `melt()` to make pictures and tables easier l
 | 2013 | 7288640.034            | 1915709.35              | 30058                       | 7636                         |
 | 2014 | 2975364.894            | 827862.547              | 15160                       | 2316                         |
 
-Note that I'm categorizing these by calendar year, not water year. "ML" stands for megaliter (1 million liters). The 2014 data only goes till September, so the apparent dropoff in trading might be mostly truncated data.
+Note that I'm aggregating these by calendar year, not water year. "ML" stands for megaliter (1 million liters). The 2014 data only goes till September, so the apparent dropoff in trading might be mostly truncated data.
 
 ### Pictures!
 

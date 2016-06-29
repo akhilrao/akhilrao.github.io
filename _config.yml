@@ -11,7 +11,7 @@ kramdown:
   syntax_highlighter: rouge
 
 # Permalinks
-permalink:        /:categories/:title.html
+permalink:        /:categories/:title.html/
 absolute_permalinks: true
 
 # Setup
@@ -34,3 +34,5 @@ github:
   repo:          https://github.com/akhilrao
   
 excerpt_separator: <!--endexcerpt-->
+
+gems: [jekyll-paginate]
