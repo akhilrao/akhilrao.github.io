@@ -38,7 +38,7 @@ which gives us the following first-order condition:
 $$
 \begin{align*} 
  \frac{1}{2} + \frac{p_2^\*}{2t} - \frac{2p_1}{2t} + \frac{c}{2t} & = 0 \cr
- \implies t + p_2^\* - p_1 & = p_1 - c 
+ \implies t + p_2^* - p_1 & = p_1 - c 
 \end{align*}
 $$
 
