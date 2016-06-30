@@ -19,7 +19,7 @@ Suppose you have a city that's on a line normalized to length 1. A mass of consu
 
 [![Linear City](/public/images/hotelling/linear_city.png "Linear City")](/public/images/hotelling/linear_city.png "Linear City")
 
-We can analyze this problem by considering the indifferent consumer, call her $$\tilde{x}$$. Let her be a distance of $$t$$ away from firm 1 and $$1-t$$ away from firm 2. The indifferent consumer's decision looks like this:
+We can analyze this problem by considering the indifferent consumer, call her $\tilde{x}$. Let her be a distance of $$t$$ away from firm 1 and $$1-t$$ away from firm 2. The indifferent consumer's decision looks like this:
 
 $$ v - p_1 - t\tilde{x} = v - p_2 -(1-t)\tilde{x}$$
 
