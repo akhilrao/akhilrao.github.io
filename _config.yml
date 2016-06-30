@@ -1,9 +1,6 @@
 # Dependencies
 markdown:         kramdown
-#mathjax: true
-#redcarpet:
- #   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
-    
+
 highlighter:      rouge
 
 kramdown:
@@ -37,4 +34,4 @@ github:
   
 excerpt_separator: <!--endexcerpt-->
 
-gems: [jekyll-paginate]['jekyll-related-posts']
+gems: [jekyll-paginate][jekyll-related-posts]
