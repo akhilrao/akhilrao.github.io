@@ -37,4 +37,4 @@ github:
   
 excerpt_separator: <!--endexcerpt-->
 
-gems: [jekyll-paginate]
+gems: [jekyll-paginate]['jekyll-related-posts']
