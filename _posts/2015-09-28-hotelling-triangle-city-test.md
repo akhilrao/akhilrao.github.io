@@ -35,12 +35,12 @@ $$ \max_{p_1} (p_1 - c)\tilde{x} $$
 
 which gives us the following first-order condition:
 
-
+$$
 \begin{align*} 
  \frac{1}{2} + \frac{p_2^\*}{2t} - \frac{2p_1}{2t} + \frac{c}{2t} & = 0 \cr
  \implies t + p_2^\* - p_1 & = p_1 - c 
 \end{align*}
-
+$$
 
 The "\*" in "$$p_2^\* $$" is to indicate that firm 1 is taking firm 2's pricing decision as given and already optimized. Because the firms are symmetric, $$p_2 = p_1$$, which gives us:
 
