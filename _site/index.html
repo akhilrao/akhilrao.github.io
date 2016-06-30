@@ -536,6 +536,42 @@
         
       
     
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
 
     <a class="sidebar-nav-item" href="https://github.com/akhilrao/archive/v0.0.1.zip">Download</a>
     <a class="sidebar-nav-item" href="https://github.com/akhilrao">GitHub project</a>
@@ -564,6 +600,31 @@
 
       <div class="container content">
         <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="//2016/06/30/i-love-npp/">
+        I love Notepad++
+      </a>
+    </h1>
+
+    <span class="post-date">30 Jun 2016</span>
+
+    <p>A while back Github Pages upgraded to Jekyll 3.0. As a result, only <code class="highlighter-rouge">kramdown</code> is supported for Jekyll sites hosted on Github Pages.</p>
+
+<p>Seeing as I didn’t pay close attention to what was going on, I spent a while very confused and frustrated trying to figure out why all my MathJax wasn’t displaying properly. Once I figured out what the upgrade was doing, I spent some more time confused and frustrated trying to fix the problem.</p>
+
+<p><a href="http://tobanwiebe.com/blog/2016/02/mathjax-kramdown">This blog post by Toban Wiebe</a> explained what was going on in words I can grok. Unfortunately, I am one of those people with a lot of old posts to convert.</p>
+
+<p>I’ve been reading through “<a href="https://automatetheboringstuff.com/">Automate the Boring Stuff with Python</a>” this summer, so I figured this was a perfect project - write a conversion script. I started down that path, even got as far as figuring out the appropriate regular expressions and writing a first draft of a script.</p>
+
+<p>Then I remembered that <a href="https://notepad-plus-plus.org/">Notepad++</a> (my preferred text editor) has a “Replace All in All Opened Documents” function. Like any good myopic optimizer, I stopped writing that script immediately and pulled up Notepad++.</p>
+
+<p>Problem solved. Hooray for Notepad++!</p>
+
+<p>(It seems like MathJax doesn’t always load with the page anymore, but a couple refreshes solves the problem. Not sure what’s up with that.)</p>
+
+  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -975,75 +1036,6 @@ EV(\text{search}) &= \hat{\beta}(v-p) - c
 <p>where <script type="math/tex">N</script> is the number of sellers, <script type="math/tex">\beta</script> is the probability the average seller has what you want, <script type="math/tex">p</script> is the average price, and <script type="math/tex">c</script> is the search cost. If the expected value of a search is greater than 0, it’s worth at least one search.</p>
 
 <p>Using the app, I can see what the probability of a seller having what I want would need to be for a search to be worth it. I can interpret the point on the x axis where <script type="math/tex">EV(\text{search})=0</script> as the minimum level of belief I would have to hold that the average seller has what I’m looking for for a search to be rational.</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="//web/2016/02/07/conditional-probability-app/">
-        A conditional probability app
-      </a>
-    </h1>
-
-    <span class="post-date">07 Feb 2016</span>
-
-    <p>I wrote my first-ever Shiny app! My first-ever app, too. It’s a simple <a href="https://akhilrao.shinyapps.io/conditionalProbApp/">conditional probability calculator</a>.</p>
-
-<table>
-  <tbody>
-    <tr>
-      <td>Say you have two events, <script type="math/tex">A</script> and <script type="math/tex">B</script>, which occur over two populations <script type="math/tex">N_A</script> and <script type="math/tex">N_B</script>. Input the number of occurrences of <script type="math/tex">A</script> and <script type="math/tex">B</script> and the size of <script type="math/tex">N_A</script> and <script type="math/tex">N_B</script>, and the app will apply Bayes’ rule to show you $$P(A</td>
-      <td>B)<script type="math/tex">for beliefs you may hold over</script>P(B</td>
-      <td>A)$$.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>For example: Suppose you want to know the probability that someone who died in the USA in 2010 was 85+ years old. Event A is taken to be the number of deaths in the USA in 2010, event B is taken to be the population that was 85+ years old in the USA in 2010, and the population size is taken to be the average total population of the USA in 2010 (<script type="math/tex">N_A = N_B</script>). Three Wolfram Alpha queries later we have</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-P(A) &= \frac{2,550,000}{310,000,000} = 0.008 \cr
-P(B) &= \frac{5,176,00}{310,000,000} = 0.017
-\end{align} %]]></script>
-
-<p>By Bayes’ rule, we have</p>
-
-<script type="math/tex; mode=display">P(A|B) = P(B|A) \frac{P(A)}{P(B)}</script>
-
-<p>I think <script type="math/tex">P(A)/P(B)</script> is called the base rate.</p>
-
-<table>
-  <tbody>
-    <tr>
-      <td>Using the app, I can see how the probability someone died given they were 85 or older would change depending on the probability of being 85 or older given they died (in the USA in 2010), or $$P(\text{died in USA in 2010</td>
-      <td>85 or older in USA in 2010})<script type="math/tex">as a function of my beliefs over</script>P(\text{85 or older in USA in 2010</td>
-      <td>died in USA in 2010})$$. In frequency terms, I can calculate the proportion of deaths that were 85+ year olds using the number of 85+ year olds, the number of deaths, the total US population in 2010, and my beliefs over the proportion of 85 year olds who died. I used this example as a “comparison event” for the app.</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <tbody>
-    <tr>
-      <td>In the picture below, the red line is $$P(\text{died in USA in 2010</td>
-      <td>85 or older in USA in 2010})<script type="math/tex">, and the black line is</script>P(A</td>
-      <td>B)<script type="math/tex">for a hypothetical event where</script>P(A) = 15/100<script type="math/tex">and</script>P(B) = 50/100$$.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><a href="/public/images/conditionalProbApp/stock.png" title="Example"><img src="/public/images/conditionalProbApp/stock.png" alt="Example" title="Example" /></a></p>
-
-<table>
-  <tbody>
-    <tr>
-      <td>I wrote this app to help me think through conditional probabilities more clearly. Often I hold beliefs over some $$P(B</td>
-      <td>A)<script type="math/tex">and use those beliefs to infer something about the corresponding</script>P(A</td>
-      <td>B)$$, not necessarily considering the base rate. Hopefully I’ll neglect base rates a little less going forward.</td>
-    </tr>
-  </tbody>
-</table>
 
   </div>
   
