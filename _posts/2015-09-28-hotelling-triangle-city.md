@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Triangle City - A Hotelling Model - test
+title: Triangle City - A Hotelling Model
 category: micro theory
 tags: micro-theory hotelling differentiation
 year: 2015
@@ -77,7 +77,8 @@ $$
 
 Under what condition(s) will the consumers only shop at their local store? The utility from shopping at a local store must be strictly greater than the utility from going to the far store, i.e.
 
-$$ U(firm 1) = U(firm 2) > U(firm 3) $$ or
+$$ U(firm 1) = U(firm 2) > U(firm 3) $$
+ or
 $$ v - p_1 - t\tilde{x} > v - p_3 - (1+\tilde{x})t $$
 
 

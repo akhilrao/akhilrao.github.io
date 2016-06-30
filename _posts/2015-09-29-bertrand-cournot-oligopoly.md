@@ -32,11 +32,11 @@ $$ \max_{q_i}  (p - c)q_i $$
 
 The FOC is:
 
-$$ a - 2bq_i - bq_j^\* - c = 0 $$
+$$ a - 2bq_i - bq_j^* - c = 0 $$
 
 Firm $$i$$'s best-response function is:
 
-$$ q_i^\* = \frac{a - bq_j^\* - c}{2b} $$
+$$ q_i^* = \frac{a - bq_j^* - c}{2b} $$
 
 Since the firms are symmetric, $$q_i = q_j$$, giving us firm i's equilibrium quantity:
 
@@ -52,8 +52,8 @@ The conditions and results are similar for $$n$$ symmetric firms. Inverse demand
 
 $$ \begin{align}
 & \max_{q_i}  (p - c)q_i \cr
-\text{FOC:} &  a - 2bq_i - b\sum_{j \neq i}^n q_j^\* - c = 0 \cr
-\text{BR:} &  q_i^\* = \frac{a - (n-1)bq_j - c}{2b} \cr
+\text{FOC:} &  a - 2bq_i - b\sum_{j \neq i}^n q_j^* - c = 0 \cr
+\text{BR:} &  q_i^* = \frac{a - (n-1)bq_j - c}{2b} \cr
 \implies & q_i = \frac{a-c}{(n+1)b}, \cr
  & P = \frac{a}{n+1} + \frac{n}{n+1}c, \cr
  & \pi = \frac{(a-c)^2}{(n+1)^2} \cr
@@ -90,8 +90,8 @@ Same as the earlier 2-firm setup, except now $$c_i > c_j$$.
 
 
 $$ \begin{align}
-BR_i : & q_i^\* = \frac{a - bq_{j}^\* - c_i}{2b} \cr
-BR_j : & q_j^\* = \frac{a - bq_{i}^\* - c_j}{2b} \cr
+BR_i : & q_i^* = \frac{a - bq_{j}^* - c_i}{2b} \cr
+BR_j : & q_j^* = \frac{a - bq_{i}^* - c_j}{2b} \cr
 \implies & q_i = \frac{a- 2c_i + c_j}{3b} \cr
  & q_j = \frac{a- 2c_j + c_i}{3b} \cr
 \implies & q_i < q_j \cr
