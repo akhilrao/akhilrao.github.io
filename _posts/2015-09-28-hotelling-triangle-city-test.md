@@ -36,10 +36,10 @@ $$ \max_{p_1} (p_1 - c)\tilde{x} $$
 which gives us the following first-order condition:
 
 
-\begin{align} 
+\begin{align*} 
  \frac{1}{2} + \frac{p_2^\*}{2t} - \frac{2p_1}{2t} + \frac{c}{2t} & = 0 \cr
  \implies t + p_2^\* - p_1 & = p_1 - c 
-\end{align}
+\end{align*}
 
 
 The "\*" in "$$p_2^\* $$" is to indicate that firm 1 is taking firm 2's pricing decision as given and already optimized. Because the firms are symmetric, $$p_2 = p_1$$, which gives us:
@@ -67,10 +67,13 @@ Everything is the same as before, except that there are 3 firms and they are loc
 Let's normalize the sides to length 1. The firms are symmetric with respect to costs, and the consumers are distributed uniformly along the edges of the triangle. Once again, we look at the indifferent consumer, $$\tilde{x}$$. Without loss of generality, let's consider the indifferent consumer between firm 1 and firm 2. As before, we have
 
 
-$$ \begin{align} 
+$$ 
+\begin{align*} 
 v - p_1 - t\tilde{x} & = v - p_2 - t(1-\tilde{x}) \cr
 \implies \tilde{x} & = \frac{1}{2} + \frac{p_2 - p_1}{2t}
-\end{align} $$
+\end{align*} 
+\end{align*} 
+$$
 
 
 Under what condition(s) will the consumers only shop at their local store? The utility from shopping at a local store must be strictly greater than the utility from going to the far store, i.e.
