@@ -10,7 +10,7 @@ published: true
 summary: A firm's profit is a random variable. A manager can exert effort to influence it. An equilibrium is described given some conditions on the conditional density of profit and the manager's utility from effort.
 ---
 
-Suppose a firm's owner contracts a manager to run the firm. The firm's profit is a random variable $$\pi \in [\pi_a , \pi_b]\$$  which the manager can influence through some effort. For simplicity, assume effort is discrete: $$e \in \\{e_l,e_h\\}$$, with $$e_h \gt e_l \ge 0 $$.  The manager's efforts are such that profits with $$e_h$$ first-order stochastically dominate profits with $$e_l$$, i.e. $$E \ [\pi|e_h] \gt E \ [\pi|e_l]$$ and $$ f(\pi|e) \gt 0 ~~ \forall \pi$$. The manager's utility is $$u(w,e) = v(w) - g(e)$$ with $$g(e_h) \gt g(e_l) $$ and $$v'(w) \gt 0, v''(w) \lt 0$$. The manager's utility strictly concave, so they are risk-averse. Let's assume the manager's reservation utility is $$\bar{u} \ge 0 $$.
+Suppose a firm's owner contracts a manager to run the firm. The firm's profit is a random variable $$\pi \in [\pi_a , \pi_b]\$$  which the manager can influence through some effort. For simplicity, assume effort is discrete: $$e \in \{e_l,e_h\}$$, with $$e_h \gt e_l \ge 0 $$.  The manager's efforts are such that profits with $$e_h$$ first-order stochastically dominate profits with $$e_l$$, i.e. $$E \ [\pi|e_h] \gt E \ [\pi|e_l]$$ and $$ f(\pi|e) \gt 0 ~~ \forall \pi$$. The manager's utility is $$u(w,e) = v(w) - g(e)$$ with $$g(e_h) \gt g(e_l) $$ and $$v'(w) \gt 0, v''(w) \lt 0$$. The manager's utility strictly concave, so they are risk-averse. Let's assume the manager's reservation utility is $$\bar{u} \ge 0 $$.
 
 The idea is that the manager would prefer to exert less effort to more, but that more effort is likely to produce higher profits than less effort. No manager can control everything - profit is still a random variable and low realizations can occur when the manager exerts more effort, it's just less likely. The manager's reservaton utility is their outside offer or what they could produce at home. For clarity, let's call the owner she and the manager he.
 
@@ -19,7 +19,7 @@ The idea is that the manager would prefer to exert less effort to more, but that
 If the manager's efforts are publicly observable, then the owner solves
 
 $$ \begin{align}
-\max_{e \in \\{e_l, e_h \\}, w( \pi )} ~~& \int_{\pi_a}^{\pi_b} [\pi - w( \pi )] f(\pi | e) ~ d \pi \cr
+\max_{e \in \{e_l, e_h \}, w( \pi )} ~~& \int_{\pi_a}^{\pi_b} [\pi - w( \pi )] f(\pi | e) ~ d \pi \cr
 \text{s.t.} ~~& \int_{\pi_a}^{\pi_b} v(w(\pi )) f(\pi | e) ~ d \pi - g(e) \ge \bar{u}
 \end{align} $$
 

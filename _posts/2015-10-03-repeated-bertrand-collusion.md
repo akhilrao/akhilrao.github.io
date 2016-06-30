@@ -23,7 +23,7 @@ Let's take the same example, and assume that play is history-dependent, i.e. pla
 ### Case 1:
 Suppose players are competing in a market with inverse demand $$D(p)$$, call it market A, and have a discount factor $$\delta \lt 1$$. The history at any period $$T$$ is given by:
 
-$$ H_{T-1} = \\{ (p_{i,t}); i=1,2,...,N; t=1,2,...,T-1 \\} $$
+$$ H_{T-1} = \{ (p_{i,t}); i=1,2,...,N; t=1,2,...,T-1 \} $$
 
 The [trigger strategy](https://en.wikipedia.org/wiki/Trigger_strategy) I define for each player $$i$$ to collude is:
 
@@ -75,7 +75,7 @@ Finally, what if the firms compete in markets A and B simultaneously? Is collusi
 
 The history at time T is: 
 
-$$ H_{T-1} = \\{ (p_{i,t,A},p_{i,t,B}); i=1,2,...,N; t=1,2,...,T-1\\} $$
+$$ H_{T-1} = \{ (p_{i,t,A},p_{i,t,B}); i=1,2,...,N; t=1,2,...,T-1\} $$
 
 The trigger strategy I define is:
 

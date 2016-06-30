@@ -13,7 +13,7 @@ summary: A planner solves a representative agent's problem when capital can be u
 Suppose a planner is solving a representative agent's problem. The agent can use capital at a varying rate $$\mu \in [0,1] $$ and the depreciation rate $$ \delta $$ is affected by capital utilization, specifically $$ \delta( \mu ) = \delta \mu^{\alpha} $$ with $$ 1 \lt \alpha \lt \infty $$. The planner solves
 
 $$ \begin{align}
-\max_{\\{c_t\\},\\{x_t\\},\\{k_{t+1}\\},\\{\mu_t\\}} ~~ & \sum_{t=0}^{\infty} \beta^t u(c_t) \cr
+\max_{\{c_t\},\{x_t\},\{k_{t+1}\},\{\mu_t\}} ~~ & \sum_{t=0}^{\infty} \beta^t u(c_t) \cr
 \text{s.t.}~~ & c_t + x_t \le f( \mu_t k_t ) \cr
 & k_{t+1} \le (1-\delta(\mu_t))k_t + x_t \cr
 & c \ge 0,~ x_t \ge 0,~ k_{t+1} \ge 0,~ \mu_t \in [0,1] ~~ \forall t \cr

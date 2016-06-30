@@ -12,7 +12,7 @@ summary: An example of a two-part tariff for a monopolist.
 
 What if a monopolist could design a pricing scheme to capture more consumer surplus when consumers have different valuations of the product? This is the idea behind price discrimination. A two-part tariff is a way to implement price discrimination when the seller is uncertain about the individual consumer's valuation.
 
-In a two-part tariff, the seller prices the good as $$T(q) = A + pq $$. This creates a continuum of bundles, $$ \\{T,q\\} $$, located on a straight line. In choosing a quantity, the consumer chooses a bundle along this line, and in any bundle, the consumer pays at least $$A$$.
+In a two-part tariff, the seller prices the good as $$T(q) = A + pq $$. This creates a continuum of bundles, $$ \{T,q\} $$, located on a straight line. In choosing a quantity, the consumer chooses a bundle along this line, and in any bundle, the consumer pays at least $$A$$.
 
 Two-part tariffs can only work if there is limited arbitrage. It doesn't work if a consumer can just acquire the good and re-sell it at $$A$$. An amusement park that charges an admission price and a price per ride (a time cost?) is an example. This pricing scheme is a de facto quantity discount, since the average cost goes down as the quantity purchased increases.
 

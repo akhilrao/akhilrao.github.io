@@ -20,7 +20,7 @@ A [competitive equilibrium](https://en.wikipedia.org/wiki/Competitive_equilibriu
 
 $$\begin{align}
 w^*(\theta)=E \ [ \ \theta \ | \ \theta \in \theta^*] \cr
-\theta^*(w)= \\{ \theta \ : \ r \le w \\}
+\theta^*(w)= \{ \theta \ : \ r \le w \}
 \end{align}$$
 
 The firm will pay workers the expected value of their marginal productivity, which ends up being a constant. The workers will work if the wage is greater than or equal to what they could get staying at home. If the workers' reservation wage is greater than the firm's wage (expected marginal productivity of labor), no one will work. If $$r<w=E[v]$$, everyone will work.

@@ -16,7 +16,7 @@ The NBS represents a particular example of an axiomatic bargaining system. These
 
 The division of the joint surplus should satisfy some individual rationality and collective rationality (pareto efficiency) constraints. This can still leave us with a whole set of equilibria all along the efficient frontier. So we impose some axioms on the solution based on how we think the cooperation should be, and that usually gives us a unique equilibrium. Axiomatic bargaining is sometimes called "equilibrium selection" because we choose the equilibrium by choosing the axioms.
 
-A two-player bargaining problem is characterized by a pair $$ (F,v) $$, where $$F$$ is a closed and convex "feasible set" and $$v \in F$$ is a vector of disagreement outcomes. The set $$ F \cap \\{ (x_1 , x_2) : x_1 \gt v_1, x_2 \gt v_2  \\} $$ should be bounded and non-empty. This is the set of feasible outcomes that is strictly better than the outcome if they can't agree, $$ (v_1, v_2) $$.
+A two-player bargaining problem is characterized by a pair $$ (F,v) $$, where $$F$$ is a closed and convex "feasible set" and $$v \in F$$ is a vector of disagreement outcomes. The set $$ F \cap \{ (x_1 , x_2) : x_1 \gt v_1, x_2 \gt v_2  \} $$ should be bounded and non-empty. This is the set of feasible outcomes that is strictly better than the outcome if they can't agree, $$ (v_1, v_2) $$.
 
 ### Axioms and Motivation
 
@@ -24,7 +24,7 @@ The NBS for two players is a mapping $$ \phi : F \to R^2 $$ which satisfies the 
 
 1. Symmetry (SYM): For every $$ (F,v) $$, if $$ (F,v) $$ is symmetric, then $$ \phi_1 (F,v) = \phi_2 (F,v)$$ (both players receive the same outcome). 
 
-2. Weak Pareto Optimality (WPO): For every $$ (F,v) $$ we should have $$ \phi (F,v) \in W(T) $$, where for $$ T \subset R^2 $$, $$ W(T) := \\{ x \in T: \not\exists \ y \in T \ \text{s.t.} \ y \gt x \\} $$.
+2. Weak Pareto Optimality (WPO): For every $$ (F,v) $$ we should have $$ \phi (F,v) \in W(T) $$, where for $$ T \subset R^2 $$, $$ W(T) := \{ x \in T: \not\exists \ y \in T \ \text{s.t.} \ y \gt x \} $$.
 
 3. Scale Transformation Covariance (STC): For every $$ (F,v) $$ and all $$a,b \in R^2 $$ with $$a \gt 0 $$ and $$ (aF + b, av + b) \in F $$, we have $$ \phi(aF + b, av + b) = a \phi(F,v) + b $$.
 
