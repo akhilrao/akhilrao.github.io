@@ -12,13 +12,13 @@ summary: How should you optimally price a piece of used furniture when you're mo
 
 Today's post is a variation on [monopoly pricing for discrete demand](http://akhilrao.github.io/micro%20theory/2015/10/04/monopoly-pricing-discrete-demand/).
 
-Suppose you're moving, and you have a piece of used furniture that you need to sell. You've got two potential buyers, \\(B_1\\) and \\(B_2\\), lined up to buy it. They arrive sequentially, so \\(B_2\\) won't have anything to look at if \\(B_1\\) buys. Assume \\(B_i\\) is willing to pay \\(v_i\\) for the furniture, where \\(v_i\\) is an independent draw from a uniform CDF \\(F(v_i) = \frac{v_i - a}{b - a}\\) for \\(v_i \in [a,b]\\). The furniture has no value to you if it isn't sold - you can't take it with you - and there is no discounting. There's no bargaining, either - you get to make a take-it-or-leave-it offer to each buyer.
+Suppose you're moving, and you have a piece of used furniture that you need to sell. You've got two potential buyers, $$B_1$$ and $$B_2$$, lined up to buy it. They arrive sequentially, so $$B_2$$ won't have anything to look at if $$B_1$$ buys. Assume $$B_i$$ is willing to pay $$v_i$$ for the furniture, where $$v_i$$ is an independent draw from a uniform CDF $$F(v_i) = \frac{v_i - a}{b - a}$$ for $$v_i \in [a,b]$$. The furniture has no value to you if it isn't sold - you can't take it with you - and there is no discounting. There's no bargaining, either - you get to make a take-it-or-leave-it offer to each buyer.
 
-Let's start at the end of this game with some numbers: \\(a=40, b\=140\\).
+Let's start at the end of this game with some numbers: $$a=40, b\=140$$.
 
 #### Pricing for the second buyer
 
-Suppose \\(B_1\\) rejected your offer, so you're pricing it for \\(B_2\\). The game ends if this buyer rejects, so this round is basically a standard discrete demand monopoly pricing problem. Your price solves
+Suppose $$B_1$$ rejected your offer, so you're pricing it for $$B_2$$. The game ends if this buyer rejects, so this round is basically a standard discrete demand monopoly pricing problem. Your price solves
 
 $$ \max_{p_2} ~ (p_2-c)(1-F(p_2)) $$
 

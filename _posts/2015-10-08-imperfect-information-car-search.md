@@ -11,7 +11,7 @@ summary: If you have to search randomly across sellers of varying quality, when 
 ---
 
 
-Suppose you are considering purchasing a used car. There are \\(N \ge 1\\) sellers. The value of seller \\(i\\)'s car is \\(v_i\\), given by
+Suppose you are considering purchasing a used car. There are $$N \ge 1$$ sellers. The value of seller $$i$$'s car is $$v_i$$, given by
 
 $$v_i =
 \begin{cases}
@@ -19,11 +19,11 @@ $$v_i =
 0 ~~ \text{with probability} ~~ 1- \beta_i \cr
 \end{cases}$$
 
-where \\(\beta_i = \beta^i, i=1,...,N\\) and the \\(\beta_i\\) are all independent of each other. So as the number of sellers increases, we start with the best seller and only add sellers worse than the current ones. Since we search in a random order, for a given \\(N\\) this just tells us the distribution of sellers. A seller's \\(\beta_i\\) is their private information. This is sort of like looking for a car on Craigslist or some other search; holding \\(N\\) constant, you search randomly over sellers of uncertain quality.
+where $$\beta_i = \beta^i, i=1,...,N$$ and the $$\beta_i$$ are all independent of each other. So as the number of sellers increases, we start with the best seller and only add sellers worse than the current ones. Since we search in a random order, for a given $$N$$ this just tells us the distribution of sellers. A seller's $$\beta_i$$ is their private information. This is sort of like looking for a car on Craigslist or some other search; holding $$N$$ constant, you search randomly over sellers of uncertain quality.
 
-You're a savvy shopper though, and before you buy the car you're going to get it inspected, which costs \\(c\\). You could also think about this as a search cost, to avoid confusion over inspection-less visits to sellers. Suppose the price of a car is \\(1/2\\) from every seller, for simplicity. You can inspect as many sellers as you want, but only one at a time.
+You're a savvy shopper though, and before you buy the car you're going to get it inspected, which costs $$c$$. You could also think about this as a search cost, to avoid confusion over inspection-less visits to sellers. Suppose the price of a car is $$1/2$$ from every seller, for simplicity. You can inspect as many sellers as you want, but only one at a time.
 
-Based on \\(\beta\\), \\(N\\), and \\(c\\), when will it be optimal for you to search at least once?
+Based on $$\beta$$, $$N$$, and $$c$$, when will it be optimal for you to search at least once?
 
 #### Benchmark case: Expected-utility maximizer
 
@@ -42,7 +42,7 @@ $$\begin{align}
  \implies c &\le \frac{1}{2}\hat{\beta} \cr
 \end{align}$$
 
-We use \\(\hat{\beta}(v-p)\\) instead of \\(\hat{\beta}-p\\) because our value from the car is \\(1\\) for sure - the uncertainty is in whether or not we see it, not in the value itself.
+We use $$\hat{\beta}(v-p)$$ instead of $$\hat{\beta}-p$$ because our value from the car is $$1$$ for sure - the uncertainty is in whether or not we see it, not in the value itself.
 
 This gives us a bound on whether or not it is optimal to search - an expected-utility maximizer will search if the expected value of the car is greater than the inspection cost.
 
@@ -52,14 +52,14 @@ This makes sense, but there's another way we can approach this question.
 
 I guess another way to put this is a "minimum-utility maximizer". I've never heard that term before. I think worst-case bounds are more popular in computer science than economics, which is probably why I haven't heard it called that. 
 
-The worst case we could encounter on our first search is to visit seller \\(N\\) first. A minimum-utility maximizer only wants to search if even in this bad draw is worth their time, or
+The worst case we could encounter on our first search is to visit seller $$N$$ first. A minimum-utility maximizer only wants to search if even in this bad draw is worth their time, or
 
 $$\begin{align}
 \beta^N(v-p) - c &\ge 0 \cr
 \implies c &\le \frac{1}{2}\beta^N \cr
 \end{align}$$
 
-which looks pretty similar to the expected-utility maximizer's solution, but with \\(\beta^N\\) instead of \\(\hat{\beta}\\). This implies a more "conservative" decision rule than the benchmark solution.
+which looks pretty similar to the expected-utility maximizer's solution, but with $$\beta^N$$ instead of $$\hat{\beta}$$. This implies a more "conservative" decision rule than the benchmark solution.
 
 #### Summary
 
@@ -73,11 +73,11 @@ In general, the worst-case bound requires less information than the expected-val
 
 While the minimum-utility maximizer may ignore opportunities that the expected-utility maximizer would take, the minimum-utility maximizer can consistently apply their decision rule in more situations than the expected-utility maximizer can.
 
-Below is a plot of the cost bounds with \\(\beta=0.99\\) as the number of sellers increases. The worst-case bound is in red, the expected-utility bound is in blue.
+Below is a plot of the cost bounds with $$\beta=0.99$$ as the number of sellers increases. The worst-case bound is in red, the expected-utility bound is in blue.
 
 [![Cost bounds](/public/images/search/cost_bounds_used_car.PNG "Cost bounds")](/public/images/search/cost_bounds_used_car.PNG "Cost bounds")
 
-The bounds both approach 0 as the number of sellers increases. With \\(\beta=0.99\\) the two are practically indistinguishable after 20000 or so sellers - which seems like a pretty big market to me, maybe not relative to financial markets but still. With \\(\beta=0.5\\) (not shown) the two are practically indistinguishable after 600 or so sellers. The lower \\(\beta\\) is, the faster they approach each other - intuitive from the functions, but I hadn't expected the worst-case bound to drop quite so fast.
+The bounds both approach 0 as the number of sellers increases. With $$\beta=0.99$$ the two are practically indistinguishable after 20000 or so sellers - which seems like a pretty big market to me, maybe not relative to financial markets but still. With $$\beta=0.5$$ (not shown) the two are practically indistinguishable after 600 or so sellers. The lower $$\beta$$ is, the faster they approach each other - intuitive from the functions, but I hadn't expected the worst-case bound to drop quite so fast.
 
 I found a neat quote on [Turing's Invisible Hand](https://agtb.wordpress.com/2009/09/06/cs-and-economics-different-attitudes/) about worst-case vs. expected-case more generally:
 

@@ -12,15 +12,15 @@ summary: A Hotelling monopolist producing a zero marginal cost good faces compet
 
 This post and [previous post](http://akhilrao.github.io/micro%20theory/2015/10/19/risky-good-supply-passthrough/) are about markets where illegal things happen. This one is about a digital good that can be pirated.
 
-The basic idea is: consumers can buy 1 unit of the good from the firm at price \\(p\\), or for free at some chance \\( \theta \in (0,1) \\) of 0 payoff ("piracy and arrest"). The good can be reproduced at 0 marginal cost.
+The basic idea is: consumers can buy 1 unit of the good from the firm at price $$p$$, or for free at some chance $$ \theta \in (0,1) $$ of 0 payoff ("piracy and arrest"). The good can be reproduced at 0 marginal cost.
 
 The setting is a version of [Linear City](http://akhilrao.github.io/micro%20theory/2015/09/28/hotelling-triangle-city/). There are three refinements on the standard Hotelling-on-a-line-of-length-1 setup here:
 
-1. Consumers choose between buying at the firm, F, or getting the good for free from an illegal source T (like torrent sites). Getting the good for free comes with a probability \\( \theta \\) of 0 payoff. This is the risk of getting sued or arrested for illegally consuming the content.
-2. The marginal cost of producing the good is 0. This is reasonable for digital goods, where the marginal cost is some \\(\epsilon\\) very small.
-3. The travel cost is directional: \\(t^F\\) to get to the firm, and \\(t^T\\) to get to the torrent. This is a crude way to capture the different user experiences of consuming a digital good through the firm or the torrent. No assumptions on the ordering of travel costs; they can even be equal, though that would defeat the point.
+1. Consumers choose between buying at the firm, F, or getting the good for free from an illegal source T (like torrent sites). Getting the good for free comes with a probability $$ \theta $$ of 0 payoff. This is the risk of getting sued or arrested for illegally consuming the content.
+2. The marginal cost of producing the good is 0. This is reasonable for digital goods, where the marginal cost is some $$\epsilon$$ very small.
+3. The travel cost is directional: $$t^F$$ to get to the firm, and $$t^T$$ to get to the torrent. This is a crude way to capture the different user experiences of consuming a digital good through the firm or the torrent. No assumptions on the ordering of travel costs; they can even be equal, though that would defeat the point.
 
-I'm assuming that the good is identical whether it's consumed from the firm or the torrent, so the value is a common \\(v\\). 
+I'm assuming that the good is identical whether it's consumed from the firm or the torrent, so the value is a common $$v$$. 
 
 ### The marginal consumer
 
@@ -32,7 +32,7 @@ v - p - t^F x &= (1- \theta)(v-t^T (1-x)) \cr
 \implies x & = \frac{\theta v - p + t^T (1- \theta) }{t^F + t^T (1- \theta)} \cr
 \end{align} $$
 
-The expression \\( t^T (1 - \theta) \\) is "expected cost of surviving piracy". 
+The expression $$ t^T (1 - \theta) $$ is "expected cost of surviving piracy". 
 
 ### The firm
 
@@ -58,15 +58,15 @@ p & = \frac{1}{2} (\theta v + t^T (1- \theta)) \cr
 \pi &= \frac{ ( \theta v + t^T (1- \theta) )^2 }{4( t^F + t^T (1- \theta) )} \cr
 \end{align}$$
 
-As \\( \theta \to 1 \\), the equilibrium approaches the regular Hotelling monopoly equilibrium with zero marginal cost,
+As $$ \theta \to 1 $$, the equilibrium approaches the regular Hotelling monopoly equilibrium with zero marginal cost,
 
 $$ x_{(\theta = 1)} = \frac{ v }{2 t^F  } , ~~ p_{(\theta = 1)} = \frac{v}{2}, ~~ \pi_{(\theta = 1)} = \frac{ v^2 }{4 t^F } $$
 
-The equilibrium price is a combination of the monopoly price and the expected cost of surviving piracy. If \\( t^T \lt v \\) (as it necessarily-but-not-sufficiently should be if there is piracy), then the price with piracy is lower than the price if piracy isn't an option. 
+The equilibrium price is a combination of the monopoly price and the expected cost of surviving piracy. If $$ t^T \lt v $$ (as it necessarily-but-not-sufficiently should be if there is piracy), then the price with piracy is lower than the price if piracy isn't an option. 
 
 The equilibrium demand is a combination of monopoly and duopoly demand expressed in terms of the expected cost of surviving piracy. I think this is because even though it's not another firm, with consumer demand being uniformly distributed the torrents act as a competitive force against the firm. I think for reasonably values of travel cost, the indifferent consumer is closer to the firm than they would be without piracy, or under a uniform-value duopoly, implying that the piracy option reduces the firm's marketshare (which makes sense).
 
-The equilibrium profits are similarly a combination of monopoly and duopoly profits, with the latter expressed in terms of expected cost of surviving piracy. This is smaller than the monopoly profit. I'm not sure if it's smaller than the duopoly profit as well; probably depends on the value of \\( t^T (1- \theta) \\).
+The equilibrium profits are similarly a combination of monopoly and duopoly profits, with the latter expressed in terms of expected cost of surviving piracy. This is smaller than the monopoly profit. I'm not sure if it's smaller than the duopoly profit as well; probably depends on the value of $$ t^T (1- \theta) $$.
 
 From the demand, we can see how much piracy vs legal purchasing is happening:
 
@@ -77,11 +77,11 @@ $$ \begin{align}
 
 
 
-Finally, we can find a restriction on \\( \theta \\) such that \\( x \lt 1 \\) (consumers always pirate):
+Finally, we can find a restriction on $$ \theta $$ such that $$ x \lt 1 $$ (consumers always pirate):
 
 $$ \implies ~ \theta \lt \frac{2t^F + t^T }{v + t^T } $$
 
-This always holds when \\( v \lt 2t^F \\), since \\( \theta \lt 1 \\). If consumers don't value the good enough relative to the travel cost of legal purchase, they would accept any chance of arrest and pirate the good (\\( \lim_{\theta \to 1} (x) \lt 1 \\) ) .
+This always holds when $$ v \lt 2t^F $$, since $$ \theta \lt 1 $$. If consumers don't value the good enough relative to the travel cost of legal purchase, they would accept any chance of arrest and pirate the good ($$ \lim_{\theta \to 1} (x) \lt 1 $$ ) .
 
 ### Summary
 
@@ -93,7 +93,7 @@ I guess the true minimum number of actions is 1 - program a button to execute th
 
 Some possible refinements:
 
-1. Allow the value of the legal/illegal good to vary, maybe making them functions of some level of investment from the firm. Related, allowing the firm to influence \\(t^T \\) through investment in DRM technologies. Individually, probably not too hard.
+1. Allow the value of the legal/illegal good to vary, maybe making them functions of some level of investment from the firm. Related, allowing the firm to influence $$t^T $$ through investment in DRM technologies. Individually, probably not too hard.
 
 2. Make the risk likelihood a function of the quantity of illegal consumption. Probably not hard.
 

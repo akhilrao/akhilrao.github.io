@@ -13,11 +13,10 @@ kramdown:
 
 # Permalinks
 permalink:        /:categories/:year/:month/:day/:title/
-#absolute_permalinks: true
 
 # Setup
 title:            Produced Under Scarcity
-tagline:          'Economics and other distractions'
+tagline:          'Everything is a constrained optimum'
 description:      
 url:              https://akhilrao.github.io
 #url:              https://github.com/akhilrao

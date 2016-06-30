@@ -10,7 +10,7 @@ published: true
 summary: A firm's profit is a random variable. A manager can exert effort to influence it. An equilibrium is described given some conditions on the conditional density of profit and the manager's utility from effort.
 ---
 
-Suppose a firm's owner contracts a manager to run the firm. The firm's profit is a random variable \\(\pi \in [\pi_a , \pi_b]\\\)  which the manager can influence through some effort. For simplicity, assume effort is discrete: \\(e \in \\{e_l,e_h\\}\\), with \\(e_h \gt e_l \ge 0 \\).  The manager's efforts are such that profits with \\(e_h\\) first-order stochastically dominate profits with \\(e_l\\), i.e. \\(E \ [\pi|e_h] \gt E \ [\pi|e_l]\\) and \\( f(\pi|e) \gt 0 ~~ \forall \pi\\). The manager's utility is \\(u(w,e) = v(w) - g(e)\\) with \\(g(e_h) \gt g(e_l) \\) and \\(v'(w) \gt 0, v''(w) \lt 0\\). The manager's utility strictly concave, so they are risk-averse. Let's assume the manager's reservation utility is \\(\bar{u} \ge 0 \\).
+Suppose a firm's owner contracts a manager to run the firm. The firm's profit is a random variable $$\pi \in [\pi_a , \pi_b]\$$  which the manager can influence through some effort. For simplicity, assume effort is discrete: $$e \in \\{e_l,e_h\\}$$, with $$e_h \gt e_l \ge 0 $$.  The manager's efforts are such that profits with $$e_h$$ first-order stochastically dominate profits with $$e_l$$, i.e. $$E \ [\pi|e_h] \gt E \ [\pi|e_l]$$ and $$ f(\pi|e) \gt 0 ~~ \forall \pi$$. The manager's utility is $$u(w,e) = v(w) - g(e)$$ with $$g(e_h) \gt g(e_l) $$ and $$v'(w) \gt 0, v''(w) \lt 0$$. The manager's utility strictly concave, so they are risk-averse. Let's assume the manager's reservation utility is $$\bar{u} \ge 0 $$.
 
 The idea is that the manager would prefer to exert less effort to more, but that more effort is likely to produce higher profits than less effort. No manager can control everything - profit is still a random variable and low realizations can occur when the manager exerts more effort, it's just less likely. The manager's reservaton utility is their outside offer or what they could produce at home. For clarity, let's call the owner she and the manager he.
 
@@ -23,16 +23,16 @@ $$ \begin{align}
 \text{s.t.} ~~& \int_{\pi_a}^{\pi_b} v(w(\pi )) f(\pi | e) ~ d \pi - g(e) \ge \bar{u}
 \end{align} $$
 
-We can think of this as a two-stage decision process: given some level of effort from the manager, the owner wants to pay him the profit-maximizing wage. The constraint is called an "individual rationality (IR) constraint" or a "participation constraint". It's a way to factor the manager's problem into the owner's decision-making - the owner is constrained to pay the manager a wage that is at least as good as the manager's outside offer. If the owner doesn't, the manager won't work for her. For a fixed level of effort \\(e\\), the owner's problem can be simplified to minimizing the manager's wage subject to the participation constraint.
+We can think of this as a two-stage decision process: given some level of effort from the manager, the owner wants to pay him the profit-maximizing wage. The constraint is called an "individual rationality (IR) constraint" or a "participation constraint". It's a way to factor the manager's problem into the owner's decision-making - the owner is constrained to pay the manager a wage that is at least as good as the manager's outside offer. If the owner doesn't, the manager won't work for her. For a fixed level of effort $$e$$, the owner's problem can be simplified to minimizing the manager's wage subject to the participation constraint.
 
 $$ \begin{align}
 \min_{w( \pi )} ~~& \int_{\pi_a}^{\pi_b} w( \pi ) f(\pi | e) ~ d \pi \cr
 \text{s.t.} ~~& \int_{\pi_a}^{\pi_b} v(w(\pi )) f(\pi | e) ~ d \pi - g(e) \ge \bar{u}
 \end{align} $$
 
-A minimization problem can be made into a maximization problem by multiplying the objective by \\(-1\\). Economists seem to prefer maximization, while statisticians and computer scientists seem to prefer minimization. 
+A minimization problem can be made into a maximization problem by multiplying the objective by $$-1$$. Economists seem to prefer maximization, while statisticians and computer scientists seem to prefer minimization. 
 
-Since we integrated over \\(\pi\\) this wage holds for all realizations of profit. We can solve this as a constrained maximization
+Since we integrated over $$\pi$$ this wage holds for all realizations of profit. We can solve this as a constrained maximization
 
 $$ \begin{align}
 \mathcal{L} = & - \int_{\pi_a}^{\pi_b} w( \pi ) f(\pi | e) ~ d \pi + \lambda [\int_{\pi_a}^{\pi_b} v(w(\pi )) f(\pi | e) ~ d \pi - g(e) - \bar{u}] \cr
@@ -40,9 +40,9 @@ $$ \begin{align}
 \implies ~~ & \frac{1}{v'(w(\pi ))} = \lambda
 \end{align} $$
 
-From this we see that for a given level of effort, the optimal wage must be a constant. We can think of this as insurance against profit risk: the optimal contract will insure the risk-averse manager against any realization of profit, since the manager's effort doesn't guarantee high profits, just makes it more likely. The optimal wage profile for any level of effort is to pay the manager the inverse wage-utility of the sum of their reservation utility and their marginal cost of effort, or \\(w^\*_e = v^{-1}(\bar{u} + g(e)) \\).
+From this we see that for a given level of effort, the optimal wage must be a constant. We can think of this as insurance against profit risk: the optimal contract will insure the risk-averse manager against any realization of profit, since the manager's effort doesn't guarantee high profits, just makes it more likely. The optimal wage profile for any level of effort is to pay the manager the inverse wage-utility of the sum of their reservation utility and their marginal cost of effort, or $$w^*_e = v^{-1}(\bar{u} + g(e)) $$.
 
-The lagrange multiplier \\( \lambda\\) on the participation constraint is the owner's [shadow price](https://en.wikipedia.org/wiki/Shadow_price) of the manager's participation: it's the owner's (maximum) willingness-to-pay to marginally reduce the manager's reservation utility. More generally, the lagrange multiplier on a constraint is the improvement to the objective function from marginally relaxing that constraint.
+The lagrange multiplier $$ \lambda$$ on the participation constraint is the owner's [shadow price](https://en.wikipedia.org/wiki/Shadow_price) of the manager's participation: it's the owner's (maximum) willingness-to-pay to marginally reduce the manager's reservation utility. More generally, the lagrange multiplier on a constraint is the improvement to the objective function from marginally relaxing that constraint.
 
 The IR constraint must bind in this problem if the manager works for the owner. Any excess utility the owner gives the manager reduces the owner's profit, so the owner can always do better by reducing the manager's wage until the constraint binds.
 
@@ -58,7 +58,7 @@ $$ \begin{align}
 
 The second constraint is called an "incentive compatibility" (IC) constraint. It says that the effort level the owner wants to implement has to be solve the manager's problem. I think of this as a refinement on the IR constraint - not only should it make sense for the manager to participate, it should be what they would most prefer to do. The manager should have no incentive to deviate. It's not quite the same as the IR constraint, since it's possible for the argmax of the manager's problem under effort is lower than the reservation utility.
 
-Implementing \\(e_l\\) is easy - the owner just pays the manager the same wage as under observable effort. It satisfies the IR constraint, and at that wage the manager would put in low effort anyway (there is no profitable deviation). Implementing \\(e_h\\) is more interesting, since the IC constraint becomes important. For this problem, the IC implies
+Implementing $$e_l$$ is easy - the owner just pays the manager the same wage as under observable effort. It satisfies the IR constraint, and at that wage the manager would put in low effort anyway (there is no profitable deviation). Implementing $$e_h$$ is more interesting, since the IC constraint becomes important. For this problem, the IC implies
 
 $$ \int_{\pi_a}^{\pi_b} v(w(\pi )) f(\pi | e_h ) ~ d \pi - g(e_h ) \ge \int_{\pi_a}^{\pi_b} v(w(\pi )) f(\pi | e_l ) ~ d \pi - g(e_l ) $$
 
