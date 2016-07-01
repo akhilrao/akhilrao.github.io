@@ -14,7 +14,7 @@ permalink:        /:categories/:year/:month/:day/:title/
 # Setup
 title:            Produced Under Scarcity
 tagline:          "Akhil Rao's blog"
-description:      'Economics \cup data science \cup words about things'
+description:      'Economics, data science, and words about things'
 url:              https://akhilrao.github.io
 baseurl:          'https://akhilrao.github.io'
 
