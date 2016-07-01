@@ -1,0 +1,5 @@
+step 1: figure out what you want to knit
+step 2: write up a post as a .Rmd
+step 3: run it through knitr in Rstudio to make sure it works
+step 4: make a folder in \public\images for the plots, if any
+step 5: run the knitr-approved .Rmd file through KnitPost.r in Rstudio, setting the parameter post.pics.dir="folder made for the plots in step 4"

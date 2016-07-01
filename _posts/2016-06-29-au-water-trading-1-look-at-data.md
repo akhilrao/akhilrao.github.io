@@ -35,9 +35,9 @@ There's a lot of state-level heterogeneity in how this all looks in practice, bu
 
 The data used for this post are publicly available at the Bureau of Meteorology's [Water Market Information page](http://www.nationalwatermarket.gov.au/water-market-reports/download-data.html), specifically the "trade history" dataset.
 
-The dataset describes all of the water transactions that occurred between 2009-2014. A lot of the trades have a zero price listed. I spoke to one of the people at the Bureau of Meteorology about this some time back, and he told me that this can be attributed to three factors:
+The dataset describes all of the water transactions that occurred between 2009-2014. A lot of the trades have a zero price listed. I spoke to one of the people at the Bureau of Meteorology about this some time back, and he told me that this can be for three reasons:
 
-1. Water trades between environmental water holders are listed at $0 as a rule
+1. As a rule, water trades between environmental water holders are listed at $0
 2. A single private user may transfer water they own from one area to another, recording a price of $0
 3. Some transactions between two private users may be listed as occuring at $0 because entering the price isn't/wasn't always mandatory (if I recall correctly, the person said this was more likely in more remote areas)
 
@@ -47,13 +47,13 @@ One of my goals for the future is to learn to use mapping tools to get data out 
 
 ## Doing stuff with the data
 
-I'm going to skip all the data cleaning and prep work. It's in the script `prep-trading-data.r`. I'm calling it "cleaning and prep work" but I guess it's called "wrangling" now? What happend to "munging", did it go out of style? [Life's mysteries](https://en.wikipedia.org/wiki/Data_wrangling). 
+I'm going to skip all the data cleaning and prep work ([wrangling](https://en.wikipedia.org/wiki/Data_wrangling)). It's in the script `[prep-trading-data.r](https://github.com/akhilrao/akhilrao.github.io/tree/master/public/code/au-water-trading/prep-trading-data.r)`. 
 
 `prep-trading-data.r` outputs two csv files, one each for allocation and entitlement trades. I used `rm(list=ls())` liberally throughout the `prep-trading-data.r`, so consider yourself warned. Don't use the script if you have other things you want to keep in your workspace.
 
 `prep-trading-data.r` does a bunch of useful things for me, like create an indicator variable for whether a trade was in the Murray-Darling Basin or not, a categorical variable describing the origin and destination states of a trade, and get rid of 14 observations with years like 2103 (at which point we'll have no water, so they're clearly wrong). The most tedious part of writing it was going through the [Australian Water Markets Report 2013-14](http://www.agriculture.gov.au/abares/publications/display?url=http://143.188.17.20/anrdl/DAFFService/display.php?fid=pb_awmr_d9aawr20151211.xml) to figure out whether a given water system was in the Murray-Darling Basin or not.
 
-`ents` and `alls` are from the csv files of prepped daily water trading data. From there I used `water-eda.r` to do a little more processing and make some tables and pictures. The data processing in `water-eda.r` is below:
+`ents` and `alls` are from the csv files of prepped daily water trading data. From there I used `[water-eda-stuff.r](https://github.com/akhilrao/akhilrao.github.io/tree/master/public/code/au-water-trading/water-eda-stuff.r)` to do a little more processing and make some tables and pictures. The data processing in `water-eda-stuff.r` is below:
 
 ```r
 ## load libraries

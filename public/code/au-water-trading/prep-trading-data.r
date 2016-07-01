@@ -74,9 +74,9 @@ surfacewater[c(grep("surface water",ent_data$ProductName),grep("Surface water",e
 regulated[c(grep("regulated",ent_data$ProductName),grep("Regulated",ent_data$ProductName))] <- 1
 productdummies <- cbind(groundwater,river,surfacewater,regulated)
 
-# govt "stability" transactions
-#govt <- rep(0,length=dim(ent_data)[1])
-#govt[which(ent_data$netPrice==0)] <- 1
+# zero price transactions
+ent_data$zerop <- rep(0,length=dim(ent_data)[1])
+ent_data$zerop[which(ent_data$netPrice==0)] <- 1
 
 # put it all together
 ent_data_aug <- cbind(ent_data,from_state,to_state,interstate,statedums,mdb,productdummies)
@@ -168,9 +168,9 @@ surfacewater[unique(c(grep("Surface water",alloc_data$ProductName),grep("Surface
 regulated[c(grep("regulated",alloc_data$ProductName),grep("Regulated",alloc_data$ProductName))] <- 1
 productdummies <- cbind(groundwater,river,surfacewater,regulated)
 
-# govt "stability" transactions
-#govt <- rep(0,length=dim(alloc_data)[1])
-#govt[which(alloc_data$netPrice==0)] <- 1
+# zero price transactions
+alloc_data$zerop <- rep(0,length=dim(alloc_data)[1])
+alloc_data$zerop[which(alloc_data$netPrice==0)] <- 1
 
 # put it all together
 alloc_data_aug <- cbind(alloc_data,from_state,to_state,interstate,statedums,mdb,productdummies)
