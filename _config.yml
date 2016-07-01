@@ -13,15 +13,16 @@ permalink:        /:categories/:year/:month/:day/:title/
 
 # Setup
 title:            Produced Under Scarcity
-tagline:          'Economics, data science, and words about things'
-description:      
+tagline:          'Akhil Rao's blog'
+description:      'Economics, data science, and words about things'
 url:              https://akhilrao.github.io
 baseurl:          'https://akhilrao.github.io'
 
 author:
   name:           'Akhil Rao'
   url:             https://akhilrao.github.io
-
+  gravatar_md5:    26915e5b3ffb1eb6bbba2f069f4b0a8e
+  
 paginate:         5
 
 # Custom vars
