@@ -6,7 +6,7 @@ category: eda
 tags: eda, visualization, R, ggplot2, water trading, markets, data, empirics
 year: 2016
 month: 7
-day: 02
+day: 01
 published: true
 summary: A look at some Australian water trading data
 ---
