@@ -21,7 +21,7 @@ baseurl:          'https://akhilrao.github.io'
 author:
   name:           'Akhil Rao'
   url:             https://akhilrao.github.io
- # gravatar_md5:    26915e5b3ffb1eb6bbba2f069f4b0a8e
+  gravatar_md5:    26915e5b3ffb1eb6bbba2f069f4b0a8e
   
 paginate:         5
 
