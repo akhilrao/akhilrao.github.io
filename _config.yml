@@ -16,18 +16,16 @@ title:            Produced Under Scarcity
 tagline:          'Economics, data science, and words about things'
 description:      
 url:              https://akhilrao.github.io
-#url:              https://github.com/akhilrao
 baseurl:          'https://akhilrao.github.io'
 
 author:
   name:           'Akhil Rao'
   url:             https://akhilrao.github.io
-  #url:            https://github.com/akhilrao
 
 paginate:         5
 
 # Custom vars
-version:          0.0.1
+version:          0.1.0
 
 github:
   repo:          https://github.com/akhilrao
