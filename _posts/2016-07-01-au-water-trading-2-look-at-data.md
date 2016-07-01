@@ -103,7 +103,7 @@ trade_counts_state + geom_point() + geom_point() + geom_smooth(method="lm",fill=
 
 ![plot of chunk unnamed-chunk-1](/public/images/eda-water-2/unnamed-chunk-1-4.svg)
 
-(*Still no Northern Territory or Australian Capital Territory. I haven't audited my code yet to see where I might be swallowing them, or looked to see if they're in the data at all. It's on my to-do list.*)
+(*Still no Northern Territory or Australian Capital Territory. I haven't audited my code yet to see where I might be dropping them, or looked to see if they're in the data at all. It's on my to-do list.*)
 
 Takeaways:
 
