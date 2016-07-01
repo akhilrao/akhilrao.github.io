@@ -11,19 +11,19 @@
 
   <title>
     
-      Produced Under Scarcity &middot; 
+      Produced Under Scarcity &middot; Economics, data science, and words about things
     
   </title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css">
-  <link rel="stylesheet" href="/public/css/syntax.css">
-  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://akhilrao.github.io/public/css/poole.css">
+  <link rel="stylesheet" href="https://akhilrao.github.io/public/css/syntax.css">
+  <link rel="stylesheet" href="https://akhilrao.github.io/public/css/lanyon.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
 
   <!-- Icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
-  <link rel="shortcut icon" href="/public/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://akhilrao.github.io/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="https://akhilrao.github.io/public/favicon.ico">
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
@@ -39,12 +39,15 @@
 
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
+<br>
+  <div class="smallerCircularProfilePic"></div>
+
   <div class="sidebar-item">
     <p></p>
   </div>
 
   <nav class="sidebar-nav">
-    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="https://akhilrao.github.io/">Home</a>
 
     
 
@@ -573,9 +576,9 @@
       
     
 
-    <a class="sidebar-nav-item" href="https://github.com/akhilrao/archive/v0.0.1.zip">Download</a>
+    <a class="sidebar-nav-item" href="https://github.com/akhilrao/archive/v0.1.0.zip">Download</a>
     <a class="sidebar-nav-item" href="https://github.com/akhilrao">GitHub project</a>
-    <span class="sidebar-nav-item">Currently v0.0.1</span>
+    <span class="sidebar-nav-item">Currently v0.1.0</span>
   </nav>
 
   <div class="sidebar-item">
@@ -592,8 +595,8 @@
       <div class="masthead">
         <div class="container">
           <h3 class="masthead-title">
-            <a href="/" title="Home">Produced Under Scarcity</a>
-            <small></small>
+            <a href="https://akhilrao.github.io/" title="Home">Produced Under Scarcity</a>
+            <small>Economics, data science, and words about things</small>
           </h3>
         </div>
       </div>
@@ -603,7 +606,7 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="//2016/06/30/i-love-npp/">
+      <a href="https://akhilrao.github.io//2016/06/30/i-love-npp/">
         I love Notepad++
       </a>
     </h1>
@@ -629,20 +632,20 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="//eda/2016/06/29/au-water-trading-1-look-at-data/">
+      <a href="https://akhilrao.github.io//eda/2016/06/29/au-water-trading-1-look-at-data/">
         A look at some Australian water trading data
       </a>
     </h1>
 
     <span class="post-date">29 Jun 2016</span>
 
-    <p><em>This is my first attempt at using Rmarkdown, knitr, and ggplot2. The scripts to reproduce and extend everything discussed here are <a href="https://github.com/akhilrao/akhilrao.github.io/tree/master/public/code/au-water-trading">here</a>. I converted the knitted Rmarkdown file to markdown with the help of this <a href="http://brooksandrew.github.io/simpleblog/articles/blogging-with-r-markdown-and-jekyll-using-knitr/">post</a> by Andrew Brooks.</em></p>
+    <p><em>This is my first attempt at using knitr and ggplot2. The scripts to reproduce and extend everything discussed here are <a href="https://github.com/akhilrao/akhilrao.github.io/tree/master/public/code/au-water-trading">here</a>. I converted the knitted Rmarkdown file to markdown with the help of this <a href="http://brooksandrew.github.io/simpleblog/articles/blogging-with-r-markdown-and-jekyll-using-knitr/">post</a> by Andrew Brooks.</em></p>
 
-<p>I’m currently working on two projects: one is about orbital debris and satellites launches (what my previous post was about), and the other is about water trading in Australian water markets (that’s what this post is about). It’s too early to talk much about the substantive content of either project; in this post I’m going to describe some interesting (to me!) things in some of the water data I have.</p>
+<p>I’m currently working on two projects: one is about orbital debris and satellites launches (what my previous post was about), and the other is about trading in Australian water markets (what this post is about). In this post I’m going to describe some of the water data I have.</p>
 
 <h2 id="why-australian-water-markets">Why Australian water markets?</h2>
 
-<p>I’ve liked the idea of water markets since I learned about <a href="http://www.latimes.com/local/california/la-me-water-rights-legal-20150629-story.html">California’s messed up water rights</a> as a <a href="http://www.corola.org/">Coro Fellow</a> (FPPA LA ‘12, fun times). Australia actually has pretty well-defined water markets with some trading data, so I started there.</p>
+<p>I’ve liked the idea of water markets since I learned about <a href="http://www.latimes.com/local/california/la-me-water-rights-legal-20150629-story.html">California’s messed up water rights</a> as a <a href="http://www.corola.org/">Coro Fellow</a> (FPPA LA ‘12, fun times). Australia actually has pretty well-defined water markets with some historical daily trading data, so I started there.</p>
 
 <p>Plus, water markets lend themselves to some great awful puns about market liquidity and trade volumes.</p>
 
@@ -660,7 +663,15 @@
 
 <p>The data used for this post are publicly available at the Bureau of Meteorology’s <a href="http://www.nationalwatermarket.gov.au/water-market-reports/download-data.html">Water Market Information page</a>, specifically the “trade history” dataset.</p>
 
-<p>The dataset describes all of the water transactions that occurred between 2009-2014. A lot of the trades have a zero recorded price. A spoke to one of the people at the Bureau of Meteorology about this some time back, and he told me that only the quantity traded is mandatory, not the price. So a lot of prices are zero. One of the things I want to check is how the distributions of zero price trades compares to the distribution of positive price trades, to see if there’s anything interesting going on there. I’m not going to look into that too much here.</p>
+<p>The dataset describes all of the water transactions that occurred between 2009-2014. A lot of the trades have a zero price listed. I spoke to one of the people at the Bureau of Meteorology about this some time back, and he told me that this can be attributed to three factors:</p>
+
+<ol>
+  <li>Water trades between environmental water holders are listed at $0 as a rule</li>
+  <li>A single private user may transfer water they own from one area to another, recording a price of $0</li>
+  <li>Some transactions between two private users may be listed as occuring at $0 because entering the price isn’t/wasn’t always mandatory (if I recall correctly, the person said this was more likely in more remote areas)</li>
+</ol>
+
+<p>One of the things I want to check eventually is how the distributions of zero price trades compares to the distribution of positive price trades, to see if there’s anything interesting going on there.</p>
 
 <p>One of my goals for the future is to learn to use mapping tools to get data out of maps like <a href="http://www.bom.gov.au/jsp/awap/rain/index.jsp">these</a>. Rainfall information would be really useful for this project. Along the way, it would help to find a shapefile for a map of Australia with the Murray-Darling Basin and the different water systems marked out.</p>
 
@@ -674,7 +685,7 @@
 
 <p><code class="highlighter-rouge">ents</code> and <code class="highlighter-rouge">alls</code> are from the csv files of prepped daily water trading data. From there I used <code class="highlighter-rouge">water-eda.r</code> to do a little more processing and make some tables and pictures. The data processing in <code class="highlighter-rouge">water-eda.r</code> is below:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">## load libraries - make sure these are installed! stuff to read excel files, reshape data, plot pretty pictures, estimate consistent standard errors, and probably other useful things.  Probably don't need all of these.
+<div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="c1">## load libraries
 </span><span class="n">library</span><span class="p">(</span><span class="n">readxl</span><span class="p">)</span>
 <span class="n">library</span><span class="p">(</span><span class="n">plyr</span><span class="p">)</span>
 <span class="n">library</span><span class="p">(</span><span class="n">reshape2</span><span class="p">)</span>
@@ -891,7 +902,7 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="//micro%20theory/2016/06/21/paper-review-aac-orbit-debris-model/">
+      <a href="https://akhilrao.github.io//micro%20theory/2016/06/21/paper-review-aac-orbit-debris-model/">
         Paper Review - "Earth Orbit Debris - An Economic Model"
       </a>
     </h1>
@@ -970,7 +981,7 @@ I think firms might underinvest in debris mitigation technologies in general, bu
   
   <div class="post">
     <h1 class="post-title">
-      <a href="//micro%20theory/2016/05/10/coase-bargaining-externality/">
+      <a href="https://akhilrao.github.io//micro%20theory/2016/05/10/coase-bargaining-externality/">
         An app for Coase bargaining
       </a>
     </h1>
@@ -1018,7 +1029,7 @@ I think firms might underinvest in debris mitigation technologies in general, bu
   
   <div class="post">
     <h1 class="post-title">
-      <a href="//web/2016/02/08/worth-a-search-app/">
+      <a href="https://akhilrao.github.io//web/2016/02/08/worth-a-search-app/">
         Is this worth a search?
       </a>
     </h1>
@@ -1048,7 +1059,7 @@ EV(\text{search}) &= \hat{\beta}(v-p) - c
 
 <div class="pagination">
   
-    <a class="pagination-item older" href="/page2">Older</a>
+    <a class="pagination-item older" href="https://akhilrao.github.io/page2">Older</a>
   
   
     <span class="pagination-item newer">Newer</span>
