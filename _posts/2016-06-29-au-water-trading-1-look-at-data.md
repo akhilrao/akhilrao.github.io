@@ -35,7 +35,13 @@ There's a lot of state-level heterogeneity in how this all looks in practice, bu
 
 The data used for this post are publicly available at the Bureau of Meteorology's [Water Market Information page](http://www.nationalwatermarket.gov.au/water-market-reports/download-data.html), specifically the "trade history" dataset.
 
-The dataset describes all of the water transactions that occurred between 2009-2014. A lot of the trades have a zero recorded price. A spoke to one of the people at the Bureau of Meteorology about this some time back, and he told me that only the quantity traded is mandatory, not the price. So a lot of prices are zero. One of the things I want to check is how the distributions of zero price trades compares to the distribution of positive price trades, to see if there's anything interesting going on there. I'm not going to look into that too much here.
+The dataset describes all of the water transactions that occurred between 2009-2014. A lot of the trades have a zero price listed. I spoke to one of the people at the Bureau of Meteorology about this some time back, and he told me that this can be attributed to three factors:
+
+1. Water trades between environmental water holders are listed at $0 as a rule
+2. A single private user may transfer water they own from one area to another, recording a price of $0
+3. Some transactions between two private users may be listed as occuring at $0 because entering the price isn't/wasn't always mandatory (if I recall correctly, the person said this was more likely in more remote areas)
+
+One of the things I want to check eventually is how the distributions of zero price trades compares to the distribution of positive price trades, to see if there's anything interesting going on there.
 
 One of my goals for the future is to learn to use mapping tools to get data out of maps like [these](http://www.bom.gov.au/jsp/awap/rain/index.jsp). Rainfall information would be really useful for this project. Along the way, it would help to find a shapefile for a map of Australia with the Murray-Darling Basin and the different water systems marked out.
 
