@@ -56,7 +56,7 @@ I'm going to skip all the data cleaning and prep work. It's in the script `prep-
 `ents` and `alls` are from the csv files of prepped daily water trading data. From there I used `water-eda.r` to do a little more processing and make some tables and pictures. The data processing in `water-eda.r` is below:
 
 ```r
-## load libraries - make sure these are installed! stuff to read excel files, reshape data, plot pretty pictures, estimate consistent standard errors, and probably other useful things.  Probably don't need all of these.
+## load libraries
 library(readxl)
 library(plyr)
 library(reshape2)
