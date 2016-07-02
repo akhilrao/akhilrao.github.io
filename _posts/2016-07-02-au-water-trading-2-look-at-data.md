@@ -6,7 +6,7 @@ category: eda
 tags: eda, visualization, R, ggplot2, water trading, markets, data, empirics
 year: 2016
 month: 7
-day: 01
+day: 02
 published: true
 summary: A look at some Australian water trading data
 ---
@@ -21,7 +21,7 @@ As mentioned last time, trades can have a zero price for three reasons:
 
 ## Why do I care about zero price transactions? 
 
-It has to do with reason 1. Towards the end of the Millennium Drought, most states had implemented unbundling schemes to separate water access entitlements from land titles. At face value I thought this would be a good thing, since it would lower transactions costs. But there is some discussion that it led to higher prices for environmental water, resulting in more government expenditure than would have occurred without unbundling. 
+It has to do with reason 1. Towards the end of the [Millennium Drought](https://en.wikipedia.org/wiki/2000s_Australian_drought), most states had implemented unbundling schemes to separate water access entitlements from land titles. At face value I thought this would be a good thing, since it would lower transactions costs. But there is some discussion that it led to higher prices for environmental water, resulting in more government expenditure than would have occurred without unbundling. 
 
 This "world of the second-best" story seems really interesting to me from a policy perspective. Intuitively, it makes sense to me if water is used to produce public goods whose marginal benefits don't enter into the market - basically a market incompleteness story. I don't know whether this is actually what happened or not, but it seems at least possible in theory.
 
