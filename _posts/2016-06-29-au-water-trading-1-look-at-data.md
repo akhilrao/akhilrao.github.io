@@ -17,7 +17,7 @@ I'm currently working on two projects: one is about orbital debris and satellite
 
 ## Why Australian water markets?
 
-I've liked the idea of water markets since I learned about [California's messed up water rights](http://www.latimes.com/local/california/la-me-water-rights-legal-20150629-story.html) as a [Coro Fellow](http://www.corola.org/) (FPPA LA '12, fun times). Australia actually has pretty well-defined water markets with some historical daily trading data, so I started there.
+I've liked the idea of water markets since I learned about [California's messed up water rights](http://www.latimes.com/local/california/la-me-water-rights-legal-20150629-story.html) as a [Coro Fellow](http://www.corola.org/) (FPPA LA '14, fun times). Australia actually has pretty well-defined water markets with some historical daily trading data, so I started there.
 
 Plus, water markets lend themselves to some great awful puns about market liquidity and trade volumes.
 
