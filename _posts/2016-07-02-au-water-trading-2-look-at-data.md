@@ -27,7 +27,7 @@ This "world of the second-best" story seems really interesting to me from a poli
 
 ## Doing stuff with the data
 
-I used the same scripts as last time, `[prep-trading-data.r](https://github.com/akhilrao/akhilrao.github.io/tree/master/public/code/au-water-trading/prep-trading-data.r)` and `[water-eda-stuff.r](https://github.com/akhilrao/akhilrao.github.io/tree/master/public/code/au-water-trading/water-eda-stuff.r)`, with some small modifications. I uncommented four lines in `prep-trading-data.r` to created an indicator variable `zerop` in `ents` and `alls`. `zerop` is 1 if the transaction had a price of $0, and 0 if the price was positive. For example,
+I used the same scripts as last time, [`prep-trading-data.r`](https://github.com/akhilrao/akhilrao.github.io/tree/master/public/code/au-water-trading/prep-trading-data.r) and [`water-eda-stuff.r`](https://github.com/akhilrao/akhilrao.github.io/tree/master/public/code/au-water-trading/water-eda-stuff.r), with some small modifications. I uncommented four lines in `prep-trading-data.r` to created an indicator variable `zerop` in `ents` and `alls`. `zerop` is 1 if the transaction had a price of $0, and 0 if the price was positive. For example,
 
 ```r
 ent_data$zerop <- rep(0,length=dim(ent_data)[1])
