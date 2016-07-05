@@ -30,7 +30,7 @@ To keep things simple, let's assume there is no exogenous job destruction; once 
 
 The utility function is natural log in consumption and leisure, so we can rule out 0 and $$\infty$$ as solutions. The unemployed worker will always accept their first job offer. The action is in the employed worker searching.
 
-#### The Bellman equations
+### The Bellman equations
 
 To solve this problem, we break the consumer's decision over infinite periods down into a series of smaller one-period decisions and find an optimal solution to that one equation ([dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming)). In each period, the workers face the following decisions:
 
@@ -48,7 +48,7 @@ $$\begin{align}
 
 $$w'$$ is the next period's offer. The search integral is a [Lebesgue integral](https://en.wikipedia.org/wiki/Lebesgue_integration) over the wage distribution. The worker will obviously not accept an offer at a wage lower than the current one, so we only integrate over the current wage to the upper bound.
 
-#### Is there a reservation wage?
+### Is there a reservation wage?
 
 In this context, "is there a wage $$\bar{w}$$ such that the employed worker searches if and only if $$w \le \bar{w}$$"? The answer is yes. To find $$\bar{w}$$, let's assume it exists, in which case it satisfies 
 

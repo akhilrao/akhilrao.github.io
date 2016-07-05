@@ -18,7 +18,7 @@ The division of the joint surplus should satisfy some individual rationality and
 
 A two-player bargaining problem is characterized by a pair $$ (F,v) $$, where $$F$$ is a closed and convex "feasible set" and $$v \in F$$ is a vector of disagreement outcomes. The set $$ F \cap \{ (x_1 , x_2) : x_1 \gt v_1, x_2 \gt v_2  \} $$ should be bounded and non-empty. This is the set of feasible outcomes that is strictly better than the outcome if they can't agree, $$ (v_1, v_2) $$.
 
-### Axioms and Motivation
+## Axioms and Motivation
 
 The NBS for two players is a mapping $$ \phi : F \to R^2 $$ which satisfies the following four axioms:
 
@@ -40,7 +40,7 @@ STC: Utility functions are uniquely determined only up to a positive affine tran
 
 IIA: IIA is apparently Nash's most-criticized axiom, as well as one of the most important for this solution concept. It says that letting the feasible set shrink while the solution outcome remains feasible souldn't change the solution. In plainer terms: if you prefer chocolate over vanilla, and vanilla over strawberry, and you were considering between chocolate and vanilla, allowing you to choose strawberry shouldn't change the outcome (you'll still choose chocolate).
 
-### Computing the solution
+## Computing the solution
 
 With these four axioms, we can now define the NBS as a function we can maximize. For every $$ (F,v)$$, the symmetric NBS is obtained by solving
 
@@ -54,7 +54,7 @@ $$ \max_{x_1,x_2 \in F} \ (x_1 - v_1)^{\beta}(x_2 - v_2)^{1-\beta} $$
 
 The exponents can be interpreted as each player's bargaining power; the higher $$ \beta $$ is, the more player 1 will receive in equilibrium, and vice versa.
 
-### An example
+## An example
 
 This is a somewhat contrived example, but suppose a buyer and a seller are bargaining over an investment $$I$$ the buyer can make. The buyer values the good at $$v$$, and it costs $$c$$ to produce (or you can think of $$c$$ as the seller's opportunity cost of selling the good).
  
@@ -62,7 +62,7 @@ The buyer will demand 1 unit of the good with probability $$ Pr(v \gt c) = x $$ 
 
 Let's assume that investment is related to the buyer's likelihood of buying as $$ I = x^2 /2 $$. If they fail to reach an agreement, there will be no surplus created and they'll each get 0 payoff.
 
-#### Benchmark: Buyer gets all surplus
+### Benchmark: Buyer gets all surplus
 
 In the benchmark case, let's suppose that the buyer is going to get all of the surplus, and is solving the problem as a planner (internalizing the seller's cost of the good). The buyer solves
 
@@ -79,7 +79,7 @@ The optimal demand, $$x$$, is actually the optimal probability of purchase. It's
 
 So the buyer takes all the surplus, and chooses to invest the amount that solves the above optimization problem. Not much intuition to see yet.
 
-#### Nash Bargaining: Buyer and Seller split surplus
+### Nash Bargaining: Buyer and Seller split surplus
 
 Now suppose the buyer and seller split the surplus, and use Nash Bargaining to determine how much to invest. The buyer's share of the surplus is $$x_b$$ and the seller's is $$x_s$$. We do this as a two-stage problem: first the buyer and seller negotiate a split of the surplus, and then the buyer chooses a level of investment. Their symmetric bargaining outcome solves
 
@@ -110,7 +110,7 @@ This is lower than the benchmark level of investment, which makes sense - the bu
 
 This example is very stylized, but I think it's a rough first pass at some deeper dynamic model of learning to use a technology and the demand for that technology. Maybe some kind of software with a learning curve, like Photoshop or something, where the cost of investment is capturing for the learning curve of that technology. If we want to think about the split of the surplus as coming from a price instead of bargaining, then we see that consumers would invest more in learning the technology if the price was lower than higher.
 
-### Summary
+## Summary
 
 The NBS isn't super realistic, but it's a nice tool to use when you don't want to get too into the details of bargaining. Sometimes that's ok and it doesn't distort the final outcome too much, and sometimes it isn't and it does.
 
