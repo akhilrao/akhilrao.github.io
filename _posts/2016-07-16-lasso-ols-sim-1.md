@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Looking at LASSO: parameter estimation in a contrived example
+title: Looking at LASSO - parameter estimation in a contrived example
 category: econometrics
 tags: econometrics, simulation, lasso, ols, regression, machine learning
 year: 2016
