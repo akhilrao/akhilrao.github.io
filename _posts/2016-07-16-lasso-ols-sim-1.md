@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Looking at LASSO's parameter estimation
+title: Looking at LASSO: parameter estimation in a contrived example
 category: econometrics
 tags: econometrics, simulation, lasso, ols, regression, machine learning
 year: 2016
@@ -10,7 +10,7 @@ published: true
 summary: Some simulation results comparing LASSO and OLS estimators in small samples
 ---
 
-I've been thinking about LASSO a lot over the last few months. I first heard about [LASSO over at Gelman's blog](http://andrewgelman.com/?s=LASSO) a few years ago (I can't remember the exact post), but didn't follow most of the discussion or spend much time trying. I didn't really understand what the fuss was about until last semester, when my econometrics professor showed me some papers in spatial econometrics using LASSO ([this one by Elena Manresa](http://www.cireqmontreal.com/wp-content/uploads/2015/02/manresa.pdf) and [this one by Cliff Lam and Pedro Souza](http://stats.lse.ac.uk/lam/RSPT.pdf) ). I've been going through those posts again since then, and regularized regressions are now the coolest thing to me since the HydroFlask.
+I've been thinking about LASSO a lot over the last few months. I first heard about [LASSO over at Gelman's blog](http://andrewgelman.com/?s=LASSO) a few years ago (I can't remember the exact post), but didn't follow most of the discussion or spend much time trying. I didn't really understand what the fuss was about until last semester, when my econometrics professor showed me some papers in spatial econometrics using LASSO ([this one by Elena Manresa](http://www.cireqmontreal.com/wp-content/uploads/2015/02/manresa.pdf) and [this one by Cliff Lam and Pedro Souza](http://stats.lse.ac.uk/lam/RSPT.pdf)). I've been going through those posts again since then, and regularized regressions are now the coolest thing to me since the HydroFlask.
 
 I visited some relatives in northwest Karnataka with my dad last week with limited internet/distractions, and finally threw together a LASSO simulation I've been thinking about. My goal was to see how LASSO's parameter estimation compares to OLS's. I don't have any new results; everything here has been derived or discussed in greater detail somewhere else. This post is to convince myself of some of LASSO's properties relative to OLS without doing derivations, to get familiar with the `glmnet` package, and to procrastinate on other work I should be doing.
 
@@ -41,7 +41,7 @@ I used R's `glmnet` package to run the LASSO estimations. My main reference was 
 This is how I made the data generating process:
 
 1. draw 100 "seeds" $$\omega_i$$ from a uniform distribution over $$[0,1]$$
-2. sample `n_covs` of these seeds to generate randomly varying sine curves $$X_i = sin(\omega_i t)$$, where $$t$$ runs from 1 to 100
+2. sample `n_covs` of these seeds to generate sines $$X_i = \sin(\omega_i t)$$, where $$t$$ runs from 1 to `n_obs`
 3. put these sines together in a matrix $$X$$, and generate a dependent variable $$Y = X_1 + 3 X_2 - 5 X_3 + 7 X_4 - 9 X_5 + 11 X_6 + R$$, where $$R ~ N(0,1)$$ is a standard normal random variable to add a little noise
 
 This gives me a bunch of randomly initialized deterministic regressors and a noisy linear combination of a few of them. Since OLS is unbiased and consistent, it should estimate the coefficients of the $$X_i$$s correctly. Since there are only 100 observations it probably won't be super precise but on average it should still be close.
@@ -53,44 +53,44 @@ For each number of covariates, I estimated OLS and LASSO regressions 1000 times 
 library(glmnet)
 
 lasso_ols_mc <- function(n_covs, n_obs, n_iter) {
-    seeds <- runif(100,min=0,max=1) #uniform draws for numbers to plug into sines in X
-    ### initialize coefficient storage
-    ols_coefs <- rep(0,length=n_covs)
-    lasso_min <- rep(0,length=n_covs)
+seeds <- runif(100,min=0,max=1) #uniform draws for numbers to plug into sines in X
+### initialize coefficient storage
+ols_coefs <- rep(0,length=n_covs)
+lasso_min <- rep(0,length=n_covs)
 
-    for(j in 1:n_iter) { #monte carlo loop  
-    #### The DGP  
-      seeds_sample <- sample(seeds, n_covs, replace=FALSE) #random sample from the seeds... not super reproducible :(
-      step <- seq(from=1,to=n_obs,by=1) #time step 
-      X <- matrix(0,nrow=n_obs,ncol=n_covs) #matrix to store sines in columns
-      for (i in 1:n_covs){ #loop over columns to create n_covs many deterministic regressors
-        X[,i] <- sinpi(seeds_sample[i]*step) #sines - deterministic regressors
-      }
-      
-    #### The Y variable
-      Y <- X[,1] + 3*X[,2] - 5*X[,3] + 7*X[,4] - 9*X[,5] + 11*X[,6] + rnorm(n_obs) #linear combination of sines + gaussian noise
-      
-    #### OLS fit
-      olsfit <- lm(Y ~ X)
-      summary(olsfit)
-      ols_coefs <- rbind(ols_coefs,as.matrix(coef(olsfit))[2:(n_covs+1),1]) #store coefficients from this run
-      
-    #### LASSO fit
-      lassofit <- cv.glmnet(x=X,y=Y,alpha=1,nlambda=100)
-      lasso_min <- rbind(lasso_min,as.numeric(coef(lassofit, s = "lambda.min", exact = FALSE)[2:(n_covs+1),1])) #store coefficients from this run
+for(j in 1:n_iter) { #monte carlo loop  
+#### The DGP  
+  seeds_sample <- sample(seeds, n_covs, replace=FALSE) #random sample from the seeds... not super reproducible :(
+  step <- seq(from=1,to=n_obs,by=1) #time step 
+  X <- matrix(0,nrow=n_obs,ncol=n_covs) #matrix to store sines in columns
+  for (i in 1:n_covs){ #loop over columns to create n_covs many deterministic regressors
+    X[,i] <- sinpi(seeds_sample[i]*step) #sines - deterministic regressors
+  }
+  
+#### The Y variable
+  Y <- X[,1] + 3*X[,2] - 5*X[,3] + 7*X[,4] - 9*X[,5] + 11*X[,6] + rnorm(n_obs) #linear combination of sines + gaussian noise
+  
+#### OLS fit
+  olsfit <- lm(Y ~ X)
+  summary(olsfit)
+  ols_coefs <- rbind(ols_coefs,as.matrix(coef(olsfit))[2:(n_covs+1),1]) #store coefficients from this run
+  
+#### LASSO fit
+  lassofit <- cv.glmnet(x=X,y=Y,alpha=1,nlambda=100)
+  lasso_min <- rbind(lasso_min,as.numeric(coef(lassofit, s = "lambda.min", exact = FALSE)[2:(n_covs+1),1])) #store coefficients from this run
 
-    }
+}
 
-    #### Cleaning up a bit
-    ols_coefs <- as.data.frame(ols_coefs[-1,], row.names=as.character(seq(1:dim(ols_coefs)[1])))
-    lasso_min <- as.data.frame(lasso_min[-1,], row.names=as.character(seq(1:dim(lasso_min)[1])))
+#### Cleaning up a bit
+ols_coefs <- as.data.frame(ols_coefs[-1,], row.names=as.character(seq(1:dim(ols_coefs)[1])))
+lasso_min <- as.data.frame(lasso_min[-1,], row.names=as.character(seq(1:dim(lasso_min)[1])))
 
-    #### Return list of coefficients
-    coefs <- list()
-    coefs[[1]] <- ols_coefs
-    coefs[[2]] <- lasso_min
+#### Return list of coefficients
+coefs <- list()
+coefs[[1]] <- ols_coefs
+coefs[[2]] <- lasso_min
 
-    return(coefs)
+return(coefs)
 }
 {% endhighlight %}
 
@@ -303,7 +303,7 @@ The first 6 numbers should be +1, +3, -5, +7, -9, +11, and all the rest should b
 
 From the results above, it looks like OLS and LASSO are both reasonable choices when the number of covariates $$p$$ is small relative to the sample size $$n$$. LASSO does a better job of estimating irrelevant covariates as 0 - I don't see how OLS could do as well there. My understanding is that LASSO sets some coefficients to 0 because of the kink in the objective function that the $$L1$$ penalty adds at 0. The OLS objective function is smooth through 0, so it seems like it should always keep every predictor, even if they're estimated as really tiny values with big standard errors. 
 
-Where LASSO really shines is when $$p$$ starts getting larger relative to $$n$$. In the second and third simulations, OLS produces some pretty ridiculous parameter estimates for both the relevant and irrelevant predictors, while LASSO stays on point - the estimates always have the correct sign and the correct order of magnitude. This [Stack Exchange post](http://stats.stackexchange.com/questions/82466/why-use-lasso-estimates-over-ols-estimates-on-variable-subset) has a good discussion of when to use LASSO vs OLS for variable selection. To be fair the sines I generated as covariates are probably fairly correlated on average, so there's most likely some collinearity messing with the OLS estimates (I think this is what's going on with all the NAs). But hey real data is messy amirite?
+Where LASSO really shines is when $$p$$ starts getting larger relative to $$n$$. In the second and third simulations, OLS produces some pretty ridiculous parameter estimates for both the relevant and irrelevant predictors, while LASSO stays on point - the estimates always have the correct sign and the correct order of magnitude. This [Stack Exchange post](http://stats.stackexchange.com/questions/82466/why-use-lasso-estimates-over-ols-estimates-on-variable-subset) has a good discussion of when to use LASSO vs OLS for variable selection. To be fair the sines I generated as covariates are probably fairly correlated on average, so there's most likely some collinearity messing with the OLS estimates (I think this is what's going on with all the NAs).
 
 So where and how is LASSO used in economics? I hear it's not uncommon in financial economics, and I know it's being applied in spatial econometrics. But I haven't seen it in the mainstream of applied fields like labor, development, or environmental economics (where reduced-form methods seem to be preferred). There, from what I've seen, OLS and IV approaches continue to dominate. Why might this be the case?
 
