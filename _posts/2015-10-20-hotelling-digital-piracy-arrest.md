@@ -64,7 +64,7 @@ $$ x_{(\theta = 1)} = \frac{ v }{2 t^F  } , ~~ p_{(\theta = 1)} = \frac{v}{2}, ~
 
 The equilibrium price is a combination of the monopoly price and the expected cost of surviving piracy. If $$ t^T \lt v $$ (as it necessarily-but-not-sufficiently should be if there is piracy), then the price with piracy is lower than the price if piracy isn't an option. 
 
-The equilibrium demand is a combination of monopoly and duopoly demand expressed in terms of the expected cost of surviving piracy. I think this is because even though it's not another firm, with consumer demand being uniformly distributed the torrents act as a competitive force against the firm. I think for reasonably values of travel cost, the indifferent consumer is closer to the firm than they would be without piracy, or under a uniform-value duopoly, implying that the piracy option reduces the firm's marketshare (which makes sense).
+The equilibrium demand is a combination of monopoly and duopoly demand expressed in terms of the expected cost of surviving piracy. I think this is because even though it's not another firm, with consumer demand being uniformly distributed the torrents act as a competitive force against the firm. I think for reasonable values of travel cost, the indifferent consumer is closer to the firm than they would be without piracy, or under a uniform-value duopoly, implying that the piracy option reduces the firm's marketshare (which makes sense).
 
 The equilibrium profits are similarly a combination of monopoly and duopoly profits, with the latter expressed in terms of expected cost of surviving piracy. This is smaller than the monopoly profit. I'm not sure if it's smaller than the duopoly profit as well; probably depends on the value of $$ t^T (1- \theta) $$.
 
