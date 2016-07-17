@@ -41,7 +41,7 @@ I used R's `glmnet` package to run the LASSO estimations. My main reference was 
 This is how I made the data generating process:
 
 1. draw 100 "seeds" $$\omega_i$$ from a uniform distribution over $$[0,1]$$
-2. sample `n_covs` of these seeds to generate sines $$X_i = \sin(\omega_i t)$$, where $$t$$ runs from 1 to `n_obs`
+2. sample `n_covs` of these seeds to generate sines $$X_i = \sin(\pi \omega_i  t)$$, where $$t$$ runs from 1 to `n_obs`
 3. put these sines together in a matrix $$X$$, and generate a dependent variable $$Y = X_1 + 3 X_2 - 5 X_3 + 7 X_4 - 9 X_5 + 11 X_6 + R$$, where $$R \sim N(0,1)$$ is a standard normal random variable to add a little noise
 
 This gives me a bunch of randomly initialized deterministic regressors and a noisy linear combination of a few of them. Since OLS is unbiased and consistent, it should estimate the coefficients of the $$X_i$$s correctly. Since there are only 100 observations it probably won't be super precise but on average it should still be close.
