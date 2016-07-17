@@ -96,7 +96,7 @@ return(coefs)
 
 The coefficient storage could have been done more elegantly and I don't like those `rbind()` calls... but effort is costly and this is produced under scarcity.
 
-Anyway, the function `lasso_ols_mc()` takes three arguments: `n_covs`, the number of covariates to generate; `n_obs`, the number of observations to generate; `n_iter`, the number of iterations to run. It returns a list with two dataframes of dimension `n_iter` by `n_covs`: the first is the OLS coefficients, and the second is the LASSO coefficients. The code is in the file `simulation.r` [here](https://github.com/akhilrao/akhilrao.github.io/tree/master/public/code/lassoOlsSim).
+Anyway, the function `lasso_ols_mc()` takes three arguments: `n_covs`, the number of covariates to generate; `n_obs`, the number of observations to generate; `n_iter`, the number of iterations to run. It returns a list with two dataframes of dimension `n_iter` by `n_covs`: the first is the OLS coefficients, and the second is the LASSO coefficients. The code is in the file `simulation.r` [here](https://github.com/akhilrao/akhilrao.github.io/tree/master/public/code/lassoOlsSim/simulation.r).
 
 Note: I'm using `cv.glmnet()` instead of `glmnet()` to get the estimated coefficients from the penalization parameter $$\lambda$$ which minimizes the cross-validated errors. This [stack exchange post](http://stats.stackexchange.com/questions/77546/how-to-interpret-glmnet) has a good discussion of the use of `cv.glmnet()` versus `glmnet()` and how that relates to $$\lambda$$.
 
