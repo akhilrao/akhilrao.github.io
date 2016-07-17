@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Looking at LASSO
+title: Looking at LASSO's parameter estimation
 category: econometrics
 tags: econometrics, simulation, lasso, ols, regression, machine learning
 year: 2016
@@ -12,11 +12,11 @@ summary: Some simulation results comparing LASSO and OLS estimators in small sam
 
 I've been thinking about LASSO a lot over the last few months. I first heard about [LASSO over at Gelman's blog](http://andrewgelman.com/?s=LASSO) a few years ago (I can't remember the exact post), but didn't follow most of the discussion or spend much time trying. I didn't really understand what the fuss was about until last semester, when my econometrics professor showed me some papers in spatial econometrics using LASSO ([this one by Elena Manresa](http://www.cireqmontreal.com/wp-content/uploads/2015/02/manresa.pdf) and [this one by Cliff Lam and Pedro Souza](http://stats.lse.ac.uk/lam/RSPT.pdf) ). I've been going through those posts again since then, and regularized regressions are now the coolest thing to me since the HydroFlask.
 
-I visited some relatives in northwest Karnataka with my dad last week with limited internet/distractions, and finally threw together a LASSO simulation I've been thinking about. My goal was to see how LASSO performs compared to OLS at recovering parameter estimates. I don't have any new results here; everything here has been derived or discussed in greater detail somewhere else. This post is to convince myself of some of LASSO's properties relative to OLS without doing derivations, to get familiar with the `glmnet` package, and to procrastinate on other research I should be doing.
+I visited some relatives in northwest Karnataka with my dad last week with limited internet/distractions, and finally threw together a LASSO simulation I've been thinking about. My goal was to see how LASSO's parameter estimation compares to OLS's. I don't have any new results; everything here has been derived or discussed in greater detail somewhere else. This post is to convince myself of some of LASSO's properties relative to OLS without doing derivations, to get familiar with the `glmnet` package, and to procrastinate on other work I should be doing.
 
 ## What is the LASSO?
 
-The basic idea with OLS is to estimate the model $$ Y = X \beta + \epsilon $$ by solving
+The idea with OLS is to estimate the model $$ Y = X \beta + \epsilon $$ by solving
 
 $$ \min_{\beta} (Y - X \beta)^2 $$
 
@@ -24,9 +24,11 @@ This results in an estimator for $$ \beta $$ which is [unbiased, consistent, and
 
 The idea with LASSO is to add a penalty to the problem that is increasing in the dimension of the coefficient vector $$ \beta$$, i.e. to solve
 
-$$ \min_{\beta} (Y - X \beta)^2 + \lambda \| \beta ||_1 $$
+$$ \min_{\beta} (Y - X \beta)^2 + \lambda \| \beta \|_1 $$
 
-where $$ \| \beta \|_1 $$ is the $$L1$$ norm of the vector $$\beta$$. $$\lambda$$ is a parameter that controls how severe the penalty for a higher-dimensional or larger $$\beta$$ is - bigger $$\lambda$$ means a sparser model. It is typically tuned through cross-validation. This procedure results in a [biased](https://arxiv.org/pdf/0808.0967.pdf) but [consistent](http://www.jmlr.org/papers/volume7/zhao06a/zhao06a.pdf) estimator of $$\beta$$. (Note that the consistency described in the Zhao paper at the "consistent" link is not the same consistency that econometricians usually speak of in regard to OLS; the former is model selection consistency, the latter is parameter estimation consistency. The Zhao paper has some discussion of this distinction, and refers to [Knight and Fu (2000) ](http://www.stat.rice.edu/~gallen/knight_fu_2000_lasso.pdf) for proofs of estimation consistency and asymptotic properties of a class of regularized estimators which include LASSO as a special case.)
+where $$ \| \beta \|_1 $$ is the $$L1$$ norm of the vector $$\beta$$. $$\lambda$$ is a parameter that controls how severe the penalty for a higher-dimensional or larger $$\beta$$ is - bigger $$\lambda$$ means a sparser model. It is typically tuned through cross-validation. This procedure results in a [biased](https://arxiv.org/pdf/0808.0967.pdf) but [consistent](http://www.jmlr.org/papers/volume7/zhao06a/zhao06a.pdf) estimator of $$\beta$$. 
+
+Note that the consistency described in the Zhao paper at the "consistent" link is not the same consistency that econometricians usually speak of in regard to OLS; the former is model selection consistency, the latter is parameter estimation consistency. The Zhao paper has some discussion of this distinction, and refers to [Knight and Fu (2000) ](http://www.stat.rice.edu/~gallen/knight_fu_2000_lasso.pdf) for proofs of estimation consistency and asymptotic properties of a class of regularized estimators which include LASSO as a special case.
 
 That's all I'll say about LASSO here. There's a lot of discussion of the LASSO online. Rob Tibshirani has a good introduction with references [here](http://statweb.stanford.edu/~tibs/lasso.html), the [wikipedia page](https://en.wikipedia.org/wiki/Lasso_(statistics) ) is also decent, and googling will turn up a lot more resources.
 
@@ -38,9 +40,9 @@ I used R's `glmnet` package to run the LASSO estimations. My main reference was 
 
 This is how I made the data generating process:
 
-1. draw 100 "seeds" from a uniform distribution over $$[0,1]$$
-2. sample `n_covs` of these seeds to generate randomly varying sine curves $$X_i$$, each 100 observations long
-3. put these sines together in a matrix $$X$$, and generate a dependent variable $$Y = X_1 + 3 X_2 - 5 X_3 + 7 X_4 - 9 X_5 + 11 X_6 + R$$, where $$R \~ N(0,1)$$ is a standard normal random variable to add a little noise
+1. draw 100 "seeds" $$\omega_i$$ from a uniform distribution over $$[0,1]$$
+2. sample `n_covs` of these seeds to generate randomly varying sine curves $$X_i = sin(\omega_i t)$$, where $$t$$ runs from 1 to 100
+3. put these sines together in a matrix $$X$$, and generate a dependent variable $$Y = X_1 + 3 X_2 - 5 X_3 + 7 X_4 - 9 X_5 + 11 X_6 + R$$, where $$R ~ N(0,1)$$ is a standard normal random variable to add a little noise
 
 This gives me a bunch of randomly initialized deterministic regressors and a noisy linear combination of a few of them. Since OLS is unbiased and consistent, it should estimate the coefficients of the $$X_i$$s correctly. Since there are only 100 observations it probably won't be super precise but on average it should still be close.
 
@@ -307,7 +309,7 @@ So where and how is LASSO used in economics? I hear it's not uncommon in financi
 
 Spatial is more of a tool-building area than a topic area like financial so simulations can be relevant to the questions of interest, but it makes spatial a less-apt comparison to fields like labor or development. Let's leave it aside for this discussion. If you're interested in the two spatial econometrics papers using LASSO I referenced at the beginning of this post, I wrote a brief review for that class which might be useful (or not). You can find it [here](https://github.com/akhilrao/akhilrao.github.io/tree/master/public/code/lassoOlsSim/akhil_rao_8838_writeup_final.pdf).
 
-Financial has lots of really good data, e.g. high-frequency stock price data, so it makes sense to me that there would be a lot of scope for "fancier" econometrics there. My limited understanding of the questions studied in financial is that they tend to focus more on prediction than policy evaluation, reducing the "interpretability advantage" of OLS over other methods. So this might be a factor that limits adoption outside of financial. Jim Savage has [some comments I found very enlightening](http://andrewgelman.com/2015/09/29/how-to-use-lasso-etc-in-political-science/#comment-244882) in this regard. (As an aside, I think Jim Savage's random forest proximity weighting paper in that comment got me stoked about random forests all over again. Someday I might blog about that.)
+Financial has lots of really good data, e.g. high-frequency stock price data, so it makes sense to me that there would be a lot of scope for "fancier" econometrics there. My limited understanding of the questions studied in financial is that they tend to focus more on prediction than policy evaluation, reducing the "interpretability advantage" of OLS over other methods. So this might be a factor that limits adoption outside of financial. Jim Savage has [some interesting comments](http://andrewgelman.com/2015/09/29/how-to-use-lasso-etc-in-political-science/#comment-244882) in this regard. (As an aside, Jim Savage's random forest proximity weighting paper mentioned in that comment got me stoked about random forests all over again. Someday I might blog about that, it's super cool.)
 
 Data quality in other applied fields is a mixed bag. Labor has lots of high-quality data, but development folks I know tell me development doesn't. In environmental it seems to depend on the question. I don't know much about industrial organization and trade, but I know they tend to use more "fancy" econometrics there than elsewhere. The preference for structural vs. reduced-form methods also plays a role in this, but in general I think many researchers in applied fields care more about policy evaluation than prediction.
 
