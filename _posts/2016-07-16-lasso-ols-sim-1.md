@@ -10,7 +10,7 @@ published: true
 summary: Some simulation results comparing LASSO and OLS estimators in small samples
 ---
 
-I've been thinking about LASSO a lot over the last few months. I first heard about [LASSO over at Gelman's blog](http://andrewgelman.com/?s=LASSO) a few years ago (I can't remember the exact post), but didn't follow most of the discussion or spend much time trying. I didn't really understand what the fuss was about until last semester, when my econometrics professor showed me some papers in spatial econometrics using LASSO ([this one by Elena Manresa](http://www.cireqmontreal.com/wp-content/uploads/2015/02/manresa.pdf) and [this one by Cliff Lam and Pedro Souza](http://stats.lse.ac.uk/lam/RSPT.pdf)). I've been going through those posts again since then, and regularized regressions are now the coolest thing to me since the HydroFlask.
+I've been thinking about LASSO a lot over the last few months. I first heard about [LASSO over at Gelman's blog](http://andrewgelman.com/?s=LASSO) a few years ago (I can't remember the exact post), but didn't follow most of the discussion or spend much time trying. I didn't really understand what the fuss was about until last semester, when my econometrics professor showed me some papers in spatial econometrics using LASSO ([this one by Elena Manresa](http://www.cireqmontreal.com/wp-content/uploads/2015/02/manresa.pdf) and [this one by Cliff Lam and Pedro Souza](http://stats.lse.ac.uk/lam/RSPT.pdf)). Going through those posts again, regularized regressions are now the coolest thing to me since the HydroFlask.
 
 I visited some relatives in northwest Karnataka with my dad last week with limited internet/distractions, and finally threw together a LASSO simulation I've been thinking about. My goal was to see how LASSO's parameter estimation compares to OLS's. I don't have any new results; everything here has been derived or discussed in greater detail somewhere else. This post is to convince myself of some of LASSO's properties relative to OLS without doing derivations, to get familiar with the `glmnet` package, and to procrastinate on other work I should be doing.
 
@@ -98,7 +98,7 @@ The coefficient storage could have been done more elegantly and I don't like tho
 
 Anyway, the function `lasso_ols_mc()` takes three arguments: `n_covs`, the number of covariates to generate; `n_obs`, the number of observations to generate; `n_iter`, the number of iterations to run. It returns a list with two dataframes of dimension `n_iter` by `n_covs`: the first is the OLS coefficients, and the second is the LASSO coefficients. The code is in the file `simulation.r` [here](https://github.com/akhilrao/akhilrao.github.io/tree/master/public/code/lassoOlsSim/simulation.r).
 
-Note: I'm using `cv.glmnet()` instead of `glmnet()` to get the estimated coefficients from the penalization parameter $$\lambda$$ which minimizes the cross-validated errors. This [stack exchange post](http://stats.stackexchange.com/questions/77546/how-to-interpret-glmnet) has a good discussion of the use of `cv.glmnet()` versus `glmnet()` and how that relates to $$\lambda$$.
+I'm using `cv.glmnet()` instead of `glmnet()` to get the estimated coefficients from the penalization parameter $$\lambda$$ which minimizes the cross-validated errors. This [stack exchange post](http://stats.stackexchange.com/questions/77546/how-to-interpret-glmnet) has a good discussion of the use of `cv.glmnet()` versus `glmnet()` and how that relates to $$\lambda$$.
 
 ### Simulation 1: 25 covariates
 
