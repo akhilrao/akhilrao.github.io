@@ -1,5 +1,7 @@
 #  cleans water entitlement/allocation trading data
 
+library(dummies)
+
 # read in entitlements data
 ent_data <- read_excel("tradehistory.xlsx",sheet="Entitlements")
 
@@ -39,9 +41,7 @@ to_state[tas] <- "tas"
 ##interstate
 interstate <- rep(0,length=dim(ent_data)[1])
 interstate[which(from_state!=to_state)] <- 1
-
-
-# "state" dummies
+## "state" dummies
 statedums <- matrix(0,nrow=dim(ent_data)[1],ncol=6)
 colnames(statedums) <- c("vic","wa","qld","nsw","sa","tas")
 statedums[from_state=="vic",1] <- 1
@@ -50,6 +50,33 @@ statedums[from_state=="qld",3] <- 1
 statedums[from_state=="nsw",4] <- 1
 statedums[from_state=="sa",5] <- 1
 statedums[from_state=="tas",6] <- 1
+
+# "trading zone" dummies
+### from
+ent_data$fromzones <- as.factor(gsub("[^[:alnum:]_]","",ent_data$TradeFrom))
+ent_data$tzdums_f <- dummy(ent_data$fromzones,sep="_")
+### to
+ent_data$tozones <- as.factor(gsub("[^[:alnum:]_]","",ent_data$TradeTo))
+ent_data$tzdums_t <- dummy(ent_data$tozones,sep="_")
+
+### collect unique trading zone names in vectors
+#vic_tz <- unique(ent_data$TradeFrom[which(from_state=="vic")])
+#wa_tz <- unique(ent_data$TradeFrom[which(from_state=="wa")])
+#qld_tz <- unique(ent_data$TradeFrom[which(from_state=="qld")])
+#nsw_tz <- unique(ent_data$TradeFrom[which(from_state=="nsw")])
+#sa_tz <- unique(ent_data$TradeFrom[which(from_state=="sa")])
+#tas_tz <- unique(ent_data$TradeFrom[which(from_state=="tas")])
+### replace non-alphanumeric characters in trading zone names
+#vic_tz <- gsub("[^[:alnum:]_]", "", vic_tz)
+#wa_tz <- gsub("[^[:alnum:]_]", "", wa_tz)
+#qld_tz <- gsub("[^[:alnum:]_]", "", qld_tz)
+#nsw_tz <- gsub("[^[:alnum:]_]", "", nsw_tz)
+#sa_tz <- gsub("[^[:alnum:]_]", "", sa_tz)
+#tas_tz <- gsub("[^[:alnum:]_]", "", tas_tz)
+### create matrices of trading zone dummies
+#vic_tz_dums <- dummy(vic_tz,sep="_") #makes length(vic_tz)xlength(vic_tz) matrix
+#vic_tz_dums <- rbind(vic_tz_dums,matrix(0,ncol=dim(vic_tz_dums)[2],nrow=(dim(ent_data)[1] - dim(vic_tz_dums)[1])))
+
 
 # "mdb" variable
 mdb <- rep(0,length=dim(ent_data)[1])
