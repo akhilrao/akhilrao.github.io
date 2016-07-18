@@ -10,11 +10,11 @@ ent_data$year <- as.numeric(format(ent_data$dates,'%Y'))
 # "state" variables
 ##from
 from_state <- character(length = dim(ent_data)[1])
-vic <- grep(":vic",ent_data$TradeFromIdent)
+vic <- c(grep(":vic",ent_data$TradeFromIdent),grep(":victoria",ent_data$TradeFromIdent))
 wa <- grep(":wa",ent_data$TradeFromIdent)
-qld <- grep(":qld",ent_data$TradeFromIdent)
-nsw <- grep(":nsw",ent_data$TradeFromIdent)
-sa <- grep(":sa",ent_data$TradeFromIdent)
+qld <- c(grep(":qld",ent_data$TradeFromIdent),grep(":queensland",ent_data$TradeFromIdent))
+nsw <- c(grep(":nsw",ent_data$TradeFromIdent),grep(":newsouthwales",ent_data$TradeFromIdent))
+sa <- c(grep(":sa",ent_data$TradeFromIdent),grep("SA",ent_data$TradeFromIdent))
 tas <- grep(":tas",ent_data$TradeFromIdent)
 from_state[vic] <- "vic"
 from_state[wa] <- "wa"
@@ -83,7 +83,6 @@ ent_data_aug <- cbind(ent_data,from_state,to_state,interstate,statedums,mdb,prod
 
 # output to csv
 write.csv(ent_data_aug, file="entitlements_aug.csv")
-
 
 ########################################################
 ########################################################
