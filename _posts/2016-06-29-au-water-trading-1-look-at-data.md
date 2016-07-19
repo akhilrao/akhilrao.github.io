@@ -47,7 +47,7 @@ One of my goals for the future is to learn to use mapping tools to get data out 
 
 ## Doing stuff with the data
 
-I'm going to skip all the data cleaning and prep work ([wrangling](https://en.wikipedia.org/wiki/Data_wrangling)). It's in the script `[prep-trading-data.r](https://github.com/akhilrao/akhilrao.github.io/tree/master/public/code/au-water-trading/prep-trading-data.r)`. 
+I'm going to skip all the data cleaning and prep work ([wrangling](https://en.wikipedia.org/wiki/Data_wrangling)). It's in the script [`prep-trading-data.r`](https://github.com/akhilrao/akhilrao.github.io/tree/master/public/code/au-water-trading/prep-trading-data.r). 
 
 `prep-trading-data.r` outputs two csv files, one each for allocation and entitlement trades. I used `rm(list=ls())` liberally throughout the `prep-trading-data.r`, so consider yourself warned. Don't use the script if you have other things you want to keep in your workspace.
 

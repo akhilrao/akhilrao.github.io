@@ -3,7 +3,7 @@
 setwd("C:/Users/Akhil/Documents/akhilrao.github.io/public/code/au-water-trading")
 #setwd("C:/Users/Akhil/Dropbox/school/water/data/trading")
 
-## load libraries - make sure these are installed! stuff to read excel files, reshape data, plot pretty pictures, estimate consistent standard errors, and probably other useful things.  Probably don't need all of these.
+## load libraries - make sure these are installed! stuff to read excel files, reshape data, plot pretty pictures, etc.
 library(readxl)
 library(plyr)
 library(reshape2)

@@ -2,7 +2,7 @@
 layout: post
 title: An example of a two-part tariff
 category: micro theory
-tags: micro-theory two part tariff hidden information
+tags: micro theory, monopolist, hidden information
 year: 2015
 month: 11
 day: 10

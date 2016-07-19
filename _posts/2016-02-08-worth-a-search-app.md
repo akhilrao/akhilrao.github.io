@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Is this worth a search?
-category: web
+category: shiny
 tags: expected value, micro theory, r, shiny, app, rational belief
 year: 2016
 month: 2

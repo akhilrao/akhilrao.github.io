@@ -2,7 +2,7 @@
 layout: post
 title: A representative agent's variable capacity utilization problem
 category: macro theory
-tags: macro-theory representative agent variable capacity
+tags: macro theory, representative agent, variable capacity
 year: 2015
 month: 10
 day: 18

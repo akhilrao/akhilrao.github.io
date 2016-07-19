@@ -2,8 +2,8 @@
 layout: post
 comments: true
 title: Paper Review - "Earth Orbit Debris - An Economic Model"
-category: micro theory
-tags: micro-theory, environmental economics, pollution, externalities, common resource, game theory, salop circle, differentiated product, hotelling
+category: reviews
+tags: micro theory, environmental economics, game theory, space economics
 year: 2016
 month: 6
 day: 21

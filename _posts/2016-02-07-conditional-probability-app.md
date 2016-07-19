@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A conditional probability app
-category: web
+category: shiny
 tags: conditional probability, bayes rule, r, shiny, app, rational belief
 year: 2016
 month: 2

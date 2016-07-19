@@ -2,7 +2,7 @@
 layout: post
 title: Hotelling monopoly pricing for a digital good with piracy
 category: micro theory
-tags: micro-theory oligopoly cournot risk supply passthrough 
+tags: micro theory, oligopoly, cournot, piracy
 year: 2015
 month: 10
 day: 20

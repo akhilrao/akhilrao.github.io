@@ -1,5 +1,6 @@
 #  cleans water entitlement/allocation trading data
-
+#setwd("C:/Users/Akhil/Documents/akhilrao.github.io/public/code/au-water-trading")
+library(readxl)
 library(dummies)
 
 # read in entitlements data
@@ -51,33 +52,6 @@ statedums[from_state=="nsw",4] <- 1
 statedums[from_state=="sa",5] <- 1
 statedums[from_state=="tas",6] <- 1
 
-# "trading zone" dummies
-### from
-ent_data$fromzones <- as.factor(gsub("[^[:alnum:]_]","",ent_data$TradeFrom))
-ent_data$tzdums_f <- dummy(ent_data$fromzones,sep="_")
-### to
-ent_data$tozones <- as.factor(gsub("[^[:alnum:]_]","",ent_data$TradeTo))
-ent_data$tzdums_t <- dummy(ent_data$tozones,sep="_")
-
-### collect unique trading zone names in vectors
-#vic_tz <- unique(ent_data$TradeFrom[which(from_state=="vic")])
-#wa_tz <- unique(ent_data$TradeFrom[which(from_state=="wa")])
-#qld_tz <- unique(ent_data$TradeFrom[which(from_state=="qld")])
-#nsw_tz <- unique(ent_data$TradeFrom[which(from_state=="nsw")])
-#sa_tz <- unique(ent_data$TradeFrom[which(from_state=="sa")])
-#tas_tz <- unique(ent_data$TradeFrom[which(from_state=="tas")])
-### replace non-alphanumeric characters in trading zone names
-#vic_tz <- gsub("[^[:alnum:]_]", "", vic_tz)
-#wa_tz <- gsub("[^[:alnum:]_]", "", wa_tz)
-#qld_tz <- gsub("[^[:alnum:]_]", "", qld_tz)
-#nsw_tz <- gsub("[^[:alnum:]_]", "", nsw_tz)
-#sa_tz <- gsub("[^[:alnum:]_]", "", sa_tz)
-#tas_tz <- gsub("[^[:alnum:]_]", "", tas_tz)
-### create matrices of trading zone dummies
-#vic_tz_dums <- dummy(vic_tz,sep="_") #makes length(vic_tz)xlength(vic_tz) matrix
-#vic_tz_dums <- rbind(vic_tz_dums,matrix(0,ncol=dim(vic_tz_dums)[2],nrow=(dim(ent_data)[1] - dim(vic_tz_dums)[1])))
-
-
 # "mdb" variable
 mdb <- rep(0,length=dim(ent_data)[1])
 toMatch_nsw_mdb <- c("uppermurrumbidgee", "farwest", "lachlan", "lowerdarling", "macquarie","murrumbidgee", "barwon","murray")
@@ -105,8 +79,33 @@ productdummies <- cbind(groundwater,river,surfacewater,regulated)
 ent_data$zerop <- rep(0,length=dim(ent_data)[1])
 ent_data$zerop[which(ent_data$netPrice==0)] <- 1
 
+# "unbundled" indicator
+unbundled <- rep(0,length=dim(ent_data)[1])
+#### new south wales - unbundled completely on July 1, 2000
+unbundled[nsw] <- 1
+#### queensland - unbundled completely on July 1, 2000
+unbundled[qld] <- 1
+#### south australia - only "River Murray Prescribed Water Course" unbundled on July 1, 2009
+sa_ub <- unique(intersect(intersect(grep("murrayprescribed",ent_data$TradeFromIdent),sa),which(ent_data$MonthOfTrade>200907)))
+unbundled[sa_ub] <- 1
+#### victoria - northern victoria unbundled on July 1, 2007; southern victoria unbundled on July 1, 2008
+nvic <- c("broken","bullarook","campaspe","goulburn","loddon","murray","ovens")
+nvic_ub <- unique(intersect(intersect(grep(paste(nvic,collapse="|"),ent_data$TradeFromIdent),vic),which(ent_data$MonthOfTrade>200807)))
+svic <- c("thomson","macalister","werribee")
+svic_ub <- unique(intersect(intersect(grep(paste(svic,collapse="|"),ent_data$TradeFromIdent),vic),which(ent_data$MonthOfTrade>200707)))
+unbundled[nvic_ub] <- 1
+unbundled[svic_ub] <- 1
+
 # put it all together
-ent_data_aug <- cbind(ent_data,from_state,to_state,interstate,statedums,mdb,productdummies)
+ent_data_aug <- cbind(ent_data,from_state,to_state,interstate,statedums,mdb,productdummies,unbundled)
+
+## "trading zone" dummies - adding these add the end so it's easy to comment out
+### from
+#fromzones <- as.factor(gsub("[^[:alnum:]_]","",ent_data$TradeFrom))
+#ent_data$tzdums_f <- dummy(fromzones,sep="_")
+### to
+#tozones <- as.factor(gsub("[^[:alnum:]_]","",ent_data$TradeTo))
+#ent_data$tzdums_t <- dummy(tozones,sep="_")
 
 # output to csv
 write.csv(ent_data_aug, file="entitlements_aug.csv")
@@ -156,8 +155,7 @@ to_state[tas] <- "tas"
 ##interstate
 interstate <- rep(0,length=dim(alloc_data)[1])
 interstate[which(from_state!=to_state)] <- 1
-
-# "state" dummies
+## "state" dummies
 statedums <- matrix(0,nrow=dim(alloc_data)[1],ncol=6)
 colnames(statedums) <- c("vic","wa","qld","nsw","sa","tas")
 statedums[from_state=="vic",1] <- 1
@@ -198,8 +196,33 @@ productdummies <- cbind(groundwater,river,surfacewater,regulated)
 alloc_data$zerop <- rep(0,length=dim(alloc_data)[1])
 alloc_data$zerop[which(alloc_data$netPrice==0)] <- 1
 
+# "unbundled" indicator
+unbundled <- rep(0,length=dim(alloc_data)[1])
+#### new south wales - unbundled completely on July 1, 2000
+unbundled[nsw] <- 1
+#### queensland - unbundled completely on July 1, 2000
+unbundled[qld] <- 1
+#### south australia - only "River Murray Prescribed Water Course" unbundled on July 1, 2009
+sa_ub <- unique(intersect(intersect(grep("murrayprescribed",alloc_data$TradeFromIdent),sa),which(alloc_data$MonthOfTrade>200907)))
+unbundled[sa_ub] <- 1
+#### victoria - northern victoria unbundled on July 1, 2007; southern victoria unbundled on July 1, 2008
+nvic <- c("broken","bullarook","campaspe","goulburn","loddon","murray","ovens")
+nvic_ub <- unique(intersect(intersect(grep(paste(nvic,collapse="|"),alloc_data$TradeFromIdent),vic),which(alloc_data$MonthOfTrade>200807)))
+svic <- c("thomson","macalister","werribee")
+svic_ub <- unique(intersect(intersect(grep(paste(svic,collapse="|"),alloc_data$TradeFromIdent),vic),which(alloc_data$MonthOfTrade>200707)))
+unbundled[nvic_ub] <- 1
+unbundled[svic_ub] <- 1
+
 # put it all together
-alloc_data_aug <- cbind(alloc_data,from_state,to_state,interstate,statedums,mdb,productdummies)
+alloc_data_aug <- cbind(alloc_data,from_state,to_state,interstate,statedums,mdb,productdummies,unbundled)
+
+## "trading zone" dummies - adding these add the end so it's easy to comment out
+### from
+#fromzones <- as.factor(gsub("[^[:alnum:]_]","",alloc_data$TradeFrom))
+#alloc_data$tzdums_f <- dummy(fromzones,sep="_")
+### to
+#tozones <- as.factor(gsub("[^[:alnum:]_]","",alloc_data$TradeTo))
+#alloc_data$tzdums_t <- dummy(tozones,sep="_")
 
 #drop incorrect year observations
 alloc_data_aug <- alloc_data_aug[-c(which(alloc_data_aug$year>2014)),]
