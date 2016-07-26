@@ -125,11 +125,11 @@ The models are estimated using data obtained from engineering estimates (for the
 
 ## Discussion
 
-Macauley's stated purpose in writing this paper was to figure out the potential gains from allowing more flexible orbit/spectrum use patterns. This is not what my current space economics project is about; I am looking at a general model of orbit choice and debris production. This model is specifically designed for telecommunications satellites in GEO, while the model I am writing is valid for any type of satellite in any not-too-elliptical orbital regime (with a focus on LEO).
+Macauley's stated purpose in writing this paper was to figure out the potential gains from allowing more flexible orbit/spectrum use patterns. This is not what my current space economics project is about; I am looking at a general model of orbit choice and debris production. This model is specifically designed for telecommunications satellites (therefore focused on GEO), while the model I am writing is valid for any type of satellite in any not-too-elliptical orbital regime (my implicit focus is on LEO). 
 
 However, I had not thought seriously about spectrum use prior to reading this paper. Now it seems obvious to me that most satellite applications require not only an orbital slot (or path) but also some electromagnetic spectrum. An imaging satellite which requires images to be physically retrieved from it is not very useful. I suppose tourist shuttles that take people to LEO and back down have less need for spectrum, but they would still need to be able to coordinate with ground-based observers and other satellites to ensure a safe trip.
 
-The question before me now is, how relevant is spectrum use to my applications? I think it's probably of second-order importance to modeling debris production from satellite operations outside GEO (say, in LEO), but might be of first-order importance in GEO. I was on the fence about incorporating locational attributes of orbital slots/paths in a general sort of way, but now I think those attributes are an important feature.
+The question before me now is, how relevant is spectrum use to my applications? I think it's probably of second-order importance to modeling debris production from satellite operations outside GEO (say, in LEO), but might be of first-order importance in GEO. I was on the fence about incorporating locational attributes of orbital slots/paths in a general sort of way, but now I think some general locational attribute(s) would be first-order important even in LEO.
 
 Back to this paper: Macauley points out that the Cobb-Douglas form is restrictive, and defends the use of this functional form in two ways:
 
