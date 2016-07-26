@@ -115,7 +115,7 @@ where $$t(u)$$ represents the marginal cost of connecting cities outside the vie
 Macauley estimates $$t(u)$$ using Mathematica to fit a polynomial of the form
 $$ t(u) = \gamma \frac{e^{(u - \bar{u})/\sigma}}{1 + e^{(u - \bar{u})/\sigma}} $$
 
-where $$ u - \bar{u}$$ measures distance in longitudinal degrees at $$u$$ from the prime orbit location, $$\bar{u}$$, and $$\sigma$$ is a curve-fitting parameter.
+where $$ u - \bar{u}$$ measures distance in longitudinal degrees at $$u$$ from the prime orbit location, $$\bar{u}$$, and $$\sigma$$ is a curve-fitting parameter. $$\gamma$$ is not explicitly described, but I'm assuming it's just a scale parameter for the curve-fitting.
 
 These equations allow Macauley to derive an equation for orbital slot value (derivation in Appendix B). It's a complicated equation which I won't describe here.
 
@@ -137,6 +137,10 @@ Back to this paper: Macauley points out that the Cobb-Douglas form is restrictiv
 2. by pointing out that data are unavailable to estimate all the parameters of a more flexible functional form.
 
 I may be missing it, but the functional form for $$Q()$$ the "fixed proportions" case seems to be unspecified. In the "variable proportions" case, I believe it is the Cobb-Douglas function given for $$X_s(u)$$. I didn't see this explicitly stated, but I'm assuming that $$Q()$$ in the "fixed proportions" case is a function with the same properties as $$X_s(u)$$ with $$\alpha=0.5$$.
+
+I didn't see any assumptions on $$p(u)$$ explicitly stated, but I'm assuming $$p(u) : p'(u) <0, p''(u) \leq 0$$ based on the locational equilibrium condition. I'm interpreting this in words as: the closer the satellite is to prime location (i.e. as $$ u \to 0$$), the higher the price of the satellite services. Since price elasticities of demand are negative for normal goods (i.e. $$\theta_2 < 0$$), this higher price scales the demand down. I can't think of any reason why satellite services or telecom services would be giffen goods, so this logic seems reasonable. 
+
+I'm not sure I understand how the locational equilibrium was derived, but it might be in some of the urban economics papers Macauley referenced. I'm interpreting it as a first-order condition from a location-choosing problem.
 
 The satellite spacing policy seems pretty bad in an "unintended consequences" way: policy intended to minimize spectrum congestion ends up obstructing the development of policies and technologies that could mitigate congestion. It's possible this spacing leads to more congestion in this equilibrium than there would be if the spacing regulations were relaxed, but I don't know if that's the case. Regardless, Macauley's argument for deadweight loss from the current intensity-limiting policy seems solid.
 
