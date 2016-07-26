@@ -79,7 +79,7 @@ where $$A$$ represents an orbital slot, $$S$$ represents spectrum, and $$H_s$$ r
 
 $$\begin{align}
 \delta(\bar{Q}) &= \sum_{j=1}^{n-1} \sum_{k=j+1}^{n} Q_{jk}, ~~0< \delta \leq 1 \cr
-Q_{jk}^D \leq \bar{Q}_{jk}
+Q_{jk}^D &\leq \bar{Q}_{jk}
 \end{align}$$
 
 $$\bar{Q}$$ represents the exogenously-given total quantity of communications demand for the set of $$n$$ countries that want to be connected. $$\delta(\bar{Q})$$ reflects individibilities in the various technologies when they operate as a system; I interpret this as meaning that these capacity investments are discrete and not continuous in nature, so that the system's installed capacity will typically exceed demand on a single country-pair route.  I am not sure what "$$0< \delta \leq 1 $$" refers to - maybe there's a typo where a $$\delta$$ exponent is missing?
@@ -135,6 +135,8 @@ Back to this paper: Macauley points out that the Cobb-Douglas form is restrictiv
 
 1. by appealing to some anecdotal engineering about the use of orbit and spectrum. The Cobb-Douglas form's restrictions implies that the ratio of input use be proportional to the ratio of factor prices. On the basis of published operating parameters, satellites in prime locations use a unit of orbit 7-10 times more intensively than in non-prime locations, through techniques like spectrum re-use. The orbit values she estimates with the first model imply values of prime locations that are approximately 10 times larger than in non-prime locations. So the Cobb-Douglas form may not be too bad an approximation in this setting.
 2. by pointing out that data are unavailable to estimate all the parameters of a more flexible functional form.
+
+I may be missing it, but the functional form for $$Q()$$ the "fixed proportions" case seems to be unspecified. In the "variable proportions" case, I believe it is the Cobb-Douglas function given for $$X_s(u)$$. I didn't see this explicitly stated, but I'm assuming that $$Q()$$ in the "fixed proportions" case is a function with the same properties as $$X_s(u)$$ with $$\alpha=0.5$$.
 
 The satellite spacing policy seems pretty bad in an "unintended consequences" way: policy intended to minimize spectrum congestion ends up obstructing the development of policies and technologies that could mitigate congestion. It's possible this spacing leads to more congestion in this equilibrium than there would be if the spacing regulations were relaxed, but I don't know if that's the case. Regardless, Macauley's argument for deadweight loss from the current intensity-limiting policy seems solid.
 
