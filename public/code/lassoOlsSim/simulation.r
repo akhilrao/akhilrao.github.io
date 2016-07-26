@@ -49,14 +49,14 @@ lasso_ols_mc <- function(n_covs, n_obs, n_iter) {
     return(coefs)
 }
 
-save.image("C:/Users/Akhil/Documents/akhilrao.github.io/public/code/lassoOlsSim/simulation.Rdata")
+#save.image("C:/Users/Akhil/Documents/akhilrao.github.io/public/code/lassoOlsSim/simulation.Rdata")
 
 #### Calculate means
 #load("C:/Users/Akhil/Documents/akhilrao.github.io/public/code/lassoOlsSim/simulation.Rdata")
-#coefs <- lasso_ols_sim(25,100,1000)
-#ols_coefs <- coefs[[1]]
-#lasso_min <- coefs[[2]]
-#options(scipen=100,digits=4) #trying to make output a little clearer
-#colMeans(ols_coefs)
-#colMeans(lasso_min)
+coefs <- lasso_ols_mc(50,100,1000)
+ols_coefs <- coefs[[1]]
+lasso_min <- coefs[[2]]
+options(scipen=100,digits=4) #trying to make output a little clearer
+colMeans(ols_coefs, na.rm=TRUE)
+colMeans(lasso_min, na.rm=TRUE)
 

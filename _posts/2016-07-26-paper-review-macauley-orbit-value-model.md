@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Paper review - "Allocation of Orbit and Spectrum Resources for Regional Communications - What's at Stake?"
-category: micro theory
+category: reviews
 tags: micro theory, resource economics, law and economics
 year: 2016
 month: 07
@@ -125,7 +125,7 @@ The models are estimated using data obtained from engineering estimates (for the
 
 ## Discussion
 
-Macauley's stated purpose in writing this paper was to figure out the potential gains from allowing more flexible orbit/spectrum use patterns. This is not what my current space economics project is about; I am looking at a general model of orbit choice and debris production. This model is specifically designed for telecommunications satellites (therefore focused on GEO), while the model I am writing is valid for any type of satellite in any not-too-elliptical orbital regime (my implicit focus is on LEO). 
+Macauley's stated purpose in writing this paper was to figure out the potential gains from allowing more flexible orbit/spectrum use patterns. This is not what my current space economics project is about; I am looking at a general model of orbit choice and debris production. This model is specifically designed for telecommunications satellites (therefore focused on GEO), while the model I am writing is valid for any type of satellite in any not-too-elliptical orbital regime (my implicit focus is on LEO, but it can be reparameterized for GEO). 
 
 However, I had not thought seriously about spectrum use prior to reading this paper. Now it seems obvious to me that most satellite applications require not only an orbital slot (or path) but also some electromagnetic spectrum. An imaging satellite which requires images to be physically retrieved from it is not very useful. I suppose tourist shuttles that take people to LEO and back down have less need for spectrum, but they would still need to be able to coordinate with ground-based observers and other satellites to ensure a safe trip.
 
