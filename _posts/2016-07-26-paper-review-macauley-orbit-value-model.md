@@ -94,7 +94,7 @@ R(L_i) &= TC(L_i) - TC(L_x)
 
 where $$TC()$$ represents the total cost to serve $$n$$ countries that want to be connected using a satellite located at location $$L_i$$. $$L_x$$ represents the next-best available orbital slot that could connect those $$n$$ countries. $$R(L_i)$$ represents the cost savings of using the most-preferred orbital slot for a set of countries in a region. The outside option of not using satellite technology to connect $$n$$ countries is represented by $$R(L_i) = R(L_i) - R(L_i) = 0$$.
 
-The phrase "prime orbit location" refers to the orbit location with a maximum value for a specific nation. I am thinking about it as the GEO location above a country which puts the most important countries it communicates with in the satellite's FOV, i.e. a satellite in prime location for country $$j$$ maximizes the value of communications between $$j$$ and the countries it wishes to communicate with, $$\{k\}$$. In South America, this definition maps "prime locations" to "locations which cover the most other countries $$k$$". In North America, population density and communications patterns break this mapping. For example, site values in the Pacific Rim are high when just Canada and the US are in view, excluding many of the other PacRim countries.
+The phrase "prime orbit location" refers to the orbit location with a maximum value for a specific nation. I am thinking about it as the GEO location above a country which puts the most important countries it communicates with in the satellite's FOV, i.e. a satellite in prime location for country $$j$$ maximizes the value of communications between $$j$$ and the countries it wishes to communicate with, $$\{k\}$$. In South America, this definition maps "prime locations" to "locations which cover the most other countries $$k$$". In North America, population density and communications patterns break this mapping. For example, site values in the Pacific Rim under the fixed proportions model are high when just Canada and the US are in view, excluding many of the other PacRim countries.
 
 ### Variable proportions
 
@@ -105,7 +105,7 @@ X_s(u) &= DA(u)^{\alpha}S(u)^{1-\alpha} \cr
 X_d(u) &= \beta y^{\theta_1} p(u)^{\theta_2}
 \end{align}$$
 
-where $$D$$ is a scale parameter, $$A$$ and $$S$$ are quantities of orbit and spectrum, $$\alpha \in (0,1)$$ is the Cobb-Douglas exponent; $$\beta$$ is a scale parameter, $$y$$ is income, $$p$$ is price, and $$\theta_1$$ and $$\theta_2$$ are the income and price elasticities respectively. $$u$$ measures the satellite location relative to prime locations.
+where $$D$$ is a scale parameter, $$A$$ and $$S$$ are quantities of orbit and spectrum, $$\alpha \in (0,1)$$ is the Cobb-Douglas exponent; $$\beta$$ is a scale parameter, $$y$$ is income, $$p$$ is price, and $$\theta_1$$ and $$\theta_2$$ are the income and price elasticities respectively. $$u$$ measures the satellite location relative to prime locations. I didn't see this explicitly stated, but I'm assuming $$u: u=0 \implies$$ prime location.
 
 This model also has an equation for locational equilibrium, as
 
