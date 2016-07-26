@@ -56,6 +56,7 @@ Macauley describes how FOV is determined at each location in the beginning of th
 This model provides the foundation for the analysis in this paper. It is a simulation model of a cost-minimizing telecom service producer's choice of service provision technology. The equations which define the model are
 
 *Terrestrial technologies*
+
 $$\begin{align}
 Q_i &= Q(H_i) \cr
 C_{ijk} &= C_i(Q_{jk},Z_{jk}, \delta_i(\bar{Q}_i))
@@ -66,6 +67,7 @@ where $$Q()$$ represents the output of communications services, and $$C()$$ repr
 $$i = 1, \dots, m$$ indexes the potential terrestrial technologies which could connect country pairs $$jk$$; $$H_i$$ represents the hardware which forms the connection and associated costs (e.g. coastal landing rights for undersea cable, overland rights of way for terrestrial cable); $$Z_{jk}$$ represents the distance between countries $$j$$ and $$k$$.
 
 *Satellites*
+
 $$\begin{align}
 Q_s &= Q(A, S, H_s) \cr
 C_{sjk} &= C_s(Q_{jk}, \delta_s(\bar{Q}_s); L_1, \dots, L_{\tau}) \text{ for } (j,k) \in FOV
@@ -74,18 +76,19 @@ C_{sjk} &= C_s(Q_{jk}, \delta_s(\bar{Q}_s); L_1, \dots, L_{\tau}) \text{ for } (
 where $$A$$ represents an orbital slot, $$S$$ represents spectrum, and $$H_s$$ represents the satellite hardware and associated costs (including launch costs); $$L_1, \dots, L_{\tau}$$ represent the exogenously-given possible orbital locations indexed $$1 - \tau$$.
 
 *Demand and indivisibilities*
+
 $$\begin{align}
 \delta(\bar{Q}) &= \sum_{j=1}^{n-1} \sum_{k=j+1}^{n} Q_{jk}, ~~0< \delta \leq 1 \cr
 Q_{jk}^D \leq \bar{Q}_{jk}
 \end{align}$$
 
-$$bar{Q}$$ represents the exogenously-given total quantity of communications demand for the set of $$n$$ countries that want to be connected. $$\delta(\bar{Q})$$ reflects individibilities in the various technologies when they operate as a system; I interpret this as meaning that these capacity investments are discrete and not continuous in nature, so that the system's installed capacity will typically exceed demand on a single country-pair route.  I am not sure what "$$0< \delta \leq 1 $$" refers to - maybe there's a typo where a $$\delta$$ exponent is missing?
+$$\bar{Q}$$ represents the exogenously-given total quantity of communications demand for the set of $$n$$ countries that want to be connected. $$\delta(\bar{Q})$$ reflects individibilities in the various technologies when they operate as a system; I interpret this as meaning that these capacity investments are discrete and not continuous in nature, so that the system's installed capacity will typically exceed demand on a single country-pair route.  I am not sure what "$$0< \delta \leq 1 $$" refers to - maybe there's a typo where a $$\delta$$ exponent is missing?
 $$Q_{jk}^D$$ measures the "busy hour" traffic between $$j$$ and $$k$$, and implies a constraint on the facilities - they must be able to serve this demand at an acceptable degree of service (i.e. low probability of receiving a busy signal).
 
 This setup lets Macauley calculate the cost savings from using satellites over terrestrial technology as
 
 $$\begin{align}
-min TC(L_i) &= \sum_{j=1}^{n-1} \sum_{k=j+1}^{n} C_{jk} (Q; \delta, z, L_i) \cr
+\min TC(L_i) &= \sum_{j=1}^{n-1} \sum_{k=j+1}^{n} C_{jk} (Q; \delta, z, L_i) \cr
 R(L_i) &= TC(L_i) - TC(L_x)
 \end{align}$$
 
@@ -96,6 +99,7 @@ The phrase "prime orbit location" refers to the orbit location with a maximum va
 ### Variable proportions
 
 The supply and demand equations for the variable proportions model are
+
 $$\begin{align}
 X_s(u) &= DA(u)^{\alpha}S(u)^{1-\alpha} \cr
 X_d(u) &= \beta y^{\theta_1} p(u)^{\theta_2}
@@ -104,13 +108,14 @@ X_d(u) &= \beta y^{\theta_1} p(u)^{\theta_2}
 where $$D$$ is a scale parameter, $$A$$ and $$S$$ are quantities of orbit and spectrum, $$\alpha \in (0,1)$$ is the Cobb-Douglas exponent; $$\beta$$ is a scale parameter, $$y$$ is income, $$p$$ is price, and $$\theta_1$$ and $$\theta_2$$ are the income and price elasticities respectively. $$u$$ measures the satellite location relative to prime locations.
 
 This model also has an equation for locational equilibrium, as
+
 $$ p'(u) X_d(u) = -t(u) $$
 
 where $$t(u)$$ represents the marginal cost of connecting cities outside the view of a satellite at location $$u$$, i.e. the extra costs incurred to get to the edge of the satellite's FOV.
 Macauley estimates $$t(u)$$ using Mathematica to fit a polynomial of the form
 $$ t(u) = \gamma \frac{e^{(u - \bar{u})/\sigma}}{1 + e^{(u - \bar{u})/\sigma}} $$
 
-where $$ u - \bar{u}$$ measures distance in longitudinal degrees at $$u$$ from the prime orbit location, $$\bar{u}$$.
+where $$ u - \bar{u}$$ measures distance in longitudinal degrees at $$u$$ from the prime orbit location, $$\bar{u}$$, and $$\sigma$$ is a curve-fitting parameter.
 
 These equations allow Macauley to derive an equation for orbital slot value (derivation in Appendix B). It's a complicated equation which I won't describe here.
 
