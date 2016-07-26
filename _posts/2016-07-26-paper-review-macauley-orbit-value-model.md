@@ -24,7 +24,7 @@ This paper is about the values of slots in geostationary orbits (GEO) and the po
 
 In writing the model, Macauley is drawing on urban economics models of spatial location. A quote from the paper illustrates the argument:
 
->> "...just as land values increase with proximity to a central business district as commuting and other transportation costs fall, orbit values might be expected to increase at locations that afford the best communications-demand-related coverage...just as an increase in land values leads to substitution toward capital and away from land...so too might an increase in orbit values lead to more capital intensive use of the orbit at preferred locations."
+> "...just as land values increase with proximity to a central business district as commuting and other transportation costs fall, orbit values might be expected to increase at locations that afford the best communications-demand-related coverage...just as an increase in land values leads to substitution toward capital and away from land...so too might an increase in orbit values lead to more capital intensive use of the orbit at preferred locations."
 
 So in the same way that urban land users in downtown areas use land more intensively (taller buildings) than users in the suburbs (flatter buildings and more sprawl), orbit users have incentives to use prime orbits more intensively (more spectrum use per unit of orbit) than users in non-prime locations. 
 
