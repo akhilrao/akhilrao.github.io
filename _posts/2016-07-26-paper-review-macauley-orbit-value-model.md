@@ -73,7 +73,7 @@ Q_s &= Q(A, S, H_s) \cr
 C_{sjk} &= C_s(Q_{jk}, \delta_s(\bar{Q}_s); L_1, \dots, L_{\tau}) \text{ for } (j,k) \in FOV
 \end{align}$$
 
-where $$A$$ represents an orbital slot, $$S$$ represents spectrum, and $$H_s$$ represents the satellite hardware and associated costs (including launch costs); $$L_1, \dots, L_{\tau}$$ represent the exogenously-given possible orbital locations indexed $$1 - \tau$$.
+where $$A$$ represents an orbital slot, $$S$$ represents spectrum, and $$H_s$$ represents the satellite hardware and associated costs (including launch costs); $$L_1, \dots, L_{\tau}$$ represent the exogenously-given possible orbital locations indexed $$1, \dots, \tau$$.
 
 *Demand and indivisibilities*
 
@@ -82,7 +82,7 @@ $$\begin{align}
 Q_{jk}^D &\leq \bar{Q}_{jk}
 \end{align}$$
 
-$$\bar{Q}$$ represents the exogenously-given total quantity of communications demand for the set of $$n$$ countries that want to be connected. $$\delta(\bar{Q})$$ reflects individibilities in the various technologies when they operate as a system; I interpret this as meaning that these capacity investments are discrete and not continuous in nature, so that the system's installed capacity will typically exceed demand on a single country-pair route.  I am not sure what "$$0< \delta \leq 1 $$" refers to - maybe there's a typo where a $$\delta$$ exponent is missing?
+$$\bar{Q}$$ represents the exogenously-given total quantity of communications demand for the set of $$n$$ countries that want to be connected. $$\delta(\bar{Q})$$ reflects individibilities in the various technologies when they operate as a system; I interpret this as meaning that these capacity investments are discrete and not continuous in nature, so that the system's installed capacity will typically exceed demand on a single country-pair route.  I am not sure what "$$0< \delta \leq 1 $$" refers to - maybe there's a typo where a $$\delta$$ exponent is missing? Or maybe there's a normalization so that $$\delta \in (0,1]$$?
 $$Q_{jk}^D$$ measures the "busy hour" traffic between $$j$$ and $$k$$, and implies a constraint on the facilities - they must be able to serve this demand at an acceptable degree of service (i.e. low probability of receiving a busy signal).
 
 This setup lets Macauley calculate the cost savings from using satellites over terrestrial technology as
@@ -113,6 +113,7 @@ $$ p'(u) X_d(u) = -t(u) $$
 
 where $$t(u)$$ represents the marginal cost of connecting cities outside the view of a satellite at location $$u$$, i.e. the extra costs incurred to get to the edge of the satellite's FOV.
 Macauley estimates $$t(u)$$ using Mathematica to fit a polynomial of the form
+
 $$ t(u) = \gamma \frac{e^{(u - \bar{u})/\sigma}}{1 + e^{(u - \bar{u})/\sigma}} $$
 
 where $$ u - \bar{u}$$ measures distance in longitudinal degrees at $$u$$ from the prime orbit location, $$\bar{u}$$, and $$\sigma$$ is a curve-fitting parameter. $$\gamma$$ is not explicitly described, but I'm assuming it's just a scale parameter for the curve-fitting.
@@ -144,6 +145,6 @@ I'm not sure I understand how the locational equilibrium was derived, but it mig
 
 The satellite spacing policy seems pretty bad in an "unintended consequences" way: policy intended to minimize spectrum congestion ends up obstructing the development of policies and technologies that could mitigate congestion. It's possible this spacing leads to more congestion in this equilibrium than there would be if the spacing regulations were relaxed, but I don't know if that's the case. Regardless, Macauley's argument for deadweight loss from the current intensity-limiting policy seems solid.
 
-I'd like to write a paper about GEO use specifically; estimating this model with more data, or extending this model, might be good places to start. 
+I'd like to write a paper about GEO use specifically; estimating this model with more data, or extending this model, might be good places to start. I liked the "calibrated simulation" approach Macauley used, and would like to do something similar. I think this was possible here because all of the variables were closely tied to things in the real world - this paper had math, but it was not [mathy](https://paulromer.net/mathiness/).
 
 Overall I really liked this paper. I thought it was insightful, well researched and thought through, and very helpful for someone getting started in this area.
