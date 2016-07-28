@@ -82,8 +82,9 @@ $$\begin{align}
 Q_{jk}^D &\leq \bar{Q}_{jk}
 \end{align}$$
 
-$$\bar{Q}$$ represents the exogenously-given total quantity of communications demand for the set of $$n$$ countries that want to be connected. $$\delta(\bar{Q})$$ reflects individibilities in the various technologies when they operate as a system; I interpret this as meaning that these capacity investments are discrete and not continuous in nature, so that the system's installed capacity will typically exceed demand on a single country-pair route.  I am not sure what "$$0< \delta \leq 1 $$" refers to - maybe there's a typo where a $$\delta$$ exponent is missing? Or maybe there's a normalization so that $$\delta \in (0,1]$$?
-$$Q_{jk}^D$$ measures the "busy hour" traffic between $$j$$ and $$k$$, and implies a constraint on the facilities - they must be able to serve this demand at an acceptable degree of service (i.e. low probability of receiving a busy signal).
+$$\bar{Q}$$ represents the exogenously-given total quantity of communications demand for the set of $$n$$ countries that want to be connected. $$\delta(\bar{Q})$$ reflects individibilities in the various technologies when they operate as a system; I interpret this as meaning that these capacity investments are discrete and not continuous in nature, so that the system's installed capacity will typically exceed demand on a single country-pair route.  I am not sure what "$$0< \delta \leq 1 $$" refers to - maybe there's a typo where a $$\delta$$ exponent is missing? Or maybe there's a normalization so that $$\delta(\bar{Q}) \in (0,1]$$?
+
+$$Q_{jk}^D$$ measures the "busy hour" traffic between $$j$$ and $$k$$, and implies a constraint on the facilities - they must be able to serve this demand at an acceptable degree of service (i.e. low probability of receiving a busy signal). These values are taken from the engineering literature.
 
 This setup lets Macauley calculate the cost savings from using satellites over terrestrial technology as
 
