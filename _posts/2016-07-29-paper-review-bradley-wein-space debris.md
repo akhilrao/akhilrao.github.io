@@ -33,9 +33,9 @@ F^{\kappa}_{\tau}:& \text{ effective number of fragments} \cr
 \kappa \in \{ h, b \}:& \text{ is fragment hazardous or benign to intacts} \cr
 \tau \in \{ R, S \}:& \text{ source of fragment, rocket body or spacecraft } \cr
 \mu_{F^{\kappa}}:& \text{ rate at which fragments deorbit} \cr
-\beta_{\alpha \gamma}:& \text{ the number of collisions between satellites of type } \alpha \text{ and } \gamma \text{ per unit time per satellite of type } \alpha \text{ per satellite of type } \gamma   \text{, where } \alpha, \gamma \in \{ S, R, F^{\kappa}_{\tau} \} \cr
-\beta_{\alpha \gamma} \alpha(t) \gamma(t):& \text{ rate of collisions between satellites of types } \alpha \text{ and } \cr 
-& \gamma \text{ at } t \cr
+\beta_{\alpha \gamma}:& \text{ the number of collisions between satellites of type } \alpha \text{ and } \gamma \text{ per unit time per satellite of type } \alpha \text{ per satellite of type } \cr
+& \gamma   \text{, where } \alpha, \gamma \in \{ S, R, F^{\kappa}_{\tau} \} \cr
+\beta_{\alpha \gamma} \alpha(t) \gamma(t):& \text{ rate of collisions between satellites of types } \alpha \text{ and } \gamma \text{ at } t \cr
 \delta_{\alpha \gamma}^{\tau \kappa}\alpha(t) \gamma(t):& \text{ rate at which fragments of type } F^{\kappa}_{\tau} \text{ are generated from } \cr
 & \text{ collisions between satellites of types } \alpha \text{ and } \gamma \cr
 S(t) \equiv& S_n^o(t) + S_n(t) + S_d(t) \cr
@@ -80,6 +80,7 @@ $$\begin{align}
 \frac{\delta_{II}}{\beta_{II}} =& \frac{\delta_{IF}}{\beta_{IF}} = \max \left { \max \frac{\delta_{\alpha \gamma}^{\tau \kappa}}{2\beta_{\alpha \gamma}} , \max \frac{\delta_{\alpha \zeta}^{\tau \kappa}}{\beta_{\alpha \zeta}} \right }
 \mu_F =& \min_{\alpha \in U^F} \mu_{\alpha}
 \end{align}$$
+
 for $$\alpha, \gamma \in U^I$$, $$ \zeta, \eta \in U^F $$, $$\tau \in \{ R, S \} $$, $$\kappa \in \{ h,b \} $$.
 
 The simplified system is
