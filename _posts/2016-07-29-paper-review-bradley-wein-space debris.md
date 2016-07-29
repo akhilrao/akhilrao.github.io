@@ -26,7 +26,7 @@ R(t):& \text{ upper stage rocket bodies lingering at separation altitude}  \cr
 \theta_d:& \text{ fraction of spacecraft with deorbit capability}  \cr
 \mu^{-1}_o:& \text{ is the average operational lifetime} \cr
 \mu_o:& \text{ rate at which } S_d \text{ deorbit,}  \cr
-& \text{ rate at which } S_n^o \text{ change to } S_n \cr
+& \text{ also rate at which } S_n^o \text{ change to } S_n \cr
 \mu_n:& \text{ rate at which } S_n \text{ deorbit naturally} \cr
 \mu_R:& \text{ rate at which } R \text{ deorbit naturally} \cr
 F^{\kappa}_{\tau}:& \text{ effective number of fragments} \cr
@@ -34,8 +34,10 @@ F^{\kappa}_{\tau}:& \text{ effective number of fragments} \cr
 \tau \in \{ R, S \}:& \text{ source of fragment, rocket body or spacecraft } \cr
 \mu_{F^{\kappa}}:& \text{ rate at which fragments deorbit} \cr
 \beta_{\alpha \gamma}:& \text{ the number of collisions between satellites of type } \alpha \text{ and } \gamma \text{ per unit time per satellite of type } \alpha \text{ per satellite of type } \gamma   \text{, where } \alpha, \gamma \in \{ S, R, F^{\kappa}_{\tau} \} \cr
-\beta_{\alpha \gamma} \alpha(t) \gamma(t):& \text{ rate of collisions between satellites of types } \alpha \text{ and } \gamma \text{ at } t \cr
-\delta_{\alpha \gamma}^{\tau \kappa}\alpha(t) \gamma(t):& \text{ rate at which fragments of type } F^{\kappa}_{\tau} \text{ are generated from collisions between satellites of types } \alpha \text{ and } \gamma \cr
+\beta_{\alpha \gamma} \alpha(t) \gamma(t):& \text{ rate of collisions between satellites of types } \alpha \text{ and } \cr 
+& \gamma \text{ at } t \cr
+\delta_{\alpha \gamma}^{\tau \kappa}\alpha(t) \gamma(t):& \text{ rate at which fragments of type } F^{\kappa}_{\tau} \text{ are generated from } \cr
+& \text{ collisions between satellites of types } \alpha \text{ and } \gamma \cr
 S(t) \equiv& S_n^o(t) + S_n(t) + S_d(t) \cr
 F^h(t) \equiv& F^h_R(t) + F^h_S(t) \cr
 F^b(t) \equiv& F^b_R(t) + F^b_S(t) \cr
@@ -47,6 +49,7 @@ U^I \equiv& \{S, R \} (\text{the set of intact types}) \cr
 \end{align}$$
 
 Notes about the notation:
+
 1. I'm assuming that $$\lambda_R \in [0, \lambda_o]$$, since the rocket bodies are used to launch spacecraft.
 2. The "effective" number of fragments refers to the fragments being weighted by the proportion of their time they spend in the SOI.
 3. "A particular fragment is not simply hazardous or benign to intacts the uncertainty in collision velocity causes the properties of the fragment to determine the probability with which it is hazardous or benign in a particular collision." A particular fragment from source $$\tau \in \{ R, S \}$$ increases the effective numbers $$F^h_{\tau}$$ and $$F^b_{\tau}$$ by quantites that sum to 1.
@@ -71,8 +74,8 @@ For the equilibrium analysis, they define some new parameters in order to simpli
 $$\begin{align}
 \beta_{II} =& \max \beta_{\alpha \gamma} \cr
 \beta_{IF} =& \max \beta_{\alpha \zeta} \cr
-\mu_I =& \min & \{ \{ \text{if } \lambda_R >0, \mu_R; \text{ else } \infty \}, \cr
-& & \{ \text{if } \theta_d <1, \mu_n; \text{ else } \infty \},\mu_o \} \cr
+\mu_I =& \min \{ \{ \text{if } \lambda_R >0, \mu_R; \text{ else } \infty \}, \cr
+&    \{ \text{if } \theta_d <1, \mu_n; \text{ else } \infty \},\mu_o \} \cr
 \lambda_I =& \lambda_R + \lambda_o \cr
 \frac{\delta_{II}}{\beta_{II}} =& \frac{\delta_{IF}}{\beta_{IF}} = \max \left { \max \frac{\delta_{\alpha \gamma}^{\tau \kappa}}{2\beta_{\alpha \gamma}} , \max \frac{\delta_{\alpha \zeta}^{\tau \kappa}}{\beta_{\alpha \zeta}} \right }
 \mu_F =& \min_{\alpha \in U^F} \mu_{\alpha}
