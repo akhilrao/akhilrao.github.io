@@ -98,8 +98,8 @@ As I'm understanding it, the simplified system involves using the highest rates 
 One of the features of this paper I found really interesting was the system quality metric BW used, the "maximum (over all time) lifetime risk to an operational spacecraft". They describe this as a sustainability metric as opposed to an efficiency metric. The metric is defined as
 
 $$\begin{align}
-& \max_{t \geq 0} r^0(t) \cr
-& r^0 = 1 - \left ( 1 - \sum_{\alpha \in U^h} \beta_{S \alpha} \alpha(t) \right )^{\mu_o^{-1}}
+r^0 &\equiv \max_{t \geq 0} r^0(t) \cr
+r^0(t) &= 1 - \left ( 1 - \sum_{\alpha \in U^h} \beta_{S \alpha} \alpha(t) \right )^{\mu_o^{-1}}
 \end{align}$$
 
 This metric measures the system's hazard as the probability that a spacecraft launched at time $$t$$ will be destroyed, while it is still operational, by an intact-intact or intact-fragment catastrophic collision.
