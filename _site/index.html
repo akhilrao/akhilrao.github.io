@@ -16,14 +16,14 @@
   </title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="https://akhilrao.github.io/public/css/poole.css">
-  <link rel="stylesheet" href="https://akhilrao.github.io/public/css/syntax.css">
-  <link rel="stylesheet" href="https://akhilrao.github.io/public/css/lanyon.css">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
 
   <!-- Icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://akhilrao.github.io/public/apple-touch-icon-precomposed.png">
-  <link rel="shortcut icon" href="https://akhilrao.github.io/public/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
@@ -48,7 +48,7 @@
   </div>
 
   <nav class="sidebar-nav">
-    <a class="sidebar-nav-item" href="https://akhilrao.github.io/">Home</a>
+    <a class="sidebar-nav-item" href="/">Home</a>
 
     
 
@@ -610,6 +610,10 @@
         
       
     
+      
+        
+      
+    
 
     <a class="sidebar-nav-item" href="https://github.com/akhilrao/archive/v0.1.0.zip">Download</a>
     <a class="sidebar-nav-item" href="https://github.com/akhilrao">GitHub project</a>
@@ -630,7 +634,7 @@
       <div class="masthead">
         <div class="container">
           <h3 class="masthead-title">
-            <a href="https://akhilrao.github.io/" title="Home">Produced Under Scarcity</a>
+            <a href="/" title="Home">Produced Under Scarcity</a>
             <small>Akhil Rao's blog</small>
           </h3>
         </div>
@@ -641,8 +645,176 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="https://akhilrao.github.io//micro%20theory/2016/07/26/paper-review-macauley-orbit-value-model/">
-        Paper review - *"Allocation of Orbit and Spectrum Resources for Regional Communications - What's at Stake?"*
+      <a href="//reviews/2016/07/29/paper-review-bradley-wein-space-debris/">
+        Paper Review - "Space debris - Assessing risk and responsibility"
+      </a>
+    </h1>
+
+    <span class="post-date">29 Jul 2016</span>
+
+    <p>Here I discuss some aspects of <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.164.4466&amp;rep=rep1&amp;type=pdf">Bradley and Wein (2009)</a>, published in <em>Advances in Space Research</em>.</p>
+
+<p>The authors (BW) consider a number of different simulations to get at the behavior of the debris system over time. My interest right now is more in the model and its assumptions than the simulations and their results, so that’s where I’ll focus this post.</p>
+
+<h2 id="notation">Notation</h2>
+
+<p>This paper has a lot of notation. I thought putting it all in one place would make it clearer than searching through the paper, but I’m not sure about that anymore.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+S_n^o(t):& \text{ spacecraft which can't deorbit, are still operational}  \cr
+S_n(t):& \text{ spacecraft which can't deorbit, not operational}  \cr 
+S_d(t):& \text{ spacecraft which can deorbit, operational}  \cr
+R(t):& \text{ upper stage rocket bodies lingering at separation altitude}  \cr
+\lambda_o:& \text{ rate at which spacecraft are launched into SOI}  \cr
+\lambda_R:& \text{ rate at which rocket bodies are launched into SOI}  \cr
+\theta_d:& \text{ fraction of spacecraft with deorbit capability}  \cr
+\mu^{-1}_o:& \text{ is the average operational lifetime} \cr
+\mu_o:& \text{ rate at which } S_d \text{ deorbit,}  \cr
+& \text{ also rate at which } S_n^o \text{ change to } S_n \cr
+\mu_n:& \text{ rate at which } S_n \text{ deorbit naturally} \cr
+\mu_R:& \text{ rate at which } R \text{ deorbit naturally} \cr
+F^{\kappa}_{\tau}:& \text{ effective number of fragments} \cr
+\kappa \in \{ h, b \}:& \text{ is fragment hazardous or benign to intacts} \cr
+\tau \in \{ R, S \}:& \text{ source of fragment, rocket body or spacecraft } \cr
+\mu_{F^{\kappa}}:& \text{ rate at which fragments deorbit} \cr
+\beta_{\alpha \gamma}:& \text{ the number of collisions between satellites of type } \alpha \text{ and } \gamma \cr
+&  \text{ per unit time per satellite of type } \alpha \text{ per satellite of type } \gamma   \text{, where } \alpha, \gamma \in \{ S, R, F^{\kappa}_{\tau} \} \cr
+\beta_{\alpha \gamma} \alpha(t) \gamma(t):& \text{ rate of collisions between satellites of types } \alpha \text{ and } \gamma \text{ at } t \cr
+\delta_{\alpha \gamma}^{\tau \kappa}\alpha(t) \gamma(t):& \text{ rate at which fragments of type } F^{\kappa}_{\tau} \text{ are generated from } \cr
+& \text{ collisions between satellites of types } \alpha \text{ and } \gamma \cr
+S(t) \equiv& S_n^o(t) + S_n(t) + S_d(t) \cr
+F^h(t) \equiv& F^h_R(t) + F^h_S(t) \cr
+F^b(t) \equiv& F^b_R(t) + F^b_S(t) \cr
+F^S(t) \equiv& F^h(t) + F^b(t) \cr
+U \equiv& \{S, R, F^h_S, F^b_S, F^h_R, F^b_R \} (\text{the set of satellite types}) \cr
+U^h \equiv& \{S, R, F^h_S, F^h_R\} (\text{the set of satellites hazardous to intacts}) \cr
+U^F \equiv& \{F^h_S, F^b_S, F^h_R, F^b_R\} (\text{the set of fragment types}) \cr
+U^I \equiv& \{S, R \} (\text{the set of intact types}) \cr
+\end{align} %]]></script>
+
+<p>Notes about the notation:</p>
+
+<ol>
+  <li>I’m assuming that <script type="math/tex">\lambda_R \in [0, \lambda_o]</script>, since the rocket bodies are used to launch spacecraft.</li>
+  <li>The “effective” number of fragments refers to the fragments being weighted by the proportion of their time they spend in the SOI.</li>
+  <li>“A particular fragment is not simply hazardous or benign to intacts the uncertainty in collision velocity causes the properties of the fragment to determine the probability with which it is hazardous or benign in a particular collision.” A particular fragment from source <script type="math/tex">\tau \in \{ R, S \}</script> increases the effective numbers <script type="math/tex">F^h_{\tau}</script> and <script type="math/tex">F^b_{\tau}</script> by quantites that sum to 1.</li>
+  <li>The assumption on the rate of new fragment generation is because satellite cross-section (which determines likelihood of collision) and mass (which determines number of fragments) have a joint probability distribution. A collision between a rocket body and a spacecraft produces all four types of fragments: hazardous and benign from both the rocket body and the spacecraft.</li>
+  <li>“Hazardous” fragments can produce catastrophic collisions with intacts; “benign” fragments cannot.</li>
+  <li>“Intacts” refers to rocket bodies or spacecraft.</li>
+</ol>
+
+<h2 id="model">Model</h2>
+
+<p>The full model is given by
+<script type="math/tex">% <![CDATA[
+\begin{align}
+\dot{R}(t)=& \lambda_R - \sum_{\alpha \in U^h} \beta_{R \alpha} R(t) \alpha(t) - \mu_R R(t)  &(1) \cr
+\dot{S}_n^o(t)=& (1 - \theta_d) \lambda_o - \sum_{\alpha \in U^h} \beta_{S \alpha} S_n^o(t) \alpha(t) - \mu_o S_n^o(t)  &(2) \cr
+\dot{S}_n(t)=& \mu_o S_n^o(t) - \sum_{\alpha \in U^h} \beta_{S \alpha} S_n(t) \alpha(t) - \mu_n S_n(t)  &(3) \cr
+\dot{S}_d(t)=& \theta_d \lambda_o - \sum_{\alpha \in U^h} \beta_{S \alpha} S_d(t) \alpha(t) - \mu_o S_d(t)  &(4) \cr
+\dot{F}_{\tau}^{\kappa}(t)=& \frac{1}{2} \sum_{\alpha \in U} \sum_{\gamma \in U}\delta_{\alpha \gamma}^{\tau \kappa}\alpha(t) \gamma(t) - \mu_{F_{\tau}^{\kappa}}F_{\tau}^{\kappa}(t)  &(5) \cr   
+\end{align} %]]></script></p>
+
+<p>for <script type="math/tex">\tau \in U^I, \kappa \in \{ h, b \}</script>.</p>
+
+<p>For the equilibrium analysis, they define some new parameters in order to simplify system (1)-(5). The new parameters are</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\beta_{II} =& \max \beta_{\alpha \gamma} \cr
+\beta_{IF} =& \max \beta_{\alpha \zeta} \cr
+\mu_I =& \min \{ \{ \text{if } \lambda_R >0, \mu_R; \text{ else } \infty \}, \{ \text{if } \theta_d <1, \mu_n; \text{ else } \infty \},\mu_o \} \cr
+\lambda_I =& \lambda_R + \lambda_o \cr
+\frac{\delta_{II}}{\beta_{II}} = \frac{\delta_{IF}}{\beta_{IF}} =& \max \left \{ \max \frac{\delta_{\alpha \gamma}^{\tau \kappa}}{2\beta_{\alpha \gamma}} ,  \max \frac{\delta_{\alpha \zeta}^{\tau \kappa}}{\beta_{\alpha \zeta}} \right \} \cr
+\mu_F =& \min_{\alpha \in U^F} \mu_{\alpha} \cr
+\end{align} %]]></script>
+
+<p>for <script type="math/tex">\alpha, \gamma \in U^I</script>, <script type="math/tex">\zeta, \eta \in U^F</script>, <script type="math/tex">\tau \in \{ R, S \}</script>, <script type="math/tex">\kappa \in \{ h,b \}</script>.</p>
+
+<p>The simplified system is
+<script type="math/tex">% <![CDATA[
+\begin{align}
+\dot{I}(t)=& \lambda_R - \sum_{\alpha \in U^h} \beta_{R \alpha} R(t) \alpha(t) - \mu_R R(t)  &(6) \cr
+\dot{F}(t)=& (1 - \theta_d) \lambda_o - \sum_{\alpha \in U^h} \beta_{S \alpha} S_n^o(t) \alpha(t) - \mu_o S_n^o(t)  &(7) \cr
+\end{align} %]]></script></p>
+
+<p>As I’m understanding it, the simplified system involves using the highest rates of collision and decay from the full system, and imposing that the rates of fragment generation are proportional to the rates of collision for intacts and fragments. I think this is done so that the simulations run faster and BW can focus on the long-term equilibrium behavior of the system.</p>
+
+<h3 id="sustainability">Sustainability</h3>
+
+<p>One of the features of this paper I found really interesting was the system quality metric BW used, the “maximum (over all time) lifetime risk to an operational spacecraft”. They describe this as a sustainability metric as opposed to an efficiency metric. The metric is defined as</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+& \max_{t \geq 0} r^0(t) \cr
+& r^0 = 1 - \left ( 1 - \sum_{\alpha \in U^h} \beta_{S \alpha} \alpha(t) \right )^{\mu_o^{-1}}
+\end{align} %]]></script>
+
+<p>This metric measures the system’s hazard as the probability that a spacecraft launched at time <script type="math/tex">t</script> will be destroyed, while it is still operational, by an intact-intact or intact-fragment catastrophic collision.</p>
+
+<h3 id="optimality-of-deorbit-compliance">Optimality of Deorbit Compliance</h3>
+
+<p>Let <script type="math/tex">C_d</script> be the cost to deorbit, <script type="math/tex">C_S</script> be the cost of a destroyed operational spacecraft, <script type="math/tex">\theta_a</script> be the attempted compliance rate, <script type="math/tex">s</script> be the probability that a deorbit attempt is successful (so that <script type="math/tex">\theta_d = s \theta_a</script>), and <script type="math/tex">r^o_{\max}(\theta_d)</script> be the sustainable lifetime risk of an operational spacecraft when the successful compliance rate is <script type="math/tex">\theta_d</script>. Then the Space Board/social planner would solve</p>
+
+<script type="math/tex; mode=display">\min_{\theta_a} \theta_a C_d + r^o_{\max}(s \theta_a) C_S</script>
+
+<p>Using values from the literature, BW solve this problem and find that <script type="math/tex">\theta_a^* = 1</script>. They find that <script type="math/tex">% <![CDATA[
+\theta_a^* < 1 %]]></script> requires <script type="math/tex">C_d =</script> $30 million, which is many times larger than the actual values and costs they find in the literature. Similarly, they find that 100% compliance with rocket body deorbiting is socially optimal.</p>
+
+<h3 id="assessing-damage-due-to-space-activities">Assessing damage due to space activities</h3>
+
+<p>BW define the damage caused by a space activity to be the total number of destroyed operational spacecraft generated by said activity. Letting <script type="math/tex">S^o(t) = S_n^o(t) + S_d(t)</script> be the number of operational spacecraft at time <script type="math/tex">t</script>, the number of destroyed operational spacecraft up to time <script type="math/tex">T</script> is</p>
+
+<script type="math/tex; mode=display">n_d(T) = \int_0^T S^o(t) \sum_{\gamma \in U^h} \beta_{S \gamma} \gamma(t) dt</script>
+
+<h2 id="discussion">Discussion</h2>
+
+<h3 id="on-the-contributions">On the contributions</h3>
+
+<p>It seems like the main contributions of this paper to the debris modeling literature are (1) it considers hazardous and benign fragments separately, and (2) it does so in a tractable ODE system.</p>
+
+<p>It seems like the main contributions of this paper to the economics literature on orbital debris are (1) it considers the costs of orbital debris to satellite launchers, (2) it considers the optimality of deorbit compliance, and (3) it offers a more practical metric of the system’s quality than economic efficiency, all within a realistic debris modeling framework.</p>
+
+<h3 id="on-the-model-and-results">On the model and results</h3>
+
+<p>BW point out that this model is generic and can be used at any altitude, though the accuracy may suffer at altitudes where the SOI is just below a congested SOI. That they didn’t find much effect from allowing debris from higher shells to enter the SOI tells me that I can probably ignore those drift effects in my own model.</p>
+
+<p>Considering intacts and fragments, benign and hazardous objects, separately, and using sustainable lifetime risk as a performance metric, leads BW to different conclusions than Kessler, Liou and Johnson, and others in the debris modeling literature. BW find that the number of fragments is bounded, and that the sustainable lifetime risk remains below <script type="math/tex">10^{-3}</script> as long as deorbit compliance is higher than 98%.</p>
+
+<p>On the economic front, BW point out that fees to preserve the orbital environment should be designed to deter debris-generating activity. One way to do this is with differential launch fees which vary based on the deorbit capability of the spacecraft and its launch vehicle.</p>
+
+<p>BW point out three reasons why rational profit-maximizing firms might not fully comply with deorbit requirements (as is currently the case):
+1. they are behaving myopically and are discounting collisions that happen in the far future (perhaps having faith in a future technological solution to the problem, i.e. a “backstop technology”);
+2. they do not plan many launches in congested regions of space, and so don’t care about the benefits of deorbiting or the costs of not deorbiting;
+3. they have an inventory of old spacecraft which are too expensive to retrofit for deorbiting.</p>
+
+<p>My guess is that it’s a combination of all three, probably 1 and 3 the biggest contributors. From a policy standpoint, 1 and 2 can be addressed but I don’t see what can be done about 3.</p>
+
+<p>To the extent that deorbit costs are different or perceived to be, the noncompliance fee (or compliance subsidy) should be high enough to deter all players. If a single player can substantially alter <script type="math/tex">\theta_d</script> by their deorbit policy, it may be efficient to use a Vickrey-type solution and charge each player the damage of their aggregate policy decision.</p>
+
+<p>BW also raise the issue of moral hazard in noncompliance fees: propulsion systems fail (the literature estimates a 3.9% failure rate), and so a spacecraft owner who plans to deorbit may be unable to do so due to system failure. A spacecraft owner who doesn’t plan to deorbit has an incentive to pretend to have suffered such a systems failure to avoid an intention-based deorbit fee. Charging on the basis of observed outcomes would penalize owners who suffer failures they couldn’t prevent.</p>
+
+<p>Apparently passivation techniques to minimize explosions from non-operational spacecraft that are not deorbited and deorbiting rocket bodies appears to be close to 100%.</p>
+
+<h3 id="other-thoughts">Other thoughts</h3>
+
+<p>I really like the focus on “sustainability” over “efficiency”, mainly because I’m not sure how to define “efficiency” for this system. The practical problem with “efficiency” is the variety of uses for LEO. An attempt to actually measure the system quality through economic efficiency would have to go about quantifying the value of satellite imaging services, the research potential of the ISS and any future space stations, the value of potential space-based manufacturing, the value of LEO tourism, etc. I feel like this is difficult to do credibly. “Sustainability” as defined in this paper, on the other hand, can plausibly be credibly measured with enough telescopes, radars, and simulations.</p>
+
+<p>I think the main drawback of this paper from an economic standpoint is its treatment of the launch rates of satellites and rocket bodies, i.e. how <script type="math/tex">\lambda_o</script> and <script type="math/tex">\lambda_R</script> are determined. In the paper, both of these values are treated as parameters to be set exogenously, rather than as endogenous responses by optimizing agents.</p>
+
+<p>BW’s result from analyzing the social optimality of deorbit compliance (that full compliance is socially optimal) makes sense to me. However, I don’t know if full compliance is also optimal for individual profit-maximizing firms. My priors are that individual firms would find <script type="math/tex">% <![CDATA[
+\theta_a <1 %]]></script> optimal for smaller values of the cost parameters and higher values of the risk parameter than the Space Board would. I don’t have priors on how high the relevant <a href="https://en.wikipedia.org/wiki/Price_of_anarchy">price of anarchy</a> (in terms of lifetime sustainable risk) would be, but I do think it would be strictly greater than 1.</p>
+
+<p>Endogenizing the launch rates, launch vehicle choices, and deorbit compliance is where I am focusing my model. While my current debris model is much simpler than this one (simple enough to be manageable in pencil and paper), I think I should work on marrying my model of launch decision-making to this model of orbital debris evolution. In terms of this model, I think this would mean that <script type="math/tex">\lambda_o</script>, <script type="math/tex">\lambda_R</script>, and <script type="math/tex">\theta_d</script> would be <script type="math/tex">\lambda_o^*(t;U^I, U^F)</script>, <script type="math/tex">\lambda_R^*(t;U^I, U^F)</script>, and <script type="math/tex">\theta_d^*(t;U^I, U^F)</script> - best-response functions which change over time in response to the state of the fragment and intact stocks.</p>
+
+    <a href="/reviews/2016/07/29/paper-review-bradley-wein-space-debris/#disqus_thread">View or add comments</a>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="//reviews/2016/07/26/paper-review-macauley-orbit-value-model/">
+        Paper review - "Allocation of Orbit and Spectrum Resources for Regional Communications - What's at Stake?"
       </a>
     </h1>
 
@@ -650,7 +822,7 @@
 
     <p>Here I review Molly Macauley’s 1998 paper, <a href="http://www.journals.uchicago.edu/doi/10.1086/467411">“Allocation of Orbit and Spectrum Resources for Regional Communications: What’s at Stake?”</a>, published in <em>The Journal of Law and Economics</em>.</p>
 
-<p>Molly Macauley <a href="https://www.washingtonpost.com/local/obituaries/molly-k-macauley-researcher-on-economics-and-space-science-dies-at-59/2016/07/20/b3d309c4-4dd9-11e6-aa14-e0c1087f7583_story.html">recently died</a> in Baltimore. As a researcher newly entering this field I’m not qualified to describe her many contributions to environmental and space economics. However, I can say that I have yet to find an area of space economics where Dr. Macauley has not written something insightful and policy-relevant. I have found her work tremendously inspirational and a useful practical guide in thinking about questions in space economics. I didn’t know her personally, and I am sad that I never will. Here is a tribute page, <a href="http://www.rff.org/blog/2016/remembering-molly"><em>Remembering Molly</em></a>.</p>
+<p>Molly Macauley <a href="https://www.washingtonpost.com/local/obituaries/molly-k-macauley-researcher-on-economics-and-space-science-dies-at-59/2016/07/20/b3d309c4-4dd9-11e6-aa14-e0c1087f7583_story.html">recently died</a> in Baltimore. It seems like Dr. Macauley has written something insightful and policy-relevant on most, if not all, of the important issues in space economics today. I have found her work to be tremendously inspirational and a useful practical guide in thinking about questions in space economics. I didn’t know her personally, and I am sad that I never will. Here is a tribute page, <a href="http://www.rff.org/blog/2016/remembering-molly"><em>Remembering Molly</em></a>.</p>
 
 <h2 id="whats-this-paper-about">What’s this paper about?</h2>
 
@@ -665,10 +837,13 @@
   </li>
 </ol>
 
-<p>In writing the model, Macauley is drawing on urban economics models of spatial location. A quote from the paper illustrates the argument well:
-&gt; “…just as land values increase with proximity to a central business district as commuting and other transportation costs fall, orbit values might be expected to increase at locations that afford the best communications-demand-related coverage…just as an increase in land values leads to substitution toward capital and away from land…so too might an increase in orbit values lead to more capital intensive use of the orbit at preferred locations.”</p>
+<p>In writing the model, Macauley is drawing on urban economics models of spatial location. A quote from the paper illustrates the argument:</p>
 
-<p>So in the same way that urban land users in downtown areas use land more intensively (e.g. taller buildings) than users in the suburbs (where buidings are flatter and there is more sprawl), orbit users have incentives to use prime orbits more intensively (more spectrum use per unit of orbit) than users in non-prime locations.</p>
+<blockquote>
+  <p>“…just as land values increase with proximity to a central business district as commuting and other transportation costs fall, orbit values might be expected to increase at locations that afford the best communications-demand-related coverage…just as an increase in land values leads to substitution toward capital and away from land…so too might an increase in orbit values lead to more capital intensive use of the orbit at preferred locations.”</p>
+</blockquote>
+
+<p>So in the same way that urban land users in downtown areas use land more intensively (taller buildings) than users in the suburbs (flatter buildings and more sprawl), orbit users have incentives to use prime orbits more intensively (more spectrum use per unit of orbit) than users in non-prime locations.</p>
 
 <p>If spectrum congestion weren’t an issue, GEO spacing could be minimum physical safe distance (40 miles or so). To guard against spectrum congestion, regulators mandate separations of 800-1600+ miles. If satellites were closer together, they could
 1. communicate at different frequencies, or
@@ -699,68 +874,75 @@
 
 <p>This model provides the foundation for the analysis in this paper. It is a simulation model of a cost-minimizing telecom service producer’s choice of service provision technology. The equations which define the model are</p>
 
-<p><em>Terrestrial technologies</em>
-<script type="math/tex">% <![CDATA[
+<p><em>Terrestrial technologies</em></p>
+
+<script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
 Q_i &= Q(H_i) \cr
 C_{ijk} &= C_i(Q_{jk},Z_{jk}, \delta_i(\bar{Q}_i))
-\end{align} %]]></script></p>
+\end{align} %]]></script>
 
 <p>where <script type="math/tex">Q()</script> represents the output of communications services, and <script type="math/tex">C()</script> represents the cost of the technology in use.</p>
 
 <p><script type="math/tex">i = 1, \dots, m</script> indexes the potential terrestrial technologies which could connect country pairs <script type="math/tex">jk</script>; <script type="math/tex">H_i</script> represents the hardware which forms the connection and associated costs (e.g. coastal landing rights for undersea cable, overland rights of way for terrestrial cable); <script type="math/tex">Z_{jk}</script> represents the distance between countries <script type="math/tex">j</script> and <script type="math/tex">k</script>.</p>
 
-<p><em>Satellites</em>
-<script type="math/tex">% <![CDATA[
+<p><em>Satellites</em></p>
+
+<script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
 Q_s &= Q(A, S, H_s) \cr
 C_{sjk} &= C_s(Q_{jk}, \delta_s(\bar{Q}_s); L_1, \dots, L_{\tau}) \text{ for } (j,k) \in FOV
-\end{align} %]]></script></p>
+\end{align} %]]></script>
 
-<p>where <script type="math/tex">A</script> represents an orbital slot, <script type="math/tex">S</script> represents spectrum, and <script type="math/tex">H_s</script> represents the satellite hardware and associated costs (including launch costs); <script type="math/tex">L_1, \dots, L_{\tau}</script> represent the exogenously-given possible orbital locations indexed <script type="math/tex">1 - \tau</script>.</p>
+<p>where <script type="math/tex">A</script> represents an orbital slot, <script type="math/tex">S</script> represents spectrum, and <script type="math/tex">H_s</script> represents the satellite hardware and associated costs (including launch costs); <script type="math/tex">L_1, \dots, L_{\tau}</script> represent the exogenously-given possible orbital locations indexed <script type="math/tex">1, \dots, \tau</script>.</p>
 
-<p><em>Demand and indivisibilities</em>
-<script type="math/tex">% <![CDATA[
+<p><em>Demand and indivisibilities</em></p>
+
+<script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
 \delta(\bar{Q}) &= \sum_{j=1}^{n-1} \sum_{k=j+1}^{n} Q_{jk}, ~~0< \delta \leq 1 \cr
-Q_{jk}^D \leq \bar{Q}_{jk}
-\end{align} %]]></script></p>
+Q_{jk}^D &\leq \bar{Q}_{jk}
+\end{align} %]]></script>
 
-<p><script type="math/tex">bar{Q}</script> represents the exogenously-given total quantity of communications demand for the set of <script type="math/tex">n</script> countries that want to be connected. <script type="math/tex">\delta(\bar{Q})</script> reflects individibilities in the various technologies when they operate as a system; I interpret this as meaning that these capacity investments are discrete and not continuous in nature, so that the system’s installed capacity will typically exceed demand on a single country-pair route.  I am not sure what “<script type="math/tex">% <![CDATA[
-0< \delta \leq 1 %]]></script>” refers to - maybe there’s a typo where a <script type="math/tex">\delta</script> exponent is missing?
-<script type="math/tex">Q_{jk}^D</script> measures the “busy hour” traffic between <script type="math/tex">j</script> and <script type="math/tex">k</script>, and implies a constraint on the facilities - they must be able to serve this demand at an acceptable degree of service (i.e. low probability of receiving a busy signal).</p>
+<p><script type="math/tex">\bar{Q}</script> represents the exogenously-given total quantity of communications demand for the set of <script type="math/tex">n</script> countries that want to be connected. <script type="math/tex">\delta(\bar{Q})</script> reflects individibilities in the various technologies when they operate as a system; I interpret this as meaning that these capacity investments are discrete and not continuous in nature, so that the system’s installed capacity will typically exceed demand on a single country-pair route.  I am not sure what “<script type="math/tex">% <![CDATA[
+0< \delta \leq 1 %]]></script>” refers to - maybe there’s a typo where a <script type="math/tex">\delta</script> exponent is missing? Or maybe there’s a normalization so that <script type="math/tex">\delta(\bar{Q}) \in (0,1]</script>?</p>
+
+<p><script type="math/tex">Q_{jk}^D</script> measures the “busy hour” traffic between <script type="math/tex">j</script> and <script type="math/tex">k</script>, and implies a constraint on the facilities - they must be able to serve this demand at an acceptable degree of service (i.e. low probability of receiving a busy signal). These values are taken from the engineering literature.</p>
 
 <p>This setup lets Macauley calculate the cost savings from using satellites over terrestrial technology as</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
-min TC(L_i) &= \sum_{j=1}^{n-1} \sum_{k=j+1}^{n} C_{jk} (Q; \delta, z, L_i) \cr
+\min TC(L_i) &= \sum_{j=1}^{n-1} \sum_{k=j+1}^{n} C_{jk} (Q; \delta, z, L_i) \cr
 R(L_i) &= TC(L_i) - TC(L_x)
 \end{align} %]]></script>
 
 <p>where <script type="math/tex">TC()</script> represents the total cost to serve <script type="math/tex">n</script> countries that want to be connected using a satellite located at location <script type="math/tex">L_i</script>. <script type="math/tex">L_x</script> represents the next-best available orbital slot that could connect those <script type="math/tex">n</script> countries. <script type="math/tex">R(L_i)</script> represents the cost savings of using the most-preferred orbital slot for a set of countries in a region. The outside option of not using satellite technology to connect <script type="math/tex">n</script> countries is represented by <script type="math/tex">R(L_i) = R(L_i) - R(L_i) = 0</script>.</p>
 
-<p>The phrase “prime orbit location” refers to the orbit location with a maximum value for a specific nation. I am thinking about it as the GEO location above a country which puts the most important countries it communicates with in the satellite’s FOV, i.e. a satellite in prime location for country <script type="math/tex">j</script> maximizes the value of communications between <script type="math/tex">j</script> and the countries it wishes to communicate with, <script type="math/tex">\{k\}</script>. In South America, this definition maps “prime locations” to “locations which cover the most other countries <script type="math/tex">k</script>”. In North America, population density and communications patterns break this mapping. For example, site values in the Pacific Rim are high when just Canada and the US are in view, excluding many of the other PacRim countries.</p>
+<p>The phrase “prime orbit location” refers to the orbit location with a maximum value for a specific nation. I am thinking about it as the GEO location above a country which puts the most important countries it communicates with in the satellite’s FOV, i.e. a satellite in prime location for country <script type="math/tex">j</script> maximizes the value of communications between <script type="math/tex">j</script> and the countries it wishes to communicate with, <script type="math/tex">\{k\}</script>. In South America, this definition maps “prime locations” to “locations which cover the most other countries <script type="math/tex">k</script>”. In North America, population density and communications patterns break this mapping. For example, site values in the Pacific Rim under the fixed proportions model are high when just Canada and the US are in view, excluding many of the other PacRim countries.</p>
 
 <h3 id="variable-proportions">Variable proportions</h3>
 
-<p>The supply and demand equations for the variable proportions model are
-<script type="math/tex">% <![CDATA[
+<p>The supply and demand equations for the variable proportions model are</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
 X_s(u) &= DA(u)^{\alpha}S(u)^{1-\alpha} \cr
 X_d(u) &= \beta y^{\theta_1} p(u)^{\theta_2}
-\end{align} %]]></script></p>
+\end{align} %]]></script>
 
-<p>where <script type="math/tex">D</script> is a scale parameter, <script type="math/tex">A</script> and <script type="math/tex">S</script> are quantities of orbit and spectrum, <script type="math/tex">\alpha \in (0,1)</script> is the Cobb-Douglas exponent; <script type="math/tex">\beta</script> is a scale parameter, <script type="math/tex">y</script> is income, <script type="math/tex">p</script> is price, and <script type="math/tex">\theta_1</script> and <script type="math/tex">\theta_2</script> are the income and price elasticities respectively. <script type="math/tex">u</script> measures the satellite location relative to prime locations.</p>
+<p>where <script type="math/tex">D</script> is a scale parameter, <script type="math/tex">A</script> and <script type="math/tex">S</script> are quantities of orbit and spectrum, <script type="math/tex">\alpha \in (0,1)</script> is the Cobb-Douglas exponent; <script type="math/tex">\beta</script> is a scale parameter, <script type="math/tex">y</script> is income, <script type="math/tex">p</script> is price, and <script type="math/tex">\theta_1</script> and <script type="math/tex">\theta_2</script> are the income and price elasticities respectively. <script type="math/tex">u</script> measures the satellite location relative to prime locations. I didn’t see this explicitly stated, but I’m assuming <script type="math/tex">u: u=0 \implies</script> prime location.</p>
 
-<p>This model also has an equation for locational equilibrium, as
-<script type="math/tex">p'(u) X_d(u) = -t(u)</script></p>
+<p>This model also has an equation for locational equilibrium, as</p>
+
+<script type="math/tex; mode=display">p'(u) X_d(u) = -t(u)</script>
 
 <p>where <script type="math/tex">t(u)</script> represents the marginal cost of connecting cities outside the view of a satellite at location <script type="math/tex">u</script>, i.e. the extra costs incurred to get to the edge of the satellite’s FOV.
-Macauley estimates <script type="math/tex">t(u)</script> using Mathematica to fit a polynomial of the form
-<script type="math/tex">t(u) = \gamma \frac{e^{(u - \bar{u})/\sigma}}{1 + e^{(u - \bar{u})/\sigma}}</script></p>
+Macauley estimates <script type="math/tex">t(u)</script> using Mathematica to fit a polynomial of the form</p>
 
-<p>where <script type="math/tex">u - \bar{u}</script> measures distance in longitudinal degrees at <script type="math/tex">u</script> from the prime orbit location, <script type="math/tex">\bar{u}</script>.</p>
+<script type="math/tex; mode=display">t(u) = \gamma \frac{e^{(u - \bar{u})/\sigma}}{1 + e^{(u - \bar{u})/\sigma}}</script>
+
+<p>where <script type="math/tex">u - \bar{u}</script> measures distance in longitudinal degrees at <script type="math/tex">u</script> from the prime orbit location, <script type="math/tex">\bar{u}</script>, and <script type="math/tex">\sigma</script> is a curve-fitting parameter. <script type="math/tex">\gamma</script> is not explicitly described, but I’m assuming it’s just a scale parameter for the curve-fitting.</p>
 
 <p>These equations allow Macauley to derive an equation for orbital slot value (derivation in Appendix B). It’s a complicated equation which I won’t describe here.</p>
 
@@ -770,11 +952,11 @@ Macauley estimates <script type="math/tex">t(u)</script> using Mathematica to fi
 
 <h2 id="discussion">Discussion</h2>
 
-<p>Macauley’s stated purpose in writing this paper was to figure out the potential gains from allowing more flexible orbit/spectrum use patterns. This is not what my current space economics project is about; I am looking at a general model of orbit choice and debris production. This model is specifically designed for telecommunications satellites in GEO, while the model I am writing is valid for any type of satellite in any not-too-elliptical orbital regime (with a focus on LEO).</p>
+<p>Macauley’s stated purpose in writing this paper was to figure out the potential gains from allowing more flexible orbit/spectrum use patterns. This is not what my current space economics project is about; I am looking at a general model of orbit choice and debris production. This model is specifically designed for telecommunications satellites (therefore focused on GEO), while the model I am writing is valid for any type of satellite in any not-too-elliptical orbital regime (my implicit focus is on LEO, but it can be reparameterized for GEO).</p>
 
 <p>However, I had not thought seriously about spectrum use prior to reading this paper. Now it seems obvious to me that most satellite applications require not only an orbital slot (or path) but also some electromagnetic spectrum. An imaging satellite which requires images to be physically retrieved from it is not very useful. I suppose tourist shuttles that take people to LEO and back down have less need for spectrum, but they would still need to be able to coordinate with ground-based observers and other satellites to ensure a safe trip.</p>
 
-<p>The question before me now is, how relevant is spectrum use to my applications? I think it’s probably of second-order importance to modeling debris production from satellite operations outside GEO (say, in LEO), but might be of first-order importance in GEO. I was on the fence about incorporating locational attributes of orbital slots/paths in a general sort of way, but now I think those attributes are an important feature.</p>
+<p>The question before me now is, how relevant is spectrum use to my applications? I think it’s probably of second-order importance to modeling debris production from satellite operations outside GEO (say, in LEO), but might be of first-order importance in GEO. I was on the fence about incorporating locational attributes of orbital slots/paths in a general sort of way, but now I think some general locational attribute(s) would be first-order important even in LEO.</p>
 
 <p>Back to this paper: Macauley points out that the Cobb-Douglas form is restrictive, and defends the use of this functional form in two ways:</p>
 
@@ -783,16 +965,26 @@ Macauley estimates <script type="math/tex">t(u)</script> using Mathematica to fi
   <li>by pointing out that data are unavailable to estimate all the parameters of a more flexible functional form.</li>
 </ol>
 
-<p>I’d like to write a paper about GEO use specifically; estimating this model with more data, or extending this model, might be good places to start.</p>
+<p>I may be missing it, but the functional form for <script type="math/tex">Q()</script> the “fixed proportions” case seems to be unspecified. In the “variable proportions” case, I believe it is the Cobb-Douglas function given for <script type="math/tex">X_s(u)</script>. I didn’t see this explicitly stated, but I’m assuming that <script type="math/tex">Q()</script> in the “fixed proportions” case is a function with the same properties as <script type="math/tex">X_s(u)</script> with <script type="math/tex">\alpha=0.5</script>.</p>
+
+<p>I didn’t see any assumptions on <script type="math/tex">p(u)</script> explicitly stated, but I’m assuming <script type="math/tex">% <![CDATA[
+p(u) : p'(u) <0, p''(u) \leq 0 %]]></script> based on the locational equilibrium condition. I’m interpreting this in words as: the closer the satellite is to prime location (i.e. as <script type="math/tex">u \to 0</script>), the higher the price of the satellite services. Since price elasticities of demand are negative for normal goods (i.e. <script type="math/tex">% <![CDATA[
+\theta_2 < 0 %]]></script>), this higher price scales the demand down. I can’t think of any reason why satellite services or telecom services would be giffen goods, so this logic seems reasonable.</p>
+
+<p>I’m not sure I understand how the locational equilibrium was derived, but it might be in some of the urban economics papers Macauley referenced. I’m interpreting it as a first-order condition from a location-choosing problem.</p>
+
+<p>The satellite spacing policy seems pretty bad in an “unintended consequences” way: policy intended to minimize spectrum congestion ends up obstructing the development of policies and technologies that could mitigate congestion. It’s possible this spacing leads to more congestion in this equilibrium than there would be if the spacing regulations were relaxed, but I don’t know if that’s the case. Regardless, Macauley’s argument for deadweight loss from the current intensity-limiting policy seems solid.</p>
+
+<p>I’d like to write a paper about GEO use specifically; estimating this model with more data, or extending this model, might be good places to start. I liked the “calibrated simulation” approach Macauley used, and would like to do something similar. I think this was possible here because all of the variables were closely tied to things in the real world - this paper had math, but it was not <a href="https://paulromer.net/mathiness/">mathy</a>.</p>
 
 <p>Overall I really liked this paper. I thought it was insightful, well researched and thought through, and very helpful for someone getting started in this area.</p>
 
-    <a href="/micro%20theory/2016/07/26/paper-review-macauley-orbit-value-model/#disqus_thread">View or add comments</a>
+    <a href="/reviews/2016/07/26/paper-review-macauley-orbit-value-model/#disqus_thread">View or add comments</a>
   </div>
   
   <div class="post">
     <h1 class="post-title">
-      <a href="https://akhilrao.github.io//econometrics/2016/07/16/lasso-ols-sim-1/">
+      <a href="//econometrics/2016/07/16/lasso-ols-sim-1/">
         Looking at LASSO - parameter estimation in a contrived example
       </a>
     </h1>
@@ -1073,7 +1265,7 @@ Macauley estimates <script type="math/tex">t(u)</script> using Mathematica to fi
   
   <div class="post">
     <h1 class="post-title">
-      <a href="https://akhilrao.github.io//eda/2016/07/02/au-water-trading-2-look-at-data/">
+      <a href="//eda/2016/07/02/au-water-trading-2-look-at-data/">
         Australian water trading data, part 2 - zero price transactions
       </a>
     </h1>
@@ -1203,7 +1395,7 @@ Macauley estimates <script type="math/tex">t(u)</script> using Mathematica to fi
   
   <div class="post">
     <h1 class="post-title">
-      <a href="https://akhilrao.github.io//2016/06/30/i-love-npp/">
+      <a href="//2016/06/30/i-love-npp/">
         I love Notepad++
       </a>
     </h1>
@@ -1227,281 +1419,11 @@ Macauley estimates <script type="math/tex">t(u)</script> using Mathematica to fi
     <a href="/2016/06/30/i-love-npp/#disqus_thread">View or add comments</a>
   </div>
   
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://akhilrao.github.io//eda/2016/06/29/au-water-trading-1-look-at-data/">
-        A look at some Australian water trading data
-      </a>
-    </h1>
-
-    <span class="post-date">29 Jun 2016</span>
-
-    <p><em>This is my first attempt at using knitr and ggplot2. The scripts to reproduce and extend everything discussed here are <a href="https://github.com/akhilrao/akhilrao.github.io/tree/master/public/code/au-water-trading">here</a>. I converted the knitted Rmarkdown file to markdown with the help of this <a href="http://brooksandrew.github.io/simpleblog/articles/blogging-with-r-markdown-and-jekyll-using-knitr/">post</a> by Andrew Brooks.</em></p>
-
-<p>I’m currently working on two projects: one is about orbital debris and satellites launches (what my previous post was about), and the other is about trading in Australian water markets (what this post is about). In this post I’m going to describe some of the water data I have.</p>
-
-<h2 id="why-australian-water-markets">Why Australian water markets?</h2>
-
-<p>I’ve liked the idea of water markets since I learned about <a href="http://www.latimes.com/local/california/la-me-water-rights-legal-20150629-story.html">California’s messed up water rights</a> as a <a href="http://www.corola.org/">Coro Fellow</a> (FPPA LA ‘14, fun times). Australia actually has pretty well-defined water markets with some historical daily trading data, so I started there.</p>
-
-<p>Plus, water markets lend themselves to some great awful puns about market liquidity and trade volumes.</p>
-
-<h2 id="a-little-bit-about-the-markets">A little bit about the markets</h2>
-
-<p>Australian water trading can broadly be classified into two categories: allocation trades and entitlement trades. Allocation trades are short-term transfers of an amount of water, lasting for the remainder of the water year (water years are July 1st xxx(y)-June 30th xxx(y+1)). Entitlement trades are transfers of the rights to water from a given source. Entitlement transfers can further be divided into permanent/ongoing and leases.</p>
-
-<p>I say “markets” instead of “market” because each state has some different laws relating to water trading within its borders. But the broad allocations/entitlements distinction still stands. The <a href="http://www.nationalwatermarket.gov.au/about/products.html">implementation details vary</a>. (I’m saying “entitlement” instead of “access entitlement” for brevity.)</p>
-
-<p>A given water resource will be divided into consumptive and non-consumptive use. Consumptive use is for private purposes like irrigation, urban use, etc., while non-consumptive use is for things like generating hydroelectricity or to guarantee the stability of the environment in that region. Tradeable water rights are defined as shares of a consumptive pool from a given water source. Water resource plans define the amount of water available to a consumptive pool. The national water market’s <a href="http://www.nationalwatermarket.gov.au/about/resources.html">resources page</a> has more information on how this works.</p>
-
-<p>There’s a lot of state-level heterogeneity in how this all looks in practice, but my understanding is that these broad statements are true across the country.</p>
-
-<h2 id="what-are-the-data">What are the data?</h2>
-
-<p>The data used for this post are publicly available at the Bureau of Meteorology’s <a href="http://www.nationalwatermarket.gov.au/water-market-reports/download-data.html">Water Market Information page</a>, specifically the “trade history” dataset.</p>
-
-<p>The dataset describes all of the water transactions that occurred between 2009-2014. A lot of the trades have a zero price listed. I spoke to one of the people at the Bureau of Meteorology about this some time back, and he told me that this can be for three reasons:</p>
-
-<ol>
-  <li>As a rule, water trades between environmental water holders are listed at $0</li>
-  <li>A single private user may transfer water they own from one area to another, recording a price of $0</li>
-  <li>Some transactions between two private users may be listed as occuring at $0 because entering the price isn’t/wasn’t always mandatory (if I recall correctly, the person said this was more likely in more remote areas)</li>
-</ol>
-
-<p>One of the things I want to check eventually is how the distributions of zero price trades compares to the distribution of positive price trades, to see if there’s anything interesting going on there.</p>
-
-<p>One of my goals for the future is to learn to use mapping tools to get data out of maps like <a href="http://www.bom.gov.au/jsp/awap/rain/index.jsp">these</a>. Rainfall information would be really useful for this project. Along the way, it would help to find a shapefile for a map of Australia with the Murray-Darling Basin and the different water systems marked out.</p>
-
-<h2 id="doing-stuff-with-the-data">Doing stuff with the data</h2>
-
-<p>I’m going to skip all the data cleaning and prep work (<a href="https://en.wikipedia.org/wiki/Data_wrangling">wrangling</a>). It’s in the script <a href="https://github.com/akhilrao/akhilrao.github.io/tree/master/public/code/au-water-trading/prep-trading-data.r"><code class="highlighter-rouge">prep-trading-data.r</code></a>.</p>
-
-<p><code class="highlighter-rouge">prep-trading-data.r</code> outputs two csv files, one each for allocation and entitlement trades. I used <code class="highlighter-rouge">rm(list=ls())</code> liberally throughout the <code class="highlighter-rouge">prep-trading-data.r</code>, so consider yourself warned. Don’t use the script if you have other things you want to keep in your workspace.</p>
-
-<p><code class="highlighter-rouge">prep-trading-data.r</code> does a bunch of useful things for me, like create an indicator variable for whether a trade was in the Murray-Darling Basin or not, a categorical variable describing the origin and destination states of a trade, and get rid of 14 observations with years like 2103 (at which point we’ll have no water, so they’re clearly wrong). The most tedious part of writing it was going through the <a href="http://www.agriculture.gov.au/abares/publications/display?url=http://143.188.17.20/anrdl/DAFFService/display.php?fid=pb_awmr_d9aawr20151211.xml">Australian Water Markets Report 2013-14</a> to figure out whether a given water system was in the Murray-Darling Basin or not.</p>
-
-<p><code class="highlighter-rouge">ents</code> and <code class="highlighter-rouge">alls</code> are from the csv files of prepped daily water trading data. From there I used <code class="highlighter-rouge">[water-eda-stuff.r](https://github.com/akhilrao/akhilrao.github.io/tree/master/public/code/au-water-trading/water-eda-stuff.r)</code> to do a little more processing and make some tables and pictures. The data processing in <code class="highlighter-rouge">water-eda-stuff.r</code> is below:</p>
-
-<div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="c1">## load libraries
-</span><span class="n">library</span><span class="p">(</span><span class="n">readxl</span><span class="p">)</span>
-<span class="n">library</span><span class="p">(</span><span class="n">plyr</span><span class="p">)</span>
-<span class="n">library</span><span class="p">(</span><span class="n">reshape2</span><span class="p">)</span>
-
-<span class="c1">## run prep script
-</span><span class="n">rm</span><span class="p">(</span><span class="n">list</span><span class="o">=</span><span class="n">ls</span><span class="p">())</span> <span class="c1"># I use these liberally. Caveat emptor.
-</span><span class="n">source</span><span class="p">(</span><span class="s2">"prep-trading-data.r"</span><span class="p">)</span> <span class="c1"># does some stuff to make the data nicer to use
-</span>
-<span class="c1">## monthly trading
-</span><span class="n">ents_m</span> <span class="o">&lt;-</span> <span class="n">ddply</span><span class="p">(</span><span class="n">ents</span><span class="p">,</span><span class="err">.</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="n">MonthOfTrade</span><span class="p">,</span><span class="n">mdb</span><span class="p">,</span><span class="n">from_state</span><span class="p">,</span><span class="n">interstate</span><span class="p">),</span><span class="n">summarize</span><span class="p">,</span><span class="n">v_ents</span><span class="o">=</span><span class="n">sum</span><span class="p">(</span><span class="n">quantityTraded</span><span class="p">),</span><span class="n">price_ents</span><span class="o">=</span><span class="n">mean</span><span class="p">(</span><span class="n">PricePerML</span><span class="p">[</span><span class="n">PricePerML</span><span class="o">!=</span><span class="m">0</span><span class="p">]),</span><span class="n">n_ents</span><span class="o">=</span><span class="n">length</span><span class="p">(</span><span class="n">quantityTraded</span><span class="p">),</span><span class="n">np_ents</span><span class="o">=</span><span class="n">length</span><span class="p">(</span><span class="n">PricePerML</span><span class="p">[</span><span class="n">PricePerML</span><span class="o">!=</span><span class="m">0</span><span class="p">]))</span>
-<span class="n">alls_m</span> <span class="o">&lt;-</span> <span class="n">ddply</span><span class="p">(</span><span class="n">alls</span><span class="p">,</span><span class="err">.</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="n">MonthOfTrade</span><span class="p">,</span><span class="n">mdb</span><span class="p">,</span><span class="n">from_state</span><span class="p">,</span><span class="n">interstate</span><span class="p">),</span><span class="n">summarize</span><span class="p">,</span><span class="n">v_alls</span><span class="o">=</span><span class="n">sum</span><span class="p">(</span><span class="n">quantityTraded</span><span class="p">),</span><span class="n">price_alls</span><span class="o">=</span><span class="n">mean</span><span class="p">(</span><span class="n">PricePerML</span><span class="p">[</span><span class="n">PricePerML</span><span class="o">!=</span><span class="m">0</span><span class="p">]),</span><span class="n">n_alls</span><span class="o">=</span><span class="n">length</span><span class="p">(</span><span class="n">quantityTraded</span><span class="p">),</span><span class="n">np_alls</span><span class="o">=</span><span class="n">length</span><span class="p">(</span><span class="n">PricePerML</span><span class="p">[</span><span class="n">PricePerML</span><span class="o">!=</span><span class="m">0</span><span class="p">]))</span>
-
-<span class="c1">### merge alls and ents
-</span><span class="n">trades_m</span> <span class="o">&lt;-</span> <span class="n">join</span><span class="p">(</span><span class="n">alls_m</span><span class="p">,</span><span class="n">ents_m</span><span class="p">,</span><span class="n">by</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"MonthOfTrade"</span><span class="p">,</span><span class="s2">"mdb"</span><span class="p">,</span><span class="s2">"from_state"</span><span class="p">,</span><span class="s2">"interstate"</span><span class="p">),</span><span class="n">type</span><span class="o">=</span><span class="s2">"full"</span><span class="p">,</span><span class="n">match</span><span class="o">=</span><span class="s2">"first"</span><span class="p">)</span>
-<span class="n">trades_m</span><span class="p">[(</span><span class="n">is.na</span><span class="p">(</span><span class="n">trades_m</span><span class="p">))]</span> <span class="o">&lt;-</span> <span class="m">0</span> <span class="c1"># replace NaN and NA with 0
-</span>
-<span class="c1">### melt trades_m
-</span><span class="n">trades_m_melted</span> <span class="o">&lt;-</span> <span class="n">melt</span><span class="p">(</span><span class="n">trades_m</span><span class="p">[,</span><span class="n">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">9</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">11</span><span class="p">,</span><span class="m">12</span><span class="p">,</span><span class="m">13</span><span class="p">)],</span><span class="n">id</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"year"</span><span class="p">,</span><span class="s2">"MonthOfTrade"</span><span class="p">,</span><span class="s2">"mdb"</span><span class="p">,</span><span class="s2">"from_state"</span><span class="p">,</span><span class="s2">"interstate"</span><span class="p">))</span> <span class="c1"># useful for plots later
-</span>
-<span class="c1">## yearly trading
-</span><span class="n">ents_y</span> <span class="o">&lt;-</span> <span class="n">ddply</span><span class="p">(</span><span class="n">ents</span><span class="p">,</span><span class="err">.</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="n">mdb</span><span class="p">,</span><span class="n">from_state</span><span class="p">,</span><span class="n">interstate</span><span class="p">),</span><span class="n">summarize</span><span class="p">,</span><span class="n">v_ents</span><span class="o">=</span><span class="n">sum</span><span class="p">(</span><span class="n">quantityTraded</span><span class="p">),</span><span class="n">price_ents</span><span class="o">=</span><span class="n">mean</span><span class="p">(</span><span class="n">PricePerML</span><span class="p">[</span><span class="n">PricePerML</span><span class="o">!=</span><span class="m">0</span><span class="p">]),</span><span class="n">n_ents</span><span class="o">=</span><span class="n">length</span><span class="p">(</span><span class="n">quantityTraded</span><span class="p">),</span><span class="n">np_ents</span><span class="o">=</span><span class="n">length</span><span class="p">(</span><span class="n">PricePerML</span><span class="p">[</span><span class="n">PricePerML</span><span class="o">!=</span><span class="m">0</span><span class="p">]))</span>
-<span class="n">alls_y</span> <span class="o">&lt;-</span> <span class="n">ddply</span><span class="p">(</span><span class="n">alls</span><span class="p">,</span><span class="err">.</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="n">mdb</span><span class="p">,</span><span class="n">from_state</span><span class="p">,</span><span class="n">interstate</span><span class="p">),</span><span class="n">summarize</span><span class="p">,</span><span class="n">v_alls</span><span class="o">=</span><span class="n">sum</span><span class="p">(</span><span class="n">quantityTraded</span><span class="p">),</span><span class="n">price_alls</span><span class="o">=</span><span class="n">mean</span><span class="p">(</span><span class="n">PricePerML</span><span class="p">[</span><span class="n">PricePerML</span><span class="o">!=</span><span class="m">0</span><span class="p">]),</span><span class="n">n_alls</span><span class="o">=</span><span class="n">length</span><span class="p">(</span><span class="n">quantityTraded</span><span class="p">),</span><span class="n">np_alls</span><span class="o">=</span><span class="n">length</span><span class="p">(</span><span class="n">PricePerML</span><span class="p">[</span><span class="n">PricePerML</span><span class="o">!=</span><span class="m">0</span><span class="p">]))</span>
-
-<span class="c1">### merge alls and ents
-</span><span class="n">trades_y</span> <span class="o">&lt;-</span> <span class="n">join</span><span class="p">(</span><span class="n">alls_y</span><span class="p">,</span><span class="n">ents_y</span><span class="p">,</span><span class="n">by</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"year"</span><span class="p">,</span><span class="s2">"mdb"</span><span class="p">,</span><span class="s2">"from_state"</span><span class="p">,</span><span class="s2">"interstate"</span><span class="p">),</span><span class="n">type</span><span class="o">=</span><span class="s2">"full"</span><span class="p">,</span><span class="n">match</span><span class="o">=</span><span class="s2">"first"</span><span class="p">)</span>
-<span class="n">trades_y</span><span class="p">[(</span><span class="n">is.na</span><span class="p">(</span><span class="n">trades_y</span><span class="p">))]</span> <span class="o">&lt;-</span> <span class="m">0</span> <span class="c1"># replace NaN and NA with 0
-</span>
-<span class="c1">### yearly summary
-</span><span class="n">yearly_summary</span> <span class="o">&lt;-</span> <span class="n">ddply</span><span class="p">(</span><span class="n">trades_y</span><span class="p">,</span><span class="err">.</span><span class="p">(</span><span class="n">year</span><span class="p">),</span><span class="n">summarize</span><span class="p">,</span><span class="n">v_alls</span><span class="o">=</span><span class="n">sum</span><span class="p">(</span><span class="n">v_alls</span><span class="p">),</span><span class="n">v_ents</span><span class="o">=</span><span class="n">sum</span><span class="p">(</span><span class="n">v_ents</span><span class="p">),</span><span class="n">n_alls</span><span class="o">=</span><span class="n">sum</span><span class="p">(</span><span class="n">n_alls</span><span class="p">),</span><span class="n">n_ents</span><span class="o">=</span><span class="n">sum</span><span class="p">(</span><span class="n">n_ents</span><span class="p">))</span> <span class="c1"># for a summary table
-</span></code></pre>
-</div>
-
-<p>Just some <code class="highlighter-rouge">ddply()</code>, <code class="highlighter-rouge">join()</code>, and <code class="highlighter-rouge">melt()</code> to make pictures and tables easier later. <code class="highlighter-rouge">n_ents</code> and <code class="highlighter-rouge">n_alls</code> are the number of entitlement and allocation trades respectively, while <code class="highlighter-rouge">v_ents</code> and <code class="highlighter-rouge">v_alls</code> are the total monthly volume of entitlements and allocations traded.</p>
-
-<p>(I’m still a noob at this whole “generating pretty things in markdown” business, so I used this handy online <a href="http://www.tablesgenerator.com/markdown_tables#">markdown table generator</a> to make this table.)</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>year</th>
-      <th>Allocation trades (ML)</th>
-      <th>Entitlement trades (ML)</th>
-      <th>Number of allocation trades</th>
-      <th>Number of entitlement trades</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>2004</td>
-      <td>1898</td>
-      <td>0</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>2005</td>
-      <td>980</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>2006</td>
-      <td>1256</td>
-      <td>0</td>
-      <td>38</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>2007</td>
-      <td>4279</td>
-      <td>0</td>
-      <td>76</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>2008</td>
-      <td>1090</td>
-      <td>0</td>
-      <td>17</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>2009</td>
-      <td>873878.133</td>
-      <td>449766.741</td>
-      <td>8119</td>
-      <td>2895</td>
-    </tr>
-    <tr>
-      <td>2010</td>
-      <td>3373516.237</td>
-      <td>1385914.681</td>
-      <td>18434</td>
-      <td>6666</td>
-    </tr>
-    <tr>
-      <td>2011</td>
-      <td>5527076.803</td>
-      <td>2261956.205</td>
-      <td>10070</td>
-      <td>7509</td>
-    </tr>
-    <tr>
-      <td>2012</td>
-      <td>5565003.714</td>
-      <td>1301803.735</td>
-      <td>15099</td>
-      <td>7804</td>
-    </tr>
-    <tr>
-      <td>2013</td>
-      <td>7288640.034</td>
-      <td>1915709.35</td>
-      <td>30058</td>
-      <td>7636</td>
-    </tr>
-    <tr>
-      <td>2014</td>
-      <td>2975364.894</td>
-      <td>827862.547</td>
-      <td>15160</td>
-      <td>2316</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Note that I’m aggregating these by calendar year, not water year. “ML” stands for megaliter (1 million liters). The 2014 data only goes till September, so the apparent dropoff in trading might be mostly truncated data.</p>
-
-<h3 id="pictures">Pictures!</h3>
-
-<p>This is the real reason I wrote this post: pictures!</p>
-
-<p>To get these to load in knitr code chunks, the script <code class="highlighter-rouge">water-eda.r</code> saves the cleaned data in a file called <code class="highlighter-rouge">water-eda-stuff.RData</code>. I’m going to focus on three quantities: volume traded (megaliters per month), trade volume (number of trades per month), and price per megaliter (Australian dollars).</p>
-
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">load</span><span class="p">(</span><span class="s2">"C:/Users/Akhil/Documents/akhilrao.github.io/public/code/au-water-trading/water-eda-stuff.RData"</span><span class="p">)</span>
-<span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
-<span class="c1">## drop everything before 2008
-</span><span class="n">trades_m</span> <span class="o">&lt;-</span> <span class="n">subset</span><span class="p">(</span><span class="n">trades_m</span><span class="p">,</span><span class="n">year</span><span class="o">&gt;</span><span class="m">2008</span><span class="p">)</span>
-<span class="n">trades_m_melted</span> <span class="o">&lt;-</span> <span class="n">subset</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="p">,</span><span class="n">year</span><span class="o">&gt;</span><span class="m">2008</span><span class="p">)</span>
-
-<span class="c1">## make plots
-### volume over time
-</span><span class="n">trade_vols</span> <span class="o">&lt;-</span> <span class="n">ggplot</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="p">[</span><span class="n">c</span><span class="p">(</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">variable</span><span class="o">==</span><span class="s2">"v_ents"</span><span class="p">),</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">variable</span><span class="o">==</span><span class="s2">"v_alls"</span><span class="p">)),],</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">MonthOfTrade</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">value</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">mdb</span><span class="p">)))</span>
-
-<span class="n">trade_vols</span> <span class="o">+</span> <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span> <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">"lm"</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">NA</span><span class="p">)</span> <span class="o">+</span> <span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="n">variable</span><span class="p">)</span> <span class="o">+</span> <span class="n">scale_colour_discrete</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"In MDB"</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"No"</span><span class="p">,</span><span class="s2">"Yes"</span><span class="p">))</span> <span class="o">+</span> <span class="n">ggtitle</span><span class="p">(</span><span class="s2">"Water volume traded in and out of MDB"</span><span class="p">)</span> <span class="o">+</span> <span class="n">ylab</span><span class="p">(</span><span class="s2">"Volume (ML) traded per month"</span><span class="p">)</span> <span class="o">+</span> <span class="n">xlab</span><span class="p">(</span><span class="s2">"time"</span><span class="p">)</span></code></pre></figure>
-
-<p><img src="/public/images/eda-water-1/unnamed-chunk-1-1.svg" alt="plot of chunk unnamed-chunk-1" /></p>
-
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">### trades over time
-</span><span class="n">trade_counts</span> <span class="o">&lt;-</span> <span class="n">ggplot</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="p">[</span><span class="n">c</span><span class="p">(</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">variable</span><span class="o">==</span><span class="s2">"n_ents"</span><span class="p">),</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">variable</span><span class="o">==</span><span class="s2">"n_alls"</span><span class="p">)),],</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">MonthOfTrade</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">value</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">mdb</span><span class="p">)))</span>
-
-<span class="n">trade_counts</span> <span class="o">+</span> <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span> <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">"lm"</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">NA</span><span class="p">)</span> <span class="o">+</span> <span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="n">variable</span><span class="p">)</span> <span class="o">+</span> <span class="n">scale_colour_discrete</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"In MDB"</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"No"</span><span class="p">,</span><span class="s2">"Yes"</span><span class="p">))</span> <span class="o">+</span> <span class="n">ggtitle</span><span class="p">(</span><span class="s2">"Trades in and out of MDB"</span><span class="p">)</span> <span class="o">+</span> <span class="n">ylab</span><span class="p">(</span><span class="s2">"Number of trades per month"</span><span class="p">)</span> <span class="o">+</span> <span class="n">xlab</span><span class="p">(</span><span class="s2">"time"</span><span class="p">)</span></code></pre></figure>
-
-<p><img src="/public/images/eda-water-1/unnamed-chunk-1-2.svg" alt="plot of chunk unnamed-chunk-1" /></p>
-
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">### prices over time
-</span><span class="n">trade_prices</span> <span class="o">&lt;-</span> <span class="n">ggplot</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="p">[</span><span class="n">c</span><span class="p">(</span><span class="n">intersect</span><span class="p">(</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">variable</span><span class="o">==</span><span class="s2">"price_ents"</span><span class="p">),</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">value</span><span class="o">!=</span><span class="m">0</span><span class="p">)),</span><span class="n">intersect</span><span class="p">(</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">variable</span><span class="o">==</span><span class="s2">"price_alls"</span><span class="p">),</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">value</span><span class="o">!=</span><span class="m">0</span><span class="p">))),],</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">MonthOfTrade</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">value</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">mdb</span><span class="p">)))</span>  <span class="c1"># only looking at observations with positive prices
-</span>
-<span class="n">trade_prices</span> <span class="o">+</span> <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span> <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">"lm"</span><span class="p">,</span><span class="n">se</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">NA</span><span class="p">)</span> <span class="o">+</span> <span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="n">variable</span><span class="p">)</span> <span class="o">+</span> <span class="n">scale_colour_discrete</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"In MDB"</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"No"</span><span class="p">,</span><span class="s2">"Yes"</span><span class="p">))</span> <span class="o">+</span> <span class="n">ggtitle</span><span class="p">(</span><span class="s2">"Monthly average trade prices in and out of MDB"</span><span class="p">)</span> <span class="o">+</span> <span class="n">ylab</span><span class="p">(</span><span class="s2">"AUD"</span><span class="p">)</span> <span class="o">+</span> <span class="n">xlab</span><span class="p">(</span><span class="s2">"time"</span><span class="p">)</span></code></pre></figure>
-
-<p><img src="/public/images/eda-water-1/unnamed-chunk-1-3.svg" alt="plot of chunk unnamed-chunk-1" /></p>
-
-<p>Three things I see here:</p>
-
-<ol>
-  <li>More trading of entitlements and allocations inside the MDB than outside, both in terms of volumes of water traded as well as number of trades.</li>
-  <li>Allocation trading inside the MDB has been increasing faster than allocation trading outside the MDB, while entitlement trading in both regions seem to follow similar trends.</li>
-  <li>Average monthly prices per megaliter seem about the same inside or outside the MDB. Entitlement prices seem to have been going up over time.</li>
-</ol>
-
-<p>This makes sense; the Murray-Darling Basin accounts for most of Australia’s water use, so I expected to see more activity inside the MDB than outside. 4 states sit inside the MDB: New South Wales, Victoria, Queensland, and South Australia. New South Wales and Victoria have the most area inside the Basin, so we might expect the action in the Basin to be driven by those two. Let’s take a look:</p>
-
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">load</span><span class="p">(</span><span class="s2">"C:/Users/Akhil/Documents/akhilrao.github.io/public/code/au-water-trading/water-eda-stuff.RData"</span><span class="p">)</span>
-<span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
-<span class="c1">## drop everything before 2008
-</span><span class="n">trades_m</span> <span class="o">&lt;-</span> <span class="n">subset</span><span class="p">(</span><span class="n">trades_m</span><span class="p">,</span><span class="n">year</span><span class="o">&gt;</span><span class="m">2008</span><span class="p">)</span>
-<span class="n">trades_m_melted</span> <span class="o">&lt;-</span> <span class="n">subset</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="p">,</span><span class="n">year</span><span class="o">&gt;</span><span class="m">2008</span><span class="p">)</span>
-
-<span class="c1">## make plots
-### volumes over time
-</span><span class="n">trade_vols_state</span> <span class="o">&lt;-</span> <span class="n">ggplot</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="p">[</span><span class="n">c</span><span class="p">(</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">variable</span><span class="o">==</span><span class="s2">"v_ents"</span><span class="p">),</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">variable</span><span class="o">==</span><span class="s2">"v_alls"</span><span class="p">)),],</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">MonthOfTrade</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">value</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">variable</span><span class="p">)))</span>
-
-<span class="n">trade_vols_state</span> <span class="o">+</span> <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span> <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">"lm"</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">NA</span><span class="p">)</span> <span class="o">+</span> <span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="n">from_state</span><span class="p">)</span> <span class="o">+</span> <span class="n">scale_colour_discrete</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"Product type"</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"Allocations"</span><span class="p">,</span><span class="s2">"Entitlements"</span><span class="p">))</span> <span class="o">+</span> <span class="n">ggtitle</span><span class="p">(</span><span class="s2">"Water volume traded in each state"</span><span class="p">)</span> <span class="o">+</span> <span class="n">ylab</span><span class="p">(</span><span class="s2">"Volume (ML) traded per month"</span><span class="p">)</span> <span class="o">+</span> <span class="n">xlab</span><span class="p">(</span><span class="s2">"time"</span><span class="p">)</span></code></pre></figure>
-
-<p><img src="/public/images/eda-water-1/unnamed-chunk-2-1.svg" alt="plot of chunk unnamed-chunk-2" /></p>
-
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">### counts over time
-</span><span class="n">trade_counts_state</span> <span class="o">&lt;-</span> <span class="n">ggplot</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="p">[</span><span class="n">c</span><span class="p">(</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">variable</span><span class="o">==</span><span class="s2">"n_ents"</span><span class="p">),</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">variable</span><span class="o">==</span><span class="s2">"n_alls"</span><span class="p">)),],</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">MonthOfTrade</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">value</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">variable</span><span class="p">)))</span>
-
-<span class="n">trade_counts_state</span> <span class="o">+</span> <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span> <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">"lm"</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">NA</span><span class="p">)</span> <span class="o">+</span> <span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="n">from_state</span><span class="p">)</span> <span class="o">+</span> <span class="n">scale_colour_discrete</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"Product type"</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"Allocations"</span><span class="p">,</span><span class="s2">"Entitlements"</span><span class="p">))</span> <span class="o">+</span> <span class="n">ggtitle</span><span class="p">(</span><span class="s2">"Trades in each state"</span><span class="p">)</span> <span class="o">+</span> <span class="n">ylab</span><span class="p">(</span><span class="s2">"Number of trades per month"</span><span class="p">)</span> <span class="o">+</span> <span class="n">xlab</span><span class="p">(</span><span class="s2">"time"</span><span class="p">)</span></code></pre></figure>
-
-<p><img src="/public/images/eda-water-1/unnamed-chunk-2-2.svg" alt="plot of chunk unnamed-chunk-2" /></p>
-
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">### prices over time
-</span><span class="n">trade_prices_state</span> <span class="o">&lt;-</span> <span class="n">ggplot</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="p">[</span><span class="n">c</span><span class="p">(</span><span class="n">intersect</span><span class="p">(</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">variable</span><span class="o">==</span><span class="s2">"price_ents"</span><span class="p">),</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">value</span><span class="o">!=</span><span class="m">0</span><span class="p">)),</span><span class="n">intersect</span><span class="p">(</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">variable</span><span class="o">==</span><span class="s2">"price_alls"</span><span class="p">),</span><span class="n">which</span><span class="p">(</span><span class="n">trades_m_melted</span><span class="o">$</span><span class="n">value</span><span class="o">!=</span><span class="m">0</span><span class="p">))),],</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">MonthOfTrade</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">value</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">variable</span><span class="p">)))</span> 
-
-<span class="n">trade_prices_state</span> <span class="o">+</span> <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span> <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">"lm"</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">NA</span><span class="p">)</span> <span class="o">+</span> <span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="n">from_state</span><span class="p">)</span> <span class="o">+</span> <span class="n">scale_colour_discrete</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"Product type"</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"Allocations"</span><span class="p">,</span><span class="s2">"Entitlements"</span><span class="p">))</span> <span class="o">+</span> <span class="n">ggtitle</span><span class="p">(</span><span class="s2">"Monthly average trade prices in each state"</span><span class="p">)</span> <span class="o">+</span> <span class="n">ylab</span><span class="p">(</span><span class="s2">"AUD"</span><span class="p">)</span> <span class="o">+</span> <span class="n">xlab</span><span class="p">(</span><span class="s2">"time"</span><span class="p">)</span></code></pre></figure>
-
-<p><img src="/public/images/eda-water-1/unnamed-chunk-2-3.svg" alt="plot of chunk unnamed-chunk-2" /></p>
-
-<p>(<em>Northern Territory seems to be missing from my data. Might be a coding error on my part.</em>)</p>
-
-<ol>
-  <li>It looks like the increase in volume traded and trade volume for the allocations is driven by Victoria and New South Wales, with New South Wales having some bigger months in terms of both amount traded and frequency of trades.</li>
-  <li>Overall prices per megaliter seem fairly flat, with the exception of entitlements in New South Wales, which seem to be increasing.</li>
-  <li>Not a lot of trades with positive prices in Queensland, I don’t think any in Tasmania.</li>
-</ol>
-
-<p>I’ll look at more cuts of this data in a future post.</p>
-
-    <a href="/eda/2016/06/29/au-water-trading-1-look-at-data/#disqus_thread">View or add comments</a>
-  </div>
-  
 </div>
 
 <div class="pagination">
   
-    <a class="pagination-item older" href="https://akhilrao.github.io/page2">Older</a>
+    <a class="pagination-item older" href="/page2">Older</a>
   
   
     <span class="pagination-item newer">Newer</span>

@@ -16,6 +16,8 @@ The authors (BW) consider a number of different simulations to get at the behavi
 
 ## Notation
 
+This paper has a lot of notation. I thought putting it all in one place would make it clearer than searching through the paper, but I'm not sure about that anymore.
+
 $$\begin{align}
 S_n^o(t):& \text{ spacecraft which can't deorbit, are still operational}  \cr
 S_n(t):& \text{ spacecraft which can't deorbit, not operational}  \cr 
@@ -33,8 +35,8 @@ F^{\kappa}_{\tau}:& \text{ effective number of fragments} \cr
 \kappa \in \{ h, b \}:& \text{ is fragment hazardous or benign to intacts} \cr
 \tau \in \{ R, S \}:& \text{ source of fragment, rocket body or spacecraft } \cr
 \mu_{F^{\kappa}}:& \text{ rate at which fragments deorbit} \cr
-\beta_{\alpha \gamma}:& \text{ the number of collisions between satellites of type } \alpha \text{ and } \gamma \text{ per unit time per satellite of type } \alpha \text{ per satellite of type } \cr
-& \gamma   \text{, where } \alpha, \gamma \in \{ S, R, F^{\kappa}_{\tau} \} \cr
+\beta_{\alpha \gamma}:& \text{ the number of collisions between satellites of type } \alpha \text{ and } \gamma \cr
+&  \text{ per unit time per satellite of type } \alpha \text{ per satellite of type } \gamma   \text{, where } \alpha, \gamma \in \{ S, R, F^{\kappa}_{\tau} \} \cr
 \beta_{\alpha \gamma} \alpha(t) \gamma(t):& \text{ rate of collisions between satellites of types } \alpha \text{ and } \gamma \text{ at } t \cr
 \delta_{\alpha \gamma}^{\tau \kappa}\alpha(t) \gamma(t):& \text{ rate at which fragments of type } F^{\kappa}_{\tau} \text{ are generated from } \cr
 & \text{ collisions between satellites of types } \alpha \text{ and } \gamma \cr
@@ -71,14 +73,14 @@ $$\begin{align}
 for $$\tau \in U^I, \kappa \in \{ h, b \} $$.
 
 For the equilibrium analysis, they define some new parameters in order to simplify system (1)-(5). The new parameters are
+
 $$\begin{align}
 \beta_{II} =& \max \beta_{\alpha \gamma} \cr
 \beta_{IF} =& \max \beta_{\alpha \zeta} \cr
-\mu_I =& \min \{ \{ \text{if } \lambda_R >0, \mu_R; \text{ else } \infty \}, \cr
-&   \{ \text{if } \theta_d <1, \mu_n; \text{ else } \infty \},\mu_o \} \cr
+\mu_I =& \min \{ \{ \text{if } \lambda_R >0, \mu_R; \text{ else } \infty \}, \{ \text{if } \theta_d <1, \mu_n; \text{ else } \infty \},\mu_o \} \cr
 \lambda_I =& \lambda_R + \lambda_o \cr
-\frac{\delta_{II}}{\beta_{II}} =& \frac{\delta_{IF}}{\beta_{IF}} = \max \left { \max \frac{\delta_{\alpha \gamma}^{\tau \kappa}}{2\beta_{\alpha \gamma}} , \max \frac{\delta_{\alpha \zeta}^{\tau \kappa}}{\beta_{\alpha \zeta}} \right } \cr
-\mu_F =& \min_{\alpha \in U^F} \mu_{\alpha}
+\frac{\delta_{II}}{\beta_{II}} = \frac{\delta_{IF}}{\beta_{IF}} =& \max \left \{ \max \frac{\delta_{\alpha \gamma}^{\tau \kappa}}{2\beta_{\alpha \gamma}} ,  \max \frac{\delta_{\alpha \zeta}^{\tau \kappa}}{\beta_{\alpha \zeta}} \right \} \cr
+\mu_F =& \min_{\alpha \in U^F} \mu_{\alpha} \cr
 \end{align}$$
 
 for $$\alpha, \gamma \in U^I$$, $$ \zeta, \eta \in U^F $$, $$\tau \in \{ R, S \} $$, $$\kappa \in \{ h,b \} $$.
@@ -96,8 +98,8 @@ As I'm understanding it, the simplified system involves using the highest rates 
 One of the features of this paper I found really interesting was the system quality metric BW used, the "maximum (over all time) lifetime risk to an operational spacecraft". They describe this as a sustainability metric as opposed to an efficiency metric. The metric is defined as
 
 $$\begin{align}
-\max_{t \geq 0} r^0(t)& \cr
- r^0 &= 1 - \left ( 1 - \sum_{\alpha \in U^h} \beta_{S \alpha} \alpha(t) \right )^{\mu_o^{-1}}
+& \max_{t \geq 0} r^0(t) \cr
+& r^0 = 1 - \left ( 1 - \sum_{\alpha \in U^h} \beta_{S \alpha} \alpha(t) \right )^{\mu_o^{-1}}
 \end{align}$$
 
 This metric measures the system's hazard as the probability that a spacecraft launched at time $$t$$ will be destroyed, while it is still operational, by an intact-intact or intact-fragment catastrophic collision.
@@ -108,7 +110,7 @@ Let $$C_d$$ be the cost to deorbit, $$C_S$$ be the cost of a destroyed operation
 
 $$ \min_{\theta_a} \theta_a C_d + r^o_{\max}(s \theta_a) C_S $$
 
-Using values from the literature, BW solve this problem and find that $$ \theta_a* = 1$$. They find that $$\theta_a* < 1$$ requires $$C_d =$$ $30 million, which is many times larger than the actual values and costs they find in the literature. Similarly, they find that 100% compliance with rocket body deorbiting is socially optimal.
+Using values from the literature, BW solve this problem and find that $$ \theta_a^* = 1$$. They find that $$\theta_a^* < 1$$ requires $$C_d =$$ $30 million, which is many times larger than the actual values and costs they find in the literature. Similarly, they find that 100% compliance with rocket body deorbiting is socially optimal.
 
 ### Assessing damage due to space activities
 
@@ -153,4 +155,4 @@ I think the main drawback of this paper from an economic standpoint is its treat
 
 BW's result from analyzing the social optimality of deorbit compliance (that full compliance is socially optimal) makes sense to me. However, I don't know if full compliance is also optimal for individual profit-maximizing firms. My priors are that individual firms would find $$\theta_a <1$$ optimal for smaller values of the cost parameters and higher values of the risk parameter than the Space Board would. I don't have priors on how high the relevant [price of anarchy](https://en.wikipedia.org/wiki/Price_of_anarchy) (in terms of lifetime sustainable risk) would be, but I do think it would be strictly greater than 1.
 
-Endogenizing the launch rates, launch vehicle choices, and deorbit compliance is where I am focusing my model. While my current debris model is much simpler than this one (simple enough to be manageable in pencil and paper), I think I should work on marrying my model of launch decision-making to this model of orbital debris evolution. In terms of this model, I think this would mean that $$\lambda_o$$, $$\lambda_R$$, and $$\theta_d$$ would be $$\lambda_o*(t;U^I, U^F)$$, $$\lambda_R*(t;U^I, U^F)$$, and $$\theta_d*(t;U^I, U^F)$$ - best-response functions which change over time in response to the state of the fragment and intact stocks.
+Endogenizing the launch rates, launch vehicle choices, and deorbit compliance is where I am focusing my model. While my current debris model is much simpler than this one (simple enough to be manageable in pencil and paper), I think I should work on marrying my model of launch decision-making to this model of orbital debris evolution. In terms of this model, I think this would mean that $$\lambda_o$$, $$\lambda_R$$, and $$\theta_d$$ would be $$\lambda_o^*(t;U^I, U^F)$$, $$\lambda_R^*(t;U^I, U^F)$$, and $$\theta_d^*(t;U^I, U^F)$$ - best-response functions which change over time in response to the state of the fragment and intact stocks.
