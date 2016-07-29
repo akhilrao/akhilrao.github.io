@@ -6,7 +6,7 @@ tags: environmental economics, applied theory, space economics
 year: 2016
 month: 07
 day: 29
-published: false
+published: true
 summary: I review some aspects of Bradley and Wein's 2009 paper about space debris.
 ---
 
