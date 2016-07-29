@@ -75,9 +75,9 @@ $$\begin{align}
 \beta_{II} =& \max \beta_{\alpha \gamma} \cr
 \beta_{IF} =& \max \beta_{\alpha \zeta} \cr
 \mu_I =& \min \{ \{ \text{if } \lambda_R >0, \mu_R; \text{ else } \infty \}, \cr
-&    \{ \text{if } \theta_d <1, \mu_n; \text{ else } \infty \},\mu_o \} \cr
+&   \{ \text{if } \theta_d <1, \mu_n; \text{ else } \infty \},\mu_o \} \cr
 \lambda_I =& \lambda_R + \lambda_o \cr
-\frac{\delta_{II}}{\beta_{II}} =& \frac{\delta_{IF}}{\beta_{IF}} = \max \left { \max \frac{\delta_{\alpha \gamma}^{\tau \kappa}}{2\beta_{\alpha \gamma}} , \max \frac{\delta_{\alpha \zeta}^{\tau \kappa}}{\beta_{\alpha \zeta}} \right }
+\frac{\delta_{II}}{\beta_{II}} =& \frac{\delta_{IF}}{\beta_{IF}} = \max \left { \max \frac{\delta_{\alpha \gamma}^{\tau \kappa}}{2\beta_{\alpha \gamma}} , \max \frac{\delta_{\alpha \zeta}^{\tau \kappa}}{\beta_{\alpha \zeta}} \right } \cr
 \mu_F =& \min_{\alpha \in U^F} \mu_{\alpha}
 \end{align}$$
 
