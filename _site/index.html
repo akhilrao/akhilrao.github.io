@@ -645,6 +645,129 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="//micro%20theory/2016/08/15/dark-forest-simple-model/">
+        Broadcasting in the Dark Forest
+      </a>
+    </h1>
+
+    <span class="post-date">15 Aug 2016</span>
+
+    <p>I read Cixin Liu’s <a href="http://www.goodreads.com/book/show/20518872-the-three-body-problem"><em>The Three-Body Problem</em></a> and <a href="http://www.goodreads.com/book/show/23168817-the-dark-forest"><em>The Dark Forest</em></a> a while ago. If you like science fiction, I highly recommend both of them. I hear the English version of the third book in the series, <em>Death’s End</em>, is coming out on September 20th. I’m looking forward to it.</p>
+
+<p>Though I think <em>Three-Body Problem</em> is the better story of the two, <em>The Dark Forest</em> had some interesting ideas of its own. The most interesting to me came late in the plot: a game theoretic explanation of the <a href="https://en.wikipedia.org/wiki/Fermi_paradox">Fermi Paradox</a>. From <a href="https://en.wikipedia.org/wiki/The_Dark_Forest">wikipedia’s page about <em>TDF</em></a>,</p>
+
+<blockquote>
+  <p>The universe is full of life. Life in the universe functions on two axioms: 1. Life’s goal is to survive and 2. That matter (resources) are finite. Like hunters in a dark forest, life can never been sure of alien life’s true intentions. The extreme distances between stars creates an insurmountable ‘Chain of Suspicion’ where the two civilizations cannot communicate fast enough to relieve mistrust, making conflict inevitable. Therefore, it is in every civilization’s best interests to preemptively strike any developing civilization before it can become a threat.</p>
+</blockquote>
+
+<p>These axioms really appealed to me; “utility maximization” and “scarcity” are foundational in economics, and I like to see them applied in science fiction settings.</p>
+
+<p><a href="http://philosophy.stackexchange.com/questions/18127/dark-forest-postulate-used-to-explain-the-fermi-paradox">This philosophy stackexchange thread</a> has a nice discussion of the “Dark Forest Postulate” (including a simple matrix game formalizing the intuition from OP) and its assumptions. TL,DR: the Dark Forest assumptions might not hold, and there are many possible explanations for the Fermi Paradox.</p>
+
+<p>Another assumption I don’t recall being stated explicitly in the book (but I think is important to the DF postulate) is speed-of-light restrictions on communication and travel - otherwise, the cost of communication/travel could be low enough to support cooperative equilibria.</p>
+
+<p>In any case, I liked the idea, and wanted to try writing down a formal model in that vein. The question I consider here is: when is it optimal for a species to broadcast its presence to the universe at large?</p>
+
+<h2 id="the-model">The Model</h2>
+
+<p>Let species <script type="math/tex">i</script> be a species deciding whether or not to broadcast its presence, <script type="math/tex">B_i \in \{0,1\}</script>. Any species is characterized by two parameters: its technology <script type="math/tex">\theta</script> and its resources <script type="math/tex">\rho</script>. Resources are matter and energy, and can be measured in energy units. I’m not sure how technology is measured, but I don’t think it’s too unreasonable to assume we can at least rank levels of technological development. Maybe it’s maximum energy consumption from a unit of resources, so then it’s energy units as well.</p>
+
+<p>Broadcasting (<script type="math/tex">B_i=1</script>) is costless, and reveals species <script type="math/tex">i</script>’s presence to some other species <script type="math/tex">j</script> with probability <script type="math/tex">D_i \in [0,1]</script>. If <script type="math/tex">i</script> does not broadcast its presence, it gets to hide without ever being discovered.</p>
+
+<p>A more involved model might actually model <script type="math/tex">D_i</script> as a function of the type of broadcast, density of stars in the local neighborhood of <script type="math/tex">i</script>, add a cost to broadcasting, maybe even add elements of <script type="math/tex">i</script> faking its type. This is not that model.</p>
+
+<p><strong>Assumption 1:</strong> <script type="math/tex">\theta_i \sim IID [0,\infty)</script> and <script type="math/tex">\rho_i \sim IID [0,r]</script>, where <script type="math/tex">F</script> and <script type="math/tex">R</script> are their respective CDFs. <script type="math/tex">\theta_i</script> and <script type="math/tex">\rho_i</script> both also have PDFs, and expectations <script type="math/tex">% <![CDATA[
+E(\theta_i) = \bar{\theta} < \infty %]]></script>, <script type="math/tex">% <![CDATA[
+E(\rho_i) = \bar{\rho} < \infty %]]></script>.</p>
+
+<p><em>Corollary 1a:</em> With nothing else known about <script type="math/tex">F</script> and <script type="math/tex">R</script>, by the <a href="https://en.wikipedia.org/wiki/Maximum_entropy_probability_distribution">Principle of Maximum Entropy</a> <script type="math/tex">\theta \sim \exp(\lambda), \lambda \in (0,\infty)</script> and <script type="math/tex">\rho \sim U[0,r]</script>. (I don’t think matter and energy are really uniformly distributed throughout the universe, but I’m not sure what other tractable distribution would be reasonable here.)</p>
+
+<p>Assumption 1 encodes the notions of finite resources and potentially unbounded technological advancement (handwaving at thermodynamic constraints), while Corollary 1a gives the maximum entropy probability distributions under those assumptions. I think maximum entropy is an appropriate principle here since functional forms are convenient but anything else would impose stronger assumptions.</p>
+
+<p><strong>Assumption 2:</strong> Any species <script type="math/tex">i</script> attempts to maximize a concave utility function <script type="math/tex">u(\cdot)</script>, and receives utility from technology <script type="math/tex">\theta_i</script> and resources <script type="math/tex">\rho_i</script> as <script type="math/tex">u(\theta_i \rho_i)</script>.</p>
+
+<p><strong>Assumption 2a:</strong> <script type="math/tex">u(\cdot)</script> satisfies Inada conditions, <script type="math/tex">\lim_{x \to 0} u'(x) = \infty</script> and <script type="math/tex">\lim_{x \to \infty} u'(x) = 0</script>.</p>
+
+<p>Assumption 2 captures the idea that a species is better off with higher levels of technology/resources, and tries to be as well off as it can. It could be made more general with <script type="math/tex">u_i(\cdot)</script> instead of just <script type="math/tex">u(\cdot)</script>, but I don’t think it’s necessary for a simple model. Assumption 2a captures the notion that a species considers total destruction (no resources/no technology) the worst possible outcome, and has <script type="math/tex">0</script> marginal utility at infinitely high levels of technology. I’m not sure if the latter really matters in this setting, but the former will be important and it seemed weird to have one without the other.</p>
+
+<p><strong>Assumption 3:</strong> When two species <script type="math/tex">i</script> and <script type="math/tex">j</script> interact and both survive the interaction, their resources after interacting are given by the solution to the Nash Bargaining problem</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\max_{x_i, x_j} ~& x_i^{\frac{\theta_i}{\theta_i + \theta_j}} x_j^{\frac{\theta_j}{\theta_i + \theta_j}} \cr
+\text{s.t.} ~& x_i + x_j = \rho_i + \rho_j
+\end{align} %]]></script>
+
+<p>Species <script type="math/tex">i</script>’s resources after the interaction are <script type="math/tex">x^*_i = \left ( \frac{\theta_i}{\theta_i + \theta_j} \right ) (\rho_i + \rho_j)</script>, and species <script type="math/tex">j</script>’s are <script type="math/tex">x^*_j = \left ( \frac{\theta_j}{\theta_i + \theta_j} \right ) (\rho_i + \rho_j)</script>. Species <script type="math/tex">i</script>’s expectation of <script type="math/tex">x^*_i</script> prior to the interaction is <script type="math/tex">\hat{x}_i = E(x^*_i) = \left ( \frac{\theta_i}{\theta_i + \bar{\theta}} \right ) (\rho_i + \bar{\rho})</script>.
+For simplicity, I ignore potential technology transfers; each species still has technology <script type="math/tex">\theta_i</script> and <script type="math/tex">\theta_j</script> after the interaction.</p>
+
+<p>I think Assumption 3 is strong, but maybe not unreasonable. <a href="http://akhilrao.github.io/micro%20theory/2015/11/01/nash-bargaining-example/">NBS is a convenient assumption</a> for sure. The idea I wanted to get at was that they’ll split the total resources between them in proportion to their levels of technological development. The form of <script type="math/tex">\hat{x}_i</script> also implies that species <script type="math/tex">i</script> knows its own level of technological development and resource stock, but not species <script type="math/tex">j</script>’s until they interact. I think ignoring technology transfers makes this a little more pessimistic/conservative, as well as more tractable. I don’t think it affects the qualitative conclusions.</p>
+
+<p><strong>Assumption 4:</strong> When two species <script type="math/tex">i</script> and <script type="math/tex">j</script> interact, the probability that the one with the lower level of technology (say it’s <script type="math/tex">i</script>) does not survive the interaction is given by <script type="math/tex">Y_i = Pr(\theta_j - \theta_i \geq \bar{C}) = 1 - Pr(\theta_j \leq \theta_i + \bar{C}) = 1 - e^{-\lambda (\bar{C} + \theta_i)}</script>. The more technologically advanced species <script type="math/tex">j</script> has net resources <script type="math/tex">\rho_i + \rho_j</script> after the interaction.</p>
+
+<p>Assumption 4 is strong, but I don’t know a weaker way to encode the probability that a species is destroyed by interacting with a technologically more advanced one. I calculated <script type="math/tex">Y_i</script> assuming <script type="math/tex">i</script> knows <script type="math/tex">\theta_i</script>, so the only unknown is <script type="math/tex">\theta_j</script>.</p>
+
+<p>The net resources bit isn’t to say that the more advanced species is going to try to steal the less advanced species’ resources (though that’s a possibility), just that the stuff’s there for the taking after the less advanced species is wiped out and I assume species <script type="math/tex">j</script> takes it. Whether <script type="math/tex">j</script> takes the resources or not doesn’t really matter to <script type="math/tex">i</script>’s decision to broadcast or not, since <script type="math/tex">i</script> would be dead.</p>
+
+<h3 id="analysis">Analysis</h3>
+
+<p>Let assumptions 1, 2, 3, and 4 hold. Let <script type="math/tex">D_i = 1</script>. Species <script type="math/tex">i</script>’s value function is</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+V_i(B_i;\theta_i,\rho_i,\hat{x}_i) &= \max \{ u(B_i = 0), E(u(B_i = 1))\} \cr
+&= \max \{ u(\theta_i \rho_i), Y_i u(0) + (1 - Y_i) u(\theta_i \hat{x}))\} 
+\end{align} %]]></script>
+
+<p><script type="math/tex">u(\theta_i \rho_i)</script> is <script type="math/tex">i</script>’s utility from not broadcasting (<script type="math/tex">B_i = 0</script>), and <script type="math/tex">Y_i u(0) + (1 - Y_i) u(\theta_i \hat{x})</script> is <script type="math/tex">i</script>’s utility from broadcasting (<script type="math/tex">B_i = 1</script>). It is optimal for <script type="math/tex">i</script> to broadcast its existence to the galaxy at large if</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+E(u(B_i=1)) &\geq u(B_i=0) \cr
+\implies Y_i &\leq \frac{u(\theta_i \rho_i) - u(\theta_i \hat{x}_i)}{u(0) - u(\theta_i \hat{x}_i)} ~~~(1) \cr
+\end{align} %]]></script>
+
+<p>The concavity of <script type="math/tex">u(\cdot)</script> from assumption 2 tells us that the bound on <script type="math/tex">Y_i</script> in (1) is non-negative if <script type="math/tex">\rho_i \leq \hat{x}_i</script>, which implies <script type="math/tex">\frac{\theta_i}{\rho_i} \geq \frac{\bar{\theta}}{\bar{\rho}}</script> . In words, <script type="math/tex">i</script>’s technology/resource ratio should be at least as high as the average technology/resource ratio for broadcasting to be worth the risk of extinction. This is coming from the Nash Bargaining mechanism, since <script type="math/tex">i</script> wants to broadcast only if there are good odds it will come out ahead in the event of a peaceful interaction.</p>
+
+<p>Corollary 1a lets us clean up the bound on <script type="math/tex">Y_i</script> to say that it’s non-negative if <script type="math/tex">\theta_i \geq \frac{r \rho_i}{\lambda}</script> . I suppose this is at least in principle computable, though the uniform distribution assumption is sketchy. We can also do some basic comparative statics to say that <script type="math/tex">i</script> is more likely to broadcast if</p>
+
+<ol>
+  <li>the maximum potential resources available to <script type="math/tex">j</script> are larger</li>
+  <li><script type="math/tex">i</script> has more resources</li>
+  <li>the average level of technological development is lower</li>
+</ol>
+
+<p>Under corollary 1a, any species <script type="math/tex">i</script> with no information about the distribution of <script type="math/tex">\theta</script> except for its own technology should be cautious: the probability that they are below the universal average level of technological development is <script type="math/tex">\int_0^{\frac{1}{\lambda}} \lambda e^{-\lambda x} dx = \frac{e - 1}{e} \approx 0.63</script>.</p>
+
+<p>Assumption 2a makes the bound on <script type="math/tex">Y_i</script> much more pessimistic. With 2a, no matter what <script type="math/tex">i</script>’s resource level is, <script type="math/tex">\lim_{x \to 0} = -\infty</script> means broadcasting is never worth the risk of getting destroyed (left with no technology/resources).</p>
+
+<p>What can we say about the distribution of broadcasting species <script type="math/tex">\theta_{B=1}</script> in the universe? If assumption 2a holds, it’s a spike at <script type="math/tex">0</script> since no one wants to broadcast and risk annihilation. Let’s suppose 2a doesn’t hold, and express (1) as a lower bound on <script type="math/tex">\theta_i</script>:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+e^{-\lambda (\bar{C} + \theta_i)} &\geq 1 - \frac{u(\theta_i \rho_i) - u(\theta_i \hat{x}_i)}{u(0) - u(\theta_i \hat{x}_i)} \equiv d  \cr
+\implies \theta_i &\geq - \frac{\log(d)}{\lambda} + \bar{C} \equiv b
+\end{align} %]]></script>
+
+<p>The distribution of <script type="math/tex">\theta_{B=1}</script> will follow an exponential distribution, truncated from below at <script type="math/tex">b</script>. The PDF for <script type="math/tex">\theta_{B=1}</script> is</p>
+
+<script type="math/tex; mode=display">f_{\theta_{B=1}}(\theta| \lambda, b) = 1 - \frac{\lambda e^{-\lambda \theta}}{1 - e^{-\lambda b}}</script>
+
+<p><script type="math/tex">E(\theta_{B=1}) = \frac{1 + b \lambda}{\lambda(e^{\lambda b} - 1)} > \frac{1}{\lambda}</script> for <a href="http://www.wolframalpha.com/input/?i=(1%2Bb+L)%2F((-1%2Be%5E(b+L))+L)+-+1%2FL+%3E0">some (but not all) admissible values of <script type="math/tex">\lambda</script> and <script type="math/tex">b</script></a>. The probability that <script type="math/tex">i</script> is below <script type="math/tex">E(\theta_{B=1})</script> is</p>
+
+<script type="math/tex; mode=display">\int_0^{E(\theta_{B=1})} \lambda e^{-\lambda x} dx = 1 - e^{-E(\theta_{B=1})}</script>
+
+<p><a href="http://www.wolframalpha.com/input/?i=1+-+exp(-x)+%3E+0.63,+x%3E0">If <script type="math/tex">E(\theta_{B=1}) > 1</script>, this is higher than <script type="math/tex">E(\theta)</script></a>.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>The takeaway: be careful about broadcasting your species’ presence to the universe. If there is nothing worse than annihilation, never broadcast. If you’re willing to risk annihilation and you haven’t found any evidence of a species other than your own… your technology is probably below average, so be careful anyway.</p>
+
+    <a href="/micro%20theory/2016/08/15/dark-forest-simple-model/#disqus_thread">View or add comments</a>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="//reviews/2016/07/29/paper-review-bradley-wein-space-debris/">
         Paper Review - "Space debris - Assessing risk and responsibility"
       </a>
@@ -1391,32 +1514,6 @@ p(u) : p'(u) <0, p''(u) \leq 0 %]]></script> based on the locational equilibrium
 <p>These dates are all really early in my sample, or for regions that may not have good counterfactuals. In the case of Victorian unbundling, I don’t have any entitlement trade data before 2009. In the case of South Australia, the RMPWC is where most of the trading activity occurs, so any control region would probably have to be located in Victoria or NSW. This makes a credibly identified setup to get at the effects of unbundling a bit more challenging, but possibly still doable. In a future post I’ll describe what one such setup might look like.</p>
 
     <a href="/eda/2016/07/02/au-water-trading-2-look-at-data/#disqus_thread">View or add comments</a>
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="//2016/06/30/i-love-npp/">
-        I love Notepad++
-      </a>
-    </h1>
-
-    <span class="post-date">30 Jun 2016</span>
-
-    <p>A while back Github Pages upgraded to Jekyll 3.0. As a result, only <code class="highlighter-rouge">kramdown</code> is supported for Jekyll sites hosted on Github Pages.</p>
-
-<p>Seeing as I didn’t pay close attention to what was going on, I spent a while very confused and frustrated trying to figure out why all my MathJax wasn’t displaying properly. Once I figured out what the upgrade was doing, I spent some more time confused and frustrated trying to fix the problem.</p>
-
-<p><a href="http://tobanwiebe.com/blog/2016/02/mathjax-kramdown">This blog post by Toban Wiebe</a> explained what was going on in words I can grok. Unfortunately, I am one of those people with a lot of old posts to convert.</p>
-
-<p>I’ve been reading through “<a href="https://automatetheboringstuff.com/">Automate the Boring Stuff with Python</a>” this summer, so I figured this was a perfect project - write a Python script to convert <code class="highlighter-rouge">redcarpet</code>-acceptable delimiters like <code class="highlighter-rouge">\\(</code> and <code class="highlighter-rouge">\\{</code> to <code class="highlighter-rouge">kramdown</code>-acceptable delimiters like <code class="highlighter-rouge">$$</code> and <code class="highlighter-rouge">\{</code>. I started down that path, and even got as far as figuring out the appropriate regular expressions and writing a first draft of a script.</p>
-
-<p>Then I remembered that <a href="https://notepad-plus-plus.org/">Notepad++</a> (my preferred text editor) has a “Replace All in All Opened Documents” function. Like any good myopic optimizer, I stopped writing that script immediately and pulled up Notepad++.</p>
-
-<p>Problem solved. Hooray for Notepad++!</p>
-
-<p>(It seems like MathJax doesn’t always load with the page anymore, but a couple refreshes solves the problem. Not sure what’s up with that.)</p>
-
-    <a href="/2016/06/30/i-love-npp/#disqus_thread">View or add comments</a>
   </div>
   
 </div>
