@@ -16,7 +16,7 @@ Though I think *Three-Body Problem* is the better story of the two, *The Dark Fo
 
 > The universe is full of life. Life in the universe functions on two axioms: 1. Life's goal is to survive and 2. That matter (resources) are finite. Like hunters in a dark forest, life can never been sure of alien life's true intentions. The extreme distances between stars creates an insurmountable 'Chain of Suspicion' where the two civilizations cannot communicate fast enough to relieve mistrust, making conflict inevitable. Therefore, it is in every civilization's best interests to preemptively strike any developing civilization before it can become a threat.
 
-These axioms really appealed to me; "utility maximization" and "scarcity" are foundational in economics, and I like to see them applied in science fiction settings.
+These axioms really appealed to me; "utility maximization" and "scarcity" are foundational in economics, and I like seeing them applied in science fiction settings.
 
 [This philosophy stackexchange thread](http://philosophy.stackexchange.com/questions/18127/dark-forest-postulate-used-to-explain-the-fermi-paradox) has a nice discussion of the "Dark Forest Postulate" (including a simple matrix game formalizing the intuition from OP) and its assumptions. TL,DR: the Dark Forest assumptions might not hold, and there are many possible explanations for the Fermi Paradox. 
 
