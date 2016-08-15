@@ -42,7 +42,7 @@ Assumption 1 encodes the notions of finite resources and potentially unbounded t
 
 **Assumption 2a:** $$u(\cdot)$$ satisfies Inada conditions, $$\lim_{x \to 0} u'(x) = \infty$$ and $$ \lim_{x \to \infty} u'(x) = 0 $$.
 
-Assumption 2 captures the idea that a species is better off with higher levels of technology/resources, and tries to be as well off as it can. It could be made more general with $$u_i(\cdot)$$ instead of just $$u(\cdot)$$, but I don't think it's necessary for a simple model. Assumption 2a captures the notion that a species considers total destruction (no resources/no technology) the worst possible outcome, and has $$0$$ marginal utility at infinitely high levels of technology. I'm not sure if the latter really matters in this setting, but the former will be important and it seemed weird to have one without the other.
+Assumption 2 captures the idea that a species is better off with higher levels of technology/resources subject to diminishing marginal utility, and tries to be as well off as it can. It could be made more general with $$u_i(\cdot)$$ instead of just $$u(\cdot)$$, but I don't think it's necessary for a simple model. Assumption 2a captures the notion that a species considers total destruction (no resources/no technology) the worst possible outcome, and has $$0$$ marginal utility at infinitely high levels of technology. I'm not sure if the latter really matters in this setting, but the former will be important and it seemed weird to have one without the other.
 
 **Assumption 3:** When two species $$i$$ and $$j$$ interact and both survive the interaction, their resources after interacting are given by the solution to the Nash Bargaining problem 
 
@@ -60,7 +60,7 @@ I think Assumption 3 is strong, but maybe not unreasonable. [NBS is a convenient
 
 Assumption 4 is strong, but I don't know a weaker way to encode the probability that a species is destroyed by interacting with a technologically more advanced one. I calculated $$Y_i$$ assuming $$i$$ knows $$\theta_i$$, so the only unknown is $$\theta_j$$.
 
-The net resources bit isn't to say that the more advanced species is going to try to steal the less advanced species' resources (though that's a possibility), just that the stuff's there for the taking after the less advanced species is wiped out and I assume species $$j$$ takes it. Whether $$j$$ takes the resources or not doesn't really matter to $$i$$'s decision to broadcast or not, since $$i$$ would be dead.
+The net resources bit isn't to say that the more advanced species is going to try to steal the less advanced species' resources (though that's a possibility), just that the stuff's there for the taking after the less advanced species is wiped out and I assume species $$j$$ takes it. Whether $$j$$ takes the resources or not doesn't really matter to $$i$$'s decision to broadcast or not, since $$i$$ would be dead. I ignore the potential incentive of finding a weaker species aand killing them and taking their stuff in the analysis below.
 
 ### Analysis
 
@@ -78,7 +78,7 @@ E(u(B_i=1)) &\geq u(B_i=0) \cr
 \implies Y_i &\leq \frac{u(\theta_i \rho_i) - u(\theta_i \hat{x}_i)}{u(0) - u(\theta_i \hat{x}_i)} ~~~(1) \cr
 \end{align}$$
 
-The concavity of $$u(\cdot)$$ from assumption 2 tells us that the bound on $$Y_i$$ in (1) is non-negative if $$ \rho_i \leq \hat{x}_i $$, which implies $$ \frac{\theta_i}{\rho_i} \geq \frac{\bar{\theta}}{\bar{\rho}}$$ . In words, $$i$$'s technology/resource ratio should be at least as high as the average technology/resource ratio for broadcasting to be worth the risk of extinction. This is coming from the Nash Bargaining mechanism, since $$i$$ wants to broadcast only if there are good odds it will come out ahead in the event of a peaceful interaction.
+The concavity of $$u(\cdot)$$ from assumption 2 tells us that the bound on $$Y_i$$ in $$(1)$$ is non-negative if $$ \rho_i \leq \hat{x}_i $$, which implies $$ \frac{\theta_i}{\rho_i} \geq \frac{\bar{\theta}}{\bar{\rho}}$$ . In words, $$i$$'s technology/resource ratio should be at least as high as the average technology/resource ratio for broadcasting to be worth the risk of extinction. This is coming from the Nash Bargaining mechanism, since $$i$$ wants to broadcast only if there are good odds it will come out ahead in the event of a peaceful interaction.
 
 Corollary 1a lets us clean up the bound on $$Y_i$$ to say that it's non-negative if $$ \theta_i \geq \frac{r \rho_i}{\lambda} $$ . I suppose this is at least in principle computable, though the uniform distribution assumption is sketchy. We can also do some basic comparative statics to say that $$i$$ is more likely to broadcast if 
 
@@ -90,7 +90,7 @@ Under corollary 1a, any species $$i$$ with no information about the distribution
 
 Assumption 2a makes the bound on $$Y_i$$ much more pessimistic. With 2a, no matter what $$i$$'s resource level is, $$ \lim_{x \to 0} = -\infty$$ means broadcasting is never worth the risk of getting destroyed (left with no technology/resources).
 
-What can we say about the distribution of broadcasting species $$\theta_{B=1}$$ in the universe? If assumption 2a holds, it's a spike at $$0$$ since no one wants to broadcast and risk annihilation. Let's suppose 2a doesn't hold, and express (1) as a lower bound on $$\theta_i$$:
+What can we say about the distribution of broadcasting species $$\theta_{B=1}$$ in the universe? If assumption 2a holds, it's a spike at $$0$$ since no one wants to broadcast and risk annihilation. Let's suppose 2a doesn't hold, and express $$(1)$$ as a lower bound on $$\theta_i$$:
 
 $$\begin{align}
 e^{-\lambda (\bar{C} + \theta_i)} &\geq 1 - \frac{u(\theta_i \rho_i) - u(\theta_i \hat{x}_i)}{u(0) - u(\theta_i \hat{x}_i)} \equiv d  \cr
@@ -107,6 +107,6 @@ $$ \int_0^{E(\theta_{B=1})} \lambda e^{-\lambda x} dx = 1 - e^{-E(\theta_{B=1})}
 
 [If $$E(\theta_{B=1}) > 1$$, this is higher than $$E(\theta)$$](http://www.wolframalpha.com/input/?i=1+-+exp(-x)+%3E+0.63,+x%3E0).
 
-## Conclusion
+## Moral of the Model
 
-The takeaway: be careful about broadcasting your species' presence to the universe. If there is nothing worse than annihilation, never broadcast. If you're willing to risk annihilation and you haven't found any evidence of a species other than your own... your technology is probably below average, so be careful anyway.
+Be careful about broadcasting your species' presence to the universe. If there is nothing worse than annihilation, never broadcast. If you're willing to risk annihilation and you haven't found any evidence of a species other than your own... your technology is probably below average, so be careful anyway.
