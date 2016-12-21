@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: Visualizing helmet weights
+title: Looking at some helmet weights
 category: eda
 tags: eda, visualization, R, ggplot2, data
 year: 2016
