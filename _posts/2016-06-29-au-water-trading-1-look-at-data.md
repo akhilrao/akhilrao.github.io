@@ -13,7 +13,7 @@ summary: A look at some Australian water trading data
 
 *This is my first attempt at using knitr and ggplot2. The scripts to reproduce and extend everything discussed here are [here](https://github.com/akhilrao/akhilrao.github.io/tree/master/public/code/au-water-trading). I converted the knitted Rmarkdown file to markdown with the help of this [post](http://brooksandrew.github.io/simpleblog/articles/blogging-with-r-markdown-and-jekyll-using-knitr/) by Andrew Brooks.*
 
-I'm currently working on two projects: one is about orbital debris and satellites launches (what my previous post was about), and the other is about trading in Australian water markets (what this post is about). In this post I'm going to describe some of the water data I have.
+I'm currently working on two projects: one is about orbital debris and satellite launches (what my previous post was about), and the other is about trading in Australian water markets (what this post is about). In this post I'm going to describe some of the water data I have.
 
 ## Why Australian water markets?
 
