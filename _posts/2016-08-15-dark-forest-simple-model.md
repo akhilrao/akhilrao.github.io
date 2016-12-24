@@ -60,7 +60,7 @@ I think Assumption 3 is strong, but maybe not unreasonable. [NBS is a convenient
 
 Assumption 4 is strong, but I don't know a weaker way to encode the probability that a species is destroyed by interacting with a technologically more advanced one. I calculated $$Y_i$$ assuming $$i$$ knows $$\theta_i$$, so the only unknown is $$\theta_j$$.
 
-The net resources bit isn't to say that the more advanced species is going to try to steal the less advanced species' resources (though that's a possibility), just that the stuff's there for the taking after the less advanced species is wiped out and I assume species $$j$$ takes it. Whether $$j$$ takes the resources or not doesn't really matter to $$i$$'s decision to broadcast or not, since $$i$$ would be dead. I ignore the potential incentive of finding a weaker species aand killing them and taking their stuff in the analysis below.
+The net resources bit isn't to say that the more advanced species is going to try to steal the less advanced species' resources (though that's a possibility), just that the stuff's there for the taking after the less advanced species is wiped out and I assume species $$j$$ takes it. Whether $$j$$ takes the resources or not doesn't really matter to $$i$$'s decision to broadcast or not, since $$i$$ would be dead. I ignore the potential incentive of finding a weaker species and killing them and taking their stuff in the analysis below.
 
 ### Analysis
 
