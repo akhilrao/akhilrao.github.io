@@ -79,7 +79,7 @@ There are up to three Nash equilibria in pure strategies here: $$(H,L), (L,H)$$,
 
 The folk region:
 
-[![Folk region for orbital separation](/public/images/orbit-games-1/separating_folk.png "Orbital separation folk region")](/public/images/orbit-games-1/separating_folk.png "Orbital separation folk region")
+[![Folk region for orbital separation](/public/images/orbit-games-1/separating_folk.PNG "Orbital separation folk region")](/public/images/orbit-games-1/separating_folk.PNG "Orbital separation folk region")
 
 The intuition here is straightforward: pooling on the same orbit is worse than (or, if $$\gamma_{HH} = \gamma_{LH}$$, as good as) mixing it up, so the firms mix it up.
 
@@ -106,11 +106,11 @@ D_L'(H,H) ~&= (1 - \delta_D) D_L + 2 \gamma
 
 The diagram below shows the three possible steady state levels of debris:
 
-[![Debris fixed points](/public/images/orbit-games-1/dynamic_fps.png "Debris dynamics fixed points")](/public/images/orbit-games-1/dynamic_fps.png "Debris dynamics fixed points")
+[![Debris fixed points](/public/images/orbit-games-1/dynamic_fps.PNG "Debris dynamics fixed points")](/public/images/orbit-games-1/dynamic_fps.PNG "Debris dynamics fixed points")
 
 The next diagram shows the returns from orbital pooling and orbital separation as a function of the current period debris stock $$D_L$$.
 
-[![Payoff-debris plot](/public/images/orbit-games-1/payoff-debris_1.png "Payoff-debris pooling vs separating")](/public/images/orbit-games-1/payoff-debris_1.png "Payoff-debris pooling vs separating")
+[![Payoff-debris plot](/public/images/orbit-games-1/payoff-debris_1.PNG "Payoff-debris pooling vs separating")](/public/images/orbit-games-1/payoff-debris_1.PNG "Payoff-debris pooling vs separating")
 
 (The x and y axes are flipped because economics.) $$\bar{D}_L$$ is a debris threshold. Above $$\bar{D}_L$$, orbital pooling dominates orbital separation, and vice versa below $$\bar{D}_L$$.
 
@@ -124,9 +124,9 @@ If $$\tilde{D}_L^{LH} \leq \bar{D}_L$$, $$\tilde{D}_L^{LH}$$ will occur, and fir
 
 The payoff-debris plots for orbital separation and orbital pooling (with proper x-y axes) are shown below
 
-[![Pooling dominant](/public/images/orbit-games-1/payoff-debris_pooling.png "Payoff-debris pooling dominant")](/public/images/orbit-games-1/payoff-debris_pooling.png "Payoff-debris pooling dominant")
+[![Pooling dominant](/public/images/orbit-games-1/payoff-debris_pooling.PNG "Payoff-debris pooling dominant")](/public/images/orbit-games-1/payoff-debris_pooling.PNG "Payoff-debris pooling dominant")
 
-[![Separating dominant](/public/images/orbit-games-1/payoff-debris_separating.png "Payoff-debris separating dominant")](/public/images/orbit-games-1/payoff-debris_separating.png "Payoff-debris pooling separating")
+[![Separating dominant](/public/images/orbit-games-1/payoff-debris_separating.PNG "Payoff-debris separating dominant")](/public/images/orbit-games-1/payoff-debris_separating.PNG "Payoff-debris pooling separating")
 
 A simple way to consider whether the firms will cooperate is to define a trigger strategy for an infinitely repeated game and see when it will/won't enforce cooperation.
 
@@ -147,7 +147,7 @@ $$\begin{align}
 
 So, they can cooperate and alternate orbital separation with a grim trigger if $$ \gamma_{LH} > 2 \gamma_{HH} - 1 $$. We can get a sense for how likely this cooperation is in a $$\gamma_{HH} - \gamma_{LH} $$ payoff space,
 
-[![Cooperation possibility](/public/images/orbit-games-1/cooperation.png "Payoff-debris separating dominant")](/public/images/orbit-games-1/cooperation.png "Payoff-debris pooling separating")
+[![Cooperation possibility](/public/images/orbit-games-1/cooperation.PNG "Payoff-debris separating dominant")](/public/images/orbit-games-1/cooperation.PNG "Payoff-debris pooling separating")
 
 So, cooperation seems more likely when orbital separation is already the Nash equilibrium. This seems intuitive enough to me.
 
