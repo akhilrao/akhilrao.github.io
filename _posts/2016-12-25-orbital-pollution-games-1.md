@@ -1,13 +1,13 @@
 ---
 layout: post
-title: An orbital altitude-debris game
+title: Pooling on orbits: a satellite altitude game
 category: micro theory
 tags: micro-theory, environmental economics, pollution, externalities, common resource, game theory
 year: 2016
 month: 12
 day: 25
-published: false
-summary: A model of satellite orbit choice with a debris externality.
+published: true
+summary: A model of satellite orbit choice with a collision risk externality.
 ---
 
 This is a model I wrote some time ago. It's a special case of a more general recursive model I'm currently working on. Hopefully, the more general model will feature as a chapter of my dissertation, and this might be a subsection of that chapter. I think it's a sort of interesting model in its own right, even apart from the setting.
