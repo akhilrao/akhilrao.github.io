@@ -104,11 +104,11 @@ D_L'(L,H) ~&= (1 - \delta_D) D_L + \gamma \cr
 D_L'(H,H) ~&= (1 - \delta_D) D_L + 2 \gamma          
 \end{align}$$
 
-The diagram below shows the three possible steady state levels of debris:
+The diagram below shows the three possible fixed points of debris:
 
 [![Debris fixed points](/public/images/orbit-games-1/dynamic_fps.PNG "Debris dynamics fixed points")](/public/images/orbit-games-1/dynamic_fps.PNG "Debris dynamics fixed points")
 
-The next diagram shows the returns from orbital pooling and orbital separation as a function of the current period debris stock $$D_L$$.
+If both firms go low, the fixed point will be $$0$$ debris in the low orbit. If the firms separate, it will be $$\tilde{D}_L^{LH}$$. If the firms pool, it will be $$\tilde{D}_L^{HH}$$. The next diagram shows the returns from orbital pooling and orbital separation as a function of the current period debris stock $$D_L$$.
 
 [![Payoff-debris plot](/public/images/orbit-games-1/payoff-debris_1.PNG "Payoff-debris pooling vs separating")](/public/images/orbit-games-1/payoff-debris_1.PNG "Payoff-debris pooling vs separating")
 
@@ -157,6 +157,6 @@ This is obviously a very stylized model, but I think the general notion of orbit
 
 With more altitudes, I would expect the pooling/separation dynamic to result in firms moving progressively higher in LEO. I think we can sort of see that in SpaceX and OneWeb's altitude choices for their announced constellations - around 1,200 and 1,100 km up, close to or a little higher than the LEO altitudes which are most-used right now. Obviously there's a lot more than collision risk going into the choice of altitude for a constellation, but I expect the risk to be a factor. 
 
-Adding the benefits to a particular altitude - e.g. coverage area - parameterizes the problem some more, but doesn't seem to add any interesting economic dynamics. Allowing satellites to last more than one period really complicates the economic dynamics, as does adding more firms or altitudes. The physical dynamics are cool and have been studied fairly well, but the economic dynamics have not really been studied at all. I may be biased - I think the exciting action in the space debris problem is in the economic dynamics.
+Adding the benefits to a particular altitude (e.g. coverage area) parameterizes the problem some more, but doesn't seem to add any interesting economic dynamics. Launch costs are necessary in the dynamic decision model, but can be ignored here. Allowing satellites to last more than one period really complicates the economic dynamics, as does adding more firms or altitudes. The physical dynamics are cool and have been studied fairly well, but the economic dynamics have not really been studied at all. I may be biased - I think the exciting action in the space debris problem is in the economic dynamics.
 
 I would really like to model constellation size choices, but again the economic dynamics make it really complicated. I wrote a single-shell model of comparative steady state constellation choices with free entry and debris accumulation for a class last semester which I might be able to extend with altitudes. The steady states are not easy to compute - mechanically, the problem is that the debris accumulation makes the cost function pretty concave, making the firm's optimization problem becomes very nonconvex. Getting the full transition paths would be cool and presumably even harder. I'm working on this, but I don't expect to get the most general case with constellations, multiple firms, multiple altitudes, and debris accumulation any time soon.
