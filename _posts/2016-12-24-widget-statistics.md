@@ -11,13 +11,13 @@ published: true
 summary: Looking at some statistics for a widget industry
 ---
 
-An unnamed source sent me some fun datasets, this time for an industrially-produced widget sold in Patriotistan (a country where people are very patriotic...or else) for Patriot-dollars (denoted $). The widget manufacturers seem to compete in a monopolistically competitive industry. There may be some vertical and horizontal integration, but I can't see it in the data I have.
+An unnamed source sent me some fun datasets for an industrially-produced widget sold in Producistan for P-dollars (denoted $). The widget manufacturers seem to compete in a monopolistically competitive industry. There may be some vertical and horizontal integration, but I can't see it in the data I have.
 
 This post, like the previous one, is just a fun exercise in holiday programming. I found a neat R package, `GGally`, while writing this.
 
 ## The data
 
-I'll look at two datasets here: one a spreadsheet with data aggregated to the brand level  where each row is a separate brand observation, and another spreadsheet with data broken down to a products offered by different brands. The data come from Patriotistan's popular online shopping portal, and include the number of reviews per firm and per product as well as the average review ranking (usual 1-5 scale).
+I'll look at two datasets here: one a spreadsheet with data aggregated to the brand level  where each row is a separate brand observation, and another spreadsheet with data broken down to a products offered by different brands. The data come from Producistan's popular online shopping portal, and include the number of reviews per firm and per product as well as the average review ranking (usual 1-5 scale).
 
 I have a third dataset where I linked the two by brand. I haven't done anything with the linked dataset, but I like knowing it's an option.
 
@@ -256,4 +256,4 @@ It looks like higher-rated products tend to be higher-priced, controlling for th
 
 ## Conclusion
 
-Widgets in Patriotistan look like a monopolistically competitive industry. Price might be positively correlated with quality, and demand slopes downward. Firms with more products might go for the higher-WTP consumers more aggressively on average, while making fewer sales. Storytime aside, `ggpairs()` is a cool function.
+Widgets in Producistan look like a monopolistically competitive industry. Price might be positively correlated with quality, and demand slopes downward. Firms with more products might go for the higher-WTP consumers more aggressively on average, while making fewer sales. Storytime aside, `ggpairs()` is a cool function.

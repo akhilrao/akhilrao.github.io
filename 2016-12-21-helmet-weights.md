@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: Visualizing helmet weights
+title: Looking at some helmet weights
 category: eda
 tags: eda, visualization, R, ggplot2, data
 year: 2016
@@ -26,15 +26,16 @@ library(ggplot2)
 library(stringr)
 
 rm(list=ls())
+setwd("C:/Users/Akhil/Documents/akhilrao.github.io/public/code/helmet_weights")
 
-hels <- read.xlsx("C:/Users/Akhil/Documents/akhilrao.github.io/public/code/helmet_weights/helmet weights.xlsx",1)
+hels <- read.xlsx("helmet weights.xlsx",1)
 
 # a histogram of weights
 #win.graph()
 ggplot(data=hels, aes(hels$Grams)) + geom_histogram(binwidth=50, breaks=seq(min(hels$Grams),max(hels$Grams),by=50),col="red") + labs(title="Histogram of helmet weights, 50 gram bins") + labs(x="Grams", y="Count")
 {% endhighlight %}
 
-![plot of chunk unnamed-chunk-1](/public/images//helmet-weightsunnamed-chunk-1-1.svg)
+![plot of chunk unnamed-chunk-1](/public/images/helmet_weightsunnamed-chunk-1-1.svg)
 
 {% highlight r %}
 # let's slice this by brand
@@ -52,7 +53,7 @@ rownames(brands) <- NULL
 ggplot(data=brands, aes(x=brand,y=weight)) + geom_bar(stat="identity", col="blue") + labs(title="Average weight by brand")
 {% endhighlight %}
 
-![plot of chunk unnamed-chunk-1](/public/images//helmet-weightsunnamed-chunk-1-2.svg)
+![plot of chunk unnamed-chunk-1](/public/images/helmet_weightsunnamed-chunk-1-2.svg)
 
 {% highlight r %}
 # which brand has the lightest/heaviest helmets?
@@ -100,12 +101,12 @@ mean(models$count) # average models per brand
 ggplot(data=models, aes(x=value,y=count)) + geom_bar(stat="identity", col="blue") + labs(title="Number of models per brand")
 {% endhighlight %}
 
-![plot of chunk unnamed-chunk-1](/public/images//helmet-weightsunnamed-chunk-1-3.svg)
+![plot of chunk unnamed-chunk-1](/public/images/helmet_weightsunnamed-chunk-1-3.svg)
 
 ## What can we say?
 
-It looks like most helmets cluster around the 1.6 kg range. Biltwell has the lightest helmets, with an average weight of 1227.5 grams, and Gmax the heaviest at a whopping 1966 grams - almost 2 kgs!
+It looks like most helmets cluster around the 1.6 kg range. Biltwell has the lightest helmets, with an average weight of 1227.5 grams, and GMax the heaviest at a whopping 1966 grams - almost 2 kgs!
 
-Of course, Gmax only has 1 helmet in this dataset. AGV and HJC are the kings of variety, with 14 models each in this dataset. Bell and LS2 are close runners up with 12 models each. Fly, GMax, Joe Rocket, Klim, and Vemar only have 1 model each in this dataset. In this dataset, brands have an average of 5.4 models.
+Of course, GMax only has 1 helmet in this dataset. AGV and HJC are the kings of variety, with 14 models each in this dataset. Bell and LS2 are close runners up with 12 models each. Fly, GMax, Joe Rocket, Klim, and Vemar only have 1 model each in this dataset. In this dataset, brands have an average of 5.4 models.
 
 The x axis labels on the histograms are messy. I don't feel like spending the time to pretty them up. I have no idea if this information is in any way useful to anyone, but it was a fun exercise.
