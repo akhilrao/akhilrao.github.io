@@ -52,10 +52,10 @@ The really important assumption is the relationship between $$\gamma_{LH}$$ and 
 | H | $$ \underline{\gamma_{HH}}, \underline{\gamma_{HH}} $$ | $$\underline{1}, \gamma_{LH} $$ |
 | L | $$\gamma_{LH}, \underline{1} $$                        | $$ \gamma_{LL}, \gamma_{LL} $$  |
 
-(Best responses are underlined.) 
+(Best responses are underlined. Row player is the first entry, column player is the second.) 
 The only Nash equilibrium in pure strategies here is for both firms to go high, $$(H,H)$$. I call this case "orbital pooling". 
 
-![Folk region for orbital pooling](/public/images/orbit-games-1/pooling_folk.png "Orbital pooling folk region")
+[![Folk region for orbital pooling](/public/images/orbit-games-1/pooling_folk.PNG "Orbital pooling folk region")](/public/images/orbit-games-1/pooling_folk.PNG "Orbital pooling folk region")
 
 (The images in this post are all photos of diagrams I drew in pencil in my notebook many months ago.)
 
