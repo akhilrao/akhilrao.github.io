@@ -47,13 +47,18 @@ The really important assumption is the relationship between $$\gamma_{LH}$$ and 
 
 #### Case 1: $$\gamma_{HH} > \gamma_{LH}$$
 
+The game matrix:
+
 |   | H                                                      | L                               |
 |---|--------------------------------------------------------|---------------------------------|
 | H | $$ \underline{\gamma_{HH}}, \underline{\gamma_{HH}} $$ | $$\underline{1}, \gamma_{LH} $$ |
 | L | $$\gamma_{LH}, \underline{1} $$                        | $$ \gamma_{LL}, \gamma_{LL} $$  |
 
 (Best responses are underlined. Row player is the first entry, column player is the second.) 
+
 The only Nash equilibrium in pure strategies here is for both firms to go high, $$(H,H)$$. I call this case "orbital pooling". 
+
+The folk region:
 
 [![Folk region for orbital pooling](/public/images/orbit-games-1/pooling_folk.PNG "Orbital pooling folk region")](/public/images/orbit-games-1/pooling_folk.PNG "Orbital pooling folk region")
 
@@ -63,12 +68,16 @@ This case is like a prisoner's dilemma. Neither firm wants to be in the low orbi
 
 #### Case 2: $$\gamma_{HH} \leq \gamma_{LH}$$
 
+The game matrix:
+
 |   | H                                                      | L                                           |
 |---|--------------------------------------------------------|---------------------------------------------|
 | H | $$ \underline{\gamma_{HH}}, \underline{\gamma_{HH}} $$ | $$\underline{1}, \underline{\gamma_{LH}} $$ |
 | L | $$\underline{\gamma_{LH}}, \underline{1} $$            | $$ \gamma_{LL}, \gamma_{LL} $$              |
 
 There are up to three Nash equilibria in pure strategies here: $$(H,L), (L,H)$$, and $$(H,H)$$. The $$(H,H)$$ equilibrium is possible if $$\gamma_{HH} = \gamma_{LH}$$. I call this case "orbital separation".
+
+The folk region:
 
 [![Folk region for orbital separation](/public/images/orbit-games-1/separating_folk.png "Orbital separation folk region")](/public/images/orbit-games-1/separating_folk.png "Orbital separation folk region")
 
