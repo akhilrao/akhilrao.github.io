@@ -55,7 +55,7 @@ The really important assumption is the relationship between $$\gamma_{LH}$$ and 
 (Best responses are underlined.) 
 The only Nash equilibrium in pure strategies here is for both firms to go high, $$(H,H)$$. I call this case "orbital pooling". 
 
-[![Folk region for orbital pooling](/public/images/orbit-games-1/pooling_folk.png "Orbital pooling folk region")](/public/images/orbit-games-1/pooling_folk.png "Orbital pooling folk region")
+![Folk region for orbital pooling](/public/images/orbit-games-1/pooling_folk.png "Orbital pooling folk region")
 
 (The images in this post are all photos of diagrams I drew in pencil in my notebook many months ago.)
 
