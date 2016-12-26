@@ -44,8 +44,6 @@ ggpairs(wagg[,c(2,3,6,7)])
 
 ![plot of chunk unnamed-chunk-1](/public/images/widget-statisticsunnamed-chunk-1-1.svg)
 
-I've been trying to get all of the warnings suppressed, but `suppressMessages` and the `knitr. options don't seem to work.
-
 I really like the scatterplot matrix produced by `ggpairs()`. The diagonal is density plots for the variables, the upper triangular has correlation coefficients between the row and column variables, and the lower triangular has pairwise scatterplots with the row variable on the y-axis and the column variable on the x-axis. The scatterplots would be more useful with outliers trimmed, but I think there's some utility to keeping them in. Let's move through the diagonal and lower triangular column by column.
 
 It looks like there are a lot of firms with 0-50 SKUs offered, and very few with more than that. I think there may be only one with more than 300 offered. Most firms have a decent price spread, but firms with a lot of SKUs tend to have prices below $20,000. Most of these SKUs have on the order of tens or hundreds of reviews, but a handful of firms with lots of SKUs have thousands of reviews. The phrase "long tail" comes to mind here.
@@ -168,12 +166,11 @@ suppressMessages(output)
 
 ![plot of chunk unnamed-chunk-3](/public/images/widget-statisticsunnamed-chunk-3-1.svg)
 
-A lot of the products don't have reviews or ratings. I've tried in vain to suppress the warnings from the NAs... if anyone has any suggestions, please drop a line in the comments.
+A lot of the products don't have reviews or ratings.
 
 Starting from the central density: most products have ratings around 4. Moving to the left, it looks like products with  ratings around 4 tend to have the most reviews, as we might expect if having a rating is correlated with the number of reviews. Moving down, it looks like products with reviews and ratings tend to be lower-priced. One story for this is that higher-priced products sell fewer units.
 
-Now, some plots.
-
+Let's look at the average price by brand now.
 
 {% highlight r %}
 load("C:/Unnamed_source/widgets/widgets.Rdata")

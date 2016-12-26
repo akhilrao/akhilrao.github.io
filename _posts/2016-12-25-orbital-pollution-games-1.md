@@ -14,7 +14,7 @@ This is a model I wrote some time ago. It's a special case of a more general rec
 
 The basic motivation is the "orbital debris" problem: as satellites are launched into orbit, there are some debris that accumulate and pose a threat to other objects in the orbital environment. There's a pretty big literature on this in the aerospace engineering and astrophysics communities, and the popular press has written about this as well. I've blogged about a couple papers on the subject before ([physics/engineering](https://akhilrao.github.io/reviews/2016/07/29/paper-review-bradley-wein-space-debris/), [economics](https://akhilrao.github.io/reviews/2016/06/21/paper-review-aac-orbit-debris-model/)).
 
-The basic intuition is pretty straightforward and well-known in economics: pollution is a negative externality, firms don't face the full cost of polluting the environment, they overproduce pollution relative to the socially optimum level. I'm not going to present the planner's solution, but in the stylized model here firms can coordinate to reduce the amount of debris produced. Without coordination, they'll end up choosing higher orbits and producing more debris. The debris can destroy satellites (and that is bad). 
+The basic intuition is pretty straightforward and well-known in economics: pollution is a negative externality, firms don't face the full cost of polluting the environment, they overproduce pollution relative to the socially optimum level. I'm not going to present the planner's solution, but in the stylized model here firms can cooperate to reduce the amount of debris produced. Without cooperation, they'll end up choosing higher orbits and producing more debris. The debris can destroy satellites (and that is bad). 
 
 In this model I'm focusing on how a firm's optimal choice of altitude in low-Earth orbit is affected by another firm's altitude choice. This is an inter-firm externality, which is a little different from the usual consumer-facing externality, but is conceptually similar to strategic substitutability in oligopoly games.
 
@@ -94,7 +94,7 @@ There are four inferences we can draw about the process dynamics from this:
 
 Let's look at the debris dynamics a little more formally.
 
-## Adding some debris dynamics in
+## Putting some debris dynamics in
 
 We'll keep it simple here: debris in the low orbit will decay each period at a rate of $$\delta_D < 1$$, and launches to the high orbit will generate $$\gamma$$ many debris in the low orbit. Letting $$D_L'$$ be the next period debris stock, the three cases for the debris law of motion are
 
@@ -120,15 +120,16 @@ If $$\tilde{D}_L^{LH} > \bar{D}_L$$, then $$\tilde{D}_L^{LH}$$ will occur, then 
 
 If $$\tilde{D}_L^{LH} \leq \bar{D}_L$$, $$\tilde{D}_L^{LH}$$ will occur, and firms will stay in orbital separation.
 
-### Can they cooperate?
 
-The payoff-debris plots for orbital separation and orbital pooling (with proper x-y axes) are shown below
+Below are payoff-debris plots for orbital separation and orbital pooling (with proper x-y axes):
 
 [![Pooling dominant](/public/images/orbit-games-1/payoff-debris_pooling.PNG "Payoff-debris pooling dominant")](/public/images/orbit-games-1/payoff-debris_pooling.PNG "Payoff-debris pooling dominant")
 
 [![Separating dominant](/public/images/orbit-games-1/payoff-debris_separating.PNG "Payoff-debris separating dominant")](/public/images/orbit-games-1/payoff-debris_separating.PNG "Payoff-debris pooling separating")
 
-A simple way to consider whether the firms will cooperate is to define a trigger strategy for an infinitely repeated game and see when it will/won't enforce cooperation.
+### Cooperation with a grim trigger
+
+The folk region diagrams show us that cooperating to get higher payoffs is generally possible. One way to see what the cooperation could look like is to write a trigger strategy for an infinitely repeated game and then see when it will/won't lead to cooperation.
 
 The trigger strategy for firm $$i$$ is:
 
