@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Pooling on orbits - a satellite altitude game
+title: High orbit, low orbit - a satellite altitude game
 category: micro theory
 tags: micro-theory, environmental economics, pollution, externalities, common resource, game theory
 year: 2016
