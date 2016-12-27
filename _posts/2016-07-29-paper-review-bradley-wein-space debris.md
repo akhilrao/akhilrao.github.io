@@ -102,7 +102,9 @@ r^0 &\equiv \max_{t \geq 0} r^0(t) \cr
 r^0(t) &= 1 - \left ( 1 - \sum_{\alpha \in U^h} \beta_{S \alpha} \alpha(t) \right )^{\mu_o^{-1}}
 \end{align}$$
 
-This metric measures the system's hazard as the probability that a spacecraft launched at time $$t$$ will be destroyed, while it is still operational, by an intact-intact or intact-fragment catastrophic collision.
+This metric measures the system's hazard as the probability that a spacecraft launched at time $$t$$ will be destroyed, while it is still operational, by an intact-intact or intact-fragment catastrophic collision. 
+
+I'm not sure if $$\beta_{S \alpha} \alpha(t)$$ is actually a proper probability. I don't see how it could be if $$\beta_{S \alpha}$$ is a constant coefficient for a given $$\alpha$$, but I can see it if it's only constant given $$\alpha(t)$$. I looked through how they derived the coefficients in the appendix, and as far as I can tell it seems like the $$\beta_{\alpha \gamma}$$s are constants over time conditional on the types of $$\alpha$$ and $$\gamma$$, so I don't think these are proper probabilities.
 
 ### Optimality of Deorbit Compliance
 

@@ -210,7 +210,7 @@ ggplot(data=sticky, aes(x=brand,y=price)) + geom_bar(stat="identity", col="blue"
 
 ![plot of chunk unnamed-chunk-4](/public/images/widget-statisticsunnamed-chunk-4-1.svg)
 
-I dropped the brands with too few products for error bars which exclude zero. This also makes the plot slightly more legible - the full plot has over 150 brands, and is just not very easy to read. It looks kinda like what we'd get out of a Hotelling model of monopolistic competition. Still, most firms seem to stay in the $20,000 or less price range, with a few gunning for the higher-end segments.
+I dropped the brands with too few products for error bars which exclude zero. This also makes the plot slightly more legible - the full plot has over 150 brands, and is just not very easy to read. It looks kinda like something we'd get out of a Hotelling model of monopolistic competition, with maybe heterogeneous consumers/firms. Most firms seem to stay in the $20,000 or less price range, with a few gunning for the higher-end segments.
 
 Let's wrap up with some more linear regressions:
 
