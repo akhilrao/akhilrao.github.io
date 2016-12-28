@@ -10,7 +10,7 @@ published: true
 summary: A model of satellite orbit choice with a collision risk externality.
 ---
 
-This is a model I wrote some time ago. It's a special case of a more general recursive model I'm currently working on. Hopefully, the more general model will feature as a chapter of my dissertation, and this might be a subsection of that chapter. I think it's a sort of interesting model in its own right, even apart from the setting.
+This is a model I wrote some time ago, a very stylized special case of a more general recursive model I'm currently working on. Hopefully, the more general model will feature as a chapter of my dissertation, and this might be a subsection of that chapter. I think it's a sort of interesting model in its own right, even apart from the setting.
 
 The basic motivation is the "orbital debris" problem: as satellites are launched into orbit, there are some debris that accumulate and pose a threat to other objects in the orbital environment. There's a pretty big literature on this in the aerospace engineering and astrophysics communities, and the popular press has written about this as well. I've blogged about a couple papers on the subject before ([physics/engineering](https://akhilrao.github.io/reviews/2016/07/29/paper-review-bradley-wein-space-debris/), [economics](https://akhilrao.github.io/reviews/2016/06/21/paper-review-aac-orbit-debris-model/)).
 
