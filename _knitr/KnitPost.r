@@ -1,10 +1,10 @@
-KnitPost <- function(site.path='C:/Users/Akhil/Documents/akhilrao.github.io/', overwriteAll=F, overwriteOne=NULL, post.pics.dir=post.pics.dir) {
+KnitPost <- function(site.path='/home/akhil/Documents/git-repos/akhilrao.github.io/', overwriteAll=F, overwriteOne=NULL, ppd=post.pics.dir) {
   if(!'package:knitr' %in% search()) library('knitr')
   
   ## Blog-specific directories.  This will depend on how you organize your blog.
   site.path <- site.path # directory of jekyll blog (including trailing slash)
   rmd.path <- paste0(site.path, "_knitr") # directory where your Rmd-files reside (relative to base)
-  fig.dir <- paste0("public/images/",post.pics.dir) # directory to save figures
+  fig.dir <- paste0("public/images/",ppd) # directory to save figures
   posts.path <- paste0(site.path, "_posts") # directory for converted markdown files
   cache.path <- paste0(site.path, "_cache") # necessary for plots
   
