@@ -51,7 +51,7 @@ Under open access, the number of machines hunted will make industry profits zero
 $$ H^{OA}_t = \left( \frac{r}{2BK} \right) \left[ \left( \frac{AK}{r} + BK \right) \pm \left( \left( \frac{AK}{r} + BK \right)^2 - 4 \left( \frac{BK}{r} \right) (AK - c) \right)^{1/2} \right] .$$
 
 When the Hunting Lodge is the monopoly shard supplier, they'll control hunting to maximize industry profits. Again, this gives two solutions:
-$$ H^{HL}_t = \left( \frac{2r}{3BK} \right) \left[ \left( \frac{AK}{r} + BK \right) \pm \left( \left( \frac{AK}{r} + BK \right)^2 - 12 \left( \frac{BK}{r} \right) (AK - c) \right)^{1/2} \right] .$$
+$$ H^{HL}_t = \left( \frac{r}{3BK} \right) \left[ \left( \frac{AK}{r} + BK \right) \pm \left( 4\left( \frac{AK}{r} + BK \right)^2 - 12 \left( \frac{BK}{r} \right) (AK - c) \right)^{1/2} \right] .$$
 
 The Hunting Lodge solutions should be closer to zero than the open access solutions... but when the parameters are all individually positive, the Hunting Lodge solutions are minima! They definitely won't try to minimize profits, so that doesn't really make economic sense. Maybe there are some reasonable conditions we can assume to fix this, but this is not a high-effort post so I'm not going to look for them. A lazy explanation for this: that's why the Hunting Lodge isn't a monopoly shard supplier in the game!
 
