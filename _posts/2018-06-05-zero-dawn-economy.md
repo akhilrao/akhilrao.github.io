@@ -1,0 +1,156 @@
+---
+layout: post
+title: Long-run equilibria in a Zero Dawn economy
+category: micro theory
+tags: micro theory, resource theory, fiction economics
+year: 2018
+month: 6
+day: 5
+published: true
+summary: A thought experiment about the economics of Horizon Zero Dawn
+comments: True
+---
+
+Last week I played through *Horizon: Zero Dawn* on my partner's dad's PS4. It's a really fun game. The controls felt natural, the story was great, and the difficulty on "Hard" was the right balance for a relaxing-but-not-trivial vacation game. It reminded me of *Mass Effect 2* that way. I really wish more developers would make story-driven open-world single-player RPGs rather than the MMORPGs that seem to be popular these days. I loved *Knights of the Old Republic* 1 and 2 (*KotOR 2* is, in my humble opinion, one of the best storylines in the *Star Wars* game universe, and I would pay $60 or more for a remake), but was sorely disappointed by *SW:TOR*. I suppose the market has spoken, though.
+
+*H:ZD* is set in a post-post-apocalyptic world, where there are machine-animals and no bio-animals larger than a boar, no governments larger than a modestly-sized empire (the Carja) and some smaller tribes, and technology is somewhere between hunter-gatherer and early agriculture. There are some more advanced technologies harvested from machines and the ruins of our civilization ("the ancients"), which went kaput in the late 2060s. The protagonist, Aloy, is a member of one of the smaller tribes, the Nora, who have a fairly isolationist matriarchal society. The game is a fascinating study of the rise, fall, and re-rise of human societies. With the exception of a couple more-skittish machine-animals, with names like "Strider" (mecha-horse) and "Grazer" (mecha-antelope), the machines tend to be quite aggressive toward humans happening by. The designs are pretty cool, blending dinosaur and megafauna with advanced weapons. For example, "Watchers", the first predator-machine encountered, are like mecha-deinonychus (deinonychi?) which can sometimes shoot lasers; "Sawtooths" and "Ravagers" are like mecha-sabretooth cats with the latter having some sort of energy beam and radar-like system; and "Thunderjaws" are like mecha-T-rexes with laser beams, energy guns, and missile launchers. The game is a blast.
+
+The world's economy is somewhere between barter and a metal specie standard. Purchasing items involves trading using a mix of metal shards harvested from machine-animals and some other things (like other parts of machine-animals and parts of bio-animals). Metal shards are the main currency, though. The shards are used in crafting arrows, so they're more useful than gold bars. The machine-animals don't really like humans much so hunting them involves some risk. There doesn't seem to be any banking in the world, private or centralized; there are predators, but no predatory lending.
+
+I thought it'd be fun to think a bit about some of the economics that follow from the ecologically-controlled money supply. I initially thought of looking at how the machine-animal population dynamics would drive inflation, but modifying a standard money supply model to account for the lack of governments and banking felt like too much work. Instead, I'm going to add a hunting-driven price to a standard fisheries model (Gordon-Schaefer) and think about the steady state equilibria.
+
+### The model
+
+The model is three equations: the machine-animal population dynamics, the relative price of shards, and the profits from hunting. The first two are just relabeled fish equations, and the third is a simple linear inverse demand curve. To simplify the model, suppose machines are homogeneous and that one unit of shards is harvested per machine. $P_t$ is the price of a unit of shards at time $t$, the size of the machine population is $M_t$, and the number of machines harvested is $H_t$. The model equations are: 
+
+$$\begin{align}
+\text{(Machine population:) } \dot{M} &= rM_t(K - H_t) - H_t \\
+\text{(Shard price:) } P_t &= A - B H_t \\
+\text{(Hunting industry profits:) } \pi_t &= P_t H_t M_t - c H_t
+\end{align}$$
+
+$A$ and $B$ are the usual maximum willingness-to-pay and slope parameters for the shard price. Note that this is partial equilibrium; the shard price is relative to a consumption good with price normalized to $1$. $r$ and $K$ are the natural machine renewal rate (the production rate from the Cauldrons) and the environment's machine-carrying capacity (the machines feed on biomass). $c$ is the real cost of hunting one machine (arrows, risk, and opportunity cost) relative to the price of the consumption good.
+
+### Steady state equilibria
+
+I'm interested in two types of long-run equilibria here: open access to hunting, which is the default state in the game; and a hunting monopoly controlled by the Hunting Lodge, a Carja organization in the game. Under open access, hunters will take down machines until the return from another unit of shards just covers the cost of taking down another machine. Under the Hunting Lodge's monopoly, hunters will take down machines until the marginal return from another unit of shards is equal to the marginal cost of taking down another machine. Of course, the Hunting Lodge in the game is far from a monopoly and seems to be more interested in the "sport" aspect of hunting than the "lucre" aspect of it. There's a series of quests where you can disrupt the Hunting Lodge's antiquated norms and shitty leadership - it's a really fun plotline.
+
+The steady state condition for the machine population gives the machine population size as a function of the number of machines hunted,
+$$\begin{align}
+\dot{M} &= 0 \\
+\implies M_t &= \frac{K}{r}(r - H_t).
+\end{align}$$
+
+This lets us reduce the model to a single equation in a single variable, profit in $H_t$,
+$$ \pi_t(H_t) = \frac{BK}{r}H_t^3 - \left( \frac{AK}{r} + BK \right)H_t^2 + (AK - c)H_t .$$
+Unlike the usual profit function in the Gordon-Schaefer model, this one is cubic in the hunting rate (harvest effort) because the price is no longer a constant.
+
+Under open access, the number of machines hunted will make industry profits zero, i.e. $H^{OA}_t : \pi_t(H^{OA}_t) = 0$. We can factor out an $H_t$ and drop it to get rid of the uninteresting $H_t = 0$ solution. This leaves us with two solutions:
+$$ H^{OA}_t = \left( \frac{r}{2BK} \right) \left[ \left( \frac{AK}{r} + BK \right) \pm \left( \left( \frac{AK}{r} + BK \right)^2 - 4 \left( \frac{BK}{r} \right) (AK - c) \right)^{1/2} \right] .$$
+
+When the Hunting Lodge is the monopoly shard supplier, they'll control hunting to maximize industry profits. Again, this gives two solutions:
+$$ H^{HL}_t = \left( \frac{2r}{3BK} \right) \left[ \left( \frac{AK}{r} + BK \right) \pm \left( \left( \frac{AK}{r} + BK \right)^2 - 12 \left( \frac{BK}{r} \right) (AK - c) \right)^{1/2} \right] .$$
+
+The Hunting Lodge solutions should be closer to zero than the open access solutions... but when the parameters are all individually positive, the Hunting Lodge solutions are minima! They definitely won't try to minimize profits, so that doesn't really make economic sense. Maybe there are some reasonable conditions we can assume to fix this, but this is not a high-effort post so I'm not going to look for them. A lazy explanation for this: that's why the Hunting Lodge isn't a monopoly shard supplier in the game!
+
+### The long-run effects of a little more HADES
+
+HADES, one of the big baddies of the game, wants to produce more machines, make them stronger and eviler, and wipe out all life on the planet. We can think about the effects of HADES getting a little stronger on the open access hunting rate by looking at the derivatives of $H^{OA}_t$ with respect to $r$ and $c$. Increasing $c$ should reduce $H^{OA}_t$, all else equal*; increasing $r$ looks like it might have stranger effects. I like pictures so I'll do this numerically.
+
+*The first solution, with the plus sign, is increasing in the cost. This is economically weird so I'm going to ignore it. There's a story where this makes sense: if the cost of hunting is a barrier to entry, then increasing the cost can also increase the value of a unit of hunted shards, since there are fewer suppliers. This type of effect shows up in mining and satellite launching when the fixed cost of entry increases. This solution has the same signs with respect to $r$ and $K$ as the other one.
+
+
+{% highlight r %}
+library(ggplot2)
+library(gridExtra)
+
+rm(list=ls())
+
+# economic parameters
+A <- 10
+B <- 2
+c <- 5
+
+# ecological parameters
+K <- 100
+r <- 10
+
+# open access hunting rate
+H <- function(c,r,K,...) {
+	X <- B*K/r
+	Y <- A*K/r + B*K
+	Z <- A*K - c
+	#rate_1 <- (1/2*X)*(Y + sqrt(Y^2 - 4*X*Z)) # drop this solution because it increases in the cost - economically weird!
+	rate_2 <- (1/2*X)*(Y - sqrt(Y^2 - 4*X*Z))
+	rates <- c(rate_2)
+	return(rates)
+}
+
+# HADES statics
+c_seq <- seq(from=1,to=51,by=1)
+r_seq <- seq(from=5,to=55,by=1)
+
+HADES_statics <- as.data.frame(cbind(c_seq,H(c_seq,r,K),r_seq,H(c,r_seq,K)))
+colnames(HADES_statics) <- c("cost","hunt_c","renew","hunt_r")
+
+cost_change <- ggplot(data=HADES_statics) + geom_line(aes(x=cost,y=hunt_c),size=1) + ggtitle("Effect of changing c") + xlab("Marginal cost of machine hunting") + ylab("Number of machines hunted") + theme_bw()
+renew_change <- ggplot(data=HADES_statics) + geom_line(aes(x=renew,y=hunt_r),size=1) + ggtitle("Effect of changing r") + xlab("Rate of machine production") + ylab("Number of machines hunted") + theme_bw()
+
+grid.arrange(cost_change,renew_change,ncol=2)
+{% endhighlight %}
+
+![plot of chunk unnamed-chunk-1](/public/images/zero-dawnunnamed-chunk-1-1.svg)
+
+The stronger HADES gets, the fewer machines get hunted. Since machines the the main source of metal and advanced technology in this world, this is bad for the folks in Zero Dawn.
+
+### The long-run effects of a little more GAIA
+
+GAIA, the force for good fighting HADES in this world, wants to improve the ecosystem so that it can support more life + more diverse life. GAIA's main tool for doing this is producing machines through the Cauldrons, and having them shepherd the world's ecological development*. These are the same machines and Cauldrons that HADES hijacks. We can think about the effects of GAIA getting a little stronger on the open access hunting rate by looking at the derivative of $H^{OA}_t$ with respect to $K$, since she is improving the ecosystem. The code from the HADES case can be repurposed for this.
+
+*Actually, HADES is a module of GAIA that's run amok. So in a sense, GAIA is both the force for good and the force for evil.
+
+
+{% highlight r %}
+library(ggplot2)
+
+rm(list=ls())
+
+# economic parameters
+A <- 10
+B <- 2
+c <- 5
+
+# ecological parameters
+K <- 100
+r <- 10
+
+# open access hunting rate
+H <- function(c,r,K,...) {
+	X <- B*K/r
+	Y <- A*K/r + B*K
+	Z <- A*K - c
+	#rate_1 <- (1/2*X)*(Y + sqrt(Y^2 - 4*X*Z)) # drop this solution because it increases in the cost - economically weird!
+	rate_2 <- (1/2*X)*(Y - sqrt(Y^2 - 4*X*Z))
+	rates <- c(rate_2)
+	return(rates)
+}
+
+# GAIA statics
+K_seq <- seq(from=90,to=140,by=1)
+
+GAIA_statics  <- as.data.frame(cbind(K_seq,H(c,r,K_seq)))
+colnames(GAIA_statics) <- c("capacity","hunt_K")
+
+capacity_change <- ggplot(data=GAIA_statics) + geom_line(aes(x=capacity,y=hunt_K),size=1) + ggtitle("Effect of changing K") + xlab("Environment's machine-carrying capacity") + ylab("Number of machines hunted") + theme_bw()
+capacity_change
+{% endhighlight %}
+
+![plot of chunk unnamed-chunk-2](/public/images/zero-dawnunnamed-chunk-2-1.svg)
+
+The stronger GAIA gets, the more machines get hunted. Presumably, this means the societies doing the hunting get more access to metal and advanced technology.
+
+### Conclusion
+
+I'm not trying to say that hunting == socially good everywhere and always (even though it does in this model), but boy that HADES is bad news!
+
+*Horizon: Zero Dawn* is a terrific game. Solid gameplay, interesting story, great visuals. If you like single player RPGs, I think you'll enjoy it.
