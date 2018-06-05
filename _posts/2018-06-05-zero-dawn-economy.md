@@ -42,7 +42,9 @@ $$\begin{align}
 \end{align}$$
 
 This lets us reduce the model to a single equation in a single variable, profit in $$ H_t $$,
-$$ \pi_t(H_t) = \frac{BK}{r}H_t^3 - \left( \frac{AK}{r} + BK \right)H_t^2 + (AK - c)H_t .$$
+$$\begin{equation} 
+\pi_t(H_t) = \frac{BK}{r}H_t^3 - \left( \frac{AK}{r} + BK \right)H_t^2 + (AK - c)H_t .
+\end{equation}$$
 Unlike the usual profit function in the Gordon-Schaefer model, this one is cubic in the hunting rate (harvest effort) because the price is no longer a constant.
 
 Under open access, the number of machines hunted will make industry profits zero, i.e. $$ H^{OA}_t : \pi_t(H^{OA}_t) = 0 $$. We can factor out an $$ H_t $$ and drop it to get rid of the uninteresting $$ H_t = 0 $$ solution. This leaves us with two solutions:
