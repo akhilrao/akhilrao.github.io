@@ -21,7 +21,7 @@ I thought it'd be fun to think a bit about some of the economics that follow fro
 
 ### The model
 
-The model is three equations: the machine-animal population dynamics, the relative price of shards, and the profits from hunting. The first two are just relabeled fish equations, and the third is a simple linear inverse demand curve. To simplify the model, suppose machines are homogeneous and that one unit of shards is harvested per machine. $P_t$ is the price of a unit of shards at time $t$, the size of the machine population is $M_t$, and the number of machines harvested is $H_t$. The model equations are: 
+The model is three equations: the machine-animal population dynamics, the relative price of shards, and the profits from hunting. The first two are just relabeled fish equations, and the third is a simple linear inverse demand curve. To simplify the model, suppose machines are homogeneous and that one unit of shards is harvested per machine. $$ P_t $$ is the price of a unit of shards at time $$ t $$, the size of the machine population is $$ M_t $$, and the number of machines harvested is $$ H_t $$. The model equations are: 
 
 $$\begin{align}
 \text{(Machine population:) } \dot{M} &= rM_t(K - H_t) - H_t \\
@@ -29,7 +29,7 @@ $$\begin{align}
 \text{(Hunting industry profits:) } \pi_t &= P_t H_t M_t - c H_t
 \end{align}$$
 
-$A$ and $B$ are the usual maximum willingness-to-pay and slope parameters for the shard price. Note that this is partial equilibrium; the shard price is relative to a consumption good with price normalized to $1$. $r$ and $K$ are the natural machine renewal rate (the production rate from the Cauldrons) and the environment's machine-carrying capacity (the machines feed on biomass). $c$ is the real cost of hunting one machine (arrows, risk, and opportunity cost) relative to the price of the consumption good.
+$$ A $$ and $$ B $$ are the usual maximum willingness-to-pay and slope parameters for the shard price. Note that this is partial equilibrium; the shard price is relative to a consumption good with price normalized to $$ 1 $$. $$ r $$ and $$ K $$ are the natural machine renewal rate (the production rate from the Cauldrons) and the environment's machine-carrying capacity (the machines feed on biomass). $$ c $$ is the real cost of hunting one machine (arrows, risk, and opportunity cost) relative to the price of the consumption good.
 
 ### Steady state equilibria
 
@@ -41,11 +41,11 @@ $$\begin{align}
 \implies M_t &= \frac{K}{r}(r - H_t).
 \end{align}$$
 
-This lets us reduce the model to a single equation in a single variable, profit in $H_t$,
+This lets us reduce the model to a single equation in a single variable, profit in $$ H_t $$,
 $$ \pi_t(H_t) = \frac{BK}{r}H_t^3 - \left( \frac{AK}{r} + BK \right)H_t^2 + (AK - c)H_t .$$
 Unlike the usual profit function in the Gordon-Schaefer model, this one is cubic in the hunting rate (harvest effort) because the price is no longer a constant.
 
-Under open access, the number of machines hunted will make industry profits zero, i.e. $H^{OA}_t : \pi_t(H^{OA}_t) = 0$. We can factor out an $H_t$ and drop it to get rid of the uninteresting $H_t = 0$ solution. This leaves us with two solutions:
+Under open access, the number of machines hunted will make industry profits zero, i.e. $$ H^{OA}_t : \pi_t(H^{OA}_t) = 0 $$. We can factor out an $$ H_t $$ and drop it to get rid of the uninteresting $$ H_t = 0 $$ solution. This leaves us with two solutions:
 $$ H^{OA}_t = \left( \frac{r}{2BK} \right) \left[ \left( \frac{AK}{r} + BK \right) \pm \left( \left( \frac{AK}{r} + BK \right)^2 - 4 \left( \frac{BK}{r} \right) (AK - c) \right)^{1/2} \right] .$$
 
 When the Hunting Lodge is the monopoly shard supplier, they'll control hunting to maximize industry profits. Again, this gives two solutions:
@@ -55,9 +55,9 @@ The Hunting Lodge solutions should be closer to zero than the open access soluti
 
 ### The long-run effects of a little more HADES
 
-HADES, one of the big baddies of the game, wants to produce more machines, make them stronger and eviler, and wipe out all life on the planet. We can think about the effects of HADES getting a little stronger on the open access hunting rate by looking at the derivatives of $H^{OA}_t$ with respect to $r$ and $c$. Increasing $c$ should reduce $H^{OA}_t$, all else equal*; increasing $r$ looks like it might have stranger effects. I like pictures so I'll do this numerically.
+HADES, one of the big baddies of the game, wants to produce more machines, make them stronger and eviler, and wipe out all life on the planet. We can think about the effects of HADES getting a little stronger on the open access hunting rate by looking at the derivatives of $$ H^{OA}_t $$ with respect to $$ r $$ and $$ c $$. Increasing $$ c $$ should reduce $$ H^{OA}_t $$, all else equal*; increasing $$ r $$ looks like it might be more interesting. I like pictures so I'll do this numerically.
 
-*The first solution, with the plus sign, is increasing in the cost. This is economically weird so I'm going to ignore it. There's a story where this makes sense: if the cost of hunting is a barrier to entry, then increasing the cost can also increase the value of a unit of hunted shards, since there are fewer suppliers. This type of effect shows up in mining and satellite launching when the fixed cost of entry increases. This solution has the same signs with respect to $r$ and $K$ as the other one.
+*The first solution, with the plus sign, is increasing in the cost. This is economically weird so I'm going to ignore it. There's a story where this makes sense: if the cost of hunting is a barrier to entry, then increasing the cost can also increase the value of a unit of hunted shards, since there are fewer suppliers. This type of effect shows up in mining and satellite launching when the fixed cost of entry increases. This solution has the same signs with respect to $$ r $$ and $$ K $$ as the other one.
 
 
 {% highlight r %}
@@ -105,7 +105,7 @@ The stronger HADES gets, the fewer machines get hunted. Since machines the the m
 
 ### The long-run effects of a little more GAIA
 
-GAIA, the force for good fighting HADES in this world, wants to improve the ecosystem so that it can support more life + more diverse life. GAIA's main tool for doing this is producing machines through the Cauldrons, and having them shepherd the world's ecological development*. These are the same machines and Cauldrons that HADES hijacks. We can think about the effects of GAIA getting a little stronger on the open access hunting rate by looking at the derivative of $H^{OA}_t$ with respect to $K$, since she is improving the ecosystem. The code from the HADES case can be repurposed for this.
+GAIA, the force for good fighting HADES in this world, wants to improve the ecosystem so that it can support more life + more diverse life. GAIA's main tool for doing this is producing machines through the Cauldrons, and having them shepherd the world's ecological development*. These are the same machines and Cauldrons that HADES hijacks. We can think about the effects of GAIA getting a little stronger on the open access hunting rate by looking at the derivative of $$ H^{OA}_t $$ with respect to $$ K $$, since she is improving the ecosystem. The code from the HADES case can be repurposed for this.
 
 *Actually, HADES is a module of GAIA that's run amok. So in a sense, GAIA is both the force for good and the force for evil.
 
