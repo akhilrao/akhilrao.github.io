@@ -153,6 +153,6 @@ The stronger GAIA gets, the more machines get hunted. Presumably, this means the
 
 ### Conclusion
 
-I'm not trying to say that hunting == socially good everywhere and always (even though it does in this model), but boy that HADES is bad news!
+I'm not trying to say that hunting == socially good everywhere and always (even though it is in this model), but boy that HADES is bad news!
 
 *Horizon: Zero Dawn* is a terrific game. Solid gameplay, interesting story, great visuals. If you like single player RPGs, I think you'll enjoy it.
