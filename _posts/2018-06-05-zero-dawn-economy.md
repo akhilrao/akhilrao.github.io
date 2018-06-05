@@ -24,7 +24,7 @@ I thought it'd be fun to think a bit about some of the economics that follow fro
 The model is three equations: the machine-animal population dynamics, the relative price of shards, and the profits from hunting. The first two are just relabeled fish equations, and the third is a simple linear inverse demand curve. To simplify the model, suppose machines are homogeneous and that one unit of shards is harvested per machine. $$ P_t $$ is the price of a unit of shards at time $$ t $$, the size of the machine population is $$ M_t $$, and the number of machines harvested is $$ H_t $$. The model equations are: 
 
 $$\begin{align}
-\text{(Machine population:) } \dot{M} &= rM_t(K - H_t) - H_t \\
+\text{(Machine population:) } \dot{M} &= rM_t(K - M_t) - H_t \\
 \text{(Shard price:) } P_t &= A - B H_t \\
 \text{(Hunting industry profits:) } \pi_t &= P_t H_t M_t - c H_t
 \end{align}$$
