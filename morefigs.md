@@ -1,19 +1,19 @@
 ---
 layout: frontpage
-title: Karl Broman
+title: Akhil Rao
 ---
 
 <div class="navbar">
   <div class="navbar-inner">
       <ul class="nav">
-          <li><a href="{{ BASE_PATH }}/assets/broman_cv.pdf">cv</a></li>
-          <li><a href="https://github.com/kbroman">github</a></li>
-          <li><a href="https://kbroman.org/blog">blog</a></li>
-          <li><a href="https://twitter.com/kwbroman">@kwbroman</a></li>
+          <li><a href="{{ BASE_PATH }}/assets/rao_cv.pdf">cv</a></li>
+          <li><a href="https://github.com/akhilrao">github</a></li>
+          <li><a href="https://akhilrao.github.io/blog">blog</a></li>
       </ul>
   </div>
 </div>
 
+<!-- 
 <table class="wide">
 <tr>
   <td class="left">
@@ -96,7 +96,7 @@ title: Karl Broman
   <td class="right">
   </td>
 </tr>
-</table>
+</table> -->
 
 <div class="navbar">
   <div class="navbar-inner">

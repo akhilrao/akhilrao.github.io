@@ -1,0 +1,17 @@
+Snowboarding event : Surfing event
+----------------------------------
+Walk : Walk
+Stand : Surfer - Standing
+Sit: Surfer - Sitting
+Chair lift: Paddle
+Kicking (one foot attached sliding): Duck dive
+Riding down the mountain: Wave
+Sync taps: Sync
+Spin around: 360
+Brake (sideways skid down, heel or toe side): floater
+Turn: 
+Fall while riding: Wipeout
+Lying down after fall: Surfer - Laying
+
+
+

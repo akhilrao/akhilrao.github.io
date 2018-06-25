@@ -1,17 +1,16 @@
 ---
 layout: frontpage
-title: Karl Broman
-description: Karl Broman is Professor in Biostatistics and Medical Informatics at University of Wisconsin - Madison; research in statistical genetics
-keywords: Broman, QTL, R/qtl, quantitative trait loci, statistics, statistical genetics, recombination
+title: Akhil Rao
+description: Akhil Rao is a PhD candidate in Economics at the University of Colorado - Boulder; research in environmental and natural resource economics
+keywords: Rao, environmental economics, resource economics, space, applied theory, computational economics
 ---
 
 <div class="navbar">
   <div class="navbar-inner">
       <ul class="nav">
-          <li><a href="{{ BASE_PATH }}/assets/broman_cv.pdf">cv</a></li>
-          <li><a href="https://github.com/kbroman">github</a></li>
-          <li><a href="https://kbroman.org/blog">blog</a></li>
-          <li><a href="https://twitter.com/kwbroman">@kwbroman</a></li>
+          <li><a href="{{ BASE_PATH }}/assets/rao_cv.pdf">cv</a></li>
+          <li><a href="https://github.com/akhilrao">github</a></li>
+          <li><a href="https://akhilrao.github.io/blog">blog</a></li>
       </ul>
   </div>
 </div>
@@ -19,35 +18,34 @@ keywords: Broman, QTL, R/qtl, quantitative trait loci, statistics, statistical g
 <table class="wide">
 <tr>
   <td class="left">
-    <a href="pages/publpics/iplotCorr.html">
-        <img src="assets/publpics/iplotCorr.png" alt="R/qtlcharts example" title="R/qtlcharts example"/>
+    <a href="pages/publpics/apo_peri_overlay.html">
+        <img src="assets/publpics/apo_peri_overlay.png" alt="Where are active satellites located?" title="Distribution of apogee and perigee for orbiting satellites (2016)"/>
     </a>
   </td>
   <td class="right">
-    <a href="pages/publpics/tian2016_fig4.html">
-        <img src="assets/publpics/tian2016_fig4.png" alt="Tian et
-        al. (2016) Fig 4" title="Tian et al. (2016) Fig 4"/>
+    <a href="pages/publpics/cost_decrease_1.html">
+        <img src="assets/publpics/cost_decrease_1.png" alt="What will sustained launch cost decreases mean for debris?" title="Falling launch costs and orbital debris"/>
     </a>
   </td>
 </tr>
 <tr>
   <td class="left">
-    <a href="pages/publpics/samplemixups_fig7.html">
-        <img src="assets/publpics/samplemixups_fig7.png" alt="Broman et al. (2013) Fig 7" title="Broman et al. (2013) Fig 7"/>
+    <a href="pages/publpics/biffplot3.html">
+        <img src="assets/publpics/biffplot3.png" alt="When are open-access orbital steady states stable?" title="Open access and orbital stability"/>
     </a>
   </td>
   <td class="right">
-    <a href="pages/publpics/isletc6_fig4.html">
-        <img src="assets/publpics/isletc6_fig4.png" alt="Tian et al. (2015) Fig 4" title="Tian et al. (2015) Fig 4"/>
+    <a href="pages/publpics/value_diff_1.html">
+        <img src="assets/publpics/value_diff_1.png" alt="How much better than open access can we do?" title="The gains from optimal launch control"/>
     </a>
   </td>
 </tr>
 </table>
 
-<div class="navbar">
+<!-- <div class="navbar">
   <div class="navbar-inner">
       <ul class="nav">
           <li><a href="morefigs.html">see more figures</a></li>
       </ul>
   </div>
-</div>
+</div> -->

@@ -8,15 +8,17 @@ highlighter: rouge
 # Themes are encouraged to use these universal variables
 # so be sure to set them if your theme uses them.
 #
-title : Karl Broman
+title : Akhil Rao
 author :
-  name : Karl Broman
-  email : kbroman@gmail.com
-  github : kbroman
-  twitter : kwbroman
+  name : Akhil Rao
+  email : akhil.rao@colorado.edu
+  github : 
+    repo: https://github.com/akhilrao
+  twitter : nil
   feedburner : nil
+  gravatar_md5:    26915e5b3ffb1eb6bbba2f069f4b0a8e
 
-production_url : https://kbroman.github.io
+production_url : https://akhilrao.github.io
 
 # Tell Github to use the kramdown markdown interpreter
 # (see https://help.github.com/articles/migrating-your-pages-site-from-maruku)
@@ -25,7 +27,7 @@ markdown: kramdown
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
 JB :
-  version : 0.3.0
+  version : 0.2.0
 
   # All links will be namespaced by BASE_PATH if defined.
   # Links in your website should always be prefixed with {{BASE_PATH}}
