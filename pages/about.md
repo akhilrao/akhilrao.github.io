@@ -16,9 +16,9 @@ MA in [Economics](https://www.colorado.edu/Economics/) in 2016, from the
 University of Colorado&ndash;Boulder; his PhD advisor is
 [Dan Kaffine](http://spot.colorado.edu/~daka9342/).
 
-Akhil is an economist focusing on problems in environmental, natural resource, and computational economics. He studies the efficient use of common-pool resources generally, and focuses on the commercial use of Earth's orbits specifically. The
-status quo for orbit use is &ldquo;open access.&rdquo; Open access is a
-regime where agents are unable to secure property rights over orbital locations. There are exceptions &ndash; though geostationary orbit slots are auctioned, low-Earth orbit paths are not. Open access to a commons typically results in over-exploitation of the resource. In the orbital case, expect to see more catastrophic collisions and a higher risk of [Kessler Syndrome](https://en.wikipedia.org/wiki/Kessler_syndrome) than would be socially optimal. 
+Akhil is an economist working on problems in environmental, natural resource, and computational economics. He studies the efficient use of common-pool resources generally, and focuses on the commercial use of Earth's orbits specifically. 
+
+The status quo for orbit use is &ldquo;open access.&rdquo; Open access is an institutional regime where agents are unable to secure property rights over orbital locations. Some orbital locations (geostationary orbit slots) are not under open access - they are auctioned, with winners granted the right to exclude others from using the location. Paths in low-Earth orbit are not like this &ndash; though radio spectrum in those regions is licensed, the physical locations are not. Open access to a commons typically results in over-exploitation, and sometimes collapse, of the resource. In the orbital case, expect to see more catastrophic collisions and a higher risk of [Kessler Syndrome](https://en.wikipedia.org/wiki/Kessler_syndrome) in low-Earth orbit than would be socially optimal. 
 
 [curriculum vitae ![CV as pdf](icons16/pdf-icon.png)]({{ BASE_PATH }}/assets/rao_cv.pdf)<br/>
 <!-- [orcid](https://orcid.org): [0000-0002-4914-6671](https://orcid.org/0000-0002-4914-6671)<br/>
@@ -49,8 +49,8 @@ regime where agents are unable to secure property rights over orbital locations.
         </div>
 
         <div class="span2">
-        <a href="../assets/pics/akhil_2014.jpg">
-            <img src="../assets/pics/akhil_2014.jpg"
+        <a href="../assets/pics/akhil_summer_2017.png">
+            <img src="../assets/pics/akhil_summer_2017.png"
                   title="Akhil Rao" alt="Akhil Rao"/></a>
         </div>
     </div>
