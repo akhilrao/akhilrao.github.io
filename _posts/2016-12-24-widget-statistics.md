@@ -1,0 +1,256 @@
+---
+layout: post
+comments: true
+title: Some statistics from a widget industry
+category: eda
+tags: eda, visualization, R, ggplot2, data
+year: 2016
+month: 12
+day: 24
+published: true
+summary: Looking at some statistics for a widget industry
+---
+
+An unnamed source sent me some fun datasets for an industrially-produced widget sold in Producistan for P-dollars (denoted $). The widget manufacturers seem to compete in a monopolistically competitive industry. There may be some vertical and horizontal integration, but I can't see it in the data I have.
+
+This post, like the previous one, is just a fun exercise in holiday programming. I found a neat R package, `GGally`, while writing this.
+
+## The data
+
+I'll look at two datasets here: one a spreadsheet with data aggregated to the brand level  where each row is a separate brand observation, and another spreadsheet with data broken down to a products offered by different brands. The data come from Producistan's popular online shopping portal, and include the number of reviews per firm and per product as well as the average review ranking (usual 1-5 scale).
+
+I have a third dataset where I linked the two by brand. I haven't done anything with the linked dataset, but I like knowing it's an option.
+
+My source would prefer the data not be public, so I've loaded the spreadsheets from a pre-saved workspace and anonymized the firms and products. I'm not really interested in the industry, and my source doesn't really care about the code and pictures being public.
+
+## Plots and regressions and stuff
+
+Let's look at the aggregated data first.
+
+### Aggregated data
+
+
+{% highlight r %}
+load("C:/Unnamed_source/widgets/widgets.Rdata")
+suppressMessages(library(ggplot2))
+suppressMessages(library(GGally))
+
+# the aggregated data
+wagg <- dataset$wagg
+
+# matrix of scatterplots, densities, and correlation coefficients
+ggpairs(wagg[,c(2,3,6,7)])
+{% endhighlight %}
+
+![plot of chunk unnamed-chunk-1](/public/images/widget-statisticsunnamed-chunk-1-1.svg)
+
+I really like the scatterplot matrix produced by `ggpairs()`. The diagonal is density plots for the variables, the upper triangular has correlation coefficients between the row and column variables, and the lower triangular has pairwise scatterplots with the row variable on the y-axis and the column variable on the x-axis. The scatterplots would be more useful with outliers trimmed, but I think there's some utility to keeping them in. Let's move through the diagonal and lower triangular column by column.
+
+It looks like there are a lot of firms with 0-50 SKUs offered, and very few with more than that. I think there may be only one with more than 300 offered. Most firms have a decent price spread, but firms with a lot of SKUs tend to have prices below $20,000. Most of these SKUs have on the order of tens or hundreds of reviews, but a handful of firms with lots of SKUs have thousands of reviews. The phrase "long tail" comes to mind here.
+
+I'm not sure how much we can glean from the correlation numbers. They're just raw correlations, not controlling for anything or accounting for outliers, so I won't spend any more time on them.
+
+The dispersion variable is interesting. It's the difference between the maximum and minimum observed prices for the item. My source tells me that a number of the listings they scraped for the data include fraudulent listings with prices that are way too high/low. I'm not sure what the purpose of these listings is, but it looks like products with very few reviews seem to have higher dispersions (though the correlation coefficient isn't very high).
+
+I think one of the weaknesses of the `ggpairs()` plots (and maybe scatterplot matrices in general) is that the y-axis scales aren't always easy to figure out. The density plots, for example, are on a different scale from the scatterplots, but it's hard to show that in a pretty way. 
+
+Now let's run some simple linear regressions:
+
+
+{% highlight r %}
+load("C:/Unnamed_source/widgets/widgets.Rdata")
+wagg <- dataset$wagg
+
+# What's the relationship between dispersion and reviews, number of SKUs offered, and the average price?
+m1.wagg <- lm(dispersion ~ Tot.Rvws + SKUs + Avg.Price, data=wagg)
+summary(m1.wagg)
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## 
+## Call:
+## lm(formula = dispersion ~ Tot.Rvws + SKUs + Avg.Price, data = wagg)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -44701  -3604     95    909  65780 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(>|t|)    
+## (Intercept) -1.292e+03  1.450e+03  -0.891    0.374    
+## Tot.Rvws    -1.299e+00  2.476e+00  -0.525    0.601    
+## SKUs         1.201e+02  2.585e+01   4.647 7.29e-06 ***
+## Avg.Price    7.889e-01  9.182e-02   8.592 9.93e-15 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 13970 on 151 degrees of freedom
+## Multiple R-squared:  0.4085,	Adjusted R-squared:  0.3968 
+## F-statistic: 34.76 on 3 and 151 DF,  p-value: < 2.2e-16
+{% endhighlight %}
+
+
+
+{% highlight r %}
+# What's the relationship between the average price and the total number of reviews and SKUs offered?
+m2.wagg <- lm(Avg.Price ~ Tot.Rvws + SKUs, data=wagg)
+summary(m2.wagg)
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## 
+## Call:
+## lm(formula = Avg.Price ~ Tot.Rvws + SKUs, data = wagg)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -13505  -8130  -5456   3503  62986 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(>|t|)    
+## (Intercept) 8839.512   1061.816   8.325 4.54e-14 ***
+## Tot.Rvws      -1.802      2.183  -0.825    0.410    
+## SKUs          17.967     22.789   0.788    0.432    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 12340 on 152 degrees of freedom
+## Multiple R-squared:  0.005636,	Adjusted R-squared:  -0.007447 
+## F-statistic: 0.4308 on 2 and 152 DF,  p-value: 0.6508
+{% endhighlight %}
+
+The standard errors aren't robust, so I'm ignoring the t-stat/p-values here. I wouldn't take these regressions very seriously - they're just giving fancier correlations than the raw coefficients in the scatterplot matrix. Caveats issued, let's ~~read the tea leaves~~ look at the parameter estimates.
+
+From the first model, it looks like there is a positive correlation with the dispersion and the number of SKUs, and a positive correlation with the average price. There's maybe a small negative correlation between the dispersion and the total number of reviews.
+
+From the second model, it looks like a firm's average price has a positive correlation with the number of SKUs the firm offers, and a small negative correlation with the number of reviews. These support a story where firms with more SKUs tend to target higher-income markets more aggressively, and where firms with higher prices tend to have fewer sales, but the standard errors are so large that it's hard to buy the story just from the data.
+
+Ok, let's look at the disaggregated data now. 
+
+### Disaggregated data
+
+The prices have some commas and ranges in them, so they need to be cleaned before we can work with them. Getting rid of the commas is an easy application of `gsub()`. The ranges are a little trickier. There are dashes and number pairs in the fields. Getting rid of them and picking a single number would be fairly easy application of `str_split_fixed()` from the `stringr` library, but I'd like to take an average. That needs a few more lines.
+
+In the end, I couldn't think of an elegant one-liner to get the averages I wanted in the one minute I spent thinking about the problem. My lazy "non-R" thought was to write a for loop, but copy-pasting and editing the values ended up being just as easy. If I get a bigger dataset with more ranges, it would be worth it to spend a little more time writing something that scales better.
+
+
+{% highlight r %}
+load("C:/Unnamed_source/widgets/widgets.Rdata")
+suppressMessages(library(ggplot2))
+suppressMessages(library(GGally))
+suppressMessages(library(stringr))
+
+# the aggregated data
+wmic <- dataset$wmic
+
+# clean commas out of 'price' variable, take average of ranges, make numeric, add back to wmic
+price.orig <- wmic$Price
+wmic <- wmic[,-3]
+Price <- gsub(",", "", price.orig)
+duals.idx <- grep("-", Price, value=FALSE) #i love grep.
+duals.vals <- grep("-", Price, value=TRUE)
+duals.split <- as.numeric(str_split_fixed(duals.vals,"-",2))
+duals.means <- c(mean(duals.split[1:2]),mean(duals.split[3:4]),mean(duals.split[5:6]),mean(duals.split[7:8])) #the inelegant copy-pasta solution
+Price[duals.idx] <- duals.means
+Price <- as.numeric(Price)
+wmic <- cbind(wmic,Price)
+
+# matrix of scatterplots, densities, and correlation coefficients
+output <- ggpairs(wmic[,3:5])
+suppressMessages(output)
+{% endhighlight %}
+
+![plot of chunk unnamed-chunk-3](/public/images/widget-statisticsunnamed-chunk-3-1.svg)
+
+A lot of the products don't have reviews or ratings.
+
+Starting from the central density: most products have ratings around 4. Moving to the left, it looks like products with  ratings around 4 tend to have the most reviews, as we might expect if having a rating is correlated with the number of reviews. Moving down, it looks like products with reviews and ratings tend to be lower-priced. One story for this is that higher-priced products sell fewer units.
+
+Let's look at the average price by brand now.
+
+{% highlight r %}
+load("C:/Unnamed_source/widgets/widgets.Rdata")
+suppressMessages(library(ggplot2))
+suppressMessages(library(stringr))
+
+# hedonic regression to get the average price per brand
+m1.wmic <- lm(Price ~ factor(Firm.id) - 1, data=wmic)
+
+# plot the average prices with error bars
+# first, get the prices
+brands <- data.frame(summary(m1.wmic)$coef[summary(m1.wmic)$coef[,4] <= .1, 1]) # only grab brands with enough products for error bars which exclude 0 (p-value less than 0.1)
+labs <- rownames(brands)
+labs <- str_split_fixed(labs,".id",2) #have to leave the close parens alone since str_split_fixed looks for regular expressions
+brands <- cbind(labs[,2],brands)
+colnames(brands) <- c("brand","price")
+rownames(brands) <- NULL
+brands$brand <- gsub(")", "", brands$brand) #get rid of that annoying close parens
+
+# next, get the standard errors
+ses <- coef(summary(m1.wmic))[,2]
+ses <- as.data.frame(ses)
+labs <- rownames(ses)
+labs <- str_split_fixed(labs,".id",2)
+ses <- cbind(labs[,2],ses)
+colnames(ses) <- c("brand","error")
+rownames(ses) <- NULL
+ses$brand <- gsub(")", "", ses$brand)
+
+# stick them together and define the limits object for geom_errorbar
+sticky <- merge(brands,ses,by="brand")
+limits <- aes(ymax= (sticky$price + sticky$error), ymin= (sticky$price - sticky$error))
+
+# finally, the plot!
+ggplot(data=sticky, aes(x=brand,y=price)) + geom_bar(stat="identity", col="blue") + labs(title="Average price by brand") + geom_errorbar(limits,width=0.2)
+{% endhighlight %}
+
+![plot of chunk unnamed-chunk-4](/public/images/widget-statisticsunnamed-chunk-4-1.svg)
+
+I dropped the brands with too few products for error bars which exclude zero. This also makes the plot slightly more legible - the full plot has over 150 brands, and is just not very easy to read. It looks kinda like something we'd get out of a Hotelling model of monopolistic competition, with maybe heterogeneous consumers/firms. Most firms seem to stay in the $20,000 or less price range, with a few gunning for the higher-end segments.
+
+Let's wrap up with some more linear regressions:
+
+
+{% highlight r %}
+load("C:/Unnamed_source/widgets/wmic.Rdata")
+# What's the relationship between price, reviews, and ratings, controlling for brand?
+m2.wmic <- lm(Price ~ Firm.id - 1 + Reviews + Rating, data=wmic)
+summary(m2.wmic)
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## 
+## Call:
+## lm(formula = Price ~ Firm.id - 1 + Reviews + Rating, data = wmic)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+##  -5001  -1547  -1329   -684  98761 
+## 
+## Coefficients:
+##         Estimate Std. Error t value Pr(>|t|)    
+## Firm.id  -15.679      8.568  -1.830   0.0678 .  
+## Reviews   -3.951      5.002  -0.790   0.4300    
+## Rating  1174.170    288.390   4.071 5.33e-05 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 9443 on 571 degrees of freedom
+##   (2398 observations deleted due to missingness)
+## Multiple R-squared:  0.07574,	Adjusted R-squared:  0.07089 
+## F-statistic:  15.6 on 3 and 571 DF,  p-value: 9.186e-10
+{% endhighlight %}
+
+The `Firm.id` variable should be entered as a factor in `m2.wmic` rather than a numeric, but this makes the output a little cleaner and we're not taking these regressions very seriously anyway.
+
+It looks like higher-rated products tend to be higher-priced, controlling for the number of reviews and the identity of the firm. It also looks like the number of reviews is negatively correlated with the price. These results are consistent with a story where price is positively correlated with quality and negatively correlated with sales, and sales are positively correlated with the number of reviews (the story for the sign of the reviews coefficient is just a fancier way to say "demand slopes downward").
+
+## Conclusion
+
+Widgets in Producistan look like a monopolistically competitive industry. Price might be positively correlated with quality, and demand slopes downward. Firms with more products might go for the higher-WTP consumers more aggressively on average, while making fewer sales. Storytime aside, `ggpairs()` is a cool function.
