@@ -41,8 +41,8 @@ regime where agents are unable to secure property rights over orbital locations&
             USA<br/><br/>
 
             <div id="hide_email">
-            Email: <code>akh</code><b>I</b><code>ilrao</code><b>don't</b><code>@</code><b>want</b><code>colo</code><b>spam!
-            </b><b>So</b><code>.</code><b>please</b><code>ra</code><b>leave
+            Email: <code>akh</code><b>I</b><code>ilrao</code><b>don't</b><code>@</code><b>want</b><code>co</code><b>spam!
+            </b><code>lo</code><b>So</b><code></code><b>please</b><code>ra</code><b>leave
             </b><code>do</code><b>me</b><code>.</code><b>alone</b><code>e</code><b>!</b><code>du</code><br/>
             Phone: 951-732-7261
             </div>
