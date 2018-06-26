@@ -8,7 +8,7 @@ description: Akhil Rao is a PhD candidate in Economics at the University of Colo
 
 I am a PhD candidate in the
 [Department of Economics](https://www.colorado.edu/Economics/)
-at the University of Colorado&ndash;Boulder. My research is in
+at the University of Colorado&ndash;Boulder. My research is
 in environmental, natural resource, and computational economics.
 
 I received a BS in [Business Administration](https://soba.ucr.edu/)
