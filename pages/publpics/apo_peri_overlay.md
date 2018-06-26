@@ -1,17 +1,23 @@
 ---
 layout: frontpage
-title: Apogee and Perigee of Orbiting Satellites (2016)
+title: Where are active satellites located?
 ---
 
-<!-- <div class="navbar">
+<div class="navbar">
   <div class="navbar-inner">
       <ul class="nav">
-          <li><a href="interfer_fig1.html">prev</a></li>
-          <li><a href="mousebc_fig3.html">next</a></li>
+          <li><a href="value_diff_1.html">prev</a></li>
+          <li><a href="yearly_hhi_leo_gso.html">next</a></li>
       </ul>
   </div>
-</div> -->
+</div> 
 
 ![Apogee and Perigee of Orbiting Satellites (2016)](../../assets/bigpublpics/apo_peri_overlay.png)
 
-**Figure 1**. &mdash; The distribution of apogee and perigee of orbiting satellites. Space is big, but some locations are more valuable than others.
+**Where are active satellites located?** &mdash; The picture shows the distributions of [apogee and perigee](https://en.wikipedia.org/wiki/Apsis) for man-made satellites orbiting the Earth. 
+*Upper left:* Distribution of perigee for all satellites. 
+*Upper right:* Distribution of apogee for all satellites.
+*Lower left:* Distribution of perigee (gray bars with blue lining) and apogee (gray bars with red lining) for satellites in [low-Earth orbit](https://en.wikipedia.org/wiki/Low_Earth_orbit).
+*Lower right:* Distribution of perigee (gray bars with blue lining) and apogee (gray bars with red lining) for satellites in [geostationary orbit](https://en.wikipedia.org/wiki/Geostationary_orbit).
+
+Earth's orbits are easily the largest physical commons humanity has ever used. But some spots are more valuable than others. This picture shows how satellites tend to cluster in specific orbital regions. Space: the lonesome crowded frontier.

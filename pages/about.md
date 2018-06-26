@@ -9,7 +9,7 @@ description: Akhil Rao is a PhD candidate in Economics at the University of Colo
 I am a PhD candidate in the
 [Department of Economics](https://www.biostat.wisc.edu)
 at the University of Colorado&ndash;Boulder. My research is in
-in environmental, natural resource, and computational economics. In my free time, I create [ridiculous Twitter bots](https://twitter.com/bakRabot).
+in environmental, natural resource, and computational economics.
 
 I received a BS in [Business Administration](https://soba.ucr.edu/)
 in 2012 from the
@@ -22,7 +22,7 @@ University of Colorado&ndash;Boulder; my PhD advisor is
 
 For the last few years, I've studied common-pool resources and commercial orbit use. Earth's orbits are the world's largest common-pool resource. As humans launches more satellites, the risk of collisions between orbiting objects increases. Paths in low-Earth orbit are under &ldquo;open access&rdquo; - though radio spectrum in those regions is licensed, firms are unable to secure property rights over orbital locations. Open access to a commons typically results in over-exploitation, and sometimes collapse, of the resource. In the orbital case, expect to see more catastrophic collisions and a higher risk of [Kessler Syndrome](https://en.wikipedia.org/wiki/Kessler_syndrome) in low-Earth orbit than would be socially optimal.
 
-Day to day, I write theoretical economic models and compute them. Sometimes I prove that the models I wrote possess certain properties. Sometimes I use data to compute things, with or without a theoretical model. My favorite computations create cool pictures. I like to play online RTS games and single-player RPGs.
+Day to day, I write theoretical economic models and prove that they possess certain properties or compute them. Sometimes both. Sometimes I use data to compute things, with or without a theoretical model. My favorite computations tell a story and lend themselves to cool pictures. In my free time, I create [ridiculous Twitter bots](https://twitter.com/bakRabot), play video games (usually online RTS games and single-player RPGs), and think about the economics of fictional worlds.
 
 [curriculum vitae ![CV as pdf](icons16/pdf-icon.png)]({{ BASE_PATH }}/assets/rao_cv.pdf)<br/>
 <!-- [orcid](https://orcid.org): [0000-0002-4914-6671](https://orcid.org/0000-0002-4914-6671)<br/>

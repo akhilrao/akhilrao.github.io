@@ -19,24 +19,24 @@ keywords: Rao, environmental economics, resource economics, space, applied theor
 <tr>
   <td class="left">
     <a href="pages/publpics/apo_peri_overlay.html">
-        <img src="assets/publpics/apo_peri_overlay.png" alt="Where are active satellites located?" title="Distribution of apogee and perigee for orbiting satellites (2016)"/>
+        <img src="assets/publpics/apo_peri_overlay.png" alt="Distribution of apogee and perigee for orbiting satellites (2016)" title="Where are active satellites located?"/>
     </a>
   </td>
   <td class="right">
-    <a href="pages/publpics/cost_decrease_1.html">
-        <img src="assets/publpics/cost_decrease_1.png" alt="What will sustained launch cost decreases mean for debris?" title="Falling launch costs and orbital debris"/>
+    <a href="pages/publpics/yearly_hhi_leo_gso.html">
+        <img src="assets/publpics/yearly_hhi_leo_gso.png" alt="Worldwide commercial satellite launch services market concentration, 1996-2015" title="How competitive is the satellite launch industry in the New Space era?"/>
     </a>
   </td>
 </tr>
 <tr>
   <td class="left">
     <a href="pages/publpics/biffplot3.html">
-        <img src="assets/publpics/biffplot3.png" alt="When are open-access orbital steady states stable?" title="Open access and orbital stability"/>
+        <img src="assets/publpics/biffplot3.png" alt="Open access and orbital stability" title="When are open-access orbital steady states stable?"/>
     </a>
   </td>
   <td class="right">
     <a href="pages/publpics/value_diff_1.html">
-        <img src="assets/publpics/value_diff_1.png" alt="How much better than open access can we do?" title="The gains from optimal launch control"/>
+        <img src="assets/publpics/value_diff_1.png" alt="The gains from optimal launch control" title="What do society's gains from optimal orbit use look like?"/>
     </a>
   </td>
 </tr>
