@@ -14,7 +14,7 @@ title: Where are active satellites located?
 
 ![Apogee and Perigee of Orbiting Satellites (2016)](../../assets/bigpublpics/apo_peri_overlay.png)
 
-**Where are active satellites located?** &mdash; The picture shows the distributions of [apogee and perigee](https://en.wikipedia.org/wiki/Apsis) for man-made satellites orbiting the Earth. 
+**Where are active satellites located?** &mdash; The picture shows the distributions of [apogee and perigee](https://en.wikipedia.org/wiki/Apsis) for man-made satellites orbiting the Earth, based on [data from the Union of Concerned Scientists](https://www.ucsusa.org/nuclear-weapons/space-weapons/satellite-database).
 *Upper left:* Distribution of perigee for all satellites. 
 *Upper right:* Distribution of apogee for all satellites.
 *Lower left:* Distribution of perigee (gray bars with blue lining) and apogee (gray bars with red lining) for satellites in [low-Earth orbit](https://en.wikipedia.org/wiki/Low_Earth_orbit).
