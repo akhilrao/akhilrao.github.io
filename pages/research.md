@@ -15,9 +15,9 @@ description: Akhil Rao's research
 
 ### <a name="working papers"></a>working papers
 
-Cost in Space: Debris and Collision Risk in the Orbital Commons (with Giacomo Rondina) [latest draft](../../assets/Cost_in_Space.pdf)
+Akhil Rao, Giacomo Rondina (2018) *Cost in Space: Debris and Collision Risk in the Orbital Commons* [latest draft](../../assets/Cost_in_Space.pdf)
 
 ### <a name="conference papers"></a>conference papers
-Trevor Bennett, Charles Cain, N.S. Campbell, Andrew Gemer, John Marino, Tobias Niederwieser, Akhil Rao (2018) The CENKI Space Economic Simulator: Analytical Verification of an Agent-Based Modeling Engine [2018 IEEE Aerospace Conference Proceedings](https://ieeexplore.ieee.org/document/8396369/) [![doi](icons16/doi-icon.png)](https://doi.org/10.1109/AERO.2018.8396369)
+Trevor Bennett, Charles Cain, N.S. Campbell, Andrew Gemer, John Marino, Tobias Niederwieser, Akhil Rao (2018) *The CENKI Space Economic Simulator: Analytical Verification of an Agent-Based Modeling Engine* [2018 IEEE Aerospace Conference Proceedings](https://ieeexplore.ieee.org/document/8396369/) [![doi](icons16/doi-icon.png)](https://doi.org/10.1109/AERO.2018.8396369)
 
-Trevor Bennett, Charles Cain, N.S. Campbell, Andrew Gemer, John Marino, Tobias Niederwieser, Akhil Rao (2018) The CENKI Space Economic Simulator: Demonstrating Agent-Based Modeling on Satellite Market Data [2018 IEEE Aerospace Conference Proceedings](https://ieeexplore.ieee.org/document/8396565/) [![doi](icons16/doi-icon.png)](https://doi.org/10.1109/AERO.2018.8396565)
+Trevor Bennett, Charles Cain, N.S. Campbell, Andrew Gemer, John Marino, Tobias Niederwieser, Akhil Rao (2018) *The CENKI Space Economic Simulator: Demonstrating Agent-Based Modeling on Satellite Market Data* [2018 IEEE Aerospace Conference Proceedings](https://ieeexplore.ieee.org/document/8396565/) [![doi](icons16/doi-icon.png)](https://doi.org/10.1109/AERO.2018.8396565)
