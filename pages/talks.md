@@ -10,6 +10,8 @@ Slides from some presentations I've given
 
 Western Economic Association International: *Cost in Space: Debris and Collision Risk in the Orbital Commons* [slides](../../assets/slides/WEAI2018.pdf)
 
+IEEE Aerospace Conference 2018: *The CENKI Space Economic Simulator: Analytical Verification of an Agent-Based Modeling Engine* [slides](../../assets/slides/IEEEAero2018_T10.pdf)
+
 <!-- Cleaning genotype data in diversity outbred mice
 [![pdf](icons16/pdf-icon.png)](https://kbroman.org/Talk_CTC2018/broman_ctc2018.pdf)
 [![html](icons16/html-icon.png)](https://kbroman.org/Talk_CTC2018)
