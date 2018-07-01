@@ -4,7 +4,11 @@ title: talks
 description: Akhil Rao's talks
 ---
 
+Slides from some presentations I've given
+
 ###  2018
+
+Western Economic Association International: *Cost in Space: Debris and Collision Risk in the Orbital Commons* [slides](../../assets/slides/WEAI2018.pdf)
 
 <!-- Cleaning genotype data in diversity outbred mice
 [![pdf](icons16/pdf-icon.png)](https://kbroman.org/Talk_CTC2018/broman_ctc2018.pdf)
