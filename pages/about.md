@@ -39,7 +39,7 @@ Day to day, I write theoretical economic models and prove that they possess cert
             Akhil Rao<br/>
             <a href="https://www.colorado.edu/Economics/">Department of Economics</a><br/>
             <a href="https://www.colorado.edu">University of Colorado&ndash;Boulder</a><br/>
-            <a href="https://map.wisc.edu/s/2tie3nen">256 UCB</a><br/>
+            <a href="https://www.colorado.edu/map/?id=336&mrkIid=193844">256 UCB</a><br/>
             Econ 414<br/>
             Boulder, Colorado 80309&ndash;0256<br/>
             USA<br/><br/>

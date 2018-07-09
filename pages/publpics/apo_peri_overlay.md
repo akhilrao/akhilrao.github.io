@@ -7,7 +7,7 @@ title: Where are active satellites located?
   <div class="navbar-inner">
       <ul class="nav">
           <li><a href="value_diff_1.html">prev</a></li>
-          <li><a href="yearly_hhi_leo_gso.html">next</a></li>
+          <li><a href="launch_summary.html">next</a></li>
       </ul>
   </div>
 </div> 
