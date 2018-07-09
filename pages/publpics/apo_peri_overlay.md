@@ -7,7 +7,7 @@ title: Where are active satellites located?
   <div class="navbar-inner">
       <ul class="nav">
           <li><a href="value_diff_1.html">prev</a></li>
-          <li><a href="launch_summary.html">next</a></li>
+          <li><a href="leo_geo_gabbard.html">next</a></li>
       </ul>
   </div>
 </div> 
@@ -20,4 +20,4 @@ title: Where are active satellites located?
 *Lower left:* Distribution of perigee (gray bars with blue lining) and apogee (gray bars with red lining) for satellites in [low-Earth orbit](https://en.wikipedia.org/wiki/Low_Earth_orbit).
 *Lower right:* Distribution of perigee (gray bars with blue lining) and apogee (gray bars with red lining) for satellites in [geostationary orbit](https://en.wikipedia.org/wiki/Geostationary_orbit).
 
-Earth's orbits are easily the largest physical commons humanity has ever used. But some orbits are more valuable than others. This picture shows where satellites tend to cluster. Space: the lonesome crowded frontier.
+Earth's orbits are easily the largest physical commons humanity has ever used. But some orbits are more useful than others, leading to clustering. Space: the lonesome crowded frontier.

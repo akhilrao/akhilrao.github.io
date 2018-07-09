@@ -18,8 +18,8 @@ keywords: Rao, environmental economics, resource economics, space, applied theor
 <table class="wide">
 <tr>
   <td class="left">
-    <a href="pages/publpics/apo_peri_overlay.html">
-        <img src="assets/publpics/apo_peri_overlay.png" alt="Distribution of apogee and perigee for orbiting satellites (2016)" title="Where are active satellites located?"/>
+    <a href="pages/publpics/leo_geo_gabbard.html">
+        <img src="assets/publpics/leo_geo_gabbard.png" alt="Gabbard diagram of active satellites (2016)" title="Where are active satellites located?"/>
     </a>
   </td>
   <td class="right">

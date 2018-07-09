@@ -6,8 +6,8 @@ title: Historical trends in satellite launch and use
 <div class="navbar">
   <div class="navbar-inner">
       <ul class="nav">
-          <li><a href="yearly_hhi_leo_gso.html">prev</a></li>
-          <li><a href="apo_peri_overlay.html">next</a></li>
+          <li><a href="leo_geo_gabbard.html">prev</a></li>
+          <li><a href="yearly_hhi_leo_gso.html">next</a></li>
       </ul>
   </div>
 </div>
