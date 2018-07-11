@@ -13,4 +13,5 @@ Coming soon!
 - [R package primer](http://kbroman.org/pkg_primer)
 - [simple site](http://kbroman.org/simple_site): making a simple
   website with [GitHub Pages](http://pages.github.com)
-- [hipsteR](http://kbroman.org/hipsteR/): re-educating people who learned R before it was cool -->
+- [hipsteR](http://kbroman.org/hipsteR/): re-educating people who learned R before it was cool 
+-->
