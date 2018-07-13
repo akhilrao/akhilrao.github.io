@@ -19,7 +19,7 @@ keywords: Rao, environmental economics, resource economics, space, applied theor
 <tr>
   <td class="left">
     <a href="pages/publpics/leo_geo_gabbard.html">
-        <img src="assets/publpics/leo_geo_gabbard.png" alt="Gabbard diagram of active satellites (2016)" title="Where are active satellites located?"/>
+        <img src="assets/publpics/leo_gabbard_all.png" alt="Gabbard diagram of LEO objects in Space-Track.Org database (2018)" title="Where are satellites and debris in LEO?"/>
     </a>
   </td>
   <td class="right">
