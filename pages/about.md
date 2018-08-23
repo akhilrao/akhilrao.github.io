@@ -22,7 +22,7 @@ University of Colorado&ndash;Boulder; my PhD advisor is
 
 For the last few years, I've studied common-pool resources and commercial orbit use. Earth's orbits are the world's largest common-pool resource. As humans launch more satellites, the risk of collisions between orbiting objects increases. Paths in low-Earth orbit are under &ldquo;open access&rdquo; - firms are unable to secure property rights over orbital locations (though radio spectrum in those regions is licensed). Open access to a commons typically results in over-exploitation, and sometimes collapse, of the resource. In the orbital case, expect to see more catastrophic collisions and a higher risk of [Kessler Syndrome](https://en.wikipedia.org/wiki/Kessler_syndrome) in low-Earth orbit than would be socially optimal.
 
-For my research, I write theoretical economic models and prove that they possess certain properties or compute them. In my free time I make [silly Twitter bots](https://twitter.com/bakRabot), play video games (online RTS and single-player RPGs), and think about the economics of fictional worlds.
+My research (so far) mainly involves writing theoretical economic models and proving that they possess certain properties or computing them. In my free time I make [silly Twitter bots](https://twitter.com/bakRabot), play video games (online RTS and single-player RPGs), and think about the economics of fictional worlds.
 
 [curriculum vitae ![CV as pdf](icons16/pdf-icon.png)]({{ BASE_PATH }}/assets/rao_cv.pdf)<br/>
 <!-- [orcid](https://orcid.org): [0000-0002-4914-6671](https://orcid.org/0000-0002-4914-6671)<br/>
