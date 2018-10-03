@@ -33,21 +33,5 @@ keywords: Rao, environmental economics, resource economics, space, applied theor
         My job market paper looks at how commercial orbit use should be regulated and the extent to which active debris removal technologies can bring about socially optimal orbit use. I show that policies which target satellite launches instead of satellite ownership can increase the risk of Kessler Syndrome or catastrophic collisions because of the incentives they create, and cannot create incentives to deorbit satellites if it is socially necessary. I also show that active debris removal can reduce the risk of Kessler Syndrome no matter how it is financed, but can only reduce the risk of catastrophic collisions to the extent that satellite owners pay for removal.
       </p>
     </div>
-    
-    <table class = "column3of3">
-      <tr>
-        <td> (Location) </td>
-        <td> (Contact) </td>
-      </tr>
-      <tr>    
-        <td> <span style = "font-family:'Dosis', sans-serif"> Boulder, CO </span> </td>
-        <td><code>akh</code><b>I</b><code>il.rao</code><b>don't</b><code>@</code><b>want</b><code>co</code><b>spam!
-            </b><code>lo</code><b>So</b><code></code><b>please</b><code>ra</code><b>leave
-            </b><code>do</code><b>me</b><code>.</code><b>alone</b><code>e</code><b>!</b><code>du</code><br/> </td>
-        <td> <p>
-          <!--<a href="https://twitter.com/jacobhowardecon" target="_blank">Twitter</a>,  --></td> 
-          </p>
-      </tr>
-    </table>
   </div>  
 </article>
