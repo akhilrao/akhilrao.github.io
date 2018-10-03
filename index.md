@@ -16,7 +16,7 @@ keywords: Rao, environmental economics, resource economics, space, applied theor
 
 
 <div class="container">
-<h4><a name="contact"></a>contact</h4>
+<h4><a name=""></a></h4>
 
     <div class="row-fluid">
         <div class="span5">
@@ -30,36 +30,11 @@ keywords: Rao, environmental economics, resource economics, space, applied theor
 
         </div>
 
-        <div class="span2">
+        <div class="portrait">
         <a href="../assets/pics/akhil_portrait.png">
             <img src="../assets/pics/akhil_portrait.png"
                   title="Akhil Rao" alt="Akhil Rao"/></a>
         </div>
     
-    </div>
-</div>
-
-
-
-<div class="container">
-<h4><a name="contact"></a>contact</h4>
-
-    <div class="row-fluid">
-        <div class="span5">
-            Akhil Rao<br/>
-            <a href="https://www.colorado.edu/Economics/">Department of Economics</a><br/>
-            <a href="https://www.colorado.edu">University of Colorado&ndash;Boulder</a><br/>
-            <a href="https://www.colorado.edu/map/?id=336&mrkIid=193844">256 UCB</a><br/>
-            Econ 414<br/>
-            Boulder, Colorado 80309&ndash;0256<br/>
-            USA<br/><br/>
-
-            <div id="hide_email">
-            Email: <code>akh</code><b>I</b><code>il.rao</code><b>don't</b><code>@</code><b>want</b><code>co</code><b>spam!
-            </b><code>lo</code><b>So</b><code></code><b>please</b><code>ra</code><b>leave
-            </b><code>do</code><b>me</b><code>.</code><b>alone</b><code>e</code><b>!</b><code>du</code><br/>
-            Phone: 951-732-7261
-            </div>
-        </div>
     </div>
 </div>
