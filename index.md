@@ -15,51 +15,39 @@ keywords: Rao, environmental economics, resource economics, space, applied theor
 </div>
 
 
-<div class="container">
-<h4><a name=""></a></h4>
 
-    <div class="row-fluid">
-        <div class="span5">
+<article> 
+  <div class = "column1of3">
+     <img src="../assets/pics/akhil_portrait.png"
+                  title="Akhil Rao"
+    />
+  </div>
 
-        I am a PhD candidate in the
+  <div class = "group">
+    <div class = "column2of3">  
+      <p>  I am a PhD candidate in the
         [Department of Economics](https://www.colorado.edu/Economics/)
         at the University of Colorado Boulder. My research is
         in environmental, natural resource, and computational economics. I am on the job market in 2018-2019 and available for interviews at the ASSA annual meeting in Atlanta. <br/><br/>
 
         My job market paper looks at how commercial orbit use should be regulated and the extent to which active debris removal technologies can bring about socially optimal orbit use. I show that policies which target satellite launches instead of satellite ownership can increase the risk of Kessler Syndrome or catastrophic collisions because of the incentives they create, and cannot create incentives to deorbit satellites if it is socially necessary. I also show that active debris removal can reduce the risk of Kessler Syndrome no matter how it is financed, but can only reduce the risk of catastrophic collisions to the extent that satellite owners pay for removal.
-
-        </div>
-
-        <div class="portrait">
-        <a href="../assets/pics/akhil_portrait.png">
-            <img src="../assets/pics/akhil_portrait.png"
-                  title="Akhil Rao" alt="Akhil Rao"/></a>
-        </div>
+      </p>
+    </div>
     
-    </div>
-</div>
-
-
-
-<div class="container">
-<h4><a name="contact"></a>contact</h4>
-
-    <div class="row-fluid">
-        <div class="span5">
-            Akhil Rao<br/>
-            <a href="https://www.colorado.edu/Economics/">Department of Economics</a><br/>
-            <a href="https://www.colorado.edu">University of Colorado&ndash;Boulder</a><br/>
-            <a href="https://www.colorado.edu/map/?id=336&mrkIid=193844">256 UCB</a><br/>
-            Econ 414<br/>
-            Boulder, Colorado 80309&ndash;0256<br/>
-            USA<br/><br/>
-
-            <div id="hide_email">
-            Email: <code>akh</code><b>I</b><code>il.rao</code><b>don't</b><code>@</code><b>want</b><code>co</code><b>spam!
+    <table class = "column3of3">
+      <tr>
+        <td> (Location) </td>
+        <td> (Contact) </td>
+      </tr>
+      <tr>    
+        <td> <span style = "font-family:'Dosis', sans-serif"> Boulder, CO </span> </td>
+        <td><code>akh</code><b>I</b><code>il.rao</code><b>don't</b><code>@</code><b>want</b><code>co</code><b>spam!
             </b><code>lo</code><b>So</b><code></code><b>please</b><code>ra</code><b>leave
-            </b><code>do</code><b>me</b><code>.</code><b>alone</b><code>e</code><b>!</b><code>du</code><br/>
-            Phone: 951-732-7261
-            </div>
-        </div>
-    </div>
-</div>
+            </b><code>do</code><b>me</b><code>.</code><b>alone</b><code>e</code><b>!</b><code>du</code><br/> </td>
+        <td> <p>
+          <!--<a href="https://twitter.com/jacobhowardecon" target="_blank">Twitter</a>,  --></td> 
+          </p>
+      </tr>
+    </table>
+  </div>  
+</article>
