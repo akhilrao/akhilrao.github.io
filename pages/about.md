@@ -13,7 +13,7 @@ in environmental, natural resource, and computational economics. I am on the job
 
 I received a BS in [Business Administration](https://soba.ucr.edu/)
 in 2012 from the
-University of California&ndash;Riverside, and an
+University of California, Riverside, and an
 MA in Economics in 2016 from the
 University of Colorado Boulder; my PhD adviser is
 [Dan Kaffine](http://spot.colorado.edu/~daka9342/).
