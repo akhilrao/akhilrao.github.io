@@ -28,8 +28,8 @@ Lately I've been working on applying tools from [information elicitation](https:
 
 In my free time I make [silly Twitter bots](https://twitter.com/bakRabot), play video games (online RTS and single-player RPGs), and think about the economics of fictional worlds.
 
-[curriculum vitae ![CV as pdf](icons16/pdf-icon.png)]({{ BASE_PATH }}/assets/rao_cv.pdf)<br/>
-<!-- [orcid](https://orcid.org): [0000-0002-4914-6671](https://orcid.org/0000-0002-4914-6671)<br/>
+<!-- [curriculum vitae ![CV as pdf](icons16/pdf-icon.png)]({{ BASE_PATH }}/assets/rao_cv.pdf)<br/>
+ [orcid](https://orcid.org): [0000-0002-4914-6671](https://orcid.org/0000-0002-4914-6671)<br/>
 [google scholar](https://scholar.google.com/citations?sortby=pubdate&hl=en&user=42tCp5UAAAAJ&view_op=list_works)<br/>
 [impactstory](https://impactstory.org/u/0000-0002-4914-6671) -->
 
@@ -56,10 +56,10 @@ In my free time I make [silly Twitter bots](https://twitter.com/bakRabot), play 
             </div>
         </div>
 
-        <div class="span2">
+ <!--       <div class="span2">
         <a href="../assets/pics/akhil_portrait.png">
             <img src="../assets/pics/akhil_portrait.png"
                   title="Akhil Rao" alt="Akhil Rao"/></a>
-        </div>
+        </div> -->
     </div>
 </div>
