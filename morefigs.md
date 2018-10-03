@@ -8,7 +8,6 @@ title: Akhil Rao
       <ul class="nav">
           <li><a href="{{ BASE_PATH }}/assets/rao_cv.pdf">cv</a></li>
           <li><a href="https://github.com/akhilrao">github</a></li>
-          <li><a href="https://akhilrao.github.io/blog">blog</a></li>
       </ul>
   </div>
 </div>
