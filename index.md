@@ -26,12 +26,8 @@ keywords: Rao, environmental economics, resource economics, space, applied theor
 
   <td class = "right"> 
       <p>  I am a PhD candidate in the
-        [Department of Economics](https://www.colorado.edu/Economics/)
-        at the University of Colorado Boulder. My research is
-        in environmental, natural resource, and computational economics. I am on the job market in 2018-2019 and available for interviews at the ASSA annual meeting in Atlanta. <br/>
-
+        <a href="https://www.colorado.edu/Economics/">Department of Economics</a> at the University of Colorado Boulder. My research is in environmental, natural resource, and computational economics. I am on the job market in 2018-2019 and available for interviews at the ASSA annual meeting in Atlanta. <br/><br/>
         My job market paper looks at how commercial orbit use should be regulated and the extent to which active debris removal technologies can bring about socially optimal orbit use. I show that policies which target satellite launches instead of satellite ownership can increase the risk of Kessler Syndrome or catastrophic collisions because of the incentives they create, and cannot create incentives to deorbit satellites if it is socially necessary. I also show that active debris removal can reduce the risk of Kessler Syndrome no matter how it is financed, but can only reduce the risk of catastrophic collisions to the extent that satellite owners pay for removal. <br/>
-
       </p>
   </td>  
 </tr>
