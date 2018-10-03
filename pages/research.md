@@ -53,7 +53,7 @@ description: Akhil Rao's research
 
 Akhil Rao, Giacomo Rondina: *Cost in Space: Debris and Collision Risk in the Orbital Commons* [draft](../../assets/working_papers/Cost_in_Space.pdf)
 
-Akhil Rao, Brennan McConnell: *Elicitation and Corrective Taxation* [draft](../../assets/working_papers/Elicitation_and_Corrective_Taxation.pdf)
+Akhil Rao, Brennan McConnell: *Elicitation and Corrective Taxation* (mimeo) <!--[draft](../../assets/working_papers/Elicitation_and_Corrective_Taxation.pdf)-->
 
 
 ### <a name="conference papers"></a>conference papers
