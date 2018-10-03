@@ -26,7 +26,7 @@ My job market paper looks at how commercial orbit use should be regulated and th
 
 Lately I've been working on applying tools from [information elicitation](https://sites.google.com/site/informationelicitation/) to externality problems in environmental economics. I'm most interested in the limits of externality-correcting mechanism design when regulators have to ask firms for information (or trust that firms won't game the measurements) in order to assess compliance and liability. The Volkswagen emissions scandal is one of the higher-profile cases in recent memory where the assumption of "no strategic behavior" broke down. <!--, with [nontrivial public health consequences](http://iopscience.iop.org/article/10.1088/1748-9326/aa5987).-->
 
-In my free time I make [silly Twitter bots](https://twitter.com/bakRabot), play video games (online RTS and single-player RPGs), and think about the economics of fictional worlds.
+In my free time I make [silly Twitter bots](https://twitter.com/bakRabot), play video games (online RTS and single-player RPGs), and think about the economics of fictional worlds[1](https://akhilrao.github.io/blog/micro%20theory/2018/06/05/zero-dawn-economy/),[2](https://akhilrao.github.io/blog/micro%20theory/2016/08/15/dark-forest-simple-model/).
 
 <!-- [curriculum vitae ![CV as pdf](icons16/pdf-icon.png)]({{ BASE_PATH }}/assets/rao_cv.pdf)<br/>
  [orcid](https://orcid.org): [0000-0002-4914-6671](https://orcid.org/0000-0002-4914-6671)<br/>
