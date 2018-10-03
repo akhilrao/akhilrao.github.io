@@ -28,12 +28,12 @@ description: Akhil Rao's research
 </tr>
 <tr>
   <td class="left">
-    <a href="pages/publpics/biffplot3.html">
+    <a href="../../pages/publpics/biffplot3.html">
         <img src="assets/publpics/biffplot3.png" alt="Open access and orbital stability" title="When are open-access orbital steady states stable?"/>
     </a>
   </td>
   <td class="right">
-    <a href="pages/publpics/value_diff_1.html">
+    <a href="../../pages/publpics/value_diff_1.html">
         <img src="assets/publpics/value_diff_1.png" alt="The gains from optimal launch control" title="What do society's gains from optimal orbit use look like?"/>
     </a>
   </td>
