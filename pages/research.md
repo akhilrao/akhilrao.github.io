@@ -53,6 +53,10 @@ description: Akhil Rao's research
 
 Akhil Rao, Giacomo Rondina: *Cost in Space: Debris and Collision Risk in the Orbital Commons* [draft](../../assets/working_papers/Cost_in_Space.pdf)
 
+<p><h6><a name="abstract"></a>contact</h6>
+	As Earth's orbits fill with satellites and debris, the probability of collisions between orbiting bodies increases. Runaway debris growth, known as Kessler syndrome, may cause Earth's orbits to become unusable for millennia. We present the first long-run economic model of Earth orbit use which accounts for the risk of satellite-destroying collisions and Kessler syndrome under rational expectations. Orbital decay and profit maximization can prevent Kessler syndrome even in the absence of cleanup technologies, but open access will result in inefficiently high levels of launches, debris, and collision risk. Steady state debris levels and the equilibrium collision rate are increasing in the excess return on a satellite, and sustained increases in the excess return will lead open access to cause Kessler syndrome. Short-run rebound effects can also make open access debris levels increase as the rate of orbital decay increases and as launches generate less debris. These results suggest that careful attention to economic incentives is necessary to ensure orbital sustainability.
+</p>
+
 Akhil Rao, Brennan McConnell: *Elicitation and Corrective Taxation* (mimeo) <!--[draft](../../assets/working_papers/Elicitation_and_Corrective_Taxation.pdf)-->
 
 
