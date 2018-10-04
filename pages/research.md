@@ -59,14 +59,19 @@ description: Akhil Rao's research
 
 Akhil Rao, Giacomo Rondina: *Cost in Space: Debris and Collision Risk in the Orbital Commons* [draft](../../assets/working_papers/Cost_in_Space.pdf)
 
-<h6><a name="abstract"></a>abstract</h6>
-<p class="tab">
+<p class="tab"><h6><a name="abstract"></a>abstract</h6>
 	<small>
 		As Earth's orbits fill with satellites and debris, the probability of collisions between orbiting bodies increases. Runaway debris growth, known as Kessler syndrome, may cause Earth's orbits to become unusable for millennia. We present the first long-run economic model of Earth orbit use which accounts for the risk of satellite-destroying collisions and Kessler syndrome under rational expectations. Orbital decay and profit maximization can prevent Kessler syndrome even in the absence of cleanup technologies, but open access will result in inefficiently high levels of launches, debris, and collision risk. Steady state debris levels and the equilibrium collision rate are increasing in the excess return on a satellite, and sustained increases in the excess return will lead open access to cause Kessler syndrome. Short-run rebound effects can also make open access debris levels increase as the rate of orbital decay increases and as launches generate less debris. These results suggest that careful attention to economic incentives is necessary to ensure orbital sustainability.
 	</small>
 </p>
 
 Akhil Rao, Brennan McConnell: *Elicitation and Corrective Taxation* (mimeo) <!--[draft](../../assets/working_papers/Elicitation_and_Corrective_Taxation.pdf)-->
+
+<p class="tab"><h6><a name="abstract"></a>abstract</h6>
+	<small>
+		Marginal contributions to observable aggregate stocks are often unobservable in games with negative stock externalities, making optimal corrective taxation a difficult endeavor. We propose a new class of mechanism, the \emph{elicited tax}, for such settings. The elicited tax uses an observable aggregate to elicit private information about marginal contributions, and a scored tax to penalize reports which are inconsistent with the observable aggregate and other reports. In this paper, we define a notion of strict propriety for elicited taxes, show that under perfect competition reports are Nash equilibria if and only if they are consistent with the observable aggregate, and that strictly proper elicited taxes ensure socially optimal output and externality production. We then study a particular strictly proper elicited tax, the \emph{Brier-Pigou} tax, which combines a modified Brier scoring rule with a Pigouvian tax. Numerical experiments highlight three properties of the Brier-Pigou tax: (1) the tax can maximize social welfare when firms are perfectly competitive; (2) the tax achieves close to optimal welfare even when firms are perfectly collusive reporters; and (3) the proportion of consistent lies which are risk-dominated by truthful reporting for each firm depends on the number of firms providing reports and that firm's true marginal externality.
+	</small>
+</p>
 
 
 ### <a name="conference papers"></a>conference papers
