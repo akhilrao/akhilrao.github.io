@@ -56,7 +56,7 @@ keywords: Rao, environmental economics, resource economics, space, applied theor
   <div class="column">
     <td width="50%" class = "right"> 
         <p>  I am a PhD candidate in the
-          <a href="https://www.colorado.edu/Economics/">Department of Economics</a> at the University of Colorado Boulder. My research is in environmental, natural resource, and computational economics. I am on the job market in 2019 and available for interviews at the ASSA annual meeting in Atlanta. <br/><br/>
+          <a href="https://www.colorado.edu/Economics/">Department of Economics</a> at the University of Colorado Boulder. My research is in environmental, natural resource, and computational economics. <br/><br/>
           In my job market paper I derive economic principles governing the choice of space traffic control policies and the effects of active debris removal technologies. I show that policies which target satellite launches instead of satellite ownership create incentives which can increase the risk of catastrophic collisions and runaway debris growth, and cannot incentivize firms to deorbit their satellites when socially necessary. I also show that active debris removal can reduce the risk of runaway debris growth no matter how it is financed, but can only reduce the risk of satellite-destroying collisions if satellite owners pay for it or if competition from removal-induced entry reduces the returns to satellite ownership. These results suggest that attempts to control orbital debris growth and collision risk through launch fees or debris removal subsidies may not be very effective or may backfire. <br/>
         </p>
     </td> 
