@@ -10,7 +10,9 @@ keywords: Rao, environmental economics, resource economics, space, applied theor
       <ul class="nav">
           <li><a href="{{ BASE_PATH }}/assets/rao_cv.pdf">cv</a></li>
           <li><a href="https://github.com/akhilrao">github</a></li>
+          <li><a href="https://github.com/akhilrao/blog">blog</a></li>
           <li><a href="https://twitter.com/ThatAkhilRao">twitter</a></li>
+          <li><a href="https://www.linkedin.com/in/akhil-rao-544b126a/">linkedin</a></li>
       </ul>
   </div>
 </div>
@@ -57,7 +59,7 @@ keywords: Rao, environmental economics, resource economics, space, applied theor
   <div class="column">
     <td width="50%" class = "right"> 
         <p>  I am a PhD candidate in the
-          <a href="https://www.colorado.edu/Economics/">Department of Economics</a> at the University of Colorado Boulder. My research is in environmental, natural resource, and computational economics. <br/><br/>
+          <a href="https://www.colorado.edu/Economics/">Department of Economics</a> at the University of Colorado Boulder. My research is in environmental, natural resource, and computational economics. Starting in the Fall of 2019, I will be an Assistant Professor of Economics at <a href="https://www.middlebury.edu/academics/econ">Middlebury College</a>. <br/><br/> 
           In my job market paper I derive economic principles governing the choice of space traffic control policies and the effects of active debris removal technologies. I show that policies which target satellite launches instead of satellite ownership create incentives which can increase the risk of catastrophic collisions and runaway debris growth, and cannot incentivize firms to deorbit their satellites when socially necessary. I also show that active debris removal can reduce the risk of runaway debris growth no matter how it is financed, but can only reduce the risk of satellite-destroying collisions if satellite owners pay for it or if competition from removal-induced entry reduces the returns to satellite ownership. These results suggest that attempts to control orbital debris growth and collision risk through launch fees or debris removal subsidies may not be very effective or may backfire. <br/>
         </p>
     </td> 
