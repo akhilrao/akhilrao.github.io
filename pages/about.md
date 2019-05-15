@@ -6,9 +6,7 @@ description: Akhil Rao is a PhD candidate in Economics at the University of Colo
 
 ### who are you?
 
-I am a PhD candidate in the
-[Department of Economics](https://www.colorado.edu/Economics/)
-at the University of Colorado Boulder. My research is
+I am an economist working on outer space-related issues. My research is broadly
 in environmental, natural resource, and computational economics.
 
 I received a BS in [Business Administration](https://soba.ucr.edu/)
