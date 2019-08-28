@@ -1,7 +1,7 @@
 ---
 layout: frontpage
 title: Akhil Rao
-description: Akhil Rao is a PhD candidate in Economics at the University of Colorado - Boulder; research in environmental and natural resource economics
+description: Akhil Rao is an Assistant Professor of Economics at Middlebury College; research in environmental and natural resource economics
 keywords: Rao, environmental economics, resource economics, space, applied theory, computational economics
 ---
 
