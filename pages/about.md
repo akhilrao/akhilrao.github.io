@@ -6,7 +6,7 @@ description: Akhil Rao is a PhD candidate in Economics at the University of Colo
 
 ### who are you?
 
-<head>
+<!--<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {
@@ -35,7 +35,7 @@ description: Akhil Rao is a PhD candidate in Economics at the University of Colo
     }
 }
 </style>
-</head>
+</head> -->
 
 <div class="row">
   <div class="column">
