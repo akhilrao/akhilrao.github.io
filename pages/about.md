@@ -13,10 +13,10 @@ description: Akhil Rao is a PhD candidate in Economics at the University of Colo
     box-sizing: border-box;
 }
 
-/* Create two equal columns that floats next to each other */
+/* Create two equal columns that float next to each other */
 .column {
     float: left;
-    width: 50%;
+    width: 100%;
     padding: 15px;
     /*height: 300px;*/ /* Should be removed. Only for demonstration */
 }
@@ -39,13 +39,13 @@ description: Akhil Rao is a PhD candidate in Economics at the University of Colo
 
 <div class="row">
   <div class="column">
-    <td width="75%" class = "left"> 
+    <td width="85%" class = "left"> 
         <p>  I am an Assistant Professor of Economics at Middlebury College, working mostly on outer space-related issues.<br/><br/> I received a BS in Business Administration in 2012 from the University of California, Riverside, and an MA in Economics in 2016 from the University of Colorado Boulder; my PhD adviser was <a href="http://spot.colorado.edu/~daka9342/">Dan Kaffine</a>. Before graduate school, I worked on motion sensor data analysis for action sports.
         </p>
     </td> 
   </div> 
     <div class="column">
-    <td width="25%" class = "right">
+    <td width="15%" class = "right">
        <img src="../assets/pics/akhil_hat.png"
                     title="Akhil Rao"
       />
