@@ -6,20 +6,22 @@ description: Akhil Rao is a PhD candidate in Economics at the University of Colo
 
 ### who are you?
 
-<div class="span2">
-<a href="../assets/pics/akhil_hat.png">
-    <img src="../assets/pics/akhil_hat.png"
-          title="Akhil Rao" alt="Akhil Rao"/></a>
+<div class="row">
+  <div class="column">
+    <td width="25%" class = "right">
+       <img src="../assets/pics/akhil_hat.png"
+                    title="Akhil Rao"
+      />
+    </td>
+  </div>
+  <div class="column">
+    <td width="75%" class = "left"> 
+        <p>  I am an Assistant Professor of Economics at Middlebury College, working mostly on outer space-related issues.<br/><br/> I received a BS in Business Administration in 2012 from the University of California, Riverside, and an MA in Economics in 2016 from the University of Colorado Boulder; my PhD adviser was <a href="http://spot.colorado.edu/~daka9342/">Dan Kaffine</a>. Before graduate school, I worked on motion sensor data analysis for action sports.
+        </p>
+    </td> 
+  </div> 
 </div>
 
-I am an Assistant Professor of Economics at Middlebury College, working mostly on outer space-related issues.
-
-I received a BS in [Business Administration](https://soba.ucr.edu/)
-in 2012 from the
-University of California, Riverside, and an
-MA in Economics in 2016 from the
-University of Colorado Boulder; my PhD adviser was
-[Dan Kaffine](http://spot.colorado.edu/~daka9342/). Before graduate school, I worked on motion sensor data analysis for action sports.
 
 ### what do you do?
 
