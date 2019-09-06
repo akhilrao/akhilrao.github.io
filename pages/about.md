@@ -57,7 +57,7 @@ description: Akhil Rao is a PhD candidate in Economics at the University of Colo
 
 ### what do you do?
 
-This year, I'm teaching statistics and environmental economics. Pedagogically, I'm very interested in the use of games and experiential learning to teach mathematical and economic concepts.
+This year I'm teaching statistics (ECON 210) and environmental economics (ECON 265). Pedagogically, I'm very interested in the use of games and experiential learning to teach mathematical and economic concepts.
 
 My research is in three agendas: first, the economics of outer space; second, computational economics; third, the economics of scientific investments. Most of my research is motivated by a desire to see us (humans) make better use our limited resources and fragile environments.
 
