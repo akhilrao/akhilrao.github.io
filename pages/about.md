@@ -55,7 +55,7 @@ description: Akhil Rao is a PhD candidate in Economics at the University of Colo
 </div>
 </table>
 
-### what do you do?
+### what is your work about?
 
 This year I'm teaching statistics (ECON 210) and environmental economics (ECON 265). Pedagogically, I'm very interested in the use of games and experiential learning to teach mathematical and economic concepts.
 
@@ -88,7 +88,7 @@ While the costs of collider investments are often relatively easy to measure, th
 <!-- The Volkswagen emissions scandal is one of the higher-profile cases in recent memory where the assumption of "no strategic behavior" broke down., with [nontrivial public health consequences](http://iopscience.iop.org/article/10.1088/1748-9326/aa5987).--> <!-- A related issue I'm interested in is the  of marginal damages or abatements, given some restrictions on the damage or abatement cost functions. Knowing the limits of truthful elicitation in settings with externalities can help policy makers anticipate policy instrument failure modes. Knowing how the elicitation complexity of (for example) marginal abatements scales with the convexity of the abatement cost function can help policy makers design better instruments to elicit marginal abatements. -->
 
 
-### what else are you into?
+### what is your play about?
 
 In my free time I make [silly Twitter bots](https://twitter.com/bakRabot), play video games (online RTS and single-player RPGs), and think about the economics of fictional worlds. I like bike rides, snowboarding, sci-fi/fantasy and historical fiction, tea, rock climbing, and judo. I take care of a cat who thinks I'm kind of slow, and some plants who think the cat doesn't understand "no". <!-- [e.g. [1](https://akhilrao.github.io/blog/micro%20theory/2018/06/05/zero-dawn-economy/),[2](https://akhilrao.github.io/blog/micro%20theory/2016/08/15/dark-forest-simple-model/)] -->
 
