@@ -15,6 +15,11 @@ MA in Economics in 2016 from the
 University of Colorado Boulder; my PhD adviser was
 [Dan Kaffine](http://spot.colorado.edu/~daka9342/). Before graduate school, I worked on motion sensor data analysis for action sports.
 
+  <div class="span2">
+        <a href="../assets/pics/akhil_hat.png">
+            <img src="../assets/pics/akhil_hat.png"
+                  title="Akhil Rao" alt="Akhil Rao"/></a>
+        </div>
 ### what do you do?
 
 My research is in three agendas: first, the economics of outer space; second, computational economics; third, the economics of scientific investments. Most of my research is motivated by a desire to see us (humans) make better use our limited resources and fragile environments.
@@ -37,14 +42,18 @@ I am also interested in applying tools from [information elicitation](https://si
 
 #### the economics of scientific investments
 
-This is a relatively new agenda for me and one I'm very excited about. The broad question I'm considering is, "How should society prioritize resources among investments in scientific progress?" Specifically, I'm working on the economics of investments in particle colliders for high-energy physics.
+This is a relatively new agenda for me and one I'm very excited about. The broad question I'm considering is, "How should society prioritize resources among investments in scientific progress?"  While cost-benefit analysis is the guiding principle, there are significant challenges in calculating the benefits of scientific investments, many of which involve fundamental limits of human knowledge and significant lags in realizing benefits. It is difficult to assign probabilities to outcomes we can't conceive of, and it may take many decades before we realize the value of a contribution. I often think of the Fourier transform in this context: though it was known since at least around 1823, it wasn't until 1930 that Norbert Wiener demonstrated the utility of the equation [source](https://pulse.embs.org/january-2016/highlights-in-the-history-of-the-fourier-transform/). In this context, I wonder under what assumptions cost-benefit analyses of supporting the mathematicians developing these tools would have declared their work beneficial enough to publicly support.
+
+Currently I'm working on the economics of investments in particle colliders for high-energy physics. One of the central aims of particle physics is to understand the elementary building blocks of nature. The consensus in the particle physics community seems to be that larger particle colliders are necessary to select between different high-energy theories.
+
+While the costs of collider investments are often relatively easy to measure, their benefits are varied and relatively difficult to measure. They span direct and indirect benefits received by regional economies, including scientific workforces and those who would employ them later, benefits conferred from spinoff technologies (some which are predictable and some which are less so), national security benefits of maintaining a buffer of skilled scientists and engineers, and the direct scientific benefits of the work itself. My goal as an economist is to provide best practices for conducting cost-benefit analyses for new collider investments, and policy guidelines to maximize the net benefits of such investments. 
 
 <!-- The Volkswagen emissions scandal is one of the higher-profile cases in recent memory where the assumption of "no strategic behavior" broke down., with [nontrivial public health consequences](http://iopscience.iop.org/article/10.1088/1748-9326/aa5987).--> <!-- A related issue I'm interested in is the  of marginal damages or abatements, given some restrictions on the damage or abatement cost functions. Knowing the limits of truthful elicitation in settings with externalities can help policy makers anticipate policy instrument failure modes. Knowing how the elicitation complexity of (for example) marginal abatements scales with the convexity of the abatement cost function can help policy makers design better instruments to elicit marginal abatements. -->
 
 
 ### what are some non-researchy things you're into?
 
-In my free time I make [silly Twitter bots](https://twitter.com/bakRabot), play video games (online RTS and single-player RPGs), and think about the economics of fictional worlds. I take care of a cat who thinks I'm kind of slow, and some plants who think the cat doesn't understand "no". <!-- [e.g. [1](https://akhilrao.github.io/blog/micro%20theory/2018/06/05/zero-dawn-economy/),[2](https://akhilrao.github.io/blog/micro%20theory/2016/08/15/dark-forest-simple-model/)] -->.
+In my free time I make [silly Twitter bots](https://twitter.com/bakRabot), play video games (online RTS and single-player RPGs), and think about the economics of fictional worlds. I take care of a cat who thinks I'm kind of slow, and some plants who think the cat doesn't understand "no". <!-- [e.g. [1](https://akhilrao.github.io/blog/micro%20theory/2018/06/05/zero-dawn-economy/),[2](https://akhilrao.github.io/blog/micro%20theory/2016/08/15/dark-forest-simple-model/)] -->
 
 <!-- [curriculum vitae ![CV as pdf](icons16/pdf-icon.png)]({{ BASE_PATH }}/assets/rao_cv.pdf)<br/>
  [orcid](https://orcid.org): [0000-0002-4914-6671](https://orcid.org/0000-0002-4914-6671)<br/>
@@ -61,7 +70,7 @@ In my free time I make [silly Twitter bots](https://twitter.com/bakRabot), play 
             <a href="http://www.middlebury.edu/academics/econ/faculty_staff_officehours/node/623754">Akhil Rao</a><br/>
             <a href="http://www.middlebury.edu/academics/econ">Department of Economics</a><br/>
             <a href="https://www.middlebury.edu">Middlebury College</a><br/>
-            Warner Hall 502A</a><br/>
+            Warner Hall 502A<br/>
             Middlebury, VT 05753<br/>
             USA<br/><br/>
 
@@ -73,10 +82,5 @@ In my free time I make [silly Twitter bots](https://twitter.com/bakRabot), play 
             </div>
         </div>
 
- <!--       <div class="span2">
-        <a href="../assets/pics/akhil_portrait.png">
-            <img src="../assets/pics/akhil_portrait.png"
-                  title="Akhil Rao" alt="Akhil Rao"/></a>
-        </div> -->
     </div>
 </div>
