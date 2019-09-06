@@ -37,6 +37,7 @@ description: Akhil Rao is a PhD candidate in Economics at the University of Colo
 </style>
 </head> -->
 
+<table style="width:90%">
 <div class="row">
   <div class="column">
     <td width="85%" class = "left"> 
@@ -52,7 +53,7 @@ description: Akhil Rao is a PhD candidate in Economics at the University of Colo
     </td>
   </div>
 </div>
-
+</table>
 
 ### what do you do?
 
