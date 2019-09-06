@@ -6,6 +6,12 @@ description: Akhil Rao is a PhD candidate in Economics at the University of Colo
 
 ### who are you?
 
+<div class="span2">
+<a href="../assets/pics/akhil_hat.png">
+    <img src="../assets/pics/akhil_hat.png"
+          title="Akhil Rao" alt="Akhil Rao"/></a>
+</div>
+
 I am an Assistant Professor of Economics at Middlebury College, working mostly on outer space-related issues.
 
 I received a BS in [Business Administration](https://soba.ucr.edu/)
@@ -15,11 +21,6 @@ MA in Economics in 2016 from the
 University of Colorado Boulder; my PhD adviser was
 [Dan Kaffine](http://spot.colorado.edu/~daka9342/). Before graduate school, I worked on motion sensor data analysis for action sports.
 
-  <div class="span2">
-        <a href="../assets/pics/akhil_hat.png">
-            <img src="../assets/pics/akhil_hat.png"
-                  title="Akhil Rao" alt="Akhil Rao"/></a>
-        </div>
 ### what do you do?
 
 My research is in three agendas: first, the economics of outer space; second, computational economics; third, the economics of scientific investments. Most of my research is motivated by a desire to see us (humans) make better use our limited resources and fragile environments.
