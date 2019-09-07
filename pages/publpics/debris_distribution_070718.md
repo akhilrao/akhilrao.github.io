@@ -12,7 +12,7 @@ title: The lonesome crowded frontier
   </div>
 </div> 
 
-![Locations of debris objects in LEO](../../assets/bigpublpics/leo_gabbard_all.png)
+![Locations of debris objects in LEO](../../assets/bigpublpics/debris_distribution_070718.png)
 
 **Where are debris located?** &mdash; The figure shows the locations of debris in low-Earth orbit. Panel a shows the [apogee and perigee](https://en.wikipedia.org/wiki/Apsis) against the [orbital period](https://en.wikipedia.org/wiki/Orbital_period) for all tracked debris orbiting the Earth, using [July 07 2018 data from the Joint Space Operations Center](https://www.space-track.org). Panels b, c, and d show histograms of debris over mean altitude, eccentricity, and inclination.
 
