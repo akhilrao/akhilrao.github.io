@@ -6,8 +6,8 @@ title: Where are active satellites located?
 <div class="navbar">
   <div class="navbar-inner">
       <ul class="nav">
-          <li><a href="value_diff_1.html">prev</a></li>
-          <li><a href="leo_geo_gabbard.html">next</a></li>
+          <li><a href="value_diff_1.md">prev</a></li>
+          <li><a href="leo_geo_gabbard.md">next</a></li>
       </ul>
   </div>
 </div> 

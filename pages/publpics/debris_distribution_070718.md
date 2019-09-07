@@ -6,8 +6,8 @@ title: The lonesome crowded frontier
 <div class="navbar">
   <div class="navbar-inner">
       <ul class="nav">
-          <li><a href="apo_peri_overlay.html">prev</a></li>
-          <li><a href="leo_gabbard_all.html">next</a></li>
+          <li><a href="apo_peri_overlay.md">prev</a></li>
+          <li><a href="leo_gabbard_all.md">next</a></li>
       </ul>
   </div>
 </div> 

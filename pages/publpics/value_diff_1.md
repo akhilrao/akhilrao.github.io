@@ -6,8 +6,8 @@ title: How much better than open access can we do?
 <div class="navbar">
   <div class="navbar-inner">
       <ul class="nav">
-          <li><a href="biffplot3.html">prev</a></li>
-          <li><a href="apo_peri_overlay.html">next</a></li>
+          <li><a href="biffplot3.md">prev</a></li>
+          <li><a href="apo_peri_overlay.md">next</a></li>
       </ul>
   </div>
 </div>

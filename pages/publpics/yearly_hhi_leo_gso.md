@@ -6,8 +6,8 @@ title: Worldwide commercial satellite launch services market concentration, 1996
 <div class="navbar">
   <div class="navbar-inner">
       <ul class="nav">
-          <li><a href="launch_summary.html">prev</a></li>
-          <li><a href="biffplot3.html">next</a></li>
+          <li><a href="launch_summary.md">prev</a></li>
+          <li><a href="biffplot3.md">next</a></li>
       </ul>
   </div>
 </div>

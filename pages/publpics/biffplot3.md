@@ -6,8 +6,8 @@ title: When are open-access orbital steady states stable?
 <div class="navbar">
   <div class="navbar-inner">
       <ul class="nav">
-          <li><a href="yearly_hhi_leo_gso.html">prev</a></li>
-          <li><a href="value_diff_1.html">next</a></li>
+          <li><a href="yearly_hhi_leo_gso.md">prev</a></li>
+          <li><a href="value_diff_1.md">next</a></li>
       </ul>
   </div>
 </div>

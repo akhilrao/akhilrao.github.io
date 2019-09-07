@@ -6,8 +6,8 @@ title: The lonesome crowded frontier
 <div class="navbar">
   <div class="navbar-inner">
       <ul class="nav">
-          <li><a href="debris_distribution_070718.html">prev</a></li>
-          <li><a href="launch_summary.html">next</a></li>
+          <li><a href="debris_distribution_070718.md">prev</a></li>
+          <li><a href="launch_summary.md">next</a></li>
       </ul>
   </div>
 </div> 
