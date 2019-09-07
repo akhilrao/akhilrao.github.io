@@ -21,24 +21,24 @@ keywords: Rao, environmental economics, resource economics, space, applied theor
 <table class="wide">
 <tr>
   <td class="left">
-    <a href="publpics/debris_distribution_070718.md">
+    <a href="pages/publpics/debris_distribution_070718.md">
         <img src="../../assets/publpics/debris_distribution_070718.png" alt="Locations of LEO debris in Space-Track.Org database (July 07 2018)" title="Where are debris in LEO?"/>
     </a>
   </td>
   <td class="right">
-    <a href="publpics/yearly_hhi_leo_gso.md">
+    <a href="pages/publpics/yearly_hhi_leo_gso.md">
         <img src="../../assets/publpics/yearly_hhi_leo_gso.png" alt="Worldwide commercial satellite launch services market concentration, 1996-2015" title="How competitive is the satellite launch industry in the New Space era?"/>
     </a>
   </td>
 </tr>
 <tr>
   <td class="left">
-    <a href="publpics/biffplot3.md">
+    <a href="pages/publpics/biffplot3.md">
         <img src="../../assets/publpics/biffplot3.png" alt="Open access and orbital stability" title="When are open-access orbital steady states stable?"/>
     </a>
   </td>
   <td class="right">
-    <a href="publpics/value_diff_1.md">
+    <a href="pages/publpics/value_diff_1.md">
         <img src="../../assets/publpics/value_diff_1.png" alt="The gains from optimal launch control" title="What do society's gains from optimal orbit use look like?"/>
     </a>
   </td>
