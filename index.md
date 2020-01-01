@@ -38,8 +38,8 @@ keywords: Rao, environmental economics, resource economics, space, applied theor
     </a>
   </td>
   <td class="right">
-    <a href="pages/publpics/value_diff_1.html">
-        <img src="../../assets/publpics/value_diff_1.png" alt="The gains from optimal launch control" title="What do society's gains from optimal orbit use look like?"/>
+    <a href="pages/publpics/trading_over_time.html">
+        <img src="../../assets/publpics/trading_over_time.png" alt="Water allocation trading in Australia, 2008&ndash;2019" title="Water allocation trading in Australia, 2008&ndash;2019"/>
     </a>
   </td>
 </tr>
