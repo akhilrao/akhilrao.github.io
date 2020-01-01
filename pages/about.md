@@ -58,7 +58,7 @@ While the costs of collider investments are often relatively easy to measure, th
 
 ### what is your play about?
 
-In my free time I make [silly Twitter bots](https://twitter.com/bakRabot), play video games (online RTS and single-player RPGs), and think about the economics of fictional worlds. I like bike rides, snowboarding, sci-fi/fantasy and historical fiction, tea, rock climbing, and judo. I take care of a cat who thinks I'm kind of slow, and some plants who think the cat doesn't understand "no".
+In my free time I make [silly Twitter bots](https://twitter.com/bakRabot), play video games (online RTS and single-player RPGs), and think about the economics of fictional worlds. I like bike rides, snowboarding, sci-fi/fantasy and historical fiction, tea, rock climbing, and judo. I take care of a cat who thinks I'm kind of slow.
 
 ---
 
