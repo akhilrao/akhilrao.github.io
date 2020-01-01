@@ -45,13 +45,13 @@ keywords: Rao, environmental economics, resource economics, space, applied theor
 </tr>
 </table>
 
-<div class="navbar">
+<!-- <div class="navbar">
   <div class="navbar-inner">
       <ul class="nav">
           <li><a href="morefigs.html">see more figures</a></li>
       </ul>
   </div>
-</div>
+</div> -->
 
 <!-- <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">

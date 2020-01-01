@@ -1,41 +1,10 @@
 ---
 layout: page
 title: about
-description: Akhil Rao is a PhD candidate in Economics at the University of Colorado - Boulder; research in environmental and natural resource economics
+description: Akhil Rao is an Assistant Professor of Economics at Middlebury College; research in environmental and natural resource economics
 ---
 
 ### who are you?
-
-<!--<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-    box-sizing: border-box;
-}
-
-/* Create two equal columns that float next to each other */
-.column {
-    float: left;
-    width: 100%;
-    padding: 15px;
-    /*height: 300px;*/ /* Should be removed. Only for demonstration */
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 500px) {
-    .column {
-        width: 100%;
-    }
-}
-</style>
-</head> -->
 
 <table style="width:100%">
 <div class="row">
@@ -59,7 +28,7 @@ description: Akhil Rao is a PhD candidate in Economics at the University of Colo
 
 This year I'm teaching statistics (ECON 210) and environmental economics (ECON 265). Pedagogically, I'm very interested in the use of games and experiential learning to teach mathematical and economic concepts.
 
-My research is in three agendas: first, the economics of outer space; second, computational economics; third, the economics of scientific investments. Most of my research is motivated by a desire to see us (humans) make better use our limited resources and fragile environments.
+My research is broadly concentrated in two agendas: first, the economics of outer space; second, computational economics. Most of my research is motivated by a desire to see us (humans) make better use our limited resources and fragile environments.
 
 #### the economics of outer space
 
@@ -73,29 +42,23 @@ While my research so far has focused on commercial orbit use, these topics are c
 
 My interest in computational economics encompasses computational modeling of economic systems and assessing the economic policy consequences of computational tools and limitations. 
 
-My work in computational modeling has primarily focused on ways to speed up dynamic programming algorithms and efficient methods to simulate agent-based models of rational expectations equilibria and Arrow-Debreu markets. Agent-based simulations are particularly interesting to me in that their limitations often suggest practical limitations which real humans and organizations need to work around, and allow researchers to assess the computational credibility of specific equilibrium concepts and policy instruments.
+My work in computational modeling has primarily focused on ways to speed up dynamic programming algorithms and efficient methods to simulate large congestion games with heterogeneous agents. Agent-based simulations are particularly interesting to me in that their limitations often suggest practical limitations which real humans and organizations need to work around, and allow researchers to assess the computational credibility of specific equilibrium concepts and policy instruments.
 
 My work on the economic policy consequences of computation has been focused on applying tools from [information elicitation](https://sites.google.com/site/informationelicitation/) to externality problems in environmental economics. Many of these problems require a regulator to elicit reports from parties generating externalities to assess compliance and liability. Using these reports as the basis of corrective policy gives externality creators an incentive to manipulate their reports to reduce their liability. In ongoing work, my coauthor and I uncover some features of economically-efficient elicitation and corrective taxation mechanisms which use independently-obtained aggregate or ambient data to verify marginal emissions reports from polluters. We numerically analyze a specific scheme, the Brier-Pigou tax, and consider its robustness to strategic collusion in reporting. I think it would be useful for policy design if this could be generalized to an understanding of how the [elicitation complexity](https://arxiv.org/abs/1506.07212) of marginal damages or abatements scales with uncertainty and convexity in the damage or abatement cost functions. Ultimately, every regulator must query some information and perform some calculations, and this has economic implications for the systems they query and regulate. This research agenda connects to broader questions about the policy design implications of information requirements and bounded computational abilities.
 
+<!-- 
 #### the economics of scientific investments
 
-This is a relatively new agenda for me, and one I'm very excited about. The broad question I'm considering is, "How should society prioritize resources among investments in scientific progress?"  While cost-benefit analysis is the guiding principle, there are significant challenges in calculating the benefits of scientific investments, many of which involve fundamental limits of human knowledge and significant lags in realizing benefits. It is difficult to assign probabilities to outcomes we can't conceive of, and it may take many decades before we realize the value of a contribution. I often think of the Fourier transform in this context: [though it was known since at least around 1823, it wasn't until 1930 that Norbert Wiener demonstrated the broad utility of the equation](https://pulse.embs.org/january-2016/highlights-in-the-history-of-the-fourier-transform/). In this context, I wonder under what assumptions cost-benefit analyses of supporting the mathematicians developing these tools would have declared their work beneficial enough to publicly support.
+The broad question I'm considering is, "How should society prioritize resources among investments in scientific progress?"  While cost-benefit analysis is the guiding principle, there are significant challenges in calculating the benefits of scientific investments, many of which involve fundamental limits of human knowledge and significant lags in realizing benefits. It is difficult to assign probabilities to outcomes we can't conceive of, and it may take many decades before we realize the value of a contribution. I often think of the Fourier transform in this context: [though it was known since at least around 1823, it wasn't until 1930 that Norbert Wiener demonstrated the broad utility of the equation](https://pulse.embs.org/january-2016/highlights-in-the-history-of-the-fourier-transform/). In this context, I wonder under what assumptions cost-benefit analyses of supporting the mathematicians developing these tools would have declared their work beneficial enough to publicly support.
 
-Currently I'm working on the economics of investments in particle colliders for high-energy physics. One of the central aims of particle physics is to understand the elementary building blocks of nature. The consensus in the particle physics community seems to be that larger particle colliders are necessary to select between different high-energy theories.
+Currently I'm thinking about the economics of investments in particle colliders for high-energy physics. One of the central aims of particle physics is to understand the elementary building blocks of nature. The consensus in the particle physics community seems to be that larger particle colliders are necessary to select between different high-energy theories.
 
-While the costs of collider investments are often relatively easy to measure, their benefits are varied and relatively difficult to measure. They span direct and indirect benefits received by regional economies, including scientific workforces and those who would employ them later, benefits conferred from spinoff technologies (some which are predictable and some which are less so), national security benefits of maintaining a buffer of skilled scientists and engineers, and the direct scientific benefits of the work itself. My goal here as an economist is to frame the ongoing debate about collider investments in the US in rigorous economic terms, provide best practices for conducting cost-benefit analyses for new collider investments around the world, and develop policy guidelines to maximize the net benefits of such investments.
-
-<!-- The Volkswagen emissions scandal is one of the higher-profile cases in recent memory where the assumption of "no strategic behavior" broke down., with [nontrivial public health consequences](http://iopscience.iop.org/article/10.1088/1748-9326/aa5987).--> <!-- A related issue I'm interested in is the  of marginal damages or abatements, given some restrictions on the damage or abatement cost functions. Knowing the limits of truthful elicitation in settings with externalities can help policy makers anticipate policy instrument failure modes. Knowing how the elicitation complexity of (for example) marginal abatements scales with the convexity of the abatement cost function can help policy makers design better instruments to elicit marginal abatements. -->
+While the costs of collider investments are often relatively easy to measure, their benefits are varied and relatively difficult to measure. They span direct and indirect benefits received by regional economies, including scientific workforces and those who would employ them later, benefits conferred from spinoff technologies (some which are predictable and some which are less so), national security benefits of maintaining a buffer of skilled scientists and engineers, and the direct scientific benefits of the work itself. My goal here as an economist is to frame the ongoing debate about collider investments in the US in rigorous economic terms, provide best practices for conducting cost-benefit analyses for new collider investments around the world, and develop policy guidelines to maximize the net benefits of such investments. -->
 
 
 ### what is your play about?
 
-In my free time I make [silly Twitter bots](https://twitter.com/bakRabot), play video games (online RTS and single-player RPGs), and think about the economics of fictional worlds. I like bike rides, snowboarding, sci-fi/fantasy and historical fiction, tea, rock climbing, and judo. I take care of a cat who thinks I'm kind of slow, and some plants who think the cat doesn't understand "no". <!-- [e.g. [1](https://akhilrao.github.io/blog/micro%20theory/2018/06/05/zero-dawn-economy/),[2](https://akhilrao.github.io/blog/micro%20theory/2016/08/15/dark-forest-simple-model/)] -->
-
-<!-- [curriculum vitae ![CV as pdf](icons16/pdf-icon.png)]({{ BASE_PATH }}/assets/rao_cv.pdf)<br/>
- [orcid](https://orcid.org): [0000-0002-4914-6671](https://orcid.org/0000-0002-4914-6671)<br/>
-[google scholar](https://scholar.google.com/citations?sortby=pubdate&hl=en&user=42tCp5UAAAAJ&view_op=list_works)<br/>
-[impactstory](https://impactstory.org/u/0000-0002-4914-6671) -->
+In my free time I make [silly Twitter bots](https://twitter.com/bakRabot), play video games (online RTS and single-player RPGs), and think about the economics of fictional worlds. I like bike rides, snowboarding, sci-fi/fantasy and historical fiction, tea, rock climbing, and judo. I take care of a cat who thinks I'm kind of slow, and some plants who think the cat doesn't understand "no".
 
 ---
 
