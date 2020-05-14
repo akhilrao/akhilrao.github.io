@@ -21,7 +21,7 @@ description: Akhil Rao's research
 
 ### <a name="working papers"></a>working papers
 
-Akhil Rao, Matthew Burgess, Daniel Kaffine: *Orbital-use fees could more than quadruple the value of the space industry* (forthcoming, *Proceedings of the National Academy of Sciences*) [SI Appendix](../../assets/working_papers/OUF_PNAS_unformatted.pdf)
+Akhil Rao, Matthew Burgess, Daniel Kaffine: *Orbital-use fees could more than quadruple the value of the space industry* (forthcoming, *Proceedings of the National Academy of Sciences*) [SI Appendix](../../assets/working_papers/OUF_SI_PNAS.pdf)
 
 <p class="tab">
 	<small>
