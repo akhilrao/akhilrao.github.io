@@ -19,15 +19,18 @@ description: Akhil Rao's research
     </div>
 </div>
 
-### <a name="working papers"></a>working papers
+### <a name="journal articles"></a>journal articles
 
-Akhil Rao, Matthew Burgess, Daniel Kaffine: *Orbital-use fees could more than quadruple the value of the space industry* (forthcoming, *Proceedings of the National Academy of Sciences*) [SI Appendix](../../assets/working_papers/OUF_SI_PNAS.pdf)
+Akhil Rao, Matthew Burgess, Daniel Kaffine: *Orbital-use fees could more than quadruple the value of the space industry* ((*Proceedings of the National Academy of Sciences*)[https://www.pnas.org/content/117/23/12756]) [Unformatted article](../../assets/published_papers/Rao et al 2020.pdf) [SI Appendix](../../assets/published_papers/Rao et al 202 SI.pdf)
 
 <p class="tab">
 	<small>
 		<b>Abstract:</b> The space industry’s rapid recent growth represents the latest Tragedy of the Commons. Satellites launched into orbit contribute to&mdash;and risk damage from&mdash;a growing  buildup of space debris and other satellites. Collision risk from this orbital congestion is costly to satellite operators. Technological and managerial solutions&mdash;such as active debris removal or end-of-life satellite deorbit guidelines&mdash;are currently being explored by regulatory authorities. However, none of these approaches address the underlying incentive problem: satellite operators do not account for costs they impose on each other via collision risk. Here, we show an internationally harmonized orbital-use fee can correct these incentives and substantially increase the value of the space industry. We construct and analyze a coupled physical-economic model of commercial launches and debris accumulation in low-Earth orbit. Similar to carbon taxes, our model projects an optimal fee that rises at a rate of 14% per year, equal to roughly $235,000 per satellite-year in 2040. The long-run value of the satellite industry would more than quadruple by 2040&mdash;increasing from around $600 billion under business-as-usual to around $3 trillion. In contrast, we project  purely technological solutions are unlikely to fully address the problem of orbital congestion. Indeed, we find debris removal sometimes worsens economic damages from congestion by increasing launch incentives. In other sectors, addressing the Tragedy of the Commons has often been a game of catch-up with substantial social costs. The infant space industry can avert these costs before they escalate.
 	</small>
 </p>
+
+
+### <a name="working papers"></a>working papers
 
 Akhil Rao: *Economic Principles of Space Traffic Control* (job market paper) [draft](../../assets/working_papers/Economic_Principles_of_Space_Traffic_Control.pdf)
 
