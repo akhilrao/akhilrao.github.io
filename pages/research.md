@@ -34,19 +34,19 @@ Akhil Rao, Matthew Burgess, Daniel Kaffine: *Orbital-use fees could more than qu
 
 ### <a name="working papers"></a>working papers
 
+Akhil Rao, Giacomo Rondina: *Open access to orbit and runaway space debris growth* [draft](../../assets/working_papers/Cost_in_Space.pdf)
+
+<p class="tab">
+	<small>
+		<b>Abstract:</b> As Earth's orbital space fills with satellites and debris, debris-producing collisions between orbiting bodies become more likely. Runaway space debris growth, known as Kessler Syndrome, may render Earth's orbits unusable for centuries. We present a dynamic physico-economic model of Earth orbit use under rational expectations with endogenous collision risk and Kessler Syndrome. When satellites can be destroyed in collisions with debris and other satellites, there is a manifold of open-access equilibria rather than a unique equilibrium. When debris can collide to produce more debris, this manifold allows Kessler Syndrome to occur along equilibrium paths. We show open access is increasingly and inefficiently likely to cause Kessler Syndrome as satellites become more profitable, highlighting the need for orbital-use management.
+	</small>
+</p>
+
 Akhil Rao: *Economic Principles of Space Traffic Control* (job market paper) [draft](../../assets/working_papers/Economic_Principles_of_Space_Traffic_Control.pdf)
 
 <p class="tab">
 	<small>
 		<b>Abstract:</b> Open access to Earth's orbits presents a unique regulatory challenge. In this paper, I derive economic principles governing the choice of space traffic control policies. I show that policies which target satellite ownership, such as satellite taxes or permits, achieve greater expected social welfare than policies which target satellite launches, such as launch taxes or permits. Price or quantity policies can achieve equal expected social welfare due to the symmetry of uncertainty between regulators and firms. I also show that active debris removal can reduce the risk of runaway debris growth no matter how it is financed, but can only reduce the risk of satellite-destroying collisions if satellite owners pay for it or if competition from removal--induced entry reduces the returns to satellite ownership. Technical solutions to space traffic control tend to emphasize launch restrictions or public funding of debris removal technology development and use, but often ignore that current and prospective orbit users dissipate rents under open access. While satellite-focused policies can achieve first-best orbit use, attempts to control orbital debris growth and collision risk through launch fees or debris removal subsidies under open access may be ineffective or backfire.
-	</small>
-</p>
-
-Akhil Rao, Giacomo Rondina: *Cost in Space: Debris and Collision Risk in the Orbital Commons* [draft](../../assets/working_papers/Cost_in_Space.pdf)
-
-<p class="tab">
-	<small>
-		<b>Abstract:</b> As Earth's orbital space fills with satellites and debris, debris-producing collisions between orbiting bodies become more likely. Runaway debris growth, known as Kessler Syndrome, may render Earth's orbits unusable for millennia. We present the first dynamic physico-economic model of Earth orbit use under rational expectations with endogenous collision risk and Kessler Syndrome. As long as satellites can be destroyed in collisions with debris and other satellites, there is a continuum of open-access equilibria determined by the excess return on a satellite. Under reasonable physical assumptions, all are inefficient. When autocatalytic debris production is possible this continuum allows for multiple steady states, which can be destabilized by increases in the excess return on a satellite. Further, open-access launch rate paths are likely to overshoot steady states. Overshooting can cause short-run rebound effects when physical or economic parameters change, for example when environmental processes increase the debris decay rate or the costs of launching a satellite decrease. Kessler Syndrome is inefficient, and open access is increasingly likely to cause it as the excess return on a satellite increases.
 	</small>
 </p>
 
