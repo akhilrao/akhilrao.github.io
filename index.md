@@ -34,13 +34,13 @@ keywords: Rao, environmental economics, resource economics, space, applied theor
 </tr>
 <tr>
   <td class="left">
-    <a href="pages/publpics/biffplot3.html">
-        <img src="../../assets/publpics/kessler_basin_small.png" alt="Open access and orbital stability" title="When are open-access orbital steady states stable?"/>
+      <a href="pages/publpics/yearly_sat_hhi_leo.html">
+        <img src="../../assets/publpics/trading_over_time.png" alt="Water allocation trading in Australia, 2008&ndash;2019" title="Water allocation trading in Australia, 2008&ndash;2019"/>
     </a>
   </td>
   <td class="right">
-    <a href="pages/publpics/trading_over_time.html">
-        <img src="../../assets/publpics/trading_over_time.png" alt="Water allocation trading in Australia, 2008&ndash;2019" title="Water allocation trading in Australia, 2008&ndash;2019"/>
+    <a href="pages/publpics/biffplot3.html">
+        <img src="../../assets/publpics/kessler_basin_small.png" alt="Open access and orbital stability" title="When are open-access orbital steady states stable?"/>
     </a>
   </td>
 </tr>

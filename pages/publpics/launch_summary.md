@@ -7,7 +7,7 @@ title: Historical trends in satellite launch and use
   <div class="navbar-inner">
       <ul class="nav">
           <li><a href="leo_gabbard_all.html">prev</a></li>
-          <li><a href="yearly_hhi_leo_gso.html">next</a></li>
+          <li><a href="launch_summary.html">next</a></li>
       </ul>
   </div>
 </div>
