@@ -34,6 +34,14 @@ Akhil Rao, Matthew Burgess, Daniel Kaffine: *Orbital-use fees could more than qu
 
 ### <a name="working papers"></a>working papers
 
+Thomas Ash, Antonio M. Bento, Daniel Kaffine, Akhil Rao, Ana I. Bento *Disease-economy trade-offs under alternative pandemic control strategies* [medRxiv](https://www.medrxiv.org/content/10.1101/2021.02.12.21251599v1) [![doi](icons16/doi-icon.png)](https://doi.org/10.1101/2021.02.12.21251599 )
+
+<p class="tab">
+	<small>
+		<b>Abstract:</b> Public policy and academic debates regarding pandemic control strategies note potential disease-economy trade-offs, and often prioritize one outcome over the other. Using a calibrated, coupled epi-economic model of individual behavior embedded within the broader economy during a novel epidemic, we show that targeted isolation strategies can avert up to 91% of individual economic losses relative to voluntary isolation strategies. Notably, the economic savings from targeted isolation strategies do not impose an additional disease burden, avoiding disease-economy trade-offs. In contrast, widely-used blanket lock-downs do create sharp disease-economy trade-offs and impose substantial economic costs per additional case avoided. These results highlight the benefits of targeted isolation strategies for disease control, as targeted isolation addresses the fundamental coordination failure between infectious and susceptible individuals that drives the recession. Our coupled-systems framework uses a data-driven approach to map economic activities to contacts, which facilitates developing effective control strategies for future novel pathogens. Implementation of this framework can help control disease spread and potentially avert trillions of dollars in losses.
+	</small>
+</p>
+
 Akhil Rao, Giacomo Rondina: *Open access to orbit and runaway space debris growth* [draft](../../assets/working_papers/Cost_in_Space.pdf)
 
 <p class="tab">
