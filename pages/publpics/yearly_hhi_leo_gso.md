@@ -6,8 +6,8 @@ title: Worldwide commercial satellite launch services market concentration, 1996
 <div class="navbar">
   <div class="navbar-inner">
       <ul class="nav">
-          <li><a href="launch_summary.html">prev</a></li>
-          <li><a href="yearly_sat_hhi_leo.html">next</a></li>
+          <li><a href="yearly_sat_hhi_leo.html">prev</a></li>
+          <li><a href="debris_distribution_070718.html">next</a></li>
       </ul>
   </div>
 </div>
