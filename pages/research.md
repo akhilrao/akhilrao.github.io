@@ -68,6 +68,15 @@ Akhil Rao, Brennan McConnell: *Elicitation and Corrective Taxation* (mimeo) <!--
 
 
 ### <a name="conference papers"></a>conference papers
+
+Akhil Rao, Francesca Letizia (2021): *An Integrated Debris Environment Assessment Model*, for the [8th European Conference on Space Debris](https://space-debris-conference.sdo.esoc.esa.int/page/welcome), [paper](../../assets/published_papers/Rao and Letizia 2021.pdf)
+
+<p class="tab">
+	<small>
+		<b>Abstract:</b> Launch behaviors are a key determinant of the orbital environment. Physical and economic forces such as fragmentations and changing launch costs, or policies like post-mission disposal (PMD) compliance requirements, will alter the relative attractiveness of different orbits and lead operators to adjust their launch behaviors. However, integrating models of adaptive launch behavior with models of the debris environment remains an open challenge. We present a statistical framework for integrating theoretically-grounded models of launch behavior with evolutionary models of the low-Earth orbit (LEO) environment. We implement this framework using data on satellite launches, the orbital environment, launch vehicle prices, sectoral revenues, and government budgets over 2007-2020. The data are combined with a multi-shell and multi-species Particle-in-a-Box (PIB) model of the debris environment and a two-stage budgeting model of commercial, civil government, and defense decisions to allocate new launches across orbital shells. We demonstrate the framework's capabilities in three counterfactual scenarios: unexpected fragmentation events in highly-used regions, a sharp decrease in the cost of accessing lower parts of LEO, and increasing compliance with 25-year PMD guidelines. Substitution across orbits based on their evolving characteristics and the behavior of other operators induces notable changes in the debris environment relative to models without behavioral channels. 
+	</small>
+</p>
+
 Trevor Bennett, Charles Cain, N.S. Campbell, Andrew Gemer, John Marino, Tobias Niederwieser, Akhil Rao (2018) *The CENKI Space Economic Simulator: Analytical Verification of an Agent-Based Modeling Engine* [2018 IEEE Aerospace Conference Proceedings](https://ieeexplore.ieee.org/document/8396369/) [![doi](icons16/doi-icon.png)](https://doi.org/10.1109/AERO.2018.8396369)
 
 Trevor Bennett, Charles Cain, N.S. Campbell, Andrew Gemer, John Marino, Tobias Niederwieser, Akhil Rao (2018) *The CENKI Space Economic Simulator: Demonstrating Agent-Based Modeling on Satellite Market Data* [2018 IEEE Aerospace Conference Proceedings](https://ieeexplore.ieee.org/document/8396565/) [![doi](icons16/doi-icon.png)](https://doi.org/10.1109/AERO.2018.8396565)
