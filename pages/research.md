@@ -69,7 +69,7 @@ Akhil Rao, Brennan McConnell: *Elicitation and Corrective Taxation* (mimeo) <!--
 
 ### <a name="conference papers"></a>conference papers
 
-Akhil Rao, Francesca Letizia (2021): *An Integrated Debris Environment Assessment Model*, for the [8th European Conference on Space Debris](https://space-debris-conference.sdo.esoc.esa.int/page/welcome), [paper](../../assets/published_papers/Rao and Letizia 2021.pdf)
+Akhil Rao, Francesca Letizia (2021): *An Integrated Debris Environment Assessment Model*, for the [8th European Conference on Space Debris](https://conference.sdo.esoc.esa.int/proceedings/sdc8/paper/206/SDC8-paper206.pdf), [paper](../../assets/published_papers/Rao and Letizia 2021.pdf)
 
 <p class="tab">
 	<small>
