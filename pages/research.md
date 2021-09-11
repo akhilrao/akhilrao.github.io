@@ -34,7 +34,7 @@ Akhil Rao, Matthew Burgess, Daniel Kaffine: *Orbital-use fees could more than qu
 
 ### <a name="working papers"></a>working papers
 
-Thomas Ash, Antonio M. Bento, Daniel Kaffine, Akhil Rao, Ana I. Bento *Disease-economy trade-offs under alternative pandemic control strategies* [medRxiv](https://www.medrxiv.org/content/10.1101/2021.02.12.21251599v1) [![doi](icons16/doi-icon.png)](https://doi.org/10.1101/2021.02.12.21251599 )
+Thomas Ash, Antonio M. Bento, Daniel Kaffine, Akhil Rao, Ana I. Bento *Disease-economy trade-offs under alternative pandemic control strategies* [medRxiv](https://www.medrxiv.org/content/10.1101/2021.02.12.21251599v1) [![doi](icons16/doi-icon.png)](https://doi.org/10.1101/2021.02.12.21251599 ) (*Under review at Nature Communications*)
 
 <p class="tab">
 	<small>
