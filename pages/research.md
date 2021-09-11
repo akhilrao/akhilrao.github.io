@@ -58,6 +58,15 @@ Akhil Rao: *Economic Principles of Space Traffic Control* (job market paper) [dr
 	</small>
 </p>
 
+Akhil Rao: *The Economics of Orbital Transportation* [draft](../../assets/working_papers/The_Economics_of_Orbital_Transportation.pdf)
+
+<p class="tab">
+	<small>
+		<b>Abstract:</b> Transportation through outer space involves a sequence of transfer orbits to move a payload from origin to destination. Transfer orbits are often chosen with the goal of minimizing either the energy required or time taken for the trip. Commercial shippers will instead choose transfer orbits to maximize delivery profits. When payment is received upon delivery and the opportunity cost of funds is positive, profit-maximizing transfer orbits may minimize neither trip energy nor time. Such ``interior transfer orbits'' balance the marginal present value from quicker delivery against the marginal cost of energy expenditures to reduce delivery time.
+	</small>
+</p>
+
+
 Akhil Rao, Brennan McConnell: *Elicitation and Corrective Taxation* (mimeo) <!--[draft](../../assets/working_papers/Elicitation_and_Corrective_Taxation.pdf)-->
 
 <p class="tab">
@@ -65,7 +74,6 @@ Akhil Rao, Brennan McConnell: *Elicitation and Corrective Taxation* (mimeo) <!--
 		<b>Abstract:</b> Marginal contributions to observable aggregate stocks are often unobservable in games with negative stock externalities, making optimal corrective taxation a difficult endeavor. We propose a new class of mechanism, the <i>elicited tax</i>, for such settings. The elicited tax uses an observable aggregate measure to elicit private information about marginal contributions, and a scored tax to penalize reports which are inconsistent with the observable aggregate and other reports. In this paper, we define a notion of strict propriety for elicited taxes, show that under perfect competition reports are Nash equilibria if and only if they are consistent with the observable aggregate, and that strictly proper elicited taxes ensure socially optimal output and externality production. We then study a particular strictly proper elicited tax, the <i>Brier-Pigou</i> tax, which combines a modified Brier scoring rule with a Pigouvian tax. Numerical experiments highlight three properties of the Brier-Pigou tax: (1) the tax can maximize social welfare when firms are perfectly competitive; (2) the tax achieves close to optimal welfare even when firms are perfectly collusive reporters; and (3) the proportion of consistent lies which are risk-dominated by truthful reporting for each firm depends on the number of firms providing reports and that firm's true marginal externality, suggesting conditions under which truthful reporting equilibria will be selected.
 	</small>
 </p>
-
 
 ### <a name="conference papers"></a>conference papers
 
