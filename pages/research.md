@@ -42,7 +42,7 @@ Thomas Ash, Antonio M. Bento, Daniel Kaffine, Akhil Rao, Ana I. Bento *Disease-e
 	</small>
 </p>
 
-Akhil Rao, Giacomo Rondina: *Open access to orbit and runaway space debris growth* [draft](../../assets/working_papers/Cost_in_Space.pdf)
+Akhil Rao, Giacomo Rondina: *Open access to orbit and runaway space debris growth* [draft](https://arxiv.org/abs/2202.07442)
 
 <p class="tab">
 	<small>
@@ -55,6 +55,14 @@ Akhil Rao: *Economic Principles of Space Traffic Control* (job market paper) [dr
 <p class="tab">
 	<small>
 		<b>Abstract:</b> Open access to Earth's orbits presents a unique regulatory challenge. In this paper, I derive economic principles governing the choice of space traffic control policies. I show that policies which target satellite ownership, such as satellite taxes or permits, achieve greater expected social welfare than policies which target satellite launches, such as launch taxes or permits. Price or quantity policies can achieve equal expected social welfare due to the symmetry of uncertainty between regulators and firms. I also show that active debris removal can reduce the risk of runaway debris growth no matter how it is financed, but can only reduce the risk of satellite-destroying collisions if satellite owners pay for it or if competition from removal--induced entry reduces the returns to satellite ownership. Technical solutions to space traffic control tend to emphasize launch restrictions or public funding of debris removal technology development and use, but often ignore that current and prospective orbit users dissipate rents under open access. While satellite-focused policies can achieve first-best orbit use, attempts to control orbital debris growth and collision risk through launch fees or debris removal subsidies under open access may be ineffective or backfire.
+	</small>
+</p>
+
+Akhil Rao, Aditya Jain: *International cooperation and competition in orbit-use management* [draft](../../assets/working_papers/International_cooperation_and_competition_in_orbit_use_management.pdf)
+
+<p class="tab">
+	<small>
+		<b>Abstract:</b> Orbit-use management efforts can be structured as binding national regulatory policies or as self-enforcing international treaties. New treaties to control space debris growth appear unlikely in the near future. Spacefaring nations can pursue national regulatory policies, though regulatory competition and open access to orbit make their effectiveness unclear. We develop a game-theoretic model of national regulatory policies and self-enforcing international treaties for orbit-use management in the face of open access, regulatory competition, and catastrophe. While open access limits the effectiveness of national policies, market-access control ensures the policies can improve environmental quality. A large enough stock of legacy debris ensures existence of a global regulatory equilibrium where all nations choose to levy environmental regulations on all satellites. The global regulatory equilibrium supports a self-enforcing treaty to avert catastrophe by making it costlier to leave the treaty and free ride.
 	</small>
 </p>
 
