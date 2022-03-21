@@ -27,6 +27,15 @@ Humans are becoming increasingly aware that our actions to improve our welfare h
 
 [Syllabus](https://rpubs.com/akhilr/729931)
 
+
+#### Space Economics (ECON 0488)
+
+Humans are becoming increasingly dependent on outer space, and increasingly interested in using its resources and environments. Many of these dependencies and uses bring interesting tradeoffs. High fixed costs and national security concerns pit natural oligopolies against government monopsonies. Launch vehicles based on inter-continental ballistic missile technology provide access to extraterrestrial resources and environments while raising issues of weapons proliferation and airspace management. National security concerns create competing pressures to limit and liberalize markets for satellite services. Satellites provide real-time monitoring and global communications capabilities but create hazardous orbital debris with long-lived consequences. Extraterrestrial bodies offer untold reserves of precious minerals, habitat opportunities, and the potential to turbocharge global wealth inequality. 
+
+Understanding these issues and weighing different approaches requires a unique blend of ethical, legal, political, business, and scientific awareness. Being the science of scarcity and choice, economics is a natural framework to unify these dimensions---national security, technological spillovers, economic (in)efficiency, automation and human survival, equity, and more.
+
+[Syllabus](https://rpubs.com/akhilr/econ0488_F_syllabus)
+
 ### <a name="current"></a>Prior courses
 
 #### Math Tools for Economists 1 (ECON 1078-004; Fall 2018)
