@@ -21,7 +21,7 @@ description: Akhil Rao's research
 
 ### <a name="journal articles"></a>journal articles
 
-Akhil Rao, Matthew Burgess, Daniel Kaffine: *Orbital-use fees could more than quadruple the value of the space industry* in [*Proceedings of the National Academy of Sciences*](https://www.pnas.org/content/117/23/12756/) 
+**Akhil Rao**, Matthew Burgess, Daniel Kaffine: *Orbital-use fees could more than quadruple the value of the space industry* in [*Proceedings of the National Academy of Sciences*](https://www.pnas.org/content/117/23/12756/) 
 
 [Unformatted article](../../assets/published_papers/Rao et al 2020.pdf), [SI Appendix](../../assets/published_papers/Rao et al 202 SI.pdf)
 
@@ -34,7 +34,7 @@ Akhil Rao, Matthew Burgess, Daniel Kaffine: *Orbital-use fees could more than qu
 
 ### <a name="working papers"></a>working papers
 
-Thomas Ash, Antonio M. Bento, Daniel Kaffine, Akhil Rao, Ana I. Bento *Disease-economy trade-offs under alternative pandemic control strategies* [medRxiv](https://www.medrxiv.org/content/10.1101/2021.02.12.21251599v1) [![doi](icons16/doi-icon.png)](https://doi.org/10.1101/2021.02.12.21251599 ) (*Under review at Nature Communications*)
+Thomas Ash, Antonio M. Bento, Daniel Kaffine, **Akhil Rao**, Ana I. Bento *Disease-economy trade-offs under alternative pandemic control strategies* [medRxiv](https://www.medrxiv.org/content/10.1101/2021.02.12.21251599v1) [![doi](icons16/doi-icon.png)](https://doi.org/10.1101/2021.02.12.21251599 ) (*Under review at Nature Communications*)
 
 <p class="tab">
 	<small>
@@ -42,7 +42,7 @@ Thomas Ash, Antonio M. Bento, Daniel Kaffine, Akhil Rao, Ana I. Bento *Disease-e
 	</small>
 </p>
 
-Akhil Rao, Giacomo Rondina: *Open access to orbit and runaway space debris growth* [draft](https://arxiv.org/abs/2202.07442)
+**Akhil Rao**, Giacomo Rondina: *Open access to orbit and runaway space debris growth* [draft](https://arxiv.org/abs/2202.07442) (*Under review at Journal of the Association of Environmental and Resource Economists*)
 
 <p class="tab">
 	<small>
@@ -50,7 +50,7 @@ Akhil Rao, Giacomo Rondina: *Open access to orbit and runaway space debris growt
 	</small>
 </p>
 
-Akhil Rao: *Economic Principles of Space Traffic Control* (job market paper) [draft](../../assets/working_papers/Economic_Principles_of_Space_Traffic_Control.pdf)
+*Economic Principles of Space Traffic Control* (job market paper) [draft](../../assets/working_papers/Economic_Principles_of_Space_Traffic_Control.pdf)
 
 <p class="tab">
 	<small>
@@ -58,7 +58,7 @@ Akhil Rao: *Economic Principles of Space Traffic Control* (job market paper) [dr
 	</small>
 </p>
 
-Akhil Rao, Aditya Jain: *International cooperation and competition in orbit-use management* [draft](../../assets/working_papers/International_cooperation_and_competition_in_orbit_use_management.pdf)
+*International cooperation and competition in orbit-use management* (with Aditya Jain) [draft](../../assets/working_papers/International_cooperation_and_competition_in_orbit_use_management.pdf)
 
 <p class="tab">
 	<small>
@@ -66,7 +66,7 @@ Akhil Rao, Aditya Jain: *International cooperation and competition in orbit-use 
 	</small>
 </p>
 
-Akhil Rao: *The Economics of Orbital Transportation* [draft](../../assets/working_papers/The_Economics_of_Orbital_Transportation.pdf)
+*The Economics of Orbital Transportation* [draft](../../assets/working_papers/The_Economics_of_Orbital_Transportation.pdf)
 
 <p class="tab">
 	<small>
@@ -75,7 +75,7 @@ Akhil Rao: *The Economics of Orbital Transportation* [draft](../../assets/workin
 </p>
 
 
-Akhil Rao, Brennan McConnell: *Elicitation and Corrective Taxation* (mimeo) <!--[draft](../../assets/working_papers/Elicitation_and_Corrective_Taxation.pdf)-->
+*Elicitation and Corrective Taxation* (with Brennan McConnell) (mimeo) <!--[draft](../../assets/working_papers/Elicitation_and_Corrective_Taxation.pdf)-->
 
 <p class="tab">
 	<small>
@@ -85,7 +85,7 @@ Akhil Rao, Brennan McConnell: *Elicitation and Corrective Taxation* (mimeo) <!--
 
 ### <a name="conference papers"></a>conference papers
 
-Akhil Rao, Francesca Letizia (2021): *An Integrated Debris Environment Assessment Model*, for the [8th European Conference on Space Debris](https://conference.sdo.esoc.esa.int/proceedings/sdc8/paper/206/SDC8-paper206.pdf), [paper](../../assets/published_papers/Rao and Letizia 2021.pdf)
+**Akhil Rao**, Francesca Letizia (2021): *An Integrated Debris Environment Assessment Model*, for the [8th European Conference on Space Debris](https://conference.sdo.esoc.esa.int/proceedings/sdc8/paper/206/SDC8-paper206.pdf), [paper](../../assets/published_papers/Rao and Letizia 2021.pdf)
 
 <p class="tab">
 	<small>
@@ -93,6 +93,6 @@ Akhil Rao, Francesca Letizia (2021): *An Integrated Debris Environment Assessmen
 	</small>
 </p>
 
-Trevor Bennett, Charles Cain, N.S. Campbell, Andrew Gemer, John Marino, Tobias Niederwieser, Akhil Rao (2018) *The CENKI Space Economic Simulator: Analytical Verification of an Agent-Based Modeling Engine* [2018 IEEE Aerospace Conference Proceedings](https://ieeexplore.ieee.org/document/8396369/) [![doi](icons16/doi-icon.png)](https://doi.org/10.1109/AERO.2018.8396369)
+Trevor Bennett, Charles Cain, N.S. Campbell, Andrew Gemer, John Marino, Tobias Niederwieser, **Akhil Rao** (2018) *The CENKI Space Economic Simulator: Analytical Verification of an Agent-Based Modeling Engine* [2018 IEEE Aerospace Conference Proceedings](https://ieeexplore.ieee.org/document/8396369/) [![doi](icons16/doi-icon.png)](https://doi.org/10.1109/AERO.2018.8396369)
 
-Trevor Bennett, Charles Cain, N.S. Campbell, Andrew Gemer, John Marino, Tobias Niederwieser, Akhil Rao (2018) *The CENKI Space Economic Simulator: Demonstrating Agent-Based Modeling on Satellite Market Data* [2018 IEEE Aerospace Conference Proceedings](https://ieeexplore.ieee.org/document/8396565/) [![doi](icons16/doi-icon.png)](https://doi.org/10.1109/AERO.2018.8396565)
+Trevor Bennett, Charles Cain, N.S. Campbell, Andrew Gemer, John Marino, Tobias Niederwieser, **Akhil Rao** (2018) *The CENKI Space Economic Simulator: Demonstrating Agent-Based Modeling on Satellite Market Data* [2018 IEEE Aerospace Conference Proceedings](https://ieeexplore.ieee.org/document/8396565/) [![doi](icons16/doi-icon.png)](https://doi.org/10.1109/AERO.2018.8396565)
