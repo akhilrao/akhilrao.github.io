@@ -21,7 +21,7 @@ description: Akhil Rao's research
 
 ### <a name="journal articles"></a>journal articles
 
-Thomas Ash, Antonio M. Bento, Daniel Kaffine, Akhil Rao, Ana I. Bento *Disease-economy trade-offs under alternative epidemic control strategies* in [*Nature Communications*](https://www.nature.com/articles/s41467-022-30642-8)
+Thomas Ash, Antonio M. Bento, Daniel Kaffine, **Akhil Rao**, Ana I. Bento *Disease-economy trade-offs under alternative epidemic control strategies* in [*Nature Communications*](https://www.nature.com/articles/s41467-022-30642-8)
 
 <p class="tab">
 	<small>
@@ -29,18 +29,17 @@ Thomas Ash, Antonio M. Bento, Daniel Kaffine, Akhil Rao, Ana I. Bento *Disease-e
 	</small>
 </p>
 
-Akhil Rao, Matthew Burgess, Daniel Kaffine: *Orbital-use fees could more than quadruple the value of the space industry* in [*Proceedings of the National Academy of Sciences*](https://www.pnas.org/content/117/23/12756/)
+**Akhil Rao**, Matthew Burgess, Daniel Kaffine: *Orbital-use fees could more than quadruple the value of the space industry* in [*Proceedings of the National Academy of Sciences*](https://www.pnas.org/content/117/23/12756/)
 
 <p class="tab">
 	<small>
-		<b>Abstract:</b> The space industry’s rapid recent growth represents the latest Tragedy of the Commons. Satellites launched into orbit contribute to&mdash;and risk damage from&mdash;a growing  buildup of space debris and other satellites. Collision risk from this orbital congestion is costly to satellite operators. Technological and managerial solutions&mdash;such as active debris removal or end-of-life satellite deorbit guidelines&mdash;are currently being explored by regulatory authorities. However, none of these approaches address the underlying incentive problem: satellite operators do not account for costs they impose on each other via collision risk. Here, we show an internationally harmonized orbital-use fee can correct these incentives and substantially increase the value of the space industry. We construct and analyze a coupled physical-economic model of commercial launches and debris accumulation in low-Earth orbit. Similar to carbon taxes, our model projects an optimal fee that rises at a rate of 14% per year, equal to roughly $235,000 per satellite-year in 2040. The long-run value of the satellite industry would more than quadruple by 2040&mdash;increasing from around $600 billion under business-as-usual to around $3 trillion. In contrast, we project  purely technological solutions are unlikely to fully address the problem of orbital congestion. Indeed, we find debris removal sometimes worsens economic damages from congestion by increasing launch incentives. In other sectors, addressing the Tragedy of the Commons has often been a game of catch-up with substantial social costs. The infant space industry can avert these costs before they escalate.
+		<b>Abstract:</b> The space industry’s rapid recent growth represents the latest Tragedy of the Commons. Satellites launched into orbit contribute to&mdash;and risk damage from&mdash;a growing  buildup of space debris and other satellites. Collision risk from this orbital congestion is costly to satellite operators. Technological and managerial solutions&mdash;such as active debris removal or end-of-life satellite deorbit guidelines&mdash;are currently being explored by regulatory authorities. However, none of these approaches address the underlying incentive problem: satellite operators do not account for costs they impose on each other via collision risk. Here, we show an internationally harmonized orbital-use fee can correct these incentives and substantially increase the value of the space industry. We construct and analyze a coupled physical-economic model of commercial launches and debris accumulation in low-Earth orbit. Similar to carbon taxes, our model projects an optimal fee that rises at a rate of 14% per year, equal to roughly $235,000 per satellite-year in 2040. The long-run value of the satellite industry would more than quadruple by 2040&mdash;increasing from around $600 billion under business-as-usual to around $3 trillion. In contrast, we project purely technological solutions are unlikely to fully address the problem of orbital congestion. Indeed, we find debris removal sometimes worsens economic damages from congestion by increasing launch incentives. In other sectors, addressing the Tragedy of the Commons has often been a game of catch-up with substantial social costs. The infant space industry can avert these costs before they escalate.
 	</small>
 </p>
 
-
 ### <a name="working papers"></a>working papers
 
-Akhil Rao, Giacomo Rondina: *Open access to orbit and runaway space debris growth* [draft](https://arxiv.org/abs/2202.07442) (*Under review at the Journal of the Association of Environmental and Resource Economists*)
+**Akhil Rao**, Giacomo Rondina: *Open access to orbit and runaway space debris growth* [draft](https://arxiv.org/abs/2202.07442) (*Under review at the Journal of the Association of Environmental and Resource Economists*)
 
 <p class="tab">
 	<small>
@@ -48,7 +47,7 @@ Akhil Rao, Giacomo Rondina: *Open access to orbit and runaway space debris growt
 	</small>
 </p>
 
-Akhil Rao: *Economic Principles of Space Traffic Control* (job market paper) [draft](../../assets/working_papers/Economic_Principles_of_Space_Traffic_Control.pdf)
+*Economic Principles of Space Traffic Control* (job market paper) [draft](../../assets/working_papers/Economic_Principles_of_Space_Traffic_Control.pdf)
 
 <p class="tab">
 	<small>
@@ -56,7 +55,7 @@ Akhil Rao: *Economic Principles of Space Traffic Control* (job market paper) [dr
 	</small>
 </p>
 
-Akhil Rao, Aditya Jain: *International cooperation and competition in orbit-use management* [draft](../../assets/working_papers/International_cooperation_and_competition_in_orbit_use_management.pdf)
+*International cooperation and competition in orbit-use management* (with Aditya Jain) [draft](../../assets/working_papers/International_cooperation_and_competition_in_orbit_use_management.pdf)
 
 <p class="tab">
 	<small>
@@ -64,7 +63,7 @@ Akhil Rao, Aditya Jain: *International cooperation and competition in orbit-use 
 	</small>
 </p>
 
-Akhil Rao: *The Economics of Orbital Transportation* [draft](../../assets/working_papers/The_Economics_of_Orbital_Transportation.pdf)
+*The Economics of Orbital Transportation* [draft](../../assets/working_papers/The_Economics_of_Orbital_Transportation.pdf)
 
 <p class="tab">
 	<small>
@@ -73,7 +72,7 @@ Akhil Rao: *The Economics of Orbital Transportation* [draft](../../assets/workin
 </p>
 
 
-Akhil Rao, Brennan McConnell: *Elicitation and Corrective Taxation* (mimeo) <!--[draft](../../assets/working_papers/Elicitation_and_Corrective_Taxation.pdf)-->
+*Elicitation and Corrective Taxation* (with Brennan McConnell) (mimeo) <!--[draft](../../assets/working_papers/Elicitation_and_Corrective_Taxation.pdf)-->
 
 <p class="tab">
 	<small>
@@ -83,7 +82,7 @@ Akhil Rao, Brennan McConnell: *Elicitation and Corrective Taxation* (mimeo) <!--
 
 ### <a name="conference papers"></a>conference papers
 
-Akhil Rao, Francesca Letizia (2021): *An Integrated Debris Environment Assessment Model*, for the [8th European Conference on Space Debris](https://conference.sdo.esoc.esa.int/proceedings/sdc8/paper/206/SDC8-paper206.pdf), [paper](../../assets/published_papers/Rao and Letizia 2021.pdf)
+**Akhil Rao**, Francesca Letizia (2021): *An Integrated Debris Environment Assessment Model*, for the [8th European Conference on Space Debris](https://conference.sdo.esoc.esa.int/proceedings/sdc8/paper/206/SDC8-paper206.pdf), [paper](../../assets/published_papers/Rao and Letizia 2021.pdf)
 
 <p class="tab">
 	<small>
@@ -91,6 +90,6 @@ Akhil Rao, Francesca Letizia (2021): *An Integrated Debris Environment Assessmen
 	</small>
 </p>
 
-Trevor Bennett, Charles Cain, N.S. Campbell, Andrew Gemer, John Marino, Tobias Niederwieser, Akhil Rao (2018) *The CENKI Space Economic Simulator: Analytical Verification of an Agent-Based Modeling Engine* [2018 IEEE Aerospace Conference Proceedings](https://ieeexplore.ieee.org/document/8396369/) [![doi](icons16/doi-icon.png)](https://doi.org/10.1109/AERO.2018.8396369)
+Trevor Bennett, Charles Cain, N.S. Campbell, Andrew Gemer, John Marino, Tobias Niederwieser, **Akhil Rao** (2018) *The CENKI Space Economic Simulator: Analytical Verification of an Agent-Based Modeling Engine* [2018 IEEE Aerospace Conference Proceedings](https://ieeexplore.ieee.org/document/8396369/) [![doi](icons16/doi-icon.png)](https://doi.org/10.1109/AERO.2018.8396369)
 
-Trevor Bennett, Charles Cain, N.S. Campbell, Andrew Gemer, John Marino, Tobias Niederwieser, Akhil Rao (2018) *The CENKI Space Economic Simulator: Demonstrating Agent-Based Modeling on Satellite Market Data* [2018 IEEE Aerospace Conference Proceedings](https://ieeexplore.ieee.org/document/8396565/) [![doi](icons16/doi-icon.png)](https://doi.org/10.1109/AERO.2018.8396565)
+Trevor Bennett, Charles Cain, N.S. Campbell, Andrew Gemer, John Marino, Tobias Niederwieser, **Akhil Rao** (2018) *The CENKI Space Economic Simulator: Demonstrating Agent-Based Modeling on Satellite Market Data* [2018 IEEE Aerospace Conference Proceedings](https://ieeexplore.ieee.org/document/8396565/) [![doi](icons16/doi-icon.png)](https://doi.org/10.1109/AERO.2018.8396565)
