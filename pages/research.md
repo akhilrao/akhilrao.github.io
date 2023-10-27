@@ -33,7 +33,7 @@ Luisa Corrado, Maureen Cropper, **Akhil Rao**: *Space exploration and economic g
 
 <p class="tab">
 	<small>
-		<b>The Space Exploration: Economics, Technologies, and Policies Special Feature provides a broad overview of the significant capital investments in space technologies both historically and through their potential to combat secular stagnation. The articles explore key issues in space economics by focusing on the role of the state and firms in technological development, resource management, and economic growth. This feature identifies and quantifies the benefits of regulating and expanding the space economy.
+		The "Space Exploration: Economics, Technologies, and Policies" Special Feature provides a broad overview of the significant capital investments in space technologies both historically and through their potential to combat secular stagnation. The articles explore key issues in space economics by focusing on the role of the state and firms in technological development, resource management, and economic growth. This feature identifies and quantifies the benefits of regulating and expanding the space economy.
 	</small>
 </p>
 
