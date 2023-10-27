@@ -21,6 +21,22 @@ description: Akhil Rao's research
 
 ### <a name="journal articles"></a>journal articles
 
+Julien Guyot, **Akhil Rao**, Sébastien Rouillon: *Oligopoly competition between satellite constellations will reduce economic welfare from orbit use* in [*Proceedings of the National Academy of Sciences*](https://www.pnas.org/doi/10.1073/pnas.2221343120)
+
+<p class="tab">
+	<small>
+		<b>Abstract:</b> Orbital space enables many essential services, such as weather forecasting, global communication, navigation, Earth observation for environmental and agricultural management, and national security applications. Orbit use is increasingly defined by firms launching coordinated fleets&mdash;“constellations”&mdash;of satellites into low-Earth orbit. These firms operate in markets with few or no competitors, such as the market for broadband internet provision to rural areas. How will oligopolistic competition shape the allocation of orbital space? We analyze orbital-use patterns and economic welfare when two profit-maximizing firms operate satellite constellations with sophisticated collision avoidance systems. We compare this duopoly equilibrium to public utility constellations designed and regulated to maximize economic welfare from orbit use. We show that imperfect competition reduces economic welfare from orbit use by up to 12%&mdash;$1.1 billion USD&mdash;per year and distorts the allocation of orbital space. The nature of the distortion depends on the magnitude of constellation-related environmental damages. When damages are low, economic welfare is maximized by larger-than-equilibrium constellations. When damages are high, economic welfare is maximized by smaller-than-equilibrium constellations. Between the growing commercial and national interests in outer space and the importance of low-Earth orbit to space exploration, orbit-use management is likely to be a fruitful and policy-relevant area for economic research. We conclude with a discussion of future research directions in orbit-use management relevant to policymakers around the world.
+	</small>
+</p>
+
+Luisa Corrado, Maureen Cropper, **Akhil Rao**: *Space exploration and economic growth: New issues and horizons* in [*Proceedings of the National Academy of Sciences*](https://www.pnas.org/doi/10.1073/pnas.2221341120). Introduction to [Special Feature on space economics](https://www.pnas.org/topic/556).
+
+<p class="tab">
+	<small>
+		<b>The Space Exploration: Economics, Technologies, and Policies Special Feature provides a broad overview of the significant capital investments in space technologies both historically and through their potential to combat secular stagnation. The articles explore key issues in space economics by focusing on the role of the state and firms in technological development, resource management, and economic growth. This feature identifies and quantifies the benefits of regulating and expanding the space economy.
+	</small>
+</p>
+
 Thomas Ash, Antonio M. Bento, Daniel Kaffine, **Akhil Rao**, Ana I. Bento *Disease-economy trade-offs under alternative epidemic control strategies* in [*Nature Communications*](https://www.nature.com/articles/s41467-022-30642-8)
 
 <p class="tab">
@@ -39,11 +55,36 @@ Thomas Ash, Antonio M. Bento, Daniel Kaffine, **Akhil Rao**, Ana I. Bento *Disea
 
 ### <a name="working papers"></a>working papers
 
+Ogutu B. Osoro, Edward J. Oughton, Andrew R. Wilson, **Akhil Rao**: *Sustainability assessment of Low Earth Orbit (LEO) satellite broadband mega-constellations* [draft](https://arxiv.org/abs/2309.02338) (*Under review at Nature Sustainability*)
+
+<p class="tab">
+	<small>
+		<b>Abstract:</b> The growth of mega-constellations is rapidly increasing the number of rocket launches required to place new satellites in space. While Low Earth Orbit (LEO) broadband satellites help to connect unconnected communities and achieve the Sustainable Development Goals, there are also a range of negative environmental externalities, from the burning of rocket fuels and resulting environmental emissions. We present sustainability analytics for phase 1 of the three main LEO constellations including Amazon Kuiper (3,236 satellites), OneWeb (648 satellites), and SpaceX Starlink (4,425 satellites). In baseline scenarios over five years, we find a per subscriber carbon dioxide equivalent (CO2eq) of 0.70±0.34 tonnes for Kuiper, 1.41±0.71 tonnes for OneWeb and 0.47±0.15 tonnes CO2eq/subscriber for Starlink. However, in the worst-case emissions scenario these values increase to 3.02±1.48 tonnes for Kuiper, 1.7±0.71 tonnes for OneWeb and 1.04±0.33 tonnes CO2eq/subscriber for Starlink, more than 31-91 times higher than equivalent terrestrial mobile broadband. Importantly, phase 2 constellations propose to increase the number of satellites by another order-of-magnitude, highlighting the pressing need to mitigate negative environmental impacts. Strategic choices in rocket design and fuel options can help to greatly mitigate negative sustainability impacts.
+	</small>
+</p>
+
+Raphaelle G. Coulombe, **Akhil Rao**: *Fires and Local Labor Markets* [draft](https://arxiv.org/abs/2308.02739) (*Under review at Review of Economic Studies*)
+
+<p class="tab">
+	<small>
+		<b>Abstract:</b> We study the dynamic effects of fires on county labor markets in the US using a novel geophysical measure of fire exposure based on satellite imagery. We find increased fire exposure causes lower employment growth in the short and medium run, with medium-run effects being linked to migration. We also document heterogeneous effects across counties by education and industrial concentration levels, states of the business cycle, and fire size. By overcoming challenges in measuring fire impacts, we identify vulnerable places and economic states, offering guidance on tailoring relief efforts and contributing to a broader understanding of natural disasters' economic impacts.
+	</small>
+</p>
+
+
 **Akhil Rao**, Giacomo Rondina: *Open access to orbit and runaway space debris growth* [draft](https://arxiv.org/abs/2202.07442) (*Under review at the Journal of the Association of Environmental and Resource Economists*)
 
 <p class="tab">
 	<small>
 		<b>Abstract:</b> As Earth's orbital space fills with satellites and debris, debris-producing collisions between orbiting bodies become more likely. Runaway space debris growth, known as Kessler Syndrome, may render Earth's orbits unusable for centuries. We present a dynamic physico-economic model of Earth orbit use under rational expectations with endogenous collision risk and Kessler Syndrome. When satellites can be destroyed in collisions with debris and other satellites, there is a manifold of open-access equilibria rather than a unique equilibrium. When debris can collide to produce more debris, this manifold allows Kessler Syndrome to occur along equilibrium paths. We show open access is increasingly and inefficiently likely to cause Kessler Syndrome as satellites become more profitable, highlighting the need for orbital-use management.
+	</small>
+</p>
+
+**Akhil Rao**, Mark Moretto, Marcus Holzinger, Daniel Kaffine, Brian Weeden: *OPUS: An Integrated Assessment Model for Satellites and Orbital Debris* [draft](https://arxiv.org/abs/2309.10252) (*This work was supported by 2022 grant funding from the NASA ROSES program.*)
+
+<p class="tab">
+	<small>
+		<b>Abstract:</b> An increasingly salient public policy challenge is how to manage the growing number of satellites in orbit, including large constellations. Many policy initiatives have been proposed that attempt to address the problem from different angles, but there is a paucity of analytical tools to help policymakers evaluate the efficacy of these different proposals and any potential counterproductive outcomes. To help address this problem, this paper summarizes work done to develop an experimental integrated assessment model&mdash;Orbital Debris Propagators Unified with Economic Systems (OPUS)&mdash;that combines both astrodynamics of the orbital population and economic behavior of space actors. For a given set of parameters, the model first utilizes a given astrodynamic propagator to assess the state of objects in orbit. It then uses a set of user-defined economic and policy parameters&mdash;e.g. launch prices, disposal regulations&mdash;to model how actors will respond to the economic incentives created by a given scenario. For the purposes of testing, the MIT Orbital Capacity Tool (MOCAT) version 4S was used as the primary astrodynamics propagator to simulate the true expected target collision probability (pc) for a given end-of-life (EOL) disposal plan. To demonstrate propagator-agnosticism, a Gaussian mixture probability hypothesis density (GMPHD) filter was also used to simulate pc. We also explore economic policy instruments to improve both sustainability of and economic welfare from orbit use. In doing so, we demonstrate that this hybrid approach can serve as a useful tool for evaluating policy proposals for managing orbital congestion. We also discuss areas where this work can be made more robust and expanded to include additional policy considerations. 
 	</small>
 </p>
 
@@ -55,7 +96,7 @@ Thomas Ash, Antonio M. Bento, Daniel Kaffine, **Akhil Rao**, Ana I. Bento *Disea
 	</small>
 </p>
 
-*International cooperation and competition in orbit-use management* (with Aditya Jain) [draft](../../assets/working_papers/International_cooperation_and_competition_in_orbit_use_management.pdf)
+*International cooperation and competition in orbit-use management* (with Aditya Jain) [draft](https://arxiv.org/abs/2205.03926)
 
 <p class="tab">
 	<small>
