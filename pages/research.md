@@ -65,6 +65,14 @@ Thomas Ash, Antonio M. Bento, Daniel Kaffine, **Akhil Rao**, Ana I. Bento *Disea
 
 ### <a name="working papers"></a>working papers
 
+**Akhil Rao**: *Close Encounters of the LEO Kind: Spillovers and Resilience in Partially-Automated Traffic Systems* [draft](https://arxiv.org/abs/2410.04599)
+
+<p class="tab">
+    <small>
+        <b>Abstract:</b> Traffic systems are becoming increasingly automated. How will automated objects interact with non-automated objects? How will partially-automated systems handle large disruptions? Low-Earth orbit (LEO) -- filled with thousands of automated and non-automated satellites and many more uncontrollable pieces of debris -- offers a useful laboratory for these questions. I exploit the COSMOS-1408 (C1408) anti-satellite missile test of November 2021 -- a large and exogenous shock to the orbital environment -- to study how an unexpected disruption affects a partially-automated traffic system. I use publicly-available close approach data, network theory, and an econometric analysis of the C1408 test to study the effect of close encounters with new fragments on the configuration of objects in orbit. I document spillover effects of close encounters with C1408 fragments, heterogeneity in impacts across operators, and changes in system-level resilience to new shocks. These results shed light on the nature of partially-automated traffic systems, and provide a basis for new models to anticipate and mitigate space traffic disruptions.
+    </small>
+</p>
+
 Ogutu B. Osoro, Edward J. Oughton, Andrew R. Wilson, **Akhil Rao**: *Sustainability assessment of Low Earth Orbit (LEO) satellite broadband mega-constellations* [draft](https://arxiv.org/abs/2309.02338)
 
 <p class="tab">
