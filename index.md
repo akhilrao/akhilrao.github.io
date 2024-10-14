@@ -10,7 +10,6 @@ keywords: Rao, environmental economics, resource economics, space, applied theor
       <ul class="nav">
           <li><a href="{{ BASE_PATH }}/assets/rao_cv.pdf">cv</a></li>
           <li><a href="https://github.com/akhilrao">github</a></li>
-          <li><a href="https://twitter.com/ThatAkhilRao">twitter</a></li>
           <li><a href="https://www.linkedin.com/in/akhil-rao-544b126a/">linkedin</a></li>
           <li><a href="https://akhilrao.substack.com">substack</a></li>
           <li><a href="{{ BASE_PATH }}/blog">blog</a></li>

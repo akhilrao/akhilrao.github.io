@@ -19,7 +19,17 @@ description: Akhil Rao's research
     </div>
 </div>
 
+Most of my research articles are available on [my arxiv page](https://arxiv.org/a/rao_a_1.html).
+
 ### <a name="journal articles"></a>journal articles
+
+**Akhil Rao**, Giacomo Rondina: *Open access to orbit and runaway space debris growth* [draft](https://arxiv.org/abs/2202.07442) (*Forthcoming at the Journal of the Association of Environmental and Resource Economists*)
+
+<p class="tab">
+	<small>
+		<b>Abstract:</b> We present a dynamic physico-economic model of Earth orbit use with endogenous satellite collision risk to study conditions under which debris-producing collisions between orbiting bodies result in debris growth that may render Earth's orbits unusable, an outcome known as Kessler Syndrome. We characterize the dynamics of objects in orbit under open access as well as when external costs%&mdash;the impact of an additional satellite launch on the collision risk faced by all satellites%&mdash;are internalized, and we show that Kessler Syndrome can emerge in both cases. Finally, we show that once the economic incentives of satellite launching are modeled, for Kessler Syndrome to emerge, autocatalytic debris growth is essential. In our main calibration, Kessler Syndrome can emerge anytime between the year 2040 and the year 2184, with the precise date being very sensitive to the calibration of autocatalytic debris growth parameters. 
+	</small>
+</p>
 
 Julien Guyot, **Akhil Rao**, Sébastien Rouillon: *Oligopoly competition between satellite constellations will reduce economic welfare from orbit use* in [*Proceedings of the National Academy of Sciences*](https://www.pnas.org/doi/10.1073/pnas.2221343120)
 
@@ -55,7 +65,7 @@ Thomas Ash, Antonio M. Bento, Daniel Kaffine, **Akhil Rao**, Ana I. Bento *Disea
 
 ### <a name="working papers"></a>working papers
 
-Ogutu B. Osoro, Edward J. Oughton, Andrew R. Wilson, **Akhil Rao**: *Sustainability assessment of Low Earth Orbit (LEO) satellite broadband mega-constellations* [draft](https://arxiv.org/abs/2309.02338) (*Under review at Nature Sustainability*)
+Ogutu B. Osoro, Edward J. Oughton, Andrew R. Wilson, **Akhil Rao**: *Sustainability assessment of Low Earth Orbit (LEO) satellite broadband mega-constellations* [draft](https://arxiv.org/abs/2309.02338)
 
 <p class="tab">
 	<small>
@@ -63,20 +73,11 @@ Ogutu B. Osoro, Edward J. Oughton, Andrew R. Wilson, **Akhil Rao**: *Sustainabil
 	</small>
 </p>
 
-Raphaelle G. Coulombe, **Akhil Rao**: *Fires and Local Labor Markets* [draft](https://arxiv.org/abs/2308.02739) (*Under review at Review of Economic Studies*)
+Raphaelle G. Coulombe, **Akhil Rao**: *Fires and Local Labor Markets* [draft](https://arxiv.org/abs/2308.02739)
 
 <p class="tab">
 	<small>
 		<b>Abstract:</b> We study the dynamic effects of fires on county labor markets in the US using a novel geophysical measure of fire exposure based on satellite imagery. We find increased fire exposure causes lower employment growth in the short and medium run, with medium-run effects being linked to migration. We also document heterogeneous effects across counties by education and industrial concentration levels, states of the business cycle, and fire size. By overcoming challenges in measuring fire impacts, we identify vulnerable places and economic states, offering guidance on tailoring relief efforts and contributing to a broader understanding of natural disasters' economic impacts.
-	</small>
-</p>
-
-
-**Akhil Rao**, Giacomo Rondina: *Open access to orbit and runaway space debris growth* [draft](https://arxiv.org/abs/2202.07442) (*Under review at the Journal of the Association of Environmental and Resource Economists*)
-
-<p class="tab">
-	<small>
-		<b>Abstract:</b> As Earth's orbital space fills with satellites and debris, debris-producing collisions between orbiting bodies become more likely. Runaway space debris growth, known as Kessler Syndrome, may render Earth's orbits unusable for centuries. We present a dynamic physico-economic model of Earth orbit use under rational expectations with endogenous collision risk and Kessler Syndrome. When satellites can be destroyed in collisions with debris and other satellites, there is a manifold of open-access equilibria rather than a unique equilibrium. When debris can collide to produce more debris, this manifold allows Kessler Syndrome to occur along equilibrium paths. We show open access is increasingly and inefficiently likely to cause Kessler Syndrome as satellites become more profitable, highlighting the need for orbital-use management.
 	</small>
 </p>
 
