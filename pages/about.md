@@ -28,7 +28,7 @@ description: Akhil Rao is a guy
 
 Pedagogically, I'm very interested in the use of games and experiential learning to teach mathematical and economic concepts.
 
-My research is mostly about the environmental and industrial economics of outer space, with a second agenda about environmental disasters featuring strong biophysical couplings with economic activity (e.g. infectious disease, fires). There is usually a computational or dynamic flavor in my work. My research is motivated by a desire to see us make better use of limited resources and fragile environments.
+My research is mostly about the environmental and industrial economics of outer space, with a second agenda about environmental disasters featuring strong biophysical couplings with economic activity (e.g. infectious disease, fires). There is usually a computational or dynamic flavor in my work.
 
 #### academic research
 
