@@ -23,6 +23,14 @@ Most of my research articles are available on [my arxiv page](https://arxiv.org/
 
 ### <a name="journal articles"></a>journal articles
 
+Raphaelle G. Coulombe, **Akhil Rao**: *Fires and local labor markets* in the [*Journal of Environmental Economics and Management*](https://www.sciencedirect.com/science/article/pii/S0095069624001839)
+
+<p class="tab">
+	<small>
+		<b>Abstract:</b> We study the dynamic effects of fires on county labor markets in the US using a novel geophysical measure of fire exposure based on satellite imagery. We find increased fire exposure depresses employment growth for about three years, with part of the medium-run effects being linked to migration. In counties that experience fires, the cumulative fire-induced decline over 3 years is on the order of 15% of employment growth over that horizon, on average. These effects appear to be driven by the fires burning more than 1.5% of county area. While very few fires in our data receive a federal disaster declaration and aid from the Federal Emergency Management Agency (FEMA), FEMA declarations appear to reverse the estimated effects on employment and migration. We also document that counties with more diversified economies and more educated workforces appear to be more resilient against fire shocks. By overcoming challenges in measuring fire impacts, we identify vulnerable places and economic states, offering guidance on tailoring relief efforts and contributing to a broader understanding of natural disasters’ economic impacts.
+	</small>
+</p>
+
 **Akhil Rao**, Giacomo Rondina: *Open access to orbit and runaway space debris growth* [draft](https://arxiv.org/abs/2202.07442) (*Forthcoming at the Journal of the Association of Environmental and Resource Economists*)
 
 <p class="tab">
@@ -78,14 +86,6 @@ Ogutu B. Osoro, Edward J. Oughton, Andrew R. Wilson, **Akhil Rao**: *Sustainabil
 <p class="tab">
 	<small>
 		<b>Abstract:</b> The growth of mega-constellations is rapidly increasing the number of rocket launches required to place new satellites in space. While Low Earth Orbit (LEO) broadband satellites help to connect unconnected communities and achieve the Sustainable Development Goals, there are also a range of negative environmental externalities, from the burning of rocket fuels and resulting environmental emissions. We present sustainability analytics for phase 1 of the three main LEO constellations including Amazon Kuiper (3,236 satellites), OneWeb (648 satellites), and SpaceX Starlink (4,425 satellites). In baseline scenarios over five years, we find a per subscriber carbon dioxide equivalent (CO2eq) of 0.70±0.34 tonnes for Kuiper, 1.41±0.71 tonnes for OneWeb and 0.47±0.15 tonnes CO2eq/subscriber for Starlink. However, in the worst-case emissions scenario these values increase to 3.02±1.48 tonnes for Kuiper, 1.7±0.71 tonnes for OneWeb and 1.04±0.33 tonnes CO2eq/subscriber for Starlink, more than 31-91 times higher than equivalent terrestrial mobile broadband. Importantly, phase 2 constellations propose to increase the number of satellites by another order-of-magnitude, highlighting the pressing need to mitigate negative environmental impacts. Strategic choices in rocket design and fuel options can help to greatly mitigate negative sustainability impacts.
-	</small>
-</p>
-
-Raphaelle G. Coulombe, **Akhil Rao**: *Fires and Local Labor Markets* [draft](https://arxiv.org/abs/2308.02739)
-
-<p class="tab">
-	<small>
-		<b>Abstract:</b> We study the dynamic effects of fires on county labor markets in the US using a novel geophysical measure of fire exposure based on satellite imagery. We find increased fire exposure causes lower employment growth in the short and medium run, with medium-run effects being linked to migration. We also document heterogeneous effects across counties by education and industrial concentration levels, states of the business cycle, and fire size. By overcoming challenges in measuring fire impacts, we identify vulnerable places and economic states, offering guidance on tailoring relief efforts and contributing to a broader understanding of natural disasters' economic impacts.
 	</small>
 </p>
 
