@@ -19,7 +19,7 @@ description: Akhil Rao's research
     </div>
 </div>
 
-Most of my research articles are available on [my arxiv page](https://arxiv.org/a/rao_a_1.html).
+Most of my research articles are available on [my arxiv page](https://arxiv.org/a/rao_a_1.html) or my [Google Scholar page](https://scholar.google.com/citations?user=zYJ2IXQAAAAJ&hl=en).
 
 ### <a name="journal articles"></a>journal articles
 
