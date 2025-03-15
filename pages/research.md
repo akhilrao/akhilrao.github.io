@@ -23,19 +23,19 @@ Most of my research articles are available on [my arxiv page](https://arxiv.org/
 
 ### <a name="journal articles"></a>journal articles
 
+**Akhil Rao**, Giacomo Rondina: *The Economics of Orbit Use: Open Access, External Costs, and Runaway Debris Growth* in the [*Journal of the Association of Environmental and Resource Economists*](https://www.journals.uchicago.edu/doi/10.1086/730695)
+
+<p class="tab">
+	<small>
+		<b>Abstract:</b> We present a dynamic physico-economic model of Earth orbit use with endogenous satellite collision risk to study conditions under which debris-producing collisions between orbiting bodies result in debris growth that may render Earth's orbits unusable, an outcome known as Kessler Syndrome. We characterize the dynamics of objects in orbit under open access as well as when external costs%&mdash;the impact of an additional satellite launch on the collision risk faced by all satellites%&mdash;are internalized, and we show that Kessler Syndrome can emerge in both cases. Finally, we show that once the economic incentives of satellite launching are modeled, for Kessler Syndrome to emerge, autocatalytic debris growth is essential. In our main calibration, Kessler Syndrome can emerge anytime between the year 2040 and the year 2184, with the precise date being very sensitive to the calibration of autocatalytic debris growth parameters. 
+	</small>
+</p>
+
 Raphaelle G. Coulombe, **Akhil Rao**: *Fires and local labor markets* in the [*Journal of Environmental Economics and Management*](https://www.sciencedirect.com/science/article/pii/S0095069624001839)
 
 <p class="tab">
 	<small>
 		<b>Abstract:</b> We study the dynamic effects of fires on county labor markets in the US using a novel geophysical measure of fire exposure based on satellite imagery. We find increased fire exposure depresses employment growth for about three years, with part of the medium-run effects being linked to migration. In counties that experience fires, the cumulative fire-induced decline over 3 years is on the order of 15% of employment growth over that horizon, on average. These effects appear to be driven by the fires burning more than 1.5% of county area. While very few fires in our data receive a federal disaster declaration and aid from the Federal Emergency Management Agency (FEMA), FEMA declarations appear to reverse the estimated effects on employment and migration. We also document that counties with more diversified economies and more educated workforces appear to be more resilient against fire shocks. By overcoming challenges in measuring fire impacts, we identify vulnerable places and economic states, offering guidance on tailoring relief efforts and contributing to a broader understanding of natural disasters’ economic impacts.
-	</small>
-</p>
-
-**Akhil Rao**, Giacomo Rondina: *Open access to orbit and runaway space debris growth* [draft](https://arxiv.org/abs/2202.07442) (*Forthcoming at the Journal of the Association of Environmental and Resource Economists*)
-
-<p class="tab">
-	<small>
-		<b>Abstract:</b> We present a dynamic physico-economic model of Earth orbit use with endogenous satellite collision risk to study conditions under which debris-producing collisions between orbiting bodies result in debris growth that may render Earth's orbits unusable, an outcome known as Kessler Syndrome. We characterize the dynamics of objects in orbit under open access as well as when external costs%&mdash;the impact of an additional satellite launch on the collision risk faced by all satellites%&mdash;are internalized, and we show that Kessler Syndrome can emerge in both cases. Finally, we show that once the economic incentives of satellite launching are modeled, for Kessler Syndrome to emerge, autocatalytic debris growth is essential. In our main calibration, Kessler Syndrome can emerge anytime between the year 2040 and the year 2184, with the precise date being very sensitive to the calibration of autocatalytic debris growth parameters. 
 	</small>
 </p>
 
