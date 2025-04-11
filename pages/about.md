@@ -6,23 +6,17 @@ description: Akhil Rao is a guy
 
 ### who are you?
 
-<table style="width:100%">
-<div class="row">
-  <div class="column">
-    <td width="75%" class = "left"> 
-        <p>  I am an economist focused on natural resource and industrial economics. I previously served as a senior economic advisor, including as acting Chief Economist, at NASA. Before NASA I was an Assistant Professor of Economics at Middlebury College. <br/><br/>
-        </p>
-    </td> 
-  </div> 
-    <div class="column">
-    <td width="25%" class = "right">
-       <img src="../assets/pics/akhil_hat.png"
-                    title="Akhil Rao"
-      />
-    </td>
-  </div>
+
+<div class="profile-container" style="display: flex; align-items: flex-start; gap: 2em; margin-bottom: 2em;">
+    <div style="flex: 1;">
+        <p>I am an economist focused on natural resource and industrial economics. I previously served as a senior economic advisor, including as acting Chief Economist, at NASA. Before NASA I was an Assistant Professor of Economics at Middlebury College.</p>
+    </div>
+    <img src="../assets/pics/akhil_hat.png" 
+         alt="Akhil Rao"
+         title="Akhil Rao"
+         style="width: 200px; height: auto;"
+    />
 </div>
-</table>
 
 At NASA, I led agency-level market analysis in areas of strategic interest. These included private space stations, cislunar transportation and infrastructure, and space data relay. I also led work on cost-benefit analysis of space sustainability investments.
 
