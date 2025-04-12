@@ -46,12 +46,12 @@ I like bike rides, snowboarding, and sci-fi/fantasy and historical fiction. I li
 
     <div class="row-fluid">
         <div class="span5">
-            <a href="http://www.middlebury.edu/academics/econ/faculty_staff_officehours/node/623754">Akhil Rao</a><br/>
+            <!-- <a href="http://www.middlebury.edu/academics/econ/faculty_staff_officehours/node/623754">Akhil Rao</a><br/>
             <a href="http://www.middlebury.edu/academics/econ">Department of Economics</a><br/>
             <a href="https://www.middlebury.edu">Middlebury College</a><br/>
             Warner Hall 502A<br/>
             Middlebury, VT 05753<br/>
-            USA<br/><br/>
+            USA<br/><br/> -->
 
             <div id="hide_email">
             Email: <code>akh</code><b>I</b><code>ilr</code><b>don't</b><code>@</code><b>want</b><code>midd</code><b>spam!

@@ -1,0 +1,59 @@
+---
+layout: default
+---
+
+{% assign viz_array = site.data.visualizations.visualizations %}
+{% assign current_index = -1 %}
+
+{% for viz in viz_array %}
+  {% if viz.id == page.vizid %}
+    {% assign current_index = forloop.index0 %}
+    {% assign current_viz = viz %}
+  {% endif %}
+{% endfor %}
+
+{% if current_index > 0 %}
+  {% assign prev_index = current_index | minus: 1 %}
+  {% assign prev_viz = viz_array[prev_index] %}
+{% endif %}
+
+{% assign next_index = current_index | plus: 1 %}
+{% if next_index < viz_array.size %}
+  {% assign next_viz = viz_array[next_index] %}
+{% endif %}
+
+<div class="navbar">
+  <div class="navbar-inner">
+      <ul class="nav">
+          {% if prev_viz %}
+          <li><a href="{{ BASE_PATH }}/pages/viz/{{ prev_viz.id }}.html">← previous</a></li>
+          {% endif %}
+          <li><a href="{{ BASE_PATH }}/pages/visualizations.html">all visualizations</a></li>
+          {% if next_viz %}
+          <li><a href="{{ BASE_PATH }}/pages/viz/{{ next_viz.id }}.html">next →</a></li>
+          {% endif %}
+      </ul>
+  </div>
+</div>
+
+<div class="visualization-detail">
+  <h1>{{ current_viz.title }}</h1>
+  
+  <div class="viz-image">
+    <img src="{{ current_viz.fullimage }}" alt="{{ current_viz.alt }}">
+  </div>
+  
+  <div class="viz-description">
+    {{ current_viz.description }}
+  </div>
+  
+  {% if page.content != "" %}
+  <div class="viz-additional-content">
+    {{ content }}
+  </div>
+  {% endif %}
+  
+  <div class="viz-metadata">
+    <p class="category">Category: {{ current_viz.category | replace: "_", " " | capitalize }}</p>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 ---
 layout: frontpage
 title: Akhil Rao
-description: Akhil Rao is an Assistant Professor of Economics at Middlebury College; research in environmental and natural resource economics
+description: Akhil Rao is a person.
 keywords: Rao, environmental economics, resource economics, space, applied theory, computational economics
 ---
 
@@ -17,31 +17,49 @@ keywords: Rao, environmental economics, resource economics, space, applied theor
   </div>
 </div>
 
+{% assign featured_items = site.data.visualizations.visualizations | where: "featured", true | limit: 4 %}
 
+<style>
+  /* Force equal sizing for both columns */
+  .wide td {
+    width: 50%;
+    box-sizing: border-box;
+  }
+  .wide img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+  }
+</style>
 
 <table class="wide">
 <tr>
   <td class="left">
-    <a href="pages/publpics/debris_distribution_070718.html">
-        <img src="../../assets/publpics/debris_distribution_070718.png" alt="Locations of LEO debris in Space-Track.Org database (July 07 2018)" title="Where are debris in LEO?"/>
+    <a href="{{ BASE_PATH }}/pages/publpics/{{ featured_items[0].id }}.html">
+        <img src="{{ featured_items[0].thumbnail }}" alt="{{ featured_items[0].alt }}" title="{{ featured_items[0].title }}"/>
     </a>
   </td>
   <td class="right">
-    <a href="pages/publpics/yearly_hhi_leo_gso.html">
-        <img src="../../assets/publpics/yearly_hhi_leo_gso.png" alt="Worldwide commercial satellite launch services market concentration, 1996-2015" title="How competitive is the satellite launch industry in the New Space era?"/>
+    <a href="{{ BASE_PATH }}/pages/publpics/{{ featured_items[1].id }}.html">
+        <img src="{{ featured_items[1].thumbnail }}" alt="{{ featured_items[1].alt }}" title="{{ featured_items[1].title }}"/>
     </a>
   </td>
 </tr>
 <tr>
   <td class="left">
-      <a href="pages/publpics/yearly_sat_hhi_leo.html">
-        <img src="../../assets/publpics/HHI_panel_2a.png" alt="Orbital-use concentration, 2006&ndash;2020" title="Orbital-use concentration, 2006&ndash;2020"/>
+    <a href="{{ BASE_PATH }}/pages/publpics/{{ featured_items[2].id }}.html">
+        <img src="{{ featured_items[2].thumbnail }}" alt="{{ featured_items[2].alt }}" title="{{ featured_items[2].title }}"/>
     </a>
   </td>
   <td class="right">
-    <a href="pages/publpics/biffplot3.html">
-        <img src="../../assets/publpics/kessler_basin_small.png" alt="Open access and orbital stability" title="When are open-access orbital steady states stable?"/>
+    <a href="{{ BASE_PATH }}/pages/publpics/{{ featured_items[3].id }}.html">
+        <img src="{{ featured_items[3].thumbnail }}" alt="{{ featured_items[3].alt }}" title="{{ featured_items[3].title }}"/>
     </a>
   </td>
 </tr>
 </table>
+
+<div class="view-all-container">
+  <a href="{{ BASE_PATH }}/pages/visualizations.html" class="view-all-link">View all pictures →</a>
+</div>

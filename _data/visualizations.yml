@@ -1,0 +1,74 @@
+# List of visualizations for the homepage and gallery
+# This file maps visualizations to their existing description pages
+visualizations:
+  - id: debris_distribution_070718
+    title: "Where are debris in LEO?"
+    thumbnail: "../../assets/publpics/debris_distribution_070718.png"
+    fullimage: "../../assets/bigpublpics/debris_distribution_070718.png"
+    alt: "Locations of LEO debris in Space-Track.Org database (July 07 2018)"
+    description_page: "pages/publpics/debris_distribution_070718.md"
+    description: "Distribution of tracked debris objects in Low Earth Orbit from Space-Track.Org database (July 2018)."
+    category: "robotic satellites"
+    featured: true
+    prev: "launch_summary"
+    next: "apo_peri_overlay"
+  
+  - id: apo_peri_overlay
+    title: "Satellite Locations (Apogee and Perigee)"
+    thumbnail: "../../assets/publpics/apo_peri_overlay.png"
+    fullimage: "../../assets/bigpublpics/apo_peri_overlay.png"
+    alt: "Apogee and Perigee of Orbiting Satellites (2016)"
+    description_page: "pages/publpics/apo_peri_overlay.md"
+    description: "Distribution of apogee and perigee for man-made satellites, showing clustering patterns in both LEO and GSO orbits."
+    category: "robotic satellites"
+    featured: false
+    prev: "debris_distribution_070718"
+    next: "leo_geo_gabbard"
+  
+  - id: leo_geo_gabbard
+    title: "LEO vs GEO Gabbard Diagrams"
+    thumbnail: "../../assets/publpics/leo_geo_gabbard.png"
+    fullimage: "../../assets/bigpublpics/leo_geo_gabbard.png"
+    alt: "LEO vs GEO Gabbard Diagrams"
+    description_page: "pages/publpics/leo_geo_gabbard.md"
+    description: "Comparison of Gabbard diagrams for Low Earth Orbit (LEO) and Geostationary Orbit (GEO) satellites."
+    category: "robotic satellites"
+    featured: true
+    prev: "apo_peri_overlay"
+    next: "yearly_hhi_leo_gso"
+  
+  - id: yearly_hhi_leo_gso
+    title: "Commercial Satellite Launch Market Concentration"
+    thumbnail: "../../assets/publpics/yearly_hhi_leo_gso.png"
+    fullimage: "../../assets/bigpublpics/yearly_hhi_leo_gso.png"
+    alt: "Worldwide commercial satellite launch services market concentration, 1996-2015"
+    description_page: "pages/publpics/yearly_hhi_leo_gso.md"
+    description: "Herfindahl-Hirschman Index for commercial satellite launch services, comparing LEO and GSO markets (1996-2015)."
+    category: "space launch"
+    featured: true
+    prev: "leo_geo_gabbard"
+    next: "falcon_booster_reuse"
+  
+  - id: falcon_booster_reuse
+    title: "SpaceX Falcon 9 Reuse"
+    thumbnail: "../../assets/publpics/falcon_booster_reuse.png"
+    fullimage: "../../assets/bigpublpics/falcon_booster_reuse.png"
+    alt: "SpaceX Falcon booster reuse"
+    description_page: "pages/publpics/falcon_booster_reuse.md"
+    description: "Analysis of SpaceX's Falcon booster reuse."
+    category: "space launch"
+    featured: true
+    prev: "yearly_sat_hhi_leo"
+    next: "launch_summary"
+
+  - id: launch_summary
+    title: "Launch Summary Statistics"
+    thumbnail: "../../assets/publpics/launch_summary.png"
+    fullimage: "../../assets/bigpublpics/launch_summary.png"
+    alt: "Launch Summary Statistics"
+    description_page: "pages/publpics/launch_summary.md"
+    description: "Summary statistics for global launch activities, showing trends in launch rates and payload characteristics."
+    category: "space launch"
+    featured: false
+    prev: "falcon_booster_reuse"
+    next: "debris_distribution_070718"
