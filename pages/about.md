@@ -6,12 +6,12 @@ description: Akhil Rao is a guy
 
 ### who are you?
 
-
 <div class="profile-container" style="display: flex; align-items: flex-start; gap: 2em; margin-bottom: 2em;">
     <div style="flex: 1;">
-        <p>I am an economist focused on natural resource and industrial economics. I previously served as a senior economic advisor, including as acting Chief Economist, at NASA. Before NASA I was an Assistant Professor of Economics at Middlebury College.</p>
+        <p>I'm an economist by training. I like bike rides, snowboarding, cats, making generative art, and reading speculative fiction. I'm mostly water.
+        <p>From late 2023 through early 2025 I served as a senior economist, including as acting Chief Economist, at NASA. Before that I was an Assistant Professor of Economics at Middlebury College.</p>
         <p>At NASA, I led agency-level market analysis in areas of strategic interest. These included private space stations, cislunar transportation and infrastructure, and space data relay. I also led work on cost-benefit analysis of space sustainability investments.</p>
-        <p>In my academic research I focus on the economics of outer space and the macroeconomics of environmental phenomena.</p>
+        <p>Most of my academic research is on the resource and industrial economics of outer space and the macroeconomics of environmental phenomena.</p>
     </div>
     <img src="../assets/pics/akhil_hat.png" 
          title="Akhil Rao"
@@ -29,15 +29,15 @@ My research is mostly about the environmental and industrial economics of outer 
 
 <!-- Most of my research is about the economics of orbit use, much of which fits under the increasingly-popular term ["space sustainability"](https://www.nasa.gov/spacesustainability/). Earth's orbits are the world's largest common-pool resource, and as humans launch more satellites the risk of collisions between orbiting objects increases. Paths in low-Earth orbit are under &ldquo;open access&rdquo;&mdash;firms are unable to secure property rights over orbits. Open access to a common-pool resource typically causes over-exploitation, and sometimes collapse, of the resource. In the orbital case, expect to see more satellite-destroying collisions and a higher risk of [Kessler Syndrome](https://en.wikipedia.org/wiki/Kessler_syndrome) in low-Earth orbit than would be socially optimal.  -->
 
-#### examples of my academic work
+#### some of my academic work
 
 On outer space: [measuring the gains from optimal orbital-use management through Pigouvian taxation](https://www.pnas.org/doi/10.1073/pnas.1921260117); [developing resource economic theory for open-access vs optimal orbit use and assessing conditions under which Kessler Syndrome is an equilibrium or even optimal outcome](https://arxiv.org/abs/2202.07442); studying economic policy choice and the equilibrium deployment of active debris removal technologies; [studying how megaconstellation operators will interact and how they should be regulated](https://www.pnas.org/doi/10.1073/pnas.2221343120); [designing integrated assessment models of orbit use](https://arxiv.org/abs/2309.10252); [using network theory and econometrics to develop granular models of risk-mitigating maneuvering patterns in orbit](https://arxiv.org/abs/2410.04599); [assessing the terrestrial sustainability impacts of megaconstellations](https://arxiv.org/abs/2309.02338); and [analyzing the structure of self-enforcing international agreements to manage collision risk and debris production](https://arxiv.org/abs/2205.03926). These projects involve a mix of economic theory and statistics. Calibrating/estimating the models tends to require substantial new data collection and integration.
 
 On environmental phenomena: [modeling disease-economy trade-offs under different control strategies](https://www.nature.com/articles/s41467-022-30642-8); [estimating the dynamic effects of fires on county-level employment in the US](https://www.sciencedirect.com/science/article/pii/S0095069624001839).
 
-### what is your play about?
+<!-- ### what is your play about?
+ -->
 
-I like bike rides, snowboarding, and sci-fi/fantasy and historical fiction. I live with cats who think I'm kind of slow.
 
 ---
 
