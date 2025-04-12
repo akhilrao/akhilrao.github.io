@@ -3,14 +3,24 @@ layout: frontpage
 title: Water allocation trading in Australia, 2008--2019
 ---
 
+{% assign current_id = "govt_vs_nongovt_trades" %}
+{% assign current_viz = site.data.visualizations.visualizations | where: "id", current_id | first %}
+
 <div class="navbar">
   <div class="navbar-inner">
       <ul class="nav">
-          <li><a href="trading_over_time.html">prev</a></li>
-          <li><a href="trading_over_time.html">next</a></li>
+          {% if current_viz.prev %}
+          {% assign prev_viz = site.data.visualizations.visualizations | where: "id", current_viz.prev | first %}
+          <li><a href="{{ current_viz.prev }}.html">← prev</a></li>
+          {% endif %}
+          <li><a href="../../pages/visualizations.html">all visualizations</a></li>
+          {% if current_viz.next %}
+          {% assign next_viz = site.data.visualizations.visualizations | where: "id", current_viz.next | first %}
+          <li><a href="{{ current_viz.next }}.html">next →</a></li>
+          {% endif %}
       </ul>
   </div>
-</div> 
+</div>
 
 ![Govt and non-govt water allocation trading in Australia, 2008--2019](../../assets/bigpublpics/govt_vs_nongovt_trades.png)
 

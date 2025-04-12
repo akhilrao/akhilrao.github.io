@@ -3,11 +3,21 @@ layout: frontpage
 title: Orbital-use concentration, 2006-2020
 ---
 
+{% assign current_id = "yearly_sat_hhi_leo" %}
+{% assign current_viz = site.data.visualizations.visualizations | where: "id", current_id | first %}
+
 <div class="navbar">
   <div class="navbar-inner">
       <ul class="nav">
-          <li><a href="launch_summary.html">prev</a></li>
-          <li><a href="yearly_hhi_leo_gso.html">next</a></li>
+          {% if current_viz.prev %}
+          {% assign prev_viz = site.data.visualizations.visualizations | where: "id", current_viz.prev | first %}
+          <li><a href="{{ current_viz.prev }}.html">← prev</a></li>
+          {% endif %}
+          <li><a href="../../pages/visualizations.html">all visualizations</a></li>
+          {% if current_viz.next %}
+          {% assign next_viz = site.data.visualizations.visualizations | where: "id", current_viz.next | first %}
+          <li><a href="{{ current_viz.next }}.html">next →</a></li>
+          {% endif %}
       </ul>
   </div>
 </div>
