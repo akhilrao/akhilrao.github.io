@@ -9,7 +9,7 @@ description: Akhil Rao is a guy
 <div class="profile-container" style="display: flex; align-items: flex-start; gap: 2em; margin-bottom: 2em;">
     <div style="flex: 1;">
         <p>I'm an economist by training. I like bike rides, snowboarding, cats, making generative art, and reading speculative fiction. I'm mostly water.</p>
-        <p>From late 2023 through early 2025 I served as a senior economist at NASA. Before that I was an Assistant Professor of Economics at Middlebury College.</p>
+        <p>From late 2023 through early 2025 I served as a senior economist and acting Chief Economist at NASA. Before that I was an Assistant Professor of Economics at Middlebury College.</p>
         <p>At NASA, I led agency-level market analysis in areas of strategic interest. These included private space stations, cislunar transportation and infrastructure, and space data relay. I also led work on cost-benefit analysis of space sustainability investments.</p>
         <p>Most of my academic research is on the resource and industrial economics of outer space and the macroeconomics of environmental phenomena.</p>
     </div>
