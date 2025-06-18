@@ -45,7 +45,7 @@ visualizations:
     description_page: "pages/publpics/yearly_hhi_leo_gso.md"
     description: "Herfindahl-Hirschman Index for commercial satellite launch services, comparing LEO and GSO markets (1996-2015)."
     category: "space launch"
-    featured: true
+    featured: false
     prev: "leo_geo_gabbard"
     next: "falcon_booster_reuse"
   
@@ -71,4 +71,16 @@ visualizations:
     category: "space launch"
     featured: false
     prev: "falcon_booster_reuse"
+    next: "debris_distribution_070718"
+
+  - id: sempi_fig1_highfill_rao_2025
+    title: "Space Economy Manufacturing Plant Utilization Index"
+    thumbnail: "../../assets/publpics/sempi_fig1_highfill_rao_2025.png"
+    fullimage: "../../assets/bigpublpics/sempi_fig1_highfill_rao_2025.png"
+    alt: "Space Economy Manufacturing Plant Utilization Index (SEMPI) 2012-2022"
+    description_page: "pages/publpics/sempi_fig1_highfill_rao_2025.md"
+    description: "Quarterly utilization rates for US space economy manufacturing plants from 2012-2022, showing capacity trends and economic cycles."
+    category: "space economy"
+    featured: true
+    prev: "launch_summary"
     next: "debris_distribution_070718"
