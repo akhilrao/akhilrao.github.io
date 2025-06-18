@@ -71,7 +71,7 @@ visualizations:
     category: "space launch"
     featured: false
     prev: "falcon_booster_reuse"
-    next: "debris_distribution_070718"
+    next: "sempi_fig1_highfill_rao_2025"
 
   - id: sempi_fig1_highfill_rao_2025
     title: "Space Economy Manufacturing Plant Utilization Index"
