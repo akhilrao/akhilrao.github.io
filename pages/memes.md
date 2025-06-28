@@ -1,7 +1,7 @@
 ---
 layout: frontpage
 title: Memes
-description: A collection of memes
+description: memes
 ---
 
 <style>
