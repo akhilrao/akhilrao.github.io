@@ -1,7 +1,7 @@
 ---
 layout: frontpage
 title: Memes
-description: memes
+description: A collection of memes
 ---
 
 <style>
@@ -27,13 +27,6 @@ description: memes
 .meme-item img:hover {
   transform: scale(1.02);
   cursor: pointer;
-}
-
-.meme-filename {
-  font-size: 12px;
-  color: #666;
-  margin-top: 8px;
-  font-family: monospace;
 }
 
 @media (max-width: 768px) {
@@ -69,13 +62,12 @@ description: memes
   {% for meme in sorted_memes %}
     <div class="meme-item">
       <img src="{{ BASE_PATH }}{{ meme.path }}" alt="{{ meme.basename }}" onclick="window.open(this.src, '_blank')">
-      <div class="meme-filename">{{ meme.basename }}</div>
     </div>
   {% endfor %}
   
   {% if meme_images.size == 0 %}
     <div style="grid-column: 1 / -1; text-align: center; color: #666; font-style: italic;">
-      u cant haz memes :'( 
+      No memes found. Add image files to the <code>assets/memes/</code> directory.
     </div>
   {% endif %}
 </div>
