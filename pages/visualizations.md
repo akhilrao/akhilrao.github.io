@@ -22,12 +22,12 @@ description: Gallery of neat pictures by Akhil Rao
   {% for viz in site.data.visualizations.visualizations %}
     <div class="gallery-item" data-category="{{ viz.category }}">
       <a href="{{ BASE_PATH }}/pages/publpics/{{ viz.id }}.html">
-        <div class="gallery-title">
+        <!-- <div class="gallery-title"> # uncomment to add back image titles
           <h3>{{ viz.title }}</h3>
           {% if viz.description %}
             <p class="gallery-description">{{ viz.description }}</p>
           {% endif %}
-        </div>
+        </div> -->
         <div class="image-container">
           <img src="{{ viz.thumbnail }}" alt="{{ viz.alt }}" title="{{ viz.title }}"/>
         </div>
