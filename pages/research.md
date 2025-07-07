@@ -23,6 +23,7 @@ active_page: research
       <label><input type="radio" name="domain" value="all" checked> All</label>
       <label><input type="radio" name="domain" value="space"> Space</label>
       <label><input type="radio" name="domain" value="macroeconomics"> Macroeconomics</label>
+      <label><input type="radio" name="domain" value="game_theory"> Game Theory</label>
     </div>
     
     <div class="filter-group">

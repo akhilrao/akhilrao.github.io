@@ -176,12 +176,78 @@ papers:
 
   - title: "The long-run economics of sustainable orbit use"
     authors: "Julien Guyot, Akhil Rao, Sébastien Rouillon"
-    venue: "Working Paper"
-    year: 2022
+    venue: "Routledge Handbook of Space Policy"
+    year: 2025
     summary: ""
-    final_version: ""
+    final_version: "https://www.taylorfrancis.com/chapters/edit/10.4324/9781003342380-17/long-run-economics-sustainable-orbit-use-julien-guyot-akhil-rao-s%C3%A9bastien-rouillon"
     preprint: "https://hal.archives-ouvertes.fr/hal-03891292"
     type: "quantitative_theory"
+    domain: "space"
+    status: "finished"
+
+  - title: "Experimental price indices for satellite manufacturing"
+    authors: "Akhil Rao, Tina Highfill"
+    venue: "BEA Working Papers"
+    year: 2025
+    summary: ""
+    final_version: "https://www.bea.gov/sites/default/files/papers/BEA-WP2025-5.pdf"
+    preprint: ""
+    type: "methodology"
+    domain: "space"
+    status: "finished"
+
+  - title: "A Tabletop Game to Study Business Wargaming in the P-LEO SATCOM Marketplace"
+    authors: "Reza Qureshi, Ryan Gleason, Akhil Rao, Stephen Mulder, Daniel R. Tauritz, Davide Guzzetti"
+    venue: "IEEE Conference on Games"
+    year: 2024
+    summary: ""
+    final_version: "https://doi.org/10.1109/CoG60054.2024.10645581"
+    preprint: ""
+    type: "methodology"
+    domain: "space"
+    status: "finished"
+
+  - title: "A table-top game to simulate competition between P-LEO satellite internet constellations"
+    authors: "Reza S. Qureshi, Christopher Roberts, Erik Kimbrell, Stephen Mulder, Akhil Rao, Daniel R. Tauritz, Davide Guzzetti"
+    venue: "AIAA/AAS Astrodynamics Specialist Conference"
+    year: 2023
+    summary: ""
+    final_version: ""
+    preprint: ""
+    type: "methodology"
+    domain: "space"
+    status: "finished"
+
+  - title: "Economic principles of space traffic control"
+    authors: "Akhil Rao"
+    venue: "Working Paper"
+    year: 2018
+    summary: ""
+    final_version: ""
+    preprint: "assets/working_papers/Economic_Principles_of_Space_Traffic_Control.pdf"
+    type: "quantitative_theory"
+    domain: "space"
+    status: "dormant"
+
+  - title: "The economics of orbital transportation"
+    authors: "Akhil Rao"
+    venue: "Working Paper"
+    year: 2018
+    summary: ""
+    final_version: ""
+    preprint: "assets/working_papers/The_Economics_of_Orbital_Transportation.pdf"
+    type: "quantitative_theory"
+    domain: "space"
+    status: "dormant"
+
+  - title: "Economists' Response to 86 FR 61335"
+    authors: "Akhil Rao, Nodir Adilov, Brendan Cunningham, Julien Guyot, Sébastien Rouillon, Jeffrey Wagner"
+    venue: "Public Comment"
+    year: 2021
+    summary: ""
+    final_version: "assets/published_papers/Economists_Response_86_FR_61335.pdf"
+    preprint: ""
+    type: "qualitative_theory"
     domain: "space"
     status: "finished"
 
@@ -239,6 +305,17 @@ papers:
     type: "methodology"
     domain: "space"
     status: "finished"
+
+  - title: "Elicitation and Corrective Taxation"
+    authors: "Akhil Rao, Brennan McConnell"
+    venue: "Working Paper"
+    year: 2018
+    summary: ""
+    final_version: ""
+    preprint: "assets/working_papers/Elicitation_and_Corrective_Taxation.pdf"
+    type: "methodology"
+    domain: "game_theory"
+    status: "cold storage"
 
   - title: "The Economics of Orbit Use: Theory, Policy, and Measurement"
     authors: "Akhil Rao"
