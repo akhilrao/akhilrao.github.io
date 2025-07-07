@@ -315,7 +315,7 @@ papers:
     preprint: "assets/working_papers/Elicitation_and_Corrective_Taxation.pdf"
     type: "methodology"
     domain: "game_theory"
-    status: "cold storage"
+    status: "cold_storage"
 
   - title: "The Economics of Orbit Use: Theory, Policy, and Measurement"
     authors: "Akhil Rao"
