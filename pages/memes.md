@@ -2,6 +2,7 @@
 layout: frontpage
 title: Memes
 description: A collection of memes
+active_page: memes
 ---
 
 <style>

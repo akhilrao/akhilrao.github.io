@@ -2,6 +2,7 @@
 layout: page
 title: research
 description: Akhil Rao's research
+active_page: research
 ---
 
 <div class="research-container">
