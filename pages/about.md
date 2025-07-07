@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: frontpage
 title: about
 description: Akhil Rao is a guy
 active_page: about
