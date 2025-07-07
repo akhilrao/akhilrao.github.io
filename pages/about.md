@@ -46,18 +46,10 @@ On environmental phenomena: [modeling disease-economy trade-offs under different
 
     <div class="row-fluid">
         <div class="span5">
-            <!-- <a href="http://www.middlebury.edu/academics/econ/faculty_staff_officehours/node/623754">Akhil Rao</a><br/>
-            <a href="http://www.middlebury.edu/academics/econ">Department of Economics</a><br/>
-            <a href="https://www.middlebury.edu">Middlebury College</a><br/>
-            Warner Hall 502A<br/>
-            Middlebury, VT 05753<br/>
-            USA<br/><br/> -->
-
             <div id="hide_email">
             Email: <code>akh</code><b>I</b><code>ilr</code><b>don't</b><code>@</code><b>want</b><code>midd</code><b>spam!
             </b><code>le</code><b>So</b><code></code><b>please</b><code>bu</code><b>leave
             </b><code>ry</code><b>me</b><code>.</code><b>alone</b><code>e</code><b>!</b><code>du</code><br/>
-            Phone: 802-443-2192
             </div>
         </div>
 
