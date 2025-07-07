@@ -68,18 +68,18 @@
 # TEMPLATE FOR NEW PAPERS
 # ==============================================================================
 
-papers:
-  # Copy this template and fill in your paper details:
-  - title: "Your Paper Title Here"
-    authors: "First Author, Second Author, Third Author"
-    venue: "Journal Name or Working Paper"
-    year: 2024
-    summary: "One to two sentences explaining what this paper shows and why it matters."
-    final_version: "https://journal.example.com/your-paper"  # or ""
-    preprint: "https://arxiv.org/abs/your-paper"  # or ""
-    type: "empirical"  # qualitative_theory, quantitative_theory, empirical, methodology
-    domain: "space"  # space, macroeconomics
-    status: "active"  # finished, active, dormant, cold_storage
+# papers:
+#   # Copy this template and fill in your paper details:
+#   - title: "Your Paper Title Here"
+#     authors: "First Author, Second Author, Third Author"
+#     venue: "Journal Name or Working Paper"
+#     year: 2024
+#     summary: "One to two sentences explaining what this paper shows and why it matters."
+#     final_version: "https://journal.example.com/your-paper"  # or ""
+#     preprint: "https://arxiv.org/abs/your-paper"  # or ""
+#     type: "empirical"  # qualitative_theory, quantitative_theory, empirical, methodology
+#     domain: "space"  # space, macroeconomics
+#     status: "active"  # finished, active, dormant, cold_storage
 
 # ==============================================================================
 # AKHIL RAO'S RESEARCH PAPERS
