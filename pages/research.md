@@ -1,253 +1,307 @@
 ---
-layout: page
-title: Research
-description: Research papers by Akhil Rao
+layout: frontpage
+title: research
+description: Akhil Rao's research
 active_page: research
 ---
 
-<link rel="stylesheet" href="{{ BASE_PATH }}/assets/themes/twitter/css/research-timeline.css">
-
-<div style="text-align: center; margin-bottom: 2rem;">
-  Most of my research articles are available on my <a href="https://arxiv.org/search/?searchtype=author&query=Rao%2C+A" style="color: #007bff;">arxiv page</a>
-  or my <a href="https://scholar.google.com/citations?user=zYJ2IXQAAAAJ&hl=en" style="color: #007bff;">Google Scholar page</a>.
-</div>
-
 <div class="research-container">
   <div class="research-filters">
-    <h3 style="color: #6f42c1; margin-bottom: 1rem;">Filter by:</h3>
+    <h3>Filter by:</h3>
     
-    <div class="filter-section" style="margin-bottom: 1.5rem;">
-      <h4 style="margin-bottom: 0.5rem;">Type</h4>
-      <div style="margin-left: 1rem;">
-        <div class="filter-legend">
-          <label class="filter-text">
-            <input type="radio" name="type" value="all" class="filter-item" checked> All
-          </label>
-        </div>
-        <div class="filter-legend">
-          <label class="filter-text">
-            <input type="radio" name="type" value="qualitative-theory" class="filter-item"> Qualitative Theory
-          </label>
-          <span class="legend-symbol symbol-qualitative"></span>
-        </div>
-        <div class="filter-legend">
-          <label class="filter-text">
-            <input type="radio" name="type" value="quantitative-theory" class="filter-item"> Quantitative Theory
-          </label>
-          <span class="legend-symbol symbol-quantitative"></span>
-        </div>
-        <div class="filter-legend">
-          <label class="filter-text">
-            <input type="radio" name="type" value="empirical" class="filter-item"> Empirical
-          </label>
-          <span class="legend-symbol symbol-empirical"></span>
-        </div>
-        <div class="filter-legend">
-          <label class="filter-text">
-            <input type="radio" name="type" value="methodology" class="filter-item"> Methodology
-          </label>
-          <span class="legend-symbol symbol-methodology"></span>
-        </div>
-      </div>
+    <div class="filter-group">
+      <h4>Type</h4>
+      <label><input type="radio" name="type" value="all" checked> All</label>
+      <label><input type="radio" name="type" value="qualitative_theory"> Qualitative Theory</label>
+      <label><input type="radio" name="type" value="quantitative_theory"> Quantitative Theory</label>
+      <label><input type="radio" name="type" value="empirical"> Empirical</label>
+      <label><input type="radio" name="type" value="methodology"> Methodology</label>
     </div>
-
-    <div class="filter-section" style="margin-bottom: 1.5rem;">
-      <h4 style="margin-bottom: 0.5rem;">Domain</h4>
-      <div style="margin-left: 1rem;">
-        <div class="filter-legend">
-          <label class="filter-text">
-            <input type="radio" name="domain" value="all" class="filter-item" checked> All
-          </label>
-        </div>
-        <div class="filter-legend">
-          <label class="filter-text">
-            <input type="radio" name="domain" value="space" class="filter-item"> Space
-          </label>
-          <span class="legend-symbol symbol-space">●</span>
-        </div>
-        <div class="filter-legend">
-          <label class="filter-text">
-            <input type="radio" name="domain" value="macroeconomics" class="filter-item"> Macroeconomics
-          </label>
-          <span class="legend-symbol symbol-macro">●</span>
-        </div>
-        <div class="filter-legend">
-          <label class="filter-text">
-            <input type="radio" name="domain" value="game-theory" class="filter-item"> Game Theory
-          </label>
-          <span class="legend-symbol symbol-game">●</span>
-        </div>
-      </div>
+    
+    <div class="filter-group">
+      <h4>Domain</h4>
+      <label><input type="radio" name="domain" value="all" checked> All</label>
+      <label><input type="radio" name="domain" value="space"> Space</label>
+      <label><input type="radio" name="domain" value="macroeconomics"> Macroeconomics</label>
+      <label><input type="radio" name="domain" value="game_theory"> Game Theory</label>
     </div>
-
-    <div class="filter-section">
-      <h4 style="margin-bottom: 0.5rem;">Status</h4>
-      <div style="margin-left: 1rem;">
-        <div class="filter-legend">
-          <label class="filter-text">
-            <input type="radio" name="status" value="all" class="filter-item" checked> All
-          </label>
-        </div>
-        <div class="filter-legend">
-          <label class="filter-text">
-            <input type="radio" name="status" value="finished" class="filter-item"> Finished
-          </label>
-          <div class="legend-symbol symbol-finished"></div>
-        </div>
-        <div class="filter-legend">
-          <label class="filter-text">
-            <input type="radio" name="status" value="active" class="filter-item"> Active
-          </label>
-          <div class="legend-symbol symbol-active"></div>
-        </div>
-        <div class="filter-legend">
-          <label class="filter-text">
-            <input type="radio" name="status" value="dormant" class="filter-item"> Dormant
-          </label>
-          <div class="legend-symbol symbol-dormant"></div>
-        </div>
-        <div class="filter-legend">
-          <label class="filter-text">
-            <input type="radio" name="status" value="cold-storage" class="filter-item"> Cold Storage
-          </label>
-          <div class="legend-symbol symbol-cold"></div>
-        </div>
-      </div>
+    
+    <div class="filter-group">
+      <h4>Status</h4>
+      <label><input type="radio" name="status" value="all" checked> All</label>
+      <label><input type="radio" name="status" value="finished"> Finished</label>
+      <label><input type="radio" name="status" value="active"> Active</label>
+      <label><input type="radio" name="status" value="dormant"> Dormant</label>
+      <label><input type="radio" name="status" value="cold_storage"> Cold Storage</label>
     </div>
   </div>
 
-  <div class="research-content">
-    <div class="research-list">
-      {% for paper in site.data.papers.papers %}
-        <div class="research-item" 
-             data-type="{{ paper.type | replace: '_', '-' }}" 
-             data-domain="{{ paper.domain | replace: ' ', '-' | downcase }}" 
-             data-status="{{ paper.status | replace: '_', '-' }}"
-             style="margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid #eee;">
-          
-          <h3 style="color: #6f42c1; margin-bottom: 0.5rem;">
-            <a href="{% if paper.external_link %}{{ paper.external_link }}{% elsif paper.pdf_link %}{{ BASE_PATH }}/{{ paper.pdf_link }}{% else %}#{% endif %}" 
-               style="text-decoration: none; color: inherit;">
-              {{ paper.title }}
-            </a>
-          </h3>
-          
-          <p style="margin: 0.5rem 0; font-style: italic; color: #666;">
-            {{ paper.authors }} 
-            <em>{{ paper.venue }}</em> ({{ paper.year }})
-          </p>
-          
-          <div style="margin: 0.75rem 0;">
-            {% if paper.pdf_link %}
-              <a href="{{ BASE_PATH }}/{{ paper.pdf_link }}" class="btn btn-sm" 
-                 style="background: #28a745; color: white; text-decoration: none; padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; margin-right: 0.5rem;">
-                Final Version
-              </a>
-            {% endif %}
-            {% if paper.external_link %}
-              <a href="{{ paper.external_link }}" class="btn btn-sm" 
-                 style="background: #007bff; color: white; text-decoration: none; padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; margin-right: 0.5rem;">
-                Preprint
-              </a>
-            {% endif %}
-          </div>
-          
-          <div style="margin: 0.75rem 0;">
-            <span class="tag" style="background: #e9f4ff; color: #0066cc; padding: 3px 8px; border-radius: 3px; font-size: 0.8rem; margin-right: 0.5rem;">
-              {{ paper.type | replace: '_', ' ' | capitalize }}
-            </span>
-            <span class="tag" style="background: #f0f9f0; color: #006600; padding: 3px 8px; border-radius: 3px; font-size: 0.8rem; margin-right: 0.5rem;">
-              {{ paper.domain | capitalize }}
-            </span>
-            <span class="tag" style="background: #fff2e6; color: #cc6600; padding: 3px 8px; border-radius: 3px; font-size: 0.8rem;">
-              {{ paper.status | replace: '_', ' ' | capitalize }}
-            </span>
-          </div>
-          
-          {% if paper.summary %}
-            <p style="margin-top: 1rem; color: #555;">{{ paper.summary }}</p>
-          {% endif %}
+  <div class="research-papers">
+    <p class="research-intro">
+      Most of my research articles are available on my <a href="https://arxiv.org/a/rao_a_1.html">arxiv page</a> or my <a href="https://scholar.google.com/citations?user=zYJ2IXQAAAAJ&hl=en">Google Scholar page</a>.
+    </p>
+    
+    {% assign sorted_papers = site.data.papers.papers | sort: 'year' | reverse %}
+    
+    {% for paper in sorted_papers %}
+    <div class="paper-item" 
+         data-type="{{ paper.type }}" 
+         data-domain="{{ paper.domain }}" 
+         data-status="{{ paper.status }}">
+      
+      <div class="paper-header">
+        <h3 class="paper-title">{{ paper.title }}</h3>
+        <div class="paper-meta">
+          <span class="paper-authors">{{ paper.authors }}</span>
+          <span class="paper-venue">{{ paper.venue }}</span>
+          <span class="paper-year">({{ paper.year }})</span>
         </div>
-      {% endfor %}
+      </div>
+      
+      <p class="paper-summary">{{ paper.summary }}</p>
+      
+      <div class="paper-links">
+        {% if paper.final_version and paper.final_version != "" %}
+        <a href="{{ paper.final_version }}" class="paper-link final-version">Final Version</a>
+        {% endif %}
+        {% if paper.preprint and paper.preprint != "" %}
+        <a href="{{ paper.preprint }}" class="paper-link preprint">Preprint</a>
+        {% endif %}
+      </div>
+      
+      <div class="paper-tags">
+        <span class="tag tag-type">{{ paper.type | replace: "_", " " | capitalize }}</span>
+        <span class="tag tag-domain">{{ paper.domain | capitalize }}</span>
+        <span class="tag tag-status">{{ paper.status | replace: "_", " " | capitalize }}</span>
+      </div>
     </div>
-  </div>
-
-  <div class="research-timeline">
-    <h4 style="color: #6f42c1; margin-bottom: 1rem; text-align: center;">Timeline</h4>
-    <div class="timeline-container">
-      <!-- Timeline will be generated by JavaScript -->
-    </div>
+    {% endfor %}
   </div>
 </div>
 
-<script>
-// Embed papers data for JavaScript
-window.papersData = [
-  {% for paper in site.data.papers.papers %}
-  {
-    id: "{{ paper.title | slugify }}",
-    title: "{{ paper.title | escape }}",
-    authors: "{{ paper.authors | escape }}",
-    venue: "{{ paper.venue | escape }}",
-    year: {{ paper.year }},
-    type: "{{ paper.type }}",
-    domain: "{{ paper.domain }}",
-    status: "{{ paper.status }}",
-    pdf_link: "{% if paper.pdf_link %}{{ BASE_PATH }}/{{ paper.pdf_link }}{% endif %}",
-    external_link: "{{ paper.external_link }}"
-  }{% unless forloop.last %},{% endunless %}
-  {% endfor %}
-];
-</script>
+<style>
+.research-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
 
-<script src="{{ BASE_PATH }}/research-timeline.js"></script>
+.research-filters {
+  flex: 0 0 250px;
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  position: sticky;
+  top: 2rem;
+}
+
+.research-filters h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.filter-group {
+  margin-bottom: 1.5rem;
+}
+
+.filter-group h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.filter-group input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+.research-papers {
+  flex: 1;
+  min-width: 0;
+}
+
+.research-intro {
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.paper-item {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.paper-item:last-child {
+  border-bottom: none;
+}
+
+.paper-header {
+  margin-bottom: 0.5rem;
+}
+
+.paper-title {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.1rem;
+  line-height: 1.3;
+}
+
+.paper-meta {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.paper-authors {
+  font-weight: 500;
+}
+
+.paper-venue {
+  font-style: italic;
+}
+
+.paper-year {
+  font-weight: 500;
+}
+
+.paper-summary {
+  margin: 0.75rem 0;
+  line-height: 1.5;
+  color: #444;
+}
+
+.paper-links {
+  margin: 0.75rem 0;
+}
+
+.paper-link {
+  display: inline-block;
+  margin-right: 1rem;
+  padding: 0.3rem 0.8rem;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  transition: background-color 0.2s;
+}
+
+.paper-link:hover {
+  color: white;
+}
+
+.paper-link.final-version {
+  background: #28a745;
+}
+
+.paper-link.final-version:hover {
+  background: #1e7e34;
+}
+
+.paper-link.preprint {
+  background: #007bff;
+}
+
+.paper-link.preprint:hover {
+  background: #0056b3;
+}
+
+.paper-tags {
+  margin-top: 0.5rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  margin-right: 0.5rem;
+  background: #e9ecef;
+  color: #495057;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.tag-type { background: #d1ecf1; color: #0c5460; }
+.tag-domain { background: #d4edda; color: #155724; }
+.tag-status { background: #f8d7da; color: #721c24; }
+
+/* Hide papers that don't match current filters */
+.paper-item {
+  display: block;
+}
+
+/* CSS-only filtering logic - Fixed structure */
+.research-container:has(input[name="type"][value="qualitative_theory"]:checked) .paper-item:not([data-type="qualitative_theory"]),
+.research-container:has(input[name="type"][value="quantitative_theory"]:checked) .paper-item:not([data-type="quantitative_theory"]),
+.research-container:has(input[name="type"][value="empirical"]:checked) .paper-item:not([data-type="empirical"]),
+.research-container:has(input[name="type"][value="methodology"]:checked) .paper-item:not([data-type="methodology"]),
+.research-container:has(input[name="domain"][value="space"]:checked) .paper-item:not([data-domain="space"]),
+.research-container:has(input[name="domain"][value="macroeconomics"]:checked) .paper-item:not([data-domain="macroeconomics"]),
+.research-container:has(input[name="status"][value="finished"]:checked) .paper-item:not([data-status="finished"]),
+.research-container:has(input[name="status"][value="active"]:checked) .paper-item:not([data-status="active"]),
+.research-container:has(input[name="status"][value="dormant"]:checked) .paper-item:not([data-status="dormant"]),
+.research-container:has(input[name="status"][value="cold_storage"]:checked) .paper-item:not([data-status="cold_storage"]) {
+  display: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .research-container {
+    flex-direction: column;
+  }
+  
+  .research-filters {
+    position: static;
+    flex: none;
+  }
+  
+  .filter-group {
+    margin-bottom: 1rem;
+  }
+  
+  .filter-group label {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: 0.3rem;
+  }
+}
+</style>
 
 <script>
-// Enhanced filter functionality for the research list
+// JavaScript fallback for browsers that don't support :has() selector
 document.addEventListener('DOMContentLoaded', function() {
-  const filterItems = document.querySelectorAll('.filter-item');
-  const researchItems = document.querySelectorAll('.research-item');
+  const filters = document.querySelectorAll('input[type="radio"]');
+  const papers = document.querySelectorAll('.paper-item');
   
-  filterItems.forEach(item => {
-    item.addEventListener('change', function() {
-      updateResearchFilter();
-    });
-  });
-  
-  function updateResearchFilter() {
-    const typeFilter = document.querySelector('input[name="type"]:checked');
-    const domainFilter = document.querySelector('input[name="domain"]:checked');
-    const statusFilter = document.querySelector('input[name="status"]:checked');
+  function filterPapers() {
+    const typeFilter = document.querySelector('input[name="type"]:checked').value;
+    const domainFilter = document.querySelector('input[name="domain"]:checked').value;
+    const statusFilter = document.querySelector('input[name="status"]:checked').value;
     
-    const selectedType = typeFilter ? typeFilter.value : 'all';
-    const selectedDomain = domainFilter ? domainFilter.value : 'all';
-    const selectedStatus = statusFilter ? statusFilter.value : 'all';
-    
-    researchItems.forEach(item => {
-      const itemType = item.dataset.type;
-      const itemDomain = item.dataset.domain;
-      const itemStatus = item.dataset.status;
+    papers.forEach(paper => {
+      const paperType = paper.getAttribute('data-type');
+      const paperDomain = paper.getAttribute('data-domain');
+      const paperStatus = paper.getAttribute('data-status');
       
-      let shouldShow = true;
+      const typeMatch = typeFilter === 'all' || paperType === typeFilter;
+      const domainMatch = domainFilter === 'all' || paperDomain === domainFilter;
+      const statusMatch = statusFilter === 'all' || paperStatus === statusFilter;
       
-      if (selectedType !== 'all' && itemType !== selectedType) {
-        shouldShow = false;
-      }
-      
-      if (selectedDomain !== 'all' && itemDomain !== selectedDomain) {
-        shouldShow = false;
-      }
-      
-      if (selectedStatus !== 'all' && itemStatus !== selectedStatus) {
-        shouldShow = false;
-      }
-      
-      if (shouldShow) {
-        item.style.display = 'block';
+      if (typeMatch && domainMatch && statusMatch) {
+        paper.style.display = 'block';
       } else {
-        item.style.display = 'none';
+        paper.style.display = 'none';
       }
     });
   }
+  
+  filters.forEach(filter => {
+    filter.addEventListener('change', filterPapers);
+  });
 });
 </script>
