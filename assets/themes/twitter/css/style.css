@@ -63,3 +63,30 @@
   background: #57A957;
   border: 1px solid #4c964d;
   color: #FFF; }
+
+/* Mobile-responsive profile container */
+.profile-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 2em;
+  margin-bottom: 2em;
+}
+
+.profile-container img {
+  width: 200px;
+  height: auto;
+}
+
+/* Mobile styles - single column with image on top */
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+  }
+  
+  .profile-container img {
+    order: -1; /* Moves image above text */
+    width: 150px; /* Slightly smaller on mobile */
+  }
+}
