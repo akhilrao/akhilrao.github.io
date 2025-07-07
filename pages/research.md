@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: frontpage
 title: research
 description: Akhil Rao's research
 active_page: research
