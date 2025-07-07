@@ -1,0 +1,290 @@
+/* Research Page Timeline and Legend Styles */
+
+/* Main layout adjustments */
+.research-container {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.research-filters {
+  flex: 0 0 25%;
+  min-width: 200px;
+}
+
+.research-content {
+  flex: 0 0 50%;
+}
+
+.research-timeline {
+  flex: 0 0 25%;
+  min-width: 180px;
+}
+
+/* Filter legend symbols */
+.filter-legend {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.filter-legend .filter-text {
+  flex: 1;
+}
+
+.filter-legend .legend-symbol {
+  flex: 0 0 auto;
+  margin-left: 8px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+/* Type symbols */
+.symbol-qualitative::before { content: "●"; }
+.symbol-quantitative::before { content: "■"; }
+.symbol-empirical::before { content: "▲"; }
+.symbol-methodology::before { content: "◆"; }
+
+/* Domain colors */
+.symbol-space { color: #483d8b; } /* darkslateblue */
+.symbol-macro { color: #228b22; } /* forestgreen */
+.symbol-game { color: #8b008b; } /* darkmagenta */
+
+/* Status border examples */
+.symbol-finished {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  background: #ddd;
+}
+
+.symbol-active {
+  width: 12px;
+  height: 12px;
+  border: 2px dashed #333;
+  border-radius: 50%;
+  background: #ddd;
+}
+
+.symbol-dormant {
+  width: 12px;
+  height: 12px;
+  border: 2px dotted #333;
+  border-radius: 50%;
+  background: #ddd;
+}
+
+.symbol-cold {
+  width: 12px;
+  height: 12px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background: #f5f5f5;
+}
+
+/* Timeline styles */
+.timeline-container {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #ddd;
+}
+
+.timeline-year {
+  position: relative;
+  margin: 30px 0;
+  min-height: 40px;
+}
+
+.timeline-year-label {
+  position: absolute;
+  left: -15px;
+  top: 0;
+  font-weight: bold;
+  color: #666;
+  background: white;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 14px;
+  z-index: 2;
+}
+
+.timeline-papers {
+  margin-left: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.timeline-paper {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.timeline-paper.filtered {
+  opacity: 0.3;
+}
+
+.timeline-paper:hover {
+  transform: scale(1.2);
+}
+
+/* Paper dots with combined encoding */
+.paper-dot {
+  width: 14px;
+  height: 14px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+/* Shape types */
+.paper-dot.qualitative-theory {
+  border-radius: 50%;
+}
+
+.paper-dot.quantitative-theory {
+  border-radius: 2px;
+}
+
+.paper-dot.empirical {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 12px solid;
+  border-radius: 2px;
+}
+
+.paper-dot.methodology {
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  border-radius: 2px;
+  margin: 2px;
+}
+
+/* Domain colors */
+.paper-dot.space {
+  background-color: #483d8b;
+  border-color: #483d8b;
+}
+
+.paper-dot.macroeconomics {
+  background-color: #228b22;
+  border-color: #228b22;
+}
+
+.paper-dot.game-theory {
+  background-color: #8b008b;
+  border-color: #8b008b;
+}
+
+/* Status borders - applied to container */
+.timeline-paper.finished .paper-dot {
+  box-shadow: 0 0 0 2px #333;
+}
+
+.timeline-paper.active .paper-dot {
+  box-shadow: 0 0 0 2px #333;
+  border-style: dashed;
+}
+
+.timeline-paper.dormant .paper-dot {
+  box-shadow: 0 0 0 2px #333;
+  border-style: dotted;
+}
+
+.timeline-paper.cold-storage .paper-dot {
+  box-shadow: 0 0 0 1px #ccc;
+}
+
+/* Special handling for triangle shape borders */
+.timeline-paper.active .paper-dot.empirical {
+  filter: drop-shadow(0 0 0 #333) drop-shadow(2px 0 0 #333) drop-shadow(-2px 0 0 #333);
+}
+
+.timeline-paper.finished .paper-dot.empirical {
+  filter: drop-shadow(0 0 0 #333) drop-shadow(2px 0 0 #333) drop-shadow(-2px 0 0 #333);
+}
+
+.timeline-paper.dormant .paper-dot.empirical {
+  filter: drop-shadow(0 0 0 #333) drop-shadow(1px 0 0 #333) drop-shadow(-1px 0 0 #333);
+}
+
+/* Tooltip */
+.paper-tooltip {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  max-width: 200px;
+  white-space: normal;
+  text-align: center;
+}
+
+.paper-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border: 5px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.8);
+}
+
+.timeline-paper:hover .paper-tooltip {
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .research-container {
+    flex-direction: column;
+  }
+  
+  .research-filters,
+  .research-content,
+  .research-timeline {
+    flex: none;
+    width: 100%;
+  }
+  
+  .timeline-container {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .filter-legend {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .legend-symbol {
+    margin-left: 0 !important;
+  }
+}
