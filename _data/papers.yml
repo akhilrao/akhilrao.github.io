@@ -186,7 +186,7 @@ papers:
     status: "finished"
 
   - title: "Experimental price indices for satellite manufacturing"
-    authors: "Akhil Rao, Tina Highfill"
+    authors: "Tina Highfill, Akhil Rao"
     venue: "BEA Working Papers"
     year: 2025
     summary: ""
@@ -197,7 +197,7 @@ papers:
     status: "finished"
 
   - title: "A Tabletop Game to Study Business Wargaming in the P-LEO SATCOM Marketplace"
-    authors: "Reza Qureshi, Ryan Gleason, Akhil Rao, Stephen Mulder, Daniel R. Tauritz, Davide Guzzetti"
+    authors: "Rehman S. Qureshi, Robert Gleason, Akhil Rao, Sam Mulder, Daniel R. Tauritz, Davide Guzzetti"
     venue: "IEEE Conference on Games"
     year: 2024
     summary: ""
@@ -208,7 +208,7 @@ papers:
     status: "finished"
 
   - title: "A table-top game to simulate competition between P-LEO satellite internet constellations"
-    authors: "Reza S. Qureshi, Christopher Roberts, Erik Kimbrell, Stephen Mulder, Akhil Rao, Daniel R. Tauritz, Davide Guzzetti"
+    authors: "Rehman S. Qureshi, Cody Roberts, Emily Kimbrell, Sam Mulder, Akhil Rao, Daniel R. Tauritz, Davide Guzzetti"
     venue: "AIAA/AAS Astrodynamics Specialist Conference"
     year: 2023
     summary: ""
