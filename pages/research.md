@@ -36,7 +36,7 @@ description: Akhil Rao's research
 
   <div class="research-papers">
     <p class="research-intro">
-      Most of my research articles are available on <a href="https://arxiv.org/a/rao_a_1.html">my arxiv page</a> or my <a href="https://scholar.google.com/citations?user=zYJ2IXQAAAAJ&hl=en">Google Scholar page</a>.
+      Most of my research articles are available on my <a href="https://arxiv.org/a/rao_a_1.html">arxiv page</a> or my <a href="https://scholar.google.com/citations?user=zYJ2IXQAAAAJ&hl=en">Google Scholar page</a>.
     </p>
     
     {% assign sorted_papers = site.data.papers.papers | sort: 'year' | reverse %}
