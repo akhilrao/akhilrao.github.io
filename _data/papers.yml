@@ -323,7 +323,7 @@ papers:
     year: 2019
     summary: ""
     final_version: ""
-    preprint: ""
+    preprint: "https://www.journals.uchicago.edu/doi/10.1086/707515" # Note that this isn't to the dissertation itself, but to the abstract that was published in the Journal of the Association of Environmental and Resource Economists in 2020. I'm not sure how to handle this case; not a preprint, but a final version of a derived product from this paper.
     type: "quantitative_theory"
     domain: "space"
     status: "finished"
