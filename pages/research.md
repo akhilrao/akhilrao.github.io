@@ -166,10 +166,10 @@ active_page: research
 }
 
 /* Type tags */
-.tag-qualitative_theory { background-color: #e8f4fd; color: #0277bd; }
-.tag-quantitative_theory { background-color: #f3e5f5; color: #7b1fa2; }
+.tag-qualitative_theory { background-color: #e1f5fe; color: #01579b; }
+.tag-quantitative_theory { background-color: #e8eaf6; color: #1a237e; }
 .tag-empirical { background-color: #e8f5e8; color: #388e3c; }
-.tag-methodology { background-color: #fff8e1; color: #f57c00; }
+.tag-methodology { background-color: #e0f2f1; color: #00695c; }
 
 /* Domain tags */
 .tag-space { background-color: #e8f5e8; color: #388e3c; }
