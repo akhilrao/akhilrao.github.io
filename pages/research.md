@@ -67,9 +67,9 @@ active_page: research
 }
 
 .paper-title {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  color: #2c3e50;
+  color: darkslateblue;
   margin-bottom: 0.5rem;
   line-height: 1.3;
 }
@@ -168,19 +168,19 @@ active_page: research
 }
 
 /* Type tags */
-.tag-qualitative_theory { background-color: #e3f2fd; color: #1565c0; }
-.tag-quantitative_theory { background-color: #f3e5f5; color: #6a1b9a; }
-.tag-empirical { background-color: #e8f5e8; color: #2e7d32; }
-.tag-methodology { background-color: #fff3e0; color: #ef6c00; }
+.tag-qualitative_theory { background-color: #e8f4fd; color: #0277bd; }
+.tag-quantitative_theory { background-color: #f3e5f5; color: #7b1fa2; }
+.tag-empirical { background-color: #e8f5e8; color: #388e3c; }
+.tag-methodology { background-color: #fff8e1; color: #f57c00; }
 
 /* Domain tags */
-.tag-space { background-color: #e8f5e8; color: #2e7d32; }
-.tag-macroeconomics { background-color: #e3f2fd; color: #1565c0; }
+.tag-space { background-color: #e8f5e8; color: #388e3c; }
+.tag-macroeconomics { background-color: #e8f4fd; color: #0277bd; }
 
 /* Status tags */
-.tag-finished { background-color: #ffebee; color: #c62828; }
-.tag-active { background-color: #f3e5f5; color: #6a1b9a; }
-.tag-dormant { background-color: #fafafa; color: #757575; }
+.tag-finished { background-color: #ffebee; color: #d32f2f; }
+.tag-active { background-color: #f3e5f5; color: #7b1fa2; }
+.tag-dormant { background-color: #f5f5f5; color: #616161; }
 .tag-cold_storage { background-color: #eceff1; color: #455a64; }
 
 /* Responsive design */
