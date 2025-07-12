@@ -304,19 +304,35 @@ input[name="type-filter"][value="all"]:checked ~ input[name="domain-filter"][val
           
           <div class="paper-links">
             {% if paper.final_version and paper.final_version != "" %}
-              <a href="{{ paper.final_version }}" class="paper-link link-final" target="_blank">Final Version</a>
+              {% if paper.final_version contains "http" %}
+                <a href="{{ paper.final_version }}" class="paper-link link-final" target="_blank">Final Version</a>
+              {% else %}
+                <a href="{{ BASE_PATH }}/{{ paper.final_version }}" class="paper-link link-final" target="_blank">Final Version</a>
+              {% endif %}
             {% endif %}
             
             {% if paper.preprint and paper.preprint != "" %}
-              <a href="{{ paper.preprint }}" class="paper-link link-preprint" target="_blank">Preprint</a>
+              {% if paper.preprint contains "http" %}
+                <a href="{{ paper.preprint }}" class="paper-link link-preprint" target="_blank">Preprint</a>
+              {% else %}
+                <a href="{{ BASE_PATH }}/{{ paper.preprint }}" class="paper-link link-preprint" target="_blank">Preprint</a>
+              {% endif %}
             {% endif %}
             
             {% if paper.abstract and paper.abstract != "" %}
-              <a href="{{ paper.abstract }}" class="paper-link link-abstract" target="_blank">Abstract</a>
+              {% if paper.abstract contains "http" %}
+                <a href="{{ paper.abstract }}" class="paper-link link-abstract" target="_blank">Abstract</a>
+              {% else %}
+                <a href="{{ BASE_PATH }}/{{ paper.abstract }}" class="paper-link link-abstract" target="_blank">Abstract</a>
+              {% endif %}
             {% endif %}
             
             {% if paper.repo and paper.repo != "" %}
-              <a href="{{ paper.repo }}" class="paper-link link-repo" target="_blank">Repo</a>
+              {% if paper.repo contains "http" %}
+                <a href="{{ paper.repo }}" class="paper-link link-repo" target="_blank">Repo</a>
+              {% else %}
+                <a href="{{ BASE_PATH }}/{{ paper.repo }}" class="paper-link link-repo" target="_blank">Repo</a>
+              {% endif %}
             {% endif %}
           </div>
           
