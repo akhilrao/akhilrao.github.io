@@ -36,8 +36,6 @@ active_page: research
   color: #333;
   font-size: 0.9rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 .filter-options {
