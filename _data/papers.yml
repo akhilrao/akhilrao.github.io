@@ -35,14 +35,25 @@
 #   - Example: "Shows that fires depress employment growth for three years."
 #
 # final_version: (optional, string)
-#   - Link to official published version (journal/conference)
+#   - Full URL to published version (journal, DOI, etc.)
 #   - Leave empty ("") if no published version available
-#   - Example: "https://www.journals.uchicago.edu/doi/10.1086/730695"
+#   - Example: "https://doi.org/10.1073/pnas.1921260117"
 #
 # preprint: (optional, string)
-#   - Link to preprint/working version (arXiv/self-hosted/ResearchGate)
+#   - Full URL to preprint version (arXiv, SSRN, etc.)
 #   - Leave empty ("") if no preprint available
 #   - Example: "https://arxiv.org/abs/2202.07442"
+#
+# abstract: (optional, string)
+#   - Full URL to abstract-only page
+#   - Useful for papers behind paywalls or conference abstracts
+#   - Leave empty ("") if no separate abstract page
+#   - Example: "https://www.journals.uchicago.edu/doi/abs/10.1086/707515"
+#
+# repo: (optional, string)
+#   - Full URL to code repository (GitHub, GitLab, etc.)
+#   - Leave empty ("") if no repository available
+#   - Example: "https://github.com/akhilrao/tragedy-space-commons"
 #
 # type: (required, string)
 #   - VALID VALUES: "qualitative_theory", "quantitative_theory", "empirical", "methodology"
@@ -93,6 +104,7 @@ papers:
     summary: ""
     final_version: "https://doi.org/10.1073/pnas.1921260117"
     preprint: "https://mpra.ub.uni-muenchen.de/112708/"
+    repo: "https://github.com/akhilrao/tragedy-space-commons"
     type: "quantitative_theory"
     domain: "space"
     status: "finished"
@@ -213,7 +225,7 @@ papers:
     year: 2023
     summary: ""
     final_version: ""
-    preprint: ""
+    preprint: "https://www.researchgate.net/profile/Rehman-Qureshi-3/publication/373295394_Preprint_AAS_23-458_A_TABLE-TOP_GAME_TO_SIMULATE_COMPETITION_BETWEEN_P-LEO_SATELLITE_INTERNET_CONSTELLATIONS/links/64e524f0434d3f628c41810d/Preprint-AAS-23-458-A-TABLE-TOP-GAME-TO-SIMULATE-COMPETITION-BETWEEN-P-LEO-SATELLITE-INTERNET-CONSTELLATIONS.pdf"
     type: "methodology"
     domain: "space"
     status: "finished"
@@ -323,7 +335,8 @@ papers:
     year: 2019
     summary: ""
     final_version: ""
-    preprint: "https://www.journals.uchicago.edu/doi/10.1086/707515" # Note that this isn't to the dissertation itself, but to the abstract that was published in the Journal of the Association of Environmental and Resource Economists in 2020. I'm not sure how to handle this case; not a preprint, but a final version of a derived product from this paper.
+    preprint: ""
+    abstract: "https://www.journals.uchicago.edu/doi/10.1086/707515"
     type: "quantitative_theory"
     domain: "space"
     status: "finished"

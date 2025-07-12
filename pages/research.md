@@ -1,140 +1,63 @@
 ---
-layout: frontpage
-title: research
-description: Akhil Rao's research
+layout: page
+title: Research
+description: Research by Akhil Rao
 active_page: research
 ---
 
-<div class="research-container">
-  <div class="research-filters">
-    <h3>Filter by:</h3>
-    
-    <div class="filter-group">
-      <h4>Type</h4>
-      <label><input type="radio" name="type" value="all" checked> All</label>
-      <label><input type="radio" name="type" value="qualitative_theory"> Qualitative Theory</label>
-      <label><input type="radio" name="type" value="quantitative_theory"> Quantitative Theory</label>
-      <label><input type="radio" name="type" value="empirical"> Empirical</label>
-      <label><input type="radio" name="type" value="methodology"> Methodology</label>
-    </div>
-    
-    <div class="filter-group">
-      <h4>Domain</h4>
-      <label><input type="radio" name="domain" value="all" checked> All</label>
-      <label><input type="radio" name="domain" value="space"> Space</label>
-      <label><input type="radio" name="domain" value="macroeconomics"> Macroeconomics</label>
-      <label><input type="radio" name="domain" value="game_theory"> Game Theory</label>
-    </div>
-    
-    <div class="filter-group">
-      <h4>Status</h4>
-      <label><input type="radio" name="status" value="all" checked> All</label>
-      <label><input type="radio" name="status" value="finished"> Finished</label>
-      <label><input type="radio" name="status" value="active"> Active</label>
-      <label><input type="radio" name="status" value="dormant"> Dormant</label>
-      <label><input type="radio" name="status" value="cold_storage"> Cold Storage</label>
-    </div>
-  </div>
-
-  <div class="research-papers">
-    <p class="research-intro">
-      Most of my research articles are available on my <a href="https://arxiv.org/a/rao_a_1.html">arxiv page</a> or my <a href="https://scholar.google.com/citations?user=zYJ2IXQAAAAJ&hl=en">Google Scholar page</a>.
-    </p>
-    
-    {% assign sorted_papers = site.data.papers.papers | sort: 'year' | reverse %}
-    
-    {% for paper in sorted_papers %}
-    <div class="paper-item" 
-         data-type="{{ paper.type }}" 
-         data-domain="{{ paper.domain }}" 
-         data-status="{{ paper.status }}">
-      
-      <div class="paper-header">
-        <h3 class="paper-title">{{ paper.title }}</h3>
-        <div class="paper-meta">
-          <span class="paper-authors">{{ paper.authors }}</span>
-          <span class="paper-venue">{{ paper.venue }}</span>
-          <span class="paper-year">({{ paper.year }})</span>
-        </div>
-      </div>
-      
-      <p class="paper-summary">{{ paper.summary }}</p>
-      
-      <div class="paper-links">
-        {% if paper.final_version and paper.final_version != "" %}
-        <a href="{{ paper.final_version }}" class="paper-link final-version">Final Version</a>
-        {% endif %}
-        {% if paper.preprint and paper.preprint != "" %}
-        <a href="{{ paper.preprint }}" class="paper-link preprint">Preprint</a>
-        {% endif %}
-      </div>
-      
-      <div class="paper-tags">
-        <span class="tag tag-type">{{ paper.type | replace: "_", " " | capitalize }}</span>
-        <span class="tag tag-domain">{{ paper.domain | capitalize }}</span>
-        <span class="tag tag-status">{{ paper.status | replace: "_", " " | capitalize }}</span>
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-</div>
-
 <style>
+/* Research page specific styles */
 .research-container {
   display: flex;
   gap: 2rem;
-  align-items: flex-start;
+  margin-top: 1rem;
 }
 
-.research-filters {
-  flex: 0 0 250px;
+.filters-sidebar {
+  flex: 0 0 200px;
   background: #f8f9fa;
   padding: 1.5rem;
   border-radius: 8px;
+  height: fit-content;
   position: sticky;
   top: 2rem;
 }
 
-.research-filters h3 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
+.papers-content {
+  flex: 1;
 }
 
-.filter-group {
+.filter-section {
   margin-bottom: 1.5rem;
 }
 
-.filter-group h4 {
-  margin: 0 0 0.5rem 0;
+.filter-section h4 {
+  margin-bottom: 0.75rem;
+  color: #333;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.filter-group label {
-  display: block;
-  margin-bottom: 0.3rem;
-  font-size: 0.85rem;
-  cursor: pointer;
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
-.filter-group input[type="radio"] {
+.filter-options input[type="radio"] {
   margin-right: 0.5rem;
 }
 
-.research-papers {
-  flex: 1;
-  min-width: 0;
-}
-
-.research-intro {
-  margin-bottom: 2rem;
-  font-style: italic;
+.filter-options label {
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0.25rem 0;
 }
 
 .paper-item {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid #eee;
 }
@@ -143,154 +66,314 @@ active_page: research
   border-bottom: none;
 }
 
-.paper-header {
-  margin-bottom: 0.5rem;
-}
-
 .paper-title {
-  margin: 0 0 0.3rem 0;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
   line-height: 1.3;
 }
 
-.paper-meta {
-  font-size: 0.9rem;
-  color: #666;
-}
-
 .paper-authors {
-  font-weight: 500;
+  color: #666;
+  margin-bottom: 0.25rem;
 }
 
 .paper-venue {
   font-style: italic;
-}
-
-.paper-year {
-  font-weight: 500;
+  color: #777;
+  margin-bottom: 1rem;
 }
 
 .paper-summary {
-  margin: 0.75rem 0;
+  color: #555;
   line-height: 1.5;
-  color: #444;
+  margin-bottom: 1rem;
 }
 
 .paper-links {
-  margin: 0.75rem 0;
+  margin-bottom: 0.75rem;
 }
 
 .paper-link {
   display: inline-block;
-  margin-right: 1rem;
-  padding: 0.3rem 0.8rem;
-  color: white;
+  padding: 0.4rem 0.8rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
   text-decoration: none;
   border-radius: 4px;
-  font-size: 0.8rem;
-  transition: background-color 0.2s;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
 .paper-link:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Link type specific colors */
+.link-final {
+  background-color: #28a745;
   color: white;
 }
 
-.paper-link.final-version {
-  background: #28a745;
+.link-final:hover {
+  background-color: #218838;
+  color: white;
 }
 
-.paper-link.final-version:hover {
-  background: #1e7e34;
+.link-preprint {
+  background-color: #007bff;
+  color: white;
 }
 
-.paper-link.preprint {
-  background: #007bff;
+.link-preprint:hover {
+  background-color: #0056b3;
+  color: white;
 }
 
-.paper-link.preprint:hover {
-  background: #0056b3;
+.link-abstract {
+  background-color: #6f42c1;
+  color: white;
+}
+
+.link-abstract:hover {
+  background-color: #5a32a3;
+  color: white;
+}
+
+.link-repo {
+  background-color: #fd7e14;
+  color: white;
+}
+
+.link-repo:hover {
+  background-color: #e8690b;
+  color: white;
 }
 
 .paper-tags {
-  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .tag {
-  display: inline-block;
-  padding: 0.2rem 0.5rem;
-  margin-right: 0.5rem;
-  background: #e9ecef;
-  color: #495057;
+  padding: 0.25rem 0.6rem;
   border-radius: 12px;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 500;
 }
 
-.tag-type { background: #d1ecf1; color: #0c5460; }
-.tag-domain { background: #d4edda; color: #155724; }
-.tag-status { background: #f8d7da; color: #721c24; }
+/* Type tags */
+.tag-qualitative_theory { background-color: #e3f2fd; color: #1565c0; }
+.tag-quantitative_theory { background-color: #f3e5f5; color: #6a1b9a; }
+.tag-empirical { background-color: #e8f5e8; color: #2e7d32; }
+.tag-methodology { background-color: #fff3e0; color: #ef6c00; }
 
-/* Hide papers that don't match current filters */
-.paper-item {
-  display: block;
-}
+/* Domain tags */
+.tag-space { background-color: #e8f5e8; color: #2e7d32; }
+.tag-macroeconomics { background-color: #e3f2fd; color: #1565c0; }
 
-/* CSS-only filtering logic - Fixed structure */
-.research-container:has(input[name="type"][value="qualitative_theory"]:checked) .paper-item:not([data-type="qualitative_theory"]),
-.research-container:has(input[name="type"][value="quantitative_theory"]:checked) .paper-item:not([data-type="quantitative_theory"]),
-.research-container:has(input[name="type"][value="empirical"]:checked) .paper-item:not([data-type="empirical"]),
-.research-container:has(input[name="type"][value="methodology"]:checked) .paper-item:not([data-type="methodology"]),
-.research-container:has(input[name="domain"][value="space"]:checked) .paper-item:not([data-domain="space"]),
-.research-container:has(input[name="domain"][value="macroeconomics"]:checked) .paper-item:not([data-domain="macroeconomics"]),
-.research-container:has(input[name="status"][value="finished"]:checked) .paper-item:not([data-status="finished"]),
-.research-container:has(input[name="status"][value="active"]:checked) .paper-item:not([data-status="active"]),
-.research-container:has(input[name="status"][value="dormant"]:checked) .paper-item:not([data-status="dormant"]),
-.research-container:has(input[name="status"][value="cold_storage"]:checked) .paper-item:not([data-status="cold_storage"]) {
-  display: none;
-}
+/* Status tags */
+.tag-finished { background-color: #ffebee; color: #c62828; }
+.tag-active { background-color: #f3e5f5; color: #6a1b9a; }
+.tag-dormant { background-color: #fafafa; color: #757575; }
+.tag-cold_storage { background-color: #eceff1; color: #455a64; }
 
 /* Responsive design */
 @media (max-width: 768px) {
   .research-container {
     flex-direction: column;
+    gap: 1rem;
   }
   
-  .research-filters {
-    position: static;
+  .filters-sidebar {
     flex: none;
+    position: static;
+    order: -1;
   }
   
-  .filter-group {
-    margin-bottom: 1rem;
+  .filter-options {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
-  
-  .filter-group label {
-    display: inline-block;
-    margin-right: 1rem;
-    margin-bottom: 0.3rem;
-  }
+}
+
+/* Filter functionality */
+.paper-item {
+  display: block;
+}
+
+.paper-item.hidden {
+  display: none;
+}
+
+/* Show all papers by default */
+input[type="radio"]:checked[value="all"] ~ .papers-list .paper-item,
+input[type="radio"]:not(:checked) ~ .papers-list .paper-item {
+  display: block;
+}
+
+/* Type filters */
+input[type="radio"]:checked[value="qualitative_theory"] ~ .papers-list .paper-item:not([data-type="qualitative_theory"]),
+input[type="radio"]:checked[value="quantitative_theory"] ~ .papers-list .paper-item:not([data-type="quantitative_theory"]),
+input[type="radio"]:checked[value="empirical"] ~ .papers-list .paper-item:not([data-type="empirical"]),
+input[type="radio"]:checked[value="methodology"] ~ .papers-list .paper-item:not([data-type="methodology"]) {
+  display: none;
+}
+
+/* Domain filters */
+input[type="radio"]:checked[value="space"] ~ .papers-list .paper-item:not([data-domain="space"]),
+input[type="radio"]:checked[value="macroeconomics"] ~ .papers-list .paper-item:not([data-domain="macroeconomics"]) {
+  display: none;
+}
+
+/* Status filters */
+input[type="radio"]:checked[value="finished"] ~ .papers-list .paper-item:not([data-status="finished"]),
+input[type="radio"]:checked[value="active"] ~ .papers-list .paper-item:not([data-status="active"]),
+input[type="radio"]:checked[value="dormant"] ~ .papers-list .paper-item:not([data-status="dormant"]),
+input[type="radio"]:checked[value="cold_storage"] ~ .papers-list .paper-item:not([data-status="cold_storage"]) {
+  display: none;
+}
+
+/* Combined filters - hide if any filter doesn't match */
+.paper-item:not([data-type]) { display: none; }
+.paper-item:not([data-domain]) { display: none; }
+.paper-item:not([data-status]) { display: none; }
+
+/* Reset show all when all filters are set to 'all' */
+input[name="type-filter"][value="all"]:checked ~ input[name="domain-filter"][value="all"]:checked ~ input[name="status-filter"][value="all"]:checked ~ .papers-list .paper-item {
+  display: block;
 }
 </style>
 
+<div class="research-container">
+  <div class="filters-sidebar">
+    <div class="filter-section">
+      <h4>Type</h4>
+      <div class="filter-options">
+        <label><input type="radio" name="type-filter" value="all" checked> All</label>
+        <label><input type="radio" name="type-filter" value="qualitative_theory"> Qualitative Theory</label>
+        <label><input type="radio" name="type-filter" value="quantitative_theory"> Quantitative Theory</label>
+        <label><input type="radio" name="type-filter" value="empirical"> Empirical</label>
+        <label><input type="radio" name="type-filter" value="methodology"> Methodology</label>
+      </div>
+    </div>
+
+    <div class="filter-section">
+      <h4>Domain</h4>
+      <div class="filter-options">
+        <label><input type="radio" name="domain-filter" value="all" checked> All</label>
+        <label><input type="radio" name="domain-filter" value="space"> Space</label>
+        <label><input type="radio" name="domain-filter" value="macroeconomics"> Macroeconomics</label>
+      </div>
+    </div>
+
+    <div class="filter-section">
+      <h4>Status</h4>
+      <div class="filter-options">
+        <label><input type="radio" name="status-filter" value="all" checked> All</label>
+        <label><input type="radio" name="status-filter" value="finished"> Finished</label>
+        <label><input type="radio" name="status-filter" value="active"> Active</label>
+        <label><input type="radio" name="status-filter" value="dormant"> Dormant</label>
+        <label><input type="radio" name="status-filter" value="cold_storage"> Cold Storage</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="papers-content">
+    <div class="papers-list">
+      {% assign sorted_papers = site.data.papers.papers | sort: 'year' | reverse %}
+      {% for paper in sorted_papers %}
+        <div class="paper-item" 
+             data-type="{{ paper.type }}" 
+             data-domain="{{ paper.domain }}" 
+             data-status="{{ paper.status }}">
+          
+          <h3 class="paper-title">{{ paper.title }}</h3>
+          
+          <div class="paper-authors">{{ paper.authors }}</div>
+          
+          <div class="paper-venue">{{ paper.venue }} ({{ paper.year }})</div>
+          
+          {% if paper.summary and paper.summary != "" %}
+            <div class="paper-summary">{{ paper.summary }}</div>
+          {% endif %}
+          
+          <div class="paper-links">
+            {% if paper.final_version and paper.final_version != "" %}
+              <a href="{{ paper.final_version }}" class="paper-link link-final" target="_blank">Final Version</a>
+            {% endif %}
+            
+            {% if paper.preprint and paper.preprint != "" %}
+              <a href="{{ paper.preprint }}" class="paper-link link-preprint" target="_blank">Preprint</a>
+            {% endif %}
+            
+            {% if paper.abstract and paper.abstract != "" %}
+              <a href="{{ paper.abstract }}" class="paper-link link-abstract" target="_blank">Abstract</a>
+            {% endif %}
+            
+            {% if paper.repo and paper.repo != "" %}
+              <a href="{{ paper.repo }}" class="paper-link link-repo" target="_blank">Repo</a>
+            {% endif %}
+          </div>
+          
+          <div class="paper-tags">
+            <span class="tag tag-{{ paper.type }}">
+              {% case paper.type %}
+                {% when 'qualitative_theory' %}Qualitative theory
+                {% when 'quantitative_theory' %}Quantitative theory
+                {% when 'empirical' %}Empirical
+                {% when 'methodology' %}Methodology
+              {% endcase %}
+            </span>
+            
+            <span class="tag tag-{{ paper.domain }}">
+              {% case paper.domain %}
+                {% when 'space' %}Space
+                {% when 'macroeconomics' %}Macroeconomics
+              {% endcase %}
+            </span>
+            
+            <span class="tag tag-{{ paper.status }}">
+              {% case paper.status %}
+                {% when 'finished' %}Finished
+                {% when 'active' %}Active
+                {% when 'dormant' %}Dormant
+                {% when 'cold_storage' %}Cold Storage
+              {% endcase %}
+            </span>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
 <script>
-// JavaScript fallback for browsers that don't support :has() selector
 document.addEventListener('DOMContentLoaded', function() {
-  const filters = document.querySelectorAll('input[type="radio"]');
+  const typeFilters = document.querySelectorAll('input[name="type-filter"]');
+  const domainFilters = document.querySelectorAll('input[name="domain-filter"]');
+  const statusFilters = document.querySelectorAll('input[name="status-filter"]');
   const papers = document.querySelectorAll('.paper-item');
   
   function filterPapers() {
-    const typeFilter = document.querySelector('input[name="type"]:checked').value;
-    const domainFilter = document.querySelector('input[name="domain"]:checked').value;
-    const statusFilter = document.querySelector('input[name="status"]:checked').value;
+    const selectedType = document.querySelector('input[name="type-filter"]:checked').value;
+    const selectedDomain = document.querySelector('input[name="domain-filter"]:checked').value;
+    const selectedStatus = document.querySelector('input[name="status-filter"]:checked').value;
     
     papers.forEach(paper => {
       const paperType = paper.getAttribute('data-type');
       const paperDomain = paper.getAttribute('data-domain');
       const paperStatus = paper.getAttribute('data-status');
       
-      const typeMatch = typeFilter === 'all' || paperType === typeFilter;
-      const domainMatch = domainFilter === 'all' || paperDomain === domainFilter;
-      const statusMatch = statusFilter === 'all' || paperStatus === statusFilter;
+      const typeMatch = selectedType === 'all' || paperType === selectedType;
+      const domainMatch = selectedDomain === 'all' || paperDomain === selectedDomain;
+      const statusMatch = selectedStatus === 'all' || paperStatus === selectedStatus;
       
       if (typeMatch && domainMatch && statusMatch) {
         paper.style.display = 'block';
@@ -300,7 +383,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  filters.forEach(filter => {
+  // Add event listeners to all filters
+  [...typeFilters, ...domainFilters, ...statusFilters].forEach(filter => {
     filter.addEventListener('change', filterPapers);
   });
 });
