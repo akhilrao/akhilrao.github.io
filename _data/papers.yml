@@ -289,16 +289,16 @@ papers:
     domain: "space"
     status: "dormant"
 
-  - title: "Sustainability assessment of Low Earth Orbit (LEO) satellite broadband megaconstellations"
+  - title: "Emissions Assessment of Low Earth Orbit (LEO) Broadband Megaconstellations; Starlink, OneWeb and Kuiper"
     authors: "Ogutu B. Osoro, Edward J. Oughton, Andrew R. Wilson, Akhil Rao"
-    venue: "Working Paper"
-    year: 2023
+    venue: "Advances in Space Research"
+    year: 2025
     summary: ""
-    final_version: ""
+    final_version: "https://doi.org/10.1016/j.asr.2025.11.036"
     preprint: "https://arxiv.org/abs/2309.02338"
     type: "quantitative_theory"
     domain: "space"
-    status: "active"
+    status: "finished"
 
   - title: "The CENKI Space Economic Simulator: Demonstrating Agent-Based Modeling on Satellite Market Data"
     authors: "Trevor Bennett, Charles Cain, N.S. Campbell, Andrew Gemer, John Marino, Tobias Niederwieser, Akhil Rao"
@@ -342,6 +342,50 @@ papers:
     preprint: ""
     abstract: "https://www.journals.uchicago.edu/doi/10.1086/707515"
     type: "quantitative_theory"
+    domain: "space"
+    status: "finished"
+
+  - title: "Prices and Competition in Vertically Integrated Launch Markets"
+    authors: "Akhil Rao"
+    venue: "Working Paper"
+    year: 2026
+    summary: ""
+    final_version: ""
+    preprint: "https://arxiv.org/abs/2607.10385"
+    type: "quantitative_theory"
+    domain: "space"
+    status: "active"
+
+  - title: "Public Infrastructure Investments for Space Market Development"
+    authors: "Akhil Rao"
+    venue: "Working Paper"
+    year: 2025
+    summary: ""
+    final_version: ""
+    preprint: "https://arxiv.org/abs/2511.00935"
+    type: "quantitative_theory"
+    domain: "space"
+    status: "active"
+
+  - title: "Do Economic Principles Explain Orbital Use in Space?"
+    authors: "Daniel Kaffine, Akhil Rao"
+    venue: "Journal of Environmental Economics and Management"
+    year: 2026
+    summary: ""
+    final_version: ""
+    preprint: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5556800"
+    type: "quantitative_theory"
+    domain: "space"
+    status: "finished"
+
+  - title: "Enhancing Space Debris Integrated Assessment Models to support transdisciplinary policy modelling in LEO"
+    authors: "Indigo Brownhall, Michele Marino, Santosh Bhattarai, Daniel Kaffine, Miles Lifson, Akhil Rao, Mark Moretto, Giovanni Lavezzi, Richard Linares"
+    venue: "AAS/AIAA Astrodynamics Specialist Conference"
+    year: 2025
+    summary: ""
+    final_version: ""
+    preprint: "https://discovery.ucl.ac.uk/id/eprint/10215296/1/Enhancing_Space_Debris_Integrated_Assessment_Models_to_support_transdisciplinary_policy_modelling_in_LEO-2.pdf"
+    type: "methodology"
     domain: "space"
     status: "finished"
 
