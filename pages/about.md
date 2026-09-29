@@ -41,18 +41,3 @@ On environmental phenomena: [modeling disease-economy trade-offs under different
 
 
 ---
-
-<div class="container">
-<h4><a name="contact"></a>contact</h4>
-
-    <div class="row-fluid">
-        <div class="span5">
-            <div id="hide_email">
-            Email: <code>akh</code><b>I</b><code>ilr</code><b>don't</b><code>@</code><b>want</b><code>midd</code><b>spam!
-            </b><code>le</code><b>So</b><code></code><b>please</b><code>bu</code><b>leave
-            </b><code>ry</code><b>me</b><code>.</code><b>alone</b><code>e</code><b>!</b><code>du</code><br/>
-            </div>
-        </div>
-
-    </div>
-</div>
